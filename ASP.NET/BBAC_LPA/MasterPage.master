@@ -1,0 +1,83 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>主要功能模块</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+    <link href="~/image/skin.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <style type="text/css">
+        .style2
+        {
+            width: 800px;
+        }
+        .fontstyle
+        {
+        	font-family:Arial;
+        	font-size:16px
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div align = "center">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="17" valign="top" background="image/mail_leftbg.gif"><img src="image/left-top-right.gif" width="17" height="29" /></td>
+    <td valign="top" background="image/content-bg.gif"><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+      <tr>
+        <td height="31"></td>
+      </tr>
+    </table></td>
+    <td width="16" valign="top" background="image/mail_rightbg.gif"><img src="image/nav-right-bg.gif" width="16" height="29" /></td>
+  </tr>
+  <tr>
+    <td valign="middle" background="image/mail_leftbg.gif">&nbsp;</td>
+    <td valign="top" bgcolor="#F7F8F9">
+    <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="2" valign="top">
+        <table style="width: 100%;">
+        <tr>
+            <td class="style2">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+            </td>
+        </tr>
+        <tr>
+            <td class="style2">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" ><div align = "center"></div>
+                </asp:ContentPlaceHolder>
+                
+            </td>
+        </tr>
+        <tr>
+            <td class="style2">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"><div align = "center"></div>
+                </asp:ContentPlaceHolder>
+                
+                
+            </td>
+        </tr>
+    </table>
+    </td>
+        <td>&nbsp;</td>
+        <td valign="top">&nbsp;</td>
+      </tr>
+      </table>
+    <td background="image/mail_rightbg.gif">&nbsp;</td>
+    <tr>
+    <td valign="bottom" background="image/mail_leftbg.gif"><img src="image/buttom_left2.gif" width="17" height="17" /></td>
+    <td background="image/buttom_bgs.gif"><img src="image/buttom_bgs.gif" width="17" height="17"></td>
+    <td valign="bottom" background="image/mail_rightbg.gif"><img src="image/buttom_right2.gif" width="16" height="17" /></td>
+  </tr>
+  </table>
+    </div>
+        
+    </form>
+</body>
+</html>
