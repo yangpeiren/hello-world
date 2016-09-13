@@ -1,0 +1,176 @@
+   ALLOCATE 1
+   LOADI 1
+   STO <0,4>
+   ALLOCATE 1
+   LOADI -100
+   STO <0,5>
+   ALLOCATE 1
+   LOADI 123.000000
+   STO <0,6>
+   ALLOCATE 1
+   LOADI -321.000000
+   STO <0,7>
+   ALLOCATE 1
+   ALLOCATE 1
+   ALLOCATE 1
+   ALLOCATE 1
+   JSR main
+max: 
+   ALLOCATE 3
+   STO <1,1>
+   STO <1,6>
+   STO <1,5>
+   STO <1,4>
+   ALLOCATE 1
+   LOAD <1,4>
+   LOAD <1,5>
+   GE
+   BRF 0
+   LOAD <1,4>
+   LOAD <1,6>
+   GE
+   BRF 1
+   LOAD <1,4>
+   STO <1,7>
+   BR 2
+1: 
+   LOAD <1,6>
+   STO <1,7>
+2: 
+   BR 3
+0: 
+   LOAD <1,5>
+   LOAD <1,6>
+   GE
+   BRF 4
+   LOAD <1,5>
+   STO <1,7>
+   BR 5
+4: 
+   LOAD <1,6>
+   STO <1,7>
+5: 
+3: 
+   LOAD <1,7>
+   RETURN
+add1: 
+   ALLOCATE 3
+   STO <1,1>
+   STO <1,6>
+   STO <1,5>
+   STO <1,4>
+6: 
+   LOAD <1,6>
+   LOADI 0
+   GT
+   BRF 7
+   LOAD <1,4>
+   LOAD <1,5>
+   ADD
+   STO <1,4>
+   LOAD <1,6>
+   LOADI 1
+   SUB
+   STO <1,6>
+   BR 6
+7: 
+   LOAD <1,4>
+   RETURN
+add2: 
+   ALLOCATE 3
+   STO <1,1>
+   STO <1,6>
+   STO <1,5>
+   STO <1,4>
+   ALLOCATE 1
+   LOADI 0
+   STO <1,7>
+8: 
+   LOAD <1,6>
+   LOADI 0
+   GT
+   BRF 9
+   LOAD <1,6>
+   LOADI 1
+   SUB
+   STO <1,6>
+   LOAD <1,5>
+   LOAD <1,4>
+   ADD
+   STO <1,4>
+   BR 8
+9: 
+   LOAD <1,4>
+   RETURN
+main: 
+   LOADI -1
+   STO <1,1>
+   ALLOCATE 1
+   ALLOCATE 1
+   ALLOCATE 1
+   ALLOCATE 1
+   ALLOCATE 1
+   ALLOCATE 1
+   ALLOCATE 1
+   ALLOCATE 1
+   LOAD <0,6>
+   STO <0,10>
+   LOAD <0,7>
+   CONVERI $Top
+   STO <0,11>
+   PRINTS Input three numbers: 
+   READ
+   CONVERI $Top
+   STO <1,4>
+   READ
+   CONVERI $Top
+   STO <1,5>
+   READ
+   CONVERI $Top
+   STO <1,6>
+   LOAD <1,4>
+   LOAD <1,5>
+   LOAD <1,6>
+   LOADI 10
+   JSR max
+10: 
+   STO <0,8>
+   PRINTS the max: 
+   LOAD <0,8>
+   PRINTI
+   PRINTS input the base: 
+   READ
+   CONVERI $Top
+   STO <1,7>
+   PRINTS input the step: 
+   READ
+   CONVERI $Top
+   STO <1,8>
+   PRINTS input the number: 
+   READ
+   CONVERI $Top
+   STO <1,9>
+   LOAD <1,7>
+   LOAD <1,8>
+   LOAD <1,9>
+   LOADI 11
+   JSR add1
+11: 
+   STO <1,10>
+   LOAD <1,7>
+   LOAD <1,8>
+   LOAD <1,9>
+   LOADI 12
+   JSR add2
+12: 
+   STO <1,11>
+   PRINTS the result: 
+   LOAD <1,10>
+   PRINTI
+   LOAD <1,11>
+   PRINTI
+   LOAD <0,10>
+   PRINTF
+   LOAD <0,11>
+   PRINTI
+   RETURN

@@ -1,0 +1,36 @@
+ void main(){
+	int a,b;
+	float c,d;
+	
+	printf("Please enter two intergers (A,B): ");
+	scanf(a,b);
+	
+	printf("A+B=");
+	printf(a+b);
+	
+	printf(" A-B=");
+	printf(a-b);
+	
+	printf(" A*B=");
+	printf(a*b);
+	
+	printf(" A/B=");
+	printf(a/b);
+	
+	printf("\nPlease enter two real numbers (C,D): ");
+	scanf(c,d);
+	
+	printf(" C+D=");
+	printf(c+d);
+	
+	printf(" C-D=");
+	printf(c-d);
+	
+	printf(" C*D=");
+	printf(c*d);
+	
+	printf(" C/D=");
+	printf(c/d);
+	
+	return ;
+}

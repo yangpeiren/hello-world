@@ -1,0 +1,16 @@
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\bin\Release\Facility_Maintain.exe.config
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\bin\Release\Facility_Maintain.exe.manifest
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\bin\Release\Facility_Maintain.application
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\bin\Release\Facility_Maintain.exe
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\bin\Release\Facility_Maintain.pdb
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\obj\Release\ResolveAssemblyReference.cache
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\obj\Release\Facility_Maintain.Form1.resources
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\obj\Release\Facility_Maintain.Form2.resources
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\obj\Release\Facility_Maintain.Form3.resources
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\obj\Release\Facility_Maintain.Properties.Resources.resources
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\obj\Release\Facility_Maintain.csproj.GenerateResource.Cache
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\obj\Release\Facility_Maintain.TrustInfo.xml
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\obj\Release\Facility_Maintain.exe.manifest
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\obj\Release\Facility_Maintain.application
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\obj\Release\Facility_Maintain.exe
+D:\编程\Facility_Maintain\Facility_Maintain\Facility_Maintain\obj\Release\Facility_Maintain.pdb

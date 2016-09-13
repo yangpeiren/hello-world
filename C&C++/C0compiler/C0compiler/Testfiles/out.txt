@@ -1,0 +1,85 @@
+   ALLOCATE 1
+   LOADI 1
+   STO <0,4>
+   ALLOCATE 1
+   LOADI -100
+   STO <0,5>
+   ALLOCATE 1
+   LOADI 97
+   STO <0,6>
+   ALLOCATE 1
+   ALLOCATE 1
+   ALLOCATE 1
+   JSR main
+GETS1: 
+   ALLOCATE 2
+   STO <1,1>
+   STO <1,5>
+   STO <1,4>
+   LOAD <1,4>
+   LOAD <1,5>
+   ADD
+   STO <0,7>
+   LOAD <0,7>
+   RETURN
+GETS2: 
+   ALLOCATE 2
+   STO <1,1>
+   STO <1,5>
+   STO <1,4>
+   LOAD <1,4>
+   LOAD <1,5>
+   SUB
+   CONVERF $Top
+   STO <0,8>
+   RETURN
+GETS3: 
+   ALLOCATE 1
+   STO <1,1>
+   STO <1,4>
+   LOAD <1,4>
+   LOADI 2
+   ADD
+   STO <0,9>
+   LOAD <0,9>
+   RETURN
+main: 
+   LOADI -1
+   STO <1,1>
+   ALLOCATE 1
+   ALLOCATE 1
+   ALLOCATE 1
+   PRINTS Input del1: 
+   READ
+   CONVERI $Top
+   STO <1,4>
+   PRINTS Input del2: 
+   READ
+   CONVERI $Top
+   STO <1,5>
+   LOAD <1,4>
+   LOAD <0,4>
+   LOADI 0
+   JSR GETS1
+0: 
+   STO <1,4>
+   LOAD <1,5>
+   LOAD <0,5>
+   LOADI 1
+   JSR GETS2
+1: 
+   LOAD <0,6>
+   LOADI 2
+   JSR GETS3
+2: 
+   STO <1,6>
+   PRINTS del1: 
+   LOAD <1,4>
+   PRINTI
+   PRINTS change2: 
+   LOAD <0,8>
+   PRINTF
+   PRINTS del3: 
+   LOAD <1,6>
+   PRINTC
+   RETURN

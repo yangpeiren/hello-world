@@ -1,0 +1,12 @@
+D:\编程\人员维护\人员维护\bin\Debug\人员维护.exe
+D:\编程\人员维护\人员维护\bin\Debug\人员维护.pdb
+D:\编程\人员维护\人员维护\obj\Debug\ResolveAssemblyReference.cache
+D:\编程\人员维护\人员维护\obj\Debug\人员维护.MainForm.resources
+D:\编程\人员维护\人员维护\obj\Debug\人员维护.Properties.Resources.resources
+D:\编程\人员维护\人员维护\obj\Debug\人员维护.csproj.GenerateResource.Cache
+D:\编程\人员维护\人员维护\obj\Debug\人员维护.exe
+D:\编程\人员维护\人员维护\obj\Debug\人员维护.pdb
+D:\编程\人员维护\人员维护\bin\Debug\DataGridViewAutoFilter.dll
+D:\编程\人员维护\人员维护\obj\Debug\人员维护.Form2.resources
+D:\编程\人员维护\人员维护\obj\Debug\人员维护.Form3.resources
+D:\编程\人员维护\人员维护\obj\Debug\人员维护.Form4.resources

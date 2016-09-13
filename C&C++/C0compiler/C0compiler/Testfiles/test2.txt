@@ -1,0 +1,20 @@
+int f1(int a,char b,int c){
+   int max;
+   max=a;
+   if (b>max)
+       max=b;
+   if (c>max)
+        max=c;
+   return (max);
+}
+
+void main(){
+   int f;
+   printf("求最大值\n",);
+   f=f1(3,'A');
+   if (f>=0)
+       printf("The max number is:",f);
+   f=f1(-1,-2,-100);
+   if (f<0)
+       printf("\nThe max number is below zero\n",);
+}

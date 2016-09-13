@@ -1,0 +1,42 @@
+const int max=8;
+int n;
+
+int Input(){
+   printf("Plase input n=",);
+   scanf(n);
+   if (n<=0){
+     printf("Error: n must over 0\n",);
+     return (0);
+   }
+   if (n>max){
+     printf("Error: n must below ",max);
+     printf("\n",);
+     return (0);
+   }
+   return (1);
+}
+
+void Print(){
+   int i,j;
+   i=0;
+   while (i<n){
+       i=i+1;
+       j=0;
+       while(j<n-i){
+         printf(" ",);
+         j=j+1;
+       }
+       j=0;
+       while(j<2*i-1){
+          j=j+1;
+          printf("*",);
+	}
+       printf("\n",);
+   }
+}
+
+void main(){
+  printf("´òÓ¡Èý½ÇÐÎ\n",);
+  if (Input()==1)
+     Print();
+}

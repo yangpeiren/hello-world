@@ -1,0 +1,28 @@
+int max(int i,int j,int t){
+	int m;
+	m=0;
+	if(i>j)
+	{
+		m=i;
+	}
+	else
+		m=j;
+	if(m<t)
+		m=t;
+	return (m);
+}
+
+void main(){
+	int i;
+	int j;
+	int t;
+	int maaaa;
+i=0;
+j=0;
+t=0;
+maaaa=0;
+	scanf(i,j,t);
+	maaaa=max(i,j,t);
+	printf(maaaa);
+}
+	

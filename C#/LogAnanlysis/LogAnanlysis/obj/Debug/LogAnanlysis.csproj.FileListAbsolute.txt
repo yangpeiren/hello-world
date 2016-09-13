@@ -1,0 +1,5 @@
+D:\MaintenanceDB\LogAnanlysis\LogAnanlysis\bin\Debug\LogAnanlysis.exe
+D:\MaintenanceDB\LogAnanlysis\LogAnanlysis\bin\Debug\LogAnanlysis.pdb
+D:\MaintenanceDB\LogAnanlysis\LogAnanlysis\obj\Debug\ResolveAssemblyReference.cache
+D:\MaintenanceDB\LogAnanlysis\LogAnanlysis\obj\Debug\LogAnanlysis.exe
+D:\MaintenanceDB\LogAnanlysis\LogAnanlysis\obj\Debug\LogAnanlysis.pdb

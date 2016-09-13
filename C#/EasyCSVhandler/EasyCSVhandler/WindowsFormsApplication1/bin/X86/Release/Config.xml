@@ -1,0 +1,6 @@
+<PathConfig>
+  <DBConfig ID="1" Description="Access DB Path">
+    <DBPath>D:\Tech\Robotics\KRMSGNET.mdb</DBPath>
+    <DefaultStorePath>D:\MaintenanceDB\EasyCSVhandler\EasyCSVhandler\WindowsFormsApplication1\bin\x86\Release\</DefaultStorePath>
+  </DBConfig>
+</PathConfig>

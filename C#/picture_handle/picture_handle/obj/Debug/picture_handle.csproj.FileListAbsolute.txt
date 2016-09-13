@@ -1,0 +1,8 @@
+D:\编程\picture_handle\picture_handle\picture_handle\bin\Debug\picture_handle.exe
+D:\编程\picture_handle\picture_handle\picture_handle\bin\Debug\picture_handle.pdb
+D:\编程\picture_handle\picture_handle\picture_handle\obj\Debug\ResolveAssemblyReference.cache
+D:\编程\picture_handle\picture_handle\picture_handle\obj\Debug\picture_handle.Properties.Resources.resources
+D:\编程\picture_handle\picture_handle\picture_handle\obj\Debug\picture_handle.csproj.GenerateResource.Cache
+D:\编程\picture_handle\picture_handle\picture_handle\obj\Debug\picture_handle.exe
+D:\编程\picture_handle\picture_handle\picture_handle\obj\Debug\picture_handle.pdb
+D:\编程\picture_handle\picture_handle\picture_handle\obj\Debug\picture_handle.Frm_Main.resources

@@ -1,0 +1,114 @@
+const int a=45,b=27;
+const char mmc='c';
+ int max ,min;
+int mm;
+
+ int add(int x , int y)
+{
+	int m;
+	m=(x+y);
+	printf("x=",x);
+	printf("\ny=",y);
+	printf("\n",);
+	return (m);
+}
+
+int dummy()
+{ {{{}}}
+  return (1);
+}
+
+float func()
+{
+const  int m=1;
+const char c=';';
+ int x,y;
+
+x=3+5*(9/3);
+y=((((10))));
+return ( 'c'+ add(2,3) );
+}
+
+char charfunc( int x1 , int y1)
+{
+char c1;
+c1=x1+y1 ;
+return (c1);
+}
+void swap()
+{
+	int temp;
+	temp=max;
+	max=min;
+	min=temp;
+	printf("\nmax=",max);
+}
+
+void  main()
+{
+const int aa=55;
+float tem;
+int tem1;
+char cccc;
+char abcd;
+mm=',';
+abcd='a';
+printf("只用于测试，该程序没有实际意义\n",);
+{	
+	printf("char abcd is ",abcd);
+        printf("\n",);
+	printf("     ",);
+        printf("\n",);
+}
+abcd='.';
+printf("char abcd is ",abcd);
+printf("\n",);
+printf("     ",);
+
+min=aa ;
+max= b;
+cccc=charfunc(45, 52);
+scanf(cccc);
+printf("cccc=",cccc);
+printf("\n",);
+
+tem=5+add(add(2,3),3)+ 3.5*func() +100.4324;
+printf("tem=",((((tem)))) );
+printf("\n",88888);
+swap();
+printf("\nmin=",min);
+printf("\n",);
+;
+
+
+tem=add(2,3);
+scanf(tem1);
+printf(tem1);
+printf("\n",);
+switch (tem1)
+{
+case -0:
+	printf(123);
+case '1':
+	printf(456);
+case +2:
+	printf(789);
+case -3:
+	printf(100);
+default:
+	printf("tem1 is not valid",123456);
+}
+printf("\n",);
+
+
+if(tem>=3)
+  tem=tem+1;
+else
+  tem=tem-1;
+
+printf("tem is not valid",tem);
+max= 32000;
+printf("\n",max);
+
+}
+ 

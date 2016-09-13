@@ -1,0 +1,30 @@
+int var1,var2;
+
+
+void function1(){
+   const int var1 = 01,var2 = 2;
+   printf("function1: ");
+   printf(var1);
+   printf(var2);
+   
+   function2();
+}
+
+void function2(){
+   const int var1 = 3,var2 = 4;
+   printf("function2: ");
+   printf(var1);
+   printf(var2);
+ }
+
+
+ 
+ void main(){
+    var1 = 5;
+    var2 = 6;
+    function1();
+    printf("main: ");
+    printf(var1);
+    printf(var2);
+    
+}

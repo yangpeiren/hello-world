@@ -1,0 +1,38 @@
+const int const1 = 1, const2 = -100;
+const char const3 = 'a';
+
+int change1;
+float change2;
+char change3;
+
+int gets1(int var1,int var2){
+    change1 = var1 + var2;
+    return (change1);
+}
+
+void gets2(int var1, int var3){
+    change2 = var1 - var3;
+}
+
+char gets3(char var){
+    change3 = var+2;
+    return (change3);
+}
+
+void main(){
+		int del1,del2;
+		char del3;
+		printf("Input del1: ");
+		scanf(del1); 
+		printf("Input del2: ");
+		scanf(del2);
+		
+		del1 = gets1(del1,const1);
+		gets2(del2,const2);
+		del3 = gets3(const3);
+		
+		printf("del1: ", del1);
+		printf("change2: ", change2);
+		printf("del3: ", del3);
+
+}
