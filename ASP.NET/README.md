@@ -16,10 +16,5 @@ Tools been used:
 Windows Server + ASP.NET + SQL Server + IIS...
 Quite different from LAMP... Because only these tools could be provided and were allowed in Company.
 
-The tool costs me 3 Months to finish, and it is a start up of programming a big project with oo language.
-It was a pity that I did it alone, without others' help. Otherwise I could make it better and with more comments or documents...
-
-
-
-
-
+The tool costs 3 Months to finish, and it is a start up of programming a big project with OOlanguage.
+It was a pity that it was done alone, otherwise it could be better made and with more comments or documents...
