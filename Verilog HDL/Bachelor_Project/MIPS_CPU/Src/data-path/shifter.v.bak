@@ -1,0 +1,46 @@
+/*
+ * This is part of COCOA project, which covers the 5 basic disciplines
+ * in computer science: digital logic, computer organization, compiler, 
+ * computer architecture,  and operating system.
+ * Copy right belongs to BUAA, 2008
+ */
+
+`include "..\processor_head.v"
+
+`timescale  1ns/1ns
+
+module Shifter( Din, Num, Funct, Dout ) ;    
+    input   [31:0]                  Din;		// source data
+    input   [4:0]                   Num;		// number of bits to shift
+    input   [4:0]                   Funct;		// shifter function selector
+    output  [31:0]                  Dout;	    // shift result
+ 
+//assign SHT_DC	= Funct == `ALU_SLL? Din << Num:
+//				Funct == `ALU_SLR? Din >> Num:
+//				Funct == `ALU_SRA? arithmetic shift:
+//				0;
+
+    wire    [31:0]          wShiftL1, wShiftL2, wShiftL4, wShiftL8, wShiftL16 ;
+    wire    [31:0]          wShiftR1, wShiftR2, wShiftR4, wShiftR8, wShiftR16 ;
+    wire                    mask;
+    
+    assign   mask = (Funct == `ALU_SRA)? Din[31]: 0;
+    assign  wShiftL1    = Num[0] ? {Din[30:0], 1'b0} : Din ;
+    assign  wShiftL2    = Num[1] ? {wShiftL1[29:0], 2'b0} : wShiftL1 ;
+    assign  wShiftL4    = Num[2] ? {wShiftL2[27:0], 4'b0} : wShiftL2 ;
+    assign  wShiftL8    = Num[3] ? {wShiftL4[23:0], 8'b0} : wShiftL4 ;
+    assign  wShiftL16   = Num[4] ? {wShiftL8[15:0], 16'b0} : wShiftL8 ;
+    
+    assign  wShiftR1    = Num[0] ? {{1{mask}}, Din[31:1]} : Din ;
+    assign  wShiftR2    = Num[1] ? {{2{mask}}, wShiftR1[31:2]} : wShiftR1 ;
+    assign  wShiftR4    = Num[2] ? {{4{mask}}, wShiftR2[31:4]} : wShiftR2 ;
+    assign  wShiftR8    = Num[3] ? {{8{mask}}, wShiftR4[31:8]} : wShiftR4 ;
+    assign  wShiftR16   = Num[4] ? {{16{mask}}, wShiftR8[31:16]} : wShiftR8 ;
+	
+    assign  Dout = (Funct==`ALU_SLL) ? wShiftL16 : wShiftR16 ;
+
+//    assign  SHT_DC = (Funct==`ALU_SLL) ? 
+//    (`ALU_SRL)
+//    (`ALU_SRA)
+endmodule
+

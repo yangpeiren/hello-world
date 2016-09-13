@@ -1,0 +1,131 @@
+module TLB(clk,Reset,RW_En,VPN,ASID,CP0_Update,CP0_EntryHi,CP0_PageMask,CP0_EntryLo0,CP0_EntryLo1,TLB_Modified,TLB_Valid,TLB_Match,PFN,TLB_Page);
+
+input clk;
+input Reset;
+input RW_En;
+input[31:12] VPN;
+input[7:0] ASID;
+input CP0_Update;
+
+input[31:0] CP0_EntryHi;
+input[31:0] CP0_PageMask;
+input[31:0] CP0_EntryLo0;
+input[31:0] CP0_EntryLo1;
+
+output TLB_Modified;
+output TLB_Valid;
+output TLB_Match;
+output[19:0] PFN;
+output[93:0] TLB_Page;
+
+wire TLB_Match_3129;
+wire TLB_Match_2827;
+wire TLB_Match_2625;
+wire TLB_Match_2423;
+wire TLB_Match_2221;
+wire TLB_Match_2019;
+wire TLB_Match_1817;
+wire TLB_Match_1615;
+wire TLB_Match_1413;
+wire TLB_PID;
+wire TLB_MD0;
+wire TLB_MD1;
+wire TLB_MD;
+wire write;
+
+reg TLB_PFN_SEL;//TLB PFN select bit
+
+reg[18:0] TLB_VPN2;
+reg[7:0] TLB_ASID;
+reg[15:0] TLB_PageMask;
+reg TLB_G;
+reg[19:0] TLB_PFN0;
+reg[2:0] TLB_C0;
+reg TLB_D0;
+reg TLB_V0;
+reg[19:0] TLB_PFN1;
+reg[2:0] TLB_C1;
+reg TLB_D1;
+reg TLB_V1;
+
+assign TLB_Page = 
+{TLB_VPN2,TLB_ASID,TLB_PageMask,TLB_G,TLB_PFN0,TLB_C0,TLB_D0,TLB_V0,TLB_PFN1,TLB_C1,TLB_D1,TLB_V1};
+
+
+assign write = !RW_En;
+//TLB update
+always @(posedge clk or posedge Reset)
+begin
+	if(Reset)
+	begin
+		TLB_VPN2 <= 19'b0;
+		TLB_ASID <= 8'b0;
+		TLB_PageMask <= 16'b0;
+		TLB_G <= 1'b0;
+		TLB_PFN0 <= 20'b0;
+		TLB_C0 <= 3'b0;
+		TLB_D0 <= 1'b0;
+		TLB_V0 <= 1'b0;
+		TLB_PFN1 <= 20'b0;
+		TLB_C1 <= 3'b0;
+		TLB_D1 <= 1'b0;
+		TLB_V1 <= 1'b0;
+	end
+	else if(CP0_Update)
+	begin
+		TLB_VPN2 <= CP0_EntryHi[31:13];
+		TLB_ASID <= CP0_EntryHi[7:0];
+		TLB_PageMask <= CP0_PageMask[28:13];
+		TLB_G <= CP0_EntryLo0[0] | CP0_EntryLo1[0];
+		TLB_PFN0 <= CP0_EntryLo0[25:6];
+		TLB_C0 <= CP0_EntryLo0[5:3];
+		TLB_D0 <= CP0_EntryLo0[2];
+		TLB_V0 <= CP0_EntryLo0[1];
+		TLB_PFN1 <= CP0_EntryLo1[25:6];
+		TLB_C1 <= CP0_EntryLo1[5:3];
+		TLB_D1 <= CP0_EntryLo1[2];
+		TLB_V1 <= CP0_EntryLo1[1];
+	end
+end
+
+always @(TLB_PageMask or VPN)
+begin
+	case(TLB_PageMask)
+		16'b0000_0000_0000_0000: TLB_PFN_SEL = VPN[12];
+		16'b0000_0000_0000_0011: TLB_PFN_SEL = VPN[14];
+		16'b0000_0000_0000_1111: TLB_PFN_SEL = VPN[16];
+		16'b0000_0000_0011_1111: TLB_PFN_SEL = VPN[18];
+		16'b0000_0000_1111_1111: TLB_PFN_SEL = VPN[20];
+		16'b0000_0011_1111_1111: TLB_PFN_SEL = VPN[22];
+		16'b0000_1111_1111_1111: TLB_PFN_SEL = VPN[24];
+		16'b0011_1111_1111_1111: TLB_PFN_SEL = VPN[26];
+		16'b1111_1111_1111_1111: TLB_PFN_SEL = VPN[28];
+		default: TLB_PFN_SEL = 0;
+	endcase
+end
+
+assign TLB_Match_3129= (VPN[31:29] == TLB_VPN2[18:16]);
+assign TLB_Match_2827= (VPN[28:27] == TLB_VPN2[15:14])|(TLB_PageMask[14]&TLB_PageMask[15]);
+assign TLB_Match_2625= (VPN[26:25] == TLB_VPN2[13:12])|(TLB_PageMask[12]&TLB_PageMask[13]);
+assign TLB_Match_2423= (VPN[24:23] == TLB_VPN2[11:10])|(TLB_PageMask[10]&TLB_PageMask[11]);
+assign TLB_Match_2221= (VPN[22:21] == TLB_VPN2[9:8])|(TLB_PageMask[8]&TLB_PageMask[9]);
+assign TLB_Match_2019= (VPN[20:19] == TLB_VPN2[7:6])|(TLB_PageMask[6]&TLB_PageMask[7]);
+assign TLB_Match_1817= (VPN[18:17] == TLB_VPN2[5:4])|(TLB_PageMask[4]&TLB_PageMask[5]);
+assign TLB_Match_1615= (VPN[16:15] == TLB_VPN2[3:2])|(TLB_PageMask[2]&TLB_PageMask[3]);
+assign TLB_Match_1413= (VPN[14:13] == TLB_VPN2[1:0])|(TLB_PageMask[0]&TLB_PageMask[1]);
+
+assign TLB_PID = (TLB_ASID == ASID)|TLB_G;
+assign TLB_Match = TLB_Match_3129 & TLB_Match_2827 & TLB_Match_2625 & TLB_Match_2423 & TLB_Match_2221 
+					& TLB_Match_2019 & TLB_Match_1817 & TLB_Match_1615 & TLB_Match_1413 & TLB_PID & !CP0_Update;
+
+assign TLB_MD0 = write & !TLB_D0;
+assign TLB_MD1 = write & !TLB_D1;
+assign TLB_MD = TLB_PFN_SEL ? TLB_MD1 : TLB_MD0;
+
+assign TLB_Valid = (TLB_PFN_SEL ? TLB_V1 : TLB_V0) & !CP0_Update;
+//assign TLB_Checked_OK = TLB_Match & !TLB_MD & TLB_Valid & !CP0_Update;
+assign TLB_Modified = TLB_MD & !CP0_Update;
+assign PFN = TLB_PFN_SEL ? TLB_PFN1 : TLB_PFN0;
+
+endmodule
+

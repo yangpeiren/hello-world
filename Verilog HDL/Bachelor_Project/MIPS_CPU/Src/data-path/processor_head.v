@@ -1,0 +1,153 @@
+//////////////////////////////////////////////////////////////////////////////////
+// This is part of COCOA project, which covers the 5 basic disciplines in computer
+// science: digital logic, computer organization, compiler, computer architecture, 
+// and operating system.
+//
+// Copy right belongs to SCSE of BUAA, 2011
+// Author:          Gao Xiaopeng
+// Design Name: 	MIPS-C processor head file
+// Module Name:     MIPS-C processor head file
+// Description:     This module is the head file of MIPS-C processor core where
+//                  exception, CP0, ALU operations, etc.
+//////////////////////////////////////////////////////////////////////////////////
+
+/*---------- debug version switch-------------*/
+`define SIMULATION
+
+////simulation macro
+`define DELAY(x) `ifdef SIMULATION #(x); `endif
+
+/* exception types and their vectors */
+//`define EXC_REBOOT          2'b00               // reset, NMI
+//`define EXC_TLB             2'b01               // TLB miss
+//`define EXC_HWINT           2'b10               // hardware interrupts
+//`define EXC_NORMAL          2'b10               // other exceptions
+
+`define VECTOR_REBOOT       32'hBFC00000        // reset, NMI
+`define VECTOR_TLB_BEV_0    32'h80000000        // BEV=0 : TLB               
+`define VECTOR_INT_BEV_0    32'h80000200        // BEV=0 : hardware interrupt
+`define VECTOR_EXC_BEV_0    32'h80000180        // BEV=0 : other exceptions  
+`define VECTOR_TLB_BEV_1    32'hBFC00200        // BEV=1 : TLB
+`define VECTOR_INT_BEV_1    32'hBFC00400        // BEV=1 : hardware interrupt
+`define VECTOR_EXC_BEV_1    32'hBFC00380        // BEV=1 : other exceptions
+
+/*--------------------------- ExcCode --------------------------------------
+  --------------------------------------------------------------------------*/
+`define EXCCODE_INT         5'd0        // interrupt
+`define EXCCODE_TLBL        5'd2        // TLB not translated
+`define EXCCODE_TLBS        5'd3        // TLB unmatch
+`define EXCCODE_AdEL        5'd4        // In usermode,access to high 2G space
+`define EXCCODE_SC          5'd8        // system call
+`define EXCCODE_BP          5'd9        // break instruction
+`define EXCCODE_RI          5'd10       // undefined instruction
+`define EXCCODE_RSV         5'd31       // reserved
+
+/*--------------------------- Register Offsets Declaration -------------------
+  Note: All registers of devices are aligned on 32-bit boundaries. As a result, 
+        A[1:0](the lowest 2bits of address bus) are ignored
+  --------------------------------------------------------------------------*/
+/* Interrupt Controller Register Offset in 32bit address bound */
+`define OFF_INTC_IRR        'h0     // IRR : interrupt requirement register
+`define OFF_INTC_IMR        'h1     // IMR : interrupt mask register
+`define OFF_INTC_ISR        'h2     // ISR : interrupt service register
+`define OFF_INTC_ISO        'h3     // ISO : interrupt service over register
+
+
+/* 
+ * Timer/Counter Register offset in 32bit address bound 
+ * offsets of 9 register 
+ */
+ `define TC0_CTRL   'h0
+ `define TC0_PRESET 'h1
+ `define TC0_COUNT  'h2
+ `define TC1_CTRL   'h3
+ `define TC1_PRESET 'h4
+ `define TC1_COUNT  'h5
+ `define TC2_CTRL   'h6
+ `define TC2_PRESET 'h7
+ `define TC2_COUNT  'h8
+
+/*
+ * macros for the multiplier
+ */
+`define MUL_MUL	'b0
+`define MUL_DIV	'b1
+
+`define MUL_SEL_HIGH	'b1
+`define MUL_SEL_LOW	'b0
+
+/*
+ * CP0 processor's register offsets
+ */
+`define CP0_INDEX       0
+`define CP0_RANDOM      1
+`define CP0_ENTRYLO0    2
+`define CP0_ENTRYLO1    3
+`define CP0_CONTEXT	    4
+`define CP0_PAGEMASK    5
+`define CP0_WIRED	    6
+`define CP0_BADVADDR    8
+`define CP0_ENTRYHI	    10
+`define CP0_SR	        12
+`define CP0_CAUSE       13
+`define CP0_EPC         14
+`define CP0_PRID	    15
+/*
+ * MMU Functions
+ */
+`define MMU_TLBR 		2'b01
+`define MMU_TLBW 		2'b10
+`define MMU_TLBP 		2'b11
+/*
+ *	instructions index in decoding module
+ */
+
+/* byte enable for the memory bus */
+`define WORD            4'b1111
+`define HALF_WORD       4'b0011
+`define BYTE            4'b0001
+
+/*
+ *	ALU function code
+    GXP    
+ */
+`define ALU_NOP         5'b00000    // pass through (C <- B)
+`define ALU_ADDU        5'b00001    // add : unsigned
+`define ALU_ADD         5'b00010    // add
+`define ALU_SUBU		5'b00011    // sub : unsigned
+`define	ALU_SUB         5'b00100    // sub
+`define	ALU_AND			5'b00101    // and
+`define	ALU_OR			5'b00110    // or
+`define	ALU_NOR			5'b00111    // nor
+`define	ALU_XOR			5'b01000    // xor
+`define	ALU_SLTU		5'b01001    // set : when A is smaller than B(unsigned)
+`define	ALU_SLT         5'b01010    // set : when A is smaller than B
+`define ALU_LTZ         5'b01101    // cmp : A less than 0
+`define	ALU_LEZ			5'b01100    // cmp : A less than or equal to 0
+`define	ALU_GTZ			5'b01011    // cmp : A greater than 0
+`define	ALU_GEZ			5'b01110    // cmp : A greater than or equal to 0
+`define	ALU_EQ			5'b01111    // cmp : A equal to B
+`define	ALU_NEQ			5'b10000    // cmp : A not equal to B
+`define ALU_SLL         5'b10001    // shift left logical
+`define ALU_SRL         5'b10010    // shift right logical
+`define ALU_SRA         5'b10011    // shift right arithmetic
+
+/*
+    Sign extend
+    GXP
+ */
+`define EXT_ZERO        2'b00
+`define EXT_SIGN        2'b01       // sign extend 
+`define EXT_SL16        2'b10       // shift left 16-bit
+
+/* extend data from memory to register files for LB/LBU/LH/LHU/LW instructions */
+`define EXT_RM_NOP  3'b000      // do nothing
+`define EXT_RM_U8   3'b001      // keep lower 8bit, zero-extend higher 24bits are zero
+`define EXT_RM_U16  3'b010      // keep lower 16bit, zero-extend higher 16bits are zero
+`define EXT_RM_S8   3'b011      // keep lower 8bit, bit-7 as signal to be extended to higher 24bits
+`define EXT_RM_S16  3'b100      // keep lower 16bit, bit-15 as signal to be extended to higher 16bits
+
+/* extend data from B to memory for SB/SH/SW instructions */
+`define EXT_WM_NOP  2'b00       // do nothing
+`define EXT_WM_U8   2'b01       // keep lower 8bit, zero-extend higher 24bits are zero
+`define EXT_WM_U16  2'b10       // keep lower 16bit, zero-extend higher 16bits are zero

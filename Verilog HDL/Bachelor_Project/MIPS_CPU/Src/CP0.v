@@ -1,0 +1,334 @@
+
+// This is part of COCOA project, which covers the 5 basic disciplines in computer
+// science: digital logic, computer organization, compiler, computer architecture, 
+// and operating system.
+//
+// Copy right belongs to SCSE of BUAA, 2011
+// Author:          Gao Xiaopeng
+// Design Name: 	Control unit
+// Module Name:     CP0 
+// Description:     This module is the CP0 of MIPS-C. The registers supported in 
+//                  MIPS-C include SR, CAUSE and EPC. And only some fields of 
+//                  those registers are supported. The details of supported field
+//                  is listed as follow.
+//
+//  1. SR register
+//      --------------------------------------------------------------
+//      |IM6     14      Interrupt mask of hardware interrupt 4.
+//      |                1 : enable interrupt
+//      |                0 : disable interrupt
+//      --------------------------------------------------------------
+//      |EXL     1       Set by any exception; clear by ERET
+//      --------------------------------------------------------------
+//      |IE      0       Global interrupt enable
+//      --------------------------------------------------------------
+//  2. Cause register
+//      --------------------------------------------------------------
+//      |IP6     14      Interrupt pending of hardware interrupt 4.
+//      --------------------------------------------------------------
+//      |ExcCode 6:2    Exceptions encode
+//      |               0 : Interrupt
+//      |               8 : Executes a syscall instruction
+//      |               9 : Executes a break instruction
+//      |               10: Instruction code not recognized(or illegal)
+//      --------------------------------------------------------------
+//  3. EPC register
+//////////////////////////////////////////////////////////////////////////////////
+
+`include "processor_head.v"
+`timescale  1ns/1ns
+
+module CP0( 
+    // read/write CP0 register
+    RegIdx_I, DataIn_I, DataOut_O, We_I,    
+    // controller status
+    PR_Exc_Enter_I, PR_ExcCode_I,
+	//input from other component
+	CP0_Func_I, TLB_Wr_I, 
+	//input from MMU
+	MMU_Req_I,MMU_BadVAddr_I,MMU_EntryHi_I,
+	MMU_EntryLo1_I,MMU_EntryLo0_I,MMU_PageMask_I,MMU_Index_I,
+	MMU_AckP_I,MMU_AckR_I,MMU_Matched_I,
+	//CP0 output to MMU
+	EntryHi_O,PageMask_O,EntryLo1_O,EntryLo0_O,MMU_Func_O,
+	MMU_Index_O,MMU_Mode_O,CP0_RdReq_O, CP0_WrReq_O,   ASID_O,
+    // CP0 output to processor
+    SR_BEV_O, SR_IM_O, SR_IE_O, EPC_O, 
+    // hardware interrupts
+    HW_Int_I,
+    // system signals
+    Clk, Reset                              
+    ) ;
+    
+    // read/write CP0 register
+    input   [4:0]           RegIdx_I ;          // internal register index
+    input   [31:0]          DataIn_I ;          // data from datapath(include PC)
+    output  [31:0]          DataOut_O ;         // CP0 output to datapath
+    input                   We_I ;              // write enable
+    // processor status
+    input                   PR_Exc_Enter_I ;    // processor is entering an exception
+    input   [6:2]           PR_ExcCode_I ;      // which exception processor is entering
+	//input from other component
+	input	[5:0]			CP0_Func_I;
+	input         TLB_Wr_I;
+    //input from MMU
+	input		            MMU_Req_I;			//when a error occur,mmu will notice cp0's badvaddr by this signal
+	input   [31:0]          MMU_BadVAddr_I;
+	input   [31:0]          MMU_EntryHi_I;
+	input   [31:0]          MMU_EntryLo1_I;
+	input   [31:0]          MMU_EntryLo0_I;
+	input   [31:0]          MMU_PageMask_I;
+	input   [2:0]           MMU_Index_I;
+	input   	            MMU_AckP_I;
+	input   	            MMU_AckR_I;
+	input   	            MMU_Matched_I;
+	//output to MMU
+	output  [31:0]			EntryHi_O;
+	output  [31:0]			PageMask_O;
+	output  [31:0]			EntryLo1_O;
+	output  [31:0]			EntryLo0_O;
+	output  [1:0]			MMU_Func_O;
+	output  [2:0]			MMU_Index_O;
+	output  				MMU_Mode_O;
+	output  				CP0_RdReq_O;
+	output      CP0_WrReq_O;
+	output	[7:0]			ASID_O;
+	// output to controller
+    output                  SR_BEV_O ;
+    output  [7:0]           SR_IM_O ;           // 8 interrupt masks
+    output                  SR_IE_O ;           // global interrupt enable
+    output  [31:0]          EPC_O ;             // exception return address
+    // hardware interrupt
+    input   [7:2]           HW_Int_I ;          // 6 interrupts
+    // system signals
+    input                   Clk ;               //
+    input                   Reset ;             //
+
+    /*        internal registers and wires            */
+    reg     [31:2]          epc;
+    reg     [7:0]           sr_im ;                     // interrupt masks of SR register
+    reg                     sr_bev, sr_exl, sr_ie ;     // EXL/IE of SR register
+    reg     [6:2]           cause_exccode ;             // ExcCode of cause register
+	reg		[2:0]			index;
+	reg						index_p;					//highest bit of index
+	reg		[2:0]			random;
+	reg		[25:6]			pfn0;						//EntryLo0
+	reg						d0;
+	reg						v0;
+	reg						g0;
+	reg		[25:6]			pfn1;						//EntryLo1
+	reg						d1;
+	reg						v1;
+	reg						g1;
+	reg		[31:23]			ptebase;					//ptebase of context
+	reg		[22:4]			badvpn2;					//badvpn2 of context
+	reg		[28:13]			pagemask;
+	reg		[2:0]			wired;
+	reg		[31:0]			badvaddr;
+	reg		[31:13]			vpn2;						//vpn2 of EntryHi
+	reg		[7:0]			asid;						//asid of EntryHi
+	reg  [31:0]  page;       //solution for small address space
+/////////////////////// implementation codes ////////////////////////////
+
+    /* read registers */
+    // if CP0Write is disabled, then output the register specified by index
+    assign  DataOut_O =  (RegIdx_I == `CP0_INDEX)  	?   {index_p,28'b0, index}                             :
+						 (RegIdx_I == `CP0_RANDOM)  ?   {29'b0, random}                                    :
+						 (RegIdx_I == `CP0_ENTRYLO0)?   {6'b0, pfn0, 3'b0, d0, v0, g0}                     :
+						 (RegIdx_I == `CP0_ENTRYLO1)?   {6'b0, pfn1, 3'b0, d1, v1, g1}                     :
+						 (RegIdx_I == `CP0_CONTEXT) ?   page                           ://{ptebase, badvpn2, 4'b0}
+						 (RegIdx_I == `CP0_PAGEMASK)?   {3'b0, pagemask,13'b0}                             :
+						 (RegIdx_I == `CP0_WIRED)   ?   {29'b0, wired}                                     :
+						 (RegIdx_I == `CP0_BADVADDR)?    badvaddr            	                           :
+						 (RegIdx_I == `CP0_ENTRYHI) ?   {vpn2, 5'b0, asid}                                 :
+						 (RegIdx_I == `CP0_EPC)  	?   {epc, 2'b0}                                        :
+                         (RegIdx_I == `CP0_CAUSE)	?   {16'b0, HW_Int_I, 2'b0, 1'b0, cause_exccode, 2'b0} :
+                         (RegIdx_I == `CP0_SR)   	?   {9'b0, sr_bev, 6'b0, sr_im, 6'b0, sr_exl, sr_ie}   :
+                         (RegIdx_I == `CP0_PRID) 	?   32'h47360010                                       :   // refer to COCOA-Cyclone3.docx
+														32'b0 ;
+    
+    /* registers need to be output */
+    assign  SR_BEV_O = sr_bev ;                         // BEV
+    assign  SR_IM_O = sr_im ;                           // IM
+    assign  SR_IE_O = sr_ie & !sr_exl ;                 /* Note : Whether hardware interrupts could be responsed by 
+                                                           CPU depends on 2 conditions, one is IE must be set and 
+                                                           another is there is no exception is active. */
+    assign  EPC_O = {epc[31:2],2'b00};                          // EPC
+    
+	assign	EntryHi_O  = {vpn2, 5'b0, asid};
+	assign	PageMask_O = {3'b0, pagemask,13'b0};
+	assign	EntryLo1_O = {6'b0, pfn1, 3'b0, d1, v1, g1};
+	assign	EntryLo0_O = {6'b0, pfn0, 3'b0, d0, v0, g0};
+	
+	assign	MMU_Func_O  = (CP0_Func_I == 6'b000001) ? `MMU_TLBR :
+						  (CP0_Func_I == 6'b000010) ? `MMU_TLBW :
+						  (CP0_Func_I == 6'b000110) ? `MMU_TLBW :
+						  (CP0_Func_I == 6'b001000) ? `MMU_TLBP :
+						  2'b0;
+	assign	CP0_RdReq_O 	    = (MMU_Func_O== 2'b00) ? 1'b0 : !We_I;//We_I
+	assign	ASID_O		= asid;
+	assign	MMU_Index_O = (CP0_Func_I == 6'b000010) ? index  :
+						  (CP0_Func_I == 6'b000110) ? random :
+						  3'b0;
+	assign	MMU_Mode_O  = 1'b1;//CPU always in "KERNEL MODE"
+	
+	
+	assign  CP0_WrReq_O = (MMU_Func_O== `MMU_TLBW) & TLB_Wr_I; 
+	
+	
+	
+	 
+	//Index
+	always  @( posedge Clk or posedge Reset )
+        if ( Reset )
+			{index_p, index} <= {1'b0, 3'b0};
+		else
+			begin
+				if ( We_I & (RegIdx_I==`CP0_INDEX) & !(|MMU_Func_O))
+					{index_p, index} <= {DataIn_I[31], DataIn_I[2:0]};
+				else if ( MMU_Matched_I & MMU_AckP_I)
+					index <= MMU_Index_I;
+				else if( !MMU_Matched_I & MMU_AckP_I)
+					index_p <= 1'b1;
+				else
+					index_p <= 1'b0;
+			end
+			
+	//Random
+	always  @( posedge Clk or posedge Reset )
+        if ( Reset )
+			random <= 3'b111;//restart or reset,random will be set to its max
+		else
+			begin
+				if ( We_I & (RegIdx_I==`CP0_RANDOM) )
+					random <= 3'b111;//write is reset to its max
+				else if(random == wired)
+					random <= 3'b111;
+				else
+					random <= random - 1'b1;
+			end
+			
+	//EntryLo0
+	always  @( posedge Clk or posedge Reset )
+        if ( Reset )
+			{pfn0,d0,v0,g0} <= {20'b0,1'b0,1'b0,1'b0};
+		else
+			begin
+				if(We_I & (RegIdx_I==`CP0_ENTRYLO0))
+					{pfn0,d0,v0,g0} <= {DataIn_I[31:12],DataIn_I[2],DataIn_I[1],DataIn_I[0]};
+				if(MMU_AckR_I)
+					{pfn0,d0,v0,g0} <= {MMU_EntryLo0_I[25:6],MMU_EntryLo0_I[2],MMU_EntryLo0_I[1],MMU_EntryLo0_I[0]};
+			end
+			
+	//EntryLo1
+	always  @( posedge Clk or posedge Reset )
+        if ( Reset )
+			{pfn1,d1,v1,g1} <= {20'b0,1'b0,1'b0,1'b0};
+		else
+			begin
+				if(We_I & (RegIdx_I==`CP0_ENTRYLO1))
+					{pfn1,d1,v1,g1} <= {DataIn_I[31:12],DataIn_I[2],DataIn_I[1],DataIn_I[0]};
+				if(MMU_AckR_I)
+					{pfn1,d1,v1,g1} <= {MMU_EntryLo1_I[25:6],MMU_EntryLo1_I[2],MMU_EntryLo1_I[1],MMU_EntryLo1_I[0]};
+			end
+			
+	//Context
+	always  @( posedge Clk or posedge Reset )//PTEBase
+        if ( Reset )
+			begin
+			ptebase <= 9'b0;
+			page    <= 32'b0;
+			end
+		else
+			if(We_I & (RegIdx_I==`CP0_CONTEXT))
+				begin
+				ptebase <= DataIn_I[31:23];
+				page    <= DataIn_I;
+				end
+	always  @( posedge Clk or posedge Reset )//BadVPN2
+        if ( Reset )
+			badvpn2 <= 19'b0;
+		else
+			if(MMU_Req_I)
+				badvpn2 <= MMU_BadVAddr_I[31:13];
+				
+	//PageMask
+	always  @( posedge Clk or posedge Reset )
+        if ( Reset )
+			pagemask <= 16'b0;
+		else
+			begin
+				if(We_I & (RegIdx_I==`CP0_PAGEMASK))
+					pagemask <= DataIn_I[28:13];
+				if(MMU_AckR_I)
+					pagemask <= MMU_PageMask_I[28:13];
+			end	
+			
+	//Wired
+	always  @( posedge Clk or posedge Reset )
+        if ( Reset )
+            wired <= 3'b0 ;
+        else
+            if ( We_I & (RegIdx_I==`CP0_WIRED) )
+                wired <= DataIn_I[2:0] ;
+
+	//BadVAddr
+	always  @( posedge Clk or posedge Reset )
+        if ( Reset )
+            badvaddr <= 32'b0 ;
+        else
+            if (MMU_Req_I)
+                badvaddr <= MMU_BadVAddr_I ;
+
+	//EntryHi
+	always  @( posedge Clk or posedge Reset )
+        if ( Reset )
+			{vpn2,asid} <= {19'b0,8'b0};
+		else
+			begin
+				if(We_I & (RegIdx_I==`CP0_ENTRYHI))
+					{vpn2,asid} <= {DataIn_I[31:13],DataIn_I[7:0]};
+				if(MMU_AckR_I)
+					{vpn2,asid} <= {MMU_EntryHi_I[31:13],MMU_EntryHi_I[7:0]};
+			end
+			
+	 /*  EPC and SR
+        Note : Since the priority of exceptions is higher than hardware interrupts,
+               we should check whether any exception is asserted firstly.               
+     */
+    always  @( posedge Clk or posedge Reset )
+        if ( Reset )
+            epc <= 30'b0 ;
+        else if (MMU_Req_I)
+                epc <= MMU_BadVAddr_I[31:2];
+        else if ( We_I & (RegIdx_I==`CP0_EPC) )
+                epc <= DataIn_I[31:2] ;
+      
+
+    // SR
+    always @( posedge Clk or posedge Reset )
+        if ( Reset )
+            {sr_bev, sr_im, sr_exl, sr_ie} <= {1'b1, 8'b0, 1'b0, 1'b0} ;
+        else
+            begin
+                if ( We_I & (RegIdx_I==`CP0_SR) )
+                    {sr_bev, sr_im, sr_exl, sr_ie} <= {DataIn_I[22], DataIn_I[15:8], DataIn_I[1:0]} ;
+                if ( PR_Exc_Enter_I )
+                    begin
+                        sr_ie <= 1'b0 ;
+                        if ( (PR_ExcCode_I==`EXCCODE_SC) |                          // system call
+                             (PR_ExcCode_I==`EXCCODE_BP) |                          // break instruction
+                             (PR_ExcCode_I==`EXCCODE_RI) )                          // undefined instruction
+                            sr_exl <= 1'b1 ;
+                    end
+            end
+
+    /* ExcCode of Cause register */
+    always  @( posedge Clk or posedge Reset )
+        if ( Reset ) 
+            cause_exccode <= `EXCCODE_RSV ;
+        else
+            if ( PR_Exc_Enter_I )
+                cause_exccode <= PR_ExcCode_I ;
+
+endmodule

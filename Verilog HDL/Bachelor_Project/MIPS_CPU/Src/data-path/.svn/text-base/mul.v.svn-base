@@ -1,0 +1,135 @@
+/*
+ * This is part of COCOA project, which covers the 5 basic disciplines
+ * in computer science: digital logic, computer organization, compiler, 
+ * computer architecture,  and operating system.
+ * Copy right belongs to BUAA, 2008
+ */
+
+//`include "../../cpu/src/cocoa_head.v"
+`timescale  1ns/1ns
+module Mul(
+	MUL_Flag,	
+	Reset,		
+	MUL_DA,
+	MUL_DB,
+	Clk,
+	MUL_DC,
+	MUL_SelHL,
+	MUL_Start,
+	MUL_SelMD,
+	MUL_Sign
+);
+    input         Clk;
+    input	  Reset;
+    input	  MUL_Start;
+    input	  MUL_SelHL;
+    input	  MUL_SelMD;
+    input       MUL_Sign;
+//    input	  MUL_Write;
+    output	 reg MUL_Flag;
+    input [31:0]  MUL_DB;
+    input [31:0]  MUL_DA;
+    output [31:0] MUL_DC;
+
+////internal registers and wires
+wire [63:0]   product;
+wire [31:0]   bussiness;
+wire [31:0]   reminder;
+
+////control signal of the multiplier and divider
+wire mdone;
+wire ddone;
+reg mwork;
+reg dwork;
+
+////internal result register
+reg [31:0] hi;
+reg [31:0] lo;
+
+///read register
+assign MUL_DC = MUL_SelHL == 1? hi : lo;
+
+//// set the working signals
+always@(negedge Clk)begin
+   mwork <= !MUL_SelMD && MUL_Start;
+   dwork <= MUL_SelMD && MUL_Start;
+end
+
+///write register
+always@(posedge Clk or posedge Reset)
+   if(Reset) begin
+       hi <= 'h00000000;
+       lo <= 'h00000000;
+   end else if(mdone) begin
+       hi <= product[63:32];
+       lo <= product[31:0];
+   end else if(ddone) begin
+       hi <= reminder;
+       lo <= bussiness;
+   end /*else if(MUL_Write) begin
+      if(MUL_SelHL == 1)
+         hi <= MUL_DA;
+      else
+         lo <= MUL_DA;
+   end*/
+
+////set finish flag
+always@(posedge Clk or posedge Reset)
+   if(Reset)
+      MUL_Flag <= 0;
+   else if(!ddone && !mdone)
+      MUL_Flag <= 0;
+   else 
+      MUL_Flag <= 1;
+ 
+///function module
+
+
+//Multiplier M(
+//   .Reset(Reset),
+//   .Clk(Clk),
+//   .MA(MUL_DA),
+//   .MB(MUL_DB),
+//   .Work(mwork),
+//   .Done(mdone),
+//   .Out(product)
+//);
+//defparam M.NBit = 32;
+    Multiplier M(MUL_DA, MUL_DB, product, mwork, MUL_Sign, mdone, Clk, Reset ) ;
+    
+Divider D(
+   .Reset(Reset),
+   .Clk(Clk),
+   .Dividend(MUL_DA),
+   .Divisor(MUL_DB),
+   .Bussiness(bussiness),
+   .Reminder(reminder),
+   .Work(dwork),
+   .Done(ddone)
+);
+defparam D.NBit = 32;
+
+endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

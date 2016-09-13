@@ -1,0 +1,166 @@
+//////////////////////////////////////////////////////////////////////////////////
+// This is part of COCOA project, which covers the 5 basic disciplines in computer
+// science: digital logic, computer organization, compiler, computer architecture, 
+// and operating system.
+//
+// Copy right belongs to SCSE of BUAA, 2011
+// Author:          Gao Xiaopeng
+// Design Name: 	MIPS_C processor core
+// Module Name:     Processor
+// Description:     MIPS_C processor core consists of data path and its controller.
+//                  MIPS_C processor core supports MIPS-C ISA.
+//////////////////////////////////////////////////////////////////////////////////
+
+
+`timescale  1ns/1ns
+
+module Processor(   
+    // processor interface
+    MemData_I, MemAck_I, MemAddr_O, MemData_O, MemBE_O, MemReq_O, MemRW_O,  
+    // hardware interrupt
+    HW_Int_I, 
+    // system interface
+    Clk, Reset, tst_mips_fsm) ;
+    // processor interface
+    input   [31:0]              MemData_I ;            // data from memory or devices
+    input                       MemAck_I ;             // bus acknowledge driven by memory or devices
+    output  [31:0]              MemAddr_O ;            // memory addresses
+    output  [31:0]              MemData_O ;            // data to memory or devices
+    output  [3:0]               MemBE_O ;          // byte enables for MemData_O
+    output                      MemReq_O ;             // bus require
+    output                      MemRW_O ;            // 1 : read cycle
+    //
+    input   [7:2]               HW_Int_I ;          // hardware interrupts
+    //
+    input                       Clk, Reset ;        // clock and reset
+//GXP
+    output  [4:0]               tst_mips_fsm ;
+
+    /*  datapath control signals definition */
+    //
+    wire    [1:0]               ma_low2 ;
+    // PC
+    wire                        pc_write ;          // PC write enable
+    wire    [2:0]               pc_src ;            // PC source select
+    wire                        iord ;              // 0: PC as memory address; 1: ALU output as memory address. route to M1
+    // instruction register
+    wire                        ir_write ;          // IR write enable from processor controller
+    wire    [31:0]              ir ;
+    // memory data extension
+    wire    [1:0]               ext_mem_funct ;
+    // register file
+    wire                        rf_write ;          // RF write enable from processor controller
+    wire    [1:0]               rf_dest ;           // destination register selection(route to M2)
+    wire    [1:0]               rf_src ;            // RF data write-back data source selection(route to M3)
+    // sign-extend
+    wire    [1:0]               ext_func ;          // sign-extend function select
+    // ALU
+    wire                        alu_src_a ;
+    wire    [1:0]               alu_src_b ;
+    wire    [4:0]               alu_func ;
+    wire                        alu_zero ;
+    wire                        alu_overflow ;
+    wire                        alu_compare ;
+    wire    [2:0]               aluout_src ;
+    // shifter
+    wire                        sht_num_src ;
+    // multiplier and divider
+    wire                        md_mord ;           // multiplier or divide select
+    wire                        md_start ;          // MUL_DIV start
+    wire                        md_horl ;           // Hi or Low internal register select
+    wire                        md_sign ;           // signed or unsigned
+    wire                        md_flag ;           // MUL_DIV status
+    // CP0
+    wire    [7:0]               cp0_sr_im ;             // interrupt masks
+    wire                        cp0_sr_ie ;             // global interrupt enable
+    wire    [1:0]               cp0_iore ;          // control of MUX for PC or ALUoutput(write to CP0)
+    wire                        cp0_idx ;           // control of MUX for index of registers 
+    wire                        cp0_wr ;            // CP0 write enable
+    wire    [7:0]				TLB_Func;
+	wire						MMU_Ack;
+	//MMU
+	wire						TLB_Err;
+	wire	[2:0]				TLB_Fault;
+    // processor status
+    wire                        exc_enter ;         // processor enter exception
+    wire    [6:2]               exccode ;           // current exception type
+    
+  
+    wire   MMU_Req;
+    wire   MMU_Pr_Ack;
+  
+  
+  
+    // controller instance
+    ProcessorController U_ProcessorController(
+        //
+        ma_low2, 
+        // instrcution
+        ir, 
+        // PC
+        pc_write, pc_src,
+        // memory interface
+        MemAck_I, MemReq_O , MemRW_O, MemBE_O, iord,
+        // IR
+        ir_write,
+        // memory data extend
+        ext_mem_funct, 
+        // register file
+        rf_write, rf_dest, rf_src,
+        // sign-extend
+        ext_func,
+        // ALU
+        alu_zero, alu_overflow, alu_compare, alu_src_a, alu_src_b, alu_func, aluout_src,
+        // shifter
+        sht_num_src,
+        // multiplier/divider
+        md_flag, md_mord, md_sign, md_start, md_horl, 
+        // CP0
+        cp0_sr_im, cp0_sr_ie, cp0_iore, cp0_idx, cp0_wr, TLB_Func,TLB_Wr,  MMU_Ack,
+	    	//MMU
+		    MMU_Pr_Ack, TLB_Err,TLB_Fault, MMU_Req, 
+        // processor status
+        exc_enter, exccode, 
+        //
+        HW_Int_I, 
+        // system signals
+        Clk, Reset,
+        tst_mips_fsm
+        ) ;
+
+    // datapath instance
+    DataPath    U_DataPath(   
+        //
+        ma_low2,
+        // PC
+        pc_write, pc_src, 
+        // memory interface
+        iord, MemAddr_O, MemData_I, MemData_O,
+        // IR
+        ir_write, ir,
+        // memory data extend
+        ext_mem_funct, 
+        // Register file
+        rf_write, rf_dest, rf_src,
+        // Sign extension
+        ext_func, 
+        // ALU
+        alu_src_a, alu_src_b, alu_func, aluout_src, alu_zero, alu_overflow, alu_compare,
+        // Shifter
+        sht_num_src, 
+        // Multiplier and Divider
+        md_mord, md_start, md_horl, md_sign, md_flag,
+        // CP0
+        cp0_iore, cp0_idx, cp0_wr, cp0_sr_im, cp0_sr_ie, TLB_Func, TLB_Wr,  MMU_Ack,
+	   	//MMU
+		    MemRW_O,MMU_Req, MMU_Pr_Ack,  TLB_Err,TLB_Fault,
+        // processor status
+        exc_enter, exccode, 
+        // external hardware interrupts
+        HW_Int_I, 
+        // System
+        Clk, Reset) ;
+		 
+
+endmodule
+

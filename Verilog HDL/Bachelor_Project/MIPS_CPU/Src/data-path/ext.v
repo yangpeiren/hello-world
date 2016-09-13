@@ -1,0 +1,77 @@
+/*
+ * This is part of COCOA project, which covers the 5 basic disciplines
+ * in computer science: digital logic, computer organization, compiler, 
+ * computer architecture,  and operating system.
+ * Copy right belongs to BUAA, 2008
+ */
+ 
+`include    "instruction_head.v"
+`timescale  1ns/1ns
+
+/*
+ * This is a module for symbol extension. It extends 16-bit integer to 32-bit 
+ */
+
+module Ext(
+	Funct_I,
+	Imm16_I,
+	ExtImm32_O,
+	ExtSL2_O
+);
+////////////////////////// declarations ////////////////////////////////
+// GXP input [1:0]	Signed_I;
+input [1:0]  Funct_I;
+input [15:0] Imm16_I;		// input number, 16 bit widen
+output[31:0] ExtImm32_O;	// output number, extended to 32-bit
+output[31:0] ExtSL2_O;
+
+////////////////////////// implementation codes ////////////////////////
+//  extend with the symbol bit or unsigned
+// GXP
+// assign ExtImm32_O = Signed_I == 'b01 ?  : 
+//					Signed_I == 'b00 ?{{16{1'b0}}, Imm16_I}:
+//					Signed_I == 'b10 ? {Imm16_I, 16'b0}:
+//					{{16{1'b0}}, Imm16_I};
+    assign ExtImm32_O = (Funct_I == `EXT_ZERO) ? {16'b0, Imm16_I} : 
+                        (Funct_I == `EXT_SIGN) ? {{16{Imm16_I[15]}}, Imm16_I} :
+                                                 {Imm16_I, 16'b0} ;
+																 
+	assign ExtSL2_O = {ExtImm32_O[29:0],2'b0};
+
+endmodule
+
+module ExtMemData( Din32, Funct, A1_A0, ExtDout32 ) ;
+
+////////////////////////// declarations ////////////////////////////////
+    input   [31:0]              Din32 ;     // data read from memory
+    input   [1:0]               Funct ;     // function code 
+    input   [1:0]               A1_A0 ;
+    output  [31:0]              ExtDout32 ;
+
+//    assign  ExtDout32   = (Funct==`EXT_M_8BIT)  ? {24'b0, Din32[7:0]} :
+//                          (Funct==`EXT_M_16BIT) ? {16'b0, Din32[15:0]} :
+//                                                  Din32 ;
+    assign  ExtDout32   =   (Funct==`EXT_M_8BIT)  ? ((A1_A0==2'b00) ? {24'b0, Din32[07:00]} :
+                                                     (A1_A0==2'b01) ? {24'b0, Din32[15:08]} :
+                                                     (A1_A0==2'b10) ? {24'b0, Din32[23:16]} :
+                                                                      {24'b0, Din32[31:24]})    :
+                            (Funct==`EXT_M_16BIT) ? ((A1_A0==2'b00) ? {16'b0, Din32[15:0]}  :
+                                                                      {16'b0, Din32[31:16]})    :
+                                                    Din32 ;
+endmodule
+
+module ExtBReg2Mem( Din32, Funct, A1_A0, ExtDout32 ) ;
+////////////////////////// declarations ////////////////////////////////
+    input   [31:0]              Din32 ;     // data read from memory
+    input   [1:0]               Funct ;     // function code 
+    input   [1:0]               A1_A0 ;
+    output  [31:0]              ExtDout32 ;
+
+    assign  ExtDout32   =   (Funct==`EXT_M_8BIT)  ? ((A1_A0==2'b00) ? {24'b0, Din32[07:00]}       :
+                                                     (A1_A0==2'b01) ? {16'b0, Din32[07:00], 8'b0} :
+                                                     (A1_A0==2'b10) ? {8'b0,  Din32[07:00], 16'b0}:
+                                                                      {Din32[07:00], 24'b0})        :
+                            (Funct==`EXT_M_16BIT) ? ((A1_A0==2'b00) ? {16'b0, Din32[15:0]}        :
+                                                                      {Din32[15:0], 16'b0})         :
+                                                    Din32 ;
+endmodule

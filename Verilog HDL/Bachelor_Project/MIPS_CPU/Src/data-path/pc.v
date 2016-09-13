@@ -1,0 +1,76 @@
+/*
+ * This is part of COCOA project, which covers the 5 basic disciplines
+ * in computer science: digital logic, computer organization, compiler, 
+ * computer architecture,  and operating system.
+ * Copy right belongs to BUAA, 2008
+ */
+ 
+//`include "../../cpu/src/cocoa_head.v"
+
+/*
+ * the program counter of MIPS-C CPU. It points out the address of the
+ * next instruction.
+ * Version 0.1.0.0
+ * Author Jerry.Zhai
+ */
+`timescale  1ns/1ns
+
+module PC(
+   	CLK_I,
+	Reset_I,
+	Addr_I,
+	PCWrite_I,
+	PC_O
+);
+
+////////////////////////////////// variable declaration ///////////////////////////////////
+/*		interface 		*/
+input			    CLK_I;	     // system clock
+input			    Reset_I;	   // reset signal
+input [31:0]	Addr_I;		    // exception code, when exception occurs, the code would starts from EPC
+input			    PCWrite_I;	 // write enable
+output[31:0]	PC_O;		     // PC output 
+
+
+/*	internal reg and wire 	*/
+reg	[31:0]	addr ;		// latch the address
+
+
+///////////////////////////////// implementation code	//////////////////////////////////////
+
+/*-------------------------------------------------
+				IO ports
+	========================================
+	PC's value would be read out but it would
+	only be changed internally, by giving
+	different PCSources 
+-------------------------------------------------*/
+
+/* read register */
+assign PC_O = addr;
+
+
+/*---------------------------------
+		PC update
+---------------------------------*/
+
+always@ ( posedge CLK_I or posedge Reset_I)
+begin
+	if(Reset_I)
+		addr <= 'hBFC00000;
+	else if(PCWrite_I)
+		addr <= Addr_I;
+end		
+
+endmodule
+
+module GenPC(PC_I,IR_I,PC_O);
+input[31:0] PC_I,IR_I;
+output[31:0] PC_O;
+
+assign PC_O={PC_I[31:28], IR_I[25:0], 2'b00};
+
+endmodule
+
+
+
