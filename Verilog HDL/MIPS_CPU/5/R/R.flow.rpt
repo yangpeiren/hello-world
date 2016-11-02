@@ -1,0 +1,102 @@
+Flow report for R
+Mon Jul 19 18:19:36 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------+
+; Flow Summary                                                        ;
++--------------------------+------------------------------------------+
+; Flow Status              ; Successful - Mon Jul 19 18:19:32 2010    ;
+; Quartus II Version       ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name            ; R                                        ;
+; Top-level Entity Name    ; R                                        ;
+; Family                   ; Cyclone                                  ;
+; Device                   ; EP1C12Q240C8                             ;
+; Timing Models            ; Final                                    ;
+; Met timing requirements  ; No                                       ;
+; Total logic elements     ; 5,538 / 12,060 ( 46 % )                  ;
+; Total pins               ; 141 / 173 ( 82 % )                       ;
+; Total virtual pins       ; 0                                        ;
+; Total memory bits        ; 1,024 / 239,616 ( < 1 % )                ;
+; DSP block 9-bit elements ; N/A until Partition Merge                ;
+; Total PLLs               ; 0 / 2 ( 0 % )                            ;
+; Total DLLs               ; N/A until Partition Merge                ;
++--------------------------+------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 07/19/2010 18:16:54 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; R                   ;
++-------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                        ;
++------------------------------------+---------+---------------+-------------+------------+
+; Assignment Name                    ; Value   ; Default Value ; Entity Name ; Section Id ;
++------------------------------------+---------+---------------+-------------+------------+
+; PARTITION_COLOR                    ; 2147039 ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE             ; SOURCE  ; --            ; --          ; Top        ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off     ; --            ; --          ; eda_palace ;
++------------------------------------+---------+---------------+-------------+------------+
+
+
++------------------------------------------------------------------+
+; Flow Elapsed Time                                                ;
++-------------------------+--------------+-------------------------+
+; Module Name             ; Elapsed Time ; Average Processors Used ;
++-------------------------+--------------+-------------------------+
+; Analysis & Synthesis    ; 00:01:05     ; 1.0                     ;
+; Fitter                  ; 00:01:05     ; 1.0                     ;
+; Assembler               ; 00:00:04     ; 1.0                     ;
+; Classic Timing Analyzer ; 00:00:04     ; 1.0                     ;
+; Total                   ; 00:02:18     ; --                      ;
++-------------------------+--------------+-------------------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off R -c R
+quartus_fit --read_settings_files=off --write_settings_files=off R -c R
+quartus_asm --read_settings_files=off --write_settings_files=off R -c R
+quartus_tan --read_settings_files=off --write_settings_files=off R -c R --timing_analysis_only
+
+
+

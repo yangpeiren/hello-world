@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jul 13 22:40:25 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : DIV
+Top-level Entity Name : DIV
+Family : Cyclone II
+Total logic elements : 2,401
+    Total combinational functions : 2,401
+    Dedicated logic registers : 129
+Total registers : 129
+Total pins : 103
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 8
+Total PLLs : 0

@@ -1,0 +1,33 @@
+|MicroAddress
+q[1] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+S[1] => inst.PRESET
+S[2] => inst2.PRESET
+S[3] => inst4.PRESET
+S[4] => inst1.PRESET
+S[5] => inst3.PRESET
+S[6] => inst5.PRESET
+clr => inst.ACLR
+clr => inst2.ACLR
+clr => inst4.ACLR
+clr => inst1.ACLR
+clr => inst3.ACLR
+clr => inst5.ACLR
+d[1] => inst.DATAIN
+d[2] => inst2.DATAIN
+d[3] => inst4.DATAIN
+d[4] => inst1.DATAIN
+d[5] => inst3.DATAIN
+d[6] => inst5.DATAIN
+clk => inst.CLK
+clk => inst2.CLK
+clk => inst4.CLK
+clk => inst1.CLK
+clk => inst3.CLK
+clk => inst5.CLK
+
+

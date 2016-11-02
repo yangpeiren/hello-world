@@ -1,0 +1,196 @@
+Simulator report for MicroAddress
+Wed Jul 14 01:26:11 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 50.0 us      ;
+; Simulation Netlist Size     ; 26 nodes     ;
+; Simulation Coverage         ;      30.77 % ;
+; Total Number of Transitions ; 138          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone      ;
+; Device                      ; EP1C12Q240C8 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      30.77 % ;
+; Total nodes checked                                 ; 26           ;
+; Total output ports checked                          ; 26           ;
+; Total output ports with complete 1/0-value coverage ; 8            ;
+; Total output ports with no 1/0-value coverage       ; 10           ;
+; Total output ports with no 1-value coverage         ; 10           ;
+; Total output ports with no 0-value coverage         ; 18           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                        ;
++---------------------+---------------------------+------------------+
+; Node Name           ; Output Port Name          ; Output Port Type ;
++---------------------+---------------------------+------------------+
+; |MicroAddress|inst1 ; |MicroAddress|inst1       ; regout           ;
+; |MicroAddress|inst2 ; |MicroAddress|inst2       ; regout           ;
+; |MicroAddress|q[4]  ; |MicroAddress|q[4]        ; padio            ;
+; |MicroAddress|q[2]  ; |MicroAddress|q[2]        ; padio            ;
+; |MicroAddress|clk   ; |MicroAddress|clk~corein  ; combout          ;
+; |MicroAddress|S[3]  ; |MicroAddress|S[3]~corein ; combout          ;
+; |MicroAddress|S[2]  ; |MicroAddress|S[2]~corein ; combout          ;
+; |MicroAddress|S[1]  ; |MicroAddress|S[1]~corein ; combout          ;
++---------------------+---------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------+
+; Missing 1-Value Coverage                                           ;
++---------------------+---------------------------+------------------+
+; Node Name           ; Output Port Name          ; Output Port Type ;
++---------------------+---------------------------+------------------+
+; |MicroAddress|inst5 ; |MicroAddress|inst5       ; regout           ;
+; |MicroAddress|q[6]  ; |MicroAddress|q[6]        ; padio            ;
+; |MicroAddress|d[6]  ; |MicroAddress|d[6]~corein ; combout          ;
+; |MicroAddress|S[6]  ; |MicroAddress|S[6]~corein ; combout          ;
+; |MicroAddress|d[5]  ; |MicroAddress|d[5]~corein ; combout          ;
+; |MicroAddress|S[5]  ; |MicroAddress|S[5]~corein ; combout          ;
+; |MicroAddress|d[4]  ; |MicroAddress|d[4]~corein ; combout          ;
+; |MicroAddress|d[3]  ; |MicroAddress|d[3]~corein ; combout          ;
+; |MicroAddress|d[2]  ; |MicroAddress|d[2]~corein ; combout          ;
+; |MicroAddress|d[1]  ; |MicroAddress|d[1]~corein ; combout          ;
++---------------------+---------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------+
+; Missing 0-Value Coverage                                           ;
++---------------------+---------------------------+------------------+
+; Node Name           ; Output Port Name          ; Output Port Type ;
++---------------------+---------------------------+------------------+
+; |MicroAddress|inst5 ; |MicroAddress|inst5       ; regout           ;
+; |MicroAddress|inst3 ; |MicroAddress|inst3       ; regout           ;
+; |MicroAddress|inst4 ; |MicroAddress|inst4       ; regout           ;
+; |MicroAddress|inst  ; |MicroAddress|inst        ; regout           ;
+; |MicroAddress|q[6]  ; |MicroAddress|q[6]        ; padio            ;
+; |MicroAddress|q[5]  ; |MicroAddress|q[5]        ; padio            ;
+; |MicroAddress|q[3]  ; |MicroAddress|q[3]        ; padio            ;
+; |MicroAddress|q[1]  ; |MicroAddress|q[1]        ; padio            ;
+; |MicroAddress|d[6]  ; |MicroAddress|d[6]~corein ; combout          ;
+; |MicroAddress|clr   ; |MicroAddress|clr~corein  ; combout          ;
+; |MicroAddress|S[6]  ; |MicroAddress|S[6]~corein ; combout          ;
+; |MicroAddress|d[5]  ; |MicroAddress|d[5]~corein ; combout          ;
+; |MicroAddress|S[5]  ; |MicroAddress|S[5]~corein ; combout          ;
+; |MicroAddress|d[4]  ; |MicroAddress|d[4]~corein ; combout          ;
+; |MicroAddress|S[4]  ; |MicroAddress|S[4]~corein ; combout          ;
+; |MicroAddress|d[3]  ; |MicroAddress|d[3]~corein ; combout          ;
+; |MicroAddress|d[2]  ; |MicroAddress|d[2]~corein ; combout          ;
+; |MicroAddress|d[1]  ; |MicroAddress|d[1]~corein ; combout          ;
++---------------------+---------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Wed Jul 14 01:26:10 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off MicroAddress -c MicroAddress
+Info: Using vector source file "D:/±à³Ì/verilog HDL/cpu/MicroAddress/MicroAddress.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      30.77 %
+Info: Number of transitions in simulation is 138
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 130 megabytes of memory during processing
+    Info: Processing ended: Wed Jul 14 01:26:11 2010
+    Info: Elapsed time: 00:00:01
+
+

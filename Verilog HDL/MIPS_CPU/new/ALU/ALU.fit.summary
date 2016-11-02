@@ -1,0 +1,12 @@
+Fitter Status : Successful - Sat Jul 17 00:54:46 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : ALU
+Top-level Entity Name : ALU
+Family : Cyclone
+Device : EP1C12Q240C8
+Timing Models : Final
+Total logic elements : 331 / 12,060 ( 3 % )
+Total pins : 102 / 173 ( 59 % )
+Total virtual pins : 0
+Total memory bits : 0 / 239,616 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

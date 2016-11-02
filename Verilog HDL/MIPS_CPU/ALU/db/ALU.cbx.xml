@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="ALU">
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|CNT4:inst1|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_okh.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

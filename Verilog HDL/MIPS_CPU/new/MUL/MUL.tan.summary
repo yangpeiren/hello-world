@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 208.821 ns
+From           : MUL_DB[27]
+To             : result[0]
+From Clock     : --
+To Clock       : Clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 13.954 ns
+From           : finish
+To             : MUL_DC[10]
+From Clock     : Clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.370 ns
+From           : MUL_SelHL
+To             : MUL_DC[5]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.363 ns
+From           : MUL_DA[17]
+To             : result[17]
+From Clock     : --
+To Clock       : Clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 145.29 MHz ( period = 6.883 ns )
+From           : result[3]
+To             : lo[3]
+From Clock     : Clk
+To Clock       : Clk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'Clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : finish
+To             : result[5]
+From Clock     : Clk
+To Clock       : Clk
+Failed Paths   : 54
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 54
+
+--------------------------------------------------------------------------------------
+

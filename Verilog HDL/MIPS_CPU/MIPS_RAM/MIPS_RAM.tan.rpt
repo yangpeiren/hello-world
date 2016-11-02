@@ -1,0 +1,842 @@
+Classic Timing Analyzer report for MIPS_RAM
+Wed Jul 07 08:56:21 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'Clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                              ;
++------------------------------+-------+---------------+----------------------------------+------------------+------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From             ; To               ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------+------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 12.178 ns                        ; Addr[3]          ; DataOut[21]~reg0 ; --         ; Clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.093 ns                        ; DataOut[23]~reg0 ; DataOut[23]      ; Clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.173 ns                        ; DataIn[3]        ; memory[29][3]    ; --         ; Clk      ; 0            ;
+; Clock Setup: 'Clk'           ; N/A   ; None          ; 147.56 MHz ( period = 6.777 ns ) ; memory[3][17]    ; DataOut[17]~reg0 ; Clk        ; Clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                  ;                  ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------+------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EP2C35F484C8       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'Clk'                                                                                                                                                                                                                            ;
++-----------------------------------------+-----------------------------------------------------+----------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From           ; To               ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 147.56 MHz ( period = 6.777 ns )                    ; memory[3][17]  ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 6.505 ns                ;
+; N/A                                     ; 148.21 MHz ( period = 6.747 ns )                    ; memory[19][26] ; DataOut[26]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 6.483 ns                ;
+; N/A                                     ; 148.41 MHz ( period = 6.738 ns )                    ; memory[24][8]  ; DataOut[8]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 6.481 ns                ;
+; N/A                                     ; 152.14 MHz ( period = 6.573 ns )                    ; memory[5][11]  ; DataOut[11]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 6.313 ns                ;
+; N/A                                     ; 152.35 MHz ( period = 6.564 ns )                    ; memory[21][17] ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 6.289 ns                ;
+; N/A                                     ; 152.42 MHz ( period = 6.561 ns )                    ; memory[3][23]  ; DataOut[23]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 6.306 ns                ;
+; N/A                                     ; 152.95 MHz ( period = 6.538 ns )                    ; memory[24][4]  ; DataOut[4]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 6.273 ns                ;
+; N/A                                     ; 154.44 MHz ( period = 6.475 ns )                    ; memory[0][0]   ; DataOut[0]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 6.217 ns                ;
+; N/A                                     ; 154.75 MHz ( period = 6.462 ns )                    ; memory[4][23]  ; DataOut[23]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 6.198 ns                ;
+; N/A                                     ; 154.89 MHz ( period = 6.456 ns )                    ; memory[29][0]  ; DataOut[0]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 6.164 ns                ;
+; N/A                                     ; 155.11 MHz ( period = 6.447 ns )                    ; memory[8][6]   ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 6.175 ns                ;
+; N/A                                     ; 155.57 MHz ( period = 6.428 ns )                    ; memory[5][5]   ; DataOut[5]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 6.162 ns                ;
+; N/A                                     ; 156.94 MHz ( period = 6.372 ns )                    ; memory[24][2]  ; DataOut[2]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 6.107 ns                ;
+; N/A                                     ; 157.70 MHz ( period = 6.341 ns )                    ; memory[9][0]   ; DataOut[0]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 6.077 ns                ;
+; N/A                                     ; 157.75 MHz ( period = 6.339 ns )                    ; memory[2][0]   ; DataOut[0]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 6.068 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; memory[17][2]  ; DataOut[2]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 6.055 ns                ;
+; N/A                                     ; 158.48 MHz ( period = 6.310 ns )                    ; memory[2][18]  ; DataOut[18]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 6.057 ns                ;
+; N/A                                     ; 159.08 MHz ( period = 6.286 ns )                    ; memory[24][5]  ; DataOut[5]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 6.021 ns                ;
+; N/A                                     ; 159.08 MHz ( period = 6.286 ns )                    ; memory[27][17] ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 6.019 ns                ;
+; N/A                                     ; 159.08 MHz ( period = 6.286 ns )                    ; memory[10][18] ; DataOut[18]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 6.020 ns                ;
+; N/A                                     ; 159.57 MHz ( period = 6.267 ns )                    ; memory[4][21]  ; DataOut[21]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 6.002 ns                ;
+; N/A                                     ; 159.87 MHz ( period = 6.255 ns )                    ; memory[8][21]  ; DataOut[21]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.984 ns                ;
+; N/A                                     ; 160.44 MHz ( period = 6.233 ns )                    ; memory[8][23]  ; DataOut[23]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.962 ns                ;
+; N/A                                     ; 160.51 MHz ( period = 6.230 ns )                    ; memory[11][17] ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.958 ns                ;
+; N/A                                     ; 160.67 MHz ( period = 6.224 ns )                    ; memory[18][17] ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.954 ns                ;
+; N/A                                     ; 160.72 MHz ( period = 6.222 ns )                    ; memory[16][2]  ; DataOut[2]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.964 ns                ;
+; N/A                                     ; 160.98 MHz ( period = 6.212 ns )                    ; memory[9][3]   ; DataOut[3]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.948 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; memory[21][23] ; DataOut[23]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.938 ns                ;
+; N/A                                     ; 161.19 MHz ( period = 6.204 ns )                    ; memory[7][21]  ; DataOut[21]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.930 ns                ;
+; N/A                                     ; 161.52 MHz ( period = 6.191 ns )                    ; memory[25][17] ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.925 ns                ;
+; N/A                                     ; 161.79 MHz ( period = 6.181 ns )                    ; memory[27][26] ; DataOut[26]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.929 ns                ;
+; N/A                                     ; 161.81 MHz ( period = 6.180 ns )                    ; memory[13][5]  ; DataOut[5]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.914 ns                ;
+; N/A                                     ; 161.94 MHz ( period = 6.175 ns )                    ; memory[18][21] ; DataOut[21]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.913 ns                ;
+; N/A                                     ; 162.05 MHz ( period = 6.171 ns )                    ; memory[6][18]  ; DataOut[18]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.918 ns                ;
+; N/A                                     ; 162.15 MHz ( period = 6.167 ns )                    ; memory[16][16] ; DataOut[16]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.899 ns                ;
+; N/A                                     ; 162.23 MHz ( period = 6.164 ns )                    ; memory[21][27] ; DataOut[27]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.26 MHz ( period = 6.163 ns )                    ; memory[14][26] ; DataOut[26]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.899 ns                ;
+; N/A                                     ; 162.63 MHz ( period = 6.149 ns )                    ; memory[24][23] ; DataOut[23]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.875 ns                ;
+; N/A                                     ; 162.65 MHz ( period = 6.148 ns )                    ; memory[0][3]   ; DataOut[3]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.883 ns                ;
+; N/A                                     ; 162.71 MHz ( period = 6.146 ns )                    ; memory[29][3]  ; DataOut[3]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.854 ns                ;
+; N/A                                     ; 163.32 MHz ( period = 6.123 ns )                    ; memory[6][6]   ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.858 ns                ;
+; N/A                                     ; 163.43 MHz ( period = 6.119 ns )                    ; memory[13][10] ; DataOut[10]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.861 ns                ;
+; N/A                                     ; 163.45 MHz ( period = 6.118 ns )                    ; memory[9][27]  ; DataOut[27]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.855 ns                ;
+; N/A                                     ; 163.56 MHz ( period = 6.114 ns )                    ; memory[7][27]  ; DataOut[27]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.850 ns                ;
+; N/A                                     ; 163.88 MHz ( period = 6.102 ns )                    ; memory[18][19] ; DataOut[19]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.847 ns                ;
+; N/A                                     ; 164.02 MHz ( period = 6.097 ns )                    ; memory[1][15]  ; DataOut[15]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.841 ns                ;
+; N/A                                     ; 164.15 MHz ( period = 6.092 ns )                    ; memory[6][13]  ; DataOut[13]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.832 ns                ;
+; N/A                                     ; 164.31 MHz ( period = 6.086 ns )                    ; memory[10][26] ; DataOut[26]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.812 ns                ;
+; N/A                                     ; 164.53 MHz ( period = 6.078 ns )                    ; memory[0][8]   ; DataOut[8]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.825 ns                ;
+; N/A                                     ; 164.58 MHz ( period = 6.076 ns )                    ; memory[18][13] ; DataOut[13]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.818 ns                ;
+; N/A                                     ; 164.64 MHz ( period = 6.074 ns )                    ; memory[22][17] ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.784 ns                ;
+; N/A                                     ; 164.66 MHz ( period = 6.073 ns )                    ; memory[17][0]  ; DataOut[0]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.807 ns                ;
+; N/A                                     ; 164.74 MHz ( period = 6.070 ns )                    ; memory[8][25]  ; DataOut[25]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.799 ns                ;
+; N/A                                     ; 164.83 MHz ( period = 6.067 ns )                    ; memory[14][18] ; DataOut[18]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.801 ns                ;
+; N/A                                     ; 165.13 MHz ( period = 6.056 ns )                    ; memory[26][2]  ; DataOut[2]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.792 ns                ;
+; N/A                                     ; 165.15 MHz ( period = 6.055 ns )                    ; memory[7][30]  ; DataOut[30]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.791 ns                ;
+; N/A                                     ; 165.18 MHz ( period = 6.054 ns )                    ; memory[16][6]  ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.798 ns                ;
+; N/A                                     ; 165.26 MHz ( period = 6.051 ns )                    ; memory[24][17] ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.781 ns                ;
+; N/A                                     ; 165.56 MHz ( period = 6.040 ns )                    ; memory[8][8]   ; DataOut[8]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.774 ns                ;
+; N/A                                     ; 165.67 MHz ( period = 6.036 ns )                    ; memory[7][11]  ; DataOut[11]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.780 ns                ;
+; N/A                                     ; 165.67 MHz ( period = 6.036 ns )                    ; memory[0][2]   ; DataOut[2]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.767 ns                ;
+; N/A                                     ; 165.67 MHz ( period = 6.036 ns )                    ; memory[24][21] ; DataOut[21]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.762 ns                ;
+; N/A                                     ; 165.81 MHz ( period = 6.031 ns )                    ; memory[18][11] ; DataOut[11]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.785 ns                ;
+; N/A                                     ; 165.81 MHz ( period = 6.031 ns )                    ; memory[10][30] ; DataOut[30]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.757 ns                ;
+; N/A                                     ; 165.95 MHz ( period = 6.026 ns )                    ; memory[21][13] ; DataOut[13]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.771 ns                ;
+; N/A                                     ; 165.98 MHz ( period = 6.025 ns )                    ; memory[29][27] ; DataOut[27]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.757 ns                ;
+; N/A                                     ; 166.03 MHz ( period = 6.023 ns )                    ; memory[24][24] ; DataOut[24]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.749 ns                ;
+; N/A                                     ; 166.20 MHz ( period = 6.017 ns )                    ; memory[24][16] ; DataOut[16]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.749 ns                ;
+; N/A                                     ; 166.22 MHz ( period = 6.016 ns )                    ; memory[0][21]  ; DataOut[21]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.751 ns                ;
+; N/A                                     ; 166.33 MHz ( period = 6.012 ns )                    ; memory[12][21] ; DataOut[21]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.741 ns                ;
+; N/A                                     ; 166.36 MHz ( period = 6.011 ns )                    ; memory[22][21] ; DataOut[21]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.749 ns                ;
+; N/A                                     ; 166.39 MHz ( period = 6.010 ns )                    ; memory[3][12]  ; DataOut[12]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.748 ns                ;
+; N/A                                     ; 166.44 MHz ( period = 6.008 ns )                    ; memory[24][25] ; DataOut[25]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.734 ns                ;
+; N/A                                     ; 166.67 MHz ( period = 6.000 ns )                    ; memory[9][17]  ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.734 ns                ;
+; N/A                                     ; 166.78 MHz ( period = 5.996 ns )                    ; memory[25][8]  ; DataOut[8]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.741 ns                ;
+; N/A                                     ; 166.78 MHz ( period = 5.996 ns )                    ; memory[28][27] ; DataOut[27]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.745 ns                ;
+; N/A                                     ; 166.86 MHz ( period = 5.993 ns )                    ; memory[29][17] ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.726 ns                ;
+; N/A                                     ; 166.97 MHz ( period = 5.989 ns )                    ; memory[2][12]  ; DataOut[12]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.725 ns                ;
+; N/A                                     ; 167.08 MHz ( period = 5.985 ns )                    ; memory[10][12] ; DataOut[12]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.718 ns                ;
+; N/A                                     ; 167.11 MHz ( period = 5.984 ns )                    ; memory[7][9]   ; DataOut[9]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.729 ns                ;
+; N/A                                     ; 167.17 MHz ( period = 5.982 ns )                    ; memory[12][23] ; DataOut[23]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.711 ns                ;
+; N/A                                     ; 167.20 MHz ( period = 5.981 ns )                    ; memory[30][18] ; DataOut[18]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; memory[3][15]  ; DataOut[15]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.714 ns                ;
+; N/A                                     ; 167.36 MHz ( period = 5.975 ns )                    ; memory[2][20]  ; DataOut[20]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.722 ns                ;
+; N/A                                     ; 167.39 MHz ( period = 5.974 ns )                    ; memory[20][2]  ; DataOut[2]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.716 ns                ;
+; N/A                                     ; 167.45 MHz ( period = 5.972 ns )                    ; memory[1][0]   ; DataOut[0]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.706 ns                ;
+; N/A                                     ; 167.45 MHz ( period = 5.972 ns )                    ; memory[22][19] ; DataOut[19]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.697 ns                ;
+; N/A                                     ; 167.48 MHz ( period = 5.971 ns )                    ; memory[27][22] ; DataOut[22]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.696 ns                ;
+; N/A                                     ; 167.87 MHz ( period = 5.957 ns )                    ; memory[4][27]  ; DataOut[27]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.703 ns                ;
+; N/A                                     ; 167.93 MHz ( period = 5.955 ns )                    ; memory[24][6]  ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.692 ns                ;
+; N/A                                     ; 168.10 MHz ( period = 5.949 ns )                    ; memory[15][6]  ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.678 ns                ;
+; N/A                                     ; 168.35 MHz ( period = 5.940 ns )                    ; memory[19][30] ; DataOut[30]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.688 ns                ;
+; N/A                                     ; 168.46 MHz ( period = 5.936 ns )                    ; memory[5][6]   ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.672 ns                ;
+; N/A                                     ; 168.49 MHz ( period = 5.935 ns )                    ; memory[3][4]   ; DataOut[4]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.666 ns                ;
+; N/A                                     ; 168.58 MHz ( period = 5.932 ns )                    ; memory[3][6]   ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.665 ns                ;
+; N/A                                     ; 168.61 MHz ( period = 5.931 ns )                    ; memory[28][5]  ; DataOut[5]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.667 ns                ;
+; N/A                                     ; 168.72 MHz ( period = 5.927 ns )                    ; memory[2][26]  ; DataOut[26]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.671 ns                ;
+; N/A                                     ; 168.95 MHz ( period = 5.919 ns )                    ; memory[23][2]  ; DataOut[2]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.648 ns                ;
+; N/A                                     ; 168.95 MHz ( period = 5.919 ns )                    ; memory[16][18] ; DataOut[18]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.666 ns                ;
+; N/A                                     ; 169.00 MHz ( period = 5.917 ns )                    ; memory[7][0]   ; DataOut[0]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.654 ns                ;
+; N/A                                     ; 169.00 MHz ( period = 5.917 ns )                    ; memory[0][4]   ; DataOut[4]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.659 ns                ;
+; N/A                                     ; 169.09 MHz ( period = 5.914 ns )                    ; memory[16][12] ; DataOut[12]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.663 ns                ;
+; N/A                                     ; 169.12 MHz ( period = 5.913 ns )                    ; memory[13][7]  ; DataOut[7]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.638 ns                ;
+; N/A                                     ; 169.12 MHz ( period = 5.913 ns )                    ; memory[5][30]  ; DataOut[30]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.644 ns                ;
+; N/A                                     ; 169.23 MHz ( period = 5.909 ns )                    ; memory[1][4]   ; DataOut[4]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.648 ns                ;
+; N/A                                     ; 169.23 MHz ( period = 5.909 ns )                    ; memory[16][5]  ; DataOut[5]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.646 ns                ;
+; N/A                                     ; 169.26 MHz ( period = 5.908 ns )                    ; memory[4][13]  ; DataOut[13]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.654 ns                ;
+; N/A                                     ; 169.52 MHz ( period = 5.899 ns )                    ; memory[28][2]  ; DataOut[2]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.635 ns                ;
+; N/A                                     ; 169.69 MHz ( period = 5.893 ns )                    ; memory[19][28] ; DataOut[28]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.641 ns                ;
+; N/A                                     ; 169.95 MHz ( period = 5.884 ns )                    ; memory[18][9]  ; DataOut[9]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.639 ns                ;
+; N/A                                     ; 170.13 MHz ( period = 5.878 ns )                    ; memory[2][28]  ; DataOut[28]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.622 ns                ;
+; N/A                                     ; 170.21 MHz ( period = 5.875 ns )                    ; memory[0][6]   ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.616 ns                ;
+; N/A                                     ; 170.27 MHz ( period = 5.873 ns )                    ; memory[5][31]  ; DataOut[31]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.601 ns                ;
+; N/A                                     ; 170.33 MHz ( period = 5.871 ns )                    ; memory[2][30]  ; DataOut[30]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.615 ns                ;
+; N/A                                     ; 170.39 MHz ( period = 5.869 ns )                    ; memory[1][27]  ; DataOut[27]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.606 ns                ;
+; N/A                                     ; 170.62 MHz ( period = 5.861 ns )                    ; memory[21][29] ; DataOut[29]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.593 ns                ;
+; N/A                                     ; 170.74 MHz ( period = 5.857 ns )                    ; memory[16][0]  ; DataOut[0]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.594 ns                ;
+; N/A                                     ; 170.79 MHz ( period = 5.855 ns )                    ; memory[0][1]   ; DataOut[1]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.597 ns                ;
+; N/A                                     ; 170.88 MHz ( period = 5.852 ns )                    ; memory[0][7]   ; DataOut[7]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.574 ns                ;
+; N/A                                     ; 170.94 MHz ( period = 5.850 ns )                    ; memory[27][30] ; DataOut[30]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.598 ns                ;
+; N/A                                     ; 171.06 MHz ( period = 5.846 ns )                    ; memory[4][19]  ; DataOut[19]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.595 ns                ;
+; N/A                                     ; 171.35 MHz ( period = 5.836 ns )                    ; memory[1][3]   ; DataOut[3]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.572 ns                ;
+; N/A                                     ; 171.38 MHz ( period = 5.835 ns )                    ; memory[7][31]  ; DataOut[31]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.557 ns                ;
+; N/A                                     ; 171.47 MHz ( period = 5.832 ns )                    ; memory[7][14]  ; DataOut[14]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.574 ns                ;
+; N/A                                     ; 171.56 MHz ( period = 5.829 ns )                    ; memory[27][6]  ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.569 ns                ;
+; N/A                                     ; 171.56 MHz ( period = 5.829 ns )                    ; memory[24][20] ; DataOut[20]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.568 ns                ;
+; N/A                                     ; 171.59 MHz ( period = 5.828 ns )                    ; memory[8][17]  ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.555 ns                ;
+; N/A                                     ; 171.73 MHz ( period = 5.823 ns )                    ; memory[30][21] ; DataOut[21]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.548 ns                ;
+; N/A                                     ; 171.76 MHz ( period = 5.822 ns )                    ; memory[12][25] ; DataOut[25]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.551 ns                ;
+; N/A                                     ; 171.82 MHz ( period = 5.820 ns )                    ; memory[26][30] ; DataOut[30]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.569 ns                ;
+; N/A                                     ; 171.94 MHz ( period = 5.816 ns )                    ; memory[1][6]   ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.557 ns                ;
+; N/A                                     ; 172.15 MHz ( period = 5.809 ns )                    ; memory[6][21]  ; DataOut[21]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.543 ns                ;
+; N/A                                     ; 172.21 MHz ( period = 5.807 ns )                    ; memory[20][6]  ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.551 ns                ;
+; N/A                                     ; 172.44 MHz ( period = 5.799 ns )                    ; memory[29][29] ; DataOut[29]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.531 ns                ;
+; N/A                                     ; 172.47 MHz ( period = 5.798 ns )                    ; memory[20][1]  ; DataOut[1]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.535 ns                ;
+; N/A                                     ; 172.47 MHz ( period = 5.798 ns )                    ; memory[6][5]   ; DataOut[5]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.531 ns                ;
+; N/A                                     ; 172.50 MHz ( period = 5.797 ns )                    ; memory[24][18] ; DataOut[18]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.544 ns                ;
+; N/A                                     ; 172.68 MHz ( period = 5.791 ns )                    ; memory[4][2]   ; DataOut[2]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.522 ns                ;
+; N/A                                     ; 172.89 MHz ( period = 5.784 ns )                    ; memory[21][5]  ; DataOut[5]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.511 ns                ;
+; N/A                                     ; 173.13 MHz ( period = 5.776 ns )                    ; memory[17][30] ; DataOut[30]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.527 ns                ;
+; N/A                                     ; 173.16 MHz ( period = 5.775 ns )                    ; memory[29][9]  ; DataOut[9]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.491 ns                ;
+; N/A                                     ; 173.25 MHz ( period = 5.772 ns )                    ; memory[13][8]  ; DataOut[8]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.514 ns                ;
+; N/A                                     ; 173.40 MHz ( period = 5.767 ns )                    ; memory[7][23]  ; DataOut[23]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.493 ns                ;
+; N/A                                     ; 173.43 MHz ( period = 5.766 ns )                    ; memory[20][10] ; DataOut[10]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.516 ns                ;
+; N/A                                     ; 173.61 MHz ( period = 5.760 ns )                    ; memory[3][5]   ; DataOut[5]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.491 ns                ;
+; N/A                                     ; 173.73 MHz ( period = 5.756 ns )                    ; memory[14][6]  ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 173.88 MHz ( period = 5.751 ns )                    ; memory[13][4]  ; DataOut[4]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.485 ns                ;
+; N/A                                     ; 174.19 MHz ( period = 5.741 ns )                    ; memory[26][5]  ; DataOut[5]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.477 ns                ;
+; N/A                                     ; 174.43 MHz ( period = 5.733 ns )                    ; memory[9][31]  ; DataOut[31]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.464 ns                ;
+; N/A                                     ; 174.58 MHz ( period = 5.728 ns )                    ; memory[7][25]  ; DataOut[25]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.459 ns                ;
+; N/A                                     ; 174.67 MHz ( period = 5.725 ns )                    ; memory[9][8]   ; DataOut[8]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.469 ns                ;
+; N/A                                     ; 174.86 MHz ( period = 5.719 ns )                    ; memory[10][28] ; DataOut[28]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.445 ns                ;
+; N/A                                     ; 175.04 MHz ( period = 5.713 ns )                    ; memory[7][17]  ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.442 ns                ;
+; N/A                                     ; 175.07 MHz ( period = 5.712 ns )                    ; memory[17][26] ; DataOut[26]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.463 ns                ;
+; N/A                                     ; 175.22 MHz ( period = 5.707 ns )                    ; memory[24][31] ; DataOut[31]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.431 ns                ;
+; N/A                                     ; 175.41 MHz ( period = 5.701 ns )                    ; memory[25][1]  ; DataOut[1]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.433 ns                ;
+; N/A                                     ; 175.44 MHz ( period = 5.700 ns )                    ; memory[11][4]  ; DataOut[4]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.431 ns                ;
+; N/A                                     ; 175.56 MHz ( period = 5.696 ns )                    ; memory[29][11] ; DataOut[11]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.411 ns                ;
+; N/A                                     ; 175.59 MHz ( period = 5.695 ns )                    ; memory[15][3]  ; DataOut[3]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.432 ns                ;
+; N/A                                     ; 175.62 MHz ( period = 5.694 ns )                    ; memory[25][30] ; DataOut[30]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.445 ns                ;
+; N/A                                     ; 175.81 MHz ( period = 5.688 ns )                    ; memory[21][25] ; DataOut[25]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.420 ns                ;
+; N/A                                     ; 175.87 MHz ( period = 5.686 ns )                    ; memory[13][6]  ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.422 ns                ;
+; N/A                                     ; 175.87 MHz ( period = 5.686 ns )                    ; memory[11][6]  ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.419 ns                ;
+; N/A                                     ; 176.12 MHz ( period = 5.678 ns )                    ; memory[20][12] ; DataOut[12]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.427 ns                ;
+; N/A                                     ; 176.15 MHz ( period = 5.677 ns )                    ; memory[1][11]  ; DataOut[11]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.423 ns                ;
+; N/A                                     ; 176.34 MHz ( period = 5.671 ns )                    ; memory[5][7]   ; DataOut[7]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.396 ns                ;
+; N/A                                     ; 176.43 MHz ( period = 5.668 ns )                    ; memory[16][17] ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.396 ns                ;
+; N/A                                     ; 176.46 MHz ( period = 5.667 ns )                    ; memory[17][16] ; DataOut[16]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.402 ns                ;
+; N/A                                     ; 176.71 MHz ( period = 5.659 ns )                    ; memory[31][17] ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.385 ns                ;
+; N/A                                     ; 176.74 MHz ( period = 5.658 ns )                    ; memory[24][10] ; DataOut[10]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.401 ns                ;
+; N/A                                     ; 176.93 MHz ( period = 5.652 ns )                    ; memory[4][1]   ; DataOut[1]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.391 ns                ;
+; N/A                                     ; 176.96 MHz ( period = 5.651 ns )                    ; memory[17][22] ; DataOut[22]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.385 ns                ;
+; N/A                                     ; 176.99 MHz ( period = 5.650 ns )                    ; memory[18][0]  ; DataOut[0]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.397 ns                ;
+; N/A                                     ; 177.30 MHz ( period = 5.640 ns )                    ; memory[17][20] ; DataOut[20]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.387 ns                ;
+; N/A                                     ; 177.59 MHz ( period = 5.631 ns )                    ; memory[0][30]  ; DataOut[30]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.375 ns                ;
+; N/A                                     ; 177.62 MHz ( period = 5.630 ns )                    ; memory[9][29]  ; DataOut[29]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.368 ns                ;
+; N/A                                     ; 177.68 MHz ( period = 5.628 ns )                    ; memory[2][6]   ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.369 ns                ;
+; N/A                                     ; 177.81 MHz ( period = 5.624 ns )                    ; memory[16][14] ; DataOut[14]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.366 ns                ;
+; N/A                                     ; 177.81 MHz ( period = 5.624 ns )                    ; memory[16][1]  ; DataOut[1]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.361 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; memory[9][4]   ; DataOut[4]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.362 ns                ;
+; N/A                                     ; 177.94 MHz ( period = 5.620 ns )                    ; memory[17][28] ; DataOut[28]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.371 ns                ;
+; N/A                                     ; 178.09 MHz ( period = 5.615 ns )                    ; memory[22][29] ; DataOut[29]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.332 ns                ;
+; N/A                                     ; 178.22 MHz ( period = 5.611 ns )                    ; memory[15][4]  ; DataOut[4]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.338 ns                ;
+; N/A                                     ; 178.32 MHz ( period = 5.608 ns )                    ; memory[1][10]  ; DataOut[10]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.356 ns                ;
+; N/A                                     ; 178.32 MHz ( period = 5.608 ns )                    ; memory[4][7]   ; DataOut[7]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.330 ns                ;
+; N/A                                     ; 178.32 MHz ( period = 5.608 ns )                    ; memory[21][21] ; DataOut[21]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.339 ns                ;
+; N/A                                     ; 178.35 MHz ( period = 5.607 ns )                    ; memory[5][27]  ; DataOut[27]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.338 ns                ;
+; N/A                                     ; 178.51 MHz ( period = 5.602 ns )                    ; memory[20][16] ; DataOut[16]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.334 ns                ;
+; N/A                                     ; 178.67 MHz ( period = 5.597 ns )                    ; memory[27][1]  ; DataOut[1]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.335 ns                ;
+; N/A                                     ; 178.76 MHz ( period = 5.594 ns )                    ; memory[5][17]  ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.327 ns                ;
+; N/A                                     ; 178.86 MHz ( period = 5.591 ns )                    ; memory[1][14]  ; DataOut[14]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.336 ns                ;
+; N/A                                     ; 178.99 MHz ( period = 5.587 ns )                    ; memory[9][23]  ; DataOut[23]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.319 ns                ;
+; N/A                                     ; 179.15 MHz ( period = 5.582 ns )                    ; memory[24][11] ; DataOut[11]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.324 ns                ;
+; N/A                                     ; 179.15 MHz ( period = 5.582 ns )                    ; memory[12][17] ; DataOut[17]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.309 ns                ;
+; N/A                                     ; 179.18 MHz ( period = 5.581 ns )                    ; memory[21][28] ; DataOut[28]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.310 ns                ;
+; N/A                                     ; 179.21 MHz ( period = 5.580 ns )                    ; memory[0][23]  ; DataOut[23]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.312 ns                ;
+; N/A                                     ; 179.31 MHz ( period = 5.577 ns )                    ; memory[16][4]  ; DataOut[4]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.314 ns                ;
+; N/A                                     ; 179.40 MHz ( period = 5.574 ns )                    ; memory[9][6]   ; DataOut[6]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.315 ns                ;
+; N/A                                     ; 179.44 MHz ( period = 5.573 ns )                    ; memory[5][10]  ; DataOut[10]~reg0 ; Clk        ; Clk      ; None                        ; None                      ; 5.315 ns                ;
+; N/A                                     ; 179.47 MHz ( period = 5.572 ns )                    ; memory[2][3]   ; DataOut[3]~reg0  ; Clk        ; Clk      ; None                        ; None                      ; 5.307 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                ;                  ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                ;
++-----------------------------------------+-----------------------------------------------------+------------+---------+------------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From    ; To               ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+---------+------------------+----------+
+; N/A                                     ; None                                                ; 12.178 ns  ; Addr[3] ; DataOut[21]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 12.109 ns  ; Addr[3] ; DataOut[2]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.944 ns  ; Addr[3] ; DataOut[5]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.852 ns  ; Addr[5] ; DataOut[17]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.842 ns  ; Addr[3] ; DataOut[30]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.705 ns  ; Addr[5] ; memory[28][0]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.705 ns  ; Addr[5] ; memory[28][1]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.705 ns  ; Addr[5] ; memory[28][3]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.705 ns  ; Addr[5] ; memory[28][4]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.705 ns  ; Addr[5] ; memory[28][27]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.705 ns  ; Addr[5] ; memory[28][31]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.677 ns  ; Addr[6] ; DataOut[4]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.650 ns  ; Addr[5] ; memory[28][12]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.650 ns  ; Addr[5] ; memory[28][13]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.650 ns  ; Addr[5] ; memory[28][14]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.650 ns  ; Addr[5] ; memory[28][15]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.650 ns  ; Addr[5] ; memory[28][16]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.650 ns  ; Addr[5] ; memory[28][17]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.650 ns  ; Addr[5] ; memory[28][19]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.650 ns  ; Addr[5] ; memory[28][20]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.650 ns  ; Addr[5] ; memory[28][21]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.629 ns  ; Addr[6] ; DataOut[6]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.610 ns  ; Addr[6] ; DataOut[15]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.582 ns  ; Addr[3] ; DataOut[20]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.581 ns  ; Addr[5] ; memory[30][31]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.565 ns  ; Addr[3] ; DataOut[25]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.563 ns  ; Addr[5] ; memory[28][8]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.563 ns  ; Addr[5] ; memory[28][9]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.563 ns  ; Addr[5] ; memory[28][10]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.563 ns  ; Addr[5] ; memory[28][11]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.563 ns  ; Addr[5] ; memory[28][2]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.563 ns  ; Addr[5] ; memory[28][5]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.563 ns  ; Addr[5] ; memory[28][6]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.563 ns  ; Addr[5] ; memory[28][7]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.563 ns  ; Addr[5] ; memory[28][18]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.551 ns  ; Addr[3] ; DataOut[6]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.529 ns  ; Addr[6] ; DataOut[17]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.501 ns  ; Addr[6] ; DataOut[16]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.491 ns  ; Addr[5] ; DataOut[3]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.489 ns  ; Addr[5] ; DataOut[5]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.488 ns  ; Addr[6] ; DataOut[11]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.480 ns  ; Addr[5] ; DataOut[27]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.434 ns  ; Addr[6] ; DataOut[10]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.429 ns  ; Addr[3] ; DataOut[29]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.425 ns  ; Addr[6] ; DataOut[14]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.415 ns  ; Addr[3] ; DataOut[12]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.396 ns  ; Addr[5] ; DataOut[29]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.374 ns  ; Addr[5] ; memory[12][16]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.374 ns  ; Addr[5] ; memory[12][17]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.374 ns  ; Addr[5] ; memory[12][19]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.374 ns  ; Addr[5] ; memory[12][21]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.374 ns  ; Addr[5] ; memory[12][22]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.374 ns  ; Addr[5] ; memory[12][23]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.374 ns  ; Addr[5] ; memory[12][24]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.374 ns  ; Addr[5] ; memory[12][25]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.347 ns  ; Addr[5] ; memory[20][14]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.347 ns  ; Addr[5] ; memory[20][0]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.347 ns  ; Addr[5] ; memory[20][1]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.347 ns  ; Addr[5] ; memory[20][3]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.347 ns  ; Addr[5] ; memory[20][16]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.347 ns  ; Addr[5] ; memory[20][18]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.338 ns  ; Addr[3] ; DataOut[17]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.335 ns  ; Addr[6] ; DataOut[13]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][8]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][9]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][10]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][11]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][12]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][13]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][14]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][15]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][6]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][7]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][16]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.274 ns  ; Addr[5] ; memory[30][20]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.273 ns  ; Addr[6] ; DataOut[5]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.207 ns  ; Addr[6] ; DataOut[12]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.195 ns  ; Addr[3] ; DataOut[7]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.189 ns  ; Addr[3] ; DataOut[13]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.177 ns  ; Addr[3] ; DataOut[11]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.164 ns  ; Addr[6] ; DataOut[7]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.162 ns  ; Addr[6] ; DataOut[20]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.132 ns  ; Addr[3] ; DataOut[18]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.126 ns  ; Addr[6] ; DataOut[18]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.095 ns  ; Addr[5] ; DataOut[26]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.089 ns  ; Addr[5] ; DataOut[30]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.073 ns  ; Addr[5] ; memory[10][9]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.073 ns  ; Addr[5] ; memory[10][10]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.073 ns  ; Addr[5] ; memory[10][11]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.073 ns  ; Addr[5] ; memory[10][12]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.073 ns  ; Addr[5] ; memory[10][13]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.073 ns  ; Addr[5] ; memory[10][14]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.073 ns  ; Addr[5] ; memory[10][15]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.073 ns  ; Addr[5] ; memory[10][16]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.073 ns  ; Addr[5] ; memory[10][19]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.069 ns  ; Addr[5] ; memory[10][17]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.069 ns  ; Addr[5] ; memory[10][18]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.069 ns  ; Addr[5] ; memory[10][20]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.069 ns  ; Addr[5] ; memory[10][21]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.069 ns  ; Addr[5] ; memory[10][22]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.069 ns  ; Addr[5] ; memory[10][23]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.069 ns  ; Addr[5] ; memory[10][24]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.069 ns  ; Addr[5] ; memory[10][25]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.069 ns  ; Addr[5] ; memory[10][26]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.064 ns  ; Addr[5] ; DataOut[28]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.053 ns  ; Addr[5] ; memory[15][27]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.051 ns  ; Addr[6] ; DataOut[21]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.049 ns  ; Addr[5] ; DataOut[4]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.045 ns  ; Addr[3] ; DataOut[19]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.028 ns  ; Addr[5] ; DataOut[25]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.018 ns  ; Addr[5] ; memory[2][9]     ; Clk      ;
+; N/A                                     ; None                                                ; 11.018 ns  ; Addr[5] ; memory[2][10]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.018 ns  ; Addr[5] ; memory[2][11]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.018 ns  ; Addr[5] ; memory[2][12]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.018 ns  ; Addr[5] ; memory[2][0]     ; Clk      ;
+; N/A                                     ; None                                                ; 11.018 ns  ; Addr[5] ; memory[2][2]     ; Clk      ;
+; N/A                                     ; None                                                ; 11.018 ns  ; Addr[5] ; memory[2][7]     ; Clk      ;
+; N/A                                     ; None                                                ; 11.018 ns  ; Addr[5] ; memory[2][17]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.017 ns  ; Addr[5] ; DataOut[16]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.017 ns  ; Addr[4] ; DataOut[2]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 11.016 ns  ; Addr[5] ; memory[12][9]    ; Clk      ;
+; N/A                                     ; None                                                ; 11.016 ns  ; Addr[5] ; memory[12][10]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.016 ns  ; Addr[5] ; memory[12][11]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.016 ns  ; Addr[5] ; memory[12][12]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.016 ns  ; Addr[5] ; memory[12][13]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.016 ns  ; Addr[5] ; memory[12][14]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.016 ns  ; Addr[5] ; memory[12][15]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.016 ns  ; Addr[5] ; memory[12][20]   ; Clk      ;
+; N/A                                     ; None                                                ; 11.014 ns  ; Addr[3] ; DataOut[22]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 11.003 ns  ; Addr[5] ; DataOut[6]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 10.995 ns  ; Addr[5] ; memory[8][16]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.995 ns  ; Addr[5] ; memory[8][17]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.995 ns  ; Addr[5] ; memory[8][19]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.995 ns  ; Addr[5] ; memory[8][21]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.995 ns  ; Addr[5] ; memory[8][22]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.995 ns  ; Addr[5] ; memory[8][23]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.995 ns  ; Addr[5] ; memory[8][24]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.995 ns  ; Addr[5] ; memory[8][25]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.991 ns  ; Addr[4] ; DataOut[21]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 10.984 ns  ; Addr[3] ; DataOut[16]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 10.983 ns  ; Addr[5] ; DataOut[15]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 10.981 ns  ; Addr[5] ; memory[27][8]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.981 ns  ; Addr[5] ; memory[27][9]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.981 ns  ; Addr[5] ; memory[27][10]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.981 ns  ; Addr[5] ; memory[27][0]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.981 ns  ; Addr[5] ; memory[27][1]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.981 ns  ; Addr[5] ; memory[27][2]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.981 ns  ; Addr[5] ; memory[27][3]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.981 ns  ; Addr[5] ; memory[27][4]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.981 ns  ; Addr[5] ; memory[27][5]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.981 ns  ; Addr[5] ; memory[27][6]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.981 ns  ; Addr[5] ; memory[27][7]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.980 ns  ; Addr[5] ; memory[31][0]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.980 ns  ; Addr[5] ; memory[31][1]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.980 ns  ; Addr[5] ; memory[31][2]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.980 ns  ; Addr[5] ; memory[31][3]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.980 ns  ; Addr[5] ; memory[31][4]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.980 ns  ; Addr[5] ; DataOut[7]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 10.972 ns  ; Addr[3] ; DataOut[26]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 10.969 ns  ; Addr[5] ; memory[15][8]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.969 ns  ; Addr[5] ; memory[15][9]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.969 ns  ; Addr[5] ; memory[15][10]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.969 ns  ; Addr[5] ; memory[15][0]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.969 ns  ; Addr[5] ; memory[15][1]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.969 ns  ; Addr[5] ; memory[15][2]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.969 ns  ; Addr[5] ; memory[15][3]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.962 ns  ; Addr[4] ; DataOut[23]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 10.961 ns  ; Addr[5] ; DataOut[10]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][8]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][9]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][10]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][11]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][0]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][1]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][2]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][3]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][4]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][5]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][6]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Addr[5] ; memory[29][7]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.953 ns  ; Addr[5] ; DataOut[23]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 10.948 ns  ; Addr[6] ; DataOut[27]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 10.947 ns  ; Addr[5] ; memory[20][13]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.947 ns  ; Addr[5] ; memory[20][15]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.947 ns  ; Addr[5] ; memory[20][17]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.947 ns  ; Addr[5] ; memory[20][20]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.947 ns  ; Addr[5] ; memory[20][21]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.947 ns  ; Addr[5] ; memory[20][22]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.947 ns  ; Addr[5] ; memory[20][23]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.946 ns  ; Addr[5] ; DataOut[14]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 10.931 ns  ; Addr[5] ; DataOut[1]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 10.915 ns  ; Addr[3] ; DataOut[8]~reg0  ; Clk      ;
+; N/A                                     ; None                                                ; 10.912 ns  ; Addr[3] ; DataOut[28]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 10.907 ns  ; Addr[3] ; DataOut[15]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; 10.903 ns  ; Addr[3] ; memory[30][31]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.880 ns  ; Addr[5] ; memory[15][12]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.880 ns  ; Addr[5] ; memory[15][13]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.880 ns  ; Addr[5] ; memory[15][15]   ; Clk      ;
+; N/A                                     ; None                                                ; 10.880 ns  ; Addr[5] ; memory[15][4]    ; Clk      ;
+; N/A                                     ; None                                                ; 10.880 ns  ; Addr[5] ; memory[15][5]    ; Clk      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;         ;                  ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+---------+------------------+----------+
+
+
++---------------------------------------------------------------------------------+
+; tco                                                                             ;
++-------+--------------+------------+------------------+-------------+------------+
+; Slack ; Required tco ; Actual tco ; From             ; To          ; From Clock ;
++-------+--------------+------------+------------------+-------------+------------+
+; N/A   ; None         ; 11.093 ns  ; DataOut[23]~reg0 ; DataOut[23] ; Clk        ;
+; N/A   ; None         ; 10.537 ns  ; DataOut[0]~reg0  ; DataOut[0]  ; Clk        ;
+; N/A   ; None         ; 10.104 ns  ; DataOut[13]~reg0 ; DataOut[13] ; Clk        ;
+; N/A   ; None         ; 10.073 ns  ; DataOut[8]~reg0  ; DataOut[8]  ; Clk        ;
+; N/A   ; None         ; 10.066 ns  ; DataOut[5]~reg0  ; DataOut[5]  ; Clk        ;
+; N/A   ; None         ; 10.057 ns  ; DataOut[21]~reg0 ; DataOut[21] ; Clk        ;
+; N/A   ; None         ; 10.055 ns  ; DataOut[4]~reg0  ; DataOut[4]  ; Clk        ;
+; N/A   ; None         ; 10.032 ns  ; DataOut[29]~reg0 ; DataOut[29] ; Clk        ;
+; N/A   ; None         ; 9.941 ns   ; DataOut[24]~reg0 ; DataOut[24] ; Clk        ;
+; N/A   ; None         ; 9.866 ns   ; DataOut[6]~reg0  ; DataOut[6]  ; Clk        ;
+; N/A   ; None         ; 9.784 ns   ; DataOut[10]~reg0 ; DataOut[10] ; Clk        ;
+; N/A   ; None         ; 9.782 ns   ; DataOut[14]~reg0 ; DataOut[14] ; Clk        ;
+; N/A   ; None         ; 9.755 ns   ; DataOut[18]~reg0 ; DataOut[18] ; Clk        ;
+; N/A   ; None         ; 9.741 ns   ; DataOut[1]~reg0  ; DataOut[1]  ; Clk        ;
+; N/A   ; None         ; 9.737 ns   ; DataOut[20]~reg0 ; DataOut[20] ; Clk        ;
+; N/A   ; None         ; 9.735 ns   ; DataOut[2]~reg0  ; DataOut[2]  ; Clk        ;
+; N/A   ; None         ; 9.687 ns   ; DataOut[28]~reg0 ; DataOut[28] ; Clk        ;
+; N/A   ; None         ; 9.680 ns   ; DataOut[31]~reg0 ; DataOut[31] ; Clk        ;
+; N/A   ; None         ; 9.676 ns   ; DataOut[30]~reg0 ; DataOut[30] ; Clk        ;
+; N/A   ; None         ; 9.666 ns   ; DataOut[16]~reg0 ; DataOut[16] ; Clk        ;
+; N/A   ; None         ; 9.618 ns   ; DataOut[19]~reg0 ; DataOut[19] ; Clk        ;
+; N/A   ; None         ; 9.615 ns   ; DataOut[17]~reg0 ; DataOut[17] ; Clk        ;
+; N/A   ; None         ; 9.496 ns   ; DataOut[9]~reg0  ; DataOut[9]  ; Clk        ;
+; N/A   ; None         ; 9.407 ns   ; DataOut[26]~reg0 ; DataOut[26] ; Clk        ;
+; N/A   ; None         ; 9.304 ns   ; DataOut[11]~reg0 ; DataOut[11] ; Clk        ;
+; N/A   ; None         ; 9.241 ns   ; DataOut[7]~reg0  ; DataOut[7]  ; Clk        ;
+; N/A   ; None         ; 9.233 ns   ; DataOut[3]~reg0  ; DataOut[3]  ; Clk        ;
+; N/A   ; None         ; 9.007 ns   ; DataOut[27]~reg0 ; DataOut[27] ; Clk        ;
+; N/A   ; None         ; 8.957 ns   ; DataOut[22]~reg0 ; DataOut[22] ; Clk        ;
+; N/A   ; None         ; 8.908 ns   ; DataOut[25]~reg0 ; DataOut[25] ; Clk        ;
+; N/A   ; None         ; 8.531 ns   ; DataOut[12]~reg0 ; DataOut[12] ; Clk        ;
+; N/A   ; None         ; 8.523 ns   ; DataOut[15]~reg0 ; DataOut[15] ; Clk        ;
++-------+--------------+------------+------------------+-------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                 ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+-----------------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From      ; To              ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+-----------------+----------+
+; N/A                                     ; None                                                ; -0.173 ns ; DataIn[3] ; memory[29][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.218 ns ; DataIn[4] ; memory[9][4]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.219 ns ; DataIn[4] ; memory[1][4]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.334 ns ; DataIn[3] ; memory[7][3]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.334 ns ; DataIn[3] ; memory[15][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.343 ns ; DataIn[3] ; memory[10][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.350 ns ; DataIn[3] ; memory[16][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.352 ns ; DataIn[3] ; memory[25][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.355 ns ; DataIn[3] ; memory[20][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.356 ns ; DataIn[3] ; memory[24][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.361 ns ; DataIn[3] ; memory[2][3]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.363 ns ; DataIn[3] ; memory[8][3]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.369 ns ; DataIn[0] ; memory[29][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.370 ns ; DataIn[3] ; memory[23][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.371 ns ; DataIn[0] ; memory[7][0]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.379 ns ; DataIn[0] ; memory[15][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.387 ns ; DataIn[0] ; memory[17][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.391 ns ; DataIn[0] ; memory[1][0]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.393 ns ; DataIn[3] ; memory[28][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.415 ns ; DataIn[4] ; memory[24][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.444 ns ; DataIn[3] ; memory[31][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.444 ns ; DataIn[3] ; memory[27][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.444 ns ; DataIn[3] ; memory[12][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.444 ns ; DataIn[3] ; memory[6][3]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.479 ns ; DataIn[4] ; memory[10][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.528 ns ; DataIn[4] ; memory[16][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.551 ns ; DataIn[0] ; memory[11][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.574 ns ; BE[3]     ; memory[21][28]  ; Clk      ;
+; N/A                                     ; None                                                ; -0.574 ns ; BE[3]     ; memory[7][31]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.598 ns ; DataIn[3] ; memory[22][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.609 ns ; DataIn[4] ; memory[6][4]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.610 ns ; DataIn[4] ; memory[12][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.628 ns ; DataIn[3] ; memory[3][3]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.628 ns ; DataIn[3] ; memory[0][3]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.631 ns ; DataIn[4] ; memory[20][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.643 ns ; BE[3]     ; memory[5][16]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.644 ns ; BE[3]     ; memory[5][18]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.699 ns ; DataIn[4] ; memory[4][4]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.705 ns ; DataIn[0] ; memory[3][0]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.716 ns ; DataIn[0] ; memory[5][0]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.716 ns ; DataIn[0] ; memory[13][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.749 ns ; DataIn[3] ; memory[30][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.789 ns ; DataIn[3] ; memory[4][3]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.790 ns ; DataIn[3] ; memory[26][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.792 ns ; DataIn[3] ; memory[18][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.794 ns ; DataIn[4] ; memory[26][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.795 ns ; DataIn[4] ; memory[18][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.797 ns ; DataIn[3] ; memory[19][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.797 ns ; DataIn[3] ; memory[5][3]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.797 ns ; DataIn[3] ; memory[13][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.800 ns ; DataIn[3] ; memory[11][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.802 ns ; DataIn[3] ; memory[9][3]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.803 ns ; DataIn[4] ; memory[22][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.803 ns ; DataIn[3] ; memory[1][3]    ; Clk      ;
+; N/A                                     ; None                                                ; -0.804 ns ; DataIn[4] ; memory[30][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.817 ns ; BE[3]     ; memory[5][20]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.819 ns ; BE[3]     ; memory[5][26]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.822 ns ; BE[3]     ; memory[5][24]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.822 ns ; DataIn[0] ; memory[31][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.822 ns ; DataIn[0] ; memory[27][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.823 ns ; BE[3]     ; memory[5][30]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.825 ns ; BE[3]     ; memory[3][19]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.825 ns ; BE[3]     ; memory[3][21]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.826 ns ; BE[3]     ; memory[3][17]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.833 ns ; DataIn[4] ; memory[19][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.895 ns ; DataIn[3] ; memory[14][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.922 ns ; DataIn[0] ; memory[19][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.930 ns ; DataIn[0] ; memory[20][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.932 ns ; DataIn[0] ; memory[24][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.955 ns ; DataIn[4] ; memory[28][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -0.976 ns ; DataIn[4] ; memory[23][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.001 ns ; DataIn[4] ; memory[29][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.003 ns ; DataIn[4] ; memory[8][4]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.003 ns ; DataIn[4] ; memory[2][4]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.005 ns ; DataIn[4] ; memory[21][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.005 ns ; DataIn[4] ; memory[7][4]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.025 ns ; DataIn[0] ; memory[16][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.048 ns ; DataIn[3] ; memory[17][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.062 ns ; DataIn[4] ; memory[31][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.063 ns ; DataIn[4] ; memory[27][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.071 ns ; BE[3]     ; memory[5][22]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.140 ns ; BE[3]     ; memory[7][28]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.142 ns ; DataIn[3] ; memory[21][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.149 ns ; DataIn[0] ; memory[6][0]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.157 ns ; DataIn[0] ; memory[23][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.165 ns ; DataIn[0] ; memory[2][0]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.172 ns ; DataIn[0] ; memory[4][0]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.173 ns ; DataIn[0] ; memory[14][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.175 ns ; DataIn[0] ; memory[10][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.177 ns ; DataIn[0] ; memory[12][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.183 ns ; DataIn[0] ; memory[9][0]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.187 ns ; DataIn[0] ; memory[21][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.213 ns ; DataIn[4] ; memory[15][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.215 ns ; DataIn[4] ; memory[14][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.410 ns ; DataIn[4] ; memory[3][4]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.411 ns ; DataIn[4] ; memory[11][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.425 ns ; BE[3]     ; memory[0][29]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.491 ns ; Reset     ; DataOut[0]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; -1.491 ns ; Reset     ; DataOut[1]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; -1.491 ns ; Reset     ; DataOut[2]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; -1.491 ns ; Reset     ; DataOut[3]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; -1.491 ns ; Reset     ; DataOut[4]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; -1.491 ns ; Reset     ; DataOut[5]~reg0 ; Clk      ;
+; N/A                                     ; None                                                ; -1.522 ns ; Reset     ; memory[8][0]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.522 ns ; Reset     ; memory[8][1]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.522 ns ; Reset     ; memory[8][3]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.522 ns ; Reset     ; memory[8][4]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.533 ns ; BE[3]     ; memory[29][18]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.547 ns ; DataIn[0] ; memory[8][0]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.548 ns ; BE[3]     ; memory[29][16]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.548 ns ; BE[3]     ; memory[19][16]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.552 ns ; BE[3]     ; memory[13][30]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.556 ns ; BE[3]     ; memory[11][17]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.598 ns ; DataIn[0] ; memory[22][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.601 ns ; DataIn[0] ; memory[30][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.643 ns ; DataIn[0] ; memory[0][0]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.657 ns ; DataIn[4] ; memory[0][4]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.695 ns ; BE[3]     ; memory[13][18]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.765 ns ; DataIn[0] ; memory[26][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.766 ns ; DataIn[0] ; memory[18][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.805 ns ; DataIn[0] ; memory[28][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.817 ns ; BE[3]     ; memory[24][31]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.830 ns ; BE[3]     ; memory[3][23]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.830 ns ; BE[3]     ; memory[3][25]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.830 ns ; BE[3]     ; memory[3][27]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.836 ns ; DataIn[4] ; memory[5][4]    ; Clk      ;
+; N/A                                     ; None                                                ; -1.838 ns ; DataIn[4] ; memory[13][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.866 ns ; BE[3]     ; memory[29][26]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.868 ns ; BE[3]     ; memory[21][26]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.891 ns ; BE[3]     ; memory[19][21]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.891 ns ; BE[3]     ; memory[21][21]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.903 ns ; BE[3]     ; memory[24][28]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.920 ns ; BE[3]     ; memory[13][24]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.973 ns ; BE[3]     ; memory[8][31]   ; Clk      ;
+; N/A                                     ; None                                                ; -1.974 ns ; BE[3]     ; memory[12][31]  ; Clk      ;
+; N/A                                     ; None                                                ; -1.981 ns ; BE[3]     ; memory[21][31]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.002 ns ; BE[3]     ; memory[8][28]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.003 ns ; BE[3]     ; memory[12][28]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.010 ns ; BE[3]     ; memory[14][28]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.011 ns ; BE[3]     ; memory[10][28]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.048 ns ; BE[3]     ; memory[27][18]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.084 ns ; BE[3]     ; memory[26][28]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.085 ns ; BE[3]     ; memory[28][28]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.125 ns ; BE[3]     ; memory[21][18]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.125 ns ; BE[3]     ; memory[19][18]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.128 ns ; DataIn[0] ; memory[25][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.134 ns ; Reset     ; memory[4][26]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.134 ns ; Reset     ; memory[4][27]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.134 ns ; Reset     ; memory[4][28]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.134 ns ; Reset     ; memory[4][29]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.134 ns ; Reset     ; memory[4][30]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.134 ns ; Reset     ; memory[4][31]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.149 ns ; BE[3]     ; memory[2][29]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.165 ns ; BE[3]     ; memory[10][24]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.177 ns ; BE[3]     ; memory[10][26]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.186 ns ; Reset     ; memory[8][2]    ; Clk      ;
+; N/A                                     ; None                                                ; -2.186 ns ; Reset     ; memory[8][5]    ; Clk      ;
+; N/A                                     ; None                                                ; -2.186 ns ; Reset     ; memory[8][7]    ; Clk      ;
+; N/A                                     ; None                                                ; -2.186 ns ; Reset     ; memory[8][18]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.209 ns ; Reset     ; memory[26][9]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.209 ns ; Reset     ; memory[26][10]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.209 ns ; Reset     ; memory[26][11]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.209 ns ; Reset     ; memory[26][2]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.209 ns ; Reset     ; memory[26][5]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.209 ns ; Reset     ; memory[26][7]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.209 ns ; Reset     ; memory[26][18]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[28][22]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[28][23]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[28][24]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[28][25]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[28][26]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[12][26]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[12][27]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[28][28]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[12][28]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[28][29]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[12][29]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[12][30]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[28][30]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.221 ns ; Reset     ; memory[12][31]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.226 ns ; BE[3]     ; memory[12][17]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.226 ns ; BE[3]     ; memory[8][17]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.236 ns ; BE[3]     ; memory[19][19]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.236 ns ; BE[3]     ; memory[21][19]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.240 ns ; DataIn[4] ; memory[25][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.242 ns ; BE[3]     ; memory[29][24]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.242 ns ; BE[3]     ; memory[21][24]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.242 ns ; DataIn[4] ; memory[17][4]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.244 ns ; Reset     ; memory[24][14]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.244 ns ; Reset     ; memory[24][0]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.244 ns ; Reset     ; memory[24][1]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.244 ns ; Reset     ; memory[24][3]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.244 ns ; Reset     ; memory[24][16]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.244 ns ; Reset     ; memory[24][18]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.254 ns ; BE[3]     ; memory[13][20]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.264 ns ; BE[3]     ; memory[30][28]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.269 ns ; BE[3]     ; memory[3][20]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.270 ns ; BE[3]     ; memory[11][20]  ; Clk      ;
+; N/A                                     ; None                                                ; -2.277 ns ; BE[3]     ; memory[5][31]   ; Clk      ;
+; N/A                                     ; None                                                ; -2.282 ns ; BE[3]     ; memory[13][21]  ; Clk      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;           ;                 ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+-----------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Wed Jul 07 08:56:20 2010
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off MIPS_RAM -c MIPS_RAM --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "Clk" is an undefined clock
+Info: Clock "Clk" has Internal fmax of 147.56 MHz between source register "memory[3][17]" and destination register "DataOut[17]~reg0" (period= 6.777 ns)
+    Info: + Longest register to register delay is 6.505 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X42_Y22_N17; Fanout = 1; REG Node = 'memory[3][17]'
+        Info: 2: + IC(0.734 ns) + CELL(0.206 ns) = 0.940 ns; Loc. = LCCOMB_X42_Y22_N22; Fanout = 1; COMB Node = 'DataOut~4348'
+        Info: 3: + IC(1.059 ns) + CELL(0.206 ns) = 2.205 ns; Loc. = LCCOMB_X42_Y23_N6; Fanout = 1; COMB Node = 'DataOut~4349'
+        Info: 4: + IC(1.920 ns) + CELL(0.624 ns) = 4.749 ns; Loc. = LCCOMB_X34_Y20_N16; Fanout = 1; COMB Node = 'DataOut~4357'
+        Info: 5: + IC(1.442 ns) + CELL(0.206 ns) = 6.397 ns; Loc. = LCCOMB_X38_Y23_N12; Fanout = 1; COMB Node = 'DataOut~4368'
+        Info: 6: + IC(0.000 ns) + CELL(0.108 ns) = 6.505 ns; Loc. = LCFF_X38_Y23_N13; Fanout = 1; REG Node = 'DataOut[17]~reg0'
+        Info: Total cell delay = 1.350 ns ( 20.75 % )
+        Info: Total interconnect delay = 5.155 ns ( 79.25 % )
+    Info: - Smallest clock skew is -0.008 ns
+        Info: + Shortest clock path from clock "Clk" to destination register is 3.175 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clk'
+            Info: 2: + IC(0.239 ns) + CELL(0.000 ns) = 1.329 ns; Loc. = CLKCTRL_G3; Fanout = 1056; COMB Node = 'Clk~clkctrl'
+            Info: 3: + IC(1.180 ns) + CELL(0.666 ns) = 3.175 ns; Loc. = LCFF_X38_Y23_N13; Fanout = 1; REG Node = 'DataOut[17]~reg0'
+            Info: Total cell delay = 1.756 ns ( 55.31 % )
+            Info: Total interconnect delay = 1.419 ns ( 44.69 % )
+        Info: - Longest clock path from clock "Clk" to source register is 3.183 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clk'
+            Info: 2: + IC(0.239 ns) + CELL(0.000 ns) = 1.329 ns; Loc. = CLKCTRL_G3; Fanout = 1056; COMB Node = 'Clk~clkctrl'
+            Info: 3: + IC(1.188 ns) + CELL(0.666 ns) = 3.183 ns; Loc. = LCFF_X42_Y22_N17; Fanout = 1; REG Node = 'memory[3][17]'
+            Info: Total cell delay = 1.756 ns ( 55.17 % )
+            Info: Total interconnect delay = 1.427 ns ( 44.83 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Micro setup delay of destination is -0.040 ns
+Info: tsu for register "DataOut[21]~reg0" (data pin = "Addr[3]", clock pin = "Clk") is 12.178 ns
+    Info: + Longest pin to register delay is 15.395 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.904 ns) = 0.904 ns; Loc. = PIN_E14; Fanout = 260; PIN Node = 'Addr[3]'
+        Info: 2: + IC(8.483 ns) + CELL(0.650 ns) = 10.037 ns; Loc. = LCCOMB_X37_Y22_N24; Fanout = 1; COMB Node = 'DataOut~4446'
+        Info: 3: + IC(0.664 ns) + CELL(0.206 ns) = 10.907 ns; Loc. = LCCOMB_X38_Y22_N16; Fanout = 1; COMB Node = 'DataOut~4447'
+        Info: 4: + IC(1.872 ns) + CELL(0.206 ns) = 12.985 ns; Loc. = LCCOMB_X35_Y15_N28; Fanout = 1; COMB Node = 'DataOut~4448'
+        Info: 5: + IC(0.354 ns) + CELL(0.206 ns) = 13.545 ns; Loc. = LCCOMB_X35_Y15_N4; Fanout = 1; COMB Node = 'DataOut~4451'
+        Info: 6: + IC(1.536 ns) + CELL(0.206 ns) = 15.287 ns; Loc. = LCCOMB_X36_Y22_N18; Fanout = 1; COMB Node = 'DataOut~4452'
+        Info: 7: + IC(0.000 ns) + CELL(0.108 ns) = 15.395 ns; Loc. = LCFF_X36_Y22_N19; Fanout = 1; REG Node = 'DataOut[21]~reg0'
+        Info: Total cell delay = 2.486 ns ( 16.15 % )
+        Info: Total interconnect delay = 12.909 ns ( 83.85 % )
+    Info: + Micro setup delay of destination is -0.040 ns
+    Info: - Shortest clock path from clock "Clk" to destination register is 3.177 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clk'
+        Info: 2: + IC(0.239 ns) + CELL(0.000 ns) = 1.329 ns; Loc. = CLKCTRL_G3; Fanout = 1056; COMB Node = 'Clk~clkctrl'
+        Info: 3: + IC(1.182 ns) + CELL(0.666 ns) = 3.177 ns; Loc. = LCFF_X36_Y22_N19; Fanout = 1; REG Node = 'DataOut[21]~reg0'
+        Info: Total cell delay = 1.756 ns ( 55.27 % )
+        Info: Total interconnect delay = 1.421 ns ( 44.73 % )
+Info: tco from clock "Clk" to destination pin "DataOut[23]" through register "DataOut[23]~reg0" is 11.093 ns
+    Info: + Longest clock path from clock "Clk" to source register is 3.177 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clk'
+        Info: 2: + IC(0.239 ns) + CELL(0.000 ns) = 1.329 ns; Loc. = CLKCTRL_G3; Fanout = 1056; COMB Node = 'Clk~clkctrl'
+        Info: 3: + IC(1.182 ns) + CELL(0.666 ns) = 3.177 ns; Loc. = LCFF_X36_Y22_N17; Fanout = 1; REG Node = 'DataOut[23]~reg0'
+        Info: Total cell delay = 1.756 ns ( 55.27 % )
+        Info: Total interconnect delay = 1.421 ns ( 44.73 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Longest register to pin delay is 7.612 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X36_Y22_N17; Fanout = 1; REG Node = 'DataOut[23]~reg0'
+        Info: 2: + IC(4.396 ns) + CELL(3.216 ns) = 7.612 ns; Loc. = PIN_AA11; Fanout = 0; PIN Node = 'DataOut[23]'
+        Info: Total cell delay = 3.216 ns ( 42.25 % )
+        Info: Total interconnect delay = 4.396 ns ( 57.75 % )
+Info: th for register "memory[29][3]" (data pin = "DataIn[3]", clock pin = "Clk") is -0.173 ns
+    Info: + Longest clock path from clock "Clk" to destination register is 3.208 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clk'
+        Info: 2: + IC(0.239 ns) + CELL(0.000 ns) = 1.329 ns; Loc. = CLKCTRL_G3; Fanout = 1056; COMB Node = 'Clk~clkctrl'
+        Info: 3: + IC(1.213 ns) + CELL(0.666 ns) = 3.208 ns; Loc. = LCFF_X32_Y19_N21; Fanout = 1; REG Node = 'memory[29][3]'
+        Info: Total cell delay = 1.756 ns ( 54.74 % )
+        Info: Total interconnect delay = 1.452 ns ( 45.26 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+    Info: - Shortest pin to register delay is 3.687 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.080 ns) = 1.080 ns; Loc. = PIN_W12; Fanout = 32; PIN Node = 'DataIn[3]'
+        Info: 2: + IC(2.293 ns) + CELL(0.206 ns) = 3.579 ns; Loc. = LCCOMB_X32_Y19_N20; Fanout = 1; COMB Node = 'memory[29][3]~feeder'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 3.687 ns; Loc. = LCFF_X32_Y19_N21; Fanout = 1; REG Node = 'memory[29][3]'
+        Info: Total cell delay = 1.394 ns ( 37.81 % )
+        Info: Total interconnect delay = 2.293 ns ( 62.19 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 127 megabytes of memory during processing
+    Info: Processing ended: Wed Jul 07 08:56:22 2010
+    Info: Elapsed time: 00:00:02
+
+

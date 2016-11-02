@@ -1,0 +1,12 @@
+Fitter Status : Successful - Wed Jul 21 08:29:45 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : beg
+Top-level Entity Name : beg
+Family : Cyclone
+Device : EP1C12Q240C8
+Timing Models : Final
+Total logic elements : 1,698 / 12,060 ( 14 % )
+Total pins : 164 / 173 ( 95 % )
+Total virtual pins : 0
+Total memory bits : 1,024 / 239,616 ( < 1 % )
+Total PLLs : 0 / 2 ( 0 % )

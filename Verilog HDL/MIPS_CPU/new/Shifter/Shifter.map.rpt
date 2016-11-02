@@ -1,0 +1,369 @@
+Analysis & Synthesis report for Shifter
+Sat Jul 17 01:07:55 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. User-Specified and Inferred Latches
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Jul 17 01:07:55 2010    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; Shifter                                  ;
+; Top-level Entity Name       ; Shifter                                  ;
+; Family                      ; Cyclone                                  ;
+; Total logic elements        ; 409                                      ;
+; Total pins                  ; 71                                       ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; N/A until Partition Merge                ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; N/A until Partition Merge                ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP1C12Q240C8       ;                    ;
+; Top-level entity name                                                          ; Shifter            ; Shifter            ;
+; Family name                                                                    ; Cyclone            ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone                                              ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                       ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                      ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; Shifter.v                        ; yes             ; User Verilog HDL File  ; D:/±à³Ì/verilog HDL/cpu/new/Shifter/Shifter.v ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Total logic elements                        ; 409       ;
+;     -- Combinational with no register       ; 409       ;
+;     -- Register only                        ; 0         ;
+;     -- Combinational with a register        ; 0         ;
+;                                             ;           ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 172       ;
+;     -- 3 input functions                    ; 218       ;
+;     -- 2 input functions                    ; 19        ;
+;     -- 1 input functions                    ; 0         ;
+;     -- 0 input functions                    ; 0         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 409       ;
+;     -- arithmetic mode                      ; 0         ;
+;     -- qfbk mode                            ; 0         ;
+;     -- register cascade mode                ; 0         ;
+;     -- synchronous clear/load mode          ; 0         ;
+;     -- asynchronous clear/load mode         ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 0         ;
+; I/O pins                                    ; 71        ;
+; Maximum fan-out node                        ; SHT_DB[1] ;
+; Maximum fan-out                             ; 79        ;
+; Total fan-out                               ; 1412      ;
+; Average fan-out                             ; 2.94      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |Shifter                   ; 409 (409)   ; 0            ; 0           ; 71   ; 0            ; 409 (409)    ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Shifter            ; work         ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; SHT_DC[0]$latch                                     ; Mux32               ; yes                    ;
+; SHT_DC[1]$latch                                     ; Mux32               ; yes                    ;
+; SHT_DC[2]$latch                                     ; Mux32               ; yes                    ;
+; SHT_DC[3]$latch                                     ; Mux32               ; yes                    ;
+; SHT_DC[4]$latch                                     ; Mux32               ; yes                    ;
+; SHT_DC[5]$latch                                     ; Mux32               ; yes                    ;
+; SHT_DC[6]$latch                                     ; Mux32               ; yes                    ;
+; SHT_DC[7]$latch                                     ; Mux32               ; yes                    ;
+; SHT_DC[8]$latch                                     ; Mux32               ; yes                    ;
+; SHT_DC[9]$latch                                     ; Mux32               ; yes                    ;
+; SHT_DC[10]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[11]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[12]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[13]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[14]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[15]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[16]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[17]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[18]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[19]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[20]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[21]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[22]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[23]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[24]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[25]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[26]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[27]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[28]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[29]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[30]$latch                                    ; Mux32               ; yes                    ;
+; SHT_DC[31]$latch                                    ; Mux32               ; yes                    ;
+; Number of user-specified and inferred latches = 32  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |Shifter|Mux18             ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |Shifter|Mux12             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 20 LEs               ; 4 LEs                  ; No         ; |Shifter|Mux26             ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 10 LEs               ; 2 LEs                  ; No         ; |Shifter|Mux28             ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |Shifter|Mux7              ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; No         ; |Shifter|Mux30             ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Shifter|Mux2              ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |Shifter|Mux0              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sat Jul 17 01:07:51 2010
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Shifter -c Shifter
+Info: Found 1 design units, including 1 entities, in source file Shifter.v
+    Info: Found entity 1: Shifter
+Info: Elaborating entity "Shifter" for the top level hierarchy
+Warning (10240): Verilog HDL Always Construct warning at Shifter.v(18): inferring latch(es) for variable "SHT_DC", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "SHT_DC[0]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[1]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[2]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[3]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[4]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[5]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[6]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[7]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[8]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[9]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[10]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[11]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[12]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[13]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[14]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[15]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[16]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[17]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[18]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[19]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[20]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[21]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[22]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[23]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[24]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[25]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[26]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[27]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[28]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[29]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[30]" at Shifter.v(18)
+Info (10041): Inferred latch for "SHT_DC[31]" at Shifter.v(18)
+Warning: Latch SHT_DC[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[7]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[8]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[9]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[10]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[11]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[12]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[13]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[14]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[15]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[16]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[17]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[18]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[19]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[20]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[21]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[22]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[23]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[24]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[25]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[26]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[27]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[28]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[29]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[1]
+Warning: Latch SHT_DC[30]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Warning: Latch SHT_DC[31]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal SHT_Func[0]
+Info: Implemented 480 device resources after synthesis - the final resource count might be different
+    Info: Implemented 39 input pins
+    Info: Implemented 32 output pins
+    Info: Implemented 409 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Allocated 166 megabytes of memory during processing
+    Info: Processing ended: Sat Jul 17 01:07:55 2010
+    Info: Elapsed time: 00:00:04
+
+

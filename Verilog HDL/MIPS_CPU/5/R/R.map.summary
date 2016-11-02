@@ -1,0 +1,12 @@
+Analysis & Synthesis Status : Successful - Mon Jul 19 18:18:00 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : R
+Top-level Entity Name : R
+Family : Cyclone
+Total logic elements : 6,112
+Total pins : 141
+Total virtual pins : 0
+Total memory bits : 1,024
+DSP block 9-bit elements : N/A until Partition Merge
+Total PLLs : 0
+Total DLLs : N/A until Partition Merge

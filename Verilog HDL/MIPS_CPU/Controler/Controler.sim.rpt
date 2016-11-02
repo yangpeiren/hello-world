@@ -1,0 +1,657 @@
+Simulator report for Controler
+Sat Jul 24 00:38:24 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 248 nodes    ;
+; Simulation Coverage         ;       0.00 % ;
+; Total Number of Transitions ; 0            ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone      ;
+; Device                      ; EP1C12Q240C8 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       0.00 % ;
+; Total nodes checked                                 ; 248          ;
+; Total output ports checked                          ; 248          ;
+; Total output ports with complete 1/0-value coverage ; 0            ;
+; Total output ports with no 1/0-value coverage       ; 248          ;
+; Total output ports with no 1-value coverage         ; 248          ;
+; Total output ports with no 0-value coverage         ; 248          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-------------------------------------------------+
+; Complete 1/0-Value Coverage                     ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                         ;
++-----------------------------+---------------------------------+------------------+
+; Node Name                   ; Output Port Name                ; Output Port Type ;
++-----------------------------+---------------------------------+------------------+
+; |Controler|state[11]~reg0   ; |Controler|state[11]~reg0       ; regout           ;
+; |Controler|PCWrite~785      ; |Controler|PCWrite~785          ; combout          ;
+; |Controler|PCWrite~786      ; |Controler|PCWrite~786          ; combout          ;
+; |Controler|state[12]~reg0   ; |Controler|state[12]~reg0       ; regout           ;
+; |Controler|state[8]~reg0    ; |Controler|state[8]~reg0        ; regout           ;
+; |Controler|always0~97       ; |Controler|always0~97           ; combout          ;
+; |Controler|PCWrite~0        ; |Controler|PCWrite~0            ; combout          ;
+; |Controler|state[0]~reg0    ; |Controler|state[0]~reg0        ; regout           ;
+; |Controler|state[17]~reg0   ; |Controler|state[17]~reg0       ; regout           ;
+; |Controler|state[16]~reg0   ; |Controler|state[16]~reg0       ; regout           ;
+; |Controler|state[15]~reg0   ; |Controler|state[15]~reg0       ; regout           ;
+; |Controler|state[14]~reg0   ; |Controler|state[14]~reg0       ; regout           ;
+; |Controler|ExCode~27        ; |Controler|ExCode~27            ; combout          ;
+; |Controler|state[18]~reg0   ; |Controler|state[18]~reg0       ; regout           ;
+; |Controler|ALUSrcB~18       ; |Controler|ALUSrcB~18           ; combout          ;
+; |Controler|PCWrite~787      ; |Controler|PCWrite~787          ; combout          ;
+; |Controler|PCWrite~788      ; |Controler|PCWrite~788          ; combout          ;
+; |Controler|is_Branch_al2~32 ; |Controler|is_Branch_al2~32     ; combout          ;
+; |Controler|PCWrite~789      ; |Controler|PCWrite~789          ; combout          ;
+; |Controler|PCWrite~790      ; |Controler|PCWrite~790          ; combout          ;
+; |Controler|PCWrite~791      ; |Controler|PCWrite~791          ; combout          ;
+; |Controler|state[3]~reg0    ; |Controler|state[3]~reg0        ; regout           ;
+; |Controler|BE~1             ; |Controler|BE~1                 ; combout          ;
+; |Controler|BE~160           ; |Controler|BE~160               ; combout          ;
+; |Controler|is_sl~11         ; |Controler|is_sl~11             ; combout          ;
+; |Controler|BE~161           ; |Controler|BE~161               ; combout          ;
+; |Controler|BE~162           ; |Controler|BE~162               ; combout          ;
+; |Controler|BE~12            ; |Controler|BE~12                ; combout          ;
+; |Controler|PCWrite~792      ; |Controler|PCWrite~792          ; combout          ;
+; |Controler|ALUOp~1682       ; |Controler|ALUOp~1682           ; combout          ;
+; |Controler|ALUOp~1683       ; |Controler|ALUOp~1683           ; combout          ;
+; |Controler|is_jl~10         ; |Controler|is_jl~10             ; combout          ;
+; |Controler|ALUSrcA~64       ; |Controler|ALUSrcA~64           ; combout          ;
+; |Controler|ALUOp~1684       ; |Controler|ALUOp~1684           ; combout          ;
+; |Controler|RegWrite~268     ; |Controler|RegWrite~268         ; combout          ;
+; |Controler|RFSource~46      ; |Controler|RFSource~46          ; combout          ;
+; |Controler|RegDst~61        ; |Controler|RegDst~61            ; combout          ;
+; |Controler|state[5]~reg0    ; |Controler|state[5]~reg0        ; regout           ;
+; |Controler|RegWrite~269     ; |Controler|RegWrite~269         ; combout          ;
+; |Controler|RegWrite~11      ; |Controler|RegWrite~11          ; combout          ;
+; |Controler|is_cp0~34        ; |Controler|is_cp0~34            ; combout          ;
+; |Controler|ALUOp~1685       ; |Controler|ALUOp~1685           ; combout          ;
+; |Controler|PCWrite~793      ; |Controler|PCWrite~793          ; combout          ;
+; |Controler|ALUOp~1686       ; |Controler|ALUOp~1686           ; combout          ;
+; |Controler|is_Func14~27     ; |Controler|is_Func14~27         ; combout          ;
+; |Controler|is_Func2~34      ; |Controler|is_Func2~34          ; combout          ;
+; |Controler|state[6]~reg0    ; |Controler|state[6]~reg0        ; regout           ;
+; |Controler|ALUOp~1687       ; |Controler|ALUOp~1687           ; combout          ;
+; |Controler|state[7]~reg0    ; |Controler|state[7]~reg0        ; regout           ;
+; |Controler|ALUOp~1688       ; |Controler|ALUOp~1688           ; combout          ;
+; |Controler|ALUOp~1689       ; |Controler|ALUOp~1689           ; combout          ;
+; |Controler|ALUOp~1690       ; |Controler|ALUOp~1690           ; combout          ;
+; |Controler|ALUSrcA~65       ; |Controler|ALUSrcA~65           ; combout          ;
+; |Controler|state[2]~reg0    ; |Controler|state[2]~reg0        ; regout           ;
+; |Controler|state[1]~reg0    ; |Controler|state[1]~reg0        ; regout           ;
+; |Controler|ALUSrcB~19       ; |Controler|ALUSrcB~19           ; combout          ;
+; |Controler|ALUOp~1691       ; |Controler|ALUOp~1691           ; combout          ;
+; |Controler|ALUOp~1692       ; |Controler|ALUOp~1692           ; combout          ;
+; |Controler|PCSource~127     ; |Controler|PCSource~127         ; combout          ;
+; |Controler|ALUOp~1693       ; |Controler|ALUOp~1693           ; combout          ;
+; |Controler|ALUOp~1694       ; |Controler|ALUOp~1694           ; combout          ;
+; |Controler|ALUOp~1695       ; |Controler|ALUOp~1695           ; combout          ;
+; |Controler|BE~163           ; |Controler|BE~163               ; combout          ;
+; |Controler|ALUOp~1696       ; |Controler|ALUOp~1696           ; combout          ;
+; |Controler|is_nop~26        ; |Controler|is_nop~26            ; combout          ;
+; |Controler|is_Func14~28     ; |Controler|is_Func14~28         ; combout          ;
+; |Controler|ALUOp~1697       ; |Controler|ALUOp~1697           ; combout          ;
+; |Controler|ALUOp~1698       ; |Controler|ALUOp~1698           ; combout          ;
+; |Controler|state[13]~reg0   ; |Controler|state[13]~reg0       ; regout           ;
+; |Controler|CP0Write~7       ; |Controler|CP0Write~7           ; combout          ;
+; |Controler|RegDst~1         ; |Controler|RegDst~1             ; combout          ;
+; |Controler|RFSource~7       ; |Controler|RFSource~7           ; combout          ;
+; |Controler|RFSource~3       ; |Controler|RFSource~3           ; combout          ;
+; |Controler|ALUSrcA~66       ; |Controler|ALUSrcA~66           ; combout          ;
+; |Controler|ALUSrcA~67       ; |Controler|ALUSrcA~67           ; combout          ;
+; |Controler|ALUSrcB~6        ; |Controler|ALUSrcB~6            ; combout          ;
+; |Controler|ALUSrcB~0        ; |Controler|ALUSrcB~0            ; combout          ;
+; |Controler|SHTOp~152        ; |Controler|SHTOp~152            ; combout          ;
+; |Controler|MULWrite~120     ; |Controler|MULWrite~120         ; combout          ;
+; |Controler|ALUOutSrc~429    ; |Controler|ALUOutSrc~429        ; combout          ;
+; |Controler|ALUOutSrc~430    ; |Controler|ALUOutSrc~430        ; combout          ;
+; |Controler|MULStart~310     ; |Controler|MULStart~310         ; combout          ;
+; |Controler|ALUOutSrc~431    ; |Controler|ALUOutSrc~431        ; combout          ;
+; |Controler|is_Func9~42      ; |Controler|is_Func9~42          ; combout          ;
+; |Controler|ALUOutSrc~432    ; |Controler|ALUOutSrc~432        ; combout          ;
+; |Controler|CP0Src~10        ; |Controler|CP0Src~10            ; combout          ;
+; |Controler|PCSource~128     ; |Controler|PCSource~128         ; combout          ;
+; |Controler|PCSource~129     ; |Controler|PCSource~129         ; combout          ;
+; |Controler|PCSource~130     ; |Controler|PCSource~130         ; combout          ;
+; |Controler|PCSource~131     ; |Controler|PCSource~131         ; combout          ;
+; |Controler|is_Func15~35     ; |Controler|is_Func15~35         ; combout          ;
+; |Controler|ALUOutSrc~433    ; |Controler|ALUOutSrc~433        ; combout          ;
+; |Controler|SHTOp~153        ; |Controler|SHTOp~153            ; combout          ;
+; |Controler|MULSelMD~177     ; |Controler|MULSelMD~177         ; combout          ;
+; |Controler|MULSelMD~178     ; |Controler|MULSelMD~178         ; combout          ;
+; |Controler|MULStart~311     ; |Controler|MULStart~311         ; combout          ;
+; |Controler|MULStart~312     ; |Controler|MULStart~312         ; combout          ;
+; |Controler|MULStart~313     ; |Controler|MULStart~313         ; combout          ;
+; |Controler|MULSelHL~16      ; |Controler|MULSelHL~16          ; combout          ;
+; |Controler|MULWrite~121     ; |Controler|MULWrite~121         ; combout          ;
+; |Controler|MemSign~0        ; |Controler|MemSign~0            ; combout          ;
+; |Controler|Equal3~97        ; |Controler|Equal3~97            ; combout          ;
+; |Controler|Equal1~85        ; |Controler|Equal1~85            ; combout          ;
+; |Controler|Equal2~75        ; |Controler|Equal2~75            ; combout          ;
+; |Controler|Equal5~54        ; |Controler|Equal5~54            ; combout          ;
+; |Controler|Equal1~86        ; |Controler|Equal1~86            ; combout          ;
+; |Controler|Equal1~87        ; |Controler|Equal1~87            ; combout          ;
+; |Controler|state[10]~reg0   ; |Controler|Equal13~70           ; combout          ;
+; |Controler|state[10]~reg0   ; |Controler|state[10]~reg0       ; regout           ;
+; |Controler|Equal8~63        ; |Controler|Equal8~63            ; combout          ;
+; |Controler|Equal11~68       ; |Controler|Equal11~68           ; combout          ;
+; |Controler|Equal12~65       ; |Controler|Equal12~65           ; combout          ;
+; |Controler|Equal12~66       ; |Controler|Equal12~66           ; combout          ;
+; |Controler|Equal13~71       ; |Controler|Equal13~71           ; combout          ;
+; |Controler|Equal7~137       ; |Controler|Equal7~137           ; combout          ;
+; |Controler|Equal7~138       ; |Controler|Equal7~138           ; combout          ;
+; |Controler|Equal2~76        ; |Controler|Equal2~76            ; combout          ;
+; |Controler|Equal3~98        ; |Controler|Equal3~98            ; combout          ;
+; |Controler|Equal7~139       ; |Controler|Equal7~139           ; combout          ;
+; |Controler|Equal5~55        ; |Controler|Equal5~55            ; combout          ;
+; |Controler|Equal7~140       ; |Controler|Equal7~140           ; combout          ;
+; |Controler|Equal7~141       ; |Controler|Equal7~141           ; combout          ;
+; |Controler|Equal7~142       ; |Controler|Equal7~142           ; combout          ;
+; |Controler|Equal6~65        ; |Controler|Equal6~65            ; combout          ;
+; |Controler|Equal10~81       ; |Controler|Equal10~81           ; combout          ;
+; |Controler|Equal7~143       ; |Controler|Equal7~143           ; combout          ;
+; |Controler|state~732        ; |Controler|state~732            ; combout          ;
+; |Controler|Equal6~66        ; |Controler|Equal6~66            ; combout          ;
+; |Controler|Selector17~307   ; |Controler|Selector17~307       ; combout          ;
+; |Controler|Equal8~64        ; |Controler|Equal8~64            ; combout          ;
+; |Controler|always0~2        ; |Controler|always0~2            ; combout          ;
+; |Controler|is_r             ; |Controler|is_r                 ; combout          ;
+; |Controler|is_nop~27        ; |Controler|is_nop~27            ; combout          ;
+; |Controler|Selector17~308   ; |Controler|Selector17~308       ; combout          ;
+; |Controler|Selector17~309   ; |Controler|Selector17~309       ; combout          ;
+; |Controler|Equal5~56        ; |Controler|Equal5~56            ; combout          ;
+; |Controler|Equal0~63        ; |Controler|Equal0~63            ; combout          ;
+; |Controler|Selector17~310   ; |Controler|Selector17~310       ; combout          ;
+; |Controler|always0~5        ; |Controler|always0~5            ; combout          ;
+; |Controler|Selector1~207    ; |Controler|Selector1~207        ; combout          ;
+; |Controler|Selector1~208    ; |Controler|Selector1~208        ; combout          ;
+; |Controler|Selector1~209    ; |Controler|Selector1~209        ; combout          ;
+; |Controler|is_esc~34        ; |Controler|is_esc~34            ; combout          ;
+; |Controler|is_esc~35        ; |Controler|is_esc~35            ; combout          ;
+; |Controler|Selector4~60     ; |Controler|Selector4~60         ; combout          ;
+; |Controler|Selector4~61     ; |Controler|Selector4~61         ; combout          ;
+; |Controler|Selector4~62     ; |Controler|Selector4~62         ; combout          ;
+; |Controler|Selector4~63     ; |Controler|Selector4~63         ; combout          ;
+; |Controler|always0~98       ; |Controler|always0~98           ; combout          ;
+; |Controler|Selector12~66    ; |Controler|Selector12~66        ; combout          ;
+; |Controler|PCSource~132     ; |Controler|PCSource~132         ; combout          ;
+; |Controler|ALUOp~1699       ; |Controler|ALUOp~1699           ; combout          ;
+; |Controler|PCSource~4       ; |Controler|PCSource~4           ; combout          ;
+; |Controler|ALUOutSrc~434    ; |Controler|ALUOutSrc~434        ; combout          ;
+; |Controler|MULWrite~122     ; |Controler|MULWrite~122         ; combout          ;
+; |Controler|Selector17~312   ; |Controler|Selector17~312       ; combout          ;
+; |Controler|ALUOp~1700       ; |Controler|ALUOp~1700           ; combout          ;
+; |Controler|ALUOp~1672       ; |Controler|ALUOp~1672           ; combout          ;
+; |Controler|PCWrite          ; |Controler|PCWrite              ; padio            ;
+; |Controler|MemRW            ; |Controler|MemRW                ; padio            ;
+; |Controler|BE[0]            ; |Controler|BE[0]                ; padio            ;
+; |Controler|BE[1]            ; |Controler|BE[1]                ; padio            ;
+; |Controler|BE[2]            ; |Controler|BE[2]                ; padio            ;
+; |Controler|BE[3]            ; |Controler|BE[3]                ; padio            ;
+; |Controler|IRWrite          ; |Controler|IRWrite              ; padio            ;
+; |Controler|RegWrite         ; |Controler|RegWrite             ; padio            ;
+; |Controler|ALUOp[0]         ; |Controler|ALUOp[0]             ; padio            ;
+; |Controler|ALUOp[1]         ; |Controler|ALUOp[1]             ; padio            ;
+; |Controler|ALUOp[2]         ; |Controler|ALUOp[2]             ; padio            ;
+; |Controler|ALUOp[3]         ; |Controler|ALUOp[3]             ; padio            ;
+; |Controler|CP0Write         ; |Controler|CP0Write             ; padio            ;
+; |Controler|IorD             ; |Controler|IorD                 ; padio            ;
+; |Controler|RegDst[0]        ; |Controler|RegDst[0]            ; padio            ;
+; |Controler|RegDst[1]        ; |Controler|RegDst[1]            ; padio            ;
+; |Controler|RFSource[0]      ; |Controler|RFSource[0]          ; padio            ;
+; |Controler|RFSource[1]      ; |Controler|RFSource[1]          ; padio            ;
+; |Controler|ALUSrcA          ; |Controler|ALUSrcA              ; padio            ;
+; |Controler|ALUSrcB[0]       ; |Controler|ALUSrcB[0]           ; padio            ;
+; |Controler|ALUSrcB[1]       ; |Controler|ALUSrcB[1]           ; padio            ;
+; |Controler|SHTNumSrc        ; |Controler|SHTNumSrc            ; padio            ;
+; |Controler|ALUOutSrc[0]     ; |Controler|ALUOutSrc[0]         ; padio            ;
+; |Controler|ALUOutSrc[1]     ; |Controler|ALUOutSrc[1]         ; padio            ;
+; |Controler|CP0Src           ; |Controler|CP0Src               ; padio            ;
+; |Controler|PCSource[0]      ; |Controler|PCSource[0]          ; padio            ;
+; |Controler|PCSource[1]      ; |Controler|PCSource[1]          ; padio            ;
+; |Controler|PCSource[2]      ; |Controler|PCSource[2]          ; padio            ;
+; |Controler|SHTOp[0]         ; |Controler|SHTOp[0]             ; padio            ;
+; |Controler|SHTOp[1]         ; |Controler|SHTOp[1]             ; padio            ;
+; |Controler|MULSelMD         ; |Controler|MULSelMD             ; padio            ;
+; |Controler|MULStart         ; |Controler|MULStart             ; padio            ;
+; |Controler|MULSelHL         ; |Controler|MULSelHL             ; padio            ;
+; |Controler|MULWrite         ; |Controler|MULWrite             ; padio            ;
+; |Controler|ExCode[0]        ; |Controler|ExCode[0]            ; padio            ;
+; |Controler|ExCode[1]        ; |Controler|ExCode[1]            ; padio            ;
+; |Controler|ExCode[2]        ; |Controler|ExCode[2]            ; padio            ;
+; |Controler|ExCode[3]        ; |Controler|ExCode[3]            ; padio            ;
+; |Controler|ExCode[4]        ; |Controler|ExCode[4]            ; padio            ;
+; |Controler|Exception        ; |Controler|Exception            ; padio            ;
+; |Controler|state[0]         ; |Controler|state[0]             ; padio            ;
+; |Controler|state[1]         ; |Controler|state[1]             ; padio            ;
+; |Controler|state[2]         ; |Controler|state[2]             ; padio            ;
+; |Controler|state[3]         ; |Controler|state[3]             ; padio            ;
+; |Controler|state[4]         ; |Controler|state[4]             ; padio            ;
+; |Controler|state[5]         ; |Controler|state[5]             ; padio            ;
+; |Controler|state[6]         ; |Controler|state[6]             ; padio            ;
+; |Controler|state[7]         ; |Controler|state[7]             ; padio            ;
+; |Controler|state[8]         ; |Controler|state[8]             ; padio            ;
+; |Controler|state[9]         ; |Controler|state[9]             ; padio            ;
+; |Controler|state[10]        ; |Controler|state[10]            ; padio            ;
+; |Controler|state[11]        ; |Controler|state[11]            ; padio            ;
+; |Controler|state[12]        ; |Controler|state[12]            ; padio            ;
+; |Controler|state[13]        ; |Controler|state[13]            ; padio            ;
+; |Controler|state[14]        ; |Controler|state[14]            ; padio            ;
+; |Controler|state[15]        ; |Controler|state[15]            ; padio            ;
+; |Controler|state[16]        ; |Controler|state[16]            ; padio            ;
+; |Controler|state[17]        ; |Controler|state[17]            ; padio            ;
+; |Controler|state[18]        ; |Controler|state[18]            ; padio            ;
+; |Controler|MemSign          ; |Controler|MemSign              ; padio            ;
+; |Controler|IR[31]           ; |Controler|IR[31]~corein        ; combout          ;
+; |Controler|IR[30]           ; |Controler|IR[30]~corein        ; combout          ;
+; |Controler|IR[29]           ; |Controler|IR[29]~corein        ; combout          ;
+; |Controler|ALU_Zero         ; |Controler|ALU_Zero~corein      ; combout          ;
+; |Controler|IR[27]           ; |Controler|IR[27]~corein        ; combout          ;
+; |Controler|IR[26]           ; |Controler|IR[26]~corein        ; combout          ;
+; |Controler|IR[28]           ; |Controler|IR[28]~corein        ; combout          ;
+; |Controler|CP0_rs[25]       ; |Controler|CP0_rs[25]~corein    ; combout          ;
+; |Controler|CP0_rs[21]       ; |Controler|CP0_rs[21]~corein    ; combout          ;
+; |Controler|CP0_rs[24]       ; |Controler|CP0_rs[24]~corein    ; combout          ;
+; |Controler|CP0_rs[22]       ; |Controler|CP0_rs[22]~corein    ; combout          ;
+; |Controler|CP0_rs[23]       ; |Controler|CP0_rs[23]~corein    ; combout          ;
+; |Controler|Branch_al[18]    ; |Controler|Branch_al[18]~corein ; combout          ;
+; |Controler|Branch_al[19]    ; |Controler|Branch_al[19]~corein ; combout          ;
+; |Controler|Branch_al[17]    ; |Controler|Branch_al[17]~corein ; combout          ;
+; |Controler|Branch_al[20]    ; |Controler|Branch_al[20]~corein ; combout          ;
+; |Controler|Branch_al[16]    ; |Controler|Branch_al[16]~corein ; combout          ;
+; |Controler|Func[5]          ; |Controler|Func[5]~corein       ; combout          ;
+; |Controler|Func[4]          ; |Controler|Func[4]~corein       ; combout          ;
+; |Controler|Func[2]          ; |Controler|Func[2]~corein       ; combout          ;
+; |Controler|Func[1]          ; |Controler|Func[1]~corein       ; combout          ;
+; |Controler|Func[3]          ; |Controler|Func[3]~corein       ; combout          ;
+; |Controler|Func[0]          ; |Controler|Func[0]~corein       ; combout          ;
+; |Controler|PClk             ; |Controler|PClk~corein          ; combout          ;
+; |Controler|Reset            ; |Controler|Reset~corein         ; combout          ;
+; |Controler|IE               ; |Controler|IE~corein            ; combout          ;
+; |Controler|ALU_Overflow     ; |Controler|ALU_Overflow~corein  ; combout          ;
+; |Controler|ExtInt           ; |Controler|ExtInt~corein        ; combout          ;
+; |Controler|MemData_Ready    ; |Controler|MemData_Ready~corein ; combout          ;
+; |Controler|Mul_Ready        ; |Controler|Mul_Ready~corein     ; combout          ;
++-----------------------------+---------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                         ;
++-----------------------------+---------------------------------+------------------+
+; Node Name                   ; Output Port Name                ; Output Port Type ;
++-----------------------------+---------------------------------+------------------+
+; |Controler|state[11]~reg0   ; |Controler|state[11]~reg0       ; regout           ;
+; |Controler|PCWrite~785      ; |Controler|PCWrite~785          ; combout          ;
+; |Controler|PCWrite~786      ; |Controler|PCWrite~786          ; combout          ;
+; |Controler|state[12]~reg0   ; |Controler|state[12]~reg0       ; regout           ;
+; |Controler|state[8]~reg0    ; |Controler|state[8]~reg0        ; regout           ;
+; |Controler|always0~97       ; |Controler|always0~97           ; combout          ;
+; |Controler|PCWrite~0        ; |Controler|PCWrite~0            ; combout          ;
+; |Controler|state[0]~reg0    ; |Controler|state[0]~reg0        ; regout           ;
+; |Controler|state[17]~reg0   ; |Controler|state[17]~reg0       ; regout           ;
+; |Controler|state[16]~reg0   ; |Controler|state[16]~reg0       ; regout           ;
+; |Controler|state[15]~reg0   ; |Controler|state[15]~reg0       ; regout           ;
+; |Controler|state[14]~reg0   ; |Controler|state[14]~reg0       ; regout           ;
+; |Controler|ExCode~27        ; |Controler|ExCode~27            ; combout          ;
+; |Controler|state[18]~reg0   ; |Controler|state[18]~reg0       ; regout           ;
+; |Controler|ALUSrcB~18       ; |Controler|ALUSrcB~18           ; combout          ;
+; |Controler|PCWrite~787      ; |Controler|PCWrite~787          ; combout          ;
+; |Controler|PCWrite~788      ; |Controler|PCWrite~788          ; combout          ;
+; |Controler|is_Branch_al2~32 ; |Controler|is_Branch_al2~32     ; combout          ;
+; |Controler|PCWrite~789      ; |Controler|PCWrite~789          ; combout          ;
+; |Controler|PCWrite~790      ; |Controler|PCWrite~790          ; combout          ;
+; |Controler|PCWrite~791      ; |Controler|PCWrite~791          ; combout          ;
+; |Controler|state[3]~reg0    ; |Controler|state[3]~reg0        ; regout           ;
+; |Controler|BE~1             ; |Controler|BE~1                 ; combout          ;
+; |Controler|BE~160           ; |Controler|BE~160               ; combout          ;
+; |Controler|is_sl~11         ; |Controler|is_sl~11             ; combout          ;
+; |Controler|BE~161           ; |Controler|BE~161               ; combout          ;
+; |Controler|BE~162           ; |Controler|BE~162               ; combout          ;
+; |Controler|BE~12            ; |Controler|BE~12                ; combout          ;
+; |Controler|PCWrite~792      ; |Controler|PCWrite~792          ; combout          ;
+; |Controler|ALUOp~1682       ; |Controler|ALUOp~1682           ; combout          ;
+; |Controler|ALUOp~1683       ; |Controler|ALUOp~1683           ; combout          ;
+; |Controler|is_jl~10         ; |Controler|is_jl~10             ; combout          ;
+; |Controler|ALUSrcA~64       ; |Controler|ALUSrcA~64           ; combout          ;
+; |Controler|ALUOp~1684       ; |Controler|ALUOp~1684           ; combout          ;
+; |Controler|RegWrite~268     ; |Controler|RegWrite~268         ; combout          ;
+; |Controler|RFSource~46      ; |Controler|RFSource~46          ; combout          ;
+; |Controler|RegDst~61        ; |Controler|RegDst~61            ; combout          ;
+; |Controler|state[5]~reg0    ; |Controler|state[5]~reg0        ; regout           ;
+; |Controler|RegWrite~269     ; |Controler|RegWrite~269         ; combout          ;
+; |Controler|RegWrite~11      ; |Controler|RegWrite~11          ; combout          ;
+; |Controler|is_cp0~34        ; |Controler|is_cp0~34            ; combout          ;
+; |Controler|ALUOp~1685       ; |Controler|ALUOp~1685           ; combout          ;
+; |Controler|PCWrite~793      ; |Controler|PCWrite~793          ; combout          ;
+; |Controler|ALUOp~1686       ; |Controler|ALUOp~1686           ; combout          ;
+; |Controler|is_Func14~27     ; |Controler|is_Func14~27         ; combout          ;
+; |Controler|is_Func2~34      ; |Controler|is_Func2~34          ; combout          ;
+; |Controler|state[6]~reg0    ; |Controler|state[6]~reg0        ; regout           ;
+; |Controler|ALUOp~1687       ; |Controler|ALUOp~1687           ; combout          ;
+; |Controler|state[7]~reg0    ; |Controler|state[7]~reg0        ; regout           ;
+; |Controler|ALUOp~1688       ; |Controler|ALUOp~1688           ; combout          ;
+; |Controler|ALUOp~1689       ; |Controler|ALUOp~1689           ; combout          ;
+; |Controler|ALUOp~1690       ; |Controler|ALUOp~1690           ; combout          ;
+; |Controler|ALUSrcA~65       ; |Controler|ALUSrcA~65           ; combout          ;
+; |Controler|state[2]~reg0    ; |Controler|state[2]~reg0        ; regout           ;
+; |Controler|state[1]~reg0    ; |Controler|state[1]~reg0        ; regout           ;
+; |Controler|ALUSrcB~19       ; |Controler|ALUSrcB~19           ; combout          ;
+; |Controler|ALUOp~1691       ; |Controler|ALUOp~1691           ; combout          ;
+; |Controler|ALUOp~1692       ; |Controler|ALUOp~1692           ; combout          ;
+; |Controler|PCSource~127     ; |Controler|PCSource~127         ; combout          ;
+; |Controler|ALUOp~1693       ; |Controler|ALUOp~1693           ; combout          ;
+; |Controler|ALUOp~1694       ; |Controler|ALUOp~1694           ; combout          ;
+; |Controler|ALUOp~1695       ; |Controler|ALUOp~1695           ; combout          ;
+; |Controler|BE~163           ; |Controler|BE~163               ; combout          ;
+; |Controler|ALUOp~1696       ; |Controler|ALUOp~1696           ; combout          ;
+; |Controler|is_nop~26        ; |Controler|is_nop~26            ; combout          ;
+; |Controler|is_Func14~28     ; |Controler|is_Func14~28         ; combout          ;
+; |Controler|ALUOp~1697       ; |Controler|ALUOp~1697           ; combout          ;
+; |Controler|ALUOp~1698       ; |Controler|ALUOp~1698           ; combout          ;
+; |Controler|state[13]~reg0   ; |Controler|state[13]~reg0       ; regout           ;
+; |Controler|CP0Write~7       ; |Controler|CP0Write~7           ; combout          ;
+; |Controler|RegDst~1         ; |Controler|RegDst~1             ; combout          ;
+; |Controler|RFSource~7       ; |Controler|RFSource~7           ; combout          ;
+; |Controler|RFSource~3       ; |Controler|RFSource~3           ; combout          ;
+; |Controler|ALUSrcA~66       ; |Controler|ALUSrcA~66           ; combout          ;
+; |Controler|ALUSrcA~67       ; |Controler|ALUSrcA~67           ; combout          ;
+; |Controler|ALUSrcB~6        ; |Controler|ALUSrcB~6            ; combout          ;
+; |Controler|ALUSrcB~0        ; |Controler|ALUSrcB~0            ; combout          ;
+; |Controler|SHTOp~152        ; |Controler|SHTOp~152            ; combout          ;
+; |Controler|MULWrite~120     ; |Controler|MULWrite~120         ; combout          ;
+; |Controler|ALUOutSrc~429    ; |Controler|ALUOutSrc~429        ; combout          ;
+; |Controler|ALUOutSrc~430    ; |Controler|ALUOutSrc~430        ; combout          ;
+; |Controler|MULStart~310     ; |Controler|MULStart~310         ; combout          ;
+; |Controler|ALUOutSrc~431    ; |Controler|ALUOutSrc~431        ; combout          ;
+; |Controler|is_Func9~42      ; |Controler|is_Func9~42          ; combout          ;
+; |Controler|ALUOutSrc~432    ; |Controler|ALUOutSrc~432        ; combout          ;
+; |Controler|CP0Src~10        ; |Controler|CP0Src~10            ; combout          ;
+; |Controler|PCSource~128     ; |Controler|PCSource~128         ; combout          ;
+; |Controler|PCSource~129     ; |Controler|PCSource~129         ; combout          ;
+; |Controler|PCSource~130     ; |Controler|PCSource~130         ; combout          ;
+; |Controler|PCSource~131     ; |Controler|PCSource~131         ; combout          ;
+; |Controler|is_Func15~35     ; |Controler|is_Func15~35         ; combout          ;
+; |Controler|ALUOutSrc~433    ; |Controler|ALUOutSrc~433        ; combout          ;
+; |Controler|SHTOp~153        ; |Controler|SHTOp~153            ; combout          ;
+; |Controler|MULSelMD~177     ; |Controler|MULSelMD~177         ; combout          ;
+; |Controler|MULSelMD~178     ; |Controler|MULSelMD~178         ; combout          ;
+; |Controler|MULStart~311     ; |Controler|MULStart~311         ; combout          ;
+; |Controler|MULStart~312     ; |Controler|MULStart~312         ; combout          ;
+; |Controler|MULStart~313     ; |Controler|MULStart~313         ; combout          ;
+; |Controler|MULSelHL~16      ; |Controler|MULSelHL~16          ; combout          ;
+; |Controler|MULWrite~121     ; |Controler|MULWrite~121         ; combout          ;
+; |Controler|MemSign~0        ; |Controler|MemSign~0            ; combout          ;
+; |Controler|Equal3~97        ; |Controler|Equal3~97            ; combout          ;
+; |Controler|Equal1~85        ; |Controler|Equal1~85            ; combout          ;
+; |Controler|Equal2~75        ; |Controler|Equal2~75            ; combout          ;
+; |Controler|Equal5~54        ; |Controler|Equal5~54            ; combout          ;
+; |Controler|Equal1~86        ; |Controler|Equal1~86            ; combout          ;
+; |Controler|Equal1~87        ; |Controler|Equal1~87            ; combout          ;
+; |Controler|state[10]~reg0   ; |Controler|Equal13~70           ; combout          ;
+; |Controler|state[10]~reg0   ; |Controler|state[10]~reg0       ; regout           ;
+; |Controler|Equal8~63        ; |Controler|Equal8~63            ; combout          ;
+; |Controler|Equal11~68       ; |Controler|Equal11~68           ; combout          ;
+; |Controler|Equal12~65       ; |Controler|Equal12~65           ; combout          ;
+; |Controler|Equal12~66       ; |Controler|Equal12~66           ; combout          ;
+; |Controler|Equal13~71       ; |Controler|Equal13~71           ; combout          ;
+; |Controler|Equal7~137       ; |Controler|Equal7~137           ; combout          ;
+; |Controler|Equal7~138       ; |Controler|Equal7~138           ; combout          ;
+; |Controler|Equal2~76        ; |Controler|Equal2~76            ; combout          ;
+; |Controler|Equal3~98        ; |Controler|Equal3~98            ; combout          ;
+; |Controler|Equal7~139       ; |Controler|Equal7~139           ; combout          ;
+; |Controler|Equal5~55        ; |Controler|Equal5~55            ; combout          ;
+; |Controler|Equal7~140       ; |Controler|Equal7~140           ; combout          ;
+; |Controler|Equal7~141       ; |Controler|Equal7~141           ; combout          ;
+; |Controler|Equal7~142       ; |Controler|Equal7~142           ; combout          ;
+; |Controler|Equal6~65        ; |Controler|Equal6~65            ; combout          ;
+; |Controler|Equal10~81       ; |Controler|Equal10~81           ; combout          ;
+; |Controler|Equal7~143       ; |Controler|Equal7~143           ; combout          ;
+; |Controler|state~732        ; |Controler|state~732            ; combout          ;
+; |Controler|Equal6~66        ; |Controler|Equal6~66            ; combout          ;
+; |Controler|Selector17~307   ; |Controler|Selector17~307       ; combout          ;
+; |Controler|Equal8~64        ; |Controler|Equal8~64            ; combout          ;
+; |Controler|always0~2        ; |Controler|always0~2            ; combout          ;
+; |Controler|is_r             ; |Controler|is_r                 ; combout          ;
+; |Controler|is_nop~27        ; |Controler|is_nop~27            ; combout          ;
+; |Controler|Selector17~308   ; |Controler|Selector17~308       ; combout          ;
+; |Controler|Selector17~309   ; |Controler|Selector17~309       ; combout          ;
+; |Controler|Equal5~56        ; |Controler|Equal5~56            ; combout          ;
+; |Controler|Equal0~63        ; |Controler|Equal0~63            ; combout          ;
+; |Controler|Selector17~310   ; |Controler|Selector17~310       ; combout          ;
+; |Controler|always0~5        ; |Controler|always0~5            ; combout          ;
+; |Controler|Selector1~207    ; |Controler|Selector1~207        ; combout          ;
+; |Controler|Selector1~208    ; |Controler|Selector1~208        ; combout          ;
+; |Controler|Selector1~209    ; |Controler|Selector1~209        ; combout          ;
+; |Controler|is_esc~34        ; |Controler|is_esc~34            ; combout          ;
+; |Controler|is_esc~35        ; |Controler|is_esc~35            ; combout          ;
+; |Controler|Selector4~60     ; |Controler|Selector4~60         ; combout          ;
+; |Controler|Selector4~61     ; |Controler|Selector4~61         ; combout          ;
+; |Controler|Selector4~62     ; |Controler|Selector4~62         ; combout          ;
+; |Controler|Selector4~63     ; |Controler|Selector4~63         ; combout          ;
+; |Controler|always0~98       ; |Controler|always0~98           ; combout          ;
+; |Controler|Selector12~66    ; |Controler|Selector12~66        ; combout          ;
+; |Controler|PCSource~132     ; |Controler|PCSource~132         ; combout          ;
+; |Controler|ALUOp~1699       ; |Controler|ALUOp~1699           ; combout          ;
+; |Controler|PCSource~4       ; |Controler|PCSource~4           ; combout          ;
+; |Controler|ALUOutSrc~434    ; |Controler|ALUOutSrc~434        ; combout          ;
+; |Controler|MULWrite~122     ; |Controler|MULWrite~122         ; combout          ;
+; |Controler|Selector17~312   ; |Controler|Selector17~312       ; combout          ;
+; |Controler|ALUOp~1700       ; |Controler|ALUOp~1700           ; combout          ;
+; |Controler|ALUOp~1672       ; |Controler|ALUOp~1672           ; combout          ;
+; |Controler|PCWrite          ; |Controler|PCWrite              ; padio            ;
+; |Controler|MemRW            ; |Controler|MemRW                ; padio            ;
+; |Controler|BE[0]            ; |Controler|BE[0]                ; padio            ;
+; |Controler|BE[1]            ; |Controler|BE[1]                ; padio            ;
+; |Controler|BE[2]            ; |Controler|BE[2]                ; padio            ;
+; |Controler|BE[3]            ; |Controler|BE[3]                ; padio            ;
+; |Controler|IRWrite          ; |Controler|IRWrite              ; padio            ;
+; |Controler|RegWrite         ; |Controler|RegWrite             ; padio            ;
+; |Controler|ALUOp[0]         ; |Controler|ALUOp[0]             ; padio            ;
+; |Controler|ALUOp[1]         ; |Controler|ALUOp[1]             ; padio            ;
+; |Controler|ALUOp[2]         ; |Controler|ALUOp[2]             ; padio            ;
+; |Controler|ALUOp[3]         ; |Controler|ALUOp[3]             ; padio            ;
+; |Controler|CP0Write         ; |Controler|CP0Write             ; padio            ;
+; |Controler|IorD             ; |Controler|IorD                 ; padio            ;
+; |Controler|RegDst[0]        ; |Controler|RegDst[0]            ; padio            ;
+; |Controler|RegDst[1]        ; |Controler|RegDst[1]            ; padio            ;
+; |Controler|RFSource[0]      ; |Controler|RFSource[0]          ; padio            ;
+; |Controler|RFSource[1]      ; |Controler|RFSource[1]          ; padio            ;
+; |Controler|ALUSrcA          ; |Controler|ALUSrcA              ; padio            ;
+; |Controler|ALUSrcB[0]       ; |Controler|ALUSrcB[0]           ; padio            ;
+; |Controler|ALUSrcB[1]       ; |Controler|ALUSrcB[1]           ; padio            ;
+; |Controler|SHTNumSrc        ; |Controler|SHTNumSrc            ; padio            ;
+; |Controler|ALUOutSrc[0]     ; |Controler|ALUOutSrc[0]         ; padio            ;
+; |Controler|ALUOutSrc[1]     ; |Controler|ALUOutSrc[1]         ; padio            ;
+; |Controler|CP0Src           ; |Controler|CP0Src               ; padio            ;
+; |Controler|PCSource[0]      ; |Controler|PCSource[0]          ; padio            ;
+; |Controler|PCSource[1]      ; |Controler|PCSource[1]          ; padio            ;
+; |Controler|PCSource[2]      ; |Controler|PCSource[2]          ; padio            ;
+; |Controler|SHTOp[0]         ; |Controler|SHTOp[0]             ; padio            ;
+; |Controler|SHTOp[1]         ; |Controler|SHTOp[1]             ; padio            ;
+; |Controler|MULSelMD         ; |Controler|MULSelMD             ; padio            ;
+; |Controler|MULStart         ; |Controler|MULStart             ; padio            ;
+; |Controler|MULSelHL         ; |Controler|MULSelHL             ; padio            ;
+; |Controler|MULWrite         ; |Controler|MULWrite             ; padio            ;
+; |Controler|ExCode[0]        ; |Controler|ExCode[0]            ; padio            ;
+; |Controler|ExCode[1]        ; |Controler|ExCode[1]            ; padio            ;
+; |Controler|ExCode[2]        ; |Controler|ExCode[2]            ; padio            ;
+; |Controler|ExCode[3]        ; |Controler|ExCode[3]            ; padio            ;
+; |Controler|ExCode[4]        ; |Controler|ExCode[4]            ; padio            ;
+; |Controler|Exception        ; |Controler|Exception            ; padio            ;
+; |Controler|state[0]         ; |Controler|state[0]             ; padio            ;
+; |Controler|state[1]         ; |Controler|state[1]             ; padio            ;
+; |Controler|state[2]         ; |Controler|state[2]             ; padio            ;
+; |Controler|state[3]         ; |Controler|state[3]             ; padio            ;
+; |Controler|state[4]         ; |Controler|state[4]             ; padio            ;
+; |Controler|state[5]         ; |Controler|state[5]             ; padio            ;
+; |Controler|state[6]         ; |Controler|state[6]             ; padio            ;
+; |Controler|state[7]         ; |Controler|state[7]             ; padio            ;
+; |Controler|state[8]         ; |Controler|state[8]             ; padio            ;
+; |Controler|state[9]         ; |Controler|state[9]             ; padio            ;
+; |Controler|state[10]        ; |Controler|state[10]            ; padio            ;
+; |Controler|state[11]        ; |Controler|state[11]            ; padio            ;
+; |Controler|state[12]        ; |Controler|state[12]            ; padio            ;
+; |Controler|state[13]        ; |Controler|state[13]            ; padio            ;
+; |Controler|state[14]        ; |Controler|state[14]            ; padio            ;
+; |Controler|state[15]        ; |Controler|state[15]            ; padio            ;
+; |Controler|state[16]        ; |Controler|state[16]            ; padio            ;
+; |Controler|state[17]        ; |Controler|state[17]            ; padio            ;
+; |Controler|state[18]        ; |Controler|state[18]            ; padio            ;
+; |Controler|MemSign          ; |Controler|MemSign              ; padio            ;
+; |Controler|IR[31]           ; |Controler|IR[31]~corein        ; combout          ;
+; |Controler|IR[30]           ; |Controler|IR[30]~corein        ; combout          ;
+; |Controler|IR[29]           ; |Controler|IR[29]~corein        ; combout          ;
+; |Controler|ALU_Zero         ; |Controler|ALU_Zero~corein      ; combout          ;
+; |Controler|IR[27]           ; |Controler|IR[27]~corein        ; combout          ;
+; |Controler|IR[26]           ; |Controler|IR[26]~corein        ; combout          ;
+; |Controler|IR[28]           ; |Controler|IR[28]~corein        ; combout          ;
+; |Controler|CP0_rs[25]       ; |Controler|CP0_rs[25]~corein    ; combout          ;
+; |Controler|CP0_rs[21]       ; |Controler|CP0_rs[21]~corein    ; combout          ;
+; |Controler|CP0_rs[24]       ; |Controler|CP0_rs[24]~corein    ; combout          ;
+; |Controler|CP0_rs[22]       ; |Controler|CP0_rs[22]~corein    ; combout          ;
+; |Controler|CP0_rs[23]       ; |Controler|CP0_rs[23]~corein    ; combout          ;
+; |Controler|Branch_al[18]    ; |Controler|Branch_al[18]~corein ; combout          ;
+; |Controler|Branch_al[19]    ; |Controler|Branch_al[19]~corein ; combout          ;
+; |Controler|Branch_al[17]    ; |Controler|Branch_al[17]~corein ; combout          ;
+; |Controler|Branch_al[20]    ; |Controler|Branch_al[20]~corein ; combout          ;
+; |Controler|Branch_al[16]    ; |Controler|Branch_al[16]~corein ; combout          ;
+; |Controler|Func[5]          ; |Controler|Func[5]~corein       ; combout          ;
+; |Controler|Func[4]          ; |Controler|Func[4]~corein       ; combout          ;
+; |Controler|Func[2]          ; |Controler|Func[2]~corein       ; combout          ;
+; |Controler|Func[1]          ; |Controler|Func[1]~corein       ; combout          ;
+; |Controler|Func[3]          ; |Controler|Func[3]~corein       ; combout          ;
+; |Controler|Func[0]          ; |Controler|Func[0]~corein       ; combout          ;
+; |Controler|PClk             ; |Controler|PClk~corein          ; combout          ;
+; |Controler|Reset            ; |Controler|Reset~corein         ; combout          ;
+; |Controler|IE               ; |Controler|IE~corein            ; combout          ;
+; |Controler|ALU_Overflow     ; |Controler|ALU_Overflow~corein  ; combout          ;
+; |Controler|ExtInt           ; |Controler|ExtInt~corein        ; combout          ;
+; |Controler|MemData_Ready    ; |Controler|MemData_Ready~corein ; combout          ;
+; |Controler|Mul_Ready        ; |Controler|Mul_Ready~corein     ; combout          ;
++-----------------------------+---------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sat Jul 24 00:38:22 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off Controler -c Controler
+Info: Using vector source file "D:/±à³Ì/verilog HDL/cpu/Controler/Controler.vwf"
+Info: Inverted registers were found during simulation
+    Info: Register: |Controler|state[0]~reg0
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is       0.00 %
+Info: Number of transitions in simulation is 0
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 131 megabytes of memory during processing
+    Info: Processing ended: Sat Jul 24 00:38:26 2010
+    Info: Elapsed time: 00:00:04
+
+

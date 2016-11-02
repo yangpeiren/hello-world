@@ -1,0 +1,436 @@
+Analysis & Synthesis report for jump
+Mon Jul 19 21:01:24 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Registers Removed During Synthesis
+  8. Removed Registers Triggering Further Register Optimizations
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Jul 19 21:01:24 2010    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; jump                                     ;
+; Top-level Entity Name       ; jump                                     ;
+; Family                      ; Cyclone                                  ;
+; Total logic elements        ; 1,678                                    ;
+; Total pins                  ; 108                                      ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; N/A until Partition Merge                ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; N/A until Partition Merge                ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP1C12Q240C8       ;                    ;
+; Top-level entity name                                                          ; jump               ; jump               ;
+; Family name                                                                    ; Cyclone            ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone                                              ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                       ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                     ;
++----------------------------------+-----------------+------------------------------------+----------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path     ;
++----------------------------------+-----------------+------------------------------------+----------------------------------+
+; J.v                              ; yes             ; User Verilog HDL File              ; E:/My booK/计组/5/jump/J.v       ;
+; PC.v                             ; yes             ; User Verilog HDL File              ; E:/My booK/计组/5/jump/PC.v      ;
+; Regfile.v                        ; yes             ; User Verilog HDL File              ; E:/My booK/计组/5/jump/Regfile.v ;
+; jump.bdf                         ; yes             ; User Block Diagram/Schematic File  ; E:/My booK/计组/5/jump/jump.bdf  ;
++----------------------------------+-----------------+------------------------------------+----------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 1678  ;
+;     -- Combinational with no register       ; 692   ;
+;     -- Register only                        ; 954   ;
+;     -- Combinational with a register        ; 32    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 629   ;
+;     -- 3 input functions                    ; 92    ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 3     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 1678  ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 29    ;
+;                                             ;       ;
+; Total registers                             ; 986   ;
+; I/O pins                                    ; 108   ;
+; Maximum fan-out node                        ; PClk  ;
+; Maximum fan-out                             ; 986   ;
+; Total fan-out                               ; 5777  ;
+; Average fan-out                             ; 3.23  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |jump                      ; 1678 (32)   ; 986          ; 0           ; 108  ; 0            ; 692 (32)     ; 954 (0)           ; 32 (0)           ; 0 (0)           ; 0 (0)      ; |jump               ; work         ;
+;    |J:inst2|               ; 29 (29)     ; 29           ; 0           ; 0    ; 0            ; 0 (0)        ; 26 (26)           ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |jump|J:inst2       ; work         ;
+;    |PC:inst|               ; 34 (34)     ; 29           ; 0           ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 29 (29)          ; 0 (0)           ; 0 (0)      ; |jump|PC:inst       ; work         ;
+;    |Regfile:inst1|         ; 1583 (1583) ; 928          ; 0           ; 0    ; 0            ; 655 (655)    ; 928 (928)         ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |jump|Regfile:inst1 ; work         ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; J:inst2|out[0..1]                      ; Stuck at GND due to stuck port data_in ;
+; PC:inst|PC_out[1]                      ; Merged with PC:inst|PC_out[0]          ;
+; J:inst2|out[30]                        ; Lost fanout                            ;
+; PC:inst|PC_out[0,30]                   ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~65              ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~127             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~189             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~251             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~313             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~375             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~437             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~499             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~561             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~623             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~685             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~747             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~809             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~871             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~933             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~995             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1057            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1119            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1181            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1243            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1305            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1367            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1429            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1491            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1553            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1615            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1677            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1739            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1801            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1863            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1925            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1987            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~63              ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~125             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~187             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~249             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~311             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~373             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~435             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~497             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~559             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~621             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~683             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~745             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~807             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~869             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~931             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~993             ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1055            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1117            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1179            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1241            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1303            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1365            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1427            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1489            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1551            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1613            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1675            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1737            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1799            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1861            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1923            ; Stuck at GND due to stuck port data_in ;
+; Regfile:inst1|RF__dual~1985            ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 70 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                               ;
++----------------+---------------------------+----------------------------------------------+
+; Register name  ; Reason for Removal        ; Registers Removed due to This Register       ;
++----------------+---------------------------+----------------------------------------------+
+; J:inst2|out[0] ; Stuck at GND              ; PC:inst|PC_out[0], Regfile:inst1|RF__dual~63 ;
+;                ; due to stuck port data_in ;                                              ;
++----------------+---------------------------+----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 986   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 29    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 955   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; PC:inst|PC_out[31]                     ; 4       ;
+; PC:inst|PC_out[29]                     ; 3       ;
+; PC:inst|PC_out[28]                     ; 3       ;
+; PC:inst|PC_out[27]                     ; 2       ;
+; PC:inst|PC_out[26]                     ; 2       ;
+; PC:inst|PC_out[25]                     ; 2       ;
+; PC:inst|PC_out[24]                     ; 2       ;
+; PC:inst|PC_out[23]                     ; 2       ;
+; PC:inst|PC_out[22]                     ; 2       ;
+; Total number of inverted registers = 9 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 6:1                ; 18 bits   ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |jump|PC:inst|PC_out[17]   ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |jump|PC:inst|PC_out[8]    ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |jump|PC:inst|PC_out[29]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Mon Jul 19 21:01:17 2010
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off jump -c jump
+Info: Found 1 design units, including 1 entities, in source file J.v
+    Info: Found entity 1: J
+Info: Found 1 design units, including 1 entities, in source file PC.v
+    Info: Found entity 1: PC
+Info: Found 1 design units, including 1 entities, in source file Regfile.v
+    Info: Found entity 1: Regfile
+Info: Found 1 design units, including 1 entities, in source file jump.bdf
+    Info: Found entity 1: jump
+Info: Elaborating entity "jump" for the top level hierarchy
+Info: Elaborating entity "PC" for hierarchy "PC:inst"
+Info: Elaborating entity "J" for hierarchy "J:inst2"
+Info: Elaborating entity "Regfile" for hierarchy "Regfile:inst1"
+Warning (14130): Reduced register "J:inst2|out[0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "J:inst2|out[1]" with stuck data_in port to stuck value GND
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "PC:inst|PC_out[1]" merged to single register "PC:inst|PC_out[0]"
+Info: Found 1 instances of uninferred RAM logic
+    Info: RAM logic "Regfile:inst1|RF__dual" uninferred due to asynchronous read logic
+Warning (14130): Reduced register "PC:inst|PC_out[30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "PC:inst|PC_out[0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~65" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~127" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~189" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~251" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~313" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~375" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~437" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~499" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~561" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~623" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~685" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~747" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~809" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~871" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~933" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~995" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1057" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1119" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1181" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1243" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1305" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1367" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1429" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1491" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1553" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1615" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1677" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1739" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1801" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1863" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1925" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1987" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~63" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~125" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~187" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~249" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~311" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~373" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~435" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~497" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~559" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~621" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~683" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~745" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~807" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~869" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~931" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~993" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1055" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1117" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1179" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1241" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1303" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1365" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1427" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1489" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1551" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1613" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1675" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1737" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1799" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1861" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1923" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Regfile:inst1|RF__dual~1985" with stuck data_in port to stuck value GND
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "pcout[30]" stuck at GND
+    Warning (13410): Pin "pcout[1]" stuck at GND
+    Warning (13410): Pin "pcout[0]" stuck at GND
+    Warning (13410): Pin "ra[30]" stuck at GND
+    Warning (13410): Pin "ra[1]" stuck at GND
+    Warning (13410): Pin "ra[0]" stuck at GND
+Info: Registers with preset signals will power-up high
+Info: 1 registers lost all their fanouts during netlist optimizations. The first 1 are displayed below.
+    Info: Register "J:inst2|out[30]" lost all its fanouts during netlist optimizations.
+Warning: Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "IR[31]"
+    Warning (15610): No output dependent on input pin "IR[30]"
+    Warning (15610): No output dependent on input pin "IR[29]"
+    Warning (15610): No output dependent on input pin "IR[28]"
+    Warning (15610): No output dependent on input pin "IR[27]"
+    Warning (15610): No output dependent on input pin "IR[26]"
+Info: Implemented 1786 device resources after synthesis - the final resource count might be different
+    Info: Implemented 44 input pins
+    Info: Implemented 64 output pins
+    Info: Implemented 1678 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 82 warnings
+    Info: Allocated 182 megabytes of memory during processing
+    Info: Processing ended: Mon Jul 19 21:01:24 2010
+    Info: Elapsed time: 00:00:07
+
+

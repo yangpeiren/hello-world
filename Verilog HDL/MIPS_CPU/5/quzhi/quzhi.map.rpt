@@ -1,0 +1,1535 @@
+Analysis & Synthesis report for quzhi
+Mon Jul 19 16:51:18 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Registers Removed During Synthesis
+  8. Removed Registers Triggering Further Register Optimizations
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Jul 19 16:51:17 2010    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; quzhi                                    ;
+; Top-level Entity Name       ; quzhi                                    ;
+; Family                      ; Cyclone                                  ;
+; Total logic elements        ; 333                                      ;
+; Total pins                  ; 111                                      ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; N/A until Partition Merge                ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; N/A until Partition Merge                ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP1C12Q240C8       ;                    ;
+; Top-level entity name                                                          ; quzhi              ; quzhi              ;
+; Family name                                                                    ; Cyclone            ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone                                              ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                       ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                      ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path      ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------+
+; quzhi.bdf                        ; yes             ; User Block Diagram/Schematic File  ; E:/My booK/计组/5/quzhi/quzhi.bdf ;
+; Mem.v                            ; yes             ; Other                              ; E:/My booK/计组/5/quzhi/Mem.v     ;
+; PC.v                             ; yes             ; Other                              ; E:/My booK/计组/5/quzhi/PC.v      ;
+; ALU.v                            ; yes             ; Other                              ; E:/My booK/计组/5/quzhi/ALU.v     ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Total logic elements                        ; 333         ;
+;     -- Combinational with no register       ; 296         ;
+;     -- Register only                        ; 0           ;
+;     -- Combinational with a register        ; 37          ;
+;                                             ;             ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 109         ;
+;     -- 3 input functions                    ; 201         ;
+;     -- 2 input functions                    ; 23          ;
+;     -- 1 input functions                    ; 0           ;
+;     -- 0 input functions                    ; 0           ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 208         ;
+;     -- arithmetic mode                      ; 125         ;
+;     -- qfbk mode                            ; 0           ;
+;     -- register cascade mode                ; 0           ;
+;     -- synchronous clear/load mode          ; 12          ;
+;     -- asynchronous clear/load mode         ; 35          ;
+;                                             ;             ;
+; Total registers                             ; 37          ;
+; Total logic cells in carry chains           ; 129         ;
+; I/O pins                                    ; 111         ;
+; Maximum fan-out node                        ; ALU_Func[1] ;
+; Maximum fan-out                             ; 91          ;
+; Total fan-out                               ; 1258        ;
+; Average fan-out                             ; 2.83        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |quzhi                     ; 333 (0)     ; 37           ; 0           ; 111  ; 0            ; 296 (0)      ; 0 (0)             ; 37 (0)           ; 129 (0)         ; 0 (0)      ; |quzhi              ; work         ;
+;    |ALU:inst|              ; 191 (191)   ; 0            ; 0           ; 0    ; 0            ; 191 (191)    ; 0 (0)             ; 0 (0)            ; 129 (129)       ; 0 (0)      ; |quzhi|ALU:inst     ; work         ;
+;    |Mem:inst11|            ; 9 (9)       ; 5            ; 0           ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |quzhi|Mem:inst11   ; work         ;
+;    |PC:inst10|             ; 133 (133)   ; 32           ; 0           ; 0    ; 0            ; 101 (101)    ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |quzhi|PC:inst10    ; work         ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++------------------------------------------+----------------------------------------+
+; Register name                            ; Reason for Removal                     ;
++------------------------------------------+----------------------------------------+
+; Mem:inst11|memory[31][31]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][30]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][29]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][28]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][27]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][26]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][25]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][24]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][23]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][22]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][21]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][20]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][19]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][18]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][17]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][16]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][15]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][14]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][13]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][12]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][11]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][10]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][9]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][8]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][7]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][6]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][5]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][4]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][3]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][2]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][1]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[31][0]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][31]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][30]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][29]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][28]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][27]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][26]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][25]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][24]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][23]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][22]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][21]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][20]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][19]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][18]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][17]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][16]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][15]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][14]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][13]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][12]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][11]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][10]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][9]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][8]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][7]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][6]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][5]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][4]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][3]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][2]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][1]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[30][0]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][31]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][30]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][29]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][28]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][27]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][26]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][25]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][24]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][23]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][22]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][21]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][20]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][19]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][18]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][17]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][16]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][15]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][14]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][13]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][12]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][11]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][10]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][9]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][8]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][7]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][6]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][5]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][4]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][3]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][2]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][1]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[29][0]                 ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[28][31]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[28][30]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[28][29]                ; Stuck at GND due to stuck port data_in ;
+; Mem:inst11|memory[28][28]                ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1051 ;                                        ;
++------------------------------------------+----------------------------------------+
+* Table truncated at 100 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                    ;
++---------------------------+---------------------------+----------------------------------------+
+; Register name             ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------------------+---------------------------+----------------------------------------+
+; Mem:inst11|memory[31][31] ; Stuck at GND              ; Mem:inst11|DataOut[31]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][30] ; Stuck at GND              ; Mem:inst11|DataOut[30]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][29] ; Stuck at GND              ; Mem:inst11|DataOut[29]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][28] ; Stuck at GND              ; Mem:inst11|DataOut[28]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][27] ; Stuck at GND              ; Mem:inst11|DataOut[27]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][26] ; Stuck at GND              ; Mem:inst11|DataOut[26]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][25] ; Stuck at GND              ; Mem:inst11|DataOut[25]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][24] ; Stuck at GND              ; Mem:inst11|DataOut[24]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][23] ; Stuck at GND              ; Mem:inst11|DataOut[23]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][22] ; Stuck at GND              ; Mem:inst11|DataOut[22]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][21] ; Stuck at GND              ; Mem:inst11|DataOut[21]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][20] ; Stuck at GND              ; Mem:inst11|DataOut[20]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][19] ; Stuck at GND              ; Mem:inst11|DataOut[19]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][18] ; Stuck at GND              ; Mem:inst11|DataOut[18]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][17] ; Stuck at GND              ; Mem:inst11|DataOut[17]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][16] ; Stuck at GND              ; Mem:inst11|DataOut[16]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][15] ; Stuck at GND              ; Mem:inst11|DataOut[15]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][14] ; Stuck at GND              ; Mem:inst11|DataOut[14]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][13] ; Stuck at GND              ; Mem:inst11|DataOut[13]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][12] ; Stuck at GND              ; Mem:inst11|DataOut[12]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][11] ; Stuck at GND              ; Mem:inst11|DataOut[11]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][10] ; Stuck at GND              ; Mem:inst11|DataOut[10]                 ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][9]  ; Stuck at GND              ; Mem:inst11|DataOut[9]                  ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][8]  ; Stuck at GND              ; Mem:inst11|DataOut[8]                  ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][7]  ; Stuck at GND              ; Mem:inst11|DataOut[7]                  ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][6]  ; Stuck at GND              ; Mem:inst11|DataOut[6]                  ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][5]  ; Stuck at GND              ; Mem:inst11|DataOut[5]                  ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][4]  ; Stuck at GND              ; Mem:inst11|DataOut[4]                  ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][3]  ; Stuck at GND              ; Mem:inst11|DataOut[3]                  ;
+;                           ; due to stuck port data_in ;                                        ;
+; Mem:inst11|memory[31][2]  ; Stuck at GND              ; Mem:inst11|DataOut[2]                  ;
+;                           ; due to stuck port data_in ;                                        ;
++---------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 37    ;
+; Number of registers using Synchronous Clear  ; 12    ;
+; Number of registers using Synchronous Load   ; 12    ;
+; Number of registers using Asynchronous Clear ; 35    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 31    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; PC:inst10|PC_out[31]                    ; 11      ;
+; PC:inst10|PC_out[29]                    ; 7       ;
+; PC:inst10|PC_out[28]                    ; 7       ;
+; PC:inst10|PC_out[27]                    ; 7       ;
+; PC:inst10|PC_out[26]                    ; 7       ;
+; PC:inst10|PC_out[25]                    ; 7       ;
+; PC:inst10|PC_out[24]                    ; 7       ;
+; PC:inst10|PC_out[23]                    ; 7       ;
+; PC:inst10|PC_out[22]                    ; 7       ;
+; Mem:inst11|memory[2][1]                 ; 3       ;
+; Mem:inst11|memory[1][1]                 ; 2       ;
+; Mem:inst11|memory[0][0]                 ; 2       ;
+; Total number of inverted registers = 12 ;         ;
++-----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 15:1               ; 12 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |quzhi|PC:inst10|PC_out[14] ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 12 LEs               ; 10 LEs                 ; Yes        ; |quzhi|PC:inst10|PC_out[8]  ;
+; 17:1               ; 7 bits    ; 77 LEs        ; 35 LEs               ; 42 LEs                 ; Yes        ; |quzhi|PC:inst10|PC_out[30] ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 40 LEs               ; 48 LEs                 ; Yes        ; |quzhi|PC:inst10|PC_out[29] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |quzhi|ALU:inst|Add0        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |quzhi|ALU:inst|Add0        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Mon Jul 19 16:51:08 2010
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off quzhi -c quzhi
+Info: Found 1 design units, including 1 entities, in source file quzhi.bdf
+    Info: Found entity 1: quzhi
+Info: Elaborating entity "quzhi" for the top level hierarchy
+Warning (10335): Unrecognized synthesis attribute "ram_int_file" at Mem.v(9)
+Warning: Using design file Mem.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: Mem
+Info: Elaborating entity "Mem" for hierarchy "Mem:inst11"
+Warning: Using design file PC.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: PC
+Info: Elaborating entity "PC" for hierarchy "PC:inst10"
+Warning: Using design file ALU.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: ALU
+Info: Elaborating entity "ALU" for hierarchy "ALU:inst"
+Warning (14130): Reduced register "Mem:inst11|memory[31][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[31][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[30][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[29][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[28][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[27][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[26][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[25][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[24][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[23][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[22][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[21][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[20][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[19][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[18][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[17][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[16][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[15][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[14][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[13][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[12][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[11][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[10][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[9][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[8][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[7][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[6][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[5][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[4][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[3][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[2][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[1][0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|memory[0][1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[27]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[26]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[25]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[24]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[23]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[22]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[21]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[20]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[19]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[18]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[17]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[16]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[15]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[9]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[8]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Mem:inst11|DataOut[2]" with stuck data_in port to stuck value GND
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "Mem:inst11|memory[2][0]" merged to single register "Mem:inst11|memory[2][1]"
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "IR[31]" stuck at GND
+    Warning (13410): Pin "IR[30]" stuck at GND
+    Warning (13410): Pin "IR[29]" stuck at GND
+    Warning (13410): Pin "IR[28]" stuck at GND
+    Warning (13410): Pin "IR[27]" stuck at GND
+    Warning (13410): Pin "IR[26]" stuck at GND
+    Warning (13410): Pin "IR[25]" stuck at GND
+    Warning (13410): Pin "IR[24]" stuck at GND
+    Warning (13410): Pin "IR[23]" stuck at GND
+    Warning (13410): Pin "IR[22]" stuck at GND
+    Warning (13410): Pin "IR[21]" stuck at GND
+    Warning (13410): Pin "IR[20]" stuck at GND
+    Warning (13410): Pin "IR[19]" stuck at GND
+    Warning (13410): Pin "IR[18]" stuck at GND
+    Warning (13410): Pin "IR[17]" stuck at GND
+    Warning (13410): Pin "IR[16]" stuck at GND
+    Warning (13410): Pin "IR[15]" stuck at GND
+    Warning (13410): Pin "IR[14]" stuck at GND
+    Warning (13410): Pin "IR[13]" stuck at GND
+    Warning (13410): Pin "IR[12]" stuck at GND
+    Warning (13410): Pin "IR[11]" stuck at GND
+    Warning (13410): Pin "IR[10]" stuck at GND
+    Warning (13410): Pin "IR[9]" stuck at GND
+    Warning (13410): Pin "IR[8]" stuck at GND
+    Warning (13410): Pin "IR[7]" stuck at GND
+    Warning (13410): Pin "IR[6]" stuck at GND
+    Warning (13410): Pin "IR[5]" stuck at GND
+    Warning (13410): Pin "IR[4]" stuck at GND
+    Warning (13410): Pin "IR[3]" stuck at GND
+    Warning (13410): Pin "IR[2]" stuck at GND
+Info: Registers with preset signals will power-up high
+Warning: Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "BE[3]"
+    Warning (15610): No output dependent on input pin "BE[2]"
+    Warning (15610): No output dependent on input pin "BE[1]"
+    Warning (15610): No output dependent on input pin "BE[0]"
+Info: Implemented 444 device resources after synthesis - the final resource count might be different
+    Info: Implemented 47 input pins
+    Info: Implemented 64 output pins
+    Info: Implemented 333 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1090 warnings
+    Info: Allocated 184 megabytes of memory during processing
+    Info: Processing ended: Mon Jul 19 16:51:18 2010
+    Info: Elapsed time: 00:00:10
+
+

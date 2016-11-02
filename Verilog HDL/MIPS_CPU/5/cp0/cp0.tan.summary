@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 21.372 ns
+From           : constE[4]
+To             : Regfile:inst2|altsyncram:RF__dual_rtl_0|altsyncram_n1e1:auto_generated|ram_block1a31~porta_datain_reg20
+From Clock     : --
+To Clock       : PClk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 21.567 ns
+From           : Regfile:inst2|RF~3564
+To             : Data1[30]
+From Clock     : PClk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 26.713 ns
+From           : Read1[1]
+To             : Data1[30]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.263 ns
+From           : Reset
+To             : CP_0:inst13|regs[4][0]
+From Clock     : --
+To Clock       : PClk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'PClk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 85.89 MHz ( period = 11.643 ns )
+From           : CP_0:inst13|regs[6][14]
+To             : Regfile:inst2|altsyncram:RF__dual_rtl_0|altsyncram_n1e1:auto_generated|ram_block1a31~porta_datain_reg3
+From Clock     : PClk
+To Clock       : PClk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

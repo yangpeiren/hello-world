@@ -1,0 +1,12 @@
+Fitter Status : Successful - Wed Jul 28 11:24:03 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : Mem
+Top-level Entity Name : Mem
+Family : Cyclone
+Device : EP1C12Q240C8
+Timing Models : Final
+Total logic elements : 1,235 / 12,060 ( 10 % )
+Total pins : 103 / 173 ( 60 % )
+Total virtual pins : 0
+Total memory bits : 0 / 239,616 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

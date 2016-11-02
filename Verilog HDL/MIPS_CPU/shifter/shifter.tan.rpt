@@ -1,0 +1,314 @@
+Classic Timing Analyzer report for shifter
+Tue Jul 13 23:03:18 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. Clock Setup: 'sclk'
+  7. tsu
+  8. tco
+  9. tpd
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                ;
++------------------------------+-------+---------------+------------------------------------------------+--------------------+--------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                                    ; From               ; To                 ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+------------------------------------------------+--------------------+--------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 4.689 ns                                       ; m                  ; shifter:inst|qb[0] ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 6.828 ns                                       ; shifter:inst|qb[0] ; qb[0]              ; clk        ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 9.448 ns                                       ; d[6]               ; in[6]              ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -3.673 ns                                      ; d[6]               ; shifter:inst|qb[6] ; --         ; clk      ; 0            ;
+; Clock Setup: 'sclk'          ; N/A   ; None          ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; cnt2:inst1|q[0]    ; cnt2:inst1|q[1]    ; sclk       ; sclk     ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[0] ; shifter:inst|qb[0] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                                ;                    ;                    ;            ;          ; 0            ;
++------------------------------+-------+---------------+------------------------------------------------+--------------------+--------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EP1C3T100C6        ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; sclk            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                           ;
++-------+------------------------------------------------+--------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From               ; To                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+--------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[0] ; shifter:inst|qb[0] ; clk        ; clk      ; None                        ; None                      ; 1.557 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[7] ; shifter:inst|qb[7] ; clk        ; clk      ; None                        ; None                      ; 1.460 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[0] ; shifter:inst|qb[7] ; clk        ; clk      ; None                        ; None                      ; 1.458 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|tmp   ; shifter:inst|qb[7] ; clk        ; clk      ; None                        ; None                      ; 1.380 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|tmp   ; shifter:inst|qb[0] ; clk        ; clk      ; None                        ; None                      ; 1.376 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[0] ; shifter:inst|tmp   ; clk        ; clk      ; None                        ; None                      ; 1.244 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[0] ; shifter:inst|cn    ; clk        ; clk      ; None                        ; None                      ; 1.242 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[7] ; shifter:inst|qb[0] ; clk        ; clk      ; None                        ; None                      ; 1.228 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[6] ; shifter:inst|qb[7] ; clk        ; clk      ; None                        ; None                      ; 1.223 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[1] ; shifter:inst|qb[0] ; clk        ; clk      ; None                        ; None                      ; 1.213 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[0] ; shifter:inst|qb[1] ; clk        ; clk      ; None                        ; None                      ; 1.137 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[4] ; shifter:inst|qb[5] ; clk        ; clk      ; None                        ; None                      ; 1.124 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[7] ; shifter:inst|tmp   ; clk        ; clk      ; None                        ; None                      ; 1.105 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[7] ; shifter:inst|cn    ; clk        ; clk      ; None                        ; None                      ; 1.103 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[2] ; shifter:inst|qb[1] ; clk        ; clk      ; None                        ; None                      ; 1.060 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[7] ; shifter:inst|qb[6] ; clk        ; clk      ; None                        ; None                      ; 0.983 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[5] ; shifter:inst|qb[6] ; clk        ; clk      ; None                        ; None                      ; 0.875 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[3] ; shifter:inst|qb[4] ; clk        ; clk      ; None                        ; None                      ; 0.875 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|cn    ; shifter:inst|cn    ; clk        ; clk      ; None                        ; None                      ; 0.858 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[1] ; shifter:inst|qb[2] ; clk        ; clk      ; None                        ; None                      ; 0.820 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|tmp   ; shifter:inst|tmp   ; clk        ; clk      ; None                        ; None                      ; 0.809 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[6] ; shifter:inst|qb[5] ; clk        ; clk      ; None                        ; None                      ; 0.691 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[2] ; shifter:inst|qb[3] ; clk        ; clk      ; None                        ; None                      ; 0.634 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[4] ; shifter:inst|qb[3] ; clk        ; clk      ; None                        ; None                      ; 0.533 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[3] ; shifter:inst|qb[2] ; clk        ; clk      ; None                        ; None                      ; 0.528 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; shifter:inst|qb[5] ; shifter:inst|qb[4] ; clk        ; clk      ; None                        ; None                      ; 0.526 ns                ;
++-------+------------------------------------------------+--------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'sclk'                                                                                                                                                                                    ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From            ; To              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; cnt2:inst1|q[0] ; cnt2:inst1|q[1] ; sclk       ; sclk     ; None                        ; None                      ; 0.670 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; cnt2:inst1|q[0] ; cnt2:inst1|q[0] ; sclk       ; sclk     ; None                        ; None                      ; 0.664 ns                ;
+; N/A   ; Restricted to 405.19 MHz ( period = 2.468 ns ) ; cnt2:inst1|q[1] ; cnt2:inst1|q[1] ; sclk       ; sclk     ; None                        ; None                      ; 0.472 ns                ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------+
+; tsu                                                                      ;
++-------+--------------+------------+------+--------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                 ; To Clock ;
++-------+--------------+------------+------+--------------------+----------+
+; N/A   ; None         ; 4.689 ns   ; m    ; shifter:inst|qb[7] ; clk      ;
+; N/A   ; None         ; 4.689 ns   ; m    ; shifter:inst|qb[0] ; clk      ;
+; N/A   ; None         ; 4.630 ns   ; d[7] ; shifter:inst|qb[7] ; clk      ;
+; N/A   ; None         ; 4.288 ns   ; d[0] ; shifter:inst|qb[0] ; clk      ;
+; N/A   ; None         ; 4.247 ns   ; d[4] ; shifter:inst|qb[4] ; clk      ;
+; N/A   ; None         ; 4.217 ns   ; d[5] ; shifter:inst|qb[5] ; clk      ;
+; N/A   ; None         ; 4.091 ns   ; m    ; shifter:inst|tmp   ; clk      ;
+; N/A   ; None         ; 4.005 ns   ; d[1] ; shifter:inst|qb[1] ; clk      ;
+; N/A   ; None         ; 3.900 ns   ; d[2] ; shifter:inst|qb[2] ; clk      ;
+; N/A   ; None         ; 3.720 ns   ; d[3] ; shifter:inst|qb[3] ; clk      ;
+; N/A   ; None         ; 3.714 ns   ; d[6] ; shifter:inst|qb[6] ; clk      ;
++-------+--------------+------------+------+--------------------+----------+
+
+
++-----------------------------------------------------------------------------+
+; tco                                                                         ;
++-------+--------------+------------+--------------------+-------+------------+
+; Slack ; Required tco ; Actual tco ; From               ; To    ; From Clock ;
++-------+--------------+------------+--------------------+-------+------------+
+; N/A   ; None         ; 6.828 ns   ; shifter:inst|qb[0] ; qb[0] ; clk        ;
+; N/A   ; None         ; 6.725 ns   ; cnt2:inst1|q[1]    ; s[1]  ; sclk       ;
+; N/A   ; None         ; 5.945 ns   ; shifter:inst|qb[5] ; qb[5] ; clk        ;
+; N/A   ; None         ; 5.621 ns   ; shifter:inst|qb[1] ; qb[1] ; clk        ;
+; N/A   ; None         ; 5.617 ns   ; shifter:inst|cn    ; cn    ; clk        ;
+; N/A   ; None         ; 5.562 ns   ; cnt2:inst1|q[0]    ; s[0]  ; sclk       ;
+; N/A   ; None         ; 5.532 ns   ; shifter:inst|qb[6] ; qb[6] ; clk        ;
+; N/A   ; None         ; 5.449 ns   ; shifter:inst|qb[7] ; qb[7] ; clk        ;
+; N/A   ; None         ; 5.375 ns   ; shifter:inst|qb[3] ; qb[3] ; clk        ;
+; N/A   ; None         ; 5.296 ns   ; shifter:inst|qb[2] ; qb[2] ; clk        ;
+; N/A   ; None         ; 5.295 ns   ; shifter:inst|qb[4] ; qb[4] ; clk        ;
++-------+--------------+------------+--------------------+-------+------------+
+
+
++------------------------------------------------------------+
+; tpd                                                        ;
++-------+-------------------+-----------------+------+-------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To    ;
++-------+-------------------+-----------------+------+-------+
+; N/A   ; None              ; 9.448 ns        ; d[6] ; in[6] ;
+; N/A   ; None              ; 9.188 ns        ; d[4] ; in[4] ;
+; N/A   ; None              ; 9.034 ns        ; d[0] ; in[0] ;
+; N/A   ; None              ; 8.891 ns        ; d[2] ; in[2] ;
+; N/A   ; None              ; 8.842 ns        ; d[7] ; in[7] ;
+; N/A   ; None              ; 8.829 ns        ; d[3] ; in[3] ;
+; N/A   ; None              ; 8.640 ns        ; d[1] ; in[1] ;
+; N/A   ; None              ; 8.489 ns        ; d[5] ; in[5] ;
++-------+-------------------+-----------------+------+-------+
+
+
++--------------------------------------------------------------------------------+
+; th                                                                             ;
++---------------+-------------+-----------+------+--------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                 ; To Clock ;
++---------------+-------------+-----------+------+--------------------+----------+
+; N/A           ; None        ; -3.673 ns ; d[6] ; shifter:inst|qb[6] ; clk      ;
+; N/A           ; None        ; -3.679 ns ; d[3] ; shifter:inst|qb[3] ; clk      ;
+; N/A           ; None        ; -3.859 ns ; d[2] ; shifter:inst|qb[2] ; clk      ;
+; N/A           ; None        ; -3.964 ns ; d[1] ; shifter:inst|qb[1] ; clk      ;
+; N/A           ; None        ; -4.050 ns ; m    ; shifter:inst|tmp   ; clk      ;
+; N/A           ; None        ; -4.176 ns ; d[5] ; shifter:inst|qb[5] ; clk      ;
+; N/A           ; None        ; -4.206 ns ; d[4] ; shifter:inst|qb[4] ; clk      ;
+; N/A           ; None        ; -4.247 ns ; d[0] ; shifter:inst|qb[0] ; clk      ;
+; N/A           ; None        ; -4.589 ns ; d[7] ; shifter:inst|qb[7] ; clk      ;
+; N/A           ; None        ; -4.648 ns ; m    ; shifter:inst|qb[7] ; clk      ;
+; N/A           ; None        ; -4.648 ns ; m    ; shifter:inst|qb[0] ; clk      ;
++---------------+-------------+-----------+------+--------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Tue Jul 13 23:03:18 2010
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off shifter -c shifter --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+    Info: Assuming node "sclk" is an undefined clock
+Info: Clock "clk" Internal fmax is restricted to 405.19 MHz between source register "shifter:inst|qb[0]" and destination register "shifter:inst|qb[0]"
+    Info: fmax restricted to Clock High delay (1.234 ns) plus Clock Low delay (1.234 ns) : restricted to 2.468 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 1.557 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X20_Y8_N4; Fanout = 5; REG Node = 'shifter:inst|qb[0]'
+            Info: 2: + IC(0.901 ns) + CELL(0.088 ns) = 0.989 ns; Loc. = LC_X20_Y8_N5; Fanout = 1; COMB Node = 'shifter:inst|Mux7~12'
+            Info: 3: + IC(0.330 ns) + CELL(0.238 ns) = 1.557 ns; Loc. = LC_X20_Y8_N4; Fanout = 5; REG Node = 'shifter:inst|qb[0]'
+            Info: Total cell delay = 0.326 ns ( 20.94 % )
+            Info: Total interconnect delay = 1.231 ns ( 79.06 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "clk" to destination register is 2.139 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.130 ns) = 1.130 ns; Loc. = PIN_10; Fanout = 10; CLK Node = 'clk'
+                Info: 2: + IC(0.462 ns) + CELL(0.547 ns) = 2.139 ns; Loc. = LC_X20_Y8_N4; Fanout = 5; REG Node = 'shifter:inst|qb[0]'
+                Info: Total cell delay = 1.677 ns ( 78.40 % )
+                Info: Total interconnect delay = 0.462 ns ( 21.60 % )
+            Info: - Longest clock path from clock "clk" to source register is 2.139 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.130 ns) = 1.130 ns; Loc. = PIN_10; Fanout = 10; CLK Node = 'clk'
+                Info: 2: + IC(0.462 ns) + CELL(0.547 ns) = 2.139 ns; Loc. = LC_X20_Y8_N4; Fanout = 5; REG Node = 'shifter:inst|qb[0]'
+                Info: Total cell delay = 1.677 ns ( 78.40 % )
+                Info: Total interconnect delay = 0.462 ns ( 21.60 % )
+        Info: + Micro clock to output delay of source is 0.173 ns
+        Info: + Micro setup delay of destination is 0.029 ns
+Info: Clock "sclk" Internal fmax is restricted to 405.19 MHz between source register "cnt2:inst1|q[0]" and destination register "cnt2:inst1|q[1]"
+    Info: fmax restricted to Clock High delay (1.234 ns) plus Clock Low delay (1.234 ns) : restricted to 2.468 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 0.670 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X21_Y8_N5; Fanout = 15; REG Node = 'cnt2:inst1|q[0]'
+            Info: 2: + IC(0.432 ns) + CELL(0.238 ns) = 0.670 ns; Loc. = LC_X21_Y8_N9; Fanout = 15; REG Node = 'cnt2:inst1|q[1]'
+            Info: Total cell delay = 0.238 ns ( 35.52 % )
+            Info: Total interconnect delay = 0.432 ns ( 64.48 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "sclk" to destination register is 2.139 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.130 ns) = 1.130 ns; Loc. = PIN_66; Fanout = 2; CLK Node = 'sclk'
+                Info: 2: + IC(0.462 ns) + CELL(0.547 ns) = 2.139 ns; Loc. = LC_X21_Y8_N9; Fanout = 15; REG Node = 'cnt2:inst1|q[1]'
+                Info: Total cell delay = 1.677 ns ( 78.40 % )
+                Info: Total interconnect delay = 0.462 ns ( 21.60 % )
+            Info: - Longest clock path from clock "sclk" to source register is 2.139 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.130 ns) = 1.130 ns; Loc. = PIN_66; Fanout = 2; CLK Node = 'sclk'
+                Info: 2: + IC(0.462 ns) + CELL(0.547 ns) = 2.139 ns; Loc. = LC_X21_Y8_N5; Fanout = 15; REG Node = 'cnt2:inst1|q[0]'
+                Info: Total cell delay = 1.677 ns ( 78.40 % )
+                Info: Total interconnect delay = 0.462 ns ( 21.60 % )
+        Info: + Micro clock to output delay of source is 0.173 ns
+        Info: + Micro setup delay of destination is 0.029 ns
+Info: tsu for register "shifter:inst|qb[7]" (data pin = "m", clock pin = "clk") is 4.689 ns
+    Info: + Longest pin to register delay is 6.799 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.135 ns) = 1.135 ns; Loc. = PIN_87; Fanout = 3; PIN Node = 'm'
+        Info: 2: + IC(4.497 ns) + CELL(0.454 ns) = 6.086 ns; Loc. = LC_X20_Y8_N2; Fanout = 1; COMB Node = 'shifter:inst|qb~231'
+        Info: 3: + IC(0.345 ns) + CELL(0.368 ns) = 6.799 ns; Loc. = LC_X20_Y8_N6; Fanout = 5; REG Node = 'shifter:inst|qb[7]'
+        Info: Total cell delay = 1.957 ns ( 28.78 % )
+        Info: Total interconnect delay = 4.842 ns ( 71.22 % )
+    Info: + Micro setup delay of destination is 0.029 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 2.139 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.130 ns) = 1.130 ns; Loc. = PIN_10; Fanout = 10; CLK Node = 'clk'
+        Info: 2: + IC(0.462 ns) + CELL(0.547 ns) = 2.139 ns; Loc. = LC_X20_Y8_N6; Fanout = 5; REG Node = 'shifter:inst|qb[7]'
+        Info: Total cell delay = 1.677 ns ( 78.40 % )
+        Info: Total interconnect delay = 0.462 ns ( 21.60 % )
+Info: tco from clock "clk" to destination pin "qb[0]" through register "shifter:inst|qb[0]" is 6.828 ns
+    Info: + Longest clock path from clock "clk" to source register is 2.139 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.130 ns) = 1.130 ns; Loc. = PIN_10; Fanout = 10; CLK Node = 'clk'
+        Info: 2: + IC(0.462 ns) + CELL(0.547 ns) = 2.139 ns; Loc. = LC_X20_Y8_N4; Fanout = 5; REG Node = 'shifter:inst|qb[0]'
+        Info: Total cell delay = 1.677 ns ( 78.40 % )
+        Info: Total interconnect delay = 0.462 ns ( 21.60 % )
+    Info: + Micro clock to output delay of source is 0.173 ns
+    Info: + Longest register to pin delay is 4.516 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X20_Y8_N4; Fanout = 5; REG Node = 'shifter:inst|qb[0]'
+        Info: 2: + IC(2.882 ns) + CELL(1.634 ns) = 4.516 ns; Loc. = PIN_21; Fanout = 0; PIN Node = 'qb[0]'
+        Info: Total cell delay = 1.634 ns ( 36.18 % )
+        Info: Total interconnect delay = 2.882 ns ( 63.82 % )
+Info: Longest tpd from source pin "d[6]" to destination pin "in[6]" is 9.448 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.135 ns) = 1.135 ns; Loc. = PIN_86; Fanout = 3; PIN Node = 'd[6]'
+    Info: 2: + IC(4.460 ns) + CELL(0.443 ns) = 6.038 ns; Loc. = LC_X21_Y8_N0; Fanout = 1; COMB Node = 'inst7[6]~COUT1'
+    Info: 3: + IC(0.000 ns) + CELL(0.468 ns) = 6.506 ns; Loc. = LC_X21_Y8_N1; Fanout = 1; COMB Node = 'inst7[6]~17'
+    Info: 4: + IC(1.320 ns) + CELL(1.622 ns) = 9.448 ns; Loc. = PIN_78; Fanout = 0; PIN Node = 'in[6]'
+    Info: Total cell delay = 3.668 ns ( 38.82 % )
+    Info: Total interconnect delay = 5.780 ns ( 61.18 % )
+Info: th for register "shifter:inst|qb[6]" (data pin = "d[6]", clock pin = "clk") is -3.673 ns
+    Info: + Longest clock path from clock "clk" to destination register is 2.139 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.130 ns) = 1.130 ns; Loc. = PIN_10; Fanout = 10; CLK Node = 'clk'
+        Info: 2: + IC(0.462 ns) + CELL(0.547 ns) = 2.139 ns; Loc. = LC_X21_Y8_N3; Fanout = 3; REG Node = 'shifter:inst|qb[6]'
+        Info: Total cell delay = 1.677 ns ( 78.40 % )
+        Info: Total interconnect delay = 0.462 ns ( 21.60 % )
+    Info: + Micro hold delay of destination is 0.012 ns
+    Info: - Shortest pin to register delay is 5.824 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.135 ns) = 1.135 ns; Loc. = PIN_86; Fanout = 3; PIN Node = 'd[6]'
+        Info: 2: + IC(4.451 ns) + CELL(0.238 ns) = 5.824 ns; Loc. = LC_X21_Y8_N3; Fanout = 3; REG Node = 'shifter:inst|qb[6]'
+        Info: Total cell delay = 1.373 ns ( 23.57 % )
+        Info: Total interconnect delay = 4.451 ns ( 76.43 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 137 megabytes of memory during processing
+    Info: Processing ended: Tue Jul 13 23:03:18 2010
+    Info: Elapsed time: 00:00:00
+
+

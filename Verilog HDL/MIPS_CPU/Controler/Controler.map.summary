@@ -1,0 +1,12 @@
+Analysis & Synthesis Status : Successful - Fri Jul 23 23:41:49 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : Controler
+Top-level Entity Name : Controler
+Family : Cyclone
+Total logic elements : 159
+Total pins : 90
+Total virtual pins : 0
+Total memory bits : 0
+DSP block 9-bit elements : N/A until Partition Merge
+Total PLLs : 0
+Total DLLs : N/A until Partition Merge

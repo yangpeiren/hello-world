@@ -1,0 +1,17 @@
+Fitter Status : Successful - Sat Jul 17 01:41:58 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : Mux3to1_32
+Top-level Entity Name : Mux3to1_32
+Family : Stratix II
+Device : EP2S15F484C3
+Timing Models : Final
+Logic utilization : < 1 %
+    Combinational ALUTs : 32 / 12,480 ( < 1 % )
+    Dedicated logic registers : 0 / 12,480 ( 0 % )
+Total registers : 0
+Total pins : 130 / 343 ( 38 % )
+Total virtual pins : 0
+Total block memory bits : 0 / 419,328 ( 0 % )
+DSP block 9-bit elements : 0 / 96 ( 0 % )
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 2 ( 0 % )

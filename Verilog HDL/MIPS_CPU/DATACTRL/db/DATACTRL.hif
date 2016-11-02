@@ -1,0 +1,72 @@
+Version 7.2 Build 151 09/26/2007 SJ Full Version
+38
+2275
+OFF
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+DATACTRL
+# storage
+db|DATACTRL.(0).cnf
+db|DATACTRL.(0).cnf
+# case_insensitive
+# source_file
+DATACTRL.bdf
+9bdd373cd61dcadf51351785fa4e755
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# hierarchies {
+|
+}
+# lmf
+..|..|..|..|program files|quartus|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+74139
+# storage
+db|DATACTRL.(1).cnf
+db|DATACTRL.(1).cnf
+# case_insensitive
+# source_file
+..|..|..|..|program files|quartus|quartus|libraries|others|maxplus2|74139.bdf
+4ab546d7302e8fe86bee1b6b8b90e8c6
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# hierarchies {
+74139:inst
+74139:inst1
+}
+# lmf
+..|..|..|..|program files|quartus|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# complete
+

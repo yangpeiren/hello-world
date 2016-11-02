@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="beg">
+		<CBX_INST_ENTRY INSTANCE_NAME="|beg|M4:inst7|lpm_mux:lpm_mux_component" CBX_FILE_NAME="mux_ngc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|beg|M5:inst8|lpm_mux:lpm_mux_component" CBX_FILE_NAME="mux_qgc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|beg|Regfile:inst2|altsyncram:RF_rtl_0" CBX_FILE_NAME="altsyncram_n1e1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

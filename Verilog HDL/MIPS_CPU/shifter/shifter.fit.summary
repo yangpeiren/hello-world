@@ -1,0 +1,12 @@
+Fitter Status : Successful - Tue Jul 13 23:03:14 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : shifter
+Top-level Entity Name : top
+Family : Cyclone
+Device : EP1C3T100C6
+Timing Models : Final
+Total logic elements : 34 / 2,910 ( 1 % )
+Total pins : 31 / 65 ( 48 % )
+Total virtual pins : 0
+Total memory bits : 0 / 59,904 ( 0 % )
+Total PLLs : 0 / 1 ( 0 % )

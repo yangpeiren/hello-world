@@ -1,0 +1,12 @@
+Fitter Status : Successful - Tue Jul 20 13:49:03 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : MIPSC
+Top-level Entity Name : PC
+Family : Cyclone
+Device : EP1C12Q240C8
+Timing Models : Final
+Total logic elements : 93 / 12,060 ( < 1 % )
+Total pins : 166 / 173 ( 96 % )
+Total virtual pins : 0
+Total memory bits : 0 / 239,616 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

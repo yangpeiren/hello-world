@@ -1,0 +1,547 @@
+Simulator report for PC
+Sat Jul 17 00:32:07 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 ms       ;
+; Simulation Netlist Size     ; 252 nodes    ;
+; Simulation Coverage         ;      45.63 % ;
+; Total Number of Transitions ; 585          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone      ;
+; Device                      ; EP1C12Q240C8 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      45.63 % ;
+; Total nodes checked                                 ; 252          ;
+; Total output ports checked                          ; 252          ;
+; Total output ports with complete 1/0-value coverage ; 115          ;
+; Total output ports with no 1/0-value coverage       ; 125          ;
+; Total output ports with no 1-value coverage         ; 128          ;
+; Total output ports with no 0-value coverage         ; 134          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-----------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                     ;
++---------------------+------------------------+------------------+
+; Node Name           ; Output Port Name       ; Output Port Type ;
++---------------------+------------------------+------------------+
+; |PC|PC_out[1]~reg0  ; |PC|PC_out[1]~reg0     ; regout           ;
+; |PC|PC_out[2]~reg0  ; |PC|PC_out[2]~reg0     ; regout           ;
+; |PC|PC_out[3]~reg0  ; |PC|PC_out[3]~reg0     ; regout           ;
+; |PC|PC_out[4]~reg0  ; |PC|PC_out[4]~reg0     ; regout           ;
+; |PC|PC_out[5]~reg0  ; |PC|PC_out[5]~reg0     ; regout           ;
+; |PC|PC_out[6]~reg0  ; |PC|PC_out[6]~reg0     ; regout           ;
+; |PC|PC_out[7]~reg0  ; |PC|PC_out[7]~reg0     ; regout           ;
+; |PC|PC_out[8]~reg0  ; |PC|PC_out[8]~reg0     ; regout           ;
+; |PC|PC_out[10]~reg0 ; |PC|PC_out[10]~reg0    ; regout           ;
+; |PC|PC_out[11]~reg0 ; |PC|PC_out[11]~reg0    ; regout           ;
+; |PC|PC_out[12]~reg0 ; |PC|PC_out[12]~reg0    ; regout           ;
+; |PC|PC_out[13]~reg0 ; |PC|PC_out[13]~reg0    ; regout           ;
+; |PC|PC_out[14]~reg0 ; |PC|PC_out[14]~reg0    ; regout           ;
+; |PC|PC_out[15]~reg0 ; |PC|PC_out[15]~reg0    ; regout           ;
+; |PC|PC_out[16]~reg0 ; |PC|PC_out[16]~reg0    ; regout           ;
+; |PC|PC_out[17]~reg0 ; |PC|PC_out[17]~reg0    ; regout           ;
+; |PC|PC_out[18]~reg0 ; |PC|PC_out[18]~reg0    ; regout           ;
+; |PC|PC_out[19]~reg0 ; |PC|PC_out[19]~reg0    ; regout           ;
+; |PC|PC_out[20]~reg0 ; |PC|PC_out[20]~reg0    ; regout           ;
+; |PC|PC_out[23]~reg0 ; |PC|PC_out[23]~reg0    ; regout           ;
+; |PC|PC_out[24]~reg0 ; |PC|PC_out[24]~reg0    ; regout           ;
+; |PC|PC_out[26]~reg0 ; |PC|PC_out[26]~reg0    ; regout           ;
+; |PC|PC_out[28]~reg0 ; |PC|PC_out[28]~reg0    ; regout           ;
+; |PC|PC_out[29]~reg0 ; |PC|PC_out[29]~reg0    ; regout           ;
+; |PC|PC_out[30]~reg0 ; |PC|PC_out[30]~reg0    ; regout           ;
+; |PC|PC_out[31]~reg0 ; |PC|PC_out[31]~reg0    ; regout           ;
+; |PC|Mux31~70        ; |PC|Mux31~70           ; combout          ;
+; |PC|PC_out[0]~1933  ; |PC|PC_out[0]~1933     ; combout          ;
+; |PC|PC_out[2]~1934  ; |PC|PC_out[2]~1934     ; combout          ;
+; |PC|PC_out[2]~1935  ; |PC|PC_out[2]~1935     ; combout          ;
+; |PC|Mux29~114       ; |PC|Mux29~114          ; combout          ;
+; |PC|Mux29~115       ; |PC|Mux29~115          ; combout          ;
+; |PC|Mux28~114       ; |PC|Mux28~114          ; combout          ;
+; |PC|Mux28~115       ; |PC|Mux28~115          ; combout          ;
+; |PC|Mux27~114       ; |PC|Mux27~114          ; combout          ;
+; |PC|Mux27~115       ; |PC|Mux27~115          ; combout          ;
+; |PC|Mux26~114       ; |PC|Mux26~114          ; combout          ;
+; |PC|Mux26~115       ; |PC|Mux26~115          ; combout          ;
+; |PC|Mux25~114       ; |PC|Mux25~114          ; combout          ;
+; |PC|Mux25~115       ; |PC|Mux25~115          ; combout          ;
+; |PC|PC_out[7]~1936  ; |PC|PC_out[7]~1936     ; combout          ;
+; |PC|PC_out[7]~1937  ; |PC|PC_out[7]~1937     ; combout          ;
+; |PC|Mux24~104       ; |PC|Mux24~104          ; combout          ;
+; |PC|Mux24~105       ; |PC|Mux24~105          ; combout          ;
+; |PC|Mux23~104       ; |PC|Mux23~104          ; combout          ;
+; |PC|Mux23~105       ; |PC|Mux23~105          ; combout          ;
+; |PC|Mux22~111       ; |PC|Mux22~111          ; combout          ;
+; |PC|Mux22~112       ; |PC|Mux22~112          ; combout          ;
+; |PC|Mux21~114       ; |PC|Mux21~114          ; combout          ;
+; |PC|Mux21~115       ; |PC|Mux21~115          ; combout          ;
+; |PC|Mux20~114       ; |PC|Mux20~114          ; combout          ;
+; |PC|Mux20~115       ; |PC|Mux20~115          ; combout          ;
+; |PC|Mux19~114       ; |PC|Mux19~114          ; combout          ;
+; |PC|Mux19~115       ; |PC|Mux19~115          ; combout          ;
+; |PC|Mux18~114       ; |PC|Mux18~114          ; combout          ;
+; |PC|Mux18~115       ; |PC|Mux18~115          ; combout          ;
+; |PC|Mux17~114       ; |PC|Mux17~114          ; combout          ;
+; |PC|Mux17~115       ; |PC|Mux17~115          ; combout          ;
+; |PC|Mux16~114       ; |PC|Mux16~114          ; combout          ;
+; |PC|Mux16~115       ; |PC|Mux16~115          ; combout          ;
+; |PC|Mux15~114       ; |PC|Mux15~114          ; combout          ;
+; |PC|Mux15~115       ; |PC|Mux15~115          ; combout          ;
+; |PC|Mux14~114       ; |PC|Mux14~114          ; combout          ;
+; |PC|Mux14~115       ; |PC|Mux14~115          ; combout          ;
+; |PC|Mux13~114       ; |PC|Mux13~114          ; combout          ;
+; |PC|Mux13~115       ; |PC|Mux13~115          ; combout          ;
+; |PC|Mux12~114       ; |PC|Mux12~114          ; combout          ;
+; |PC|Mux12~115       ; |PC|Mux12~115          ; combout          ;
+; |PC|Mux11~114       ; |PC|Mux11~114          ; combout          ;
+; |PC|Mux11~115       ; |PC|Mux11~115          ; combout          ;
+; |PC|Mux10~114       ; |PC|Mux10~114          ; combout          ;
+; |PC|Mux10~115       ; |PC|Mux10~115          ; combout          ;
+; |PC|PC_out[22]~1938 ; |PC|PC_out[22]~1938    ; combout          ;
+; |PC|Mux9~94         ; |PC|Mux9~94            ; combout          ;
+; |PC|Mux8~94         ; |PC|Mux8~94            ; combout          ;
+; |PC|Mux7~94         ; |PC|Mux7~94            ; combout          ;
+; |PC|Mux6~94         ; |PC|Mux6~94            ; combout          ;
+; |PC|Mux5~94         ; |PC|Mux5~94            ; combout          ;
+; |PC|Mux4~94         ; |PC|Mux4~94            ; combout          ;
+; |PC|Mux3~94         ; |PC|Mux3~94            ; combout          ;
+; |PC|Mux2~94         ; |PC|Mux2~94            ; combout          ;
+; |PC|Mux1~114        ; |PC|Mux1~114           ; combout          ;
+; |PC|Mux1~115        ; |PC|Mux1~115           ; combout          ;
+; |PC|Mux0~94         ; |PC|Mux0~94            ; combout          ;
+; |PC|PC_out[1]       ; |PC|PC_out[1]          ; padio            ;
+; |PC|PC_out[2]       ; |PC|PC_out[2]          ; padio            ;
+; |PC|PC_out[3]       ; |PC|PC_out[3]          ; padio            ;
+; |PC|PC_out[4]       ; |PC|PC_out[4]          ; padio            ;
+; |PC|PC_out[5]       ; |PC|PC_out[5]          ; padio            ;
+; |PC|PC_out[6]       ; |PC|PC_out[6]          ; padio            ;
+; |PC|PC_out[7]       ; |PC|PC_out[7]          ; padio            ;
+; |PC|PC_out[8]       ; |PC|PC_out[8]          ; padio            ;
+; |PC|PC_out[10]      ; |PC|PC_out[10]         ; padio            ;
+; |PC|PC_out[11]      ; |PC|PC_out[11]         ; padio            ;
+; |PC|PC_out[12]      ; |PC|PC_out[12]         ; padio            ;
+; |PC|PC_out[13]      ; |PC|PC_out[13]         ; padio            ;
+; |PC|PC_out[14]      ; |PC|PC_out[14]         ; padio            ;
+; |PC|PC_out[15]      ; |PC|PC_out[15]         ; padio            ;
+; |PC|PC_out[16]      ; |PC|PC_out[16]         ; padio            ;
+; |PC|PC_out[17]      ; |PC|PC_out[17]         ; padio            ;
+; |PC|PC_out[18]      ; |PC|PC_out[18]         ; padio            ;
+; |PC|PC_out[19]      ; |PC|PC_out[19]         ; padio            ;
+; |PC|PC_out[20]      ; |PC|PC_out[20]         ; padio            ;
+; |PC|PC_out[23]      ; |PC|PC_out[23]         ; padio            ;
+; |PC|PC_out[24]      ; |PC|PC_out[24]         ; padio            ;
+; |PC|PC_out[26]      ; |PC|PC_out[26]         ; padio            ;
+; |PC|PC_out[28]      ; |PC|PC_out[28]         ; padio            ;
+; |PC|PC_out[29]      ; |PC|PC_out[29]         ; padio            ;
+; |PC|PC_out[30]      ; |PC|PC_out[30]         ; padio            ;
+; |PC|PC_out[31]      ; |PC|PC_out[31]         ; padio            ;
+; |PC|PCSource[2]     ; |PC|PCSource[2]~corein ; combout          ;
+; |PC|PCSource[1]     ; |PC|PCSource[1]~corein ; combout          ;
+; |PC|PCSource[0]     ; |PC|PCSource[0]~corein ; combout          ;
+; |PC|Clk             ; |PC|Clk~corein         ; combout          ;
+; |PC|reset           ; |PC|reset~corein       ; combout          ;
++---------------------+------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++---------------------------------------------------------+
+; Missing 1-Value Coverage                                ;
++----------------+---------------------+------------------+
+; Node Name      ; Output Port Name    ; Output Port Type ;
++----------------+---------------------+------------------+
+; |PC|PC_out[22] ; |PC|PC_out[22]      ; padio            ;
+; |PC|PC_out[25] ; |PC|PC_out[25]      ; padio            ;
+; |PC|PC_out[27] ; |PC|PC_out[27]      ; padio            ;
+; |PC|PC4[0]     ; |PC|PC4[0]~corein   ; combout          ;
+; |PC|EPC[0]     ; |PC|EPC[0]~corein   ; combout          ;
+; |PC|PCWrite    ; |PC|PCWrite~corein  ; combout          ;
+; |PC|PC4[1]     ; |PC|PC4[1]~corein   ; combout          ;
+; |PC|EPC[1]     ; |PC|EPC[1]~corein   ; combout          ;
+; |PC|EPC[2]     ; |PC|EPC[2]~corein   ; combout          ;
+; |PC|PC4[2]     ; |PC|PC4[2]~corein   ; combout          ;
+; |PC|BrPC[2]    ; |PC|BrPC[2]~corein  ; combout          ;
+; |PC|JPC[2]     ; |PC|JPC[2]~corein   ; combout          ;
+; |PC|PC4[3]     ; |PC|PC4[3]~corein   ; combout          ;
+; |PC|EPC[3]     ; |PC|EPC[3]~corein   ; combout          ;
+; |PC|BrPC[3]    ; |PC|BrPC[3]~corein  ; combout          ;
+; |PC|JPC[3]     ; |PC|JPC[3]~corein   ; combout          ;
+; |PC|EPC[4]     ; |PC|EPC[4]~corein   ; combout          ;
+; |PC|PC4[4]     ; |PC|PC4[4]~corein   ; combout          ;
+; |PC|BrPC[4]    ; |PC|BrPC[4]~corein  ; combout          ;
+; |PC|JPC[4]     ; |PC|JPC[4]~corein   ; combout          ;
+; |PC|PC4[5]     ; |PC|PC4[5]~corein   ; combout          ;
+; |PC|EPC[5]     ; |PC|EPC[5]~corein   ; combout          ;
+; |PC|BrPC[5]    ; |PC|BrPC[5]~corein  ; combout          ;
+; |PC|JPC[5]     ; |PC|JPC[5]~corein   ; combout          ;
+; |PC|EPC[6]     ; |PC|EPC[6]~corein   ; combout          ;
+; |PC|PC4[6]     ; |PC|PC4[6]~corein   ; combout          ;
+; |PC|BrPC[6]    ; |PC|BrPC[6]~corein  ; combout          ;
+; |PC|JPC[6]     ; |PC|JPC[6]~corein   ; combout          ;
+; |PC|PC4[7]     ; |PC|PC4[7]~corein   ; combout          ;
+; |PC|JPC[7]     ; |PC|JPC[7]~corein   ; combout          ;
+; |PC|BrPC[7]    ; |PC|BrPC[7]~corein  ; combout          ;
+; |PC|EPC[7]     ; |PC|EPC[7]~corein   ; combout          ;
+; |PC|PC4[8]     ; |PC|PC4[8]~corein   ; combout          ;
+; |PC|JPC[8]     ; |PC|JPC[8]~corein   ; combout          ;
+; |PC|BrPC[8]    ; |PC|BrPC[8]~corein  ; combout          ;
+; |PC|EPC[8]     ; |PC|EPC[8]~corein   ; combout          ;
+; |PC|PC4[9]     ; |PC|PC4[9]~corein   ; combout          ;
+; |PC|JPC[9]     ; |PC|JPC[9]~corein   ; combout          ;
+; |PC|BrPC[9]    ; |PC|BrPC[9]~corein  ; combout          ;
+; |PC|EPC[9]     ; |PC|EPC[9]~corein   ; combout          ;
+; |PC|PC4[10]    ; |PC|PC4[10]~corein  ; combout          ;
+; |PC|EPC[10]    ; |PC|EPC[10]~corein  ; combout          ;
+; |PC|BrPC[10]   ; |PC|BrPC[10]~corein ; combout          ;
+; |PC|JPC[10]    ; |PC|JPC[10]~corein  ; combout          ;
+; |PC|EPC[11]    ; |PC|EPC[11]~corein  ; combout          ;
+; |PC|PC4[11]    ; |PC|PC4[11]~corein  ; combout          ;
+; |PC|BrPC[11]   ; |PC|BrPC[11]~corein ; combout          ;
+; |PC|JPC[11]    ; |PC|JPC[11]~corein  ; combout          ;
+; |PC|PC4[12]    ; |PC|PC4[12]~corein  ; combout          ;
+; |PC|EPC[12]    ; |PC|EPC[12]~corein  ; combout          ;
+; |PC|BrPC[12]   ; |PC|BrPC[12]~corein ; combout          ;
+; |PC|JPC[12]    ; |PC|JPC[12]~corein  ; combout          ;
+; |PC|EPC[13]    ; |PC|EPC[13]~corein  ; combout          ;
+; |PC|PC4[13]    ; |PC|PC4[13]~corein  ; combout          ;
+; |PC|BrPC[13]   ; |PC|BrPC[13]~corein ; combout          ;
+; |PC|JPC[13]    ; |PC|JPC[13]~corein  ; combout          ;
+; |PC|PC4[14]    ; |PC|PC4[14]~corein  ; combout          ;
+; |PC|EPC[14]    ; |PC|EPC[14]~corein  ; combout          ;
+; |PC|BrPC[14]   ; |PC|BrPC[14]~corein ; combout          ;
+; |PC|JPC[14]    ; |PC|JPC[14]~corein  ; combout          ;
+; |PC|EPC[15]    ; |PC|EPC[15]~corein  ; combout          ;
+; |PC|PC4[15]    ; |PC|PC4[15]~corein  ; combout          ;
+; |PC|BrPC[15]   ; |PC|BrPC[15]~corein ; combout          ;
+; |PC|JPC[15]    ; |PC|JPC[15]~corein  ; combout          ;
+; |PC|PC4[16]    ; |PC|PC4[16]~corein  ; combout          ;
+; |PC|EPC[16]    ; |PC|EPC[16]~corein  ; combout          ;
+; |PC|BrPC[16]   ; |PC|BrPC[16]~corein ; combout          ;
+; |PC|JPC[16]    ; |PC|JPC[16]~corein  ; combout          ;
+; |PC|EPC[17]    ; |PC|EPC[17]~corein  ; combout          ;
+; |PC|PC4[17]    ; |PC|PC4[17]~corein  ; combout          ;
+; |PC|BrPC[17]   ; |PC|BrPC[17]~corein ; combout          ;
+; |PC|JPC[17]    ; |PC|JPC[17]~corein  ; combout          ;
+; |PC|PC4[18]    ; |PC|PC4[18]~corein  ; combout          ;
+; |PC|EPC[18]    ; |PC|EPC[18]~corein  ; combout          ;
+; |PC|BrPC[18]   ; |PC|BrPC[18]~corein ; combout          ;
+; |PC|JPC[18]    ; |PC|JPC[18]~corein  ; combout          ;
+; |PC|EPC[19]    ; |PC|EPC[19]~corein  ; combout          ;
+; |PC|PC4[19]    ; |PC|PC4[19]~corein  ; combout          ;
+; |PC|BrPC[19]   ; |PC|BrPC[19]~corein ; combout          ;
+; |PC|JPC[19]    ; |PC|JPC[19]~corein  ; combout          ;
+; |PC|PC4[20]    ; |PC|PC4[20]~corein  ; combout          ;
+; |PC|EPC[20]    ; |PC|EPC[20]~corein  ; combout          ;
+; |PC|BrPC[20]   ; |PC|BrPC[20]~corein ; combout          ;
+; |PC|JPC[20]    ; |PC|JPC[20]~corein  ; combout          ;
+; |PC|EPC[21]    ; |PC|EPC[21]~corein  ; combout          ;
+; |PC|PC4[21]    ; |PC|PC4[21]~corein  ; combout          ;
+; |PC|BrPC[21]   ; |PC|BrPC[21]~corein ; combout          ;
+; |PC|JPC[21]    ; |PC|JPC[21]~corein  ; combout          ;
+; |PC|BrPC[22]   ; |PC|BrPC[22]~corein ; combout          ;
+; |PC|EPC[22]    ; |PC|EPC[22]~corein  ; combout          ;
+; |PC|PC4[22]    ; |PC|PC4[22]~corein  ; combout          ;
+; |PC|JPC[22]    ; |PC|JPC[22]~corein  ; combout          ;
+; |PC|BrPC[23]   ; |PC|BrPC[23]~corein ; combout          ;
+; |PC|EPC[23]    ; |PC|EPC[23]~corein  ; combout          ;
+; |PC|PC4[23]    ; |PC|PC4[23]~corein  ; combout          ;
+; |PC|JPC[23]    ; |PC|JPC[23]~corein  ; combout          ;
+; |PC|BrPC[24]   ; |PC|BrPC[24]~corein ; combout          ;
+; |PC|EPC[24]    ; |PC|EPC[24]~corein  ; combout          ;
+; |PC|PC4[24]    ; |PC|PC4[24]~corein  ; combout          ;
+; |PC|JPC[24]    ; |PC|JPC[24]~corein  ; combout          ;
+; |PC|BrPC[25]   ; |PC|BrPC[25]~corein ; combout          ;
+; |PC|EPC[25]    ; |PC|EPC[25]~corein  ; combout          ;
+; |PC|PC4[25]    ; |PC|PC4[25]~corein  ; combout          ;
+; |PC|JPC[25]    ; |PC|JPC[25]~corein  ; combout          ;
+; |PC|BrPC[26]   ; |PC|BrPC[26]~corein ; combout          ;
+; |PC|EPC[26]    ; |PC|EPC[26]~corein  ; combout          ;
+; |PC|PC4[26]    ; |PC|PC4[26]~corein  ; combout          ;
+; |PC|JPC[26]    ; |PC|JPC[26]~corein  ; combout          ;
+; |PC|BrPC[27]   ; |PC|BrPC[27]~corein ; combout          ;
+; |PC|EPC[27]    ; |PC|EPC[27]~corein  ; combout          ;
+; |PC|PC4[27]    ; |PC|PC4[27]~corein  ; combout          ;
+; |PC|JPC[27]    ; |PC|JPC[27]~corein  ; combout          ;
+; |PC|BrPC[28]   ; |PC|BrPC[28]~corein ; combout          ;
+; |PC|EPC[28]    ; |PC|EPC[28]~corein  ; combout          ;
+; |PC|PC4[28]    ; |PC|PC4[28]~corein  ; combout          ;
+; |PC|JPC[28]    ; |PC|JPC[28]~corein  ; combout          ;
+; |PC|BrPC[29]   ; |PC|BrPC[29]~corein ; combout          ;
+; |PC|EPC[29]    ; |PC|EPC[29]~corein  ; combout          ;
+; |PC|PC4[29]    ; |PC|PC4[29]~corein  ; combout          ;
+; |PC|JPC[29]    ; |PC|JPC[29]~corein  ; combout          ;
+; |PC|PC4[30]    ; |PC|PC4[30]~corein  ; combout          ;
+; |PC|EPC[30]    ; |PC|EPC[30]~corein  ; combout          ;
+; |PC|BrPC[30]   ; |PC|BrPC[30]~corein ; combout          ;
+; |PC|JPC[30]    ; |PC|JPC[30]~corein  ; combout          ;
+; |PC|BrPC[31]   ; |PC|BrPC[31]~corein ; combout          ;
+; |PC|EPC[31]    ; |PC|EPC[31]~corein  ; combout          ;
+; |PC|PC4[31]    ; |PC|PC4[31]~corein  ; combout          ;
+; |PC|JPC[31]    ; |PC|JPC[31]~corein  ; combout          ;
++----------------+---------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------+
+; Missing 0-Value Coverage                                     ;
++---------------------+---------------------+------------------+
+; Node Name           ; Output Port Name    ; Output Port Type ;
++---------------------+---------------------+------------------+
+; |PC|PC_out[0]~reg0  ; |PC|PC_out[0]~reg0  ; regout           ;
+; |PC|PC_out[9]~reg0  ; |PC|PC_out[9]~reg0  ; regout           ;
+; |PC|PC_out[21]~reg0 ; |PC|PC_out[21]~reg0 ; regout           ;
+; |PC|PC_out[22]~reg0 ; |PC|PC_out[22]~reg0 ; regout           ;
+; |PC|PC_out[25]~reg0 ; |PC|PC_out[25]~reg0 ; regout           ;
+; |PC|PC_out[27]~reg0 ; |PC|PC_out[27]~reg0 ; regout           ;
+; |PC|PC_out[0]       ; |PC|PC_out[0]       ; padio            ;
+; |PC|PC_out[9]       ; |PC|PC_out[9]       ; padio            ;
+; |PC|PC_out[21]      ; |PC|PC_out[21]      ; padio            ;
+; |PC|PC4[0]          ; |PC|PC4[0]~corein   ; combout          ;
+; |PC|EPC[0]          ; |PC|EPC[0]~corein   ; combout          ;
+; |PC|PCWrite         ; |PC|PCWrite~corein  ; combout          ;
+; |PC|PC4[1]          ; |PC|PC4[1]~corein   ; combout          ;
+; |PC|EPC[1]          ; |PC|EPC[1]~corein   ; combout          ;
+; |PC|EPC[2]          ; |PC|EPC[2]~corein   ; combout          ;
+; |PC|PC4[2]          ; |PC|PC4[2]~corein   ; combout          ;
+; |PC|BrPC[2]         ; |PC|BrPC[2]~corein  ; combout          ;
+; |PC|JPC[2]          ; |PC|JPC[2]~corein   ; combout          ;
+; |PC|PC4[3]          ; |PC|PC4[3]~corein   ; combout          ;
+; |PC|EPC[3]          ; |PC|EPC[3]~corein   ; combout          ;
+; |PC|BrPC[3]         ; |PC|BrPC[3]~corein  ; combout          ;
+; |PC|JPC[3]          ; |PC|JPC[3]~corein   ; combout          ;
+; |PC|EPC[4]          ; |PC|EPC[4]~corein   ; combout          ;
+; |PC|PC4[4]          ; |PC|PC4[4]~corein   ; combout          ;
+; |PC|BrPC[4]         ; |PC|BrPC[4]~corein  ; combout          ;
+; |PC|JPC[4]          ; |PC|JPC[4]~corein   ; combout          ;
+; |PC|PC4[5]          ; |PC|PC4[5]~corein   ; combout          ;
+; |PC|EPC[5]          ; |PC|EPC[5]~corein   ; combout          ;
+; |PC|BrPC[5]         ; |PC|BrPC[5]~corein  ; combout          ;
+; |PC|JPC[5]          ; |PC|JPC[5]~corein   ; combout          ;
+; |PC|EPC[6]          ; |PC|EPC[6]~corein   ; combout          ;
+; |PC|PC4[6]          ; |PC|PC4[6]~corein   ; combout          ;
+; |PC|BrPC[6]         ; |PC|BrPC[6]~corein  ; combout          ;
+; |PC|JPC[6]          ; |PC|JPC[6]~corein   ; combout          ;
+; |PC|PC4[7]          ; |PC|PC4[7]~corein   ; combout          ;
+; |PC|JPC[7]          ; |PC|JPC[7]~corein   ; combout          ;
+; |PC|BrPC[7]         ; |PC|BrPC[7]~corein  ; combout          ;
+; |PC|EPC[7]          ; |PC|EPC[7]~corein   ; combout          ;
+; |PC|PC4[8]          ; |PC|PC4[8]~corein   ; combout          ;
+; |PC|JPC[8]          ; |PC|JPC[8]~corein   ; combout          ;
+; |PC|BrPC[8]         ; |PC|BrPC[8]~corein  ; combout          ;
+; |PC|EPC[8]          ; |PC|EPC[8]~corein   ; combout          ;
+; |PC|PC4[9]          ; |PC|PC4[9]~corein   ; combout          ;
+; |PC|JPC[9]          ; |PC|JPC[9]~corein   ; combout          ;
+; |PC|BrPC[9]         ; |PC|BrPC[9]~corein  ; combout          ;
+; |PC|EPC[9]          ; |PC|EPC[9]~corein   ; combout          ;
+; |PC|PC4[10]         ; |PC|PC4[10]~corein  ; combout          ;
+; |PC|EPC[10]         ; |PC|EPC[10]~corein  ; combout          ;
+; |PC|BrPC[10]        ; |PC|BrPC[10]~corein ; combout          ;
+; |PC|JPC[10]         ; |PC|JPC[10]~corein  ; combout          ;
+; |PC|EPC[11]         ; |PC|EPC[11]~corein  ; combout          ;
+; |PC|PC4[11]         ; |PC|PC4[11]~corein  ; combout          ;
+; |PC|BrPC[11]        ; |PC|BrPC[11]~corein ; combout          ;
+; |PC|JPC[11]         ; |PC|JPC[11]~corein  ; combout          ;
+; |PC|PC4[12]         ; |PC|PC4[12]~corein  ; combout          ;
+; |PC|EPC[12]         ; |PC|EPC[12]~corein  ; combout          ;
+; |PC|BrPC[12]        ; |PC|BrPC[12]~corein ; combout          ;
+; |PC|JPC[12]         ; |PC|JPC[12]~corein  ; combout          ;
+; |PC|EPC[13]         ; |PC|EPC[13]~corein  ; combout          ;
+; |PC|PC4[13]         ; |PC|PC4[13]~corein  ; combout          ;
+; |PC|BrPC[13]        ; |PC|BrPC[13]~corein ; combout          ;
+; |PC|JPC[13]         ; |PC|JPC[13]~corein  ; combout          ;
+; |PC|PC4[14]         ; |PC|PC4[14]~corein  ; combout          ;
+; |PC|EPC[14]         ; |PC|EPC[14]~corein  ; combout          ;
+; |PC|BrPC[14]        ; |PC|BrPC[14]~corein ; combout          ;
+; |PC|JPC[14]         ; |PC|JPC[14]~corein  ; combout          ;
+; |PC|EPC[15]         ; |PC|EPC[15]~corein  ; combout          ;
+; |PC|PC4[15]         ; |PC|PC4[15]~corein  ; combout          ;
+; |PC|BrPC[15]        ; |PC|BrPC[15]~corein ; combout          ;
+; |PC|JPC[15]         ; |PC|JPC[15]~corein  ; combout          ;
+; |PC|PC4[16]         ; |PC|PC4[16]~corein  ; combout          ;
+; |PC|EPC[16]         ; |PC|EPC[16]~corein  ; combout          ;
+; |PC|BrPC[16]        ; |PC|BrPC[16]~corein ; combout          ;
+; |PC|JPC[16]         ; |PC|JPC[16]~corein  ; combout          ;
+; |PC|EPC[17]         ; |PC|EPC[17]~corein  ; combout          ;
+; |PC|PC4[17]         ; |PC|PC4[17]~corein  ; combout          ;
+; |PC|BrPC[17]        ; |PC|BrPC[17]~corein ; combout          ;
+; |PC|JPC[17]         ; |PC|JPC[17]~corein  ; combout          ;
+; |PC|PC4[18]         ; |PC|PC4[18]~corein  ; combout          ;
+; |PC|EPC[18]         ; |PC|EPC[18]~corein  ; combout          ;
+; |PC|BrPC[18]        ; |PC|BrPC[18]~corein ; combout          ;
+; |PC|JPC[18]         ; |PC|JPC[18]~corein  ; combout          ;
+; |PC|EPC[19]         ; |PC|EPC[19]~corein  ; combout          ;
+; |PC|PC4[19]         ; |PC|PC4[19]~corein  ; combout          ;
+; |PC|BrPC[19]        ; |PC|BrPC[19]~corein ; combout          ;
+; |PC|JPC[19]         ; |PC|JPC[19]~corein  ; combout          ;
+; |PC|PC4[20]         ; |PC|PC4[20]~corein  ; combout          ;
+; |PC|EPC[20]         ; |PC|EPC[20]~corein  ; combout          ;
+; |PC|BrPC[20]        ; |PC|BrPC[20]~corein ; combout          ;
+; |PC|JPC[20]         ; |PC|JPC[20]~corein  ; combout          ;
+; |PC|EPC[21]         ; |PC|EPC[21]~corein  ; combout          ;
+; |PC|PC4[21]         ; |PC|PC4[21]~corein  ; combout          ;
+; |PC|BrPC[21]        ; |PC|BrPC[21]~corein ; combout          ;
+; |PC|JPC[21]         ; |PC|JPC[21]~corein  ; combout          ;
+; |PC|BrPC[22]        ; |PC|BrPC[22]~corein ; combout          ;
+; |PC|EPC[22]         ; |PC|EPC[22]~corein  ; combout          ;
+; |PC|PC4[22]         ; |PC|PC4[22]~corein  ; combout          ;
+; |PC|JPC[22]         ; |PC|JPC[22]~corein  ; combout          ;
+; |PC|BrPC[23]        ; |PC|BrPC[23]~corein ; combout          ;
+; |PC|EPC[23]         ; |PC|EPC[23]~corein  ; combout          ;
+; |PC|PC4[23]         ; |PC|PC4[23]~corein  ; combout          ;
+; |PC|JPC[23]         ; |PC|JPC[23]~corein  ; combout          ;
+; |PC|BrPC[24]        ; |PC|BrPC[24]~corein ; combout          ;
+; |PC|EPC[24]         ; |PC|EPC[24]~corein  ; combout          ;
+; |PC|PC4[24]         ; |PC|PC4[24]~corein  ; combout          ;
+; |PC|JPC[24]         ; |PC|JPC[24]~corein  ; combout          ;
+; |PC|BrPC[25]        ; |PC|BrPC[25]~corein ; combout          ;
+; |PC|EPC[25]         ; |PC|EPC[25]~corein  ; combout          ;
+; |PC|PC4[25]         ; |PC|PC4[25]~corein  ; combout          ;
+; |PC|JPC[25]         ; |PC|JPC[25]~corein  ; combout          ;
+; |PC|BrPC[26]        ; |PC|BrPC[26]~corein ; combout          ;
+; |PC|EPC[26]         ; |PC|EPC[26]~corein  ; combout          ;
+; |PC|PC4[26]         ; |PC|PC4[26]~corein  ; combout          ;
+; |PC|JPC[26]         ; |PC|JPC[26]~corein  ; combout          ;
+; |PC|BrPC[27]        ; |PC|BrPC[27]~corein ; combout          ;
+; |PC|EPC[27]         ; |PC|EPC[27]~corein  ; combout          ;
+; |PC|PC4[27]         ; |PC|PC4[27]~corein  ; combout          ;
+; |PC|JPC[27]         ; |PC|JPC[27]~corein  ; combout          ;
+; |PC|BrPC[28]        ; |PC|BrPC[28]~corein ; combout          ;
+; |PC|EPC[28]         ; |PC|EPC[28]~corein  ; combout          ;
+; |PC|PC4[28]         ; |PC|PC4[28]~corein  ; combout          ;
+; |PC|JPC[28]         ; |PC|JPC[28]~corein  ; combout          ;
+; |PC|BrPC[29]        ; |PC|BrPC[29]~corein ; combout          ;
+; |PC|EPC[29]         ; |PC|EPC[29]~corein  ; combout          ;
+; |PC|PC4[29]         ; |PC|PC4[29]~corein  ; combout          ;
+; |PC|JPC[29]         ; |PC|JPC[29]~corein  ; combout          ;
+; |PC|PC4[30]         ; |PC|PC4[30]~corein  ; combout          ;
+; |PC|EPC[30]         ; |PC|EPC[30]~corein  ; combout          ;
+; |PC|BrPC[30]        ; |PC|BrPC[30]~corein ; combout          ;
+; |PC|JPC[30]         ; |PC|JPC[30]~corein  ; combout          ;
+; |PC|BrPC[31]        ; |PC|BrPC[31]~corein ; combout          ;
+; |PC|EPC[31]         ; |PC|EPC[31]~corein  ; combout          ;
+; |PC|PC4[31]         ; |PC|PC4[31]~corein  ; combout          ;
+; |PC|JPC[31]         ; |PC|JPC[31]~corein  ; combout          ;
++---------------------+---------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sat Jul 17 00:32:06 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off PC -c PC
+Info: Using vector source file "D:/±à³Ì/verilog HDL/cpu/new/PC/PC.vwf"
+Info: Inverted registers were found during simulation
+    Info: Register: |PC|PC_out[22]~reg0
+    Info: Register: |PC|PC_out[23]~reg0
+    Info: Register: |PC|PC_out[24]~reg0
+    Info: Register: |PC|PC_out[25]~reg0
+    Info: Register: |PC|PC_out[26]~reg0
+    Info: Register: |PC|PC_out[27]~reg0
+    Info: Register: |PC|PC_out[28]~reg0
+    Info: Register: |PC|PC_out[29]~reg0
+    Info: Register: |PC|PC_out[31]~reg0
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      45.63 %
+Info: Number of transitions in simulation is 585
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 131 megabytes of memory during processing
+    Info: Processing ended: Sat Jul 17 00:32:07 2010
+    Info: Elapsed time: 00:00:01
+
+

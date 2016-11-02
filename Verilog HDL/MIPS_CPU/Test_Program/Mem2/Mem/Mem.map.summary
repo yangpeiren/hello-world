@@ -1,0 +1,15 @@
+Analysis & Synthesis Status : Successful - Thu Jul 29 18:36:15 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : Mem
+Top-level Entity Name : Mem
+Family : Stratix II
+Logic utilization : N/A
+    Combinational ALUTs : 617
+    Dedicated logic registers : 1,056
+Total registers : 1056
+Total pins : 103
+Total virtual pins : 0
+Total block memory bits : 0
+DSP block 9-bit elements : 0
+Total PLLs : 0
+Total DLLs : 0

@@ -1,0 +1,104 @@
+|top
+cn <= shifter:inst.cn
+clk => shifter:inst.clk
+m => shifter:inst.m
+co => inst3.IN1
+d[0] => shifter:inst.d[0]
+d[0] => inst7[0].DATAIN
+d[1] => shifter:inst.d[1]
+d[1] => inst7[1].DATAIN
+d[2] => shifter:inst.d[2]
+d[2] => inst7[2].DATAIN
+d[3] => shifter:inst.d[3]
+d[3] => inst7[3].DATAIN
+d[4] => shifter:inst.d[4]
+d[4] => inst7[4].DATAIN
+d[5] => shifter:inst.d[5]
+d[5] => inst7[5].DATAIN
+d[6] => shifter:inst.d[6]
+d[6] => inst7[6].DATAIN
+d[7] => shifter:inst.d[7]
+d[7] => inst7[7].DATAIN
+sclk => cnt2:inst1.clk
+in[0] <= inst7[0].DB_MAX_OUTPUT_PORT_TYPE
+in[1] <= inst7[1].DB_MAX_OUTPUT_PORT_TYPE
+in[2] <= inst7[2].DB_MAX_OUTPUT_PORT_TYPE
+in[3] <= inst7[3].DB_MAX_OUTPUT_PORT_TYPE
+in[4] <= inst7[4].DB_MAX_OUTPUT_PORT_TYPE
+in[5] <= inst7[5].DB_MAX_OUTPUT_PORT_TYPE
+in[6] <= inst7[6].DB_MAX_OUTPUT_PORT_TYPE
+in[7] <= inst7[7].DB_MAX_OUTPUT_PORT_TYPE
+qb[0] <= shifter:inst.qb[0]
+qb[1] <= shifter:inst.qb[1]
+qb[2] <= shifter:inst.qb[2]
+qb[3] <= shifter:inst.qb[3]
+qb[4] <= shifter:inst.qb[4]
+qb[5] <= shifter:inst.qb[5]
+qb[6] <= shifter:inst.qb[6]
+qb[7] <= shifter:inst.qb[7]
+s[0] <= cnt2:inst1.q[0]
+s[1] <= cnt2:inst1.q[1]
+
+
+|top|shifter:inst
+clk => qb[7]~reg0.CLK
+clk => qb[6]~reg0.CLK
+clk => qb[5]~reg0.CLK
+clk => qb[4]~reg0.CLK
+clk => qb[3]~reg0.CLK
+clk => qb[2]~reg0.CLK
+clk => qb[1]~reg0.CLK
+clk => qb[0]~reg0.CLK
+clk => cn~reg0.CLK
+clk => tmp.CLK
+m => qb~1.OUTPUTSELECT
+m => tmp~1.OUTPUTSELECT
+m => tmp~0.OUTPUTSELECT
+m => qb~0.OUTPUTSELECT
+co => ~NO_FANOUT~
+s[0] => Mux9.IN3
+s[0] => Mux8.IN1
+s[0] => Mux7.IN2
+s[0] => Mux6.IN1
+s[0] => Mux5.IN1
+s[0] => Mux4.IN1
+s[0] => Mux3.IN1
+s[0] => Mux2.IN1
+s[0] => Mux1.IN1
+s[0] => Mux0.IN2
+s[1] => Mux9.IN2
+s[1] => Mux8.IN0
+s[1] => Mux7.IN1
+s[1] => Mux6.IN0
+s[1] => Mux5.IN0
+s[1] => Mux4.IN0
+s[1] => Mux3.IN0
+s[1] => Mux2.IN0
+s[1] => Mux1.IN0
+s[1] => Mux0.IN1
+d[0] => Mux7.IN3
+d[1] => Mux6.IN2
+d[2] => Mux5.IN2
+d[3] => Mux4.IN2
+d[4] => Mux3.IN2
+d[5] => Mux2.IN2
+d[6] => Mux1.IN2
+d[7] => Mux0.IN3
+qb[0] <= qb[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb[1] <= qb[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb[2] <= qb[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb[3] <= qb[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb[4] <= qb[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb[5] <= qb[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb[6] <= qb[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb[7] <= qb[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cn <= cn~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|cnt2:inst1
+clk => q[1]~reg0.CLK
+clk => q[0]~reg0.CLK
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

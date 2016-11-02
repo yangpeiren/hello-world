@@ -1,0 +1,12 @@
+Analysis & Synthesis Status : Successful - Mon Jul 19 16:51:17 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : quzhi
+Top-level Entity Name : quzhi
+Family : Cyclone
+Total logic elements : 333
+Total pins : 111
+Total virtual pins : 0
+Total memory bits : 0
+DSP block 9-bit elements : N/A until Partition Merge
+Total PLLs : 0
+Total DLLs : N/A until Partition Merge

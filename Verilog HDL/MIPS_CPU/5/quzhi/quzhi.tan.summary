@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.918 ns
+From           : const4[5]
+To             : PC:inst10|PC_out[31]
+From Clock     : --
+To Clock       : PClk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.536 ns
+From           : PC:inst10|PC_out[18]
+To             : PC[18]
+From Clock     : PClk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.237 ns
+From           : Reset
+To             : Mem:inst11|DataOut[0]
+From Clock     : --
+To Clock       : PClk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'PClk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 130.16 MHz ( period = 7.683 ns )
+From           : PC:inst10|PC_out[3]
+To             : PC:inst10|PC_out[31]
+From Clock     : PClk
+To Clock       : PClk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

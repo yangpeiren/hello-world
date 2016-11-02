@@ -1,0 +1,42 @@
+--lpm_divide DEVICE_FAMILY="Cyclone II" LPM_DREPRESENTATION="UNSIGNED" LPM_NREPRESENTATION="UNSIGNED" LPM_WIDTHD=32 LPM_WIDTHN=32 OPTIMIZE_FOR_SPEED=5 denom numer remain CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 IGNORE_CARRY_BUFFERS="OFF"
+--VERSION_BEGIN 7.2 cbx_cycloneii 2007:06:13:15:47:32:SJ cbx_lpm_abs 2006:04:25:14:52:42:SJ cbx_lpm_add_sub 2007:08:06:16:01:34:SJ cbx_lpm_divide 2007:01:30:03:58:02:SJ cbx_mgl 2007:08:03:15:48:12:SJ cbx_stratix 2007:05:02:16:27:14:SJ cbx_stratixii 2007:06:28:17:26:26:SJ cbx_util_mgl 2007:06:01:06:37:30:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2007 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION sign_div_unsign_9nh (denominator[31..0], numerator[31..0])
+RETURNS ( quotient[31..0], remainder[31..0]);
+
+--synthesis_resources = 
+SUBDESIGN lpm_divide_28m
+( 
+	denom[31..0]	:	input;
+	numer[31..0]	:	input;
+	quotient[31..0]	:	output;
+	remain[31..0]	:	output;
+) 
+VARIABLE 
+	divider : sign_div_unsign_9nh;
+	numer_tmp[31..0]	: WIRE;
+
+BEGIN 
+	divider.denominator[] = denom[];
+	divider.numerator[] = numer_tmp[];
+	numer_tmp[] = numer[];
+	quotient[] = divider.quotient[];
+	remain[] = divider.remainder[];
+END;
+--VALID FILE

@@ -1,0 +1,377 @@
+Analysis & Synthesis report for Mem
+Thu Jul 29 18:36:15 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Inverted Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                             ;
++-------------------------------+------------------------------------------+
+; Analysis & Synthesis Status   ; Successful - Thu Jul 29 18:36:15 2010    ;
+; Quartus II Version            ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name                 ; Mem                                      ;
+; Top-level Entity Name         ; Mem                                      ;
+; Family                        ; Stratix II                               ;
+; Logic utilization             ; N/A                                      ;
+;     Combinational ALUTs       ; 617                                      ;
+;     Dedicated logic registers ; 1,056                                    ;
+; Total registers               ; 1056                                     ;
+; Total pins                    ; 103                                      ;
+; Total virtual pins            ; 0                                        ;
+; Total block memory bits       ; 0                                        ;
+; DSP block 9-bit elements      ; 0                                        ;
+; Total PLLs                    ; 0                                        ;
+; Total DLLs                    ; 0                                        ;
++-------------------------------+------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                         ;
++-----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                      ; Setting            ; Default Value      ;
++-----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                       ; Mem                ; Mem                ;
+; Family name                                                                 ; Stratix II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                     ; Off                ;                    ;
+; Use smart compilation                                                       ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                         ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                    ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                         ; Off                ; Off                ;
+; Preserve fewer node names                                                   ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                   ; Off                ; Off                ;
+; Verilog Version                                                             ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                    ; Auto               ; Auto               ;
+; Safe State Machine                                                          ; Off                ; Off                ;
+; Extract Verilog State Machines                                              ; On                 ; On                 ;
+; Extract VHDL State Machines                                                 ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                           ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                     ; On                 ; On                 ;
+; Parallel Synthesis                                                          ; Off                ; Off                ;
+; DSP Block Balancing                                                         ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                          ; On                 ; On                 ;
+; Power-Up Don't Care                                                         ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                ; Off                ; Off                ;
+; Remove Duplicate Registers                                                  ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                        ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                      ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                   ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                        ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                         ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                              ; Off                ; Off                ;
+; Optimization Technique -- Stratix II/III/HardCopy II/Stratix II GX/Arria GX ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix II/Stratix III                                ; 70                 ; 70                 ;
+; Auto Carry Chains                                                           ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                        ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                       ; Off                ; Off                ;
+; Perform gate-level register retiming                                        ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                      ; On                 ; On                 ;
+; Auto ROM Replacement                                                        ; On                 ; On                 ;
+; Auto RAM Replacement                                                        ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                  ; On                 ; On                 ;
+; Auto Shift Register Replacement                                             ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                               ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                           ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                      ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                    ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                           ; Off                ; Off                ;
+; Auto Resource Sharing                                                       ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                          ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                          ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                               ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                           ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                          ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                          ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                            ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                ; Normal compilation ; Normal compilation ;
+; HDL message level                                                           ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                             ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                    ; 100                ; 100                ;
+; Clock MUX Protection                                                        ; On                 ; On                 ;
+; Block Design Naming                                                         ; Auto               ; Auto               ;
++-----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                   ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+
+; Mem.v                            ; yes             ; User Verilog HDL File  ; D:/±à³Ì/verilog HDL/cpu/chengxu/Mem2/Mem/Mem.v ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++-----------------------------------------------+-------+
+; Resource                                      ; Usage ;
++-----------------------------------------------+-------+
+; Estimated ALUTs Used                          ; 617   ;
+; Dedicated logic registers                     ; 1056  ;
+;                                               ;       ;
+; Estimated ALUTs Unavailable                   ; 246   ;
+;                                               ;       ;
+; Total combinational functions                 ; 617   ;
+; Combinational ALUT usage by number of inputs  ;       ;
+;     -- 7 input functions                      ; 0     ;
+;     -- 6 input functions                      ; 320   ;
+;     -- 5 input functions                      ; 64    ;
+;     -- 4 input functions                      ; 0     ;
+;     -- <=3 input functions                    ; 233   ;
+;                                               ;       ;
+; Combinational ALUTs by mode                   ;       ;
+;     -- normal mode                            ; 617   ;
+;     -- extended LUT mode                      ; 0     ;
+;     -- arithmetic mode                        ; 0     ;
+;     -- shared arithmetic mode                 ; 0     ;
+;                                               ;       ;
+; Estimated ALUT/register pairs used            ; 1056  ;
+;                                               ;       ;
+; Total registers                               ; 1056  ;
+;     -- Dedicated logic registers              ; 1056  ;
+;     -- I/O registers                          ; 0     ;
+;                                               ;       ;
+; Estimated ALMs:  partially or completely used ; 528   ;
+;                                               ;       ;
+; I/O pins                                      ; 103   ;
+; Maximum fan-out node                          ; Clk   ;
+; Maximum fan-out                               ; 1056  ;
+; Total fan-out                                 ; 6748  ;
+; Average fan-out                               ; 3.80  ;
++-----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; |Mem                       ; 617 (617)         ; 1056 (1056)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 103  ; 0            ; |Mem                ; work         ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1056  ;
+; Number of registers using Synchronous Clear  ; 24    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 1024  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1056  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; memory[21][0]                             ; 1       ;
+; memory[13][0]                             ; 1       ;
+; memory[15][0]                             ; 1       ;
+; memory[25][0]                             ; 1       ;
+; memory[29][0]                             ; 1       ;
+; memory[18][0]                             ; 1       ;
+; memory[10][0]                             ; 1       ;
+; memory[26][0]                             ; 1       ;
+; memory[22][0]                             ; 1       ;
+; memory[20][0]                             ; 1       ;
+; memory[28][0]                             ; 1       ;
+; memory[21][1]                             ; 1       ;
+; memory[13][1]                             ; 1       ;
+; memory[25][1]                             ; 1       ;
+; memory[29][1]                             ; 1       ;
+; memory[27][1]                             ; 1       ;
+; memory[31][1]                             ; 1       ;
+; memory[18][1]                             ; 1       ;
+; memory[26][1]                             ; 1       ;
+; memory[22][1]                             ; 1       ;
+; memory[30][1]                             ; 1       ;
+; memory[20][1]                             ; 1       ;
+; memory[12][1]                             ; 1       ;
+; memory[28][1]                             ; 1       ;
+; memory[8][1]                              ; 1       ;
+; memory[17][2]                             ; 1       ;
+; memory[19][2]                             ; 1       ;
+; memory[9][2]                              ; 1       ;
+; memory[14][2]                             ; 1       ;
+; memory[12][2]                             ; 1       ;
+; memory[28][2]                             ; 1       ;
+; memory[8][2]                              ; 1       ;
+; memory[24][2]                             ; 1       ;
+; memory[21][3]                             ; 1       ;
+; memory[13][3]                             ; 1       ;
+; memory[31][3]                             ; 1       ;
+; memory[22][3]                             ; 1       ;
+; memory[20][3]                             ; 1       ;
+; memory[15][5]                             ; 1       ;
+; memory[25][5]                             ; 1       ;
+; memory[29][5]                             ; 1       ;
+; memory[31][5]                             ; 1       ;
+; memory[18][5]                             ; 1       ;
+; memory[26][5]                             ; 1       ;
+; memory[12][5]                             ; 1       ;
+; memory[28][5]                             ; 1       ;
+; memory[7][6]                              ; 1       ;
+; memory[7][7]                              ; 1       ;
+; memory[7][8]                              ; 1       ;
+; memory[7][9]                              ; 1       ;
+; memory[7][10]                             ; 1       ;
+; memory[7][11]                             ; 1       ;
+; memory[7][12]                             ; 1       ;
+; memory[29][12]                            ; 1       ;
+; memory[18][12]                            ; 1       ;
+; memory[26][12]                            ; 1       ;
+; memory[12][12]                            ; 1       ;
+; memory[7][13]                             ; 1       ;
+; memory[15][13]                            ; 1       ;
+; memory[25][13]                            ; 1       ;
+; memory[18][13]                            ; 1       ;
+; memory[7][15]                             ; 1       ;
+; memory[21][15]                            ; 1       ;
+; memory[13][15]                            ; 1       ;
+; memory[15][15]                            ; 1       ;
+; memory[25][15]                            ; 1       ;
+; memory[29][15]                            ; 1       ;
+; memory[18][15]                            ; 1       ;
+; memory[26][15]                            ; 1       ;
+; memory[22][15]                            ; 1       ;
+; memory[20][15]                            ; 1       ;
+; memory[12][15]                            ; 1       ;
+; memory[23][16]                            ; 1       ;
+; memory[9][16]                             ; 1       ;
+; memory[11][16]                            ; 1       ;
+; memory[18][16]                            ; 1       ;
+; memory[26][16]                            ; 1       ;
+; memory[22][16]                            ; 1       ;
+; memory[16][16]                            ; 1       ;
+; memory[17][17]                            ; 1       ;
+; memory[21][17]                            ; 1       ;
+; memory[10][17]                            ; 1       ;
+; memory[26][17]                            ; 1       ;
+; memory[22][17]                            ; 1       ;
+; memory[20][17]                            ; 1       ;
+; memory[24][17]                            ; 1       ;
+; memory[17][18]                            ; 1       ;
+; memory[21][18]                            ; 1       ;
+; memory[23][18]                            ; 1       ;
+; memory[11][18]                            ; 1       ;
+; memory[18][18]                            ; 1       ;
+; memory[22][18]                            ; 1       ;
+; memory[14][18]                            ; 1       ;
+; memory[16][18]                            ; 1       ;
+; memory[24][18]                            ; 1       ;
+; memory[7][19]                             ; 1       ;
+; memory[15][19]                            ; 1       ;
+; memory[25][19]                            ; 1       ;
+; memory[20][19]                            ; 1       ;
+; memory[17][20]                            ; 1       ;
+; Total number of inverted registers = 206* ;         ;
++-------------------------------------------+---------+
+*Too many items, table truncated at 100 items.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 32:1               ; 8 bits    ; 168 ALUTs     ; 168 ALUTs            ; 0 ALUTs                ; Yes        ; |Mem|DataOut[0]~reg0       ;
+; 33:1               ; 8 bits    ; 176 ALUTs     ; 168 ALUTs            ; 8 ALUTs                ; Yes        ; |Mem|DataOut[8]~reg0       ;
+; 33:1               ; 16 bits   ; 352 ALUTs     ; 336 ALUTs            ; 16 ALUTs               ; Yes        ; |Mem|DataOut[16]~reg0      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Thu Jul 29 18:36:09 2010
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mem -c Mem
+Info: Found 1 design units, including 1 entities, in source file Mem.v
+    Info: Found entity 1: Mem
+Info: Elaborating entity "Mem" for the top level hierarchy
+Warning (10306): Invalid value "96'b010001000011101000001010011001010111011101001101011001010110110100101110011011010110100101100110" for synthesis attribute "ram_init_file" at Mem.v(9)
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DataReady" stuck at VCC
+Info: Registers with preset signals will power-up high
+Warning: Design contains 27 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "BE[0]"
+    Warning (15610): No output dependent on input pin "CS"
+    Warning (15610): No output dependent on input pin "Addr[7]"
+    Warning (15610): No output dependent on input pin "Addr[8]"
+    Warning (15610): No output dependent on input pin "Addr[9]"
+    Warning (15610): No output dependent on input pin "Addr[10]"
+    Warning (15610): No output dependent on input pin "Addr[11]"
+    Warning (15610): No output dependent on input pin "Addr[12]"
+    Warning (15610): No output dependent on input pin "Addr[13]"
+    Warning (15610): No output dependent on input pin "Addr[14]"
+    Warning (15610): No output dependent on input pin "Addr[15]"
+    Warning (15610): No output dependent on input pin "Addr[16]"
+    Warning (15610): No output dependent on input pin "Addr[17]"
+    Warning (15610): No output dependent on input pin "Addr[18]"
+    Warning (15610): No output dependent on input pin "Addr[19]"
+    Warning (15610): No output dependent on input pin "Addr[20]"
+    Warning (15610): No output dependent on input pin "Addr[21]"
+    Warning (15610): No output dependent on input pin "Addr[22]"
+    Warning (15610): No output dependent on input pin "Addr[23]"
+    Warning (15610): No output dependent on input pin "Addr[24]"
+    Warning (15610): No output dependent on input pin "Addr[25]"
+    Warning (15610): No output dependent on input pin "Addr[26]"
+    Warning (15610): No output dependent on input pin "Addr[27]"
+    Warning (15610): No output dependent on input pin "Addr[28]"
+    Warning (15610): No output dependent on input pin "Addr[29]"
+    Warning (15610): No output dependent on input pin "Addr[30]"
+    Warning (15610): No output dependent on input pin "Addr[31]"
+Info: Implemented 1538 device resources after synthesis - the final resource count might be different
+    Info: Implemented 70 input pins
+    Info: Implemented 33 output pins
+    Info: Implemented 1435 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Allocated 178 megabytes of memory during processing
+    Info: Processing ended: Thu Jul 29 18:36:15 2010
+    Info: Elapsed time: 00:00:06
+
+

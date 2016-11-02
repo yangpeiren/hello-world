@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.584 ns
+From           : WR
+To             : fifo3:inst|scfifo:scfifo_component|scfifo_bn21:auto_generated|a_dpfifo_it21:dpfifo|empty_dff
+From Clock     : --
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.133 ns
+From           : fifo3:inst|scfifo:scfifo_component|scfifo_bn21:auto_generated|a_dpfifo_it21:dpfifo|altsyncram_rqd1:FIFOram|altsyncram_mbj1:altsyncram1|q_a[5]
+To             : Q[5]
+From Clock     : CLK
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -3.381 ns
+From           : D[5]
+To             : fifo3:inst|scfifo:scfifo_component|scfifo_bn21:auto_generated|a_dpfifo_it21:dpfifo|altsyncram_rqd1:FIFOram|altsyncram_mbj1:altsyncram1|ram_block2a0~portb_datain_reg5
+From Clock     : --
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 163.03 MHz ( period = 6.134 ns )
+From           : fifo3:inst|scfifo:scfifo_component|scfifo_bn21:auto_generated|a_dpfifo_it21:dpfifo|altsyncram_rqd1:FIFOram|altsyncram_mbj1:altsyncram1|ram_block2a0~porta_address_reg7
+To             : fifo3:inst|scfifo:scfifo_component|scfifo_bn21:auto_generated|a_dpfifo_it21:dpfifo|altsyncram_rqd1:FIFOram|altsyncram_mbj1:altsyncram1|q_a[7]
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

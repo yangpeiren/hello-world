@@ -1,0 +1,15 @@
+Analysis & Synthesis Status : Successful - Sat Jul 17 01:41:51 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : Mux3to1_32
+Top-level Entity Name : Mux3to1_32
+Family : Stratix II
+Logic utilization : N/A
+    Combinational ALUTs : 32
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 130
+Total virtual pins : 0
+Total block memory bits : 0
+DSP block 9-bit elements : 0
+Total PLLs : 0
+Total DLLs : 0

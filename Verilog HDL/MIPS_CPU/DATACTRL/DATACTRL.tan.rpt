@@ -1,0 +1,130 @@
+Classic Timing Analyzer report for DATACTRL
+Wed Jul 14 01:53:49 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. tpd
+  5. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                 ;
++------------------------------+-------+---------------+-------------+------+------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From ; To   ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+------+------+------------+----------+--------------+
+; Worst-case tpd               ; N/A   ; None          ; 12.464 ns   ; I0   ; R1_B ; --         ; --       ; 0            ;
+; Total number of failed paths ;       ;               ;             ;      ;      ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+------+------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EP1C12Q240C8       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++-----------------------------------------------------------+
+; tpd                                                       ;
++-------+-------------------+-----------------+------+------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To   ;
++-------+-------------------+-----------------+------+------+
+; N/A   ; None              ; 12.464 ns       ; I0   ; R1_B ;
+; N/A   ; None              ; 12.195 ns       ; I1   ; R1_B ;
+; N/A   ; None              ; 11.789 ns       ; RS_B ; R0_B ;
+; N/A   ; None              ; 11.728 ns       ; I0   ; R0_B ;
+; N/A   ; None              ; 11.614 ns       ; I2   ; R2_B ;
+; N/A   ; None              ; 11.566 ns       ; RS_B ; R2_B ;
+; N/A   ; None              ; 11.455 ns       ; I1   ; R0_B ;
+; N/A   ; None              ; 11.434 ns       ; I0   ; R2_B ;
+; N/A   ; None              ; 11.433 ns       ; I3   ; R2_B ;
+; N/A   ; None              ; 11.422 ns       ; I0   ; LDR2 ;
+; N/A   ; None              ; 11.368 ns       ; I2   ; R0_B ;
+; N/A   ; None              ; 11.340 ns       ; I3   ; R0_B ;
+; N/A   ; None              ; 11.339 ns       ; RS_B ; R1_B ;
+; N/A   ; None              ; 11.153 ns       ; I1   ; R2_B ;
+; N/A   ; None              ; 11.152 ns       ; I1   ; LDR2 ;
+; N/A   ; None              ; 11.091 ns       ; I2   ; R1_B ;
+; N/A   ; None              ; 11.065 ns       ; RJ_B ; R2_B ;
+; N/A   ; None              ; 10.987 ns       ; I0   ; LDR1 ;
+; N/A   ; None              ; 10.979 ns       ; I0   ; LDR0 ;
+; N/A   ; None              ; 10.944 ns       ; RD_B ; R1_B ;
+; N/A   ; None              ; 10.941 ns       ; RD_B ; R2_B ;
+; N/A   ; None              ; 10.939 ns       ; RD_B ; R0_B ;
+; N/A   ; None              ; 10.890 ns       ; I3   ; R1_B ;
+; N/A   ; None              ; 10.709 ns       ; I1   ; LDR0 ;
+; N/A   ; None              ; 10.703 ns       ; I1   ; LDR1 ;
+; N/A   ; None              ; 10.563 ns       ; LDRI ; LDR2 ;
+; N/A   ; None              ; 10.125 ns       ; LDRI ; LDR1 ;
+; N/A   ; None              ; 10.121 ns       ; LDRI ; LDR0 ;
++-------+-------------------+-----------------+------+------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Wed Jul 14 01:53:49 2010
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off DATACTRL -c DATACTRL --timing_analysis_only
+Info: Longest tpd from source pin "I0" to destination pin "R1_B" is 12.464 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.475 ns) = 1.475 ns; Loc. = PIN_233; Fanout = 6; PIN Node = 'I0'
+    Info: 2: + IC(5.445 ns) + CELL(0.590 ns) = 7.510 ns; Loc. = LC_X2_Y26_N1; Fanout = 1; COMB Node = '74139:inst|34~8'
+    Info: 3: + IC(0.438 ns) + CELL(0.590 ns) = 8.538 ns; Loc. = LC_X2_Y26_N9; Fanout = 1; COMB Node = 'inst15'
+    Info: 4: + IC(1.802 ns) + CELL(2.124 ns) = 12.464 ns; Loc. = PIN_8; Fanout = 0; PIN Node = 'R1_B'
+    Info: Total cell delay = 4.779 ns ( 38.34 % )
+    Info: Total interconnect delay = 7.685 ns ( 61.66 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Allocated 138 megabytes of memory during processing
+    Info: Processing ended: Wed Jul 14 01:53:49 2010
+    Info: Elapsed time: 00:00:00
+
+

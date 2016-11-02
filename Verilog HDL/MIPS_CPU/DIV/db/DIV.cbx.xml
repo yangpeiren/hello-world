@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DIV">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DIV|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_vfm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DIV|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_28m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DIV|lpm_mult:Mult0" CBX_FILE_NAME="mult_9v01.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

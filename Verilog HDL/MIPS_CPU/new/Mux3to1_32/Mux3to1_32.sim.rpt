@@ -1,0 +1,442 @@
+Simulator report for Mux3to1_32
+Sat Jul 17 01:45:00 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 162 nodes    ;
+; Simulation Coverage         ;      25.93 % ;
+; Total Number of Transitions ; 402          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix II   ;
+; Device                      ; EP2S15F484C3 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      25.93 % ;
+; Total nodes checked                                 ; 162          ;
+; Total output ports checked                          ; 162          ;
+; Total output ports with complete 1/0-value coverage ; 42           ;
+; Total output ports with no 1/0-value coverage       ; 120          ;
+; Total output ports with no 1-value coverage         ; 120          ;
+; Total output ports with no 0-value coverage         ; 120          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                          ;
++-----------------------+---------------------------+------------------+
+; Node Name             ; Output Port Name          ; Output Port Type ;
++-----------------------+---------------------------+------------------+
+; |Mux3to1_32|Mux30~130 ; |Mux3to1_32|Mux30~130     ; combout          ;
+; |Mux3to1_32|Mux28~130 ; |Mux3to1_32|Mux28~130     ; combout          ;
+; |Mux3to1_32|Mux27~130 ; |Mux3to1_32|Mux27~130     ; combout          ;
+; |Mux3to1_32|Mux25~130 ; |Mux3to1_32|Mux25~130     ; combout          ;
+; |Mux3to1_32|Mux24~130 ; |Mux3to1_32|Mux24~130     ; combout          ;
+; |Mux3to1_32|Mux21~130 ; |Mux3to1_32|Mux21~130     ; combout          ;
+; |Mux3to1_32|Mux20~130 ; |Mux3to1_32|Mux20~130     ; combout          ;
+; |Mux3to1_32|Mux19~130 ; |Mux3to1_32|Mux19~130     ; combout          ;
+; |Mux3to1_32|Mux18~130 ; |Mux3to1_32|Mux18~130     ; combout          ;
+; |Mux3to1_32|Mux17~130 ; |Mux3to1_32|Mux17~130     ; combout          ;
+; |Mux3to1_32|Mux16~130 ; |Mux3to1_32|Mux16~130     ; combout          ;
+; |Mux3to1_32|Mux15~130 ; |Mux3to1_32|Mux15~130     ; combout          ;
+; |Mux3to1_32|Mux13~130 ; |Mux3to1_32|Mux13~130     ; combout          ;
+; |Mux3to1_32|Mux12~130 ; |Mux3to1_32|Mux12~130     ; combout          ;
+; |Mux3to1_32|Mux10~130 ; |Mux3to1_32|Mux10~130     ; combout          ;
+; |Mux3to1_32|Mux8~130  ; |Mux3to1_32|Mux8~130      ; combout          ;
+; |Mux3to1_32|Mux7~130  ; |Mux3to1_32|Mux7~130      ; combout          ;
+; |Mux3to1_32|Mux6~130  ; |Mux3to1_32|Mux6~130      ; combout          ;
+; |Mux3to1_32|Mux4~130  ; |Mux3to1_32|Mux4~130      ; combout          ;
+; |Mux3to1_32|Mux0~130  ; |Mux3to1_32|Mux0~130      ; combout          ;
+; |Mux3to1_32|out[1]    ; |Mux3to1_32|out[1]        ; padio            ;
+; |Mux3to1_32|out[3]    ; |Mux3to1_32|out[3]        ; padio            ;
+; |Mux3to1_32|out[4]    ; |Mux3to1_32|out[4]        ; padio            ;
+; |Mux3to1_32|out[6]    ; |Mux3to1_32|out[6]        ; padio            ;
+; |Mux3to1_32|out[7]    ; |Mux3to1_32|out[7]        ; padio            ;
+; |Mux3to1_32|out[10]   ; |Mux3to1_32|out[10]       ; padio            ;
+; |Mux3to1_32|out[11]   ; |Mux3to1_32|out[11]       ; padio            ;
+; |Mux3to1_32|out[12]   ; |Mux3to1_32|out[12]       ; padio            ;
+; |Mux3to1_32|out[13]   ; |Mux3to1_32|out[13]       ; padio            ;
+; |Mux3to1_32|out[14]   ; |Mux3to1_32|out[14]       ; padio            ;
+; |Mux3to1_32|out[15]   ; |Mux3to1_32|out[15]       ; padio            ;
+; |Mux3to1_32|out[16]   ; |Mux3to1_32|out[16]       ; padio            ;
+; |Mux3to1_32|out[18]   ; |Mux3to1_32|out[18]       ; padio            ;
+; |Mux3to1_32|out[19]   ; |Mux3to1_32|out[19]       ; padio            ;
+; |Mux3to1_32|out[21]   ; |Mux3to1_32|out[21]       ; padio            ;
+; |Mux3to1_32|out[23]   ; |Mux3to1_32|out[23]       ; padio            ;
+; |Mux3to1_32|out[24]   ; |Mux3to1_32|out[24]       ; padio            ;
+; |Mux3to1_32|out[25]   ; |Mux3to1_32|out[25]       ; padio            ;
+; |Mux3to1_32|out[27]   ; |Mux3to1_32|out[27]       ; padio            ;
+; |Mux3to1_32|out[31]   ; |Mux3to1_32|out[31]       ; padio            ;
+; |Mux3to1_32|sel[0]    ; |Mux3to1_32|sel[0]~corein ; combout          ;
+; |Mux3to1_32|sel[1]    ; |Mux3to1_32|sel[1]~corein ; combout          ;
++-----------------------+---------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-----------------------------------------------------------------------+
+; Missing 1-Value Coverage                                              ;
++-----------------------+----------------------------+------------------+
+; Node Name             ; Output Port Name           ; Output Port Type ;
++-----------------------+----------------------------+------------------+
+; |Mux3to1_32|Mux31~145 ; |Mux3to1_32|Mux31~145      ; combout          ;
+; |Mux3to1_32|Mux29~130 ; |Mux3to1_32|Mux29~130      ; combout          ;
+; |Mux3to1_32|Mux26~130 ; |Mux3to1_32|Mux26~130      ; combout          ;
+; |Mux3to1_32|Mux23~130 ; |Mux3to1_32|Mux23~130      ; combout          ;
+; |Mux3to1_32|Mux22~130 ; |Mux3to1_32|Mux22~130      ; combout          ;
+; |Mux3to1_32|Mux14~130 ; |Mux3to1_32|Mux14~130      ; combout          ;
+; |Mux3to1_32|Mux11~130 ; |Mux3to1_32|Mux11~130      ; combout          ;
+; |Mux3to1_32|Mux9~130  ; |Mux3to1_32|Mux9~130       ; combout          ;
+; |Mux3to1_32|Mux5~130  ; |Mux3to1_32|Mux5~130       ; combout          ;
+; |Mux3to1_32|Mux3~130  ; |Mux3to1_32|Mux3~130       ; combout          ;
+; |Mux3to1_32|Mux2~130  ; |Mux3to1_32|Mux2~130       ; combout          ;
+; |Mux3to1_32|Mux1~130  ; |Mux3to1_32|Mux1~130       ; combout          ;
+; |Mux3to1_32|out[0]    ; |Mux3to1_32|out[0]         ; padio            ;
+; |Mux3to1_32|out[2]    ; |Mux3to1_32|out[2]         ; padio            ;
+; |Mux3to1_32|out[5]    ; |Mux3to1_32|out[5]         ; padio            ;
+; |Mux3to1_32|out[8]    ; |Mux3to1_32|out[8]         ; padio            ;
+; |Mux3to1_32|out[9]    ; |Mux3to1_32|out[9]         ; padio            ;
+; |Mux3to1_32|out[17]   ; |Mux3to1_32|out[17]        ; padio            ;
+; |Mux3to1_32|out[20]   ; |Mux3to1_32|out[20]        ; padio            ;
+; |Mux3to1_32|out[22]   ; |Mux3to1_32|out[22]        ; padio            ;
+; |Mux3to1_32|out[26]   ; |Mux3to1_32|out[26]        ; padio            ;
+; |Mux3to1_32|out[28]   ; |Mux3to1_32|out[28]        ; padio            ;
+; |Mux3to1_32|out[29]   ; |Mux3to1_32|out[29]        ; padio            ;
+; |Mux3to1_32|out[30]   ; |Mux3to1_32|out[30]        ; padio            ;
+; |Mux3to1_32|in0[0]    ; |Mux3to1_32|in0[0]~corein  ; combout          ;
+; |Mux3to1_32|in1[0]    ; |Mux3to1_32|in1[0]~corein  ; combout          ;
+; |Mux3to1_32|in2[0]    ; |Mux3to1_32|in2[0]~corein  ; combout          ;
+; |Mux3to1_32|in0[1]    ; |Mux3to1_32|in0[1]~corein  ; combout          ;
+; |Mux3to1_32|in1[1]    ; |Mux3to1_32|in1[1]~corein  ; combout          ;
+; |Mux3to1_32|in2[1]    ; |Mux3to1_32|in2[1]~corein  ; combout          ;
+; |Mux3to1_32|in0[2]    ; |Mux3to1_32|in0[2]~corein  ; combout          ;
+; |Mux3to1_32|in1[2]    ; |Mux3to1_32|in1[2]~corein  ; combout          ;
+; |Mux3to1_32|in2[2]    ; |Mux3to1_32|in2[2]~corein  ; combout          ;
+; |Mux3to1_32|in0[3]    ; |Mux3to1_32|in0[3]~corein  ; combout          ;
+; |Mux3to1_32|in1[3]    ; |Mux3to1_32|in1[3]~corein  ; combout          ;
+; |Mux3to1_32|in2[3]    ; |Mux3to1_32|in2[3]~corein  ; combout          ;
+; |Mux3to1_32|in0[4]    ; |Mux3to1_32|in0[4]~corein  ; combout          ;
+; |Mux3to1_32|in1[4]    ; |Mux3to1_32|in1[4]~corein  ; combout          ;
+; |Mux3to1_32|in2[4]    ; |Mux3to1_32|in2[4]~corein  ; combout          ;
+; |Mux3to1_32|in0[5]    ; |Mux3to1_32|in0[5]~corein  ; combout          ;
+; |Mux3to1_32|in1[5]    ; |Mux3to1_32|in1[5]~corein  ; combout          ;
+; |Mux3to1_32|in2[5]    ; |Mux3to1_32|in2[5]~corein  ; combout          ;
+; |Mux3to1_32|in0[6]    ; |Mux3to1_32|in0[6]~corein  ; combout          ;
+; |Mux3to1_32|in1[6]    ; |Mux3to1_32|in1[6]~corein  ; combout          ;
+; |Mux3to1_32|in2[6]    ; |Mux3to1_32|in2[6]~corein  ; combout          ;
+; |Mux3to1_32|in0[7]    ; |Mux3to1_32|in0[7]~corein  ; combout          ;
+; |Mux3to1_32|in1[7]    ; |Mux3to1_32|in1[7]~corein  ; combout          ;
+; |Mux3to1_32|in2[7]    ; |Mux3to1_32|in2[7]~corein  ; combout          ;
+; |Mux3to1_32|in0[8]    ; |Mux3to1_32|in0[8]~corein  ; combout          ;
+; |Mux3to1_32|in1[8]    ; |Mux3to1_32|in1[8]~corein  ; combout          ;
+; |Mux3to1_32|in2[8]    ; |Mux3to1_32|in2[8]~corein  ; combout          ;
+; |Mux3to1_32|in0[9]    ; |Mux3to1_32|in0[9]~corein  ; combout          ;
+; |Mux3to1_32|in1[9]    ; |Mux3to1_32|in1[9]~corein  ; combout          ;
+; |Mux3to1_32|in2[9]    ; |Mux3to1_32|in2[9]~corein  ; combout          ;
+; |Mux3to1_32|in0[10]   ; |Mux3to1_32|in0[10]~corein ; combout          ;
+; |Mux3to1_32|in1[10]   ; |Mux3to1_32|in1[10]~corein ; combout          ;
+; |Mux3to1_32|in2[10]   ; |Mux3to1_32|in2[10]~corein ; combout          ;
+; |Mux3to1_32|in0[11]   ; |Mux3to1_32|in0[11]~corein ; combout          ;
+; |Mux3to1_32|in1[11]   ; |Mux3to1_32|in1[11]~corein ; combout          ;
+; |Mux3to1_32|in2[11]   ; |Mux3to1_32|in2[11]~corein ; combout          ;
+; |Mux3to1_32|in0[12]   ; |Mux3to1_32|in0[12]~corein ; combout          ;
+; |Mux3to1_32|in1[12]   ; |Mux3to1_32|in1[12]~corein ; combout          ;
+; |Mux3to1_32|in2[12]   ; |Mux3to1_32|in2[12]~corein ; combout          ;
+; |Mux3to1_32|in0[13]   ; |Mux3to1_32|in0[13]~corein ; combout          ;
+; |Mux3to1_32|in1[13]   ; |Mux3to1_32|in1[13]~corein ; combout          ;
+; |Mux3to1_32|in2[13]   ; |Mux3to1_32|in2[13]~corein ; combout          ;
+; |Mux3to1_32|in0[14]   ; |Mux3to1_32|in0[14]~corein ; combout          ;
+; |Mux3to1_32|in1[14]   ; |Mux3to1_32|in1[14]~corein ; combout          ;
+; |Mux3to1_32|in2[14]   ; |Mux3to1_32|in2[14]~corein ; combout          ;
+; |Mux3to1_32|in0[15]   ; |Mux3to1_32|in0[15]~corein ; combout          ;
+; |Mux3to1_32|in1[15]   ; |Mux3to1_32|in1[15]~corein ; combout          ;
+; |Mux3to1_32|in2[15]   ; |Mux3to1_32|in2[15]~corein ; combout          ;
+; |Mux3to1_32|in0[16]   ; |Mux3to1_32|in0[16]~corein ; combout          ;
+; |Mux3to1_32|in1[16]   ; |Mux3to1_32|in1[16]~corein ; combout          ;
+; |Mux3to1_32|in2[16]   ; |Mux3to1_32|in2[16]~corein ; combout          ;
+; |Mux3to1_32|in0[17]   ; |Mux3to1_32|in0[17]~corein ; combout          ;
+; |Mux3to1_32|in1[17]   ; |Mux3to1_32|in1[17]~corein ; combout          ;
+; |Mux3to1_32|in2[17]   ; |Mux3to1_32|in2[17]~corein ; combout          ;
+; |Mux3to1_32|in0[18]   ; |Mux3to1_32|in0[18]~corein ; combout          ;
+; |Mux3to1_32|in1[18]   ; |Mux3to1_32|in1[18]~corein ; combout          ;
+; |Mux3to1_32|in2[18]   ; |Mux3to1_32|in2[18]~corein ; combout          ;
+; |Mux3to1_32|in0[19]   ; |Mux3to1_32|in0[19]~corein ; combout          ;
+; |Mux3to1_32|in1[19]   ; |Mux3to1_32|in1[19]~corein ; combout          ;
+; |Mux3to1_32|in2[19]   ; |Mux3to1_32|in2[19]~corein ; combout          ;
+; |Mux3to1_32|in0[20]   ; |Mux3to1_32|in0[20]~corein ; combout          ;
+; |Mux3to1_32|in1[20]   ; |Mux3to1_32|in1[20]~corein ; combout          ;
+; |Mux3to1_32|in2[20]   ; |Mux3to1_32|in2[20]~corein ; combout          ;
+; |Mux3to1_32|in0[21]   ; |Mux3to1_32|in0[21]~corein ; combout          ;
+; |Mux3to1_32|in1[21]   ; |Mux3to1_32|in1[21]~corein ; combout          ;
+; |Mux3to1_32|in2[21]   ; |Mux3to1_32|in2[21]~corein ; combout          ;
+; |Mux3to1_32|in0[22]   ; |Mux3to1_32|in0[22]~corein ; combout          ;
+; |Mux3to1_32|in1[22]   ; |Mux3to1_32|in1[22]~corein ; combout          ;
+; |Mux3to1_32|in2[22]   ; |Mux3to1_32|in2[22]~corein ; combout          ;
+; |Mux3to1_32|in0[23]   ; |Mux3to1_32|in0[23]~corein ; combout          ;
+; |Mux3to1_32|in1[23]   ; |Mux3to1_32|in1[23]~corein ; combout          ;
+; |Mux3to1_32|in2[23]   ; |Mux3to1_32|in2[23]~corein ; combout          ;
+; |Mux3to1_32|in0[24]   ; |Mux3to1_32|in0[24]~corein ; combout          ;
+; |Mux3to1_32|in1[24]   ; |Mux3to1_32|in1[24]~corein ; combout          ;
+; |Mux3to1_32|in2[24]   ; |Mux3to1_32|in2[24]~corein ; combout          ;
+; |Mux3to1_32|in0[25]   ; |Mux3to1_32|in0[25]~corein ; combout          ;
+; |Mux3to1_32|in1[25]   ; |Mux3to1_32|in1[25]~corein ; combout          ;
+; |Mux3to1_32|in2[25]   ; |Mux3to1_32|in2[25]~corein ; combout          ;
+; |Mux3to1_32|in0[26]   ; |Mux3to1_32|in0[26]~corein ; combout          ;
+; |Mux3to1_32|in1[26]   ; |Mux3to1_32|in1[26]~corein ; combout          ;
+; |Mux3to1_32|in2[26]   ; |Mux3to1_32|in2[26]~corein ; combout          ;
+; |Mux3to1_32|in0[27]   ; |Mux3to1_32|in0[27]~corein ; combout          ;
+; |Mux3to1_32|in1[27]   ; |Mux3to1_32|in1[27]~corein ; combout          ;
+; |Mux3to1_32|in2[27]   ; |Mux3to1_32|in2[27]~corein ; combout          ;
+; |Mux3to1_32|in0[28]   ; |Mux3to1_32|in0[28]~corein ; combout          ;
+; |Mux3to1_32|in1[28]   ; |Mux3to1_32|in1[28]~corein ; combout          ;
+; |Mux3to1_32|in2[28]   ; |Mux3to1_32|in2[28]~corein ; combout          ;
+; |Mux3to1_32|in0[29]   ; |Mux3to1_32|in0[29]~corein ; combout          ;
+; |Mux3to1_32|in1[29]   ; |Mux3to1_32|in1[29]~corein ; combout          ;
+; |Mux3to1_32|in2[29]   ; |Mux3to1_32|in2[29]~corein ; combout          ;
+; |Mux3to1_32|in0[30]   ; |Mux3to1_32|in0[30]~corein ; combout          ;
+; |Mux3to1_32|in1[30]   ; |Mux3to1_32|in1[30]~corein ; combout          ;
+; |Mux3to1_32|in2[30]   ; |Mux3to1_32|in2[30]~corein ; combout          ;
+; |Mux3to1_32|in0[31]   ; |Mux3to1_32|in0[31]~corein ; combout          ;
+; |Mux3to1_32|in1[31]   ; |Mux3to1_32|in1[31]~corein ; combout          ;
+; |Mux3to1_32|in2[31]   ; |Mux3to1_32|in2[31]~corein ; combout          ;
++-----------------------+----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-----------------------------------------------------------------------+
+; Missing 0-Value Coverage                                              ;
++-----------------------+----------------------------+------------------+
+; Node Name             ; Output Port Name           ; Output Port Type ;
++-----------------------+----------------------------+------------------+
+; |Mux3to1_32|Mux31~145 ; |Mux3to1_32|Mux31~145      ; combout          ;
+; |Mux3to1_32|Mux29~130 ; |Mux3to1_32|Mux29~130      ; combout          ;
+; |Mux3to1_32|Mux26~130 ; |Mux3to1_32|Mux26~130      ; combout          ;
+; |Mux3to1_32|Mux23~130 ; |Mux3to1_32|Mux23~130      ; combout          ;
+; |Mux3to1_32|Mux22~130 ; |Mux3to1_32|Mux22~130      ; combout          ;
+; |Mux3to1_32|Mux14~130 ; |Mux3to1_32|Mux14~130      ; combout          ;
+; |Mux3to1_32|Mux11~130 ; |Mux3to1_32|Mux11~130      ; combout          ;
+; |Mux3to1_32|Mux9~130  ; |Mux3to1_32|Mux9~130       ; combout          ;
+; |Mux3to1_32|Mux5~130  ; |Mux3to1_32|Mux5~130       ; combout          ;
+; |Mux3to1_32|Mux3~130  ; |Mux3to1_32|Mux3~130       ; combout          ;
+; |Mux3to1_32|Mux2~130  ; |Mux3to1_32|Mux2~130       ; combout          ;
+; |Mux3to1_32|Mux1~130  ; |Mux3to1_32|Mux1~130       ; combout          ;
+; |Mux3to1_32|out[0]    ; |Mux3to1_32|out[0]         ; padio            ;
+; |Mux3to1_32|out[2]    ; |Mux3to1_32|out[2]         ; padio            ;
+; |Mux3to1_32|out[5]    ; |Mux3to1_32|out[5]         ; padio            ;
+; |Mux3to1_32|out[8]    ; |Mux3to1_32|out[8]         ; padio            ;
+; |Mux3to1_32|out[9]    ; |Mux3to1_32|out[9]         ; padio            ;
+; |Mux3to1_32|out[17]   ; |Mux3to1_32|out[17]        ; padio            ;
+; |Mux3to1_32|out[20]   ; |Mux3to1_32|out[20]        ; padio            ;
+; |Mux3to1_32|out[22]   ; |Mux3to1_32|out[22]        ; padio            ;
+; |Mux3to1_32|out[26]   ; |Mux3to1_32|out[26]        ; padio            ;
+; |Mux3to1_32|out[28]   ; |Mux3to1_32|out[28]        ; padio            ;
+; |Mux3to1_32|out[29]   ; |Mux3to1_32|out[29]        ; padio            ;
+; |Mux3to1_32|out[30]   ; |Mux3to1_32|out[30]        ; padio            ;
+; |Mux3to1_32|in0[0]    ; |Mux3to1_32|in0[0]~corein  ; combout          ;
+; |Mux3to1_32|in1[0]    ; |Mux3to1_32|in1[0]~corein  ; combout          ;
+; |Mux3to1_32|in2[0]    ; |Mux3to1_32|in2[0]~corein  ; combout          ;
+; |Mux3to1_32|in0[1]    ; |Mux3to1_32|in0[1]~corein  ; combout          ;
+; |Mux3to1_32|in1[1]    ; |Mux3to1_32|in1[1]~corein  ; combout          ;
+; |Mux3to1_32|in2[1]    ; |Mux3to1_32|in2[1]~corein  ; combout          ;
+; |Mux3to1_32|in0[2]    ; |Mux3to1_32|in0[2]~corein  ; combout          ;
+; |Mux3to1_32|in1[2]    ; |Mux3to1_32|in1[2]~corein  ; combout          ;
+; |Mux3to1_32|in2[2]    ; |Mux3to1_32|in2[2]~corein  ; combout          ;
+; |Mux3to1_32|in0[3]    ; |Mux3to1_32|in0[3]~corein  ; combout          ;
+; |Mux3to1_32|in1[3]    ; |Mux3to1_32|in1[3]~corein  ; combout          ;
+; |Mux3to1_32|in2[3]    ; |Mux3to1_32|in2[3]~corein  ; combout          ;
+; |Mux3to1_32|in0[4]    ; |Mux3to1_32|in0[4]~corein  ; combout          ;
+; |Mux3to1_32|in1[4]    ; |Mux3to1_32|in1[4]~corein  ; combout          ;
+; |Mux3to1_32|in2[4]    ; |Mux3to1_32|in2[4]~corein  ; combout          ;
+; |Mux3to1_32|in0[5]    ; |Mux3to1_32|in0[5]~corein  ; combout          ;
+; |Mux3to1_32|in1[5]    ; |Mux3to1_32|in1[5]~corein  ; combout          ;
+; |Mux3to1_32|in2[5]    ; |Mux3to1_32|in2[5]~corein  ; combout          ;
+; |Mux3to1_32|in0[6]    ; |Mux3to1_32|in0[6]~corein  ; combout          ;
+; |Mux3to1_32|in1[6]    ; |Mux3to1_32|in1[6]~corein  ; combout          ;
+; |Mux3to1_32|in2[6]    ; |Mux3to1_32|in2[6]~corein  ; combout          ;
+; |Mux3to1_32|in0[7]    ; |Mux3to1_32|in0[7]~corein  ; combout          ;
+; |Mux3to1_32|in1[7]    ; |Mux3to1_32|in1[7]~corein  ; combout          ;
+; |Mux3to1_32|in2[7]    ; |Mux3to1_32|in2[7]~corein  ; combout          ;
+; |Mux3to1_32|in0[8]    ; |Mux3to1_32|in0[8]~corein  ; combout          ;
+; |Mux3to1_32|in1[8]    ; |Mux3to1_32|in1[8]~corein  ; combout          ;
+; |Mux3to1_32|in2[8]    ; |Mux3to1_32|in2[8]~corein  ; combout          ;
+; |Mux3to1_32|in0[9]    ; |Mux3to1_32|in0[9]~corein  ; combout          ;
+; |Mux3to1_32|in1[9]    ; |Mux3to1_32|in1[9]~corein  ; combout          ;
+; |Mux3to1_32|in2[9]    ; |Mux3to1_32|in2[9]~corein  ; combout          ;
+; |Mux3to1_32|in0[10]   ; |Mux3to1_32|in0[10]~corein ; combout          ;
+; |Mux3to1_32|in1[10]   ; |Mux3to1_32|in1[10]~corein ; combout          ;
+; |Mux3to1_32|in2[10]   ; |Mux3to1_32|in2[10]~corein ; combout          ;
+; |Mux3to1_32|in0[11]   ; |Mux3to1_32|in0[11]~corein ; combout          ;
+; |Mux3to1_32|in1[11]   ; |Mux3to1_32|in1[11]~corein ; combout          ;
+; |Mux3to1_32|in2[11]   ; |Mux3to1_32|in2[11]~corein ; combout          ;
+; |Mux3to1_32|in0[12]   ; |Mux3to1_32|in0[12]~corein ; combout          ;
+; |Mux3to1_32|in1[12]   ; |Mux3to1_32|in1[12]~corein ; combout          ;
+; |Mux3to1_32|in2[12]   ; |Mux3to1_32|in2[12]~corein ; combout          ;
+; |Mux3to1_32|in0[13]   ; |Mux3to1_32|in0[13]~corein ; combout          ;
+; |Mux3to1_32|in1[13]   ; |Mux3to1_32|in1[13]~corein ; combout          ;
+; |Mux3to1_32|in2[13]   ; |Mux3to1_32|in2[13]~corein ; combout          ;
+; |Mux3to1_32|in0[14]   ; |Mux3to1_32|in0[14]~corein ; combout          ;
+; |Mux3to1_32|in1[14]   ; |Mux3to1_32|in1[14]~corein ; combout          ;
+; |Mux3to1_32|in2[14]   ; |Mux3to1_32|in2[14]~corein ; combout          ;
+; |Mux3to1_32|in0[15]   ; |Mux3to1_32|in0[15]~corein ; combout          ;
+; |Mux3to1_32|in1[15]   ; |Mux3to1_32|in1[15]~corein ; combout          ;
+; |Mux3to1_32|in2[15]   ; |Mux3to1_32|in2[15]~corein ; combout          ;
+; |Mux3to1_32|in0[16]   ; |Mux3to1_32|in0[16]~corein ; combout          ;
+; |Mux3to1_32|in1[16]   ; |Mux3to1_32|in1[16]~corein ; combout          ;
+; |Mux3to1_32|in2[16]   ; |Mux3to1_32|in2[16]~corein ; combout          ;
+; |Mux3to1_32|in0[17]   ; |Mux3to1_32|in0[17]~corein ; combout          ;
+; |Mux3to1_32|in1[17]   ; |Mux3to1_32|in1[17]~corein ; combout          ;
+; |Mux3to1_32|in2[17]   ; |Mux3to1_32|in2[17]~corein ; combout          ;
+; |Mux3to1_32|in0[18]   ; |Mux3to1_32|in0[18]~corein ; combout          ;
+; |Mux3to1_32|in1[18]   ; |Mux3to1_32|in1[18]~corein ; combout          ;
+; |Mux3to1_32|in2[18]   ; |Mux3to1_32|in2[18]~corein ; combout          ;
+; |Mux3to1_32|in0[19]   ; |Mux3to1_32|in0[19]~corein ; combout          ;
+; |Mux3to1_32|in1[19]   ; |Mux3to1_32|in1[19]~corein ; combout          ;
+; |Mux3to1_32|in2[19]   ; |Mux3to1_32|in2[19]~corein ; combout          ;
+; |Mux3to1_32|in0[20]   ; |Mux3to1_32|in0[20]~corein ; combout          ;
+; |Mux3to1_32|in1[20]   ; |Mux3to1_32|in1[20]~corein ; combout          ;
+; |Mux3to1_32|in2[20]   ; |Mux3to1_32|in2[20]~corein ; combout          ;
+; |Mux3to1_32|in0[21]   ; |Mux3to1_32|in0[21]~corein ; combout          ;
+; |Mux3to1_32|in1[21]   ; |Mux3to1_32|in1[21]~corein ; combout          ;
+; |Mux3to1_32|in2[21]   ; |Mux3to1_32|in2[21]~corein ; combout          ;
+; |Mux3to1_32|in0[22]   ; |Mux3to1_32|in0[22]~corein ; combout          ;
+; |Mux3to1_32|in1[22]   ; |Mux3to1_32|in1[22]~corein ; combout          ;
+; |Mux3to1_32|in2[22]   ; |Mux3to1_32|in2[22]~corein ; combout          ;
+; |Mux3to1_32|in0[23]   ; |Mux3to1_32|in0[23]~corein ; combout          ;
+; |Mux3to1_32|in1[23]   ; |Mux3to1_32|in1[23]~corein ; combout          ;
+; |Mux3to1_32|in2[23]   ; |Mux3to1_32|in2[23]~corein ; combout          ;
+; |Mux3to1_32|in0[24]   ; |Mux3to1_32|in0[24]~corein ; combout          ;
+; |Mux3to1_32|in1[24]   ; |Mux3to1_32|in1[24]~corein ; combout          ;
+; |Mux3to1_32|in2[24]   ; |Mux3to1_32|in2[24]~corein ; combout          ;
+; |Mux3to1_32|in0[25]   ; |Mux3to1_32|in0[25]~corein ; combout          ;
+; |Mux3to1_32|in1[25]   ; |Mux3to1_32|in1[25]~corein ; combout          ;
+; |Mux3to1_32|in2[25]   ; |Mux3to1_32|in2[25]~corein ; combout          ;
+; |Mux3to1_32|in0[26]   ; |Mux3to1_32|in0[26]~corein ; combout          ;
+; |Mux3to1_32|in1[26]   ; |Mux3to1_32|in1[26]~corein ; combout          ;
+; |Mux3to1_32|in2[26]   ; |Mux3to1_32|in2[26]~corein ; combout          ;
+; |Mux3to1_32|in0[27]   ; |Mux3to1_32|in0[27]~corein ; combout          ;
+; |Mux3to1_32|in1[27]   ; |Mux3to1_32|in1[27]~corein ; combout          ;
+; |Mux3to1_32|in2[27]   ; |Mux3to1_32|in2[27]~corein ; combout          ;
+; |Mux3to1_32|in0[28]   ; |Mux3to1_32|in0[28]~corein ; combout          ;
+; |Mux3to1_32|in1[28]   ; |Mux3to1_32|in1[28]~corein ; combout          ;
+; |Mux3to1_32|in2[28]   ; |Mux3to1_32|in2[28]~corein ; combout          ;
+; |Mux3to1_32|in0[29]   ; |Mux3to1_32|in0[29]~corein ; combout          ;
+; |Mux3to1_32|in1[29]   ; |Mux3to1_32|in1[29]~corein ; combout          ;
+; |Mux3to1_32|in2[29]   ; |Mux3to1_32|in2[29]~corein ; combout          ;
+; |Mux3to1_32|in0[30]   ; |Mux3to1_32|in0[30]~corein ; combout          ;
+; |Mux3to1_32|in1[30]   ; |Mux3to1_32|in1[30]~corein ; combout          ;
+; |Mux3to1_32|in2[30]   ; |Mux3to1_32|in2[30]~corein ; combout          ;
+; |Mux3to1_32|in0[31]   ; |Mux3to1_32|in0[31]~corein ; combout          ;
+; |Mux3to1_32|in1[31]   ; |Mux3to1_32|in1[31]~corein ; combout          ;
+; |Mux3to1_32|in2[31]   ; |Mux3to1_32|in2[31]~corein ; combout          ;
++-----------------------+----------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sat Jul 17 01:44:59 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off Mux3to1_32 -c Mux3to1_32
+Info: Using vector source file "D:/±à³Ì/verilog HDL/cpu/new/Mux3to1_32/Mux3to1_32.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      25.93 %
+Info: Number of transitions in simulation is 402
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 132 megabytes of memory during processing
+    Info: Processing ended: Sat Jul 17 01:45:00 2010
+    Info: Elapsed time: 00:00:01
+
+

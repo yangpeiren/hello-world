@@ -1,0 +1,935 @@
+Simulator report for Shifter
+Sat Jul 17 01:11:49 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 2.0 ms       ;
+; Simulation Netlist Size     ; 480 nodes    ;
+; Simulation Coverage         ;      27.01 % ;
+; Total Number of Transitions ; 849          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone      ;
+; Device                      ; EP1C12Q240C8 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      27.01 % ;
+; Total nodes checked                                 ; 480          ;
+; Total output ports checked                          ; 448          ;
+; Total output ports with complete 1/0-value coverage ; 121          ;
+; Total output ports with no 1/0-value coverage       ; 327          ;
+; Total output ports with no 1-value coverage         ; 327          ;
+; Total output ports with no 0-value coverage         ; 327          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-----------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                           ;
++----------------------+-----------------------------+------------------+
+; Node Name            ; Output Port Name            ; Output Port Type ;
++----------------------+-----------------------------+------------------+
+; |Shifter|Mux0~526    ; |Shifter|Mux0~526           ; combout          ;
+; |Shifter|Mux0~528    ; |Shifter|Mux0~528           ; combout          ;
+; |Shifter|Mux0~529    ; |Shifter|Mux0~529           ; combout          ;
+; |Shifter|Mux0~530    ; |Shifter|Mux0~530           ; combout          ;
+; |Shifter|Mux1~137    ; |Shifter|Mux1~137           ; combout          ;
+; |Shifter|Mux32~22    ; |Shifter|Mux32~22           ; combout          ;
+; |Shifter|Mux2~577    ; |Shifter|Mux2~577           ; combout          ;
+; |Shifter|Mux2~578    ; |Shifter|Mux2~578           ; combout          ;
+; |Shifter|Mux6~399    ; |Shifter|Mux6~399           ; combout          ;
+; |Shifter|Mux6~402    ; |Shifter|Mux6~402           ; combout          ;
+; |Shifter|Mux7~419    ; |Shifter|Mux7~419           ; combout          ;
+; |Shifter|Mux7~420    ; |Shifter|Mux7~420           ; combout          ;
+; |Shifter|Mux7~421    ; |Shifter|Mux7~421           ; combout          ;
+; |Shifter|Mux12~150   ; |Shifter|Mux12~150          ; combout          ;
+; |Shifter|Mux12~151   ; |Shifter|Mux12~151          ; combout          ;
+; |Shifter|Mux8~4      ; |Shifter|Mux8~4             ; combout          ;
+; |Shifter|Mux8~5      ; |Shifter|Mux8~5             ; combout          ;
+; |Shifter|Mux12~152   ; |Shifter|Mux12~152          ; combout          ;
+; |Shifter|Mux12~153   ; |Shifter|Mux12~153          ; combout          ;
+; |Shifter|Mux8~6      ; |Shifter|Mux8~6             ; combout          ;
+; |Shifter|Mux8        ; |Shifter|Mux8               ; combout          ;
+; |Shifter|Mux9~4      ; |Shifter|Mux9~4             ; combout          ;
+; |Shifter|Mux9~5      ; |Shifter|Mux9~5             ; combout          ;
+; |Shifter|Mux9~6      ; |Shifter|Mux9~6             ; combout          ;
+; |Shifter|Mux9        ; |Shifter|Mux9               ; combout          ;
+; |Shifter|Mux10~4     ; |Shifter|Mux10~4            ; combout          ;
+; |Shifter|Mux10~5     ; |Shifter|Mux10~5            ; combout          ;
+; |Shifter|Mux10~6     ; |Shifter|Mux10~6            ; combout          ;
+; |Shifter|Mux11~29    ; |Shifter|Mux11~29           ; combout          ;
+; |Shifter|Mux11~30    ; |Shifter|Mux11~30           ; combout          ;
+; |Shifter|Mux11~31    ; |Shifter|Mux11~31           ; combout          ;
+; |Shifter|Mux11       ; |Shifter|Mux11              ; combout          ;
+; |Shifter|Mux12~154   ; |Shifter|Mux12~154          ; combout          ;
+; |Shifter|Mux12~155   ; |Shifter|Mux12~155          ; combout          ;
+; |Shifter|Mux12~156   ; |Shifter|Mux12~156          ; combout          ;
+; |Shifter|Mux12       ; |Shifter|Mux12              ; combout          ;
+; |Shifter|Mux13~8     ; |Shifter|Mux13~8            ; combout          ;
+; |Shifter|Mux13~9     ; |Shifter|Mux13~9            ; combout          ;
+; |Shifter|Mux13~10    ; |Shifter|Mux13~10           ; combout          ;
+; |Shifter|Mux13       ; |Shifter|Mux13              ; combout          ;
+; |Shifter|Mux14~4     ; |Shifter|Mux14~4            ; combout          ;
+; |Shifter|Mux14~5     ; |Shifter|Mux14~5            ; combout          ;
+; |Shifter|Mux14~6     ; |Shifter|Mux14~6            ; combout          ;
+; |Shifter|Mux14       ; |Shifter|Mux14              ; combout          ;
+; |Shifter|Mux15~4     ; |Shifter|Mux15~4            ; combout          ;
+; |Shifter|Mux15~5     ; |Shifter|Mux15~5            ; combout          ;
+; |Shifter|Mux15~6     ; |Shifter|Mux15~6            ; combout          ;
+; |Shifter|Mux15       ; |Shifter|Mux15              ; combout          ;
+; |Shifter|Mux18~376   ; |Shifter|Mux18~376          ; combout          ;
+; |Shifter|Mux18~377   ; |Shifter|Mux18~377          ; combout          ;
+; |Shifter|Mux16~14    ; |Shifter|Mux16~14           ; combout          ;
+; |Shifter|Mux16~15    ; |Shifter|Mux16~15           ; combout          ;
+; |Shifter|Mux16~16    ; |Shifter|Mux16~16           ; combout          ;
+; |Shifter|Mux17~14    ; |Shifter|Mux17~14           ; combout          ;
+; |Shifter|Mux17~15    ; |Shifter|Mux17~15           ; combout          ;
+; |Shifter|Mux17~16    ; |Shifter|Mux17~16           ; combout          ;
+; |Shifter|Mux18~378   ; |Shifter|Mux18~378          ; combout          ;
+; |Shifter|Mux18~379   ; |Shifter|Mux18~379          ; combout          ;
+; |Shifter|Mux18~380   ; |Shifter|Mux18~380          ; combout          ;
+; |Shifter|Mux19~516   ; |Shifter|Mux19~516          ; combout          ;
+; |Shifter|Mux19~517   ; |Shifter|Mux19~517          ; combout          ;
+; |Shifter|Mux19~518   ; |Shifter|Mux19~518          ; combout          ;
+; |Shifter|Mux20~216   ; |Shifter|Mux20~216          ; combout          ;
+; |Shifter|Mux20~217   ; |Shifter|Mux20~217          ; combout          ;
+; |Shifter|Mux20~218   ; |Shifter|Mux20~218          ; combout          ;
+; |Shifter|Mux21~196   ; |Shifter|Mux21~196          ; combout          ;
+; |Shifter|Mux21~197   ; |Shifter|Mux21~197          ; combout          ;
+; |Shifter|Mux21~198   ; |Shifter|Mux21~198          ; combout          ;
+; |Shifter|Mux22~184   ; |Shifter|Mux22~184          ; combout          ;
+; |Shifter|Mux22~185   ; |Shifter|Mux22~185          ; combout          ;
+; |Shifter|Mux22~186   ; |Shifter|Mux22~186          ; combout          ;
+; |Shifter|Mux23~164   ; |Shifter|Mux23~164          ; combout          ;
+; |Shifter|Mux23~165   ; |Shifter|Mux23~165          ; combout          ;
+; |Shifter|Mux23~166   ; |Shifter|Mux23~166          ; combout          ;
+; |Shifter|Mux24~661   ; |Shifter|Mux24~661          ; combout          ;
+; |Shifter|Mux24~662   ; |Shifter|Mux24~662          ; combout          ;
+; |Shifter|Mux25~700   ; |Shifter|Mux25~700          ; combout          ;
+; |Shifter|Mux25~701   ; |Shifter|Mux25~701          ; combout          ;
+; |Shifter|Mux26~479   ; |Shifter|Mux26~479          ; combout          ;
+; |Shifter|Mux26~480   ; |Shifter|Mux26~480          ; combout          ;
+; |Shifter|Mux27~524   ; |Shifter|Mux27~524          ; combout          ;
+; |Shifter|Mux27~525   ; |Shifter|Mux27~525          ; combout          ;
+; |Shifter|Mux28~157   ; |Shifter|Mux28~157          ; combout          ;
+; |Shifter|Mux28~158   ; |Shifter|Mux28~158          ; combout          ;
+; |Shifter|Mux28~159   ; |Shifter|Mux28~159          ; combout          ;
+; |Shifter|Mux28~160   ; |Shifter|Mux28~160          ; combout          ;
+; |Shifter|Mux28       ; |Shifter|Mux28              ; combout          ;
+; |Shifter|Mux29~47    ; |Shifter|Mux29~47           ; combout          ;
+; |Shifter|Mux29       ; |Shifter|Mux29              ; combout          ;
+; |Shifter|Mux30~102   ; |Shifter|Mux30~102          ; combout          ;
+; |Shifter|Mux30~103   ; |Shifter|Mux30~103          ; combout          ;
+; |Shifter|Mux30~104   ; |Shifter|Mux30~104          ; combout          ;
+; |Shifter|Mux31~26    ; |Shifter|Mux31~26           ; combout          ;
+; |Shifter|Mux31~27    ; |Shifter|Mux31~27           ; combout          ;
+; |Shifter|Mux31~28    ; |Shifter|Mux31~28           ; combout          ;
+; |Shifter|SHT_DC[7]   ; |Shifter|SHT_DC[7]          ; padio            ;
+; |Shifter|SHT_DC[8]   ; |Shifter|SHT_DC[8]          ; padio            ;
+; |Shifter|SHT_DC[9]   ; |Shifter|SHT_DC[9]          ; padio            ;
+; |Shifter|SHT_DC[11]  ; |Shifter|SHT_DC[11]         ; padio            ;
+; |Shifter|SHT_DC[12]  ; |Shifter|SHT_DC[12]         ; padio            ;
+; |Shifter|SHT_DC[13]  ; |Shifter|SHT_DC[13]         ; padio            ;
+; |Shifter|SHT_DC[14]  ; |Shifter|SHT_DC[14]         ; padio            ;
+; |Shifter|SHT_DC[15]  ; |Shifter|SHT_DC[15]         ; padio            ;
+; |Shifter|SHT_DC[16]  ; |Shifter|SHT_DC[16]         ; padio            ;
+; |Shifter|SHT_DC[17]  ; |Shifter|SHT_DC[17]         ; padio            ;
+; |Shifter|SHT_DC[18]  ; |Shifter|SHT_DC[18]         ; padio            ;
+; |Shifter|SHT_DC[19]  ; |Shifter|SHT_DC[19]         ; padio            ;
+; |Shifter|SHT_DC[20]  ; |Shifter|SHT_DC[20]         ; padio            ;
+; |Shifter|SHT_DC[21]  ; |Shifter|SHT_DC[21]         ; padio            ;
+; |Shifter|SHT_DC[22]  ; |Shifter|SHT_DC[22]         ; padio            ;
+; |Shifter|SHT_DC[23]  ; |Shifter|SHT_DC[23]         ; padio            ;
+; |Shifter|SHT_DC[24]  ; |Shifter|SHT_DC[24]         ; padio            ;
+; |Shifter|SHT_DC[25]  ; |Shifter|SHT_DC[25]         ; padio            ;
+; |Shifter|SHT_DC[26]  ; |Shifter|SHT_DC[26]         ; padio            ;
+; |Shifter|SHT_DC[27]  ; |Shifter|SHT_DC[27]         ; padio            ;
+; |Shifter|SHT_DC[28]  ; |Shifter|SHT_DC[28]         ; padio            ;
+; |Shifter|SHT_DC[29]  ; |Shifter|SHT_DC[29]         ; padio            ;
+; |Shifter|SHT_DC[30]  ; |Shifter|SHT_DC[30]         ; padio            ;
+; |Shifter|SHT_DC[31]  ; |Shifter|SHT_DC[31]         ; padio            ;
+; |Shifter|SHT_Func[1] ; |Shifter|SHT_Func[1]~corein ; combout          ;
+; |Shifter|SHT_Func[0] ; |Shifter|SHT_Func[0]~corein ; combout          ;
++----------------------+-----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++---------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                  ;
++---------------------------+----------------------------+------------------+
+; Node Name                 ; Output Port Name           ; Output Port Type ;
++---------------------------+----------------------------+------------------+
+; |Shifter|ShiftLeft0~9207  ; |Shifter|ShiftLeft0~9207   ; combout          ;
+; |Shifter|ShiftLeft0~9208  ; |Shifter|ShiftLeft0~9208   ; combout          ;
+; |Shifter|ShiftRight1~9194 ; |Shifter|ShiftRight1~9194  ; combout          ;
+; |Shifter|ShiftRight1~9195 ; |Shifter|ShiftRight1~9195  ; combout          ;
+; |Shifter|ShiftRight1~9196 ; |Shifter|ShiftRight1~9196  ; combout          ;
+; |Shifter|Mux0~521         ; |Shifter|Mux0~521          ; combout          ;
+; |Shifter|ShiftRight1~9197 ; |Shifter|ShiftRight1~9197  ; combout          ;
+; |Shifter|ShiftRight1~9198 ; |Shifter|ShiftRight1~9198  ; combout          ;
+; |Shifter|ShiftRight1~9199 ; |Shifter|ShiftRight1~9199  ; combout          ;
+; |Shifter|ShiftRight1~9200 ; |Shifter|ShiftRight1~9200  ; combout          ;
+; |Shifter|ShiftRight1~9201 ; |Shifter|ShiftRight1~9201  ; combout          ;
+; |Shifter|ShiftRight1~9202 ; |Shifter|ShiftRight1~9202  ; combout          ;
+; |Shifter|ShiftRight1~9203 ; |Shifter|ShiftRight1~9203  ; combout          ;
+; |Shifter|Mux0~522         ; |Shifter|Mux0~522          ; combout          ;
+; |Shifter|ShiftRight1~9204 ; |Shifter|ShiftRight1~9204  ; combout          ;
+; |Shifter|Mux0~523         ; |Shifter|Mux0~523          ; combout          ;
+; |Shifter|ShiftRight1~9205 ; |Shifter|ShiftRight1~9205  ; combout          ;
+; |Shifter|ShiftRight1~9206 ; |Shifter|ShiftRight1~9206  ; combout          ;
+; |Shifter|ShiftRight1~9207 ; |Shifter|ShiftRight1~9207  ; combout          ;
+; |Shifter|ShiftRight1~9208 ; |Shifter|ShiftRight1~9208  ; combout          ;
+; |Shifter|ShiftRight1~9209 ; |Shifter|ShiftRight1~9209  ; combout          ;
+; |Shifter|ShiftRight1~9210 ; |Shifter|ShiftRight1~9210  ; combout          ;
+; |Shifter|ShiftRight1~9211 ; |Shifter|ShiftRight1~9211  ; combout          ;
+; |Shifter|ShiftRight1~9212 ; |Shifter|ShiftRight1~9212  ; combout          ;
+; |Shifter|ShiftRight1~9213 ; |Shifter|ShiftRight1~9213  ; combout          ;
+; |Shifter|ShiftRight1~9214 ; |Shifter|ShiftRight1~9214  ; combout          ;
+; |Shifter|ShiftRight1~9215 ; |Shifter|ShiftRight1~9215  ; combout          ;
+; |Shifter|ShiftRight1~9216 ; |Shifter|ShiftRight1~9216  ; combout          ;
+; |Shifter|ShiftRight1~9217 ; |Shifter|ShiftRight1~9217  ; combout          ;
+; |Shifter|ShiftRight1~9218 ; |Shifter|ShiftRight1~9218  ; combout          ;
+; |Shifter|ShiftRight1~9219 ; |Shifter|ShiftRight1~9219  ; combout          ;
+; |Shifter|Mux0~524         ; |Shifter|Mux0~524          ; combout          ;
+; |Shifter|Mux0~525         ; |Shifter|Mux0~525          ; combout          ;
+; |Shifter|Mux0~527         ; |Shifter|Mux0~527          ; combout          ;
+; |Shifter|Mux12~148        ; |Shifter|Mux12~148         ; combout          ;
+; |Shifter|Mux0~531         ; |Shifter|Mux0~531          ; combout          ;
+; |Shifter|Mux0~532         ; |Shifter|Mux0~532          ; combout          ;
+; |Shifter|Mux32~21         ; |Shifter|Mux32~21          ; combout          ;
+; |Shifter|ShiftLeft0~9209  ; |Shifter|ShiftLeft0~9209   ; combout          ;
+; |Shifter|ShiftLeft0~9210  ; |Shifter|ShiftLeft0~9210   ; combout          ;
+; |Shifter|ShiftRight1~9220 ; |Shifter|ShiftRight1~9220  ; combout          ;
+; |Shifter|ShiftRight1~9221 ; |Shifter|ShiftRight1~9221  ; combout          ;
+; |Shifter|ShiftRight1~9222 ; |Shifter|ShiftRight1~9222  ; combout          ;
+; |Shifter|ShiftRight1~9223 ; |Shifter|ShiftRight1~9223  ; combout          ;
+; |Shifter|ShiftRight1~9224 ; |Shifter|ShiftRight1~9224  ; combout          ;
+; |Shifter|ShiftRight1~9225 ; |Shifter|ShiftRight1~9225  ; combout          ;
+; |Shifter|ShiftRight1~9226 ; |Shifter|ShiftRight1~9226  ; combout          ;
+; |Shifter|ShiftRight1~9227 ; |Shifter|ShiftRight1~9227  ; combout          ;
+; |Shifter|ShiftRight1~9228 ; |Shifter|ShiftRight1~9228  ; combout          ;
+; |Shifter|Mux1~133         ; |Shifter|Mux1~133          ; combout          ;
+; |Shifter|ShiftRight1~9229 ; |Shifter|ShiftRight1~9229  ; combout          ;
+; |Shifter|ShiftRight1~9230 ; |Shifter|ShiftRight1~9230  ; combout          ;
+; |Shifter|ShiftRight1~9231 ; |Shifter|ShiftRight1~9231  ; combout          ;
+; |Shifter|ShiftRight1~9232 ; |Shifter|ShiftRight1~9232  ; combout          ;
+; |Shifter|ShiftRight1~9233 ; |Shifter|ShiftRight1~9233  ; combout          ;
+; |Shifter|ShiftRight1~9234 ; |Shifter|ShiftRight1~9234  ; combout          ;
+; |Shifter|ShiftRight1~9235 ; |Shifter|ShiftRight1~9235  ; combout          ;
+; |Shifter|ShiftRight1~9236 ; |Shifter|ShiftRight1~9236  ; combout          ;
+; |Shifter|ShiftRight1~9237 ; |Shifter|ShiftRight1~9237  ; combout          ;
+; |Shifter|ShiftRight1~9238 ; |Shifter|ShiftRight1~9238  ; combout          ;
+; |Shifter|ShiftRight1~9239 ; |Shifter|ShiftRight1~9239  ; combout          ;
+; |Shifter|Mux1~134         ; |Shifter|Mux1~134          ; combout          ;
+; |Shifter|ShiftRight0~3935 ; |Shifter|ShiftRight0~3935  ; combout          ;
+; |Shifter|ShiftRight0~3936 ; |Shifter|ShiftRight0~3936  ; combout          ;
+; |Shifter|ShiftRight0~3937 ; |Shifter|ShiftRight0~3937  ; combout          ;
+; |Shifter|ShiftRight0~3938 ; |Shifter|ShiftRight0~3938  ; combout          ;
+; |Shifter|Mux1~135         ; |Shifter|Mux1~135          ; combout          ;
+; |Shifter|Mux1~136         ; |Shifter|Mux1~136          ; combout          ;
+; |Shifter|Mux1~138         ; |Shifter|Mux1~138          ; combout          ;
+; |Shifter|Mux1~139         ; |Shifter|Mux1~139          ; combout          ;
+; |Shifter|ShiftRight1~9240 ; |Shifter|ShiftRight1~9240  ; combout          ;
+; |Shifter|ShiftRight1~9241 ; |Shifter|ShiftRight1~9241  ; combout          ;
+; |Shifter|ShiftRight0~3939 ; |Shifter|ShiftRight0~3939  ; combout          ;
+; |Shifter|ShiftRight1~9242 ; |Shifter|ShiftRight1~9242  ; combout          ;
+; |Shifter|ShiftRight1~9243 ; |Shifter|ShiftRight1~9243  ; combout          ;
+; |Shifter|ShiftRight1~9244 ; |Shifter|ShiftRight1~9244  ; combout          ;
+; |Shifter|ShiftRight1~9245 ; |Shifter|ShiftRight1~9245  ; combout          ;
+; |Shifter|ShiftRight1~9246 ; |Shifter|ShiftRight1~9246  ; combout          ;
+; |Shifter|Mux18~374        ; |Shifter|Mux18~374         ; combout          ;
+; |Shifter|ShiftRight1~9247 ; |Shifter|ShiftRight1~9247  ; combout          ;
+; |Shifter|ShiftRight1~9248 ; |Shifter|ShiftRight1~9248  ; combout          ;
+; |Shifter|Mux2~573         ; |Shifter|Mux2~573          ; combout          ;
+; |Shifter|ShiftRight1~9249 ; |Shifter|ShiftRight1~9249  ; combout          ;
+; |Shifter|ShiftRight1~9250 ; |Shifter|ShiftRight1~9250  ; combout          ;
+; |Shifter|ShiftRight1~9251 ; |Shifter|ShiftRight1~9251  ; combout          ;
+; |Shifter|Mux2~574         ; |Shifter|Mux2~574          ; combout          ;
+; |Shifter|ShiftRight1~9252 ; |Shifter|ShiftRight1~9252  ; combout          ;
+; |Shifter|ShiftRight1~9253 ; |Shifter|ShiftRight1~9253  ; combout          ;
+; |Shifter|ShiftRight1~9254 ; |Shifter|ShiftRight1~9254  ; combout          ;
+; |Shifter|ShiftRight1~9255 ; |Shifter|ShiftRight1~9255  ; combout          ;
+; |Shifter|ShiftRight1~9256 ; |Shifter|ShiftRight1~9256  ; combout          ;
+; |Shifter|Mux2~575         ; |Shifter|Mux2~575          ; combout          ;
+; |Shifter|ShiftLeft0~9211  ; |Shifter|ShiftLeft0~9211   ; combout          ;
+; |Shifter|ShiftLeft0~9212  ; |Shifter|ShiftLeft0~9212   ; combout          ;
+; |Shifter|Mux2~576         ; |Shifter|Mux2~576          ; combout          ;
+; |Shifter|Mux2~579         ; |Shifter|Mux2~579          ; combout          ;
+; |Shifter|Mux2~580         ; |Shifter|Mux2~580          ; combout          ;
+; |Shifter|Mux2~581         ; |Shifter|Mux2~581          ; combout          ;
+; |Shifter|ShiftLeft0~9213  ; |Shifter|ShiftLeft0~9213   ; combout          ;
+; |Shifter|ShiftRight1~9257 ; |Shifter|ShiftRight1~9257  ; combout          ;
+; |Shifter|ShiftRight1~9258 ; |Shifter|ShiftRight1~9258  ; combout          ;
+; |Shifter|ShiftRight0~3940 ; |Shifter|ShiftRight0~3940  ; combout          ;
+; |Shifter|ShiftRight1~9259 ; |Shifter|ShiftRight1~9259  ; combout          ;
+; |Shifter|ShiftRight1~9260 ; |Shifter|ShiftRight1~9260  ; combout          ;
+; |Shifter|ShiftRight1~9261 ; |Shifter|ShiftRight1~9261  ; combout          ;
+; |Shifter|Mux19~515        ; |Shifter|Mux19~515         ; combout          ;
+; |Shifter|ShiftRight1~9262 ; |Shifter|ShiftRight1~9262  ; combout          ;
+; |Shifter|ShiftRight1~9263 ; |Shifter|ShiftRight1~9263  ; combout          ;
+; |Shifter|ShiftRight1~9264 ; |Shifter|ShiftRight1~9264  ; combout          ;
+; |Shifter|ShiftRight1~9265 ; |Shifter|ShiftRight1~9265  ; combout          ;
+; |Shifter|Mux3~585         ; |Shifter|Mux3~585          ; combout          ;
+; |Shifter|ShiftRight1~9266 ; |Shifter|ShiftRight1~9266  ; combout          ;
+; |Shifter|ShiftRight1~9267 ; |Shifter|ShiftRight1~9267  ; combout          ;
+; |Shifter|ShiftRight1~9268 ; |Shifter|ShiftRight1~9268  ; combout          ;
+; |Shifter|Mux3~586         ; |Shifter|Mux3~586          ; combout          ;
+; |Shifter|ShiftLeft0~9214  ; |Shifter|ShiftLeft0~9214   ; combout          ;
+; |Shifter|ShiftLeft0~9215  ; |Shifter|ShiftLeft0~9215   ; combout          ;
+; |Shifter|Mux3~587         ; |Shifter|Mux3~587          ; combout          ;
+; |Shifter|Mux3~588         ; |Shifter|Mux3~588          ; combout          ;
+; |Shifter|Mux3~589         ; |Shifter|Mux3~589          ; combout          ;
+; |Shifter|Mux3~590         ; |Shifter|Mux3~590          ; combout          ;
+; |Shifter|ShiftRight0~3941 ; |Shifter|ShiftRight0~3941  ; combout          ;
+; |Shifter|Mux4~232         ; |Shifter|Mux4~232          ; combout          ;
+; |Shifter|ShiftRight0~3942 ; |Shifter|ShiftRight0~3942  ; combout          ;
+; |Shifter|ShiftRight1~9269 ; |Shifter|ShiftRight1~9269  ; combout          ;
+; |Shifter|Mux4~233         ; |Shifter|Mux4~233          ; combout          ;
+; |Shifter|ShiftRight0~3943 ; |Shifter|ShiftRight0~3943  ; combout          ;
+; |Shifter|Mux4~234         ; |Shifter|Mux4~234          ; combout          ;
+; |Shifter|Mux4~235         ; |Shifter|Mux4~235          ; combout          ;
+; |Shifter|ShiftLeft0~9216  ; |Shifter|ShiftLeft0~9216   ; combout          ;
+; |Shifter|ShiftLeft0~9217  ; |Shifter|ShiftLeft0~9217   ; combout          ;
+; |Shifter|ShiftLeft0~9218  ; |Shifter|ShiftLeft0~9218   ; combout          ;
+; |Shifter|ShiftLeft0~9219  ; |Shifter|ShiftLeft0~9219   ; combout          ;
+; |Shifter|Mux5~209         ; |Shifter|Mux5~209          ; combout          ;
+; |Shifter|Mux4~236         ; |Shifter|Mux4~236          ; combout          ;
+; |Shifter|ShiftRight0~3944 ; |Shifter|ShiftRight0~3944  ; combout          ;
+; |Shifter|Mux5~210         ; |Shifter|Mux5~210          ; combout          ;
+; |Shifter|ShiftRight0~3945 ; |Shifter|ShiftRight0~3945  ; combout          ;
+; |Shifter|ShiftRight1~9270 ; |Shifter|ShiftRight1~9270  ; combout          ;
+; |Shifter|Mux5~211         ; |Shifter|Mux5~211          ; combout          ;
+; |Shifter|ShiftRight0~3946 ; |Shifter|ShiftRight0~3946  ; combout          ;
+; |Shifter|Mux5~212         ; |Shifter|Mux5~212          ; combout          ;
+; |Shifter|Mux5~213         ; |Shifter|Mux5~213          ; combout          ;
+; |Shifter|ShiftLeft0~9220  ; |Shifter|ShiftLeft0~9220   ; combout          ;
+; |Shifter|ShiftLeft0~9221  ; |Shifter|ShiftLeft0~9221   ; combout          ;
+; |Shifter|ShiftLeft0~9222  ; |Shifter|ShiftLeft0~9222   ; combout          ;
+; |Shifter|Mux5~214         ; |Shifter|Mux5~214          ; combout          ;
+; |Shifter|Mux6~400         ; |Shifter|Mux6~400          ; combout          ;
+; |Shifter|ShiftRight0~3947 ; |Shifter|ShiftRight0~3947  ; combout          ;
+; |Shifter|ShiftLeft0~9223  ; |Shifter|ShiftLeft0~9223   ; combout          ;
+; |Shifter|ShiftLeft0~9224  ; |Shifter|ShiftLeft0~9224   ; combout          ;
+; |Shifter|ShiftLeft0~9225  ; |Shifter|ShiftLeft0~9225   ; combout          ;
+; |Shifter|Mux6~401         ; |Shifter|Mux6~401          ; combout          ;
+; |Shifter|ShiftRight0~3948 ; |Shifter|ShiftRight0~3948  ; combout          ;
+; |Shifter|ShiftRight1~9271 ; |Shifter|ShiftRight1~9271  ; combout          ;
+; |Shifter|ShiftRight0~3949 ; |Shifter|ShiftRight0~3949  ; combout          ;
+; |Shifter|Mux6~403         ; |Shifter|Mux6~403          ; combout          ;
+; |Shifter|Mux6~404         ; |Shifter|Mux6~404          ; combout          ;
+; |Shifter|Mux7~417         ; |Shifter|Mux7~417          ; combout          ;
+; |Shifter|ShiftRight0~3950 ; |Shifter|ShiftRight0~3950  ; combout          ;
+; |Shifter|ShiftLeft0~9226  ; |Shifter|ShiftLeft0~9226   ; combout          ;
+; |Shifter|ShiftLeft0~9227  ; |Shifter|ShiftLeft0~9227   ; combout          ;
+; |Shifter|ShiftLeft0~9228  ; |Shifter|ShiftLeft0~9228   ; combout          ;
+; |Shifter|ShiftLeft0~9229  ; |Shifter|ShiftLeft0~9229   ; combout          ;
+; |Shifter|Mux7~418         ; |Shifter|Mux7~418          ; combout          ;
+; |Shifter|ShiftRight0~3951 ; |Shifter|ShiftRight0~3951  ; combout          ;
+; |Shifter|ShiftRight1~9272 ; |Shifter|ShiftRight1~9272  ; combout          ;
+; |Shifter|ShiftLeft0~9230  ; |Shifter|ShiftLeft0~9230   ; combout          ;
+; |Shifter|ShiftRight0~3952 ; |Shifter|ShiftRight0~3952  ; combout          ;
+; |Shifter|Mux12~149        ; |Shifter|Mux12~149         ; combout          ;
+; |Shifter|ShiftRight0~3953 ; |Shifter|ShiftRight0~3953  ; combout          ;
+; |Shifter|ShiftLeft0~9231  ; |Shifter|ShiftLeft0~9231   ; combout          ;
+; |Shifter|ShiftLeft0~9232  ; |Shifter|ShiftLeft0~9232   ; combout          ;
+; |Shifter|ShiftLeft0~9233  ; |Shifter|ShiftLeft0~9233   ; combout          ;
+; |Shifter|ShiftLeft0~9234  ; |Shifter|ShiftLeft0~9234   ; combout          ;
+; |Shifter|ShiftRight1~9273 ; |Shifter|ShiftRight1~9273  ; combout          ;
+; |Shifter|ShiftRight0~3954 ; |Shifter|ShiftRight0~3954  ; combout          ;
+; |Shifter|ShiftLeft0~9235  ; |Shifter|ShiftLeft0~9235   ; combout          ;
+; |Shifter|ShiftLeft0~9236  ; |Shifter|ShiftLeft0~9236   ; combout          ;
+; |Shifter|ShiftLeft0~9237  ; |Shifter|ShiftLeft0~9237   ; combout          ;
+; |Shifter|ShiftLeft0~9238  ; |Shifter|ShiftLeft0~9238   ; combout          ;
+; |Shifter|ShiftRight1~9274 ; |Shifter|ShiftRight1~9274  ; combout          ;
+; |Shifter|ShiftRight0~3955 ; |Shifter|ShiftRight0~3955  ; combout          ;
+; |Shifter|ShiftLeft0~9239  ; |Shifter|ShiftLeft0~9239   ; combout          ;
+; |Shifter|ShiftLeft0~9240  ; |Shifter|ShiftLeft0~9240   ; combout          ;
+; |Shifter|ShiftLeft0~9241  ; |Shifter|ShiftLeft0~9241   ; combout          ;
+; |Shifter|ShiftLeft0~9242  ; |Shifter|ShiftLeft0~9242   ; combout          ;
+; |Shifter|ShiftRight1~9275 ; |Shifter|ShiftRight1~9275  ; combout          ;
+; |Shifter|Mux10            ; |Shifter|Mux10             ; combout          ;
+; |Shifter|ShiftRight0~3956 ; |Shifter|ShiftRight0~3956  ; combout          ;
+; |Shifter|ShiftLeft0~9243  ; |Shifter|ShiftLeft0~9243   ; combout          ;
+; |Shifter|ShiftLeft0~9244  ; |Shifter|ShiftLeft0~9244   ; combout          ;
+; |Shifter|ShiftLeft0~9245  ; |Shifter|ShiftLeft0~9245   ; combout          ;
+; |Shifter|ShiftLeft0~9246  ; |Shifter|ShiftLeft0~9246   ; combout          ;
+; |Shifter|ShiftRight1~9276 ; |Shifter|ShiftRight1~9276  ; combout          ;
+; |Shifter|ShiftRight0~3957 ; |Shifter|ShiftRight0~3957  ; combout          ;
+; |Shifter|ShiftLeft0~9247  ; |Shifter|ShiftLeft0~9247   ; combout          ;
+; |Shifter|ShiftLeft0~9248  ; |Shifter|ShiftLeft0~9248   ; combout          ;
+; |Shifter|ShiftLeft0~9249  ; |Shifter|ShiftLeft0~9249   ; combout          ;
+; |Shifter|ShiftLeft0~9250  ; |Shifter|ShiftLeft0~9250   ; combout          ;
+; |Shifter|ShiftRight1~9277 ; |Shifter|ShiftRight1~9277  ; combout          ;
+; |Shifter|ShiftLeft0~9251  ; |Shifter|ShiftLeft0~9251   ; combout          ;
+; |Shifter|ShiftLeft0~9252  ; |Shifter|ShiftLeft0~9252   ; combout          ;
+; |Shifter|ShiftLeft0~9253  ; |Shifter|ShiftLeft0~9253   ; combout          ;
+; |Shifter|ShiftLeft0~9254  ; |Shifter|ShiftLeft0~9254   ; combout          ;
+; |Shifter|ShiftRight1~9278 ; |Shifter|ShiftRight1~9278  ; combout          ;
+; |Shifter|ShiftLeft0~9255  ; |Shifter|ShiftLeft0~9255   ; combout          ;
+; |Shifter|ShiftLeft0~9256  ; |Shifter|ShiftLeft0~9256   ; combout          ;
+; |Shifter|ShiftLeft0~9257  ; |Shifter|ShiftLeft0~9257   ; combout          ;
+; |Shifter|ShiftLeft0~9258  ; |Shifter|ShiftLeft0~9258   ; combout          ;
+; |Shifter|ShiftRight0~3958 ; |Shifter|ShiftRight0~3958  ; combout          ;
+; |Shifter|ShiftLeft0~9259  ; |Shifter|ShiftLeft0~9259   ; combout          ;
+; |Shifter|ShiftLeft0~9260  ; |Shifter|ShiftLeft0~9260   ; combout          ;
+; |Shifter|ShiftLeft0~9261  ; |Shifter|ShiftLeft0~9261   ; combout          ;
+; |Shifter|ShiftLeft0~9262  ; |Shifter|ShiftLeft0~9262   ; combout          ;
+; |Shifter|ShiftRight1~9279 ; |Shifter|ShiftRight1~9279  ; combout          ;
+; |Shifter|ShiftLeft0~9263  ; |Shifter|ShiftLeft0~9263   ; combout          ;
+; |Shifter|ShiftLeft0~9264  ; |Shifter|ShiftLeft0~9264   ; combout          ;
+; |Shifter|ShiftLeft0~9265  ; |Shifter|ShiftLeft0~9265   ; combout          ;
+; |Shifter|Mux18~375        ; |Shifter|Mux18~375         ; combout          ;
+; |Shifter|ShiftLeft0~9266  ; |Shifter|ShiftLeft0~9266   ; combout          ;
+; |Shifter|ShiftLeft0~9267  ; |Shifter|ShiftLeft0~9267   ; combout          ;
+; |Shifter|ShiftLeft0~9268  ; |Shifter|ShiftLeft0~9268   ; combout          ;
+; |Shifter|ShiftLeft0~9269  ; |Shifter|ShiftLeft0~9269   ; combout          ;
+; |Shifter|ShiftLeft0~9270  ; |Shifter|ShiftLeft0~9270   ; combout          ;
+; |Shifter|ShiftLeft0~9271  ; |Shifter|ShiftLeft0~9271   ; combout          ;
+; |Shifter|ShiftLeft0~9272  ; |Shifter|ShiftLeft0~9272   ; combout          ;
+; |Shifter|ShiftLeft0~9273  ; |Shifter|ShiftLeft0~9273   ; combout          ;
+; |Shifter|ShiftLeft0~9274  ; |Shifter|ShiftLeft0~9274   ; combout          ;
+; |Shifter|ShiftLeft0~9275  ; |Shifter|ShiftLeft0~9275   ; combout          ;
+; |Shifter|ShiftLeft0~9276  ; |Shifter|ShiftLeft0~9276   ; combout          ;
+; |Shifter|ShiftLeft0~9277  ; |Shifter|ShiftLeft0~9277   ; combout          ;
+; |Shifter|ShiftLeft0~9278  ; |Shifter|ShiftLeft0~9278   ; combout          ;
+; |Shifter|ShiftLeft0~9279  ; |Shifter|ShiftLeft0~9279   ; combout          ;
+; |Shifter|ShiftLeft0~9280  ; |Shifter|ShiftLeft0~9280   ; combout          ;
+; |Shifter|ShiftLeft0~9281  ; |Shifter|ShiftLeft0~9281   ; combout          ;
+; |Shifter|ShiftLeft0~9282  ; |Shifter|ShiftLeft0~9282   ; combout          ;
+; |Shifter|ShiftLeft0~9283  ; |Shifter|ShiftLeft0~9283   ; combout          ;
+; |Shifter|ShiftLeft0~9284  ; |Shifter|ShiftLeft0~9284   ; combout          ;
+; |Shifter|ShiftLeft0~9285  ; |Shifter|ShiftLeft0~9285   ; combout          ;
+; |Shifter|ShiftLeft0~9286  ; |Shifter|ShiftLeft0~9286   ; combout          ;
+; |Shifter|ShiftLeft0~9287  ; |Shifter|ShiftLeft0~9287   ; combout          ;
+; |Shifter|ShiftLeft0~9288  ; |Shifter|ShiftLeft0~9288   ; combout          ;
+; |Shifter|ShiftLeft0~9289  ; |Shifter|ShiftLeft0~9289   ; combout          ;
+; |Shifter|ShiftLeft0~9290  ; |Shifter|ShiftLeft0~9290   ; combout          ;
+; |Shifter|ShiftLeft0~9291  ; |Shifter|ShiftLeft0~9291   ; combout          ;
+; |Shifter|ShiftLeft0~9292  ; |Shifter|ShiftLeft0~9292   ; combout          ;
+; |Shifter|Mux24~659        ; |Shifter|Mux24~659         ; combout          ;
+; |Shifter|Mux24~660        ; |Shifter|Mux24~660         ; combout          ;
+; |Shifter|Mux27~521        ; |Shifter|Mux27~521         ; combout          ;
+; |Shifter|ShiftLeft0~9293  ; |Shifter|ShiftLeft0~9293   ; combout          ;
+; |Shifter|ShiftLeft0~9294  ; |Shifter|ShiftLeft0~9294   ; combout          ;
+; |Shifter|Mux25~698        ; |Shifter|Mux25~698         ; combout          ;
+; |Shifter|Mux25~699        ; |Shifter|Mux25~699         ; combout          ;
+; |Shifter|ShiftLeft0~9295  ; |Shifter|ShiftLeft0~9295   ; combout          ;
+; |Shifter|ShiftLeft0~9296  ; |Shifter|ShiftLeft0~9296   ; combout          ;
+; |Shifter|ShiftLeft0~9297  ; |Shifter|ShiftLeft0~9297   ; combout          ;
+; |Shifter|Mux26~477        ; |Shifter|Mux26~477         ; combout          ;
+; |Shifter|Mux26~478        ; |Shifter|Mux26~478         ; combout          ;
+; |Shifter|ShiftLeft0~9298  ; |Shifter|ShiftLeft0~9298   ; combout          ;
+; |Shifter|ShiftLeft0~9299  ; |Shifter|ShiftLeft0~9299   ; combout          ;
+; |Shifter|ShiftLeft0~9300  ; |Shifter|ShiftLeft0~9300   ; combout          ;
+; |Shifter|Mux27~522        ; |Shifter|Mux27~522         ; combout          ;
+; |Shifter|Mux27~523        ; |Shifter|Mux27~523         ; combout          ;
+; |Shifter|ShiftLeft0~9301  ; |Shifter|ShiftLeft0~9301   ; combout          ;
+; |Shifter|Mux28~155        ; |Shifter|Mux28~155         ; combout          ;
+; |Shifter|Mux28~156        ; |Shifter|Mux28~156         ; combout          ;
+; |Shifter|ShiftLeft0~9302  ; |Shifter|ShiftLeft0~9302   ; combout          ;
+; |Shifter|Mux29~45         ; |Shifter|Mux29~45          ; combout          ;
+; |Shifter|Mux29~46         ; |Shifter|Mux29~46          ; combout          ;
+; |Shifter|Mux30~99         ; |Shifter|Mux30~99          ; combout          ;
+; |Shifter|Mux30~100        ; |Shifter|Mux30~100         ; combout          ;
+; |Shifter|Mux30~101        ; |Shifter|Mux30~101         ; combout          ;
+; |Shifter|Mux31~24         ; |Shifter|Mux31~24          ; combout          ;
+; |Shifter|Mux31~25         ; |Shifter|Mux31~25          ; combout          ;
+; |Shifter|ShiftLeft0~9303  ; |Shifter|ShiftLeft0~9303   ; combout          ;
+; |Shifter|ShiftLeft0~9304  ; |Shifter|ShiftLeft0~9304   ; combout          ;
+; |Shifter|ShiftRight0~3959 ; |Shifter|ShiftRight0~3959  ; combout          ;
+; |Shifter|ShiftRight0~3960 ; |Shifter|ShiftRight0~3960  ; combout          ;
+; |Shifter|ShiftRight1~9280 ; |Shifter|ShiftRight1~9280  ; combout          ;
+; |Shifter|Mux28~161        ; |Shifter|Mux28~161         ; combout          ;
+; |Shifter|Mux29~48         ; |Shifter|Mux29~48          ; combout          ;
+; |Shifter|SHT_DC[0]        ; |Shifter|SHT_DC[0]         ; padio            ;
+; |Shifter|SHT_DC[1]        ; |Shifter|SHT_DC[1]         ; padio            ;
+; |Shifter|SHT_DC[2]        ; |Shifter|SHT_DC[2]         ; padio            ;
+; |Shifter|SHT_DC[3]        ; |Shifter|SHT_DC[3]         ; padio            ;
+; |Shifter|SHT_DC[4]        ; |Shifter|SHT_DC[4]         ; padio            ;
+; |Shifter|SHT_DC[5]        ; |Shifter|SHT_DC[5]         ; padio            ;
+; |Shifter|SHT_DC[6]        ; |Shifter|SHT_DC[6]         ; padio            ;
+; |Shifter|SHT_DC[10]       ; |Shifter|SHT_DC[10]        ; padio            ;
+; |Shifter|SHT_DB[3]        ; |Shifter|SHT_DB[3]~corein  ; combout          ;
+; |Shifter|SHT_DB[2]        ; |Shifter|SHT_DB[2]~corein  ; combout          ;
+; |Shifter|SHT_DA[0]        ; |Shifter|SHT_DA[0]~corein  ; combout          ;
+; |Shifter|SHT_DB[0]        ; |Shifter|SHT_DB[0]~corein  ; combout          ;
+; |Shifter|SHT_DB[1]        ; |Shifter|SHT_DB[1]~corein  ; combout          ;
+; |Shifter|SHT_DA[7]        ; |Shifter|SHT_DA[7]~corein  ; combout          ;
+; |Shifter|SHT_DA[6]        ; |Shifter|SHT_DA[6]~corein  ; combout          ;
+; |Shifter|SHT_DA[5]        ; |Shifter|SHT_DA[5]~corein  ; combout          ;
+; |Shifter|SHT_DA[4]        ; |Shifter|SHT_DA[4]~corein  ; combout          ;
+; |Shifter|SHT_DB[4]        ; |Shifter|SHT_DB[4]~corein  ; combout          ;
+; |Shifter|SHT_DA[15]       ; |Shifter|SHT_DA[15]~corein ; combout          ;
+; |Shifter|SHT_DA[13]       ; |Shifter|SHT_DA[13]~corein ; combout          ;
+; |Shifter|SHT_DA[14]       ; |Shifter|SHT_DA[14]~corein ; combout          ;
+; |Shifter|SHT_DA[12]       ; |Shifter|SHT_DA[12]~corein ; combout          ;
+; |Shifter|SHT_DA[11]       ; |Shifter|SHT_DA[11]~corein ; combout          ;
+; |Shifter|SHT_DA[9]        ; |Shifter|SHT_DA[9]~corein  ; combout          ;
+; |Shifter|SHT_DA[10]       ; |Shifter|SHT_DA[10]~corein ; combout          ;
+; |Shifter|SHT_DA[8]        ; |Shifter|SHT_DA[8]~corein  ; combout          ;
+; |Shifter|SHT_DA[3]        ; |Shifter|SHT_DA[3]~corein  ; combout          ;
+; |Shifter|SHT_DA[2]        ; |Shifter|SHT_DA[2]~corein  ; combout          ;
+; |Shifter|SHT_DA[31]       ; |Shifter|SHT_DA[31]~corein ; combout          ;
+; |Shifter|SHT_DA[30]       ; |Shifter|SHT_DA[30]~corein ; combout          ;
+; |Shifter|SHT_DA[29]       ; |Shifter|SHT_DA[29]~corein ; combout          ;
+; |Shifter|SHT_DA[28]       ; |Shifter|SHT_DA[28]~corein ; combout          ;
+; |Shifter|SHT_DA[27]       ; |Shifter|SHT_DA[27]~corein ; combout          ;
+; |Shifter|SHT_DA[25]       ; |Shifter|SHT_DA[25]~corein ; combout          ;
+; |Shifter|SHT_DA[26]       ; |Shifter|SHT_DA[26]~corein ; combout          ;
+; |Shifter|SHT_DA[24]       ; |Shifter|SHT_DA[24]~corein ; combout          ;
+; |Shifter|SHT_DA[23]       ; |Shifter|SHT_DA[23]~corein ; combout          ;
+; |Shifter|SHT_DA[21]       ; |Shifter|SHT_DA[21]~corein ; combout          ;
+; |Shifter|SHT_DA[22]       ; |Shifter|SHT_DA[22]~corein ; combout          ;
+; |Shifter|SHT_DA[20]       ; |Shifter|SHT_DA[20]~corein ; combout          ;
+; |Shifter|SHT_DA[19]       ; |Shifter|SHT_DA[19]~corein ; combout          ;
+; |Shifter|SHT_DA[17]       ; |Shifter|SHT_DA[17]~corein ; combout          ;
+; |Shifter|SHT_DA[18]       ; |Shifter|SHT_DA[18]~corein ; combout          ;
+; |Shifter|SHT_DA[16]       ; |Shifter|SHT_DA[16]~corein ; combout          ;
+; |Shifter|SHT_DA[1]        ; |Shifter|SHT_DA[1]~corein  ; combout          ;
++---------------------------+----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++---------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                  ;
++---------------------------+----------------------------+------------------+
+; Node Name                 ; Output Port Name           ; Output Port Type ;
++---------------------------+----------------------------+------------------+
+; |Shifter|ShiftLeft0~9207  ; |Shifter|ShiftLeft0~9207   ; combout          ;
+; |Shifter|ShiftLeft0~9208  ; |Shifter|ShiftLeft0~9208   ; combout          ;
+; |Shifter|ShiftRight1~9194 ; |Shifter|ShiftRight1~9194  ; combout          ;
+; |Shifter|ShiftRight1~9195 ; |Shifter|ShiftRight1~9195  ; combout          ;
+; |Shifter|ShiftRight1~9196 ; |Shifter|ShiftRight1~9196  ; combout          ;
+; |Shifter|Mux0~521         ; |Shifter|Mux0~521          ; combout          ;
+; |Shifter|ShiftRight1~9197 ; |Shifter|ShiftRight1~9197  ; combout          ;
+; |Shifter|ShiftRight1~9198 ; |Shifter|ShiftRight1~9198  ; combout          ;
+; |Shifter|ShiftRight1~9199 ; |Shifter|ShiftRight1~9199  ; combout          ;
+; |Shifter|ShiftRight1~9200 ; |Shifter|ShiftRight1~9200  ; combout          ;
+; |Shifter|ShiftRight1~9201 ; |Shifter|ShiftRight1~9201  ; combout          ;
+; |Shifter|ShiftRight1~9202 ; |Shifter|ShiftRight1~9202  ; combout          ;
+; |Shifter|ShiftRight1~9203 ; |Shifter|ShiftRight1~9203  ; combout          ;
+; |Shifter|Mux0~522         ; |Shifter|Mux0~522          ; combout          ;
+; |Shifter|ShiftRight1~9204 ; |Shifter|ShiftRight1~9204  ; combout          ;
+; |Shifter|Mux0~523         ; |Shifter|Mux0~523          ; combout          ;
+; |Shifter|ShiftRight1~9205 ; |Shifter|ShiftRight1~9205  ; combout          ;
+; |Shifter|ShiftRight1~9206 ; |Shifter|ShiftRight1~9206  ; combout          ;
+; |Shifter|ShiftRight1~9207 ; |Shifter|ShiftRight1~9207  ; combout          ;
+; |Shifter|ShiftRight1~9208 ; |Shifter|ShiftRight1~9208  ; combout          ;
+; |Shifter|ShiftRight1~9209 ; |Shifter|ShiftRight1~9209  ; combout          ;
+; |Shifter|ShiftRight1~9210 ; |Shifter|ShiftRight1~9210  ; combout          ;
+; |Shifter|ShiftRight1~9211 ; |Shifter|ShiftRight1~9211  ; combout          ;
+; |Shifter|ShiftRight1~9212 ; |Shifter|ShiftRight1~9212  ; combout          ;
+; |Shifter|ShiftRight1~9213 ; |Shifter|ShiftRight1~9213  ; combout          ;
+; |Shifter|ShiftRight1~9214 ; |Shifter|ShiftRight1~9214  ; combout          ;
+; |Shifter|ShiftRight1~9215 ; |Shifter|ShiftRight1~9215  ; combout          ;
+; |Shifter|ShiftRight1~9216 ; |Shifter|ShiftRight1~9216  ; combout          ;
+; |Shifter|ShiftRight1~9217 ; |Shifter|ShiftRight1~9217  ; combout          ;
+; |Shifter|ShiftRight1~9218 ; |Shifter|ShiftRight1~9218  ; combout          ;
+; |Shifter|ShiftRight1~9219 ; |Shifter|ShiftRight1~9219  ; combout          ;
+; |Shifter|Mux0~524         ; |Shifter|Mux0~524          ; combout          ;
+; |Shifter|Mux0~525         ; |Shifter|Mux0~525          ; combout          ;
+; |Shifter|Mux0~527         ; |Shifter|Mux0~527          ; combout          ;
+; |Shifter|Mux12~148        ; |Shifter|Mux12~148         ; combout          ;
+; |Shifter|Mux0~531         ; |Shifter|Mux0~531          ; combout          ;
+; |Shifter|Mux0~532         ; |Shifter|Mux0~532          ; combout          ;
+; |Shifter|Mux32~21         ; |Shifter|Mux32~21          ; combout          ;
+; |Shifter|ShiftLeft0~9209  ; |Shifter|ShiftLeft0~9209   ; combout          ;
+; |Shifter|ShiftLeft0~9210  ; |Shifter|ShiftLeft0~9210   ; combout          ;
+; |Shifter|ShiftRight1~9220 ; |Shifter|ShiftRight1~9220  ; combout          ;
+; |Shifter|ShiftRight1~9221 ; |Shifter|ShiftRight1~9221  ; combout          ;
+; |Shifter|ShiftRight1~9222 ; |Shifter|ShiftRight1~9222  ; combout          ;
+; |Shifter|ShiftRight1~9223 ; |Shifter|ShiftRight1~9223  ; combout          ;
+; |Shifter|ShiftRight1~9224 ; |Shifter|ShiftRight1~9224  ; combout          ;
+; |Shifter|ShiftRight1~9225 ; |Shifter|ShiftRight1~9225  ; combout          ;
+; |Shifter|ShiftRight1~9226 ; |Shifter|ShiftRight1~9226  ; combout          ;
+; |Shifter|ShiftRight1~9227 ; |Shifter|ShiftRight1~9227  ; combout          ;
+; |Shifter|ShiftRight1~9228 ; |Shifter|ShiftRight1~9228  ; combout          ;
+; |Shifter|Mux1~133         ; |Shifter|Mux1~133          ; combout          ;
+; |Shifter|ShiftRight1~9229 ; |Shifter|ShiftRight1~9229  ; combout          ;
+; |Shifter|ShiftRight1~9230 ; |Shifter|ShiftRight1~9230  ; combout          ;
+; |Shifter|ShiftRight1~9231 ; |Shifter|ShiftRight1~9231  ; combout          ;
+; |Shifter|ShiftRight1~9232 ; |Shifter|ShiftRight1~9232  ; combout          ;
+; |Shifter|ShiftRight1~9233 ; |Shifter|ShiftRight1~9233  ; combout          ;
+; |Shifter|ShiftRight1~9234 ; |Shifter|ShiftRight1~9234  ; combout          ;
+; |Shifter|ShiftRight1~9235 ; |Shifter|ShiftRight1~9235  ; combout          ;
+; |Shifter|ShiftRight1~9236 ; |Shifter|ShiftRight1~9236  ; combout          ;
+; |Shifter|ShiftRight1~9237 ; |Shifter|ShiftRight1~9237  ; combout          ;
+; |Shifter|ShiftRight1~9238 ; |Shifter|ShiftRight1~9238  ; combout          ;
+; |Shifter|ShiftRight1~9239 ; |Shifter|ShiftRight1~9239  ; combout          ;
+; |Shifter|Mux1~134         ; |Shifter|Mux1~134          ; combout          ;
+; |Shifter|ShiftRight0~3935 ; |Shifter|ShiftRight0~3935  ; combout          ;
+; |Shifter|ShiftRight0~3936 ; |Shifter|ShiftRight0~3936  ; combout          ;
+; |Shifter|ShiftRight0~3937 ; |Shifter|ShiftRight0~3937  ; combout          ;
+; |Shifter|ShiftRight0~3938 ; |Shifter|ShiftRight0~3938  ; combout          ;
+; |Shifter|Mux1~135         ; |Shifter|Mux1~135          ; combout          ;
+; |Shifter|Mux1~136         ; |Shifter|Mux1~136          ; combout          ;
+; |Shifter|Mux1~138         ; |Shifter|Mux1~138          ; combout          ;
+; |Shifter|Mux1~139         ; |Shifter|Mux1~139          ; combout          ;
+; |Shifter|ShiftRight1~9240 ; |Shifter|ShiftRight1~9240  ; combout          ;
+; |Shifter|ShiftRight1~9241 ; |Shifter|ShiftRight1~9241  ; combout          ;
+; |Shifter|ShiftRight0~3939 ; |Shifter|ShiftRight0~3939  ; combout          ;
+; |Shifter|ShiftRight1~9242 ; |Shifter|ShiftRight1~9242  ; combout          ;
+; |Shifter|ShiftRight1~9243 ; |Shifter|ShiftRight1~9243  ; combout          ;
+; |Shifter|ShiftRight1~9244 ; |Shifter|ShiftRight1~9244  ; combout          ;
+; |Shifter|ShiftRight1~9245 ; |Shifter|ShiftRight1~9245  ; combout          ;
+; |Shifter|ShiftRight1~9246 ; |Shifter|ShiftRight1~9246  ; combout          ;
+; |Shifter|Mux18~374        ; |Shifter|Mux18~374         ; combout          ;
+; |Shifter|ShiftRight1~9247 ; |Shifter|ShiftRight1~9247  ; combout          ;
+; |Shifter|ShiftRight1~9248 ; |Shifter|ShiftRight1~9248  ; combout          ;
+; |Shifter|Mux2~573         ; |Shifter|Mux2~573          ; combout          ;
+; |Shifter|ShiftRight1~9249 ; |Shifter|ShiftRight1~9249  ; combout          ;
+; |Shifter|ShiftRight1~9250 ; |Shifter|ShiftRight1~9250  ; combout          ;
+; |Shifter|ShiftRight1~9251 ; |Shifter|ShiftRight1~9251  ; combout          ;
+; |Shifter|Mux2~574         ; |Shifter|Mux2~574          ; combout          ;
+; |Shifter|ShiftRight1~9252 ; |Shifter|ShiftRight1~9252  ; combout          ;
+; |Shifter|ShiftRight1~9253 ; |Shifter|ShiftRight1~9253  ; combout          ;
+; |Shifter|ShiftRight1~9254 ; |Shifter|ShiftRight1~9254  ; combout          ;
+; |Shifter|ShiftRight1~9255 ; |Shifter|ShiftRight1~9255  ; combout          ;
+; |Shifter|ShiftRight1~9256 ; |Shifter|ShiftRight1~9256  ; combout          ;
+; |Shifter|Mux2~575         ; |Shifter|Mux2~575          ; combout          ;
+; |Shifter|ShiftLeft0~9211  ; |Shifter|ShiftLeft0~9211   ; combout          ;
+; |Shifter|ShiftLeft0~9212  ; |Shifter|ShiftLeft0~9212   ; combout          ;
+; |Shifter|Mux2~576         ; |Shifter|Mux2~576          ; combout          ;
+; |Shifter|Mux2~579         ; |Shifter|Mux2~579          ; combout          ;
+; |Shifter|Mux2~580         ; |Shifter|Mux2~580          ; combout          ;
+; |Shifter|Mux2~581         ; |Shifter|Mux2~581          ; combout          ;
+; |Shifter|ShiftLeft0~9213  ; |Shifter|ShiftLeft0~9213   ; combout          ;
+; |Shifter|ShiftRight1~9257 ; |Shifter|ShiftRight1~9257  ; combout          ;
+; |Shifter|ShiftRight1~9258 ; |Shifter|ShiftRight1~9258  ; combout          ;
+; |Shifter|ShiftRight0~3940 ; |Shifter|ShiftRight0~3940  ; combout          ;
+; |Shifter|ShiftRight1~9259 ; |Shifter|ShiftRight1~9259  ; combout          ;
+; |Shifter|ShiftRight1~9260 ; |Shifter|ShiftRight1~9260  ; combout          ;
+; |Shifter|ShiftRight1~9261 ; |Shifter|ShiftRight1~9261  ; combout          ;
+; |Shifter|Mux19~515        ; |Shifter|Mux19~515         ; combout          ;
+; |Shifter|ShiftRight1~9262 ; |Shifter|ShiftRight1~9262  ; combout          ;
+; |Shifter|ShiftRight1~9263 ; |Shifter|ShiftRight1~9263  ; combout          ;
+; |Shifter|ShiftRight1~9264 ; |Shifter|ShiftRight1~9264  ; combout          ;
+; |Shifter|ShiftRight1~9265 ; |Shifter|ShiftRight1~9265  ; combout          ;
+; |Shifter|Mux3~585         ; |Shifter|Mux3~585          ; combout          ;
+; |Shifter|ShiftRight1~9266 ; |Shifter|ShiftRight1~9266  ; combout          ;
+; |Shifter|ShiftRight1~9267 ; |Shifter|ShiftRight1~9267  ; combout          ;
+; |Shifter|ShiftRight1~9268 ; |Shifter|ShiftRight1~9268  ; combout          ;
+; |Shifter|Mux3~586         ; |Shifter|Mux3~586          ; combout          ;
+; |Shifter|ShiftLeft0~9214  ; |Shifter|ShiftLeft0~9214   ; combout          ;
+; |Shifter|ShiftLeft0~9215  ; |Shifter|ShiftLeft0~9215   ; combout          ;
+; |Shifter|Mux3~587         ; |Shifter|Mux3~587          ; combout          ;
+; |Shifter|Mux3~588         ; |Shifter|Mux3~588          ; combout          ;
+; |Shifter|Mux3~589         ; |Shifter|Mux3~589          ; combout          ;
+; |Shifter|Mux3~590         ; |Shifter|Mux3~590          ; combout          ;
+; |Shifter|ShiftRight0~3941 ; |Shifter|ShiftRight0~3941  ; combout          ;
+; |Shifter|Mux4~232         ; |Shifter|Mux4~232          ; combout          ;
+; |Shifter|ShiftRight0~3942 ; |Shifter|ShiftRight0~3942  ; combout          ;
+; |Shifter|ShiftRight1~9269 ; |Shifter|ShiftRight1~9269  ; combout          ;
+; |Shifter|Mux4~233         ; |Shifter|Mux4~233          ; combout          ;
+; |Shifter|ShiftRight0~3943 ; |Shifter|ShiftRight0~3943  ; combout          ;
+; |Shifter|Mux4~234         ; |Shifter|Mux4~234          ; combout          ;
+; |Shifter|Mux4~235         ; |Shifter|Mux4~235          ; combout          ;
+; |Shifter|ShiftLeft0~9216  ; |Shifter|ShiftLeft0~9216   ; combout          ;
+; |Shifter|ShiftLeft0~9217  ; |Shifter|ShiftLeft0~9217   ; combout          ;
+; |Shifter|ShiftLeft0~9218  ; |Shifter|ShiftLeft0~9218   ; combout          ;
+; |Shifter|ShiftLeft0~9219  ; |Shifter|ShiftLeft0~9219   ; combout          ;
+; |Shifter|Mux5~209         ; |Shifter|Mux5~209          ; combout          ;
+; |Shifter|Mux4~236         ; |Shifter|Mux4~236          ; combout          ;
+; |Shifter|ShiftRight0~3944 ; |Shifter|ShiftRight0~3944  ; combout          ;
+; |Shifter|Mux5~210         ; |Shifter|Mux5~210          ; combout          ;
+; |Shifter|ShiftRight0~3945 ; |Shifter|ShiftRight0~3945  ; combout          ;
+; |Shifter|ShiftRight1~9270 ; |Shifter|ShiftRight1~9270  ; combout          ;
+; |Shifter|Mux5~211         ; |Shifter|Mux5~211          ; combout          ;
+; |Shifter|ShiftRight0~3946 ; |Shifter|ShiftRight0~3946  ; combout          ;
+; |Shifter|Mux5~212         ; |Shifter|Mux5~212          ; combout          ;
+; |Shifter|Mux5~213         ; |Shifter|Mux5~213          ; combout          ;
+; |Shifter|ShiftLeft0~9220  ; |Shifter|ShiftLeft0~9220   ; combout          ;
+; |Shifter|ShiftLeft0~9221  ; |Shifter|ShiftLeft0~9221   ; combout          ;
+; |Shifter|ShiftLeft0~9222  ; |Shifter|ShiftLeft0~9222   ; combout          ;
+; |Shifter|Mux5~214         ; |Shifter|Mux5~214          ; combout          ;
+; |Shifter|Mux6~400         ; |Shifter|Mux6~400          ; combout          ;
+; |Shifter|ShiftRight0~3947 ; |Shifter|ShiftRight0~3947  ; combout          ;
+; |Shifter|ShiftLeft0~9223  ; |Shifter|ShiftLeft0~9223   ; combout          ;
+; |Shifter|ShiftLeft0~9224  ; |Shifter|ShiftLeft0~9224   ; combout          ;
+; |Shifter|ShiftLeft0~9225  ; |Shifter|ShiftLeft0~9225   ; combout          ;
+; |Shifter|Mux6~401         ; |Shifter|Mux6~401          ; combout          ;
+; |Shifter|ShiftRight0~3948 ; |Shifter|ShiftRight0~3948  ; combout          ;
+; |Shifter|ShiftRight1~9271 ; |Shifter|ShiftRight1~9271  ; combout          ;
+; |Shifter|ShiftRight0~3949 ; |Shifter|ShiftRight0~3949  ; combout          ;
+; |Shifter|Mux6~403         ; |Shifter|Mux6~403          ; combout          ;
+; |Shifter|Mux6~404         ; |Shifter|Mux6~404          ; combout          ;
+; |Shifter|Mux7~417         ; |Shifter|Mux7~417          ; combout          ;
+; |Shifter|ShiftRight0~3950 ; |Shifter|ShiftRight0~3950  ; combout          ;
+; |Shifter|ShiftLeft0~9226  ; |Shifter|ShiftLeft0~9226   ; combout          ;
+; |Shifter|ShiftLeft0~9227  ; |Shifter|ShiftLeft0~9227   ; combout          ;
+; |Shifter|ShiftLeft0~9228  ; |Shifter|ShiftLeft0~9228   ; combout          ;
+; |Shifter|ShiftLeft0~9229  ; |Shifter|ShiftLeft0~9229   ; combout          ;
+; |Shifter|Mux7~418         ; |Shifter|Mux7~418          ; combout          ;
+; |Shifter|ShiftRight0~3951 ; |Shifter|ShiftRight0~3951  ; combout          ;
+; |Shifter|ShiftRight1~9272 ; |Shifter|ShiftRight1~9272  ; combout          ;
+; |Shifter|ShiftLeft0~9230  ; |Shifter|ShiftLeft0~9230   ; combout          ;
+; |Shifter|ShiftRight0~3952 ; |Shifter|ShiftRight0~3952  ; combout          ;
+; |Shifter|Mux12~149        ; |Shifter|Mux12~149         ; combout          ;
+; |Shifter|ShiftRight0~3953 ; |Shifter|ShiftRight0~3953  ; combout          ;
+; |Shifter|ShiftLeft0~9231  ; |Shifter|ShiftLeft0~9231   ; combout          ;
+; |Shifter|ShiftLeft0~9232  ; |Shifter|ShiftLeft0~9232   ; combout          ;
+; |Shifter|ShiftLeft0~9233  ; |Shifter|ShiftLeft0~9233   ; combout          ;
+; |Shifter|ShiftLeft0~9234  ; |Shifter|ShiftLeft0~9234   ; combout          ;
+; |Shifter|ShiftRight1~9273 ; |Shifter|ShiftRight1~9273  ; combout          ;
+; |Shifter|ShiftRight0~3954 ; |Shifter|ShiftRight0~3954  ; combout          ;
+; |Shifter|ShiftLeft0~9235  ; |Shifter|ShiftLeft0~9235   ; combout          ;
+; |Shifter|ShiftLeft0~9236  ; |Shifter|ShiftLeft0~9236   ; combout          ;
+; |Shifter|ShiftLeft0~9237  ; |Shifter|ShiftLeft0~9237   ; combout          ;
+; |Shifter|ShiftLeft0~9238  ; |Shifter|ShiftLeft0~9238   ; combout          ;
+; |Shifter|ShiftRight1~9274 ; |Shifter|ShiftRight1~9274  ; combout          ;
+; |Shifter|ShiftRight0~3955 ; |Shifter|ShiftRight0~3955  ; combout          ;
+; |Shifter|ShiftLeft0~9239  ; |Shifter|ShiftLeft0~9239   ; combout          ;
+; |Shifter|ShiftLeft0~9240  ; |Shifter|ShiftLeft0~9240   ; combout          ;
+; |Shifter|ShiftLeft0~9241  ; |Shifter|ShiftLeft0~9241   ; combout          ;
+; |Shifter|ShiftLeft0~9242  ; |Shifter|ShiftLeft0~9242   ; combout          ;
+; |Shifter|ShiftRight1~9275 ; |Shifter|ShiftRight1~9275  ; combout          ;
+; |Shifter|Mux10            ; |Shifter|Mux10             ; combout          ;
+; |Shifter|ShiftRight0~3956 ; |Shifter|ShiftRight0~3956  ; combout          ;
+; |Shifter|ShiftLeft0~9243  ; |Shifter|ShiftLeft0~9243   ; combout          ;
+; |Shifter|ShiftLeft0~9244  ; |Shifter|ShiftLeft0~9244   ; combout          ;
+; |Shifter|ShiftLeft0~9245  ; |Shifter|ShiftLeft0~9245   ; combout          ;
+; |Shifter|ShiftLeft0~9246  ; |Shifter|ShiftLeft0~9246   ; combout          ;
+; |Shifter|ShiftRight1~9276 ; |Shifter|ShiftRight1~9276  ; combout          ;
+; |Shifter|ShiftRight0~3957 ; |Shifter|ShiftRight0~3957  ; combout          ;
+; |Shifter|ShiftLeft0~9247  ; |Shifter|ShiftLeft0~9247   ; combout          ;
+; |Shifter|ShiftLeft0~9248  ; |Shifter|ShiftLeft0~9248   ; combout          ;
+; |Shifter|ShiftLeft0~9249  ; |Shifter|ShiftLeft0~9249   ; combout          ;
+; |Shifter|ShiftLeft0~9250  ; |Shifter|ShiftLeft0~9250   ; combout          ;
+; |Shifter|ShiftRight1~9277 ; |Shifter|ShiftRight1~9277  ; combout          ;
+; |Shifter|ShiftLeft0~9251  ; |Shifter|ShiftLeft0~9251   ; combout          ;
+; |Shifter|ShiftLeft0~9252  ; |Shifter|ShiftLeft0~9252   ; combout          ;
+; |Shifter|ShiftLeft0~9253  ; |Shifter|ShiftLeft0~9253   ; combout          ;
+; |Shifter|ShiftLeft0~9254  ; |Shifter|ShiftLeft0~9254   ; combout          ;
+; |Shifter|ShiftRight1~9278 ; |Shifter|ShiftRight1~9278  ; combout          ;
+; |Shifter|ShiftLeft0~9255  ; |Shifter|ShiftLeft0~9255   ; combout          ;
+; |Shifter|ShiftLeft0~9256  ; |Shifter|ShiftLeft0~9256   ; combout          ;
+; |Shifter|ShiftLeft0~9257  ; |Shifter|ShiftLeft0~9257   ; combout          ;
+; |Shifter|ShiftLeft0~9258  ; |Shifter|ShiftLeft0~9258   ; combout          ;
+; |Shifter|ShiftRight0~3958 ; |Shifter|ShiftRight0~3958  ; combout          ;
+; |Shifter|ShiftLeft0~9259  ; |Shifter|ShiftLeft0~9259   ; combout          ;
+; |Shifter|ShiftLeft0~9260  ; |Shifter|ShiftLeft0~9260   ; combout          ;
+; |Shifter|ShiftLeft0~9261  ; |Shifter|ShiftLeft0~9261   ; combout          ;
+; |Shifter|ShiftLeft0~9262  ; |Shifter|ShiftLeft0~9262   ; combout          ;
+; |Shifter|ShiftRight1~9279 ; |Shifter|ShiftRight1~9279  ; combout          ;
+; |Shifter|ShiftLeft0~9263  ; |Shifter|ShiftLeft0~9263   ; combout          ;
+; |Shifter|ShiftLeft0~9264  ; |Shifter|ShiftLeft0~9264   ; combout          ;
+; |Shifter|ShiftLeft0~9265  ; |Shifter|ShiftLeft0~9265   ; combout          ;
+; |Shifter|Mux18~375        ; |Shifter|Mux18~375         ; combout          ;
+; |Shifter|ShiftLeft0~9266  ; |Shifter|ShiftLeft0~9266   ; combout          ;
+; |Shifter|ShiftLeft0~9267  ; |Shifter|ShiftLeft0~9267   ; combout          ;
+; |Shifter|ShiftLeft0~9268  ; |Shifter|ShiftLeft0~9268   ; combout          ;
+; |Shifter|ShiftLeft0~9269  ; |Shifter|ShiftLeft0~9269   ; combout          ;
+; |Shifter|ShiftLeft0~9270  ; |Shifter|ShiftLeft0~9270   ; combout          ;
+; |Shifter|ShiftLeft0~9271  ; |Shifter|ShiftLeft0~9271   ; combout          ;
+; |Shifter|ShiftLeft0~9272  ; |Shifter|ShiftLeft0~9272   ; combout          ;
+; |Shifter|ShiftLeft0~9273  ; |Shifter|ShiftLeft0~9273   ; combout          ;
+; |Shifter|ShiftLeft0~9274  ; |Shifter|ShiftLeft0~9274   ; combout          ;
+; |Shifter|ShiftLeft0~9275  ; |Shifter|ShiftLeft0~9275   ; combout          ;
+; |Shifter|ShiftLeft0~9276  ; |Shifter|ShiftLeft0~9276   ; combout          ;
+; |Shifter|ShiftLeft0~9277  ; |Shifter|ShiftLeft0~9277   ; combout          ;
+; |Shifter|ShiftLeft0~9278  ; |Shifter|ShiftLeft0~9278   ; combout          ;
+; |Shifter|ShiftLeft0~9279  ; |Shifter|ShiftLeft0~9279   ; combout          ;
+; |Shifter|ShiftLeft0~9280  ; |Shifter|ShiftLeft0~9280   ; combout          ;
+; |Shifter|ShiftLeft0~9281  ; |Shifter|ShiftLeft0~9281   ; combout          ;
+; |Shifter|ShiftLeft0~9282  ; |Shifter|ShiftLeft0~9282   ; combout          ;
+; |Shifter|ShiftLeft0~9283  ; |Shifter|ShiftLeft0~9283   ; combout          ;
+; |Shifter|ShiftLeft0~9284  ; |Shifter|ShiftLeft0~9284   ; combout          ;
+; |Shifter|ShiftLeft0~9285  ; |Shifter|ShiftLeft0~9285   ; combout          ;
+; |Shifter|ShiftLeft0~9286  ; |Shifter|ShiftLeft0~9286   ; combout          ;
+; |Shifter|ShiftLeft0~9287  ; |Shifter|ShiftLeft0~9287   ; combout          ;
+; |Shifter|ShiftLeft0~9288  ; |Shifter|ShiftLeft0~9288   ; combout          ;
+; |Shifter|ShiftLeft0~9289  ; |Shifter|ShiftLeft0~9289   ; combout          ;
+; |Shifter|ShiftLeft0~9290  ; |Shifter|ShiftLeft0~9290   ; combout          ;
+; |Shifter|ShiftLeft0~9291  ; |Shifter|ShiftLeft0~9291   ; combout          ;
+; |Shifter|ShiftLeft0~9292  ; |Shifter|ShiftLeft0~9292   ; combout          ;
+; |Shifter|Mux24~659        ; |Shifter|Mux24~659         ; combout          ;
+; |Shifter|Mux24~660        ; |Shifter|Mux24~660         ; combout          ;
+; |Shifter|Mux27~521        ; |Shifter|Mux27~521         ; combout          ;
+; |Shifter|ShiftLeft0~9293  ; |Shifter|ShiftLeft0~9293   ; combout          ;
+; |Shifter|ShiftLeft0~9294  ; |Shifter|ShiftLeft0~9294   ; combout          ;
+; |Shifter|Mux25~698        ; |Shifter|Mux25~698         ; combout          ;
+; |Shifter|Mux25~699        ; |Shifter|Mux25~699         ; combout          ;
+; |Shifter|ShiftLeft0~9295  ; |Shifter|ShiftLeft0~9295   ; combout          ;
+; |Shifter|ShiftLeft0~9296  ; |Shifter|ShiftLeft0~9296   ; combout          ;
+; |Shifter|ShiftLeft0~9297  ; |Shifter|ShiftLeft0~9297   ; combout          ;
+; |Shifter|Mux26~477        ; |Shifter|Mux26~477         ; combout          ;
+; |Shifter|Mux26~478        ; |Shifter|Mux26~478         ; combout          ;
+; |Shifter|ShiftLeft0~9298  ; |Shifter|ShiftLeft0~9298   ; combout          ;
+; |Shifter|ShiftLeft0~9299  ; |Shifter|ShiftLeft0~9299   ; combout          ;
+; |Shifter|ShiftLeft0~9300  ; |Shifter|ShiftLeft0~9300   ; combout          ;
+; |Shifter|Mux27~522        ; |Shifter|Mux27~522         ; combout          ;
+; |Shifter|Mux27~523        ; |Shifter|Mux27~523         ; combout          ;
+; |Shifter|ShiftLeft0~9301  ; |Shifter|ShiftLeft0~9301   ; combout          ;
+; |Shifter|Mux28~155        ; |Shifter|Mux28~155         ; combout          ;
+; |Shifter|Mux28~156        ; |Shifter|Mux28~156         ; combout          ;
+; |Shifter|ShiftLeft0~9302  ; |Shifter|ShiftLeft0~9302   ; combout          ;
+; |Shifter|Mux29~45         ; |Shifter|Mux29~45          ; combout          ;
+; |Shifter|Mux29~46         ; |Shifter|Mux29~46          ; combout          ;
+; |Shifter|Mux30~99         ; |Shifter|Mux30~99          ; combout          ;
+; |Shifter|Mux30~100        ; |Shifter|Mux30~100         ; combout          ;
+; |Shifter|Mux30~101        ; |Shifter|Mux30~101         ; combout          ;
+; |Shifter|Mux31~24         ; |Shifter|Mux31~24          ; combout          ;
+; |Shifter|Mux31~25         ; |Shifter|Mux31~25          ; combout          ;
+; |Shifter|ShiftLeft0~9303  ; |Shifter|ShiftLeft0~9303   ; combout          ;
+; |Shifter|ShiftLeft0~9304  ; |Shifter|ShiftLeft0~9304   ; combout          ;
+; |Shifter|ShiftRight0~3959 ; |Shifter|ShiftRight0~3959  ; combout          ;
+; |Shifter|ShiftRight0~3960 ; |Shifter|ShiftRight0~3960  ; combout          ;
+; |Shifter|ShiftRight1~9280 ; |Shifter|ShiftRight1~9280  ; combout          ;
+; |Shifter|Mux28~161        ; |Shifter|Mux28~161         ; combout          ;
+; |Shifter|Mux29~48         ; |Shifter|Mux29~48          ; combout          ;
+; |Shifter|SHT_DC[0]        ; |Shifter|SHT_DC[0]         ; padio            ;
+; |Shifter|SHT_DC[1]        ; |Shifter|SHT_DC[1]         ; padio            ;
+; |Shifter|SHT_DC[2]        ; |Shifter|SHT_DC[2]         ; padio            ;
+; |Shifter|SHT_DC[3]        ; |Shifter|SHT_DC[3]         ; padio            ;
+; |Shifter|SHT_DC[4]        ; |Shifter|SHT_DC[4]         ; padio            ;
+; |Shifter|SHT_DC[5]        ; |Shifter|SHT_DC[5]         ; padio            ;
+; |Shifter|SHT_DC[6]        ; |Shifter|SHT_DC[6]         ; padio            ;
+; |Shifter|SHT_DC[10]       ; |Shifter|SHT_DC[10]        ; padio            ;
+; |Shifter|SHT_DB[3]        ; |Shifter|SHT_DB[3]~corein  ; combout          ;
+; |Shifter|SHT_DB[2]        ; |Shifter|SHT_DB[2]~corein  ; combout          ;
+; |Shifter|SHT_DA[0]        ; |Shifter|SHT_DA[0]~corein  ; combout          ;
+; |Shifter|SHT_DB[0]        ; |Shifter|SHT_DB[0]~corein  ; combout          ;
+; |Shifter|SHT_DB[1]        ; |Shifter|SHT_DB[1]~corein  ; combout          ;
+; |Shifter|SHT_DA[7]        ; |Shifter|SHT_DA[7]~corein  ; combout          ;
+; |Shifter|SHT_DA[6]        ; |Shifter|SHT_DA[6]~corein  ; combout          ;
+; |Shifter|SHT_DA[5]        ; |Shifter|SHT_DA[5]~corein  ; combout          ;
+; |Shifter|SHT_DA[4]        ; |Shifter|SHT_DA[4]~corein  ; combout          ;
+; |Shifter|SHT_DB[4]        ; |Shifter|SHT_DB[4]~corein  ; combout          ;
+; |Shifter|SHT_DA[15]       ; |Shifter|SHT_DA[15]~corein ; combout          ;
+; |Shifter|SHT_DA[13]       ; |Shifter|SHT_DA[13]~corein ; combout          ;
+; |Shifter|SHT_DA[14]       ; |Shifter|SHT_DA[14]~corein ; combout          ;
+; |Shifter|SHT_DA[12]       ; |Shifter|SHT_DA[12]~corein ; combout          ;
+; |Shifter|SHT_DA[11]       ; |Shifter|SHT_DA[11]~corein ; combout          ;
+; |Shifter|SHT_DA[9]        ; |Shifter|SHT_DA[9]~corein  ; combout          ;
+; |Shifter|SHT_DA[10]       ; |Shifter|SHT_DA[10]~corein ; combout          ;
+; |Shifter|SHT_DA[8]        ; |Shifter|SHT_DA[8]~corein  ; combout          ;
+; |Shifter|SHT_DA[3]        ; |Shifter|SHT_DA[3]~corein  ; combout          ;
+; |Shifter|SHT_DA[2]        ; |Shifter|SHT_DA[2]~corein  ; combout          ;
+; |Shifter|SHT_DA[31]       ; |Shifter|SHT_DA[31]~corein ; combout          ;
+; |Shifter|SHT_DA[30]       ; |Shifter|SHT_DA[30]~corein ; combout          ;
+; |Shifter|SHT_DA[29]       ; |Shifter|SHT_DA[29]~corein ; combout          ;
+; |Shifter|SHT_DA[28]       ; |Shifter|SHT_DA[28]~corein ; combout          ;
+; |Shifter|SHT_DA[27]       ; |Shifter|SHT_DA[27]~corein ; combout          ;
+; |Shifter|SHT_DA[25]       ; |Shifter|SHT_DA[25]~corein ; combout          ;
+; |Shifter|SHT_DA[26]       ; |Shifter|SHT_DA[26]~corein ; combout          ;
+; |Shifter|SHT_DA[24]       ; |Shifter|SHT_DA[24]~corein ; combout          ;
+; |Shifter|SHT_DA[23]       ; |Shifter|SHT_DA[23]~corein ; combout          ;
+; |Shifter|SHT_DA[21]       ; |Shifter|SHT_DA[21]~corein ; combout          ;
+; |Shifter|SHT_DA[22]       ; |Shifter|SHT_DA[22]~corein ; combout          ;
+; |Shifter|SHT_DA[20]       ; |Shifter|SHT_DA[20]~corein ; combout          ;
+; |Shifter|SHT_DA[19]       ; |Shifter|SHT_DA[19]~corein ; combout          ;
+; |Shifter|SHT_DA[17]       ; |Shifter|SHT_DA[17]~corein ; combout          ;
+; |Shifter|SHT_DA[18]       ; |Shifter|SHT_DA[18]~corein ; combout          ;
+; |Shifter|SHT_DA[16]       ; |Shifter|SHT_DA[16]~corein ; combout          ;
+; |Shifter|SHT_DA[1]        ; |Shifter|SHT_DA[1]~corein  ; combout          ;
++---------------------------+----------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sat Jul 17 01:11:48 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off Shifter -c Shifter
+Info: Using vector source file "D:/±à³Ì/verilog HDL/cpu/new/Shifter/Shifter.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      27.01 %
+Info: Number of transitions in simulation is 849
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 132 megabytes of memory during processing
+    Info: Processing ended: Sat Jul 17 01:11:49 2010
+    Info: Elapsed time: 00:00:01
+
+

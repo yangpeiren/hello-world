@@ -1,0 +1,445 @@
+Analysis & Synthesis report for I
+Mon Jul 19 21:36:43 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. General Register Statistics
+  9. Registers Packed Into Inferred Megafunctions
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Source assignments for Regfile:inst|altsyncram:RF_rtl_0|altsyncram_n1e1:auto_generated
+ 12. Parameter Settings for Inferred Entity Instance: Regfile:inst|altsyncram:RF_rtl_0
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Jul 19 21:36:42 2010    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; I                                        ;
+; Top-level Entity Name       ; I                                        ;
+; Family                      ; Cyclone                                  ;
+; Total logic elements        ; 2,125                                    ;
+; Total pins                  ; 107                                      ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 1,024                                    ;
+; DSP block 9-bit elements    ; N/A until Partition Merge                ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; N/A until Partition Merge                ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP1C12Q240C8       ;                    ;
+; Top-level entity name                                                          ; I                  ; I                  ;
+; Family name                                                                    ; Cyclone            ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone                                              ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                       ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                       ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
+; Extent.v                         ; yes             ; User Verilog HDL File              ; E:/My booK/计组/5/I/Extent.v                                       ;
+; ALU.v                            ; yes             ; User Verilog HDL File              ; E:/My booK/计组/5/I/ALU.v                                          ;
+; Reg.v                            ; yes             ; User Verilog HDL File              ; E:/My booK/计组/5/I/Reg.v                                          ;
+; Regfile.v                        ; yes             ; User Verilog HDL File              ; E:/My booK/计组/5/I/Regfile.v                                      ;
+; I.bdf                            ; yes             ; User Block Diagram/Schematic File  ; E:/My booK/计组/5/I/I.bdf                                          ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; e:/altera/72/quartus/libraries/megafunctions/altsyncram.tdf        ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; e:/altera/72/quartus/libraries/megafunctions/stratix_ram_block.inc ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; e:/altera/72/quartus/libraries/megafunctions/lpm_mux.inc           ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; e:/altera/72/quartus/libraries/megafunctions/lpm_decode.inc        ;
+; aglobal72.inc                    ; yes             ; Megafunction                       ; e:/altera/72/quartus/libraries/megafunctions/aglobal72.inc         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; e:/altera/72/quartus/libraries/megafunctions/a_rdenreg.inc         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; e:/altera/72/quartus/libraries/megafunctions/altrom.inc            ;
+; altram.inc                       ; yes             ; Megafunction                       ; e:/altera/72/quartus/libraries/megafunctions/altram.inc            ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; e:/altera/72/quartus/libraries/megafunctions/altdpram.inc          ;
+; altqpram.inc                     ; yes             ; Megafunction                       ; e:/altera/72/quartus/libraries/megafunctions/altqpram.inc          ;
+; db/altsyncram_n1e1.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/My booK/计组/5/I/db/altsyncram_n1e1.tdf                         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 2125  ;
+;     -- Combinational with no register       ; 1069  ;
+;     -- Register only                        ; 1056  ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 858   ;
+;     -- 3 input functions                    ; 173   ;
+;     -- 2 input functions                    ; 38    ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 2093  ;
+;     -- arithmetic mode                      ; 32    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 1056  ;
+; Total logic cells in carry chains           ; 33    ;
+; I/O pins                                    ; 107   ;
+; Total memory bits                           ; 1024  ;
+; Maximum fan-out node                        ; PClk  ;
+; Maximum fan-out                             ; 1088  ;
+; Total fan-out                               ; 7643  ;
+; Average fan-out                             ; 3.38  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                 ;
++-------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                ; Library Name ;
++-------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------+--------------+
+; |I                                        ; 2125 (32)   ; 1056         ; 1024        ; 107  ; 0            ; 1069 (32)    ; 1056 (0)          ; 0 (0)            ; 33 (0)          ; 0 (0)      ; |I                                                                 ; work         ;
+;    |ALU:inst2|                            ; 316 (316)   ; 0            ; 0           ; 0    ; 0            ; 316 (316)    ; 0 (0)             ; 0 (0)            ; 33 (33)         ; 0 (0)      ; |I|ALU:inst2                                                       ; work         ;
+;    |Reg:inst4|                            ; 32 (32)     ; 32           ; 0           ; 0    ; 0            ; 0 (0)        ; 32 (32)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |I|Reg:inst4                                                       ; work         ;
+;    |Regfile:inst|                         ; 1745 (1745) ; 1024         ; 1024        ; 0    ; 0            ; 721 (721)    ; 1024 (1024)       ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |I|Regfile:inst                                                    ; work         ;
+;       |altsyncram:RF_rtl_0|               ; 0 (0)       ; 0            ; 1024        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |I|Regfile:inst|altsyncram:RF_rtl_0                                ; work         ;
+;          |altsyncram_n1e1:auto_generated| ; 0 (0)       ; 0            ; 1024        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |I|Regfile:inst|altsyncram:RF_rtl_0|altsyncram_n1e1:auto_generated ; work         ;
++-------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                               ;
++----------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                       ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++----------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Regfile:inst|altsyncram:RF_rtl_0|altsyncram_n1e1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
++----------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1056  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1024  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions       ;
++------------------------+--------------------+------+
+; Register Name          ; Megafunction       ; Type ;
++------------------------+--------------------+------+
+; Reg:inst1|data_out[0]  ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[1]  ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[2]  ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[3]  ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[4]  ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[5]  ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[6]  ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[7]  ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[8]  ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[9]  ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[10] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[11] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[12] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[13] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[14] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[15] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[16] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[17] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[18] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[19] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[20] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[21] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[22] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[23] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[24] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[25] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[26] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[27] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[28] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[29] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[30] ; Regfile:inst|RF~32 ; RAM  ;
+; Reg:inst1|data_out[31] ; Regfile:inst|RF~32 ; RAM  ;
++------------------------+--------------------+------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |I|ALU:inst2|Add0          ;
+; 12:1               ; 14 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; No         ; |I|ALU:inst2|Mux23         ;
+; 12:1               ; 15 bits   ; 120 LEs       ; 75 LEs               ; 45 LEs                 ; No         ; |I|ALU:inst2|Mux15         ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |I|ALU:inst2|Add0          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Source assignments for Regfile:inst|altsyncram:RF_rtl_0|altsyncram_n1e1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------+
+; Assignment                      ; Value              ; From ; To                       ;
++---------------------------------+--------------------+------+--------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                        ;
++---------------------------------+--------------------+------+--------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Regfile:inst|altsyncram:RF_rtl_0 ;
++------------------------------------+----------------------+-----------------------+
+; Parameter Name                     ; Value                ; Type                  ;
++------------------------------------+----------------------+-----------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped               ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE        ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped               ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped               ;
+; WIDTH_A                            ; 32                   ; Untyped               ;
+; WIDTHAD_A                          ; 5                    ; Untyped               ;
+; NUMWORDS_A                         ; 32                   ; Untyped               ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped               ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped               ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped               ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped               ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped               ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped               ;
+; WIDTH_B                            ; 32                   ; Untyped               ;
+; WIDTHAD_B                          ; 5                    ; Untyped               ;
+; NUMWORDS_B                         ; 32                   ; Untyped               ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped               ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped               ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped               ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped               ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped               ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped               ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped               ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped               ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped               ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped               ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped               ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped               ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped               ;
+; BYTE_SIZE                          ; 8                    ; Untyped               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped               ;
+; INIT_FILE                          ; UNUSED               ; Untyped               ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped               ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped               ;
+; ENABLE_ECC                         ; FALSE                ; Untyped               ;
+; DEVICE_FAMILY                      ; Cyclone              ; Untyped               ;
+; CBXI_PARAMETER                     ; altsyncram_n1e1      ; Untyped               ;
++------------------------------------+----------------------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Mon Jul 19 21:36:31 2010
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off I -c I
+Info: Found 1 design units, including 1 entities, in source file Extent.v
+    Info: Found entity 1: Extent
+Info: Found 1 design units, including 1 entities, in source file ALU.v
+    Info: Found entity 1: ALU
+Info: Found 1 design units, including 1 entities, in source file Reg.v
+    Info: Found entity 1: Reg
+Info: Found 1 design units, including 1 entities, in source file Regfile.v
+    Info: Found entity 1: Regfile
+Info: Found 1 design units, including 1 entities, in source file I.bdf
+    Info: Found entity 1: I
+Info: Elaborating entity "I" for the top level hierarchy
+Info: Elaborating entity "Regfile" for hierarchy "Regfile:inst"
+Info: Elaborating entity "Reg" for hierarchy "Reg:inst4"
+Info: Elaborating entity "ALU" for hierarchy "ALU:inst2"
+Info: Elaborating entity "Extent" for hierarchy "Extent:inst3"
+Warning (10240): Verilog HDL Always Construct warning at Extent.v(17): inferring latch(es) for variable "ExImm32", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "ExImm32[0]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[1]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[2]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[3]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[4]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[5]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[6]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[7]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[8]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[9]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[10]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[11]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[12]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[13]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[14]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[15]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[16]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[17]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[18]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[19]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[20]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[21]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[22]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[23]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[24]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[25]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[26]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[27]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[28]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[29]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[30]" at Extent.v(17)
+Info (10041): Inferred latch for "ExImm32[31]" at Extent.v(17)
+Info: Found 1 instances of uninferred RAM logic
+    Info: RAM logic "Regfile:inst|RF__dual" uninferred due to asynchronous read logic
+Info: Inferred 1 megafunctions from design logic
+    Info: Inferred altsyncram megafunction from the following design logic: "Regfile:inst|RF~32" 
+        Info: Parameter OPERATION_MODE set to DUAL_PORT
+        Info: Parameter WIDTH_A set to 32
+        Info: Parameter WIDTHAD_A set to 5
+        Info: Parameter NUMWORDS_A set to 32
+        Info: Parameter WIDTH_B set to 32
+        Info: Parameter WIDTHAD_B set to 5
+        Info: Parameter NUMWORDS_B set to 32
+        Info: Parameter ADDRESS_ACLR_A set to NONE
+        Info: Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info: Parameter ADDRESS_ACLR_B set to NONE
+        Info: Parameter OUTDATA_ACLR_B set to NONE
+        Info: Parameter ADDRESS_REG_B set to CLOCK0
+        Info: Parameter INDATA_ACLR_A set to NONE
+        Info: Parameter WRCONTROL_ACLR_A set to NONE
+        Info: Parameter RAM_BLOCK_TYPE set to AUTO
+Info: Found 1 design units, including 1 entities, in source file ../../../../altera/72/quartus/libraries/megafunctions/altsyncram.tdf
+    Info: Found entity 1: altsyncram
+Info: Elaborated megafunction instantiation "Regfile:inst|altsyncram:RF_rtl_0"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_n1e1.tdf
+    Info: Found entity 1: altsyncram_n1e1
+Warning: Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "IR[31]"
+    Warning (15610): No output dependent on input pin "IR[30]"
+    Warning (15610): No output dependent on input pin "IR[29]"
+    Warning (15610): No output dependent on input pin "IR[28]"
+    Warning (15610): No output dependent on input pin "IR[27]"
+    Warning (15610): No output dependent on input pin "IR[26]"
+Info: Implemented 2264 device resources after synthesis - the final resource count might be different
+    Info: Implemented 43 input pins
+    Info: Implemented 64 output pins
+    Info: Implemented 2125 logic cells
+    Info: Implemented 32 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Allocated 186 megabytes of memory during processing
+    Info: Processing ended: Mon Jul 19 21:36:43 2010
+    Info: Elapsed time: 00:00:12
+
+

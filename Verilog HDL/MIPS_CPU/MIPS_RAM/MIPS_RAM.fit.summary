@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Jul 07 08:56:07 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : MIPS_RAM
+Top-level Entity Name : MIPS_RAM
+Family : Cyclone II
+Device : EP2C35F484C8
+Timing Models : Final
+Total logic elements : 1,235 / 33,216 ( 4 % )
+    Total combinational functions : 750 / 33,216 ( 2 % )
+    Dedicated logic registers : 1,056 / 33,216 ( 3 % )
+Total registers : 1056
+Total pins : 103 / 322 ( 32 % )
+Total virtual pins : 0
+Total memory bits : 0 / 483,840 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

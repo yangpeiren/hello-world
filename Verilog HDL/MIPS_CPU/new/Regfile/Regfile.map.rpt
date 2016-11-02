@@ -1,0 +1,1352 @@
+Analysis & Synthesis report for Regfile
+Sat Jul 17 00:40:27 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Registers Removed During Synthesis
+  8. General Register Statistics
+  9. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Jul 17 00:40:26 2010    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; Regfile                                  ;
+; Top-level Entity Name       ; Regfile                                  ;
+; Family                      ; Cyclone                                  ;
+; Total logic elements        ; 2,449                                    ;
+; Total pins                  ; 113                                      ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; N/A until Partition Merge                ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; N/A until Partition Merge                ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP1C12Q240C8       ;                    ;
+; Top-level entity name                                                          ; Regfile            ; Regfile            ;
+; Family name                                                                    ; Cyclone            ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone                                              ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                       ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                      ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; Regfile.v                        ; yes             ; User Verilog HDL File  ; D:/±à³Ì/verilog HDL/cpu/new/Regfile/Regfile.v ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 2449  ;
+;     -- Combinational with no register       ; 1425  ;
+;     -- Register only                        ; 1024  ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 1297  ;
+;     -- 3 input functions                    ; 128   ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 2449  ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 1024  ;
+; I/O pins                                    ; 113   ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 1024  ;
+; Total fan-out                               ; 8708  ;
+; Average fan-out                             ; 3.40  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |Regfile                   ; 2449 (2449) ; 1024         ; 0           ; 113  ; 0            ; 1425 (1425)  ; 1024 (1024)       ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Regfile            ; work         ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------+
+; Registers Removed During Synthesis                             ;
++------------------------------------------+---------------------+
+; Register name                            ; Reason for Removal  ;
++------------------------------------------+---------------------+
+; RF__dual~1024                            ; Merged with RF~1120 ;
+; RF__dual~1088                            ; Merged with RF~1184 ;
+; RF__dual~1216                            ; Merged with RF~1312 ;
+; RF__dual~1472                            ; Merged with RF~1568 ;
+; RF__dual~2048                            ; Merged with RF~2144 ;
+; RF__dual~66                              ; Merged with RF~162  ;
+; RF__dual~130                             ; Merged with RF~226  ;
+; RF__dual~194                             ; Merged with RF~290  ;
+; RF__dual~322                             ; Merged with RF~418  ;
+; RF__dual~450                             ; Merged with RF~546  ;
+; RF__dual~706                             ; Merged with RF~802  ;
+; RF__dual~962                             ; Merged with RF~1058 ;
+; RF__dual~1474                            ; Merged with RF~1570 ;
+; RF__dual~2050                            ; Merged with RF~2146 ;
+; RF__dual~68                              ; Merged with RF~164  ;
+; RF__dual~132                             ; Merged with RF~228  ;
+; RF__dual~196                             ; Merged with RF~292  ;
+; RF__dual~260                             ; Merged with RF~356  ;
+; RF__dual~324                             ; Merged with RF~420  ;
+; RF__dual~388                             ; Merged with RF~484  ;
+; RF__dual~452                             ; Merged with RF~548  ;
+; RF__dual~516                             ; Merged with RF~612  ;
+; RF__dual~580                             ; Merged with RF~676  ;
+; RF__dual~708                             ; Merged with RF~804  ;
+; RF__dual~836                             ; Merged with RF~932  ;
+; RF__dual~964                             ; Merged with RF~1060 ;
+; RF__dual~1220                            ; Merged with RF~1316 ;
+; RF__dual~1476                            ; Merged with RF~1572 ;
+; RF__dual~1732                            ; Merged with RF~1828 ;
+; RF__dual~1988                            ; Merged with RF~2084 ;
+; RF__dual~454                             ; Merged with RF~550  ;
+; RF__dual~966                             ; Merged with RF~1062 ;
+; RF__dual~1478                            ; Merged with RF~1574 ;
+; RF__dual~72                              ; Merged with RF~168  ;
+; RF__dual~200                             ; Merged with RF~296  ;
+; RF__dual~264                             ; Merged with RF~360  ;
+; RF__dual~328                             ; Merged with RF~424  ;
+; RF__dual~392                             ; Merged with RF~488  ;
+; RF__dual~456                             ; Merged with RF~552  ;
+; RF__dual~520                             ; Merged with RF~616  ;
+; RF__dual~584                             ; Merged with RF~680  ;
+; RF__dual~648                             ; Merged with RF~744  ;
+; RF__dual~712                             ; Merged with RF~808  ;
+; RF__dual~776                             ; Merged with RF~872  ;
+; RF__dual~840                             ; Merged with RF~936  ;
+; RF__dual~904                             ; Merged with RF~1000 ;
+; RF__dual~968                             ; Merged with RF~1064 ;
+; RF__dual~1032                            ; Merged with RF~1128 ;
+; RF__dual~1096                            ; Merged with RF~1192 ;
+; RF__dual~1160                            ; Merged with RF~1256 ;
+; RF__dual~1224                            ; Merged with RF~1320 ;
+; RF__dual~1288                            ; Merged with RF~1384 ;
+; RF__dual~1352                            ; Merged with RF~1448 ;
+; RF__dual~1416                            ; Merged with RF~1512 ;
+; RF__dual~1480                            ; Merged with RF~1576 ;
+; RF__dual~1544                            ; Merged with RF~1640 ;
+; RF__dual~1608                            ; Merged with RF~1704 ;
+; RF__dual~1672                            ; Merged with RF~1768 ;
+; RF__dual~1736                            ; Merged with RF~1832 ;
+; RF__dual~1800                            ; Merged with RF~1896 ;
+; RF__dual~1864                            ; Merged with RF~1960 ;
+; RF__dual~1928                            ; Merged with RF~2024 ;
+; RF__dual~1992                            ; Merged with RF~2088 ;
+; RF__dual~74                              ; Merged with RF~170  ;
+; RF__dual~202                             ; Merged with RF~298  ;
+; RF__dual~330                             ; Merged with RF~426  ;
+; RF__dual~458                             ; Merged with RF~554  ;
+; RF__dual~586                             ; Merged with RF~682  ;
+; RF__dual~714                             ; Merged with RF~810  ;
+; RF__dual~842                             ; Merged with RF~938  ;
+; RF__dual~970                             ; Merged with RF~1066 ;
+; RF__dual~1226                            ; Merged with RF~1322 ;
+; RF__dual~1482                            ; Merged with RF~1578 ;
+; RF__dual~1738                            ; Merged with RF~1834 ;
+; RF__dual~1994                            ; Merged with RF~2090 ;
+; RF__dual~204                             ; Merged with RF~300  ;
+; RF__dual~460                             ; Merged with RF~556  ;
+; RF__dual~972                             ; Merged with RF~1068 ;
+; RF__dual~1484                            ; Merged with RF~1580 ;
+; RF__dual~1996                            ; Merged with RF~2092 ;
+; RF__dual~462                             ; Merged with RF~558  ;
+; RF__dual~974                             ; Merged with RF~1070 ;
+; RF__dual~1486                            ; Merged with RF~1582 ;
+; RF__dual~208                             ; Merged with RF~304  ;
+; RF__dual~464                             ; Merged with RF~560  ;
+; RF__dual~720                             ; Merged with RF~816  ;
+; RF__dual~976                             ; Merged with RF~1072 ;
+; RF__dual~1232                            ; Merged with RF~1328 ;
+; RF__dual~1360                            ; Merged with RF~1456 ;
+; RF__dual~1488                            ; Merged with RF~1584 ;
+; RF__dual~1616                            ; Merged with RF~1712 ;
+; RF__dual~1744                            ; Merged with RF~1840 ;
+; RF__dual~1872                            ; Merged with RF~1968 ;
+; RF__dual~2000                            ; Merged with RF~2096 ;
+; RF__dual~82                              ; Merged with RF~178  ;
+; RF__dual~210                             ; Merged with RF~306  ;
+; RF__dual~338                             ; Merged with RF~434  ;
+; RF__dual~466                             ; Merged with RF~562  ;
+; RF__dual~594                             ; Merged with RF~690  ;
+; RF__dual~722                             ; Merged with RF~818  ;
+; Total Number of Removed Registers = 1024 ;                     ;
++------------------------------------------+---------------------+
+* Table truncated at 100 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1024  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1024  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sat Jul 17 00:40:19 2010
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Regfile -c Regfile
+Info: Found 1 design units, including 1 entities, in source file Regfile.v
+    Info: Found entity 1: Regfile
+Info: Elaborating entity "Regfile" for the top level hierarchy
+Info: Found 2 instances of uninferred RAM logic
+    Info: RAM logic "RF" uninferred due to asynchronous read logic
+    Info: RAM logic "RF__dual" uninferred due to asynchronous read logic
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "RF__dual~1024" merged to single register "RF~1120"
+    Info: Duplicate register "RF__dual~1088" merged to single register "RF~1184"
+    Info: Duplicate register "RF__dual~1216" merged to single register "RF~1312"
+    Info: Duplicate register "RF__dual~1472" merged to single register "RF~1568"
+    Info: Duplicate register "RF__dual~2048" merged to single register "RF~2144"
+    Info: Duplicate register "RF__dual~66" merged to single register "RF~162"
+    Info: Duplicate register "RF__dual~130" merged to single register "RF~226"
+    Info: Duplicate register "RF__dual~194" merged to single register "RF~290"
+    Info: Duplicate register "RF__dual~322" merged to single register "RF~418"
+    Info: Duplicate register "RF__dual~450" merged to single register "RF~546"
+    Info: Duplicate register "RF__dual~706" merged to single register "RF~802"
+    Info: Duplicate register "RF__dual~962" merged to single register "RF~1058"
+    Info: Duplicate register "RF__dual~1474" merged to single register "RF~1570"
+    Info: Duplicate register "RF__dual~2050" merged to single register "RF~2146"
+    Info: Duplicate register "RF__dual~68" merged to single register "RF~164"
+    Info: Duplicate register "RF__dual~132" merged to single register "RF~228"
+    Info: Duplicate register "RF__dual~196" merged to single register "RF~292"
+    Info: Duplicate register "RF__dual~260" merged to single register "RF~356"
+    Info: Duplicate register "RF__dual~324" merged to single register "RF~420"
+    Info: Duplicate register "RF__dual~388" merged to single register "RF~484"
+    Info: Duplicate register "RF__dual~452" merged to single register "RF~548"
+    Info: Duplicate register "RF__dual~516" merged to single register "RF~612"
+    Info: Duplicate register "RF__dual~580" merged to single register "RF~676"
+    Info: Duplicate register "RF__dual~708" merged to single register "RF~804"
+    Info: Duplicate register "RF__dual~836" merged to single register "RF~932"
+    Info: Duplicate register "RF__dual~964" merged to single register "RF~1060"
+    Info: Duplicate register "RF__dual~1220" merged to single register "RF~1316"
+    Info: Duplicate register "RF__dual~1476" merged to single register "RF~1572"
+    Info: Duplicate register "RF__dual~1732" merged to single register "RF~1828"
+    Info: Duplicate register "RF__dual~1988" merged to single register "RF~2084"
+    Info: Duplicate register "RF__dual~454" merged to single register "RF~550"
+    Info: Duplicate register "RF__dual~966" merged to single register "RF~1062"
+    Info: Duplicate register "RF__dual~1478" merged to single register "RF~1574"
+    Info: Duplicate register "RF__dual~72" merged to single register "RF~168"
+    Info: Duplicate register "RF__dual~200" merged to single register "RF~296"
+    Info: Duplicate register "RF__dual~264" merged to single register "RF~360"
+    Info: Duplicate register "RF__dual~328" merged to single register "RF~424"
+    Info: Duplicate register "RF__dual~392" merged to single register "RF~488"
+    Info: Duplicate register "RF__dual~456" merged to single register "RF~552"
+    Info: Duplicate register "RF__dual~520" merged to single register "RF~616"
+    Info: Duplicate register "RF__dual~584" merged to single register "RF~680"
+    Info: Duplicate register "RF__dual~648" merged to single register "RF~744"
+    Info: Duplicate register "RF__dual~712" merged to single register "RF~808"
+    Info: Duplicate register "RF__dual~776" merged to single register "RF~872"
+    Info: Duplicate register "RF__dual~840" merged to single register "RF~936"
+    Info: Duplicate register "RF__dual~904" merged to single register "RF~1000"
+    Info: Duplicate register "RF__dual~968" merged to single register "RF~1064"
+    Info: Duplicate register "RF__dual~1032" merged to single register "RF~1128"
+    Info: Duplicate register "RF__dual~1096" merged to single register "RF~1192"
+    Info: Duplicate register "RF__dual~1160" merged to single register "RF~1256"
+    Info: Duplicate register "RF__dual~1224" merged to single register "RF~1320"
+    Info: Duplicate register "RF__dual~1288" merged to single register "RF~1384"
+    Info: Duplicate register "RF__dual~1352" merged to single register "RF~1448"
+    Info: Duplicate register "RF__dual~1416" merged to single register "RF~1512"
+    Info: Duplicate register "RF__dual~1480" merged to single register "RF~1576"
+    Info: Duplicate register "RF__dual~1544" merged to single register "RF~1640"
+    Info: Duplicate register "RF__dual~1608" merged to single register "RF~1704"
+    Info: Duplicate register "RF__dual~1672" merged to single register "RF~1768"
+    Info: Duplicate register "RF__dual~1736" merged to single register "RF~1832"
+    Info: Duplicate register "RF__dual~1800" merged to single register "RF~1896"
+    Info: Duplicate register "RF__dual~1864" merged to single register "RF~1960"
+    Info: Duplicate register "RF__dual~1928" merged to single register "RF~2024"
+    Info: Duplicate register "RF__dual~1992" merged to single register "RF~2088"
+    Info: Duplicate register "RF__dual~74" merged to single register "RF~170"
+    Info: Duplicate register "RF__dual~202" merged to single register "RF~298"
+    Info: Duplicate register "RF__dual~330" merged to single register "RF~426"
+    Info: Duplicate register "RF__dual~458" merged to single register "RF~554"
+    Info: Duplicate register "RF__dual~586" merged to single register "RF~682"
+    Info: Duplicate register "RF__dual~714" merged to single register "RF~810"
+    Info: Duplicate register "RF__dual~842" merged to single register "RF~938"
+    Info: Duplicate register "RF__dual~970" merged to single register "RF~1066"
+    Info: Duplicate register "RF__dual~1226" merged to single register "RF~1322"
+    Info: Duplicate register "RF__dual~1482" merged to single register "RF~1578"
+    Info: Duplicate register "RF__dual~1738" merged to single register "RF~1834"
+    Info: Duplicate register "RF__dual~1994" merged to single register "RF~2090"
+    Info: Duplicate register "RF__dual~204" merged to single register "RF~300"
+    Info: Duplicate register "RF__dual~460" merged to single register "RF~556"
+    Info: Duplicate register "RF__dual~972" merged to single register "RF~1068"
+    Info: Duplicate register "RF__dual~1484" merged to single register "RF~1580"
+    Info: Duplicate register "RF__dual~1996" merged to single register "RF~2092"
+    Info: Duplicate register "RF__dual~462" merged to single register "RF~558"
+    Info: Duplicate register "RF__dual~974" merged to single register "RF~1070"
+    Info: Duplicate register "RF__dual~1486" merged to single register "RF~1582"
+    Info: Duplicate register "RF__dual~208" merged to single register "RF~304"
+    Info: Duplicate register "RF__dual~464" merged to single register "RF~560"
+    Info: Duplicate register "RF__dual~720" merged to single register "RF~816"
+    Info: Duplicate register "RF__dual~976" merged to single register "RF~1072"
+    Info: Duplicate register "RF__dual~1232" merged to single register "RF~1328"
+    Info: Duplicate register "RF__dual~1360" merged to single register "RF~1456"
+    Info: Duplicate register "RF__dual~1488" merged to single register "RF~1584"
+    Info: Duplicate register "RF__dual~1616" merged to single register "RF~1712"
+    Info: Duplicate register "RF__dual~1744" merged to single register "RF~1840"
+    Info: Duplicate register "RF__dual~1872" merged to single register "RF~1968"
+    Info: Duplicate register "RF__dual~2000" merged to single register "RF~2096"
+    Info: Duplicate register "RF__dual~82" merged to single register "RF~178"
+    Info: Duplicate register "RF__dual~210" merged to single register "RF~306"
+    Info: Duplicate register "RF__dual~338" merged to single register "RF~434"
+    Info: Duplicate register "RF__dual~466" merged to single register "RF~562"
+    Info: Duplicate register "RF__dual~594" merged to single register "RF~690"
+    Info: Duplicate register "RF__dual~722" merged to single register "RF~818"
+    Info: Duplicate register "RF__dual~850" merged to single register "RF~946"
+    Info: Duplicate register "RF__dual~978" merged to single register "RF~1074"
+    Info: Duplicate register "RF__dual~1106" merged to single register "RF~1202"
+    Info: Duplicate register "RF__dual~1234" merged to single register "RF~1330"
+    Info: Duplicate register "RF__dual~1298" merged to single register "RF~1394"
+    Info: Duplicate register "RF__dual~1362" merged to single register "RF~1458"
+    Info: Duplicate register "RF__dual~1426" merged to single register "RF~1522"
+    Info: Duplicate register "RF__dual~1490" merged to single register "RF~1586"
+    Info: Duplicate register "RF__dual~1554" merged to single register "RF~1650"
+    Info: Duplicate register "RF__dual~1618" merged to single register "RF~1714"
+    Info: Duplicate register "RF__dual~1682" merged to single register "RF~1778"
+    Info: Duplicate register "RF__dual~1746" merged to single register "RF~1842"
+    Info: Duplicate register "RF__dual~1810" merged to single register "RF~1906"
+    Info: Duplicate register "RF__dual~1874" merged to single register "RF~1970"
+    Info: Duplicate register "RF__dual~1938" merged to single register "RF~2034"
+    Info: Duplicate register "RF__dual~2002" merged to single register "RF~2098"
+    Info: Duplicate register "RF__dual~2066" merged to single register "RF~2162"
+    Info: Duplicate register "RF__dual~84" merged to single register "RF~180"
+    Info: Duplicate register "RF__dual~148" merged to single register "RF~244"
+    Info: Duplicate register "RF__dual~212" merged to single register "RF~308"
+    Info: Duplicate register "RF__dual~276" merged to single register "RF~372"
+    Info: Duplicate register "RF__dual~340" merged to single register "RF~436"
+    Info: Duplicate register "RF__dual~404" merged to single register "RF~500"
+    Info: Duplicate register "RF__dual~468" merged to single register "RF~564"
+    Info: Duplicate register "RF__dual~532" merged to single register "RF~628"
+    Info: Duplicate register "RF__dual~596" merged to single register "RF~692"
+    Info: Duplicate register "RF__dual~660" merged to single register "RF~756"
+    Info: Duplicate register "RF__dual~724" merged to single register "RF~820"
+    Info: Duplicate register "RF__dual~788" merged to single register "RF~884"
+    Info: Duplicate register "RF__dual~852" merged to single register "RF~948"
+    Info: Duplicate register "RF__dual~916" merged to single register "RF~1012"
+    Info: Duplicate register "RF__dual~980" merged to single register "RF~1076"
+    Info: Duplicate register "RF__dual~1044" merged to single register "RF~1140"
+    Info: Duplicate register "RF__dual~1108" merged to single register "RF~1204"
+    Info: Duplicate register "RF__dual~1172" merged to single register "RF~1268"
+    Info: Duplicate register "RF__dual~1236" merged to single register "RF~1332"
+    Info: Duplicate register "RF__dual~1300" merged to single register "RF~1396"
+    Info: Duplicate register "RF__dual~1364" merged to single register "RF~1460"
+    Info: Duplicate register "RF__dual~1428" merged to single register "RF~1524"
+    Info: Duplicate register "RF__dual~1492" merged to single register "RF~1588"
+    Info: Duplicate register "RF__dual~1556" merged to single register "RF~1652"
+    Info: Duplicate register "RF__dual~1620" merged to single register "RF~1716"
+    Info: Duplicate register "RF__dual~1684" merged to single register "RF~1780"
+    Info: Duplicate register "RF__dual~1748" merged to single register "RF~1844"
+    Info: Duplicate register "RF__dual~1812" merged to single register "RF~1908"
+    Info: Duplicate register "RF__dual~1876" merged to single register "RF~1972"
+    Info: Duplicate register "RF__dual~1940" merged to single register "RF~2036"
+    Info: Duplicate register "RF__dual~2004" merged to single register "RF~2100"
+    Info: Duplicate register "RF__dual~2068" merged to single register "RF~2164"
+    Info: Duplicate register "RF__dual~86" merged to single register "RF~182"
+    Info: Duplicate register "RF__dual~150" merged to single register "RF~246"
+    Info: Duplicate register "RF__dual~214" merged to single register "RF~310"
+    Info: Duplicate register "RF__dual~278" merged to single register "RF~374"
+    Info: Duplicate register "RF__dual~342" merged to single register "RF~438"
+    Info: Duplicate register "RF__dual~406" merged to single register "RF~502"
+    Info: Duplicate register "RF__dual~470" merged to single register "RF~566"
+    Info: Duplicate register "RF__dual~534" merged to single register "RF~630"
+    Info: Duplicate register "RF__dual~598" merged to single register "RF~694"
+    Info: Duplicate register "RF__dual~662" merged to single register "RF~758"
+    Info: Duplicate register "RF__dual~726" merged to single register "RF~822"
+    Info: Duplicate register "RF__dual~790" merged to single register "RF~886"
+    Info: Duplicate register "RF__dual~854" merged to single register "RF~950"
+    Info: Duplicate register "RF__dual~918" merged to single register "RF~1014"
+    Info: Duplicate register "RF__dual~982" merged to single register "RF~1078"
+    Info: Duplicate register "RF__dual~1046" merged to single register "RF~1142"
+    Info: Duplicate register "RF__dual~1110" merged to single register "RF~1206"
+    Info: Duplicate register "RF__dual~1174" merged to single register "RF~1270"
+    Info: Duplicate register "RF__dual~1238" merged to single register "RF~1334"
+    Info: Duplicate register "RF__dual~1302" merged to single register "RF~1398"
+    Info: Duplicate register "RF__dual~1366" merged to single register "RF~1462"
+    Info: Duplicate register "RF__dual~1494" merged to single register "RF~1590"
+    Info: Duplicate register "RF__dual~1622" merged to single register "RF~1718"
+    Info: Duplicate register "RF__dual~1750" merged to single register "RF~1846"
+    Info: Duplicate register "RF__dual~1878" merged to single register "RF~1974"
+    Info: Duplicate register "RF__dual~2006" merged to single register "RF~2102"
+    Info: Duplicate register "RF__dual~88" merged to single register "RF~184"
+    Info: Duplicate register "RF__dual~216" merged to single register "RF~312"
+    Info: Duplicate register "RF__dual~344" merged to single register "RF~440"
+    Info: Duplicate register "RF__dual~472" merged to single register "RF~568"
+    Info: Duplicate register "RF__dual~600" merged to single register "RF~696"
+    Info: Duplicate register "RF__dual~728" merged to single register "RF~824"
+    Info: Duplicate register "RF__dual~856" merged to single register "RF~952"
+    Info: Duplicate register "RF__dual~984" merged to single register "RF~1080"
+    Info: Duplicate register "RF__dual~1112" merged to single register "RF~1208"
+    Info: Duplicate register "RF__dual~1240" merged to single register "RF~1336"
+    Info: Duplicate register "RF__dual~1368" merged to single register "RF~1464"
+    Info: Duplicate register "RF__dual~1496" merged to single register "RF~1592"
+    Info: Duplicate register "RF__dual~1752" merged to single register "RF~1848"
+    Info: Duplicate register "RF__dual~2008" merged to single register "RF~2104"
+    Info: Duplicate register "RF__dual~218" merged to single register "RF~314"
+    Info: Duplicate register "RF__dual~474" merged to single register "RF~570"
+    Info: Duplicate register "RF__dual~730" merged to single register "RF~826"
+    Info: Duplicate register "RF__dual~986" merged to single register "RF~1082"
+    Info: Duplicate register "RF__dual~1242" merged to single register "RF~1338"
+    Info: Duplicate register "RF__dual~1498" merged to single register "RF~1594"
+    Info: Duplicate register "RF__dual~1754" merged to single register "RF~1850"
+    Info: Duplicate register "RF__dual~2010" merged to single register "RF~2106"
+    Info: Duplicate register "RF__dual~220" merged to single register "RF~316"
+    Info: Duplicate register "RF__dual~476" merged to single register "RF~572"
+    Info: Duplicate register "RF__dual~732" merged to single register "RF~828"
+    Info: Duplicate register "RF__dual~988" merged to single register "RF~1084"
+    Info: Duplicate register "RF__dual~1244" merged to single register "RF~1340"
+    Info: Duplicate register "RF__dual~1500" merged to single register "RF~1596"
+    Info: Duplicate register "RF__dual~2012" merged to single register "RF~2108"
+    Info: Duplicate register "RF__dual~478" merged to single register "RF~574"
+    Info: Duplicate register "RF__dual~990" merged to single register "RF~1086"
+    Info: Duplicate register "RF__dual~1502" merged to single register "RF~1598"
+    Info: Duplicate register "RF__dual~480" merged to single register "RF~576"
+    Info: Duplicate register "RF__dual~992" merged to single register "RF~1088"
+    Info: Duplicate register "RF__dual~1504" merged to single register "RF~1600"
+    Info: Duplicate register "RF__dual~2016" merged to single register "RF~2112"
+    Info: Duplicate register "RF__dual~482" merged to single register "RF~578"
+    Info: Duplicate register "RF__dual~994" merged to single register "RF~1090"
+    Info: Duplicate register "RF__dual~1506" merged to single register "RF~1602"
+    Info: Duplicate register "RF__dual~2018" merged to single register "RF~2114"
+    Info: Duplicate register "RF__dual~484" merged to single register "RF~580"
+    Info: Duplicate register "RF__dual~996" merged to single register "RF~1092"
+    Info: Duplicate register "RF__dual~1508" merged to single register "RF~1604"
+    Info: Duplicate register "RF__dual~2020" merged to single register "RF~2116"
+    Info: Duplicate register "RF__dual~486" merged to single register "RF~582"
+    Info: Duplicate register "RF__dual~998" merged to single register "RF~1094"
+    Info: Duplicate register "RF__dual~1254" merged to single register "RF~1350"
+    Info: Duplicate register "RF__dual~1510" merged to single register "RF~1606"
+    Info: Duplicate register "RF__dual~1766" merged to single register "RF~1862"
+    Info: Duplicate register "RF__dual~2022" merged to single register "RF~2118"
+    Info: Duplicate register "RF__dual~232" merged to single register "RF~328"
+    Info: Duplicate register "RF__dual~488" merged to single register "RF~584"
+    Info: Duplicate register "RF__dual~744" merged to single register "RF~840"
+    Info: Duplicate register "RF__dual~1000" merged to single register "RF~1096"
+    Info: Duplicate register "RF__dual~1256" merged to single register "RF~1352"
+    Info: Duplicate register "RF__dual~1512" merged to single register "RF~1608"
+    Info: Duplicate register "RF__dual~1768" merged to single register "RF~1864"
+    Info: Duplicate register "RF__dual~2024" merged to single register "RF~2120"
+    Info: Duplicate register "RF__dual~234" merged to single register "RF~330"
+    Info: Duplicate register "RF__dual~490" merged to single register "RF~586"
+    Info: Duplicate register "RF__dual~746" merged to single register "RF~842"
+    Info: Duplicate register "RF__dual~1002" merged to single register "RF~1098"
+    Info: Duplicate register "RF__dual~1258" merged to single register "RF~1354"
+    Info: Duplicate register "RF__dual~1514" merged to single register "RF~1610"
+    Info: Duplicate register "RF__dual~1770" merged to single register "RF~1866"
+    Info: Duplicate register "RF__dual~2026" merged to single register "RF~2122"
+    Info: Duplicate register "RF__dual~236" merged to single register "RF~332"
+    Info: Duplicate register "RF__dual~492" merged to single register "RF~588"
+    Info: Duplicate register "RF__dual~748" merged to single register "RF~844"
+    Info: Duplicate register "RF__dual~1004" merged to single register "RF~1100"
+    Info: Duplicate register "RF__dual~1260" merged to single register "RF~1356"
+    Info: Duplicate register "RF__dual~1516" merged to single register "RF~1612"
+    Info: Duplicate register "RF__dual~1772" merged to single register "RF~1868"
+    Info: Duplicate register "RF__dual~2028" merged to single register "RF~2124"
+    Info: Duplicate register "RF__dual~238" merged to single register "RF~334"
+    Info: Duplicate register "RF__dual~494" merged to single register "RF~590"
+    Info: Duplicate register "RF__dual~750" merged to single register "RF~846"
+    Info: Duplicate register "RF__dual~1006" merged to single register "RF~1102"
+    Info: Duplicate register "RF__dual~1262" merged to single register "RF~1358"
+    Info: Duplicate register "RF__dual~1518" merged to single register "RF~1614"
+    Info: Duplicate register "RF__dual~1774" merged to single register "RF~1870"
+    Info: Duplicate register "RF__dual~2030" merged to single register "RF~2126"
+    Info: Duplicate register "RF__dual~240" merged to single register "RF~336"
+    Info: Duplicate register "RF__dual~496" merged to single register "RF~592"
+    Info: Duplicate register "RF__dual~752" merged to single register "RF~848"
+    Info: Duplicate register "RF__dual~1008" merged to single register "RF~1104"
+    Info: Duplicate register "RF__dual~1264" merged to single register "RF~1360"
+    Info: Duplicate register "RF__dual~1520" merged to single register "RF~1616"
+    Info: Duplicate register "RF__dual~1776" merged to single register "RF~1872"
+    Info: Duplicate register "RF__dual~2032" merged to single register "RF~2128"
+    Info: Duplicate register "RF__dual~242" merged to single register "RF~338"
+    Info: Duplicate register "RF__dual~498" merged to single register "RF~594"
+    Info: Duplicate register "RF__dual~754" merged to single register "RF~850"
+    Info: Duplicate register "RF__dual~1010" merged to single register "RF~1106"
+    Info: Duplicate register "RF__dual~1266" merged to single register "RF~1362"
+    Info: Duplicate register "RF__dual~1522" merged to single register "RF~1618"
+    Info: Duplicate register "RF__dual~1650" merged to single register "RF~1746"
+    Info: Duplicate register "RF__dual~1778" merged to single register "RF~1874"
+    Info: Duplicate register "RF__dual~1906" merged to single register "RF~2002"
+    Info: Duplicate register "RF__dual~2034" merged to single register "RF~2130"
+    Info: Duplicate register "RF__dual~116" merged to single register "RF~212"
+    Info: Duplicate register "RF__dual~244" merged to single register "RF~340"
+    Info: Duplicate register "RF__dual~372" merged to single register "RF~468"
+    Info: Duplicate register "RF__dual~500" merged to single register "RF~596"
+    Info: Duplicate register "RF__dual~628" merged to single register "RF~724"
+    Info: Duplicate register "RF__dual~756" merged to single register "RF~852"
+    Info: Duplicate register "RF__dual~884" merged to single register "RF~980"
+    Info: Duplicate register "RF__dual~1012" merged to single register "RF~1108"
+    Info: Duplicate register "RF__dual~1140" merged to single register "RF~1236"
+    Info: Duplicate register "RF__dual~1268" merged to single register "RF~1364"
+    Info: Duplicate register "RF__dual~1396" merged to single register "RF~1492"
+    Info: Duplicate register "RF__dual~1524" merged to single register "RF~1620"
+    Info: Duplicate register "RF__dual~1652" merged to single register "RF~1748"
+    Info: Duplicate register "RF__dual~1780" merged to single register "RF~1876"
+    Info: Duplicate register "RF__dual~1908" merged to single register "RF~2004"
+    Info: Duplicate register "RF__dual~2036" merged to single register "RF~2132"
+    Info: Duplicate register "RF__dual~118" merged to single register "RF~214"
+    Info: Duplicate register "RF__dual~246" merged to single register "RF~342"
+    Info: Duplicate register "RF__dual~374" merged to single register "RF~470"
+    Info: Duplicate register "RF__dual~502" merged to single register "RF~598"
+    Info: Duplicate register "RF__dual~630" merged to single register "RF~726"
+    Info: Duplicate register "RF__dual~758" merged to single register "RF~854"
+    Info: Duplicate register "RF__dual~886" merged to single register "RF~982"
+    Info: Duplicate register "RF__dual~1014" merged to single register "RF~1110"
+    Info: Duplicate register "RF__dual~1142" merged to single register "RF~1238"
+    Info: Duplicate register "RF__dual~1270" merged to single register "RF~1366"
+    Info: Duplicate register "RF__dual~1398" merged to single register "RF~1494"
+    Info: Duplicate register "RF__dual~1526" merged to single register "RF~1622"
+    Info: Duplicate register "RF__dual~1654" merged to single register "RF~1750"
+    Info: Duplicate register "RF__dual~1782" merged to single register "RF~1878"
+    Info: Duplicate register "RF__dual~1910" merged to single register "RF~2006"
+    Info: Duplicate register "RF__dual~2038" merged to single register "RF~2134"
+    Info: Duplicate register "RF__dual~120" merged to single register "RF~216"
+    Info: Duplicate register "RF__dual~248" merged to single register "RF~344"
+    Info: Duplicate register "RF__dual~376" merged to single register "RF~472"
+    Info: Duplicate register "RF__dual~504" merged to single register "RF~600"
+    Info: Duplicate register "RF__dual~632" merged to single register "RF~728"
+    Info: Duplicate register "RF__dual~760" merged to single register "RF~856"
+    Info: Duplicate register "RF__dual~888" merged to single register "RF~984"
+    Info: Duplicate register "RF__dual~1016" merged to single register "RF~1112"
+    Info: Duplicate register "RF__dual~1144" merged to single register "RF~1240"
+    Info: Duplicate register "RF__dual~1272" merged to single register "RF~1368"
+    Info: Duplicate register "RF__dual~1400" merged to single register "RF~1496"
+    Info: Duplicate register "RF__dual~1528" merged to single register "RF~1624"
+    Info: Duplicate register "RF__dual~1656" merged to single register "RF~1752"
+    Info: Duplicate register "RF__dual~1784" merged to single register "RF~1880"
+    Info: Duplicate register "RF__dual~1848" merged to single register "RF~1944"
+    Info: Duplicate register "RF__dual~1912" merged to single register "RF~2008"
+    Info: Duplicate register "RF__dual~1976" merged to single register "RF~2072"
+    Info: Duplicate register "RF__dual~2040" merged to single register "RF~2136"
+    Info: Duplicate register "RF__dual~2104" merged to single register "RF~2200"
+    Info: Duplicate register "RF__dual~122" merged to single register "RF~218"
+    Info: Duplicate register "RF__dual~186" merged to single register "RF~282"
+    Info: Duplicate register "RF__dual~250" merged to single register "RF~346"
+    Info: Duplicate register "RF__dual~314" merged to single register "RF~410"
+    Info: Duplicate register "RF__dual~378" merged to single register "RF~474"
+    Info: Duplicate register "RF__dual~442" merged to single register "RF~538"
+    Info: Duplicate register "RF__dual~506" merged to single register "RF~602"
+    Info: Duplicate register "RF__dual~570" merged to single register "RF~666"
+    Info: Duplicate register "RF__dual~634" merged to single register "RF~730"
+    Info: Duplicate register "RF__dual~698" merged to single register "RF~794"
+    Info: Duplicate register "RF__dual~762" merged to single register "RF~858"
+    Info: Duplicate register "RF__dual~826" merged to single register "RF~922"
+    Info: Duplicate register "RF__dual~890" merged to single register "RF~986"
+    Info: Duplicate register "RF__dual~954" merged to single register "RF~1050"
+    Info: Duplicate register "RF__dual~1018" merged to single register "RF~1114"
+    Info: Duplicate register "RF__dual~1082" merged to single register "RF~1178"
+    Info: Duplicate register "RF__dual~1146" merged to single register "RF~1242"
+    Info: Duplicate register "RF__dual~1210" merged to single register "RF~1306"
+    Info: Duplicate register "RF__dual~1274" merged to single register "RF~1370"
+    Info: Duplicate register "RF__dual~1338" merged to single register "RF~1434"
+    Info: Duplicate register "RF__dual~1402" merged to single register "RF~1498"
+    Info: Duplicate register "RF__dual~1466" merged to single register "RF~1562"
+    Info: Duplicate register "RF__dual~1530" merged to single register "RF~1626"
+    Info: Duplicate register "RF__dual~1594" merged to single register "RF~1690"
+    Info: Duplicate register "RF__dual~1658" merged to single register "RF~1754"
+    Info: Duplicate register "RF__dual~1722" merged to single register "RF~1818"
+    Info: Duplicate register "RF__dual~1786" merged to single register "RF~1882"
+    Info: Duplicate register "RF__dual~1850" merged to single register "RF~1946"
+    Info: Duplicate register "RF__dual~1914" merged to single register "RF~2010"
+    Info: Duplicate register "RF__dual~1978" merged to single register "RF~2074"
+    Info: Duplicate register "RF__dual~2042" merged to single register "RF~2138"
+    Info: Duplicate register "RF__dual~2106" merged to single register "RF~2202"
+    Info: Duplicate register "RF__dual~124" merged to single register "RF~220"
+    Info: Duplicate register "RF__dual~188" merged to single register "RF~284"
+    Info: Duplicate register "RF__dual~252" merged to single register "RF~348"
+    Info: Duplicate register "RF__dual~316" merged to single register "RF~412"
+    Info: Duplicate register "RF__dual~380" merged to single register "RF~476"
+    Info: Duplicate register "RF__dual~444" merged to single register "RF~540"
+    Info: Duplicate register "RF__dual~508" merged to single register "RF~604"
+    Info: Duplicate register "RF__dual~572" merged to single register "RF~668"
+    Info: Duplicate register "RF__dual~636" merged to single register "RF~732"
+    Info: Duplicate register "RF__dual~700" merged to single register "RF~796"
+    Info: Duplicate register "RF__dual~764" merged to single register "RF~860"
+    Info: Duplicate register "RF__dual~828" merged to single register "RF~924"
+    Info: Duplicate register "RF__dual~892" merged to single register "RF~988"
+    Info: Duplicate register "RF__dual~956" merged to single register "RF~1052"
+    Info: Duplicate register "RF__dual~1020" merged to single register "RF~1116"
+    Info: Duplicate register "RF__dual~1084" merged to single register "RF~1180"
+    Info: Duplicate register "RF__dual~1148" merged to single register "RF~1244"
+    Info: Duplicate register "RF__dual~1212" merged to single register "RF~1308"
+    Info: Duplicate register "RF__dual~1276" merged to single register "RF~1372"
+    Info: Duplicate register "RF__dual~1340" merged to single register "RF~1436"
+    Info: Duplicate register "RF__dual~1404" merged to single register "RF~1500"
+    Info: Duplicate register "RF__dual~1468" merged to single register "RF~1564"
+    Info: Duplicate register "RF__dual~1532" merged to single register "RF~1628"
+    Info: Duplicate register "RF__dual~1596" merged to single register "RF~1692"
+    Info: Duplicate register "RF__dual~1660" merged to single register "RF~1756"
+    Info: Duplicate register "RF__dual~1724" merged to single register "RF~1820"
+    Info: Duplicate register "RF__dual~1788" merged to single register "RF~1884"
+    Info: Duplicate register "RF__dual~1852" merged to single register "RF~1948"
+    Info: Duplicate register "RF__dual~1916" merged to single register "RF~2012"
+    Info: Duplicate register "RF__dual~1980" merged to single register "RF~2076"
+    Info: Duplicate register "RF__dual~2044" merged to single register "RF~2140"
+    Info: Duplicate register "RF__dual~2108" merged to single register "RF~2204"
+    Info: Duplicate register "RF__dual~126" merged to single register "RF~222"
+    Info: Duplicate register "RF__dual~190" merged to single register "RF~286"
+    Info: Duplicate register "RF__dual~254" merged to single register "RF~350"
+    Info: Duplicate register "RF__dual~318" merged to single register "RF~414"
+    Info: Duplicate register "RF__dual~382" merged to single register "RF~478"
+    Info: Duplicate register "RF__dual~446" merged to single register "RF~542"
+    Info: Duplicate register "RF__dual~510" merged to single register "RF~606"
+    Info: Duplicate register "RF__dual~574" merged to single register "RF~670"
+    Info: Duplicate register "RF__dual~638" merged to single register "RF~734"
+    Info: Duplicate register "RF__dual~702" merged to single register "RF~798"
+    Info: Duplicate register "RF__dual~766" merged to single register "RF~862"
+    Info: Duplicate register "RF__dual~830" merged to single register "RF~926"
+    Info: Duplicate register "RF__dual~894" merged to single register "RF~990"
+    Info: Duplicate register "RF__dual~958" merged to single register "RF~1054"
+    Info: Duplicate register "RF__dual~1022" merged to single register "RF~1118"
+    Info: Duplicate register "RF__dual~1086" merged to single register "RF~1182"
+    Info: Duplicate register "RF__dual~1150" merged to single register "RF~1246"
+    Info: Duplicate register "RF__dual~1214" merged to single register "RF~1310"
+    Info: Duplicate register "RF__dual~1278" merged to single register "RF~1374"
+    Info: Duplicate register "RF__dual~1342" merged to single register "RF~1438"
+    Info: Duplicate register "RF__dual~1406" merged to single register "RF~1502"
+    Info: Duplicate register "RF__dual~1470" merged to single register "RF~1566"
+    Info: Duplicate register "RF__dual~1534" merged to single register "RF~1630"
+    Info: Duplicate register "RF__dual~1598" merged to single register "RF~1694"
+    Info: Duplicate register "RF__dual~1662" merged to single register "RF~1758"
+    Info: Duplicate register "RF__dual~1726" merged to single register "RF~1822"
+    Info: Duplicate register "RF__dual~1790" merged to single register "RF~1886"
+    Info: Duplicate register "RF__dual~1854" merged to single register "RF~1950"
+    Info: Duplicate register "RF__dual~1918" merged to single register "RF~2014"
+    Info: Duplicate register "RF__dual~1982" merged to single register "RF~2078"
+    Info: Duplicate register "RF__dual~2046" merged to single register "RF~2142"
+    Info: Duplicate register "RF__dual~832" merged to single register "RF~928"
+    Info: Duplicate register "RF__dual~896" merged to single register "RF~992"
+    Info: Duplicate register "RF__dual~1728" merged to single register "RF~1824"
+    Info: Duplicate register "RF__dual~1856" merged to single register "RF~1952"
+    Info: Duplicate register "RF__dual~1920" merged to single register "RF~2016"
+    Info: Duplicate register "RF__dual~1218" merged to single register "RF~1314"
+    Info: Duplicate register "RF__dual~1346" merged to single register "RF~1442"
+    Info: Duplicate register "RF__dual~1094" merged to single register "RF~1190"
+    Info: Duplicate register "RF__dual~1222" merged to single register "RF~1318"
+    Info: Duplicate register "RF__dual~1350" merged to single register "RF~1446"
+    Info: Duplicate register "RF__dual~136" merged to single register "RF~232"
+    Info: Duplicate register "RF__dual~206" merged to single register "RF~302"
+    Info: Duplicate register "RF__dual~336" merged to single register "RF~432"
+    Info: Duplicate register "RF__dual~1552" merged to single register "RF~1648"
+    Info: Duplicate register "RF__dual~1808" merged to single register "RF~1904"
+    Info: Duplicate register "RF__dual~2064" merged to single register "RF~2160"
+    Info: Duplicate register "RF__dual~274" merged to single register "RF~370"
+    Info: Duplicate register "RF__dual~530" merged to single register "RF~626"
+    Info: Duplicate register "RF__dual~786" merged to single register "RF~882"
+    Info: Duplicate register "RF__dual~1042" merged to single register "RF~1138"
+    Info: Duplicate register "RF__dual~222" merged to single register "RF~318"
+    Info: Duplicate register "RF__dual~736" merged to single register "RF~832"
+    Info: Duplicate register "RF__dual~740" merged to single register "RF~836"
+    Info: Duplicate register "RF__dual~614" merged to single register "RF~710"
+    Info: Duplicate register "RF__dual~870" merged to single register "RF~966"
+    Info: Duplicate register "RF__dual~1894" merged to single register "RF~1990"
+    Info: Duplicate register "RF__dual~872" merged to single register "RF~968"
+    Info: Duplicate register "RF__dual~1896" merged to single register "RF~1992"
+    Info: Duplicate register "RF__dual~874" merged to single register "RF~970"
+    Info: Duplicate register "RF__dual~1322" merged to single register "RF~1418"
+    Info: Duplicate register "RF__dual~1450" merged to single register "RF~1546"
+    Info: Duplicate register "RF__dual~1834" merged to single register "RF~1930"
+    Info: Duplicate register "RF__dual~1898" merged to single register "RF~1994"
+    Info: Duplicate register "RF__dual~1962" merged to single register "RF~2058"
+    Info: Duplicate register "RF__dual~300" merged to single register "RF~396"
+    Info: Duplicate register "RF__dual~428" merged to single register "RF~524"
+    Info: Duplicate register "RF__dual~812" merged to single register "RF~908"
+    Info: Duplicate register "RF__dual~876" merged to single register "RF~972"
+    Info: Duplicate register "RF__dual~940" merged to single register "RF~1036"
+    Info: Duplicate register "RF__dual~1324" merged to single register "RF~1420"
+    Info: Duplicate register "RF__dual~1452" merged to single register "RF~1548"
+    Info: Duplicate register "RF__dual~1836" merged to single register "RF~1932"
+    Info: Duplicate register "RF__dual~1900" merged to single register "RF~1996"
+    Info: Duplicate register "RF__dual~1964" merged to single register "RF~2060"
+    Info: Duplicate register "RF__dual~302" merged to single register "RF~398"
+    Info: Duplicate register "RF__dual~430" merged to single register "RF~526"
+    Info: Duplicate register "RF__dual~814" merged to single register "RF~910"
+    Info: Duplicate register "RF__dual~878" merged to single register "RF~974"
+    Info: Duplicate register "RF__dual~942" merged to single register "RF~1038"
+    Info: Duplicate register "RF__dual~1326" merged to single register "RF~1422"
+    Info: Duplicate register "RF__dual~1454" merged to single register "RF~1550"
+    Info: Duplicate register "RF__dual~1838" merged to single register "RF~1934"
+    Info: Duplicate register "RF__dual~1902" merged to single register "RF~1998"
+    Info: Duplicate register "RF__dual~1966" merged to single register "RF~2062"
+    Info: Duplicate register "RF__dual~304" merged to single register "RF~400"
+    Info: Duplicate register "RF__dual~432" merged to single register "RF~528"
+    Info: Duplicate register "RF__dual~816" merged to single register "RF~912"
+    Info: Duplicate register "RF__dual~880" merged to single register "RF~976"
+    Info: Duplicate register "RF__dual~944" merged to single register "RF~1040"
+    Info: Duplicate register "RF__dual~1328" merged to single register "RF~1424"
+    Info: Duplicate register "RF__dual~1456" merged to single register "RF~1552"
+    Info: Duplicate register "RF__dual~1840" merged to single register "RF~1936"
+    Info: Duplicate register "RF__dual~1904" merged to single register "RF~2000"
+    Info: Duplicate register "RF__dual~1968" merged to single register "RF~2064"
+    Info: Duplicate register "RF__dual~306" merged to single register "RF~402"
+    Info: Duplicate register "RF__dual~434" merged to single register "RF~530"
+    Info: Duplicate register "RF__dual~818" merged to single register "RF~914"
+    Info: Duplicate register "RF__dual~882" merged to single register "RF~978"
+    Info: Duplicate register "RF__dual~1202" merged to single register "RF~1298"
+    Info: Duplicate register "RF__dual~1586" merged to single register "RF~1682"
+    Info: Duplicate register "RF__dual~2098" merged to single register "RF~2194"
+    Info: Duplicate register "RF__dual~564" merged to single register "RF~660"
+    Info: Duplicate register "RF__dual~1076" merged to single register "RF~1172"
+    Info: Duplicate register "RF__dual~1588" merged to single register "RF~1684"
+    Info: Duplicate register "RF__dual~2100" merged to single register "RF~2196"
+    Info: Duplicate register "RF__dual~566" merged to single register "RF~662"
+    Info: Duplicate register "RF__dual~1078" merged to single register "RF~1174"
+    Info: Duplicate register "RF__dual~1590" merged to single register "RF~1686"
+    Info: Duplicate register "RF__dual~2102" merged to single register "RF~2198"
+    Info: Duplicate register "RF__dual~568" merged to single register "RF~664"
+    Info: Duplicate register "RF__dual~1602" merged to single register "RF~1698"
+    Info: Duplicate register "RF__dual~1794" merged to single register "RF~1890"
+    Info: Duplicate register "RF__dual~1858" merged to single register "RF~1954"
+    Info: Duplicate register "RF__dual~1922" merged to single register "RF~2018"
+    Info: Duplicate register "RF__dual~716" merged to single register "RF~812"
+    Info: Duplicate register "RF__dual~1104" merged to single register "RF~1200"
+    Info: Duplicate register "RF__dual~1168" merged to single register "RF~1264"
+    Info: Duplicate register "RF__dual~1424" merged to single register "RF~1520"
+    Info: Duplicate register "RF__dual~1936" merged to single register "RF~2032"
+    Info: Duplicate register "RF__dual~402" merged to single register "RF~498"
+    Info: Duplicate register "RF__dual~914" merged to single register "RF~1010"
+    Info: Duplicate register "RF__dual~1758" merged to single register "RF~1854"
+    Info: Duplicate register "RF__dual~1760" merged to single register "RF~1856"
+    Info: Duplicate register "RF__dual~1124" merged to single register "RF~1220"
+    Info: Duplicate register "RF__dual~1252" merged to single register "RF~1348"
+    Info: Duplicate register "RF__dual~1380" merged to single register "RF~1476"
+    Info: Duplicate register "RF__dual~1638" merged to single register "RF~1734"
+    Info: Duplicate register "RF__dual~360" merged to single register "RF~456"
+    Info: Duplicate register "RF__dual~1128" merged to single register "RF~1224"
+    Info: Duplicate register "RF__dual~1704" merged to single register "RF~1800"
+    Info: Duplicate register "RF__dual~1960" merged to single register "RF~2056"
+    Info: Duplicate register "RF__dual~298" merged to single register "RF~394"
+    Info: Duplicate register "RF__dual~426" merged to single register "RF~522"
+    Info: Duplicate register "RF__dual~810" merged to single register "RF~906"
+    Info: Duplicate register "RF__dual~1066" merged to single register "RF~1162"
+    Info: Duplicate register "RF__dual~1194" merged to single register "RF~1290"
+    Info: Duplicate register "RF__dual~1386" merged to single register "RF~1482"
+    Info: Duplicate register "RF__dual~1578" merged to single register "RF~1674"
+    Info: Duplicate register "RF__dual~1706" merged to single register "RF~1802"
+    Info: Duplicate register "RF__dual~1068" merged to single register "RF~1164"
+    Info: Duplicate register "RF__dual~1132" merged to single register "RF~1228"
+    Info: Duplicate register "RF__dual~1196" merged to single register "RF~1292"
+    Info: Duplicate register "RF__dual~1580" merged to single register "RF~1676"
+    Info: Duplicate register "RF__dual~1644" merged to single register "RF~1740"
+    Info: Duplicate register "RF__dual~1708" merged to single register "RF~1804"
+    Info: Duplicate register "RF__dual~1070" merged to single register "RF~1166"
+    Info: Duplicate register "RF__dual~1198" merged to single register "RF~1294"
+    Info: Duplicate register "RF__dual~1390" merged to single register "RF~1486"
+    Info: Duplicate register "RF__dual~1582" merged to single register "RF~1678"
+    Info: Duplicate register "RF__dual~1710" merged to single register "RF~1806"
+    Info: Duplicate register "RF__dual~560" merged to single register "RF~656"
+    Info: Duplicate register "RF__dual~1392" merged to single register "RF~1488"
+    Info: Duplicate register "RF__dual~178" merged to single register "RF~274"
+    Info: Duplicate register "RF__dual~690" merged to single register "RF~786"
+    Info: Duplicate register "RF__dual~1330" merged to single register "RF~1426"
+    Info: Duplicate register "RF__dual~1842" merged to single register "RF~1938"
+    Info: Duplicate register "RF__dual~436" merged to single register "RF~532"
+    Info: Duplicate register "RF__dual~1204" merged to single register "RF~1300"
+    Info: Duplicate register "RF__dual~1844" merged to single register "RF~1940"
+    Info: Duplicate register "RF__dual~704" merged to single register "RF~800"
+    Info: Duplicate register "RF__dual~1614" merged to single register "RF~1710"
+    Info: Duplicate register "RF__dual~1870" merged to single register "RF~1966"
+    Info: Duplicate register "RF__dual~80" merged to single register "RF~176"
+    Info: Duplicate register "RF__dual~848" merged to single register "RF~944"
+    Info: Duplicate register "RF__dual~1296" merged to single register "RF~1392"
+    Info: Duplicate register "RF__dual~146" merged to single register "RF~242"
+    Info: Duplicate register "RF__dual~1170" merged to single register "RF~1266"
+    Info: Duplicate register "RF__dual~224" merged to single register "RF~320"
+    Info: Duplicate register "RF__dual~1250" merged to single register "RF~1346"
+    Info: Duplicate register "RF__dual~868" merged to single register "RF~964"
+    Info: Duplicate register "RF__dual~104" merged to single register "RF~200"
+    Info: Duplicate register "RF__dual~808" merged to single register "RF~904"
+    Info: Duplicate register "RF__dual~1064" merged to single register "RF~1160"
+    Info: Duplicate register "RF__dual~1320" merged to single register "RF~1416"
+    Info: Duplicate register "RF__dual~1384" merged to single register "RF~1480"
+    Info: Duplicate register "RF__dual~1448" merged to single register "RF~1544"
+    Info: Duplicate register "RF__dual~2088" merged to single register "RF~2184"
+    Info: Duplicate register "RF__dual~170" merged to single register "RF~266"
+    Info: Duplicate register "RF__dual~362" merged to single register "RF~458"
+    Info: Duplicate register "RF__dual~554" merged to single register "RF~650"
+    Info: Duplicate register "RF__dual~682" merged to single register "RF~778"
+    Info: Duplicate register "RF__dual~2090" merged to single register "RF~2186"
+    Info: Duplicate register "RF__dual~108" merged to single register "RF~204"
+    Info: Duplicate register "RF__dual~172" merged to single register "RF~268"
+    Info: Duplicate register "RF__dual~556" merged to single register "RF~652"
+    Info: Duplicate register "RF__dual~620" merged to single register "RF~716"
+    Info: Duplicate register "RF__dual~684" merged to single register "RF~780"
+    Info: Duplicate register "RF__dual~2092" merged to single register "RF~2188"
+    Info: Duplicate register "RF__dual~110" merged to single register "RF~206"
+    Info: Duplicate register "RF__dual~174" merged to single register "RF~270"
+    Info: Duplicate register "RF__dual~558" merged to single register "RF~654"
+    Info: Duplicate register "RF__dual~622" merged to single register "RF~718"
+    Info: Duplicate register "RF__dual~686" merged to single register "RF~782"
+    Info: Duplicate register "RF__dual~2094" merged to single register "RF~2190"
+    Info: Duplicate register "RF__dual~1200" merged to single register "RF~1296"
+    Info: Duplicate register "RF__dual~1648" merged to single register "RF~1744"
+    Info: Duplicate register "RF__dual~2096" merged to single register "RF~2192"
+    Info: Duplicate register "RF__dual~1606" merged to single register "RF~1702"
+    Info: Duplicate register "RF__dual~1734" merged to single register "RF~1830"
+    Info: Duplicate register "RF__dual~1798" merged to single register "RF~1894"
+    Info: Duplicate register "RF__dual~1862" merged to single register "RF~1958"
+    Info: Duplicate register "RF__dual~1926" merged to single register "RF~2022"
+    Info: Duplicate register "RF__dual~2054" merged to single register "RF~2150"
+    Info: Duplicate register "RF__dual~1866" merged to single register "RF~1962"
+    Info: Duplicate register "RF__dual~1740" merged to single register "RF~1836"
+    Info: Duplicate register "RF__dual~1102" merged to single register "RF~1198"
+    Info: Duplicate register "RF__dual~1358" merged to single register "RF~1454"
+    Info: Duplicate register "RF__dual~1040" merged to single register "RF~1136"
+    Info: Duplicate register "RF__dual~658" merged to single register "RF~754"
+    Info: Duplicate register "RF__dual~738" merged to single register "RF~834"
+    Info: Duplicate register "RF__dual~100" merged to single register "RF~196"
+    Info: Duplicate register "RF__dual~356" merged to single register "RF~452"
+    Info: Duplicate register "RF__dual~1636" merged to single register "RF~1732"
+    Info: Duplicate register "RF__dual~1892" merged to single register "RF~1988"
+    Info: Duplicate register "RF__dual~424" merged to single register "RF~520"
+    Info: Duplicate register "RF__dual~936" merged to single register "RF~1032"
+    Info: Duplicate register "RF__dual~1576" merged to single register "RF~1672"
+    Info: Duplicate register "RF__dual~1832" merged to single register "RF~1928"
+    Info: Duplicate register "RF__dual~106" merged to single register "RF~202"
+    Info: Duplicate register "RF__dual~1642" merged to single register "RF~1738"
+    Info: Duplicate register "RF__dual~626" merged to single register "RF~722"
+    Info: Duplicate register "RF__dual~1742" merged to single register "RF~1838"
+    Info: Duplicate register "RF__dual~784" merged to single register "RF~880"
+    Info: Duplicate register "RF__dual~1680" merged to single register "RF~1776"
+    Info: Duplicate register "RF__dual~1248" merged to single register "RF~1344"
+    Info: Duplicate register "RF__dual~1634" merged to single register "RF~1730"
+    Info: Duplicate register "RF__dual~1762" merged to single register "RF~1858"
+    Info: Duplicate register "RF__dual~1890" merged to single register "RF~1986"
+    Info: Duplicate register "RF__dual~612" merged to single register "RF~708"
+    Info: Duplicate register "RF__dual~742" merged to single register "RF~838"
+    Info: Duplicate register "RF__dual~1574" merged to single register "RF~1670"
+    Info: Duplicate register "RF__dual~1830" merged to single register "RF~1926"
+    Info: Duplicate register "RF__dual~2086" merged to single register "RF~2182"
+    Info: Duplicate register "RF__dual~296" merged to single register "RF~392"
+    Info: Duplicate register "RF__dual~1192" merged to single register "RF~1288"
+    Info: Duplicate register "RF__dual~176" merged to single register "RF~272"
+    Info: Duplicate register "RF__dual~624" merged to single register "RF~720"
+    Info: Duplicate register "RF__dual~1072" merged to single register "RF~1168"
+    Info: Duplicate register "RF__dual~734" merged to single register "RF~830"
+    Info: Duplicate register "RF__dual~610" merged to single register "RF~706"
+    Info: Duplicate register "RF__dual~1318" merged to single register "RF~1414"
+    Info: Duplicate register "RF__dual~1382" merged to single register "RF~1478"
+    Info: Duplicate register "RF__dual~1446" merged to single register "RF~1542"
+    Info: Duplicate register "RF__dual~1958" merged to single register "RF~2054"
+    Info: Duplicate register "RF__dual~552" merged to single register "RF~648"
+    Info: Duplicate register "RF__dual~680" merged to single register "RF~776"
+    Info: Duplicate register "RF__dual~1640" merged to single register "RF~1736"
+    Info: Duplicate register "RF__dual~364" merged to single register "RF~460"
+    Info: Duplicate register "RF__dual~368" merged to single register "RF~464"
+    Info: Duplicate register "RF__dual~226" merged to single register "RF~322"
+    Info: Duplicate register "RF__dual~1122" merged to single register "RF~1218"
+    Info: Duplicate register "RF__dual~102" merged to single register "RF~198"
+    Info: Duplicate register "RF__dual~230" merged to single register "RF~326"
+    Info: Duplicate register "RF__dual~358" merged to single register "RF~454"
+    Info: Duplicate register "RF__dual~1702" merged to single register "RF~1798"
+    Info: Duplicate register "RF__dual~618" merged to single register "RF~714"
+    Info: Duplicate register "RF__dual~938" merged to single register "RF~1034"
+    Info: Duplicate register "RF__dual~688" merged to single register "RF~784"
+    Info: Duplicate register "RF__dual~1394" merged to single register "RF~1490"
+    Info: Duplicate register "RF__dual~866" merged to single register "RF~962"
+    Info: Duplicate register "RF__dual~1764" merged to single register "RF~1860"
+    Info: Duplicate register "RF__dual~806" merged to single register "RF~902"
+    Info: Duplicate register "RF__dual~1062" merged to single register "RF~1158"
+    Info: Duplicate register "RF__dual~1190" merged to single register "RF~1286"
+    Info: Duplicate register "RF__dual~1378" merged to single register "RF~1474"
+    Info: Duplicate register "RF__dual~934" merged to single register "RF~1030"
+    Info: Duplicate register "RF__dual~168" merged to single register "RF~264"
+    Info: Duplicate register "RF__dual~616" merged to single register "RF~712"
+    Info: Duplicate register "RF__dual~112" merged to single register "RF~208"
+    Info: Duplicate register "RF__dual~678" merged to single register "RF~774"
+    Info: Duplicate register "RF__dual~1126" merged to single register "RF~1222"
+    Info: Duplicate register "RF__dual~1388" merged to single register "RF~1484"
+    Info: Duplicate register "RF__dual~370" merged to single register "RF~466"
+    Info: Duplicate register "RF__dual~1646" merged to single register "RF~1742"
+    Info: Duplicate register "RF__dual~1138" merged to single register "RF~1234"
+    Info: Duplicate register "RF__dual~1136" merged to single register "RF~1232"
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "RF__dual~640" merged to single register "RF~736"
+    Info: Duplicate register "RF__dual~576" merged to single register "RF~672"
+    Info: Duplicate register "RF__dual~768" merged to single register "RF~864"
+    Info: Duplicate register "RF__dual~384" merged to single register "RF~480"
+    Info: Duplicate register "RF__dual~448" merged to single register "RF~544"
+    Info: Duplicate register "RF__dual~320" merged to single register "RF~416"
+    Info: Duplicate register "RF__dual~512" merged to single register "RF~608"
+    Info: Duplicate register "RF__dual~192" merged to single register "RF~288"
+    Info: Duplicate register "RF__dual~128" merged to single register "RF~224"
+    Info: Duplicate register "RF__dual~64" merged to single register "RF~160"
+    Info: Duplicate register "RF__dual~256" merged to single register "RF~352"
+    Info: Duplicate register "RF__dual~960" merged to single register "RF~1056"
+    Info: Duplicate register "RF__dual~1984" merged to single register "RF~2080"
+    Info: Duplicate register "RF__dual~1664" merged to single register "RF~1760"
+    Info: Duplicate register "RF__dual~1408" merged to single register "RF~1504"
+    Info: Duplicate register "RF__dual~1152" merged to single register "RF~1248"
+    Info: Duplicate register "RF__dual~1344" merged to single register "RF~1440"
+    Info: Duplicate register "RF__dual~1600" merged to single register "RF~1696"
+    Info: Duplicate register "RF__dual~1792" merged to single register "RF~1888"
+    Info: Duplicate register "RF__dual~1536" merged to single register "RF~1632"
+    Info: Duplicate register "RF__dual~1280" merged to single register "RF~1376"
+    Info: Duplicate register "RF__dual~386" merged to single register "RF~482"
+    Info: Duplicate register "RF__dual~514" merged to single register "RF~610"
+    Info: Duplicate register "RF__dual~642" merged to single register "RF~738"
+    Info: Duplicate register "RF__dual~578" merged to single register "RF~674"
+    Info: Duplicate register "RF__dual~770" merged to single register "RF~866"
+    Info: Duplicate register "RF__dual~258" merged to single register "RF~354"
+    Info: Duplicate register "RF__dual~898" merged to single register "RF~994"
+    Info: Duplicate register "RF__dual~834" merged to single register "RF~930"
+    Info: Duplicate register "RF__dual~1026" merged to single register "RF~1122"
+    Info: Duplicate register "RF__dual~1410" merged to single register "RF~1506"
+    Info: Duplicate register "RF__dual~1666" merged to single register "RF~1762"
+    Info: Duplicate register "RF__dual~1154" merged to single register "RF~1250"
+    Info: Duplicate register "RF__dual~1730" merged to single register "RF~1826"
+    Info: Duplicate register "RF__dual~1986" merged to single register "RF~2082"
+    Info: Duplicate register "RF__dual~1090" merged to single register "RF~1186"
+    Info: Duplicate register "RF__dual~1538" merged to single register "RF~1634"
+    Info: Duplicate register "RF__dual~1282" merged to single register "RF~1378"
+    Info: Duplicate register "RF__dual~644" merged to single register "RF~740"
+    Info: Duplicate register "RF__dual~772" merged to single register "RF~868"
+    Info: Duplicate register "RF__dual~900" merged to single register "RF~996"
+    Info: Duplicate register "RF__dual~1028" merged to single register "RF~1124"
+    Info: Duplicate register "RF__dual~1668" merged to single register "RF~1764"
+    Info: Duplicate register "RF__dual~1412" merged to single register "RF~1508"
+    Info: Duplicate register "RF__dual~1156" merged to single register "RF~1252"
+    Info: Duplicate register "RF__dual~1924" merged to single register "RF~2020"
+    Info: Duplicate register "RF__dual~1348" merged to single register "RF~1444"
+    Info: Duplicate register "RF__dual~1604" merged to single register "RF~1700"
+    Info: Duplicate register "RF__dual~1092" merged to single register "RF~1188"
+    Info: Duplicate register "RF__dual~1860" merged to single register "RF~1956"
+    Info: Duplicate register "RF__dual~1796" merged to single register "RF~1892"
+    Info: Duplicate register "RF__dual~1540" merged to single register "RF~1636"
+    Info: Duplicate register "RF__dual~1284" merged to single register "RF~1380"
+    Info: Duplicate register "RF__dual~2052" merged to single register "RF~2148"
+    Info: Duplicate register "RF__dual~390" merged to single register "RF~486"
+    Info: Duplicate register "RF__dual~326" merged to single register "RF~422"
+    Info: Duplicate register "RF__dual~518" merged to single register "RF~614"
+    Info: Duplicate register "RF__dual~646" merged to single register "RF~742"
+    Info: Duplicate register "RF__dual~710" merged to single register "RF~806"
+    Info: Duplicate register "RF__dual~582" merged to single register "RF~678"
+    Info: Duplicate register "RF__dual~774" merged to single register "RF~870"
+    Info: Duplicate register "RF__dual~134" merged to single register "RF~230"
+    Info: Duplicate register "RF__dual~198" merged to single register "RF~294"
+    Info: Duplicate register "RF__dual~70" merged to single register "RF~166"
+    Info: Duplicate register "RF__dual~262" merged to single register "RF~358"
+    Info: Duplicate register "RF__dual~902" merged to single register "RF~998"
+    Info: Duplicate register "RF__dual~838" merged to single register "RF~934"
+    Info: Duplicate register "RF__dual~1030" merged to single register "RF~1126"
+    Info: Duplicate register "RF__dual~1414" merged to single register "RF~1510"
+    Info: Duplicate register "RF__dual~1670" merged to single register "RF~1766"
+    Info: Duplicate register "RF__dual~1158" merged to single register "RF~1254"
+    Info: Duplicate register "RF__dual~1990" merged to single register "RF~2086"
+    Info: Duplicate register "RF__dual~1542" merged to single register "RF~1638"
+    Info: Duplicate register "RF__dual~1286" merged to single register "RF~1382"
+    Info: Duplicate register "RF__dual~2056" merged to single register "RF~2152"
+    Info: Duplicate register "RF__dual~394" merged to single register "RF~490"
+    Info: Duplicate register "RF__dual~522" merged to single register "RF~618"
+    Info: Duplicate register "RF__dual~650" merged to single register "RF~746"
+    Info: Duplicate register "RF__dual~778" merged to single register "RF~874"
+    Info: Duplicate register "RF__dual~138" merged to single register "RF~234"
+    Info: Duplicate register "RF__dual~266" merged to single register "RF~362"
+    Info: Duplicate register "RF__dual~906" merged to single register "RF~1002"
+    Info: Duplicate register "RF__dual~1034" merged to single register "RF~1130"
+    Info: Duplicate register "RF__dual~1418" merged to single register "RF~1514"
+    Info: Duplicate register "RF__dual~1674" merged to single register "RF~1770"
+    Info: Duplicate register "RF__dual~1162" merged to single register "RF~1258"
+    Info: Duplicate register "RF__dual~1930" merged to single register "RF~2026"
+    Info: Duplicate register "RF__dual~1610" merged to single register "RF~1706"
+    Info: Duplicate register "RF__dual~1354" merged to single register "RF~1450"
+    Info: Duplicate register "RF__dual~1098" merged to single register "RF~1194"
+    Info: Duplicate register "RF__dual~1546" merged to single register "RF~1642"
+    Info: Duplicate register "RF__dual~1802" merged to single register "RF~1898"
+    Info: Duplicate register "RF__dual~1290" merged to single register "RF~1386"
+    Info: Duplicate register "RF__dual~2058" merged to single register "RF~2154"
+    Info: Duplicate register "RF__dual~652" merged to single register "RF~748"
+    Info: Duplicate register "RF__dual~588" merged to single register "RF~684"
+    Info: Duplicate register "RF__dual~780" merged to single register "RF~876"
+    Info: Duplicate register "RF__dual~396" merged to single register "RF~492"
+    Info: Duplicate register "RF__dual~332" merged to single register "RF~428"
+    Info: Duplicate register "RF__dual~524" merged to single register "RF~620"
+    Info: Duplicate register "RF__dual~140" merged to single register "RF~236"
+    Info: Duplicate register "RF__dual~76" merged to single register "RF~172"
+    Info: Duplicate register "RF__dual~268" merged to single register "RF~364"
+    Info: Duplicate register "RF__dual~908" merged to single register "RF~1004"
+    Info: Duplicate register "RF__dual~844" merged to single register "RF~940"
+    Info: Duplicate register "RF__dual~1036" merged to single register "RF~1132"
+    Info: Duplicate register "RF__dual~1228" merged to single register "RF~1324"
+    Info: Duplicate register "RF__dual~1676" merged to single register "RF~1772"
+    Info: Duplicate register "RF__dual~1420" merged to single register "RF~1516"
+    Info: Duplicate register "RF__dual~1164" merged to single register "RF~1260"
+    Info: Duplicate register "RF__dual~1932" merged to single register "RF~2028"
+    Info: Duplicate register "RF__dual~1356" merged to single register "RF~1452"
+    Info: Duplicate register "RF__dual~1612" merged to single register "RF~1708"
+    Info: Duplicate register "RF__dual~1100" merged to single register "RF~1196"
+    Info: Duplicate register "RF__dual~1868" merged to single register "RF~1964"
+    Info: Duplicate register "RF__dual~1804" merged to single register "RF~1900"
+    Info: Duplicate register "RF__dual~1548" merged to single register "RF~1644"
+    Info: Duplicate register "RF__dual~1292" merged to single register "RF~1388"
+    Info: Duplicate register "RF__dual~2060" merged to single register "RF~2156"
+    Info: Duplicate register "RF__dual~398" merged to single register "RF~494"
+    Info: Duplicate register "RF__dual~334" merged to single register "RF~430"
+    Info: Duplicate register "RF__dual~526" merged to single register "RF~622"
+    Info: Duplicate register "RF__dual~654" merged to single register "RF~750"
+    Info: Duplicate register "RF__dual~718" merged to single register "RF~814"
+    Info: Duplicate register "RF__dual~590" merged to single register "RF~686"
+    Info: Duplicate register "RF__dual~782" merged to single register "RF~878"
+    Info: Duplicate register "RF__dual~142" merged to single register "RF~238"
+    Info: Duplicate register "RF__dual~78" merged to single register "RF~174"
+    Info: Duplicate register "RF__dual~270" merged to single register "RF~366"
+    Info: Duplicate register "RF__dual~910" merged to single register "RF~1006"
+    Info: Duplicate register "RF__dual~846" merged to single register "RF~942"
+    Info: Duplicate register "RF__dual~1038" merged to single register "RF~1134"
+    Info: Duplicate register "RF__dual~1422" merged to single register "RF~1518"
+    Info: Duplicate register "RF__dual~1678" merged to single register "RF~1774"
+    Info: Duplicate register "RF__dual~1166" merged to single register "RF~1262"
+    Info: Duplicate register "RF__dual~1934" merged to single register "RF~2030"
+    Info: Duplicate register "RF__dual~1230" merged to single register "RF~1326"
+    Info: Duplicate register "RF__dual~1998" merged to single register "RF~2094"
+    Info: Duplicate register "RF__dual~1550" merged to single register "RF~1646"
+    Info: Duplicate register "RF__dual~1806" merged to single register "RF~1902"
+    Info: Duplicate register "RF__dual~1294" merged to single register "RF~1390"
+    Info: Duplicate register "RF__dual~2062" merged to single register "RF~2158"
+    Info: Duplicate register "RF__dual~656" merged to single register "RF~752"
+    Info: Duplicate register "RF__dual~592" merged to single register "RF~688"
+    Info: Duplicate register "RF__dual~400" merged to single register "RF~496"
+    Info: Duplicate register "RF__dual~528" merged to single register "RF~624"
+    Info: Duplicate register "RF__dual~144" merged to single register "RF~240"
+    Info: Duplicate register "RF__dual~272" merged to single register "RF~368"
+    Info: Duplicate register "RF__dual~912" merged to single register "RF~1008"
+    Info: Duplicate register "RF__dual~1430" merged to single register "RF~1526"
+    Info: Duplicate register "RF__dual~1686" merged to single register "RF~1782"
+    Info: Duplicate register "RF__dual~1942" merged to single register "RF~2038"
+    Info: Duplicate register "RF__dual~1558" merged to single register "RF~1654"
+    Info: Duplicate register "RF__dual~1814" merged to single register "RF~1910"
+    Info: Duplicate register "RF__dual~2070" merged to single register "RF~2166"
+    Info: Duplicate register "RF__dual~664" merged to single register "RF~760"
+    Info: Duplicate register "RF__dual~792" merged to single register "RF~888"
+    Info: Duplicate register "RF__dual~408" merged to single register "RF~504"
+    Info: Duplicate register "RF__dual~536" merged to single register "RF~632"
+    Info: Duplicate register "RF__dual~152" merged to single register "RF~248"
+    Info: Duplicate register "RF__dual~280" merged to single register "RF~376"
+    Info: Duplicate register "RF__dual~920" merged to single register "RF~1016"
+    Info: Duplicate register "RF__dual~1048" merged to single register "RF~1144"
+    Info: Duplicate register "RF__dual~1688" merged to single register "RF~1784"
+    Info: Duplicate register "RF__dual~1432" merged to single register "RF~1528"
+    Info: Duplicate register "RF__dual~1176" merged to single register "RF~1272"
+    Info: Duplicate register "RF__dual~1944" merged to single register "RF~2040"
+    Info: Duplicate register "RF__dual~1624" merged to single register "RF~1720"
+    Info: Duplicate register "RF__dual~1880" merged to single register "RF~1976"
+    Info: Duplicate register "RF__dual~1816" merged to single register "RF~1912"
+    Info: Duplicate register "RF__dual~1560" merged to single register "RF~1656"
+    Info: Duplicate register "RF__dual~1304" merged to single register "RF~1400"
+    Info: Duplicate register "RF__dual~2072" merged to single register "RF~2168"
+    Info: Duplicate register "RF__dual~410" merged to single register "RF~506"
+    Info: Duplicate register "RF__dual~346" merged to single register "RF~442"
+    Info: Duplicate register "RF__dual~538" merged to single register "RF~634"
+    Info: Duplicate register "RF__dual~666" merged to single register "RF~762"
+    Info: Duplicate register "RF__dual~602" merged to single register "RF~698"
+    Info: Duplicate register "RF__dual~794" merged to single register "RF~890"
+    Info: Duplicate register "RF__dual~154" merged to single register "RF~250"
+    Info: Duplicate register "RF__dual~90" merged to single register "RF~186"
+    Info: Duplicate register "RF__dual~282" merged to single register "RF~378"
+    Info: Duplicate register "RF__dual~922" merged to single register "RF~1018"
+    Info: Duplicate register "RF__dual~858" merged to single register "RF~954"
+    Info: Duplicate register "RF__dual~1050" merged to single register "RF~1146"
+    Info: Duplicate register "RF__dual~1434" merged to single register "RF~1530"
+    Info: Duplicate register "RF__dual~1690" merged to single register "RF~1786"
+    Info: Duplicate register "RF__dual~1178" merged to single register "RF~1274"
+    Info: Duplicate register "RF__dual~1946" merged to single register "RF~2042"
+    Info: Duplicate register "RF__dual~1626" merged to single register "RF~1722"
+    Info: Duplicate register "RF__dual~1370" merged to single register "RF~1466"
+    Info: Duplicate register "RF__dual~1114" merged to single register "RF~1210"
+    Info: Duplicate register "RF__dual~1882" merged to single register "RF~1978"
+    Info: Duplicate register "RF__dual~1562" merged to single register "RF~1658"
+    Info: Duplicate register "RF__dual~1818" merged to single register "RF~1914"
+    Info: Duplicate register "RF__dual~1306" merged to single register "RF~1402"
+    Info: Duplicate register "RF__dual~2074" merged to single register "RF~2170"
+    Info: Duplicate register "RF__dual~668" merged to single register "RF~764"
+    Info: Duplicate register "RF__dual~604" merged to single register "RF~700"
+    Info: Duplicate register "RF__dual~796" merged to single register "RF~892"
+    Info: Duplicate register "RF__dual~412" merged to single register "RF~508"
+    Info: Duplicate register "RF__dual~348" merged to single register "RF~444"
+    Info: Duplicate register "RF__dual~540" merged to single register "RF~636"
+    Info: Duplicate register "RF__dual~156" merged to single register "RF~252"
+    Info: Duplicate register "RF__dual~92" merged to single register "RF~188"
+    Info: Duplicate register "RF__dual~284" merged to single register "RF~380"
+    Info: Duplicate register "RF__dual~924" merged to single register "RF~1020"
+    Info: Duplicate register "RF__dual~860" merged to single register "RF~956"
+    Info: Duplicate register "RF__dual~1052" merged to single register "RF~1148"
+    Info: Duplicate register "RF__dual~1756" merged to single register "RF~1852"
+    Info: Duplicate register "RF__dual~1692" merged to single register "RF~1788"
+    Info: Duplicate register "RF__dual~1436" merged to single register "RF~1532"
+    Info: Duplicate register "RF__dual~1180" merged to single register "RF~1276"
+    Info: Duplicate register "RF__dual~1948" merged to single register "RF~2044"
+    Info: Duplicate register "RF__dual~1372" merged to single register "RF~1468"
+    Info: Duplicate register "RF__dual~1628" merged to single register "RF~1724"
+    Info: Duplicate register "RF__dual~1116" merged to single register "RF~1212"
+    Info: Duplicate register "RF__dual~1884" merged to single register "RF~1980"
+    Info: Duplicate register "RF__dual~1820" merged to single register "RF~1916"
+    Info: Duplicate register "RF__dual~1564" merged to single register "RF~1660"
+    Info: Duplicate register "RF__dual~1308" merged to single register "RF~1404"
+    Info: Duplicate register "RF__dual~2076" merged to single register "RF~2172"
+    Info: Duplicate register "RF__dual~414" merged to single register "RF~510"
+    Info: Duplicate register "RF__dual~350" merged to single register "RF~446"
+    Info: Duplicate register "RF__dual~542" merged to single register "RF~638"
+    Info: Duplicate register "RF__dual~670" merged to single register "RF~766"
+    Info: Duplicate register "RF__dual~606" merged to single register "RF~702"
+    Info: Duplicate register "RF__dual~798" merged to single register "RF~894"
+    Info: Duplicate register "RF__dual~158" merged to single register "RF~254"
+    Info: Duplicate register "RF__dual~94" merged to single register "RF~190"
+    Info: Duplicate register "RF__dual~286" merged to single register "RF~382"
+    Info: Duplicate register "RF__dual~926" merged to single register "RF~1022"
+    Info: Duplicate register "RF__dual~862" merged to single register "RF~958"
+    Info: Duplicate register "RF__dual~1054" merged to single register "RF~1150"
+    Info: Duplicate register "RF__dual~1438" merged to single register "RF~1534"
+    Info: Duplicate register "RF__dual~1694" merged to single register "RF~1790"
+    Info: Duplicate register "RF__dual~1182" merged to single register "RF~1278"
+    Info: Duplicate register "RF__dual~1950" merged to single register "RF~2046"
+    Info: Duplicate register "RF__dual~1246" merged to single register "RF~1342"
+    Info: Duplicate register "RF__dual~2014" merged to single register "RF~2110"
+    Info: Duplicate register "RF__dual~1630" merged to single register "RF~1726"
+    Info: Duplicate register "RF__dual~1374" merged to single register "RF~1470"
+    Info: Duplicate register "RF__dual~1118" merged to single register "RF~1214"
+    Info: Duplicate register "RF__dual~1886" merged to single register "RF~1982"
+    Info: Duplicate register "RF__dual~1566" merged to single register "RF~1662"
+    Info: Duplicate register "RF__dual~1822" merged to single register "RF~1918"
+    Info: Duplicate register "RF__dual~1310" merged to single register "RF~1406"
+    Info: Duplicate register "RF__dual~2078" merged to single register "RF~2174"
+    Info: Duplicate register "RF__dual~672" merged to single register "RF~768"
+    Info: Duplicate register "RF__dual~608" merged to single register "RF~704"
+    Info: Duplicate register "RF__dual~800" merged to single register "RF~896"
+    Info: Duplicate register "RF__dual~416" merged to single register "RF~512"
+    Info: Duplicate register "RF__dual~352" merged to single register "RF~448"
+    Info: Duplicate register "RF__dual~544" merged to single register "RF~640"
+    Info: Duplicate register "RF__dual~160" merged to single register "RF~256"
+    Info: Duplicate register "RF__dual~96" merged to single register "RF~192"
+    Info: Duplicate register "RF__dual~288" merged to single register "RF~384"
+    Info: Duplicate register "RF__dual~928" merged to single register "RF~1024"
+    Info: Duplicate register "RF__dual~864" merged to single register "RF~960"
+    Info: Duplicate register "RF__dual~1056" merged to single register "RF~1152"
+    Info: Duplicate register "RF__dual~1696" merged to single register "RF~1792"
+    Info: Duplicate register "RF__dual~1440" merged to single register "RF~1536"
+    Info: Duplicate register "RF__dual~1184" merged to single register "RF~1280"
+    Info: Duplicate register "RF__dual~1952" merged to single register "RF~2048"
+    Info: Duplicate register "RF__dual~1376" merged to single register "RF~1472"
+    Info: Duplicate register "RF__dual~1632" merged to single register "RF~1728"
+    Info: Duplicate register "RF__dual~1120" merged to single register "RF~1216"
+    Info: Duplicate register "RF__dual~1888" merged to single register "RF~1984"
+    Info: Duplicate register "RF__dual~1824" merged to single register "RF~1920"
+    Info: Duplicate register "RF__dual~1568" merged to single register "RF~1664"
+    Info: Duplicate register "RF__dual~1312" merged to single register "RF~1408"
+    Info: Duplicate register "RF__dual~2080" merged to single register "RF~2176"
+    Info: Duplicate register "RF__dual~418" merged to single register "RF~514"
+    Info: Duplicate register "RF__dual~354" merged to single register "RF~450"
+    Info: Duplicate register "RF__dual~546" merged to single register "RF~642"
+    Info: Duplicate register "RF__dual~674" merged to single register "RF~770"
+    Info: Duplicate register "RF__dual~802" merged to single register "RF~898"
+    Info: Duplicate register "RF__dual~162" merged to single register "RF~258"
+    Info: Duplicate register "RF__dual~98" merged to single register "RF~194"
+    Info: Duplicate register "RF__dual~290" merged to single register "RF~386"
+    Info: Duplicate register "RF__dual~930" merged to single register "RF~1026"
+    Info: Duplicate register "RF__dual~1058" merged to single register "RF~1154"
+    Info: Duplicate register "RF__dual~1442" merged to single register "RF~1538"
+    Info: Duplicate register "RF__dual~1698" merged to single register "RF~1794"
+    Info: Duplicate register "RF__dual~1186" merged to single register "RF~1282"
+    Info: Duplicate register "RF__dual~1954" merged to single register "RF~2050"
+    Info: Duplicate register "RF__dual~1570" merged to single register "RF~1666"
+    Info: Duplicate register "RF__dual~1826" merged to single register "RF~1922"
+    Info: Duplicate register "RF__dual~1314" merged to single register "RF~1410"
+    Info: Duplicate register "RF__dual~2082" merged to single register "RF~2178"
+    Info: Duplicate register "RF__dual~676" merged to single register "RF~772"
+    Info: Duplicate register "RF__dual~804" merged to single register "RF~900"
+    Info: Duplicate register "RF__dual~420" merged to single register "RF~516"
+    Info: Duplicate register "RF__dual~548" merged to single register "RF~644"
+    Info: Duplicate register "RF__dual~228" merged to single register "RF~324"
+    Info: Duplicate register "RF__dual~164" merged to single register "RF~260"
+    Info: Duplicate register "RF__dual~292" merged to single register "RF~388"
+    Info: Duplicate register "RF__dual~932" merged to single register "RF~1028"
+    Info: Duplicate register "RF__dual~1060" merged to single register "RF~1156"
+    Info: Duplicate register "RF__dual~1700" merged to single register "RF~1796"
+    Info: Duplicate register "RF__dual~1444" merged to single register "RF~1540"
+    Info: Duplicate register "RF__dual~1188" merged to single register "RF~1284"
+    Info: Duplicate register "RF__dual~1956" merged to single register "RF~2052"
+    Info: Duplicate register "RF__dual~1828" merged to single register "RF~1924"
+    Info: Duplicate register "RF__dual~1572" merged to single register "RF~1668"
+    Info: Duplicate register "RF__dual~1316" merged to single register "RF~1412"
+    Info: Duplicate register "RF__dual~2084" merged to single register "RF~2180"
+    Info: Duplicate register "RF__dual~422" merged to single register "RF~518"
+    Info: Duplicate register "RF__dual~550" merged to single register "RF~646"
+    Info: Duplicate register "RF__dual~166" merged to single register "RF~262"
+    Info: Duplicate register "RF__dual~294" merged to single register "RF~390"
+    Info: Duplicate register "RF__dual~1130" merged to single register "RF~1226"
+    Info: Duplicate register "RF__dual~366" merged to single register "RF~462"
+    Info: Duplicate register "RF__dual~1134" merged to single register "RF~1230"
+    Info: Duplicate register "RF__dual~1712" merged to single register "RF~1808"
+    Info: Duplicate register "RF__dual~1584" merged to single register "RF~1680"
+    Info: Duplicate register "RF__dual~562" merged to single register "RF~658"
+    Info: Duplicate register "RF__dual~114" merged to single register "RF~210"
+    Info: Duplicate register "RF__dual~946" merged to single register "RF~1042"
+    Info: Duplicate register "RF__dual~1074" merged to single register "RF~1170"
+    Info: Duplicate register "RF__dual~1458" merged to single register "RF~1554"
+    Info: Duplicate register "RF__dual~1714" merged to single register "RF~1810"
+    Info: Duplicate register "RF__dual~1970" merged to single register "RF~2066"
+    Info: Duplicate register "RF__dual~692" merged to single register "RF~788"
+    Info: Duplicate register "RF__dual~820" merged to single register "RF~916"
+    Info: Duplicate register "RF__dual~180" merged to single register "RF~276"
+    Info: Duplicate register "RF__dual~308" merged to single register "RF~404"
+    Info: Duplicate register "RF__dual~948" merged to single register "RF~1044"
+    Info: Duplicate register "RF__dual~1716" merged to single register "RF~1812"
+    Info: Duplicate register "RF__dual~1460" merged to single register "RF~1556"
+    Info: Duplicate register "RF__dual~1972" merged to single register "RF~2068"
+    Info: Duplicate register "RF__dual~1332" merged to single register "RF~1428"
+    Info: Duplicate register "RF__dual~438" merged to single register "RF~534"
+    Info: Duplicate register "RF__dual~694" merged to single register "RF~790"
+    Info: Duplicate register "RF__dual~822" merged to single register "RF~918"
+    Info: Duplicate register "RF__dual~182" merged to single register "RF~278"
+    Info: Duplicate register "RF__dual~310" merged to single register "RF~406"
+    Info: Duplicate register "RF__dual~950" merged to single register "RF~1046"
+    Info: Duplicate register "RF__dual~1462" merged to single register "RF~1558"
+    Info: Duplicate register "RF__dual~1718" merged to single register "RF~1814"
+    Info: Duplicate register "RF__dual~1206" merged to single register "RF~1302"
+    Info: Duplicate register "RF__dual~1974" merged to single register "RF~2070"
+    Info: Duplicate register "RF__dual~1846" merged to single register "RF~1942"
+    Info: Duplicate register "RF__dual~1334" merged to single register "RF~1430"
+    Info: Duplicate register "RF__dual~696" merged to single register "RF~792"
+    Info: Duplicate register "RF__dual~824" merged to single register "RF~920"
+    Info: Duplicate register "RF__dual~440" merged to single register "RF~536"
+    Info: Duplicate register "RF__dual~184" merged to single register "RF~280"
+    Info: Duplicate register "RF__dual~312" merged to single register "RF~408"
+    Info: Duplicate register "RF__dual~952" merged to single register "RF~1048"
+    Info: Duplicate register "RF__dual~1080" merged to single register "RF~1176"
+    Info: Duplicate register "RF__dual~1720" merged to single register "RF~1816"
+    Info: Duplicate register "RF__dual~1464" merged to single register "RF~1560"
+    Info: Duplicate register "RF__dual~1208" merged to single register "RF~1304"
+    Info: Duplicate register "RF__dual~1592" merged to single register "RF~1688"
+    Info: Duplicate register "RF__dual~1336" merged to single register "RF~1432"
+    Info: Duplicate register "RF__dual~2110" merged to single register "RF~2206"
+Info: Implemented 2562 device resources after synthesis - the final resource count might be different
+    Info: Implemented 49 input pins
+    Info: Implemented 64 output pins
+    Info: Implemented 2449 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Allocated 177 megabytes of memory during processing
+    Info: Processing ended: Sat Jul 17 00:40:27 2010
+    Info: Elapsed time: 00:00:08
+
+

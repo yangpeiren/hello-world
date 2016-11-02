@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="R">
+		<CBX_INST_ENTRY INSTANCE_NAME="|R|M5:inst6|lpm_mux:lpm_mux_component" CBX_FILE_NAME="mux_7fc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|R|M7:inst8|lpm_mux:lpm_mux_component" CBX_FILE_NAME="mux_pgc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|R|Mul:inst7|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_g0m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|R|lpm_mux0:inst|lpm_mux:lpm_mux_component" CBX_FILE_NAME="mux_ngc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|R|Mul:inst7|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_d8m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|R|Mul:inst7|lpm_mult:Mult0" CBX_FILE_NAME="mult_nn01.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|R|Regfile:inst1|altsyncram:RF_rtl_0" CBX_FILE_NAME="altsyncram_n1e1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

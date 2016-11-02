@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Jul 07 08:55:52 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : MIPS_RAM
+Top-level Entity Name : MIPS_RAM
+Family : Cyclone II
+Total logic elements : 1,056
+    Total combinational functions : 750
+    Dedicated logic registers : 1,056
+Total registers : 1056
+Total pins : 103
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

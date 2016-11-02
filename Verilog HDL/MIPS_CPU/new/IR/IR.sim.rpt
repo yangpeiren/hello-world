@@ -1,0 +1,319 @@
+Simulator report for IR
+Sat Jul 17 00:38:25 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 ms       ;
+; Simulation Netlist Size     ; 100 nodes    ;
+; Simulation Coverage         ;      14.00 % ;
+; Total Number of Transitions ; 99           ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone      ;
+; Device                      ; EP1C12Q240C8 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      14.00 % ;
+; Total nodes checked                                 ; 100          ;
+; Total output ports checked                          ; 100          ;
+; Total output ports with complete 1/0-value coverage ; 14           ;
+; Total output ports with no 1/0-value coverage       ; 59           ;
+; Total output ports with no 1-value coverage         ; 61           ;
+; Total output ports with no 0-value coverage         ; 84           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-----------------------------------------------------------+
+; Complete 1/0-Value Coverage                               ;
++----------------+-----------------------+------------------+
+; Node Name      ; Output Port Name      ; Output Port Type ;
++----------------+-----------------------+------------------+
+; |IR|IR[0]~reg0 ; |IR|IR[0]~reg0        ; regout           ;
+; |IR|IR[1]~reg0 ; |IR|IR[1]~reg0        ; regout           ;
+; |IR|IR[2]~reg0 ; |IR|IR[2]~reg0        ; regout           ;
+; |IR|IR[0]~1392 ; |IR|IR[0]~1392        ; combout          ;
+; |IR|IR[0]      ; |IR|IR[0]             ; padio            ;
+; |IR|IR[1]      ; |IR|IR[1]             ; padio            ;
+; |IR|IR[2]      ; |IR|IR[2]             ; padio            ;
+; |IR|MemData[0] ; |IR|MemData[0]~corein ; combout          ;
+; |IR|Reset      ; |IR|Reset~corein      ; combout          ;
+; |IR|Clk        ; |IR|Clk~corein        ; combout          ;
+; |IR|IRWrite    ; |IR|IRWrite~corein    ; combout          ;
+; |IR|MemData[1] ; |IR|MemData[1]~corein ; combout          ;
+; |IR|MemData[2] ; |IR|MemData[2]~corein ; combout          ;
+; |IR|MemData[3] ; |IR|MemData[3]~corein ; combout          ;
++----------------+-----------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------------------+
+; Missing 1-Value Coverage                                    ;
++-----------------+------------------------+------------------+
+; Node Name       ; Output Port Name       ; Output Port Type ;
++-----------------+------------------------+------------------+
+; |IR|IR[4]~reg0  ; |IR|IR[4]~reg0         ; regout           ;
+; |IR|IR[5]~reg0  ; |IR|IR[5]~reg0         ; regout           ;
+; |IR|IR[8]~reg0  ; |IR|IR[8]~reg0         ; regout           ;
+; |IR|IR[9]~reg0  ; |IR|IR[9]~reg0         ; regout           ;
+; |IR|IR[11]~reg0 ; |IR|IR[11]~reg0        ; regout           ;
+; |IR|IR[14]~reg0 ; |IR|IR[14]~reg0        ; regout           ;
+; |IR|IR[15]~reg0 ; |IR|IR[15]~reg0        ; regout           ;
+; |IR|IR[17]~reg0 ; |IR|IR[17]~reg0        ; regout           ;
+; |IR|IR[18]~reg0 ; |IR|IR[18]~reg0        ; regout           ;
+; |IR|IR[19]~reg0 ; |IR|IR[19]~reg0        ; regout           ;
+; |IR|IR[20]~reg0 ; |IR|IR[20]~reg0        ; regout           ;
+; |IR|IR[22]~reg0 ; |IR|IR[22]~reg0        ; regout           ;
+; |IR|IR[23]~reg0 ; |IR|IR[23]~reg0        ; regout           ;
+; |IR|IR[24]~reg0 ; |IR|IR[24]~reg0        ; regout           ;
+; |IR|IR[26]~reg0 ; |IR|IR[26]~reg0        ; regout           ;
+; |IR|IR[30]~reg0 ; |IR|IR[30]~reg0        ; regout           ;
+; |IR|IR[31]~reg0 ; |IR|IR[31]~reg0        ; regout           ;
+; |IR|IR[4]       ; |IR|IR[4]              ; padio            ;
+; |IR|IR[5]       ; |IR|IR[5]              ; padio            ;
+; |IR|IR[8]       ; |IR|IR[8]              ; padio            ;
+; |IR|IR[9]       ; |IR|IR[9]              ; padio            ;
+; |IR|IR[11]      ; |IR|IR[11]             ; padio            ;
+; |IR|IR[14]      ; |IR|IR[14]             ; padio            ;
+; |IR|IR[15]      ; |IR|IR[15]             ; padio            ;
+; |IR|IR[17]      ; |IR|IR[17]             ; padio            ;
+; |IR|IR[18]      ; |IR|IR[18]             ; padio            ;
+; |IR|IR[19]      ; |IR|IR[19]             ; padio            ;
+; |IR|IR[20]      ; |IR|IR[20]             ; padio            ;
+; |IR|IR[22]      ; |IR|IR[22]             ; padio            ;
+; |IR|IR[23]      ; |IR|IR[23]             ; padio            ;
+; |IR|IR[24]      ; |IR|IR[24]             ; padio            ;
+; |IR|IR[26]      ; |IR|IR[26]             ; padio            ;
+; |IR|IR[30]      ; |IR|IR[30]             ; padio            ;
+; |IR|IR[31]      ; |IR|IR[31]             ; padio            ;
+; |IR|MemData[4]  ; |IR|MemData[4]~corein  ; combout          ;
+; |IR|MemData[5]  ; |IR|MemData[5]~corein  ; combout          ;
+; |IR|MemData[7]  ; |IR|MemData[7]~corein  ; combout          ;
+; |IR|MemData[8]  ; |IR|MemData[8]~corein  ; combout          ;
+; |IR|MemData[9]  ; |IR|MemData[9]~corein  ; combout          ;
+; |IR|MemData[10] ; |IR|MemData[10]~corein ; combout          ;
+; |IR|MemData[11] ; |IR|MemData[11]~corein ; combout          ;
+; |IR|MemData[12] ; |IR|MemData[12]~corein ; combout          ;
+; |IR|MemData[13] ; |IR|MemData[13]~corein ; combout          ;
+; |IR|MemData[14] ; |IR|MemData[14]~corein ; combout          ;
+; |IR|MemData[15] ; |IR|MemData[15]~corein ; combout          ;
+; |IR|MemData[16] ; |IR|MemData[16]~corein ; combout          ;
+; |IR|MemData[17] ; |IR|MemData[17]~corein ; combout          ;
+; |IR|MemData[18] ; |IR|MemData[18]~corein ; combout          ;
+; |IR|MemData[19] ; |IR|MemData[19]~corein ; combout          ;
+; |IR|MemData[20] ; |IR|MemData[20]~corein ; combout          ;
+; |IR|MemData[21] ; |IR|MemData[21]~corein ; combout          ;
+; |IR|MemData[22] ; |IR|MemData[22]~corein ; combout          ;
+; |IR|MemData[23] ; |IR|MemData[23]~corein ; combout          ;
+; |IR|MemData[24] ; |IR|MemData[24]~corein ; combout          ;
+; |IR|MemData[25] ; |IR|MemData[25]~corein ; combout          ;
+; |IR|MemData[26] ; |IR|MemData[26]~corein ; combout          ;
+; |IR|MemData[27] ; |IR|MemData[27]~corein ; combout          ;
+; |IR|MemData[28] ; |IR|MemData[28]~corein ; combout          ;
+; |IR|MemData[29] ; |IR|MemData[29]~corein ; combout          ;
+; |IR|MemData[30] ; |IR|MemData[30]~corein ; combout          ;
+; |IR|MemData[31] ; |IR|MemData[31]~corein ; combout          ;
++-----------------+------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------------------+
+; Missing 0-Value Coverage                                    ;
++-----------------+------------------------+------------------+
+; Node Name       ; Output Port Name       ; Output Port Type ;
++-----------------+------------------------+------------------+
+; |IR|IR[3]~reg0  ; |IR|IR[3]~reg0         ; regout           ;
+; |IR|IR[4]~reg0  ; |IR|IR[4]~reg0         ; regout           ;
+; |IR|IR[5]~reg0  ; |IR|IR[5]~reg0         ; regout           ;
+; |IR|IR[6]~reg0  ; |IR|IR[6]~reg0         ; regout           ;
+; |IR|IR[7]~reg0  ; |IR|IR[7]~reg0         ; regout           ;
+; |IR|IR[8]~reg0  ; |IR|IR[8]~reg0         ; regout           ;
+; |IR|IR[9]~reg0  ; |IR|IR[9]~reg0         ; regout           ;
+; |IR|IR[10]~reg0 ; |IR|IR[10]~reg0        ; regout           ;
+; |IR|IR[11]~reg0 ; |IR|IR[11]~reg0        ; regout           ;
+; |IR|IR[12]~reg0 ; |IR|IR[12]~reg0        ; regout           ;
+; |IR|IR[13]~reg0 ; |IR|IR[13]~reg0        ; regout           ;
+; |IR|IR[14]~reg0 ; |IR|IR[14]~reg0        ; regout           ;
+; |IR|IR[15]~reg0 ; |IR|IR[15]~reg0        ; regout           ;
+; |IR|IR[16]~reg0 ; |IR|IR[16]~reg0        ; regout           ;
+; |IR|IR[17]~reg0 ; |IR|IR[17]~reg0        ; regout           ;
+; |IR|IR[18]~reg0 ; |IR|IR[18]~reg0        ; regout           ;
+; |IR|IR[19]~reg0 ; |IR|IR[19]~reg0        ; regout           ;
+; |IR|IR[20]~reg0 ; |IR|IR[20]~reg0        ; regout           ;
+; |IR|IR[21]~reg0 ; |IR|IR[21]~reg0        ; regout           ;
+; |IR|IR[22]~reg0 ; |IR|IR[22]~reg0        ; regout           ;
+; |IR|IR[23]~reg0 ; |IR|IR[23]~reg0        ; regout           ;
+; |IR|IR[24]~reg0 ; |IR|IR[24]~reg0        ; regout           ;
+; |IR|IR[25]~reg0 ; |IR|IR[25]~reg0        ; regout           ;
+; |IR|IR[26]~reg0 ; |IR|IR[26]~reg0        ; regout           ;
+; |IR|IR[27]~reg0 ; |IR|IR[27]~reg0        ; regout           ;
+; |IR|IR[28]~reg0 ; |IR|IR[28]~reg0        ; regout           ;
+; |IR|IR[29]~reg0 ; |IR|IR[29]~reg0        ; regout           ;
+; |IR|IR[30]~reg0 ; |IR|IR[30]~reg0        ; regout           ;
+; |IR|IR[31]~reg0 ; |IR|IR[31]~reg0        ; regout           ;
+; |IR|IR[3]       ; |IR|IR[3]              ; padio            ;
+; |IR|IR[4]       ; |IR|IR[4]              ; padio            ;
+; |IR|IR[5]       ; |IR|IR[5]              ; padio            ;
+; |IR|IR[6]       ; |IR|IR[6]              ; padio            ;
+; |IR|IR[7]       ; |IR|IR[7]              ; padio            ;
+; |IR|IR[8]       ; |IR|IR[8]              ; padio            ;
+; |IR|IR[9]       ; |IR|IR[9]              ; padio            ;
+; |IR|IR[10]      ; |IR|IR[10]             ; padio            ;
+; |IR|IR[11]      ; |IR|IR[11]             ; padio            ;
+; |IR|IR[12]      ; |IR|IR[12]             ; padio            ;
+; |IR|IR[13]      ; |IR|IR[13]             ; padio            ;
+; |IR|IR[14]      ; |IR|IR[14]             ; padio            ;
+; |IR|IR[15]      ; |IR|IR[15]             ; padio            ;
+; |IR|IR[16]      ; |IR|IR[16]             ; padio            ;
+; |IR|IR[17]      ; |IR|IR[17]             ; padio            ;
+; |IR|IR[18]      ; |IR|IR[18]             ; padio            ;
+; |IR|IR[19]      ; |IR|IR[19]             ; padio            ;
+; |IR|IR[20]      ; |IR|IR[20]             ; padio            ;
+; |IR|IR[21]      ; |IR|IR[21]             ; padio            ;
+; |IR|IR[22]      ; |IR|IR[22]             ; padio            ;
+; |IR|IR[23]      ; |IR|IR[23]             ; padio            ;
+; |IR|IR[24]      ; |IR|IR[24]             ; padio            ;
+; |IR|IR[25]      ; |IR|IR[25]             ; padio            ;
+; |IR|IR[26]      ; |IR|IR[26]             ; padio            ;
+; |IR|IR[27]      ; |IR|IR[27]             ; padio            ;
+; |IR|IR[28]      ; |IR|IR[28]             ; padio            ;
+; |IR|IR[29]      ; |IR|IR[29]             ; padio            ;
+; |IR|IR[30]      ; |IR|IR[30]             ; padio            ;
+; |IR|IR[31]      ; |IR|IR[31]             ; padio            ;
+; |IR|MemData[6]  ; |IR|MemData[6]~corein  ; combout          ;
+; |IR|MemData[7]  ; |IR|MemData[7]~corein  ; combout          ;
+; |IR|MemData[8]  ; |IR|MemData[8]~corein  ; combout          ;
+; |IR|MemData[9]  ; |IR|MemData[9]~corein  ; combout          ;
+; |IR|MemData[10] ; |IR|MemData[10]~corein ; combout          ;
+; |IR|MemData[11] ; |IR|MemData[11]~corein ; combout          ;
+; |IR|MemData[12] ; |IR|MemData[12]~corein ; combout          ;
+; |IR|MemData[13] ; |IR|MemData[13]~corein ; combout          ;
+; |IR|MemData[14] ; |IR|MemData[14]~corein ; combout          ;
+; |IR|MemData[15] ; |IR|MemData[15]~corein ; combout          ;
+; |IR|MemData[16] ; |IR|MemData[16]~corein ; combout          ;
+; |IR|MemData[17] ; |IR|MemData[17]~corein ; combout          ;
+; |IR|MemData[18] ; |IR|MemData[18]~corein ; combout          ;
+; |IR|MemData[19] ; |IR|MemData[19]~corein ; combout          ;
+; |IR|MemData[20] ; |IR|MemData[20]~corein ; combout          ;
+; |IR|MemData[21] ; |IR|MemData[21]~corein ; combout          ;
+; |IR|MemData[22] ; |IR|MemData[22]~corein ; combout          ;
+; |IR|MemData[23] ; |IR|MemData[23]~corein ; combout          ;
+; |IR|MemData[24] ; |IR|MemData[24]~corein ; combout          ;
+; |IR|MemData[25] ; |IR|MemData[25]~corein ; combout          ;
+; |IR|MemData[26] ; |IR|MemData[26]~corein ; combout          ;
+; |IR|MemData[27] ; |IR|MemData[27]~corein ; combout          ;
+; |IR|MemData[28] ; |IR|MemData[28]~corein ; combout          ;
+; |IR|MemData[29] ; |IR|MemData[29]~corein ; combout          ;
+; |IR|MemData[30] ; |IR|MemData[30]~corein ; combout          ;
+; |IR|MemData[31] ; |IR|MemData[31]~corein ; combout          ;
++-----------------+------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sat Jul 17 00:38:25 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off IR -c IR
+Info: Using vector source file "D:/±à³Ì/verilog HDL/cpu/new/IR/IR.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      14.00 %
+Info: Number of transitions in simulation is 99
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 130 megabytes of memory during processing
+    Info: Processing ended: Sat Jul 17 00:38:26 2010
+    Info: Elapsed time: 00:00:01
+
+

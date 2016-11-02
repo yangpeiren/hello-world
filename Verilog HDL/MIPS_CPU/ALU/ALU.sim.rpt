@@ -1,0 +1,375 @@
+Simulator report for ALU
+Tue Jul 13 22:56:22 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 4.0 us       ;
+; Simulation Netlist Size     ; 174 nodes    ;
+; Simulation Coverage         ;      67.39 % ;
+; Total Number of Transitions ; 2273         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F484C8 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      67.39 % ;
+; Total nodes checked                                 ; 174          ;
+; Total output ports checked                          ; 184          ;
+; Total output ports with complete 1/0-value coverage ; 124          ;
+; Total output ports with no 1/0-value coverage       ; 31           ;
+; Total output ports with no 1-value coverage         ; 44           ;
+; Total output ports with no 0-value coverage         ; 47           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                           ;
++------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                      ; Output Port Name                                                                                  ; Output Port Type ;
++------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+
+; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_reg_bit1a[3] ; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|safe_q[3]               ; regout           ;
+; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_reg_bit1a[0] ; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|safe_q[0]               ; regout           ;
+; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_reg_bit1a[1] ; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|safe_q[1]               ; regout           ;
+; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_reg_bit1a[2] ; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|safe_q[2]               ; regout           ;
+; |ALU|ALU181:inst|Add0~5345                                                                     ; |ALU|ALU181:inst|Add0~5345                                                                        ; cout             ;
+; |ALU|ALU181:inst|Add0~5346                                                                     ; |ALU|ALU181:inst|Add0~5346                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5346                                                                     ; |ALU|ALU181:inst|Add0~5347                                                                        ; cout             ;
+; |ALU|ALU181:inst|Add0~5348                                                                     ; |ALU|ALU181:inst|Add0~5348                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5348                                                                     ; |ALU|ALU181:inst|Add0~5349                                                                        ; cout             ;
+; |ALU|ALU181:inst|Add0~5350                                                                     ; |ALU|ALU181:inst|Add0~5350                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5350                                                                     ; |ALU|ALU181:inst|Add0~5351                                                                        ; cout             ;
+; |ALU|ALU181:inst|Add0~5352                                                                     ; |ALU|ALU181:inst|Add0~5352                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5352                                                                     ; |ALU|ALU181:inst|Add0~5353                                                                        ; cout             ;
+; |ALU|ALU181:inst|Add0~5354                                                                     ; |ALU|ALU181:inst|Add0~5354                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5354                                                                     ; |ALU|ALU181:inst|Add0~5355                                                                        ; cout             ;
+; |ALU|ALU181:inst|Add0~5356                                                                     ; |ALU|ALU181:inst|Add0~5356                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5356                                                                     ; |ALU|ALU181:inst|Add0~5357                                                                        ; cout             ;
+; |ALU|ALU181:inst|Add0~5358                                                                     ; |ALU|ALU181:inst|Add0~5358                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5358                                                                     ; |ALU|ALU181:inst|Add0~5359                                                                        ; cout             ;
+; |ALU|ALU181:inst|Add0~5360                                                                     ; |ALU|ALU181:inst|Add0~5360                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5360                                                                     ; |ALU|ALU181:inst|Add0~5361                                                                        ; cout             ;
+; |ALU|ALU181:inst|Add0~5364                                                                     ; |ALU|ALU181:inst|Add0~5364                                                                        ; combout          ;
+; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita0   ; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita0      ; combout          ;
+; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita0   ; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita0~COUT ; cout             ;
+; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita1   ; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita1      ; combout          ;
+; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita1   ; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita1~COUT ; cout             ;
+; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita2   ; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita2      ; combout          ;
+; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita2   ; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita2~COUT ; cout             ;
+; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita3   ; |ALU|CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|counter_comb_bita3      ; combout          ;
+; |ALU|ALU181:inst|Add0~5315                                                                     ; |ALU|ALU181:inst|Add0~5315                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5316                                                                     ; |ALU|ALU181:inst|Add0~5316                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5317                                                                     ; |ALU|ALU181:inst|Add0~5317                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5318                                                                     ; |ALU|ALU181:inst|Add0~5318                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5319                                                                     ; |ALU|ALU181:inst|Add0~5319                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5320                                                                     ; |ALU|ALU181:inst|Add0~5320                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5321                                                                     ; |ALU|ALU181:inst|Add0~5321                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5322                                                                     ; |ALU|ALU181:inst|Add0~5322                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5325                                                                     ; |ALU|ALU181:inst|Add0~5325                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5326                                                                     ; |ALU|ALU181:inst|Add0~5326                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5327                                                                     ; |ALU|ALU181:inst|Add0~5327                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5328                                                                     ; |ALU|ALU181:inst|Add0~5328                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5331                                                                     ; |ALU|ALU181:inst|Add0~5331                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5332                                                                     ; |ALU|ALU181:inst|Add0~5332                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5333                                                                     ; |ALU|ALU181:inst|Add0~5333                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5334                                                                     ; |ALU|ALU181:inst|Add0~5334                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5335                                                                     ; |ALU|ALU181:inst|Add0~5335                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5336                                                                     ; |ALU|ALU181:inst|Add0~5336                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5337                                                                     ; |ALU|ALU181:inst|Add0~5337                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5338                                                                     ; |ALU|ALU181:inst|Add0~5338                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5339                                                                     ; |ALU|ALU181:inst|Add0~5339                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5340                                                                     ; |ALU|ALU181:inst|Add0~5340                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5341                                                                     ; |ALU|ALU181:inst|Add0~5341                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5343                                                                     ; |ALU|ALU181:inst|Add0~5343                                                                        ; combout          ;
+; |ALU|ALU181:inst|Mux1~255                                                                      ; |ALU|ALU181:inst|Mux1~255                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux7~333                                                                      ; |ALU|ALU181:inst|Mux7~333                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux1~256                                                                      ; |ALU|ALU181:inst|Mux1~256                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux2~229                                                                      ; |ALU|ALU181:inst|Mux2~229                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux2~230                                                                      ; |ALU|ALU181:inst|Mux2~230                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux3~229                                                                      ; |ALU|ALU181:inst|Mux3~229                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux3~230                                                                      ; |ALU|ALU181:inst|Mux3~230                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux4~230                                                                      ; |ALU|ALU181:inst|Mux4~230                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux5~229                                                                      ; |ALU|ALU181:inst|Mux5~229                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux5~230                                                                      ; |ALU|ALU181:inst|Mux5~230                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux6~229                                                                      ; |ALU|ALU181:inst|Mux6~229                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux6~230                                                                      ; |ALU|ALU181:inst|Mux6~230                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux7~335                                                                      ; |ALU|ALU181:inst|Mux7~335                                                                         ; combout          ;
+; |ALU|ALU181:inst|Mux8~248                                                                      ; |ALU|ALU181:inst|Mux8~248                                                                         ; combout          ;
+; |ALU|ALU181:inst|Add0~5362                                                                     ; |ALU|ALU181:inst|Add0~5362                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5363                                                                     ; |ALU|ALU181:inst|Add0~5363                                                                        ; combout          ;
+; |ALU|ALU181:inst|Mux0~206                                                                      ; |ALU|ALU181:inst|Mux0~206                                                                         ; combout          ;
+; |ALU|ALU181:inst|Add0~5245                                                                     ; |ALU|ALU181:inst|Add0~5245                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5246                                                                     ; |ALU|ALU181:inst|Add0~5246                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5251                                                                     ; |ALU|ALU181:inst|Add0~5251                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5254                                                                     ; |ALU|ALU181:inst|Add0~5254                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5259                                                                     ; |ALU|ALU181:inst|Add0~5259                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5261                                                                     ; |ALU|ALU181:inst|Add0~5261                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5266                                                                     ; |ALU|ALU181:inst|Add0~5266                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5267                                                                     ; |ALU|ALU181:inst|Add0~5267                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5269                                                                     ; |ALU|ALU181:inst|Add0~5269                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5270                                                                     ; |ALU|ALU181:inst|Add0~5270                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5274                                                                     ; |ALU|ALU181:inst|Add0~5274                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5275                                                                     ; |ALU|ALU181:inst|Add0~5275                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5277                                                                     ; |ALU|ALU181:inst|Add0~5277                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5278                                                                     ; |ALU|ALU181:inst|Add0~5278                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5283                                                                     ; |ALU|ALU181:inst|Add0~5283                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5286                                                                     ; |ALU|ALU181:inst|Add0~5286                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5291                                                                     ; |ALU|ALU181:inst|Add0~5291                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5293                                                                     ; |ALU|ALU181:inst|Add0~5293                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5296                                                                     ; |ALU|ALU181:inst|Add0~5296                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5297                                                                     ; |ALU|ALU181:inst|Add0~5297                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5298                                                                     ; |ALU|ALU181:inst|Add0~5298                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5299                                                                     ; |ALU|ALU181:inst|Add0~5299                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5300                                                                     ; |ALU|ALU181:inst|Add0~5300                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5301                                                                     ; |ALU|ALU181:inst|Add0~5301                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5302                                                                     ; |ALU|ALU181:inst|Add0~5302                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5303                                                                     ; |ALU|ALU181:inst|Add0~5303                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5304                                                                     ; |ALU|ALU181:inst|Add0~5304                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5305                                                                     ; |ALU|ALU181:inst|Add0~5305                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5306                                                                     ; |ALU|ALU181:inst|Add0~5306                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5307                                                                     ; |ALU|ALU181:inst|Add0~5307                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5308                                                                     ; |ALU|ALU181:inst|Add0~5308                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5366                                                                     ; |ALU|ALU181:inst|Add0~5366                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5367                                                                     ; |ALU|ALU181:inst|Add0~5367                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5368                                                                     ; |ALU|ALU181:inst|Add0~5368                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5369                                                                     ; |ALU|ALU181:inst|Add0~5369                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5370                                                                     ; |ALU|ALU181:inst|Add0~5370                                                                        ; combout          ;
+; |ALU|ALU181:inst|Add0~5371                                                                     ; |ALU|ALU181:inst|Add0~5371                                                                        ; combout          ;
+; |ALU|F[7]                                                                                      ; |ALU|F[7]                                                                                         ; padio            ;
+; |ALU|F[6]                                                                                      ; |ALU|F[6]                                                                                         ; padio            ;
+; |ALU|F[5]                                                                                      ; |ALU|F[5]                                                                                         ; padio            ;
+; |ALU|F[4]                                                                                      ; |ALU|F[4]                                                                                         ; padio            ;
+; |ALU|F[3]                                                                                      ; |ALU|F[3]                                                                                         ; padio            ;
+; |ALU|F[2]                                                                                      ; |ALU|F[2]                                                                                         ; padio            ;
+; |ALU|F[1]                                                                                      ; |ALU|F[1]                                                                                         ; padio            ;
+; |ALU|F[0]                                                                                      ; |ALU|F[0]                                                                                         ; padio            ;
+; |ALU|S[3]                                                                                      ; |ALU|S[3]                                                                                         ; padio            ;
+; |ALU|S[2]                                                                                      ; |ALU|S[2]                                                                                         ; padio            ;
+; |ALU|S[1]                                                                                      ; |ALU|S[1]                                                                                         ; padio            ;
+; |ALU|S[0]                                                                                      ; |ALU|S[0]                                                                                         ; padio            ;
+; |ALU|A0_B1                                                                                     ; |ALU|A0_B1~corein                                                                                 ; combout          ;
+; |ALU|Sclk                                                                                      ; |ALU|Sclk~corein                                                                                  ; combout          ;
+; |ALU|T4                                                                                        ; |ALU|T4~corein                                                                                    ; combout          ;
+; |ALU|A0_B1~clkctrl                                                                             ; |ALU|A0_B1~clkctrl                                                                                ; outclk           ;
+; |ALU|Sclk~clkctrl                                                                              ; |ALU|Sclk~clkctrl                                                                                 ; outclk           ;
++------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                   ;
++----------------------------+----------------------------+------------------+
+; Node Name                  ; Output Port Name           ; Output Port Type ;
++----------------------------+----------------------------+------------------+
+; |ALU|inst4                 ; |ALU|inst4                 ; regout           ;
+; |ALU|ALU181:inst|Add0~5324 ; |ALU|ALU181:inst|Add0~5324 ; combout          ;
+; |ALU|ALU181:inst|Add0~5330 ; |ALU|ALU181:inst|Add0~5330 ; combout          ;
+; |ALU|ALU181:inst|Add0~5342 ; |ALU|ALU181:inst|Add0~5342 ; combout          ;
+; |ALU|ALU181:inst|Mux4~229  ; |ALU|ALU181:inst|Mux4~229  ; combout          ;
+; |ALU|ALU181:inst|Mux7~334  ; |ALU|ALU181:inst|Mux7~334  ; combout          ;
+; |ALU|ALU181:inst|Mux0~205  ; |ALU|ALU181:inst|Mux0~205  ; combout          ;
+; |ALU|inst6                 ; |ALU|inst6                 ; combout          ;
+; |ALU|ALU181:inst|Add0~5250 ; |ALU|ALU181:inst|Add0~5250 ; combout          ;
+; |ALU|ALU181:inst|Add0~5253 ; |ALU|ALU181:inst|Add0~5253 ; combout          ;
+; |ALU|ALU181:inst|Add0~5258 ; |ALU|ALU181:inst|Add0~5258 ; combout          ;
+; |ALU|ALU181:inst|Add0~5282 ; |ALU|ALU181:inst|Add0~5282 ; combout          ;
+; |ALU|ALU181:inst|Add0~5285 ; |ALU|ALU181:inst|Add0~5285 ; combout          ;
+; |ALU|ALU181:inst|Add0~5290 ; |ALU|ALU181:inst|Add0~5290 ; combout          ;
+; |ALU|74373b:inst2|19       ; |ALU|74373b:inst2|19       ; combout          ;
+; |ALU|74373b:inst2|17       ; |ALU|74373b:inst2|17       ; combout          ;
+; |ALU|74373b:inst2|16       ; |ALU|74373b:inst2|16       ; combout          ;
+; |ALU|74373b:inst2|15       ; |ALU|74373b:inst2|15       ; combout          ;
+; |ALU|74373b:inst2|13       ; |ALU|74373b:inst2|13       ; combout          ;
+; |ALU|74373b:inst2|12       ; |ALU|74373b:inst2|12       ; combout          ;
+; |ALU|74373b:inst3|19       ; |ALU|74373b:inst3|19       ; combout          ;
+; |ALU|74373b:inst3|18       ; |ALU|74373b:inst3|18       ; combout          ;
+; |ALU|74373b:inst3|15       ; |ALU|74373b:inst3|15       ; combout          ;
+; |ALU|74373b:inst3|14       ; |ALU|74373b:inst3|14       ; combout          ;
+; |ALU|74373b:inst3|12       ; |ALU|74373b:inst3|12       ; combout          ;
+; |ALU|CO                    ; |ALU|CO                    ; padio            ;
+; |ALU|A[7]                  ; |ALU|A[7]                  ; padio            ;
+; |ALU|A[5]                  ; |ALU|A[5]                  ; padio            ;
+; |ALU|A[4]                  ; |ALU|A[4]                  ; padio            ;
+; |ALU|A[3]                  ; |ALU|A[3]                  ; padio            ;
+; |ALU|A[1]                  ; |ALU|A[1]                  ; padio            ;
+; |ALU|A[0]                  ; |ALU|A[0]                  ; padio            ;
+; |ALU|B[7]                  ; |ALU|B[7]                  ; padio            ;
+; |ALU|B[6]                  ; |ALU|B[6]                  ; padio            ;
+; |ALU|B[3]                  ; |ALU|B[3]                  ; padio            ;
+; |ALU|B[2]                  ; |ALU|B[2]                  ; padio            ;
+; |ALU|B[0]                  ; |ALU|B[0]                  ; padio            ;
+; |ALU|IN[7]                 ; |ALU|IN[7]~corein          ; combout          ;
+; |ALU|IN[5]                 ; |ALU|IN[5]~corein          ; combout          ;
+; |ALU|IN[4]                 ; |ALU|IN[4]~corein          ; combout          ;
+; |ALU|IN[3]                 ; |ALU|IN[3]~corein          ; combout          ;
+; |ALU|IN[1]                 ; |ALU|IN[1]~corein          ; combout          ;
+; |ALU|IN[0]                 ; |ALU|IN[0]~corein          ; combout          ;
+; |ALU|CN                    ; |ALU|CN~corein             ; combout          ;
++----------------------------+----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                   ;
++----------------------------+----------------------------+------------------+
+; Node Name                  ; Output Port Name           ; Output Port Type ;
++----------------------------+----------------------------+------------------+
+; |ALU|inst4                 ; |ALU|inst4                 ; regout           ;
+; |ALU|ALU181:inst|Add0~5323 ; |ALU|ALU181:inst|Add0~5323 ; combout          ;
+; |ALU|ALU181:inst|Add0~5324 ; |ALU|ALU181:inst|Add0~5324 ; combout          ;
+; |ALU|ALU181:inst|Add0~5329 ; |ALU|ALU181:inst|Add0~5329 ; combout          ;
+; |ALU|ALU181:inst|Add0~5330 ; |ALU|ALU181:inst|Add0~5330 ; combout          ;
+; |ALU|ALU181:inst|Add0~5342 ; |ALU|ALU181:inst|Add0~5342 ; combout          ;
+; |ALU|ALU181:inst|Mux4~229  ; |ALU|ALU181:inst|Mux4~229  ; combout          ;
+; |ALU|ALU181:inst|Mux7~334  ; |ALU|ALU181:inst|Mux7~334  ; combout          ;
+; |ALU|ALU181:inst|Mux0~205  ; |ALU|ALU181:inst|Mux0~205  ; combout          ;
+; |ALU|inst6                 ; |ALU|inst6                 ; combout          ;
+; |ALU|ALU181:inst|Add0~5250 ; |ALU|ALU181:inst|Add0~5250 ; combout          ;
+; |ALU|ALU181:inst|Add0~5253 ; |ALU|ALU181:inst|Add0~5253 ; combout          ;
+; |ALU|ALU181:inst|Add0~5258 ; |ALU|ALU181:inst|Add0~5258 ; combout          ;
+; |ALU|ALU181:inst|Add0~5262 ; |ALU|ALU181:inst|Add0~5262 ; combout          ;
+; |ALU|ALU181:inst|Add0~5282 ; |ALU|ALU181:inst|Add0~5282 ; combout          ;
+; |ALU|ALU181:inst|Add0~5285 ; |ALU|ALU181:inst|Add0~5285 ; combout          ;
+; |ALU|ALU181:inst|Add0~5290 ; |ALU|ALU181:inst|Add0~5290 ; combout          ;
+; |ALU|ALU181:inst|Add0~5294 ; |ALU|ALU181:inst|Add0~5294 ; combout          ;
+; |ALU|74373b:inst2|19       ; |ALU|74373b:inst2|19       ; combout          ;
+; |ALU|74373b:inst2|18       ; |ALU|74373b:inst2|18       ; combout          ;
+; |ALU|74373b:inst2|16       ; |ALU|74373b:inst2|16       ; combout          ;
+; |ALU|74373b:inst2|15       ; |ALU|74373b:inst2|15       ; combout          ;
+; |ALU|74373b:inst2|14       ; |ALU|74373b:inst2|14       ; combout          ;
+; |ALU|74373b:inst2|13       ; |ALU|74373b:inst2|13       ; combout          ;
+; |ALU|74373b:inst2|12       ; |ALU|74373b:inst2|12       ; combout          ;
+; |ALU|74373b:inst3|17       ; |ALU|74373b:inst3|17       ; combout          ;
+; |ALU|74373b:inst3|16       ; |ALU|74373b:inst3|16       ; combout          ;
+; |ALU|74373b:inst3|13       ; |ALU|74373b:inst3|13       ; combout          ;
+; |ALU|CO                    ; |ALU|CO                    ; padio            ;
+; |ALU|A[7]                  ; |ALU|A[7]                  ; padio            ;
+; |ALU|A[6]                  ; |ALU|A[6]                  ; padio            ;
+; |ALU|A[4]                  ; |ALU|A[4]                  ; padio            ;
+; |ALU|A[3]                  ; |ALU|A[3]                  ; padio            ;
+; |ALU|A[2]                  ; |ALU|A[2]                  ; padio            ;
+; |ALU|A[1]                  ; |ALU|A[1]                  ; padio            ;
+; |ALU|A[0]                  ; |ALU|A[0]                  ; padio            ;
+; |ALU|B[5]                  ; |ALU|B[5]                  ; padio            ;
+; |ALU|B[4]                  ; |ALU|B[4]                  ; padio            ;
+; |ALU|B[1]                  ; |ALU|B[1]                  ; padio            ;
+; |ALU|IN[7]                 ; |ALU|IN[7]~corein          ; combout          ;
+; |ALU|IN[6]                 ; |ALU|IN[6]~corein          ; combout          ;
+; |ALU|IN[4]                 ; |ALU|IN[4]~corein          ; combout          ;
+; |ALU|IN[3]                 ; |ALU|IN[3]~corein          ; combout          ;
+; |ALU|IN[2]                 ; |ALU|IN[2]~corein          ; combout          ;
+; |ALU|IN[1]                 ; |ALU|IN[1]~corein          ; combout          ;
+; |ALU|IN[0]                 ; |ALU|IN[0]~corein          ; combout          ;
+; |ALU|CN                    ; |ALU|CN~corein             ; combout          ;
++----------------------------+----------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Tue Jul 13 22:56:21 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off ALU -c ALU
+Info: Using vector source file "D:/±à³Ì/verilog HDL/cpu/ALU/ALU.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      67.39 %
+Info: Number of transitions in simulation is 2273
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 133 megabytes of memory during processing
+    Info: Processing ended: Tue Jul 13 22:56:22 2010
+    Info: Elapsed time: 00:00:01
+
+

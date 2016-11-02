@@ -1,0 +1,141 @@
+--lpm_mult CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEDICATED_MULTIPLIER_CIRCUITRY="AUTO" DEVICE_FAMILY="Cyclone II" DSP_BLOCK_BALANCING="Auto" INPUT_A_IS_CONSTANT="NO" INPUT_B_IS_CONSTANT="NO" LPM_REPRESENTATION="UNSIGNED" LPM_WIDTHA=32 LPM_WIDTHB=32 LPM_WIDTHP=64 LPM_WIDTHS=1 MAXIMIZE_SPEED=5 dataa datab result CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+--VERSION_BEGIN 7.2 cbx_cycloneii 2007:06:13:15:47:32:SJ cbx_lpm_add_sub 2007:08:06:16:01:34:SJ cbx_lpm_mult 2007:07:20:16:47:26:SJ cbx_mgl 2007:08:03:15:48:12:SJ cbx_padd 2007:07:12:14:48:24:SJ cbx_stratix 2007:05:02:16:27:14:SJ cbx_stratixii 2007:06:28:17:26:26:SJ cbx_util_mgl 2007:06:01:06:37:30:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2007 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION cycloneii_mac_mult (aclr, clk, dataa[dataa_width-1..0], datab[datab_width-1..0], ena, signa, signb)
+WITH ( dataa_clock, dataa_width, datab_clock, datab_width, signa_clock, signb_clock)
+RETURNS ( dataout[dataa_width+datab_width-1..0]);
+FUNCTION cycloneii_mac_out (aclr, clk, dataa[dataa_width-1..0], ena)
+WITH ( dataa_width = 0, output_clock)
+RETURNS ( dataout[dataa_width-1..0]);
+
+--synthesis_resources = dsp_9bit 8 lut 110 
+SUBDESIGN mult_9v01
+( 
+	dataa[31..0]	:	input;
+	datab[31..0]	:	input;
+	result[63..0]	:	output;
+) 
+VARIABLE 
+	mac_mult1 : cycloneii_mac_mult
+		WITH (
+			dataa_clock = "none",
+			dataa_width = 18,
+			datab_clock = "none",
+			datab_width = 18,
+			signa_clock = "none",
+			signb_clock = "none"
+		);
+	mac_mult3 : cycloneii_mac_mult
+		WITH (
+			dataa_clock = "none",
+			dataa_width = 18,
+			datab_clock = "none",
+			datab_width = 14,
+			signa_clock = "none",
+			signb_clock = "none"
+		);
+	mac_mult5 : cycloneii_mac_mult
+		WITH (
+			dataa_clock = "none",
+			dataa_width = 14,
+			datab_clock = "none",
+			datab_width = 18,
+			signa_clock = "none",
+			signb_clock = "none"
+		);
+	mac_mult7 : cycloneii_mac_mult
+		WITH (
+			dataa_clock = "none",
+			dataa_width = 14,
+			datab_clock = "none",
+			datab_width = 14,
+			signa_clock = "none",
+			signb_clock = "none"
+		);
+	mac_out2 : cycloneii_mac_out
+		WITH (
+			dataa_width = 36,
+			output_clock = "none"
+		);
+	mac_out4 : cycloneii_mac_out
+		WITH (
+			dataa_width = 32,
+			output_clock = "none"
+		);
+	mac_out6 : cycloneii_mac_out
+		WITH (
+			dataa_width = 32,
+			output_clock = "none"
+		);
+	mac_out8 : cycloneii_mac_out
+		WITH (
+			dataa_width = 28,
+			output_clock = "none"
+		);
+	add_sub10_dataa[28..0]	:	WIRE;
+	add_sub10_datab[28..0]	:	WIRE;
+	add_sub10_result[28..0]	:	WIRE;
+	add_sub11_dataa[47..0]	:	WIRE;
+	add_sub11_datab[47..0]	:	WIRE;
+	add_sub11_result[47..0]	:	WIRE;
+	add_sub9_dataa[32..0]	:	WIRE;
+	add_sub9_datab[32..0]	:	WIRE;
+	add_sub9_result[32..0]	:	WIRE;
+	w52w[50..0]	: WIRE;
+	w58w[46..0]	: WIRE;
+	w61w[50..0]	: WIRE;
+	w64w[65..0]	: WIRE;
+
+BEGIN 
+	mac_mult1.dataa[] = ( dataa[17..0]);
+	mac_mult1.datab[] = ( datab[17..0]);
+	mac_mult1.signa = B"0";
+	mac_mult1.signb = B"0";
+	mac_mult3.dataa[] = ( dataa[17..0]);
+	mac_mult3.datab[] = ( datab[31..18]);
+	mac_mult3.signa = B"0";
+	mac_mult3.signb = B"0";
+	mac_mult5.dataa[] = ( dataa[31..18]);
+	mac_mult5.datab[] = ( datab[17..0]);
+	mac_mult5.signa = B"0";
+	mac_mult5.signb = B"0";
+	mac_mult7.dataa[] = ( dataa[31..18]);
+	mac_mult7.datab[] = ( datab[31..18]);
+	mac_mult7.signa = B"0";
+	mac_mult7.signb = B"0";
+	mac_out2.dataa[] = mac_mult1.dataout[];
+	mac_out4.dataa[] = mac_mult3.dataout[];
+	mac_out6.dataa[] = mac_mult5.dataout[];
+	mac_out8.dataa[] = mac_mult7.dataout[];
+	add_sub10_result[] = add_sub10_dataa[] + add_sub10_datab[];
+	add_sub10_dataa[] = ( B"000000000000000", mac_out6.dataout[31..18]);
+	add_sub10_datab[] = ( B"0", mac_out8.dataout[27..0]);
+	add_sub11_result[] = add_sub11_dataa[] + add_sub11_datab[];
+	add_sub11_dataa[] = ( B"000000000000000", w52w[50..18]);
+	add_sub11_datab[] = ( B"0", w58w[46..0]);
+	add_sub9_result[] = add_sub9_dataa[] + add_sub9_datab[];
+	add_sub9_dataa[] = ( B"000000000000000", mac_out2.dataout[35..18]);
+	add_sub9_datab[] = ( B"0", mac_out4.dataout[31..0]);
+	result[63..0] = w64w[63..0];
+	w52w[] = ( add_sub9_result[], mac_out2.dataout[17..0]);
+	w58w[] = ( add_sub10_result[], mac_out6.dataout[17..0]);
+	w61w[] = ( add_sub9_result[], mac_out2.dataout[17..0]);
+	w64w[] = ( add_sub11_result[], w61w[17..0]);
+END;
+--VALID FILE

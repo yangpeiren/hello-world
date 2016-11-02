@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 18.589 ns
+From           : SHT_DB[1]
+To             : SHT_DC[3]$latch
+From Clock     : --
+To Clock       : SHT_DA[31]
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.142 ns
+From           : SHT_DC[14]$latch
+To             : SHT_DC[14]
+From Clock     : SHT_Func[0]
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.113 ns
+From           : SHT_DB[0]
+To             : SHT_DC[0]$latch
+From Clock     : --
+To Clock       : SHT_Func[0]
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.914 ns
+From           : IN[4]
+To             : 74373b:inst3|16
+From Clock     : --
+To Clock       : A0_B1
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 17.974 ns
+From           : CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|safe_q[0]
+To             : F[3]
+From Clock     : Sclk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.342 ns
+From           : IN[7]
+To             : 74373b:inst2|19
+From Clock     : --
+To Clock       : A0_B1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'T4'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 189.43 MHz ( period = 5.279 ns )
+From           : inst4
+To             : inst4
+From Clock     : T4
+To Clock       : T4
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CN'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 189.43 MHz ( period = 5.279 ns )
+From           : inst4
+To             : inst4
+From Clock     : CN
+To Clock       : CN
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Sclk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 340.02 MHz ( period = 2.941 ns )
+From           : CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|safe_q[0]
+To             : CNT4:inst1|lpm_counter:lpm_counter_component|cntr_okh:auto_generated|safe_q[3]
+From Clock     : Sclk
+To Clock       : Sclk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
