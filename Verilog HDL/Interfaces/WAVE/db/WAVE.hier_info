@@ -1,0 +1,145 @@
+|wave_down
+HEX0[0] <= segout:inst1.oSEG[0]
+HEX0[1] <= segout:inst1.oSEG[1]
+HEX0[2] <= segout:inst1.oSEG[2]
+HEX0[3] <= segout:inst1.oSEG[3]
+HEX0[4] <= segout:inst1.oSEG[4]
+HEX0[5] <= segout:inst1.oSEG[5]
+HEX0[6] <= segout:inst1.oSEG[6]
+CLK => clkdiv:inst4.clkin
+MODE => wave:inst.mode
+RESET => wave:inst.reset
+MAX[0] => wave:inst.max[0]
+MAX[1] => wave:inst.max[1]
+MAX[2] => wave:inst.max[2]
+MAX[3] => wave:inst.max[3]
+HEX1[0] <= segout:inst2.oSEG[0]
+HEX1[1] <= segout:inst2.oSEG[1]
+HEX1[2] <= segout:inst2.oSEG[2]
+HEX1[3] <= segout:inst2.oSEG[3]
+HEX1[4] <= segout:inst2.oSEG[4]
+HEX1[5] <= segout:inst2.oSEG[5]
+HEX1[6] <= segout:inst2.oSEG[6]
+clkstar => ~NO_FANOUT~
+
+
+|wave_down|segout:inst1
+iDIG[0] => Decoder0.IN3
+iDIG[1] => Decoder0.IN2
+iDIG[2] => Decoder0.IN1
+iDIG[3] => Decoder0.IN0
+oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|wave_down|wave:inst
+clk => count[3]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[0]~reg0.CLK
+clk => sign2[1]~reg0.CLK
+clk => sign2[0]~reg0.CLK
+clk => length[3].CLK
+clk => length[2].CLK
+clk => length[1].CLK
+clk => length[0].CLK
+clk => sign1.CLK
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+max[0] => count~19.DATAA
+max[0] => Equal3.IN3
+max[0] => Equal2.IN3
+max[0] => Add1.IN8
+max[0] => count~7.DATAB
+max[1] => count~18.DATAA
+max[1] => Equal3.IN2
+max[1] => Equal2.IN2
+max[1] => Add1.IN7
+max[1] => count~6.DATAB
+max[2] => count~17.DATAA
+max[2] => Equal3.IN1
+max[2] => Equal2.IN1
+max[2] => Add1.IN6
+max[2] => count~5.DATAB
+max[3] => count~16.DATAA
+max[3] => Equal3.IN0
+max[3] => Equal2.IN0
+max[3] => Add1.IN5
+max[3] => count~4.DATAB
+mode => disp_mode[1]~reg0.CLK
+mode => disp_mode[0]~reg0.CLK
+reset => count[3]~reg0.ACLR
+reset => count[2]~reg0.ACLR
+reset => count[1]~reg0.ACLR
+reset => count[0]~reg0.ACLR
+reset => sign1.ENA
+reset => sign2[1]~reg0.ENA
+reset => sign2[0]~reg0.ENA
+reset => length[3].ENA
+reset => length[2].ENA
+reset => length[1].ENA
+reset => length[0].ENA
+sign2[0] <= sign2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sign2[1] <= sign2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+disp_mode[0] <= disp_mode[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+disp_mode[1] <= disp_mode[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|wave_down|clkdiv:inst4
+clkin => clkout~reg0.CLK
+clkin => clk_count[31].CLK
+clkin => clk_count[30].CLK
+clkin => clk_count[29].CLK
+clkin => clk_count[28].CLK
+clkin => clk_count[27].CLK
+clkin => clk_count[26].CLK
+clkin => clk_count[25].CLK
+clkin => clk_count[24].CLK
+clkin => clk_count[23].CLK
+clkin => clk_count[22].CLK
+clkin => clk_count[21].CLK
+clkin => clk_count[20].CLK
+clkin => clk_count[19].CLK
+clkin => clk_count[18].CLK
+clkin => clk_count[17].CLK
+clkin => clk_count[16].CLK
+clkin => clk_count[15].CLK
+clkin => clk_count[14].CLK
+clkin => clk_count[13].CLK
+clkin => clk_count[12].CLK
+clkin => clk_count[11].CLK
+clkin => clk_count[10].CLK
+clkin => clk_count[9].CLK
+clkin => clk_count[8].CLK
+clkin => clk_count[7].CLK
+clkin => clk_count[6].CLK
+clkin => clk_count[5].CLK
+clkin => clk_count[4].CLK
+clkin => clk_count[3].CLK
+clkin => clk_count[2].CLK
+clkin => clk_count[1].CLK
+clkin => clk_count[0].CLK
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|wave_down|segout:inst2
+iDIG[0] => Decoder0.IN3
+iDIG[1] => Decoder0.IN2
+iDIG[2] => Decoder0.IN1
+iDIG[3] => Decoder0.IN0
+oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

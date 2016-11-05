@@ -1,0 +1,219 @@
+Version 7.2 Build 151 09/26/2007 SJ Full Version
+11
+1009
+OFF
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+da
+# storage
+db|AD.(0).cnf
+db|AD.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+da.v
+76297ea3285c17a0ce2db2e3c8aa5d63
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+wave
+# storage
+db|AD.(1).cnf
+db|AD.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+wave.v
+2e8f25481227c7261e999d64e85b3bdb
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+wave_down
+# storage
+db|AD.(2).cnf
+db|AD.(2).cnf
+# case_insensitive
+# source_file
+wave_down.bdf
+9b525662af2094aa5d78cefc8615c5
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+ad
+# storage
+db|AD.(3).cnf
+db|AD.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ad.v
+c05753a4fa9d15a85c2c316e4432ee1
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# hierarchies {
+ad:inst
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+segout
+# storage
+db|AD.(5).cnf
+db|AD.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+segout.v
+132bf38f6c3569d73d7227e6d5f1c4
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+DA_down
+# storage
+db|AD.(6).cnf
+db|AD.(6).cnf
+# case_insensitive
+# source_file
+DA_down.bdf
+75e5f48e2399cfeb637b2490cda76de1
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+AD_down
+# storage
+db|AD.(4).cnf
+db|AD.(4).cnf
+# case_insensitive
+# source_file
+AD_down.bdf
+ac1b43d7a29eb3b2191c599595498c5
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# hierarchies {
+|
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# complete
+

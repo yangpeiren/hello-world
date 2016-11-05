@@ -1,0 +1,714 @@
+Analysis & Synthesis report for 8259
+Tue May 10 17:09:49 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |8259a_down|CORE_DOWN2:inst|core:inst|state
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue May 10 17:09:49 2011    ;
+; Quartus II Version                 ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name                      ; 8259                                     ;
+; Top-level Entity Name              ; 8259a_down                               ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 429                                      ;
+;     Total combinational functions  ; 429                                      ;
+;     Dedicated logic registers      ; 17                                       ;
+; Total registers                    ; 17                                       ;
+; Total pins                         ; 74                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                          ; 8259a_down         ; 8259               ;
+; Family name                                                                    ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; DSP Block Balancing                                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II/Cyclone III                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------+
+; irr.v                            ; yes             ; User Verilog HDL File              ; D:/download/接口/8259/irr.v          ;
+; irr_a.bdf                        ; yes             ; User Block Diagram/Schematic File  ; D:/download/接口/8259/irr_a.bdf      ;
+; isr.v                            ; yes             ; User Verilog HDL File              ; D:/download/接口/8259/isr.v          ;
+; isr_a.bdf                        ; yes             ; User Block Diagram/Schematic File  ; D:/download/接口/8259/isr_a.bdf      ;
+; imr.v                            ; yes             ; User Verilog HDL File              ; D:/download/接口/8259/imr.v          ;
+; imr_a.bdf                        ; yes             ; User Block Diagram/Schematic File  ; D:/download/接口/8259/imr_a.bdf      ;
+; pr.v                             ; yes             ; User Verilog HDL File              ; D:/download/接口/8259/pr.v           ;
+; core.v                           ; yes             ; User Verilog HDL File              ; D:/download/接口/8259/core.v         ;
+; 8259a_down.bdf                   ; yes             ; User Block Diagram/Schematic File  ; D:/download/接口/8259/8259a_down.bdf ;
+; select2.v                        ; yes             ; User Verilog HDL File              ; D:/download/接口/8259/select2.v      ;
+; segout.v                         ; yes             ; User Verilog HDL File              ; D:/download/接口/8259/segout.v       ;
+; CORE_DOWN2.bdf                   ; yes             ; Other                              ; D:/download/接口/8259/CORE_DOWN2.bdf ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                    ;
++---------------------------------------------+----------------------------------+
+; Resource                                    ; Usage                            ;
++---------------------------------------------+----------------------------------+
+; Estimated Total logic elements              ; 429                              ;
+;                                             ;                                  ;
+; Total combinational functions               ; 429                              ;
+; Logic element usage by number of LUT inputs ;                                  ;
+;     -- 4 input functions                    ; 319                              ;
+;     -- 3 input functions                    ; 65                               ;
+;     -- <=2 input functions                  ; 45                               ;
+;                                             ;                                  ;
+; Logic elements by mode                      ;                                  ;
+;     -- normal mode                          ; 429                              ;
+;     -- arithmetic mode                      ; 0                                ;
+;                                             ;                                  ;
+; Total registers                             ; 17                               ;
+;     -- Dedicated logic registers            ; 17                               ;
+;     -- I/O registers                        ; 0                                ;
+;                                             ;                                  ;
+; I/O pins                                    ; 74                               ;
+; Maximum fan-out node                        ; CORE_DOWN2:inst|core:inst|pri[0] ;
+; Maximum fan-out                             ; 49                               ;
+; Total fan-out                               ; 1662                             ;
+; Average fan-out                             ; 3.20                             ;
++---------------------------------------------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                   ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------+
+; |8259a_down                ; 429 (19)          ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 74   ; 0            ; |8259a_down                           ; work         ;
+;    |CORE_DOWN2:inst|       ; 132 (0)           ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|CORE_DOWN2:inst           ; work         ;
+;       |core:inst|          ; 132 (132)         ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|CORE_DOWN2:inst|core:inst ; work         ;
+;    |imr_a:inst1|           ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|imr_a:inst1               ; work         ;
+;       |imr:inst|           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|imr_a:inst1|imr:inst      ; work         ;
+;    |irr_a:inst5|           ; 24 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|irr_a:inst5               ; work         ;
+;       |irr:inst|           ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|irr_a:inst5|irr:inst      ; work         ;
+;    |isr_a:inst2|           ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|isr_a:inst2               ; work         ;
+;       |isr:inst|           ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|isr_a:inst2|isr:inst      ; work         ;
+;    |pr:inst4|              ; 201 (201)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|pr:inst4                  ; work         ;
+;    |segout:inst3|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|segout:inst3              ; work         ;
+;    |segout:inst7|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|segout:inst7              ; work         ;
+;    |select2:inst8|         ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8259a_down|select2:inst8             ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------+
+; State Machine - |8259a_down|CORE_DOWN2:inst|core:inst|state                 ;
++------------+------------+------------+------------+------------+------------+
+; Name       ; state.0101 ; state.0100 ; state.0011 ; state.0010 ; state.0001 ;
++------------+------------+------------+------------+------------+------------+
+; state.0001 ; 0          ; 0          ; 0          ; 0          ; 0          ;
+; state.0010 ; 0          ; 0          ; 0          ; 1          ; 1          ;
+; state.0011 ; 0          ; 0          ; 1          ; 0          ; 1          ;
+; state.0100 ; 0          ; 1          ; 0          ; 0          ; 1          ;
+; state.0101 ; 1          ; 0          ; 0          ; 0          ; 1          ;
++------------+------------+------------+------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                               ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; isr_a:inst2|isr:inst|isrreg[7]                      ; GND                                ; yes                    ;
+; isr_a:inst2|isr:inst|isrreg[6]                      ; GND                                ; yes                    ;
+; isr_a:inst2|isr:inst|isrreg[5]                      ; GND                                ; yes                    ;
+; isr_a:inst2|isr:inst|isrreg[4]                      ; GND                                ; yes                    ;
+; isr_a:inst2|isr:inst|isrreg[3]                      ; GND                                ; yes                    ;
+; isr_a:inst2|isr:inst|isrreg[2]                      ; GND                                ; yes                    ;
+; isr_a:inst2|isr:inst|isrreg[1]                      ; GND                                ; yes                    ;
+; isr_a:inst2|isr:inst|isrreg[0]                      ; GND                                ; yes                    ;
+; pr:inst4|position.00000111_3378                     ; pr:inst4|position.00000111~72      ; yes                    ;
+; pr:inst4|position.00000110_3517                     ; pr:inst4|position.00000111~72      ; yes                    ;
+; pr:inst4|position.00000101_3656                     ; pr:inst4|position.00000111~72      ; yes                    ;
+; pr:inst4|position.00000100_3795                     ; pr:inst4|position.00000111~72      ; yes                    ;
+; pr:inst4|position.00000011_3934                     ; pr:inst4|position.00000111~72      ; yes                    ;
+; pr:inst4|position.00000010_4073                     ; pr:inst4|position.00000111~72      ; yes                    ;
+; pr:inst4|position.00000001_4212                     ; pr:inst4|position.00000111~72      ; yes                    ;
+; irr_a:inst5|irr:inst|irrreg[7]                      ; pr:inst4|Equal2                    ; yes                    ;
+; irr_a:inst5|irr:inst|irrreg[6]                      ; pr:inst4|Equal2                    ; yes                    ;
+; irr_a:inst5|irr:inst|irrreg[5]                      ; pr:inst4|Equal2                    ; yes                    ;
+; irr_a:inst5|irr:inst|irrreg[4]                      ; pr:inst4|Equal2                    ; yes                    ;
+; irr_a:inst5|irr:inst|irrreg[3]                      ; pr:inst4|Equal2                    ; yes                    ;
+; irr_a:inst5|irr:inst|irrreg[2]                      ; pr:inst4|Equal2                    ; yes                    ;
+; irr_a:inst5|irr:inst|irrreg[1]                      ; pr:inst4|Equal2                    ; yes                    ;
+; irr_a:inst5|irr:inst|irrreg[0]                      ; pr:inst4|Equal2                    ; yes                    ;
+; CORE_DOWN2:inst|core:inst|er[7]                     ; CORE_DOWN2:inst|core:inst|er[7]~0  ; yes                    ;
+; CORE_DOWN2:inst|core:inst|er[6]                     ; CORE_DOWN2:inst|core:inst|er[7]~0  ; yes                    ;
+; CORE_DOWN2:inst|core:inst|er[5]                     ; CORE_DOWN2:inst|core:inst|er[7]~0  ; yes                    ;
+; CORE_DOWN2:inst|core:inst|er[4]                     ; CORE_DOWN2:inst|core:inst|er[7]~0  ; yes                    ;
+; CORE_DOWN2:inst|core:inst|er[3]                     ; CORE_DOWN2:inst|core:inst|er[7]~0  ; yes                    ;
+; CORE_DOWN2:inst|core:inst|er[2]                     ; CORE_DOWN2:inst|core:inst|er[7]~0  ; yes                    ;
+; CORE_DOWN2:inst|core:inst|er[1]                     ; CORE_DOWN2:inst|core:inst|er[7]~0  ; yes                    ;
+; CORE_DOWN2:inst|core:inst|er[0]                     ; CORE_DOWN2:inst|core:inst|er[7]~0  ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw3[1]                   ; CORE_DOWN2:inst|core:inst|ocw3~0   ; yes                    ;
+; pr:inst4|hp_nmr[0]                                  ; pr:inst4|position.00000111~15      ; yes                    ;
+; pr:inst4|hp_nmr[1]                                  ; pr:inst4|position.00000111~15      ; yes                    ;
+; pr:inst4|hp_nmr[2]                                  ; pr:inst4|position.00000111~15      ; yes                    ;
+; pr:inst4|hp_nmr[3]                                  ; pr:inst4|position.00000111~15      ; yes                    ;
+; CORE_DOWN2:inst|core:inst|pri[2]                    ; CORE_DOWN2:inst|core:inst|pri[2]~0 ; yes                    ;
+; CORE_DOWN2:inst|core:inst|pri[1]                    ; CORE_DOWN2:inst|core:inst|pri[2]~0 ; yes                    ;
+; CORE_DOWN2:inst|core:inst|pri[0]                    ; CORE_DOWN2:inst|core:inst|pri[2]~0 ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw3[6]                   ; CORE_DOWN2:inst|core:inst|ocw3~0   ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw3[5]                   ; CORE_DOWN2:inst|core:inst|ocw3~0   ; yes                    ;
+; pr:inst4|position.00000000_4351                     ; pr:inst4|position.00000111~72      ; yes                    ;
+; imr_a:inst1|imr:inst|imrreg[7]                      ; WR                                 ; yes                    ;
+; imr_a:inst1|imr:inst|imrreg[6]                      ; WR                                 ; yes                    ;
+; imr_a:inst1|imr:inst|imrreg[5]                      ; WR                                 ; yes                    ;
+; imr_a:inst1|imr:inst|imrreg[4]                      ; WR                                 ; yes                    ;
+; imr_a:inst1|imr:inst|imrreg[3]                      ; WR                                 ; yes                    ;
+; imr_a:inst1|imr:inst|imrreg[2]                      ; WR                                 ; yes                    ;
+; imr_a:inst1|imr:inst|imrreg[1]                      ; WR                                 ; yes                    ;
+; imr_a:inst1|imr:inst|imrreg[0]                      ; WR                                 ; yes                    ;
+; irr_a:inst5|irr:inst|senselatch[7]                  ; GND                                ; yes                    ;
+; CORE_DOWN2:inst|core:inst|icw1[3]                   ; CORE_DOWN2:inst|core:inst|icw1~0   ; yes                    ;
+; irr_a:inst5|irr:inst|senselatch[6]                  ; GND                                ; yes                    ;
+; irr_a:inst5|irr:inst|senselatch[5]                  ; GND                                ; yes                    ;
+; irr_a:inst5|irr:inst|senselatch[4]                  ; GND                                ; yes                    ;
+; irr_a:inst5|irr:inst|senselatch[3]                  ; GND                                ; yes                    ;
+; irr_a:inst5|irr:inst|senselatch[2]                  ; GND                                ; yes                    ;
+; irr_a:inst5|irr:inst|senselatch[1]                  ; GND                                ; yes                    ;
+; irr_a:inst5|irr:inst|senselatch[0]                  ; GND                                ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw2[2]                   ; CORE_DOWN2:inst|core:inst|o2       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw2[1]                   ; CORE_DOWN2:inst|core:inst|o2       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw2[0]                   ; CORE_DOWN2:inst|core:inst|o2       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|write1                    ; GND                                ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw2[6]                   ; CORE_DOWN2:inst|core:inst|o2       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw2[5]                   ; CORE_DOWN2:inst|core:inst|o2       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|write2                    ; GND                                ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw2[7]                   ; CORE_DOWN2:inst|core:inst|o2       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw1[7]                   ; CORE_DOWN2:inst|core:inst|o1       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw3[0]                   ; CORE_DOWN2:inst|core:inst|ocw3~0   ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw1[6]                   ; CORE_DOWN2:inst|core:inst|o1       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw1[5]                   ; CORE_DOWN2:inst|core:inst|o1       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw1[4]                   ; CORE_DOWN2:inst|core:inst|o1       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw1[3]                   ; CORE_DOWN2:inst|core:inst|o1       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw1[2]                   ; CORE_DOWN2:inst|core:inst|o1       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw1[1]                   ; CORE_DOWN2:inst|core:inst|o1       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|ocw1[0]                   ; CORE_DOWN2:inst|core:inst|o1       ; yes                    ;
+; CORE_DOWN2:inst|core:inst|icw1[0]                   ; CORE_DOWN2:inst|core:inst|icw1~0   ; yes                    ;
+; CORE_DOWN2:inst|core:inst|icw1[1]                   ; CORE_DOWN2:inst|core:inst|icw1~0   ; yes                    ;
+; Number of user-specified and inferred latches = 78  ;                                    ;                        ;
++-----------------------------------------------------+------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; CORE_DOWN2:inst|core:inst|state~180   ; Lost fanout        ;
+; CORE_DOWN2:inst|core:inst|state~181   ; Lost fanout        ;
+; CORE_DOWN2:inst|core:inst|state~182   ; Lost fanout        ;
+; CORE_DOWN2:inst|core:inst|state~183   ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 17    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 17    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 6     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; CORE_DOWN2:inst|core:inst|clr_imr      ; 10      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |8259a_down|CORE_DOWN2:inst|core:inst|setzero[1] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |8259a_down|CORE_DOWN2:inst|core:inst|dataout[2] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |8259a_down|CORE_DOWN2:inst|core:inst|pri[0]~14  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |8259a_down|CORE_DOWN2:inst|core:inst|er[1]~15   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |8259a_down|gdfx_temp0[6]                        ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |8259a_down|CORE_DOWN2:inst|core:inst|Selector1  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Tue May 10 17:09:42 2011
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 8259 -c 8259
+Warning: Ignored assignments for entity "8259a" -- entity does not exist in design
+    Warning: Assignment of entity set_global_assignment -name LL_ROOT_REGION ON -entity 8259a -section_id "Root Region" is ignored
+    Warning: Assignment of entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity 8259a -section_id "Root Region" is ignored
+Warning: Ignored assignments for entity "8259a_down" -- entity does not exist in design
+    Warning: Assignment of entity set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region" is ignored
+    Warning: Assignment of entity set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region" is ignored
+    Warning: Assignment of entity set_instance_assignment -name PARTITION_HIERARCHY no_file_for_top_partition -to | -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_COLOR 2147039 -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS REPLACE_CONFLICTING -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -section_id Top is ignored
+Warning: Ignored assignments for entity "pr" -- entity does not exist in design
+    Warning: Assignment of entity set_global_assignment -name LL_ROOT_REGION ON -entity pr -section_id "Root Region" is ignored
+    Warning: Assignment of entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity pr -section_id "Root Region" is ignored
+Info: Found 1 design units, including 1 entities, in source file irr.v
+    Info: Found entity 1: irr
+Info: Found 1 design units, including 1 entities, in source file irr_a.bdf
+    Info: Found entity 1: irr_a
+Info: Found 1 design units, including 1 entities, in source file isr.v
+    Info: Found entity 1: isr
+Info: Found 1 design units, including 1 entities, in source file isr_a.bdf
+    Info: Found entity 1: isr_a
+Info: Found 1 design units, including 1 entities, in source file imr.v
+    Info: Found entity 1: imr
+Info: Found 1 design units, including 1 entities, in source file imr_a.bdf
+    Info: Found entity 1: imr_a
+Info: Found 1 design units, including 1 entities, in source file pr.v
+    Info: Found entity 1: pr
+Info: Found 1 design units, including 1 entities, in source file core.v
+    Info: Found entity 1: core
+Warning: Can't analyze file -- file D:/download/接口/8259/core_dual.bdf is missing
+Info: Found 1 design units, including 1 entities, in source file 8259a_down.bdf
+    Info: Found entity 1: 8259a_down
+Info: Found 1 design units, including 1 entities, in source file select2.v
+    Info: Found entity 1: select2
+Info: Found 1 design units, including 1 entities, in source file segout.v
+    Info: Found entity 1: segout
+Info: Elaborating entity "8259a_down" for the top level hierarchy
+Info: Elaborating entity "pr" for hierarchy "pr:inst4"
+Warning (10036): Verilog HDL or VHDL warning at pr.v(17): object "tmp" assigned a value but never read
+Warning (10240): Verilog HDL Always Construct warning at pr.v(20): inferring latch(es) for variable "hp_nmr", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at pr.v(20): inferring latch(es) for variable "position", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at pr.v(388): inferring latch(es) for variable "hp_isr", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at pr.v(582): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(583): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(584): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(585): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(586): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(587): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(588): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(589): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(590): truncated value with size 8 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at pr.v(591): truncated value with size 32 to match size of target (1)
+Info (10041): Inferred latch for "hp_isr[0]" at pr.v(388)
+Info (10041): Inferred latch for "hp_isr[1]" at pr.v(388)
+Info (10041): Inferred latch for "hp_isr[2]" at pr.v(388)
+Info (10041): Inferred latch for "hp_isr[3]" at pr.v(388)
+Info (10041): Inferred latch for "hp_isr[4]" at pr.v(388)
+Info (10041): Inferred latch for "hp_isr[5]" at pr.v(388)
+Info (10041): Inferred latch for "hp_isr[6]" at pr.v(388)
+Info (10041): Inferred latch for "hp_isr[7]" at pr.v(388)
+Info (10041): Inferred latch for "position.00001000" at pr.v(20)
+Info (10041): Inferred latch for "position.00000111" at pr.v(20)
+Info (10041): Inferred latch for "position.00000110" at pr.v(20)
+Info (10041): Inferred latch for "position.00000101" at pr.v(20)
+Info (10041): Inferred latch for "position.00000100" at pr.v(20)
+Info (10041): Inferred latch for "position.00000011" at pr.v(20)
+Info (10041): Inferred latch for "position.00000010" at pr.v(20)
+Info (10041): Inferred latch for "position.00000001" at pr.v(20)
+Info (10041): Inferred latch for "position.00000000" at pr.v(20)
+Info (10041): Inferred latch for "hp_nmr[0]" at pr.v(20)
+Info (10041): Inferred latch for "hp_nmr[1]" at pr.v(20)
+Info (10041): Inferred latch for "hp_nmr[2]" at pr.v(20)
+Info (10041): Inferred latch for "hp_nmr[3]" at pr.v(20)
+Info (10041): Inferred latch for "hp_nmr[4]" at pr.v(20)
+Info (10041): Inferred latch for "hp_nmr[5]" at pr.v(20)
+Info (10041): Inferred latch for "hp_nmr[6]" at pr.v(20)
+Info (10041): Inferred latch for "hp_nmr[7]" at pr.v(20)
+Warning: Using design file CORE_DOWN2.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: CORE_DOWN2
+Info: Elaborating entity "CORE_DOWN2" for hierarchy "CORE_DOWN2:inst"
+Info: Elaborating entity "core" for hierarchy "CORE_DOWN2:inst|core:inst"
+Warning (10230): Verilog HDL assignment warning at core.v(48): truncated value with size 32 to match size of target (1)
+Warning (10240): Verilog HDL Always Construct warning at core.v(86): inferring latch(es) for variable "write1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at core.v(86): inferring latch(es) for variable "write2", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at core.v(94): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at core.v(220): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at core.v(223): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at core.v(224): truncated value with size 32 to match size of target (1)
+Warning (10235): Verilog HDL Always Construct warning at core.v(279): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(279): variable "mclr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(280): variable "icw4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(282): variable "flag2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(283): variable "code" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(296): variable "o2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(298): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(299): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(300): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(313): variable "code" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(327): variable "mclr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at core.v(277): inferring latch(es) for variable "er", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at core.v(335): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(335): variable "mclr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(337): variable "icw4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(338): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(340): variable "er" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at core.v(340): incomplete case statement has no default case item
+Info (10264): Verilog HDL Case Statement information at core.v(340): all case item expressions in this case statement are onehot
+Warning (10235): Verilog HDL Always Construct warning at core.v(352): variable "o2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(352): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(353): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(365): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(369): variable "er" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at core.v(369): incomplete case statement has no default case item
+Warning (10235): Verilog HDL Always Construct warning at core.v(383): variable "pri" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at core.v(333): inferring latch(es) for variable "pri", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at core.v(387): truncated value with size 32 to match size of target (1)
+Warning (10235): Verilog HDL Always Construct warning at core.v(396): variable "flag2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(398): variable "code" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at core.v(415): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at core.v(416): truncated value with size 32 to match size of target (1)
+Info (10041): Inferred latch for "pri[0]" at core.v(333)
+Info (10041): Inferred latch for "pri[1]" at core.v(333)
+Info (10041): Inferred latch for "pri[2]" at core.v(333)
+Info (10041): Inferred latch for "er[0]" at core.v(277)
+Info (10041): Inferred latch for "er[1]" at core.v(277)
+Info (10041): Inferred latch for "er[2]" at core.v(277)
+Info (10041): Inferred latch for "er[3]" at core.v(277)
+Info (10041): Inferred latch for "er[4]" at core.v(277)
+Info (10041): Inferred latch for "er[5]" at core.v(277)
+Info (10041): Inferred latch for "er[6]" at core.v(277)
+Info (10041): Inferred latch for "er[7]" at core.v(277)
+Info (10041): Inferred latch for "ocw3[0]" at core.v(174)
+Info (10041): Inferred latch for "ocw3[1]" at core.v(174)
+Info (10041): Inferred latch for "ocw3[5]" at core.v(174)
+Info (10041): Inferred latch for "ocw3[6]" at core.v(174)
+Info (10041): Inferred latch for "ocw2[0]" at core.v(173)
+Info (10041): Inferred latch for "ocw2[1]" at core.v(173)
+Info (10041): Inferred latch for "ocw2[2]" at core.v(173)
+Info (10041): Inferred latch for "ocw2[5]" at core.v(173)
+Info (10041): Inferred latch for "ocw2[6]" at core.v(173)
+Info (10041): Inferred latch for "ocw2[7]" at core.v(173)
+Info (10041): Inferred latch for "ocw1[0]" at core.v(172)
+Info (10041): Inferred latch for "ocw1[1]" at core.v(172)
+Info (10041): Inferred latch for "ocw1[2]" at core.v(172)
+Info (10041): Inferred latch for "ocw1[3]" at core.v(172)
+Info (10041): Inferred latch for "ocw1[4]" at core.v(172)
+Info (10041): Inferred latch for "ocw1[5]" at core.v(172)
+Info (10041): Inferred latch for "ocw1[6]" at core.v(172)
+Info (10041): Inferred latch for "ocw1[7]" at core.v(172)
+Info (10041): Inferred latch for "icw1[0]" at core.v(168)
+Info (10041): Inferred latch for "icw1[1]" at core.v(168)
+Info (10041): Inferred latch for "icw1[3]" at core.v(168)
+Info (10041): Inferred latch for "write2" at core.v(86)
+Info (10041): Inferred latch for "write1" at core.v(86)
+Info: Elaborating entity "select2" for hierarchy "select2:inst8"
+Info: Elaborating entity "isr_a" for hierarchy "isr_a:inst2"
+Info: Elaborating entity "isr" for hierarchy "isr_a:inst2|isr:inst"
+Warning (10230): Verilog HDL assignment warning at isr.v(13): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(15): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(16): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(17): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(18): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(19): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(20): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(21): truncated value with size 32 to match size of target (1)
+Info (10041): Inferred latch for "isrreg[7]" at isr.v(21)
+Info (10041): Inferred latch for "isrreg[6]" at isr.v(20)
+Info (10041): Inferred latch for "isrreg[5]" at isr.v(19)
+Info (10041): Inferred latch for "isrreg[4]" at isr.v(18)
+Info (10041): Inferred latch for "isrreg[3]" at isr.v(17)
+Info (10041): Inferred latch for "isrreg[2]" at isr.v(16)
+Info (10041): Inferred latch for "isrreg[1]" at isr.v(15)
+Info (10041): Inferred latch for "isrreg[0]" at isr.v(13)
+Info: Elaborating entity "imr_a" for hierarchy "imr_a:inst1"
+Info: Elaborating entity "imr" for hierarchy "imr_a:inst1|imr:inst"
+Info (10041): Inferred latch for "imrreg[0]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[1]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[2]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[3]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[4]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[5]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[6]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[7]" at imr.v(7)
+Info: Elaborating entity "irr_a" for hierarchy "irr_a:inst5"
+Info: Elaborating entity "irr" for hierarchy "irr_a:inst5|irr:inst"
+Warning (10230): Verilog HDL assignment warning at irr.v(15): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(18): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(21): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(24): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(27): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(30): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(33): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(36): truncated value with size 32 to match size of target (1)
+Info (10041): Inferred latch for "senselatch[7]" at irr.v(36)
+Info (10041): Inferred latch for "irrreg[7]" at irr.v(35)
+Info (10041): Inferred latch for "senselatch[6]" at irr.v(33)
+Info (10041): Inferred latch for "irrreg[6]" at irr.v(32)
+Info (10041): Inferred latch for "senselatch[5]" at irr.v(30)
+Info (10041): Inferred latch for "irrreg[5]" at irr.v(29)
+Info (10041): Inferred latch for "senselatch[4]" at irr.v(27)
+Info (10041): Inferred latch for "irrreg[4]" at irr.v(26)
+Info (10041): Inferred latch for "senselatch[3]" at irr.v(24)
+Info (10041): Inferred latch for "irrreg[3]" at irr.v(23)
+Info (10041): Inferred latch for "senselatch[2]" at irr.v(21)
+Info (10041): Inferred latch for "irrreg[2]" at irr.v(20)
+Info (10041): Inferred latch for "senselatch[1]" at irr.v(18)
+Info (10041): Inferred latch for "irrreg[1]" at irr.v(17)
+Info (10041): Inferred latch for "senselatch[0]" at irr.v(15)
+Info (10041): Inferred latch for "irrreg[0]" at irr.v(14)
+Info: Elaborating entity "segout" for hierarchy "segout:inst3"
+Warning: Converted TRI buffer or tri-state bus to logic, or removed OPNDRN
+    Warning: Converting tri-state bus "gdfx_temp0[7]" that feeds logic into logic
+    Warning: Converting tri-state bus "gdfx_temp0[6]" that feeds logic into logic
+    Warning: Converting tri-state bus "gdfx_temp0[5]" that feeds logic into logic
+    Warning: Converting tri-state bus "gdfx_temp0[4]" that feeds logic into logic
+    Warning: Converting tri-state bus "gdfx_temp0[3]" that feeds logic into logic
+    Warning: Converting tri-state bus "gdfx_temp0[2]" that feeds logic into logic
+    Warning: Converting tri-state bus "gdfx_temp0[1]" that feeds logic into logic
+    Warning: Converting tri-state bus "gdfx_temp0[0]" that feeds logic into logic
+Warning: LATCH primitive "pr:inst4|hp_isr[0]" is permanently enabled
+Warning: LATCH primitive "pr:inst4|hp_isr[1]" is permanently enabled
+Warning: LATCH primitive "pr:inst4|hp_isr[2]" is permanently enabled
+Warning: LATCH primitive "pr:inst4|hp_isr[3]" is permanently enabled
+Info: State machine "|8259a_down|CORE_DOWN2:inst|core:inst|state" contains 5 states
+Info: Selected Auto state machine encoding method for state machine "|8259a_down|CORE_DOWN2:inst|core:inst|state"
+Info: Encoding result for state machine "|8259a_down|CORE_DOWN2:inst|core:inst|state"
+    Info: Completed encoding using 5 state bits
+        Info: Encoded state bit "CORE_DOWN2:inst|core:inst|state.0101"
+        Info: Encoded state bit "CORE_DOWN2:inst|core:inst|state.0100"
+        Info: Encoded state bit "CORE_DOWN2:inst|core:inst|state.0011"
+        Info: Encoded state bit "CORE_DOWN2:inst|core:inst|state.0010"
+        Info: Encoded state bit "CORE_DOWN2:inst|core:inst|state.0001"
+    Info: State "|8259a_down|CORE_DOWN2:inst|core:inst|state.0001" uses code string "00000"
+    Info: State "|8259a_down|CORE_DOWN2:inst|core:inst|state.0010" uses code string "00011"
+    Info: State "|8259a_down|CORE_DOWN2:inst|core:inst|state.0011" uses code string "00101"
+    Info: State "|8259a_down|CORE_DOWN2:inst|core:inst|state.0100" uses code string "01001"
+    Info: State "|8259a_down|CORE_DOWN2:inst|core:inst|state.0101" uses code string "10001"
+Warning: Latch pr:inst4|position.00000111_3378 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch pr:inst4|position.00000110_3517 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch pr:inst4|position.00000101_3656 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch pr:inst4|position.00000100_3795 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch pr:inst4|position.00000011_3934 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch pr:inst4|position.00000010_4073 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch pr:inst4|position.00000001_4212 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch CORE_DOWN2:inst|core:inst|er[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|o2
+    Warning: Ports ENA and PRE on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|clr_imr
+Warning: Latch CORE_DOWN2:inst|core:inst|er[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|o2
+    Warning: Ports ENA and PRE on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|clr_imr
+Warning: Latch CORE_DOWN2:inst|core:inst|er[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|o2
+    Warning: Ports ENA and PRE on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|clr_imr
+Warning: Latch CORE_DOWN2:inst|core:inst|er[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|o2
+    Warning: Ports ENA and PRE on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|clr_imr
+Warning: Latch CORE_DOWN2:inst|core:inst|er[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|o2
+    Warning: Ports ENA and PRE on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|clr_imr
+Warning: Latch CORE_DOWN2:inst|core:inst|er[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|o2
+    Warning: Ports ENA and PRE on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|clr_imr
+Warning: Latch CORE_DOWN2:inst|core:inst|er[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|o2
+    Warning: Ports ENA and PRE on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|clr_imr
+Warning: Latch CORE_DOWN2:inst|core:inst|er[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|o2
+    Warning: Ports ENA and PRE on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|clr_imr
+Warning: Latch CORE_DOWN2:inst|core:inst|ocw3[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal EN
+Warning: Latch pr:inst4|hp_nmr[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal pr:inst4|nmr[2]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch pr:inst4|hp_nmr[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal pr:inst4|nmr[7]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch pr:inst4|hp_nmr[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal pr:inst4|nmr[3]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch pr:inst4|hp_nmr[3] has unsafe behavior
+    Warning: Ports ENA and PRE on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch CORE_DOWN2:inst|core:inst|pri[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|ocw2[7]
+Warning: Latch CORE_DOWN2:inst|core:inst|pri[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|ocw2[7]
+Warning: Latch CORE_DOWN2:inst|core:inst|pri[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal CORE_DOWN2:inst|core:inst|ocw2[7]
+Warning: Latch CORE_DOWN2:inst|core:inst|ocw3[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal EN
+Warning: Latch CORE_DOWN2:inst|core:inst|ocw3[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal EN
+Warning: Latch pr:inst4|position.00000000_4351 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal pr:inst4|nmr[7]
+Warning: Latch CORE_DOWN2:inst|core:inst|ocw2[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal EN
+Warning: Latch CORE_DOWN2:inst|core:inst|ocw2[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal EN
+Warning: Latch CORE_DOWN2:inst|core:inst|ocw2[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal EN
+Warning: Latch CORE_DOWN2:inst|core:inst|ocw2[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal EN
+Warning: Latch CORE_DOWN2:inst|core:inst|ocw2[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal EN
+Warning: Latch CORE_DOWN2:inst|core:inst|ocw2[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal EN
+Warning: Latch CORE_DOWN2:inst|core:inst|ocw3[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal EN
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX4[6]" stuck at VCC
+    Warning (13410): Pin "HEX4[2]" stuck at GND
+    Warning (13410): Pin "HEX4[1]" stuck at GND
+Info: 4 registers lost all their fanouts during netlist optimizations. The first 4 are displayed below.
+    Info: Register "CORE_DOWN2:inst|core:inst|state~180" lost all its fanouts during netlist optimizations.
+    Info: Register "CORE_DOWN2:inst|core:inst|state~181" lost all its fanouts during netlist optimizations.
+    Info: Register "CORE_DOWN2:inst|core:inst|state~182" lost all its fanouts during netlist optimizations.
+    Info: Register "CORE_DOWN2:inst|core:inst|state~183" lost all its fanouts during netlist optimizations.
+Warning: Ignored assignments for entity "8259a" -- entity does not exist in design
+    Warning: Assignment of entity set_global_assignment -name LL_ROOT_REGION ON -entity 8259a -section_id "Root Region" is ignored
+    Warning: Assignment of entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity 8259a -section_id "Root Region" is ignored
+Info: Generated suppressed messages file D:/download/接口/8259/8259.map.smsg
+Info: Implemented 510 device resources after synthesis - the final resource count might be different
+    Info: Implemented 23 input pins
+    Info: Implemented 51 output pins
+    Info: Implemented 436 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 185 warnings
+    Info: Allocated 175 megabytes of memory during processing
+    Info: Processing ended: Tue May 10 17:09:49 2011
+    Info: Elapsed time: 00:00:07
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/download/接口/8259/8259.map.smsg.
+
+

@@ -1,0 +1,695 @@
+Simulator report for pic8255
+Thu Apr 15 15:51:30 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 372 nodes    ;
+; Simulation Coverage         ;      33.33 % ;
+; Total Number of Transitions ; 498          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                          ;
++--------------------------------------------------------------------------------------------+----------------+---------------+
+; Option                                                                                     ; Setting        ; Default Value ;
++--------------------------------------------------------------------------------------------+----------------+---------------+
+; Simulation mode                                                                            ; Timing         ; Timing        ;
+; Start time                                                                                 ; 0 ns           ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF           ;               ;
+; Vector input source                                                                        ; 8225_down2.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On             ; On            ;
+; Check outputs                                                                              ; Off            ; Off           ;
+; Report simulation coverage                                                                 ; On             ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On             ; On            ;
+; Display missing 1-value coverage report                                                    ; On             ; On            ;
+; Display missing 0-value coverage report                                                    ; On             ; On            ;
+; Detect setup and hold time violations                                                      ; Off            ; Off           ;
+; Detect glitches                                                                            ; Off            ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off            ; Off           ;
+; Generate Signal Activity File                                                              ; Off            ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off            ; Off           ;
+; Group bus channels in simulation results                                                   ; Off            ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On             ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE     ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off            ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off            ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto           ; Auto          ;
++--------------------------------------------------------------------------------------------+----------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      33.33 % ;
+; Total nodes checked                                 ; 372          ;
+; Total output ports checked                          ; 372          ;
+; Total output ports with complete 1/0-value coverage ; 124          ;
+; Total output ports with no 1/0-value coverage       ; 154          ;
+; Total output ports with no 1-value coverage         ; 216          ;
+; Total output ports with no 0-value coverage         ; 186          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                  ;
++---------------------------------------------+---------------------------------------------+------------------+
+; Node Name                                   ; Output Port Name                            ; Output Port Type ;
++---------------------------------------------+---------------------------------------------+------------------+
+; |8255_down|pic8255:inst|PC_R_OUT[0]~392     ; |8255_down|pic8255:inst|PC_R_OUT[0]~392     ; combout          ;
+; |8255_down|select4:inst4|mode[0]            ; |8255_down|select4:inst4|mode[0]            ; regout           ;
+; |8255_down|pic8255:inst|PC_out~314          ; |8255_down|pic8255:inst|PC_out~314          ; combout          ;
+; |8255_down|pic8255:inst|PC_out~315          ; |8255_down|pic8255:inst|PC_out~315          ; combout          ;
+; |8255_down|pic8255:inst|PC_CTRL             ; |8255_down|pic8255:inst|PC_CTRL             ; combout          ;
+; |8255_down|select4:inst4|Mux2~158           ; |8255_down|select4:inst4|Mux2~158           ; combout          ;
+; |8255_down|select4:inst4|Mux6~12            ; |8255_down|select4:inst4|Mux6~12            ; combout          ;
+; |8255_down|select4:inst4|Mux6~13            ; |8255_down|select4:inst4|Mux6~13            ; combout          ;
+; |8255_down|select4:inst4|Mux5~17            ; |8255_down|select4:inst4|Mux5~17            ; combout          ;
+; |8255_down|select4:inst4|Mux5               ; |8255_down|select4:inst4|Mux5               ; combout          ;
+; |8255_down|segout4:inst1|WideOr1~23         ; |8255_down|segout4:inst1|WideOr1~23         ; combout          ;
+; |8255_down|segout4:inst1|WideOr2~21         ; |8255_down|segout4:inst1|WideOr2~21         ; combout          ;
+; |8255_down|segout4:inst1|WideOr3~23         ; |8255_down|segout4:inst1|WideOr3~23         ; combout          ;
+; |8255_down|segout4:inst1|WideOr4~23         ; |8255_down|segout4:inst1|WideOr4~23         ; combout          ;
+; |8255_down|segout4:inst1|WideOr5~23         ; |8255_down|segout4:inst1|WideOr5~23         ; combout          ;
+; |8255_down|segout4:inst1|WideOr6~23         ; |8255_down|segout4:inst1|WideOr6~23         ; combout          ;
+; |8255_down|select4:inst4|Mux2~159           ; |8255_down|select4:inst4|Mux2~159           ; combout          ;
+; |8255_down|select4:inst4|Mux2~160           ; |8255_down|select4:inst4|Mux2~160           ; combout          ;
+; |8255_down|select4:inst4|Mux1~17            ; |8255_down|select4:inst4|Mux1~17            ; combout          ;
+; |8255_down|segout4:inst5|WideOr0~23         ; |8255_down|segout4:inst5|WideOr0~23         ; combout          ;
+; |8255_down|segout4:inst5|WideOr3~23         ; |8255_down|segout4:inst5|WideOr3~23         ; combout          ;
+; |8255_down|segout4:inst5|WideOr6~23         ; |8255_down|segout4:inst5|WideOr6~23         ; combout          ;
+; |8255_down|select4_1:inst3|mode[0]          ; |8255_down|select4_1:inst3|mode[0]          ; regout           ;
+; |8255_down|segout4:inst7|Decoder0~50        ; |8255_down|segout4:inst7|Decoder0~50        ; combout          ;
+; |8255_down|segout4:inst6|Decoder0~35        ; |8255_down|segout4:inst6|Decoder0~35        ; combout          ;
+; |8255_down|segout4:inst6|Decoder0~36        ; |8255_down|segout4:inst6|Decoder0~36        ; combout          ;
+; |8255_down|select4:inst4|mode[1]~25         ; |8255_down|select4:inst4|mode[1]~25         ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~611        ; |8255_down|pic8255:inst|PC_R_OUT~611        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~612        ; |8255_down|pic8255:inst|PC_R_OUT~612        ; combout          ;
+; |8255_down|pic8255:inst|PA_MODE[1]~370      ; |8255_down|pic8255:inst|PA_MODE[1]~370      ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~614        ; |8255_down|pic8255:inst|PC_R_OUT~614        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~615        ; |8255_down|pic8255:inst|PC_R_OUT~615        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~616        ; |8255_down|pic8255:inst|PC_R_OUT~616        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~617        ; |8255_down|pic8255:inst|PC_R_OUT~617        ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[3]~head_lut  ; |8255_down|pic8255:inst|D_R_IN[3]~head_lut  ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~621        ; |8255_down|pic8255:inst|PC_R_OUT~621        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~623        ; |8255_down|pic8255:inst|PC_R_OUT~623        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~627        ; |8255_down|pic8255:inst|PC_R_OUT~627        ; combout          ;
+; |8255_down|select4_1:inst3|mode[1]~20       ; |8255_down|select4_1:inst3|mode[1]~20       ; combout          ;
+; |8255_down|pic8255:inst|PB_BUS~25           ; |8255_down|pic8255:inst|PB_BUS~25           ; combout          ;
+; |8255_down|pic8255:inst|BUS_CTRL_new~51     ; |8255_down|pic8255:inst|BUS_CTRL_new~51     ; combout          ;
+; |8255_down|pic8255:inst|R~23                ; |8255_down|pic8255:inst|R~23                ; combout          ;
+; |8255_down|pic8255:inst|PB_0~20             ; |8255_down|pic8255:inst|PB_0~20             ; combout          ;
+; |8255_down|pic8255:inst|PB_BUS~26           ; |8255_down|pic8255:inst|PB_BUS~26           ; combout          ;
+; |8255_down|pic8255:inst|BUS_PA~47           ; |8255_down|pic8255:inst|BUS_PA~47           ; combout          ;
+; |8255_down|pic8255:inst|BUS_PA              ; |8255_down|pic8255:inst|BUS_PA              ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~452          ; |8255_down|pic8255:inst|D_R_IN~452          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~453          ; |8255_down|pic8255:inst|D_R_IN~453          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~454          ; |8255_down|pic8255:inst|D_R_IN~454          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[1]~data_lut  ; |8255_down|pic8255:inst|D_R_IN[1]~data_lut  ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~456          ; |8255_down|pic8255:inst|D_R_IN~456          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~458          ; |8255_down|pic8255:inst|D_R_IN~458          ; combout          ;
+; |8255_down|pic8255:inst|intra~561           ; |8255_down|pic8255:inst|intra~561           ; combout          ;
+; |8255_down|pic8255:inst|intra~562           ; |8255_down|pic8255:inst|intra~562           ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~460          ; |8255_down|pic8255:inst|D_R_IN~460          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~461          ; |8255_down|pic8255:inst|D_R_IN~461          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[4]~data_lut  ; |8255_down|pic8255:inst|D_R_IN[4]~data_lut  ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~462          ; |8255_down|pic8255:inst|D_R_IN~462          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~463          ; |8255_down|pic8255:inst|D_R_IN~463          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~464          ; |8255_down|pic8255:inst|D_R_IN~464          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~465          ; |8255_down|pic8255:inst|D_R_IN~465          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~466          ; |8255_down|pic8255:inst|D_R_IN~466          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~468          ; |8255_down|pic8255:inst|D_R_IN~468          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~469          ; |8255_down|pic8255:inst|D_R_IN~469          ; combout          ;
+; |8255_down|pic8255:inst|PB_BUS_new          ; |8255_down|pic8255:inst|PB_BUS_new          ; combout          ;
+; |8255_down|pic8255:inst|PA_BUS_new          ; |8255_down|pic8255:inst|PA_BUS_new          ; combout          ;
+; |8255_down|select4:inst4|Mux2~161           ; |8255_down|select4:inst4|Mux2~161           ; combout          ;
+; |8255_down|pic8255:inst|PB_0                ; |8255_down|pic8255:inst|PB_0                ; combout          ;
+; |8255_down|pic8255:inst|intra~564           ; |8255_down|pic8255:inst|intra~564           ; combout          ;
+; |8255_down|pic8255:inst|PA_0                ; |8255_down|pic8255:inst|PA_0                ; combout          ;
+; |8255_down|select4:inst4|mode[0]~26         ; |8255_down|select4:inst4|mode[0]~26         ; combout          ;
+; |8255_down|select4_1:inst3|mode[0]~21       ; |8255_down|select4_1:inst3|mode[0]~21       ; combout          ;
+; |8255_down|select4_1:inst3|out1[7]          ; |8255_down|select4_1:inst3|out1[7]          ; combout          ;
+; |8255_down|select4_1:inst3|out1[2]          ; |8255_down|select4_1:inst3|out1[2]          ; combout          ;
+; |8255_down|select4_1:inst3|out1[1]          ; |8255_down|select4_1:inst3|out1[1]          ; combout          ;
+; |8255_down|select4_1:inst3|out1[5]          ; |8255_down|select4_1:inst3|out1[5]          ; combout          ;
+; |8255_down|select4_1:inst3|out1[4]          ; |8255_down|select4_1:inst3|out1[4]          ; combout          ;
+; |8255_down|select4_1:inst3|out3[1]          ; |8255_down|select4_1:inst3|out3[1]          ; combout          ;
+; |8255_down|pic8255:inst|PB_R_IN[1]          ; |8255_down|pic8255:inst|PB_R_IN[1]          ; combout          ;
+; |8255_down|select4_1:inst3|out3[4]          ; |8255_down|select4_1:inst3|out3[4]          ; combout          ;
+; |8255_down|pic8255:inst|PB_R_IN[4]          ; |8255_down|pic8255:inst|PB_R_IN[4]          ; combout          ;
+; |8255_down|HEX0[5]                          ; |8255_down|HEX0[5]                          ; padio            ;
+; |8255_down|HEX0[4]                          ; |8255_down|HEX0[4]                          ; padio            ;
+; |8255_down|HEX0[3]                          ; |8255_down|HEX0[3]                          ; padio            ;
+; |8255_down|HEX0[2]                          ; |8255_down|HEX0[2]                          ; padio            ;
+; |8255_down|HEX0[1]                          ; |8255_down|HEX0[1]                          ; padio            ;
+; |8255_down|HEX0[0]                          ; |8255_down|HEX0[0]                          ; padio            ;
+; |8255_down|HEX1[6]                          ; |8255_down|HEX1[6]                          ; padio            ;
+; |8255_down|HEX1[3]                          ; |8255_down|HEX1[3]                          ; padio            ;
+; |8255_down|HEX1[0]                          ; |8255_down|HEX1[0]                          ; padio            ;
+; |8255_down|HEX4[4]                          ; |8255_down|HEX4[4]                          ; padio            ;
+; |8255_down|HEX4[3]                          ; |8255_down|HEX4[3]                          ; padio            ;
+; |8255_down|HEX4[0]                          ; |8255_down|HEX4[0]                          ; padio            ;
+; |8255_down|HEX6[5]                          ; |8255_down|HEX6[5]                          ; padio            ;
+; |8255_down|HEX6[4]                          ; |8255_down|HEX6[4]                          ; padio            ;
+; |8255_down|HEX6[3]                          ; |8255_down|HEX6[3]                          ; padio            ;
+; |8255_down|HEX6[0]                          ; |8255_down|HEX6[0]                          ; padio            ;
+; |8255_down|inmode1[0]                       ; |8255_down|inmode1[0]                       ; padio            ;
+; |8255_down|out[5]                           ; |8255_down|out[5]                           ; padio            ;
+; |8255_down|out[2]                           ; |8255_down|out[2]                           ; padio            ;
+; |8255_down|out[1]                           ; |8255_down|out[1]                           ; padio            ;
+; |8255_down|outmode1[0]                      ; |8255_down|outmode1[0]                      ; padio            ;
+; |8255_down|A0                               ; |8255_down|A0~corein                        ; combout          ;
+; |8255_down|rd                               ; |8255_down|rd~corein                        ; combout          ;
+; |8255_down|A1                               ; |8255_down|A1~corein                        ; combout          ;
+; |8255_down|cs                               ; |8255_down|cs~corein                        ; combout          ;
+; |8255_down|WR                               ; |8255_down|WR~corein                        ; combout          ;
+; |8255_down|out_sel                          ; |8255_down|out_sel~corein                   ; combout          ;
+; |8255_down|out_reset                        ; |8255_down|out_reset~corein                 ; combout          ;
+; |8255_down|reset                            ; |8255_down|reset~corein                     ; combout          ;
+; |8255_down|in[7]                            ; |8255_down|in[7]~corein                     ; combout          ;
+; |8255_down|in_sel                           ; |8255_down|in_sel~corein                    ; combout          ;
+; |8255_down|in[2]                            ; |8255_down|in[2]~corein                     ; combout          ;
+; |8255_down|in[1]                            ; |8255_down|in[1]~corein                     ; combout          ;
+; |8255_down|in[5]                            ; |8255_down|in[5]~corein                     ; combout          ;
+; |8255_down|in[4]                            ; |8255_down|in[4]~corein                     ; combout          ;
+; |8255_down|out_reset~clk_delay_ctrl         ; |8255_down|out_reset~clk_delay_ctrl         ; clkout           ;
+; |8255_down|out_sel~clk_delay_ctrl           ; |8255_down|out_sel~clk_delay_ctrl           ; clkout           ;
+; |8255_down|pic8255:inst|BUS_PA~clkctrl      ; |8255_down|pic8255:inst|BUS_PA~clkctrl      ; outclk           ;
+; |8255_down|pic8255:inst|PC_CTRL~clkctrl     ; |8255_down|pic8255:inst|PC_CTRL~clkctrl     ; outclk           ;
+; |8255_down|segout4:inst7|Decoder0~50clkctrl ; |8255_down|segout4:inst7|Decoder0~50clkctrl ; outclk           ;
+; |8255_down|pic8255:inst|R~23clkctrl         ; |8255_down|pic8255:inst|R~23clkctrl         ; outclk           ;
+; |8255_down|out_reset~clkctrl                ; |8255_down|out_reset~clkctrl                ; outclk           ;
+; |8255_down|out_sel~clkctrl                  ; |8255_down|out_sel~clkctrl                  ; outclk           ;
++---------------------------------------------+---------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                         ;
++-----------------------------------------------+-----------------------------------------------+------------------+
+; Node Name                                     ; Output Port Name                              ; Output Port Type ;
++-----------------------------------------------+-----------------------------------------------+------------------+
+; |8255_down|pic8255:inst|PC_R_OUT[0]           ; |8255_down|pic8255:inst|PC_R_OUT[0]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[1]           ; |8255_down|pic8255:inst|PC_R_OUT[1]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[3]           ; |8255_down|pic8255:inst|PC_R_OUT[3]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[6]           ; |8255_down|pic8255:inst|PC_R_OUT[6]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[7]           ; |8255_down|pic8255:inst|PC_R_OUT[7]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[1]~393       ; |8255_down|pic8255:inst|PC_R_OUT[1]~393       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[2]~394       ; |8255_down|pic8255:inst|PC_R_OUT[2]~394       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[3]~395       ; |8255_down|pic8255:inst|PC_R_OUT[3]~395       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[4]~396       ; |8255_down|pic8255:inst|PC_R_OUT[4]~396       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[5]~397       ; |8255_down|pic8255:inst|PC_R_OUT[5]~397       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[6]~398       ; |8255_down|pic8255:inst|PC_R_OUT[6]~398       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[7]~399       ; |8255_down|pic8255:inst|PC_R_OUT[7]~399       ; combout          ;
+; |8255_down|pic8255:inst|PB_R_OUT[0]           ; |8255_down|pic8255:inst|PB_R_OUT[0]           ; regout           ;
+; |8255_down|select4:inst4|mode[1]              ; |8255_down|select4:inst4|mode[1]              ; regout           ;
+; |8255_down|select4:inst4|Mux2~156             ; |8255_down|select4:inst4|Mux2~156             ; combout          ;
+; |8255_down|select4:inst4|Mux2~157             ; |8255_down|select4:inst4|Mux2~157             ; combout          ;
+; |8255_down|pic8255:inst|PA_R_OUT[0]           ; |8255_down|pic8255:inst|PA_R_OUT[0]           ; regout           ;
+; |8255_down|pic8255:inst|PB_MODE               ; |8255_down|pic8255:inst|PB_MODE               ; regout           ;
+; |8255_down|pic8255:inst|PA_MODE[1]            ; |8255_down|pic8255:inst|PA_MODE[1]            ; regout           ;
+; |8255_down|pic8255:inst|PA_MODE[0]            ; |8255_down|pic8255:inst|PA_MODE[0]            ; regout           ;
+; |8255_down|pic8255:inst|PCH_IO                ; |8255_down|pic8255:inst|PCH_IO                ; regout           ;
+; |8255_down|pic8255:inst|PCL_IO                ; |8255_down|pic8255:inst|PCL_IO                ; regout           ;
+; |8255_down|select4:inst4|Mux7~77              ; |8255_down|select4:inst4|Mux7~77              ; combout          ;
+; |8255_down|select4:inst4|Mux7~78              ; |8255_down|select4:inst4|Mux7~78              ; combout          ;
+; |8255_down|pic8255:inst|PB_R_OUT[1]           ; |8255_down|pic8255:inst|PB_R_OUT[1]           ; regout           ;
+; |8255_down|pic8255:inst|PA_R_OUT[1]           ; |8255_down|pic8255:inst|PA_R_OUT[1]           ; regout           ;
+; |8255_down|pic8255:inst|PC_out[1]~316         ; |8255_down|pic8255:inst|PC_out[1]~316         ; combout          ;
+; |8255_down|pic8255:inst|PC_out[1]~317         ; |8255_down|pic8255:inst|PC_out[1]~317         ; combout          ;
+; |8255_down|pic8255:inst|PB_R_OUT[2]           ; |8255_down|pic8255:inst|PB_R_OUT[2]           ; regout           ;
+; |8255_down|pic8255:inst|PB_R_OUT[3]           ; |8255_down|pic8255:inst|PB_R_OUT[3]           ; regout           ;
+; |8255_down|pic8255:inst|PA_R_OUT[3]           ; |8255_down|pic8255:inst|PA_R_OUT[3]           ; regout           ;
+; |8255_down|select4:inst4|Mux4~79              ; |8255_down|select4:inst4|Mux4~79              ; combout          ;
+; |8255_down|select4:inst4|Mux4~80              ; |8255_down|select4:inst4|Mux4~80              ; combout          ;
+; |8255_down|pic8255:inst|PB_R_OUT[4]           ; |8255_down|pic8255:inst|PB_R_OUT[4]           ; regout           ;
+; |8255_down|pic8255:inst|PB_R_OUT[5]           ; |8255_down|pic8255:inst|PB_R_OUT[5]           ; regout           ;
+; |8255_down|pic8255:inst|PA_R_OUT[6]           ; |8255_down|pic8255:inst|PA_R_OUT[6]           ; regout           ;
+; |8255_down|pic8255:inst|PB_R_OUT[6]           ; |8255_down|pic8255:inst|PB_R_OUT[6]           ; regout           ;
+; |8255_down|select4:inst4|Mux1                 ; |8255_down|select4:inst4|Mux1                 ; combout          ;
+; |8255_down|pic8255:inst|PB_R_OUT[7]           ; |8255_down|pic8255:inst|PB_R_OUT[7]           ; regout           ;
+; |8255_down|pic8255:inst|PA_R_OUT[7]           ; |8255_down|pic8255:inst|PA_R_OUT[7]           ; regout           ;
+; |8255_down|select4:inst4|Mux0~62              ; |8255_down|select4:inst4|Mux0~62              ; combout          ;
+; |8255_down|select4:inst4|Mux0~63              ; |8255_down|select4:inst4|Mux0~63              ; combout          ;
+; |8255_down|segout4:inst5|WideOr4~23           ; |8255_down|segout4:inst5|WideOr4~23           ; combout          ;
+; |8255_down|segout4:inst5|WideOr5~23           ; |8255_down|segout4:inst5|WideOr5~23           ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~613          ; |8255_down|pic8255:inst|PC_R_OUT~613          ; combout          ;
+; |8255_down|pic8255:inst|intrb~_emulated       ; |8255_down|pic8255:inst|intrb~_emulated       ; regout           ;
+; |8255_down|pic8255:inst|intrb~head_lut        ; |8255_down|pic8255:inst|intrb~head_lut        ; combout          ;
+; |8255_down|pic8255:inst|PA_IO                 ; |8255_down|pic8255:inst|PA_IO                 ; regout           ;
+; |8255_down|pic8255:inst|PA_R_OUT[5]~326       ; |8255_down|pic8255:inst|PA_R_OUT[5]~326       ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[0]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[0]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|D_R_IN[0]~head_lut    ; |8255_down|pic8255:inst|D_R_IN[0]~head_lut    ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[1]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[1]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|ibfb~_emulated        ; |8255_down|pic8255:inst|ibfb~_emulated        ; regout           ;
+; |8255_down|pic8255:inst|ibfb~head_lut         ; |8255_down|pic8255:inst|ibfb~head_lut         ; combout          ;
+; |8255_down|pic8255:inst|obfb~_emulated        ; |8255_down|pic8255:inst|obfb~_emulated        ; regout           ;
+; |8255_down|pic8255:inst|obfb~head_lut         ; |8255_down|pic8255:inst|obfb~head_lut         ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[2]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[2]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|D_R_IN[2]~head_lut    ; |8255_down|pic8255:inst|D_R_IN[2]~head_lut    ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~618          ; |8255_down|pic8255:inst|PC_R_OUT~618          ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~619          ; |8255_down|pic8255:inst|PC_R_OUT~619          ; combout          ;
+; |8255_down|pic8255:inst|intra~_emulated       ; |8255_down|pic8255:inst|intra~_emulated       ; regout           ;
+; |8255_down|pic8255:inst|intra~head_lut        ; |8255_down|pic8255:inst|intra~head_lut        ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[3]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[3]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT~620          ; |8255_down|pic8255:inst|PC_R_OUT~620          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[4]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[4]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT~622          ; |8255_down|pic8255:inst|PC_R_OUT~622          ; combout          ;
+; |8255_down|pic8255:inst|ibfa~_emulated        ; |8255_down|pic8255:inst|ibfa~_emulated        ; regout           ;
+; |8255_down|pic8255:inst|ibfa~head_lut         ; |8255_down|pic8255:inst|ibfa~head_lut         ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[5]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[5]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|D_R_IN[5]~head_lut    ; |8255_down|pic8255:inst|D_R_IN[5]~head_lut    ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~624          ; |8255_down|pic8255:inst|PC_R_OUT~624          ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~625          ; |8255_down|pic8255:inst|PC_R_OUT~625          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[6]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[6]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|D_R_IN[6]~head_lut    ; |8255_down|pic8255:inst|D_R_IN[6]~head_lut    ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~626          ; |8255_down|pic8255:inst|PC_R_OUT~626          ; combout          ;
+; |8255_down|pic8255:inst|obfa~_emulated        ; |8255_down|pic8255:inst|obfa~_emulated        ; regout           ;
+; |8255_down|pic8255:inst|obfa~head_lut         ; |8255_down|pic8255:inst|obfa~head_lut         ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[7]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[7]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|D_R_IN[7]~head_lut    ; |8255_down|pic8255:inst|D_R_IN[7]~head_lut    ; combout          ;
+; |8255_down|pic8255:inst|BUS_PB                ; |8255_down|pic8255:inst|BUS_PB                ; combout          ;
+; |8255_down|pic8255:inst|intrb~data_lut        ; |8255_down|pic8255:inst|intrb~data_lut        ; combout          ;
+; |8255_down|pic8255:inst|PB_R_IN[0]~43         ; |8255_down|pic8255:inst|PB_R_IN[0]~43         ; combout          ;
+; |8255_down|pic8255:inst|intrb~621             ; |8255_down|pic8255:inst|intrb~621             ; combout          ;
+; |8255_down|pic8255:inst|intrb~622             ; |8255_down|pic8255:inst|intrb~622             ; combout          ;
+; |8255_down|pic8255:inst|intrb~623             ; |8255_down|pic8255:inst|intrb~623             ; combout          ;
+; |8255_down|pic8255:inst|always13~3            ; |8255_down|pic8255:inst|always13~3            ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[0]~data_lut    ; |8255_down|pic8255:inst|D_R_IN[0]~data_lut    ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[0]~450         ; |8255_down|pic8255:inst|D_R_IN[0]~450         ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[0]~451         ; |8255_down|pic8255:inst|D_R_IN[0]~451         ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~455            ; |8255_down|pic8255:inst|D_R_IN~455            ; combout          ;
+; |8255_down|pic8255:inst|ibfb~data_lut         ; |8255_down|pic8255:inst|ibfb~data_lut         ; combout          ;
+; |8255_down|segout4:inst7|Decoder0~52          ; |8255_down|segout4:inst7|Decoder0~52          ; combout          ;
+; |8255_down|pic8255:inst|ibfb~46               ; |8255_down|pic8255:inst|ibfb~46               ; combout          ;
+; |8255_down|pic8255:inst|obfb~data_lut         ; |8255_down|pic8255:inst|obfb~data_lut         ; combout          ;
+; |8255_down|pic8255:inst|obfb~51               ; |8255_down|pic8255:inst|obfb~51               ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[2]~data_lut    ; |8255_down|pic8255:inst|D_R_IN[2]~data_lut    ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~459            ; |8255_down|pic8255:inst|D_R_IN~459            ; combout          ;
+; |8255_down|pic8255:inst|always1~34            ; |8255_down|pic8255:inst|always1~34            ; combout          ;
+; |8255_down|pic8255:inst|Equal1~54             ; |8255_down|pic8255:inst|Equal1~54             ; combout          ;
+; |8255_down|pic8255:inst|intra~data_lut        ; |8255_down|pic8255:inst|intra~data_lut        ; combout          ;
+; |8255_down|pic8255:inst|intra~559             ; |8255_down|pic8255:inst|intra~559             ; combout          ;
+; |8255_down|pic8255:inst|stbacka~40            ; |8255_down|pic8255:inst|stbacka~40            ; combout          ;
+; |8255_down|pic8255:inst|intra~560             ; |8255_down|pic8255:inst|intra~560             ; combout          ;
+; |8255_down|pic8255:inst|intra~563             ; |8255_down|pic8255:inst|intra~563             ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[3]~data_lut    ; |8255_down|pic8255:inst|D_R_IN[3]~data_lut    ; combout          ;
+; |8255_down|pic8255:inst|ibfa~data_lut         ; |8255_down|pic8255:inst|ibfa~data_lut         ; combout          ;
+; |8255_down|pic8255:inst|stbacka_new_1         ; |8255_down|pic8255:inst|stbacka_new_1         ; combout          ;
+; |8255_down|pic8255:inst|ibfa~61               ; |8255_down|pic8255:inst|ibfa~61               ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[5]~data_lut    ; |8255_down|pic8255:inst|D_R_IN[5]~data_lut    ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[6]~data_lut    ; |8255_down|pic8255:inst|D_R_IN[6]~data_lut    ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~467            ; |8255_down|pic8255:inst|D_R_IN~467            ; combout          ;
+; |8255_down|pic8255:inst|always4~63            ; |8255_down|pic8255:inst|always4~63            ; combout          ;
+; |8255_down|pic8255:inst|obfa~224              ; |8255_down|pic8255:inst|obfa~224              ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[7]~data_lut    ; |8255_down|pic8255:inst|D_R_IN[7]~data_lut    ; combout          ;
+; |8255_down|pic8255:inst|stb~39                ; |8255_down|pic8255:inst|stb~39                ; combout          ;
+; |8255_down|pic8255:inst|stb                   ; |8255_down|pic8255:inst|stb                   ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[0]~241        ; |8255_down|pic8255:inst|PC_R_IN[0]~241        ; combout          ;
+; |8255_down|pic8255:inst|PC_out~318            ; |8255_down|pic8255:inst|PC_out~318            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[3]~242        ; |8255_down|pic8255:inst|PC_R_IN[3]~242        ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[0]~9          ; |8255_down|pic8255:inst|PA_R_IN[0]~9          ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[1]~243        ; |8255_down|pic8255:inst|PC_R_IN[1]~243        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[2]~244        ; |8255_down|pic8255:inst|PC_R_IN[2]~244        ; combout          ;
+; |8255_down|pic8255:inst|stbacka               ; |8255_down|pic8255:inst|stbacka               ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[3]~245        ; |8255_down|pic8255:inst|PC_R_IN[3]~245        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[4]~246        ; |8255_down|pic8255:inst|PC_R_IN[4]~246        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[5]~247        ; |8255_down|pic8255:inst|PC_R_IN[5]~247        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[6]~248        ; |8255_down|pic8255:inst|PC_R_IN[6]~248        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[7]~249        ; |8255_down|pic8255:inst|PC_R_IN[7]~249        ; combout          ;
+; |8255_down|select4:inst4|Mux7~79              ; |8255_down|select4:inst4|Mux7~79              ; combout          ;
+; |8255_down|select4:inst4|Mux4~81              ; |8255_down|select4:inst4|Mux4~81              ; combout          ;
+; |8255_down|select4:inst4|Mux0~64              ; |8255_down|select4:inst4|Mux0~64              ; combout          ;
+; |8255_down|pic8255:inst|obfa~data_lut         ; |8255_down|pic8255:inst|obfa~data_lut         ; combout          ;
+; |8255_down|select4_1:inst3|out1[0]            ; |8255_down|select4_1:inst3|out1[0]            ; combout          ;
+; |8255_down|select4_1:inst3|out1[3]            ; |8255_down|select4_1:inst3|out1[3]            ; combout          ;
+; |8255_down|pic8255:inst|intrb~latch           ; |8255_down|pic8255:inst|intrb~latch           ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[0]~latch       ; |8255_down|pic8255:inst|D_R_IN[0]~latch       ; combout          ;
+; |8255_down|select4_1:inst3|out1[6]            ; |8255_down|select4_1:inst3|out1[6]            ; combout          ;
+; |8255_down|pic8255:inst|ibfb~latch            ; |8255_down|pic8255:inst|ibfb~latch            ; combout          ;
+; |8255_down|select4_1:inst3|out4[2]            ; |8255_down|select4_1:inst3|out4[2]            ; combout          ;
+; |8255_down|pic8255:inst|obfb~latch            ; |8255_down|pic8255:inst|obfb~latch            ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[2]~latch       ; |8255_down|pic8255:inst|D_R_IN[2]~latch       ; combout          ;
+; |8255_down|pic8255:inst|intra~latch           ; |8255_down|pic8255:inst|intra~latch           ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[3]~latch       ; |8255_down|pic8255:inst|D_R_IN[3]~latch       ; combout          ;
+; |8255_down|pic8255:inst|ibfa~latch            ; |8255_down|pic8255:inst|ibfa~latch            ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[5]~latch       ; |8255_down|pic8255:inst|D_R_IN[5]~latch       ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[6]~latch       ; |8255_down|pic8255:inst|D_R_IN[6]~latch       ; combout          ;
+; |8255_down|pic8255:inst|obfa~latch            ; |8255_down|pic8255:inst|obfa~latch            ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[7]~latch       ; |8255_down|pic8255:inst|D_R_IN[7]~latch       ; combout          ;
+; |8255_down|select4_1:inst3|out3[0]            ; |8255_down|select4_1:inst3|out3[0]            ; combout          ;
+; |8255_down|select4_1:inst3|out2[0]            ; |8255_down|select4_1:inst3|out2[0]            ; combout          ;
+; |8255_down|pic8255:inst|PB_R_IN[0]            ; |8255_down|pic8255:inst|PB_R_IN[0]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[0]            ; |8255_down|pic8255:inst|PC_R_IN[0]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[0]            ; |8255_down|pic8255:inst|PA_R_IN[0]            ; combout          ;
+; |8255_down|select4_1:inst3|out2[1]            ; |8255_down|select4_1:inst3|out2[1]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[1]            ; |8255_down|pic8255:inst|PC_R_IN[1]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[1]            ; |8255_down|pic8255:inst|PA_R_IN[1]            ; combout          ;
+; |8255_down|select4_1:inst3|out3[2]            ; |8255_down|select4_1:inst3|out3[2]            ; combout          ;
+; |8255_down|select4_1:inst3|out2[2]            ; |8255_down|select4_1:inst3|out2[2]            ; combout          ;
+; |8255_down|pic8255:inst|PB_R_IN[2]            ; |8255_down|pic8255:inst|PB_R_IN[2]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[2]            ; |8255_down|pic8255:inst|PC_R_IN[2]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[2]            ; |8255_down|pic8255:inst|PA_R_IN[2]            ; combout          ;
+; |8255_down|select4_1:inst3|out3[3]            ; |8255_down|select4_1:inst3|out3[3]            ; combout          ;
+; |8255_down|select4_1:inst3|out2[3]            ; |8255_down|select4_1:inst3|out2[3]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[3]            ; |8255_down|pic8255:inst|PC_R_IN[3]            ; combout          ;
+; |8255_down|pic8255:inst|PB_R_IN[3]            ; |8255_down|pic8255:inst|PB_R_IN[3]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[3]            ; |8255_down|pic8255:inst|PA_R_IN[3]            ; combout          ;
+; |8255_down|select4_1:inst3|out2[4]            ; |8255_down|select4_1:inst3|out2[4]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[4]            ; |8255_down|pic8255:inst|PC_R_IN[4]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[4]            ; |8255_down|pic8255:inst|PA_R_IN[4]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[4]            ; |8255_down|select4_1:inst3|out4[4]            ; combout          ;
+; |8255_down|select4_1:inst3|out3[5]            ; |8255_down|select4_1:inst3|out3[5]            ; combout          ;
+; |8255_down|select4_1:inst3|out2[5]            ; |8255_down|select4_1:inst3|out2[5]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[5]            ; |8255_down|pic8255:inst|PC_R_IN[5]            ; combout          ;
+; |8255_down|pic8255:inst|PB_R_IN[5]            ; |8255_down|pic8255:inst|PB_R_IN[5]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[5]            ; |8255_down|pic8255:inst|PA_R_IN[5]            ; combout          ;
+; |8255_down|select4_1:inst3|out3[6]            ; |8255_down|select4_1:inst3|out3[6]            ; combout          ;
+; |8255_down|select4_1:inst3|out2[6]            ; |8255_down|select4_1:inst3|out2[6]            ; combout          ;
+; |8255_down|pic8255:inst|PB_R_IN[6]            ; |8255_down|pic8255:inst|PB_R_IN[6]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[6]            ; |8255_down|pic8255:inst|PC_R_IN[6]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[6]            ; |8255_down|pic8255:inst|PA_R_IN[6]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[6]            ; |8255_down|select4_1:inst3|out4[6]            ; combout          ;
+; |8255_down|select4_1:inst3|out3[7]            ; |8255_down|select4_1:inst3|out3[7]            ; combout          ;
+; |8255_down|select4_1:inst3|out2[7]            ; |8255_down|select4_1:inst3|out2[7]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[7]            ; |8255_down|pic8255:inst|PC_R_IN[7]            ; combout          ;
+; |8255_down|pic8255:inst|PB_R_IN[7]            ; |8255_down|pic8255:inst|PB_R_IN[7]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[7]            ; |8255_down|pic8255:inst|PA_R_IN[7]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[0]            ; |8255_down|select4_1:inst3|out4[0]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[1]            ; |8255_down|select4_1:inst3|out4[1]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[3]            ; |8255_down|select4_1:inst3|out4[3]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[5]            ; |8255_down|select4_1:inst3|out4[5]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[7]            ; |8255_down|select4_1:inst3|out4[7]            ; combout          ;
+; |8255_down|HEX1[5]                            ; |8255_down|HEX1[5]                            ; padio            ;
+; |8255_down|HEX1[4]                            ; |8255_down|HEX1[4]                            ; padio            ;
+; |8255_down|HEX4[5]                            ; |8255_down|HEX4[5]                            ; padio            ;
+; |8255_down|HEX4[2]                            ; |8255_down|HEX4[2]                            ; padio            ;
+; |8255_down|HEX4[1]                            ; |8255_down|HEX4[1]                            ; padio            ;
+; |8255_down|HEX6[6]                            ; |8255_down|HEX6[6]                            ; padio            ;
+; |8255_down|HEX6[2]                            ; |8255_down|HEX6[2]                            ; padio            ;
+; |8255_down|HEX6[1]                            ; |8255_down|HEX6[1]                            ; padio            ;
+; |8255_down|out[7]                             ; |8255_down|out[7]                             ; padio            ;
+; |8255_down|out[6]                             ; |8255_down|out[6]                             ; padio            ;
+; |8255_down|out[3]                             ; |8255_down|out[3]                             ; padio            ;
+; |8255_down|out[0]                             ; |8255_down|out[0]                             ; padio            ;
+; |8255_down|outmode1[1]                        ; |8255_down|outmode1[1]                        ; padio            ;
+; |8255_down|in_reset                           ; |8255_down|in_reset~corein                    ; combout          ;
+; |8255_down|in[0]                              ; |8255_down|in[0]~corein                       ; combout          ;
+; |8255_down|in[3]                              ; |8255_down|in[3]~corein                       ; combout          ;
+; |8255_down|in[6]                              ; |8255_down|in[6]~corein                       ; combout          ;
+; |8255_down|in_reset~clk_delay_ctrl            ; |8255_down|in_reset~clk_delay_ctrl            ; clkout           ;
+; |8255_down|pic8255:inst|BUS_PB~clkctrl        ; |8255_down|pic8255:inst|BUS_PB~clkctrl        ; outclk           ;
+; |8255_down|pic8255:inst|PA_R_IN[0]~9clkctrl   ; |8255_down|pic8255:inst|PA_R_IN[0]~9clkctrl   ; outclk           ;
+; |8255_down|pic8255:inst|stb~clkctrl           ; |8255_down|pic8255:inst|stb~clkctrl           ; outclk           ;
+; |8255_down|pic8255:inst|PC_R_IN[3]~242clkctrl ; |8255_down|pic8255:inst|PC_R_IN[3]~242clkctrl ; outclk           ;
+; |8255_down|segout4:inst7|Decoder0~52clkctrl   ; |8255_down|segout4:inst7|Decoder0~52clkctrl   ; outclk           ;
+; |8255_down|select4_1:inst3|out4[2]~clkctrl    ; |8255_down|select4_1:inst3|out4[2]~clkctrl    ; outclk           ;
+; |8255_down|in_reset~clkctrl                   ; |8255_down|in_reset~clkctrl                   ; outclk           ;
++-----------------------------------------------+-----------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                         ;
++-----------------------------------------------+-----------------------------------------------+------------------+
+; Node Name                                     ; Output Port Name                              ; Output Port Type ;
++-----------------------------------------------+-----------------------------------------------+------------------+
+; |8255_down|pic8255:inst|PC_R_OUT[0]           ; |8255_down|pic8255:inst|PC_R_OUT[0]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[1]           ; |8255_down|pic8255:inst|PC_R_OUT[1]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[2]           ; |8255_down|pic8255:inst|PC_R_OUT[2]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[3]           ; |8255_down|pic8255:inst|PC_R_OUT[3]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[4]           ; |8255_down|pic8255:inst|PC_R_OUT[4]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[5]           ; |8255_down|pic8255:inst|PC_R_OUT[5]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[6]           ; |8255_down|pic8255:inst|PC_R_OUT[6]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[7]           ; |8255_down|pic8255:inst|PC_R_OUT[7]           ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT[1]~393       ; |8255_down|pic8255:inst|PC_R_OUT[1]~393       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[2]~394       ; |8255_down|pic8255:inst|PC_R_OUT[2]~394       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[3]~395       ; |8255_down|pic8255:inst|PC_R_OUT[3]~395       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[4]~396       ; |8255_down|pic8255:inst|PC_R_OUT[4]~396       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[5]~397       ; |8255_down|pic8255:inst|PC_R_OUT[5]~397       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[6]~398       ; |8255_down|pic8255:inst|PC_R_OUT[6]~398       ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT[7]~399       ; |8255_down|pic8255:inst|PC_R_OUT[7]~399       ; combout          ;
+; |8255_down|pic8255:inst|PB_R_OUT[0]           ; |8255_down|pic8255:inst|PB_R_OUT[0]           ; regout           ;
+; |8255_down|select4:inst4|mode[1]              ; |8255_down|select4:inst4|mode[1]              ; regout           ;
+; |8255_down|select4:inst4|Mux2~156             ; |8255_down|select4:inst4|Mux2~156             ; combout          ;
+; |8255_down|select4:inst4|Mux2~157             ; |8255_down|select4:inst4|Mux2~157             ; combout          ;
+; |8255_down|pic8255:inst|PA_R_OUT[0]           ; |8255_down|pic8255:inst|PA_R_OUT[0]           ; regout           ;
+; |8255_down|pic8255:inst|PB_MODE               ; |8255_down|pic8255:inst|PB_MODE               ; regout           ;
+; |8255_down|pic8255:inst|PA_MODE[1]            ; |8255_down|pic8255:inst|PA_MODE[1]            ; regout           ;
+; |8255_down|pic8255:inst|PA_MODE[0]            ; |8255_down|pic8255:inst|PA_MODE[0]            ; regout           ;
+; |8255_down|pic8255:inst|PCH_IO                ; |8255_down|pic8255:inst|PCH_IO                ; regout           ;
+; |8255_down|pic8255:inst|PCL_IO                ; |8255_down|pic8255:inst|PCL_IO                ; regout           ;
+; |8255_down|pic8255:inst|PB_R_OUT[1]           ; |8255_down|pic8255:inst|PB_R_OUT[1]           ; regout           ;
+; |8255_down|pic8255:inst|PA_R_OUT[1]           ; |8255_down|pic8255:inst|PA_R_OUT[1]           ; regout           ;
+; |8255_down|pic8255:inst|PB_IO                 ; |8255_down|pic8255:inst|PB_IO                 ; regout           ;
+; |8255_down|pic8255:inst|PC_out[1]~316         ; |8255_down|pic8255:inst|PC_out[1]~316         ; combout          ;
+; |8255_down|pic8255:inst|PA_R_OUT[2]           ; |8255_down|pic8255:inst|PA_R_OUT[2]           ; regout           ;
+; |8255_down|pic8255:inst|PB_R_OUT[2]           ; |8255_down|pic8255:inst|PB_R_OUT[2]           ; regout           ;
+; |8255_down|pic8255:inst|PB_R_OUT[3]           ; |8255_down|pic8255:inst|PB_R_OUT[3]           ; regout           ;
+; |8255_down|pic8255:inst|PA_R_OUT[3]           ; |8255_down|pic8255:inst|PA_R_OUT[3]           ; regout           ;
+; |8255_down|segout4:inst1|WideOr0~23           ; |8255_down|segout4:inst1|WideOr0~23           ; combout          ;
+; |8255_down|pic8255:inst|PA_R_OUT[4]           ; |8255_down|pic8255:inst|PA_R_OUT[4]           ; regout           ;
+; |8255_down|pic8255:inst|PB_R_OUT[4]           ; |8255_down|pic8255:inst|PB_R_OUT[4]           ; regout           ;
+; |8255_down|select4:inst4|Mux3~112             ; |8255_down|select4:inst4|Mux3~112             ; combout          ;
+; |8255_down|select4:inst4|Mux3                 ; |8255_down|select4:inst4|Mux3                 ; combout          ;
+; |8255_down|pic8255:inst|PB_R_OUT[5]           ; |8255_down|pic8255:inst|PB_R_OUT[5]           ; regout           ;
+; |8255_down|pic8255:inst|PA_R_OUT[5]           ; |8255_down|pic8255:inst|PA_R_OUT[5]           ; regout           ;
+; |8255_down|pic8255:inst|PA_R_OUT[6]           ; |8255_down|pic8255:inst|PA_R_OUT[6]           ; regout           ;
+; |8255_down|pic8255:inst|PB_R_OUT[6]           ; |8255_down|pic8255:inst|PB_R_OUT[6]           ; regout           ;
+; |8255_down|pic8255:inst|PB_R_OUT[7]           ; |8255_down|pic8255:inst|PB_R_OUT[7]           ; regout           ;
+; |8255_down|pic8255:inst|PA_R_OUT[7]           ; |8255_down|pic8255:inst|PA_R_OUT[7]           ; regout           ;
+; |8255_down|segout4:inst5|WideOr1~23           ; |8255_down|segout4:inst5|WideOr1~23           ; combout          ;
+; |8255_down|segout4:inst5|WideOr2~21           ; |8255_down|segout4:inst5|WideOr2~21           ; combout          ;
+; |8255_down|select4_1:inst3|mode[1]            ; |8255_down|select4_1:inst3|mode[1]            ; regout           ;
+; |8255_down|segout4:inst7|Decoder0~49          ; |8255_down|segout4:inst7|Decoder0~49          ; combout          ;
+; |8255_down|segout4:inst7|Decoder0~51          ; |8255_down|segout4:inst7|Decoder0~51          ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~613          ; |8255_down|pic8255:inst|PC_R_OUT~613          ; combout          ;
+; |8255_down|pic8255:inst|intrb~_emulated       ; |8255_down|pic8255:inst|intrb~_emulated       ; regout           ;
+; |8255_down|pic8255:inst|intrb~head_lut        ; |8255_down|pic8255:inst|intrb~head_lut        ; combout          ;
+; |8255_down|pic8255:inst|PA_IO                 ; |8255_down|pic8255:inst|PA_IO                 ; regout           ;
+; |8255_down|pic8255:inst|PA_R_OUT[5]~326       ; |8255_down|pic8255:inst|PA_R_OUT[5]~326       ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[0]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[0]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|D_R_IN[1]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[1]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|D_R_IN[1]~head_lut    ; |8255_down|pic8255:inst|D_R_IN[1]~head_lut    ; combout          ;
+; |8255_down|pic8255:inst|ibfb~_emulated        ; |8255_down|pic8255:inst|ibfb~_emulated        ; regout           ;
+; |8255_down|pic8255:inst|ibfb~head_lut         ; |8255_down|pic8255:inst|ibfb~head_lut         ; combout          ;
+; |8255_down|pic8255:inst|obfb~_emulated        ; |8255_down|pic8255:inst|obfb~_emulated        ; regout           ;
+; |8255_down|pic8255:inst|obfb~head_lut         ; |8255_down|pic8255:inst|obfb~head_lut         ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[2]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[2]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT~618          ; |8255_down|pic8255:inst|PC_R_OUT~618          ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~619          ; |8255_down|pic8255:inst|PC_R_OUT~619          ; combout          ;
+; |8255_down|pic8255:inst|intra~_emulated       ; |8255_down|pic8255:inst|intra~_emulated       ; regout           ;
+; |8255_down|pic8255:inst|intra~head_lut        ; |8255_down|pic8255:inst|intra~head_lut        ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[3]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[3]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT~620          ; |8255_down|pic8255:inst|PC_R_OUT~620          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[4]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[4]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|D_R_IN[4]~head_lut    ; |8255_down|pic8255:inst|D_R_IN[4]~head_lut    ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~622          ; |8255_down|pic8255:inst|PC_R_OUT~622          ; combout          ;
+; |8255_down|pic8255:inst|ibfa~_emulated        ; |8255_down|pic8255:inst|ibfa~_emulated        ; regout           ;
+; |8255_down|pic8255:inst|ibfa~head_lut         ; |8255_down|pic8255:inst|ibfa~head_lut         ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[5]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[5]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT~624          ; |8255_down|pic8255:inst|PC_R_OUT~624          ; combout          ;
+; |8255_down|pic8255:inst|PC_R_OUT~625          ; |8255_down|pic8255:inst|PC_R_OUT~625          ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[6]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[6]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|PC_R_OUT~626          ; |8255_down|pic8255:inst|PC_R_OUT~626          ; combout          ;
+; |8255_down|pic8255:inst|obfa~_emulated        ; |8255_down|pic8255:inst|obfa~_emulated        ; regout           ;
+; |8255_down|pic8255:inst|obfa~head_lut         ; |8255_down|pic8255:inst|obfa~head_lut         ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[7]~_emulated   ; |8255_down|pic8255:inst|D_R_IN[7]~_emulated   ; regout           ;
+; |8255_down|pic8255:inst|BUS_PB                ; |8255_down|pic8255:inst|BUS_PB                ; combout          ;
+; |8255_down|pic8255:inst|intrb~data_lut        ; |8255_down|pic8255:inst|intrb~data_lut        ; combout          ;
+; |8255_down|pic8255:inst|PB_R_IN[0]~43         ; |8255_down|pic8255:inst|PB_R_IN[0]~43         ; combout          ;
+; |8255_down|pic8255:inst|intrb~622             ; |8255_down|pic8255:inst|intrb~622             ; combout          ;
+; |8255_down|pic8255:inst|intrb~623             ; |8255_down|pic8255:inst|intrb~623             ; combout          ;
+; |8255_down|pic8255:inst|always13~3            ; |8255_down|pic8255:inst|always13~3            ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[0]~450         ; |8255_down|pic8255:inst|D_R_IN[0]~450         ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[0]~451         ; |8255_down|pic8255:inst|D_R_IN[0]~451         ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN~457            ; |8255_down|pic8255:inst|D_R_IN~457            ; combout          ;
+; |8255_down|pic8255:inst|ibfb~data_lut         ; |8255_down|pic8255:inst|ibfb~data_lut         ; combout          ;
+; |8255_down|segout4:inst7|Decoder0~52          ; |8255_down|segout4:inst7|Decoder0~52          ; combout          ;
+; |8255_down|pic8255:inst|ibfb~46               ; |8255_down|pic8255:inst|ibfb~46               ; combout          ;
+; |8255_down|pic8255:inst|obfb~data_lut         ; |8255_down|pic8255:inst|obfb~data_lut         ; combout          ;
+; |8255_down|pic8255:inst|stbackb_new           ; |8255_down|pic8255:inst|stbackb_new           ; combout          ;
+; |8255_down|pic8255:inst|obfb~51               ; |8255_down|pic8255:inst|obfb~51               ; combout          ;
+; |8255_down|pic8255:inst|always1~34            ; |8255_down|pic8255:inst|always1~34            ; combout          ;
+; |8255_down|pic8255:inst|Equal1~54             ; |8255_down|pic8255:inst|Equal1~54             ; combout          ;
+; |8255_down|pic8255:inst|intra~data_lut        ; |8255_down|pic8255:inst|intra~data_lut        ; combout          ;
+; |8255_down|pic8255:inst|intra~559             ; |8255_down|pic8255:inst|intra~559             ; combout          ;
+; |8255_down|pic8255:inst|stbacka~40            ; |8255_down|pic8255:inst|stbacka~40            ; combout          ;
+; |8255_down|pic8255:inst|intra~560             ; |8255_down|pic8255:inst|intra~560             ; combout          ;
+; |8255_down|pic8255:inst|intra~563             ; |8255_down|pic8255:inst|intra~563             ; combout          ;
+; |8255_down|pic8255:inst|ibfa~data_lut         ; |8255_down|pic8255:inst|ibfa~data_lut         ; combout          ;
+; |8255_down|pic8255:inst|stbacka_new_1         ; |8255_down|pic8255:inst|stbacka_new_1         ; combout          ;
+; |8255_down|pic8255:inst|ibfa~61               ; |8255_down|pic8255:inst|ibfa~61               ; combout          ;
+; |8255_down|pic8255:inst|always4~63            ; |8255_down|pic8255:inst|always4~63            ; combout          ;
+; |8255_down|pic8255:inst|stbacka_new_2         ; |8255_down|pic8255:inst|stbacka_new_2         ; combout          ;
+; |8255_down|pic8255:inst|obfa~224              ; |8255_down|pic8255:inst|obfa~224              ; combout          ;
+; |8255_down|pic8255:inst|stb~39                ; |8255_down|pic8255:inst|stb~39                ; combout          ;
+; |8255_down|pic8255:inst|stb                   ; |8255_down|pic8255:inst|stb                   ; combout          ;
+; |8255_down|pic8255:inst|PB_R_IN[0]~44         ; |8255_down|pic8255:inst|PB_R_IN[0]~44         ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[0]~241        ; |8255_down|pic8255:inst|PC_R_IN[0]~241        ; combout          ;
+; |8255_down|pic8255:inst|PC_out~318            ; |8255_down|pic8255:inst|PC_out~318            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[3]~242        ; |8255_down|pic8255:inst|PC_R_IN[3]~242        ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[0]~9          ; |8255_down|pic8255:inst|PA_R_IN[0]~9          ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[1]~243        ; |8255_down|pic8255:inst|PC_R_IN[1]~243        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[2]~244        ; |8255_down|pic8255:inst|PC_R_IN[2]~244        ; combout          ;
+; |8255_down|pic8255:inst|stbacka               ; |8255_down|pic8255:inst|stbacka               ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[3]~245        ; |8255_down|pic8255:inst|PC_R_IN[3]~245        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[4]~246        ; |8255_down|pic8255:inst|PC_R_IN[4]~246        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[5]~247        ; |8255_down|pic8255:inst|PC_R_IN[5]~247        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[6]~248        ; |8255_down|pic8255:inst|PC_R_IN[6]~248        ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[7]~249        ; |8255_down|pic8255:inst|PC_R_IN[7]~249        ; combout          ;
+; |8255_down|pic8255:inst|obfa~data_lut         ; |8255_down|pic8255:inst|obfa~data_lut         ; combout          ;
+; |8255_down|select4_1:inst3|out1[0]            ; |8255_down|select4_1:inst3|out1[0]            ; combout          ;
+; |8255_down|select4_1:inst3|out1[3]            ; |8255_down|select4_1:inst3|out1[3]            ; combout          ;
+; |8255_down|pic8255:inst|intrb~latch           ; |8255_down|pic8255:inst|intrb~latch           ; combout          ;
+; |8255_down|select4_1:inst3|out1[6]            ; |8255_down|select4_1:inst3|out1[6]            ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[1]~latch       ; |8255_down|pic8255:inst|D_R_IN[1]~latch       ; combout          ;
+; |8255_down|pic8255:inst|ibfb~latch            ; |8255_down|pic8255:inst|ibfb~latch            ; combout          ;
+; |8255_down|select4_1:inst3|out4[2]            ; |8255_down|select4_1:inst3|out4[2]            ; combout          ;
+; |8255_down|pic8255:inst|obfb~latch            ; |8255_down|pic8255:inst|obfb~latch            ; combout          ;
+; |8255_down|pic8255:inst|intra~latch           ; |8255_down|pic8255:inst|intra~latch           ; combout          ;
+; |8255_down|pic8255:inst|D_R_IN[4]~latch       ; |8255_down|pic8255:inst|D_R_IN[4]~latch       ; combout          ;
+; |8255_down|pic8255:inst|ibfa~latch            ; |8255_down|pic8255:inst|ibfa~latch            ; combout          ;
+; |8255_down|pic8255:inst|obfa~latch            ; |8255_down|pic8255:inst|obfa~latch            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[0]            ; |8255_down|pic8255:inst|PC_R_IN[0]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[0]            ; |8255_down|pic8255:inst|PA_R_IN[0]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[1]            ; |8255_down|pic8255:inst|PC_R_IN[1]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[1]            ; |8255_down|pic8255:inst|PA_R_IN[1]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[2]            ; |8255_down|pic8255:inst|PC_R_IN[2]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[2]            ; |8255_down|pic8255:inst|PA_R_IN[2]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[3]            ; |8255_down|pic8255:inst|PC_R_IN[3]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[3]            ; |8255_down|pic8255:inst|PA_R_IN[3]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[4]            ; |8255_down|pic8255:inst|PC_R_IN[4]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[4]            ; |8255_down|pic8255:inst|PA_R_IN[4]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[4]            ; |8255_down|select4_1:inst3|out4[4]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[5]            ; |8255_down|pic8255:inst|PC_R_IN[5]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[5]            ; |8255_down|pic8255:inst|PA_R_IN[5]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[6]            ; |8255_down|pic8255:inst|PC_R_IN[6]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[6]            ; |8255_down|pic8255:inst|PA_R_IN[6]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[6]            ; |8255_down|select4_1:inst3|out4[6]            ; combout          ;
+; |8255_down|pic8255:inst|PC_R_IN[7]            ; |8255_down|pic8255:inst|PC_R_IN[7]            ; combout          ;
+; |8255_down|pic8255:inst|PA_R_IN[7]            ; |8255_down|pic8255:inst|PA_R_IN[7]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[0]            ; |8255_down|select4_1:inst3|out4[0]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[1]            ; |8255_down|select4_1:inst3|out4[1]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[3]            ; |8255_down|select4_1:inst3|out4[3]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[5]            ; |8255_down|select4_1:inst3|out4[5]            ; combout          ;
+; |8255_down|select4_1:inst3|out4[7]            ; |8255_down|select4_1:inst3|out4[7]            ; combout          ;
+; |8255_down|HEX0[6]                            ; |8255_down|HEX0[6]                            ; padio            ;
+; |8255_down|HEX1[2]                            ; |8255_down|HEX1[2]                            ; padio            ;
+; |8255_down|HEX1[1]                            ; |8255_down|HEX1[1]                            ; padio            ;
+; |8255_down|HEX4[6]                            ; |8255_down|HEX4[6]                            ; padio            ;
+; |8255_down|HEX4[1]                            ; |8255_down|HEX4[1]                            ; padio            ;
+; |8255_down|HEX6[6]                            ; |8255_down|HEX6[6]                            ; padio            ;
+; |8255_down|HEX6[2]                            ; |8255_down|HEX6[2]                            ; padio            ;
+; |8255_down|HEX6[1]                            ; |8255_down|HEX6[1]                            ; padio            ;
+; |8255_down|inmode1[1]                         ; |8255_down|inmode1[1]                         ; padio            ;
+; |8255_down|out[4]                             ; |8255_down|out[4]                             ; padio            ;
+; |8255_down|outmode1[1]                        ; |8255_down|outmode1[1]                        ; padio            ;
+; |8255_down|in_reset                           ; |8255_down|in_reset~corein                    ; combout          ;
+; |8255_down|in[0]                              ; |8255_down|in[0]~corein                       ; combout          ;
+; |8255_down|in[3]                              ; |8255_down|in[3]~corein                       ; combout          ;
+; |8255_down|in[6]                              ; |8255_down|in[6]~corein                       ; combout          ;
+; |8255_down|in_reset~clk_delay_ctrl            ; |8255_down|in_reset~clk_delay_ctrl            ; clkout           ;
+; |8255_down|pic8255:inst|PB_R_IN[0]~44clkctrl  ; |8255_down|pic8255:inst|PB_R_IN[0]~44clkctrl  ; outclk           ;
+; |8255_down|pic8255:inst|BUS_PB~clkctrl        ; |8255_down|pic8255:inst|BUS_PB~clkctrl        ; outclk           ;
+; |8255_down|pic8255:inst|PA_R_IN[0]~9clkctrl   ; |8255_down|pic8255:inst|PA_R_IN[0]~9clkctrl   ; outclk           ;
+; |8255_down|segout4:inst7|Decoder0~49clkctrl   ; |8255_down|segout4:inst7|Decoder0~49clkctrl   ; outclk           ;
+; |8255_down|pic8255:inst|stb~clkctrl           ; |8255_down|pic8255:inst|stb~clkctrl           ; outclk           ;
+; |8255_down|pic8255:inst|PC_R_IN[3]~242clkctrl ; |8255_down|pic8255:inst|PC_R_IN[3]~242clkctrl ; outclk           ;
+; |8255_down|segout4:inst7|Decoder0~52clkctrl   ; |8255_down|segout4:inst7|Decoder0~52clkctrl   ; outclk           ;
+; |8255_down|segout4:inst7|Decoder0~51clkctrl   ; |8255_down|segout4:inst7|Decoder0~51clkctrl   ; outclk           ;
+; |8255_down|select4_1:inst3|out4[2]~clkctrl    ; |8255_down|select4_1:inst3|out4[2]~clkctrl    ; outclk           ;
+; |8255_down|in_reset~clkctrl                   ; |8255_down|in_reset~clkctrl                   ; outclk           ;
++-----------------------------------------------+-----------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Thu Apr 15 15:51:29 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off pic8255 -c pic8255
+Info: Using vector source file "F:/interface/pic8255/8225_down2.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning: Found clock high time violation at 146.52 ns on register "|8255_down|pic8255:inst|PC_R_OUT[0]"
+Warning: Found clock high time violation at 146.52 ns on register "|8255_down|pic8255:inst|PC_R_OUT[1]"
+Warning: Found clock high time violation at 146.52 ns on register "|8255_down|pic8255:inst|PC_R_OUT[2]"
+Warning: Found clock high time violation at 146.52 ns on register "|8255_down|pic8255:inst|PC_R_OUT[3]"
+Warning: Found clock high time violation at 146.52 ns on register "|8255_down|pic8255:inst|PC_R_OUT[4]"
+Warning: Found clock high time violation at 146.52 ns on register "|8255_down|pic8255:inst|PC_R_OUT[5]"
+Warning: Found clock high time violation at 146.52 ns on register "|8255_down|pic8255:inst|PC_R_OUT[6]"
+Warning: Found clock high time violation at 146.54 ns on register "|8255_down|pic8255:inst|PC_R_OUT[7]"
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      33.33 %
+Info: Number of transitions in simulation is 498
+Info: Quartus II Simulator was successful. 0 errors, 8 warnings
+    Info: Allocated 136 megabytes of memory during processing
+    Info: Processing ended: Thu Apr 15 15:51:30 2010
+    Info: Elapsed time: 00:00:01
+
+

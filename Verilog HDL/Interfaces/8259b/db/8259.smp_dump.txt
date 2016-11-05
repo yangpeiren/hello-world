@@ -1,0 +1,8 @@
+
+State Machine - |8259a_down|CORE_DOWN2:inst|core:inst|state
+Name state.0101 state.0100 state.0011 state.0010 state.0001 
+state.0001 0 0 0 0 0 
+state.0010 0 0 0 1 1 
+state.0011 0 0 1 0 1 
+state.0100 0 1 0 0 1 
+state.0101 1 0 0 0 1 

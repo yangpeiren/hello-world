@@ -1,0 +1,156 @@
+Version 7.2 Build 151 09/26/2007 SJ Full Version
+11
+1009
+OFF
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+I8253f
+# storage
+db|8253_2.(0).cnf
+db|8253_2.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+I8253f.v
+fcdd80f9c65d95ffc727dad3f14fe89
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# hierarchies {
+I8253f:inst
+}
+# lmf
+..|..|..|program files|quartus|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+8253_down
+# storage
+db|8253_2.(1).cnf
+db|8253_2.(1).cnf
+# case_insensitive
+# source_file
+8253_down.bdf
+99ef857e5d7e121b95756a65ce5caca
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# hierarchies {
+|
+}
+# lmf
+..|..|..|program files|quartus|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+clkdiv
+# storage
+db|8253_2.(2).cnf
+db|8253_2.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+clkdiv.v
+a9eb8476fc41bf4bf769194284831c1b
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# hierarchies {
+clkdiv:inst12
+}
+# lmf
+..|..|..|program files|quartus|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+segout
+# storage
+db|8253_2.(3).cnf
+db|8253_2.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+segout.v
+132bf38f6c3569d73d7227e6d5f1c4
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# hierarchies {
+segout:inst6
+segout:inst7
+segout:inst9
+segout:inst8
+}
+# lmf
+..|..|..|program files|quartus|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# complete
+

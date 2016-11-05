@@ -1,0 +1,196 @@
+Version 7.2 Build 151 09/26/2007 SJ Full Version
+11
+1009
+OFF
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+segout4
+# storage
+db|pic8255.(3).cnf
+db|pic8255.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+segout4.v
+5d466ce96c39df4ac407b4adc412e1
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+select1
+# storage
+db|pic8255.(5).cnf
+db|pic8255.(5).cnf
+# case_insensitive
+# source_file
+select1.bdf
+96f42cd232b4cf68ea20f11aa0dfdf81
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+select4
+# storage
+db|pic8255.(2).cnf
+db|pic8255.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+select4.v
+f08698d672678ff0aa36523248f8f6c
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+8255_down
+# storage
+db|pic8255.(4).cnf
+db|pic8255.(4).cnf
+# case_insensitive
+# source_file
+8255_down.bdf
+67b0e85e21cca99fddf124656ad5e90
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+select4_1
+# storage
+db|pic8255.(1).cnf
+db|pic8255.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+select4_1.v
+43cd9839e098c5f6c44150db80a58622
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+pic8255
+# storage
+db|pic8255.(0).cnf
+db|pic8255.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+pic8255.v
+d6de48f77cd4cd905f7f26eb207e13
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# hierarchies {
+|
+}
+# lmf
+d:|quartusii|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# complete
+

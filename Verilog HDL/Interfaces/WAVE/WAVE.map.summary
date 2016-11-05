@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue May 25 19:14:28 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : WAVE
+Top-level Entity Name : wave_down
+Family : Cyclone II
+Total logic elements : 116
+    Total combinational functions : 116
+    Dedicated logic registers : 46
+Total registers : 46
+Total pins : 22
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

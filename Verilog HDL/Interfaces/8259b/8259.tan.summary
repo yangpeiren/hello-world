@@ -1,0 +1,156 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.500 ns
+From           : CS
+To             : imr_a:inst1|imr:inst|imrreg[4]
+From Clock     : --
+To Clock       : WR
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 26.608 ns
+From           : CORE_DOWN2:inst|core:inst|pri[1]
+To             : HEX4[5]
+From Clock     : IN[4]
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.833 ns
+From           : CS
+To             : HEX0[2]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 4.097 ns
+From           : IN[0]
+To             : CORE_DOWN2:inst|core:inst|ocw3[0]
+From Clock     : --
+To Clock       : IN[4]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'EN'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 239.64 MHz ( period = 4.173 ns )
+From           : CORE_DOWN2:inst|core:inst|ocw2[2]
+To             : CORE_DOWN2:inst|core:inst|er[1]
+From Clock     : EN
+To Clock       : EN
+Failed Paths   : 0
+
+Type           : Clock Setup: 'IN[3]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 249.25 MHz ( period = 4.012 ns )
+From           : CORE_DOWN2:inst|core:inst|ocw2[2]
+To             : CORE_DOWN2:inst|core:inst|er[1]
+From Clock     : IN[3]
+To Clock       : IN[3]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'IN[4]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 249.25 MHz ( period = 4.012 ns )
+From           : CORE_DOWN2:inst|core:inst|ocw2[2]
+To             : CORE_DOWN2:inst|core:inst|er[1]
+From Clock     : IN[4]
+To Clock       : IN[4]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'WR'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 371.61 MHz ( period = 2.691 ns )
+From           : imr_a:inst1|imr:inst|imrreg[4]
+To             : imr_a:inst1|imr:inst|imrreg[4]
+From Clock     : WR
+To Clock       : WR
+Failed Paths   : 0
+
+Type           : Clock Setup: 'INTA'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 450.05 MHz ( period = 2.222 ns )
+From           : CORE_DOWN2:inst|core:inst|flag2[0]
+To             : CORE_DOWN2:inst|core:inst|flag2[0]
+From Clock     : INTA
+To Clock       : INTA
+Failed Paths   : 0
+
+Type           : Clock Hold: 'EN'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : CORE_DOWN2:inst|core:inst|ocw2[7]
+To             : CORE_DOWN2:inst|core:inst|pri[2]
+From Clock     : EN
+To Clock       : EN
+Failed Paths   : 33
+
+Type           : Clock Hold: 'IN[4]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : CORE_DOWN2:inst|core:inst|ocw2[7]
+To             : CORE_DOWN2:inst|core:inst|pri[2]
+From Clock     : IN[4]
+To Clock       : IN[4]
+Failed Paths   : 33
+
+Type           : Clock Hold: 'IN[3]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : CORE_DOWN2:inst|core:inst|ocw2[7]
+To             : CORE_DOWN2:inst|core:inst|pri[2]
+From Clock     : IN[3]
+To Clock       : IN[3]
+Failed Paths   : 33
+
+Type           : Clock Hold: 'INTA'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : CORE_DOWN2:inst|core:inst|er[1]
+To             : CORE_DOWN2:inst|core:inst|pri[0]
+From Clock     : INTA
+To Clock       : INTA
+Failed Paths   : 24
+
+Type           : Clock Hold: 'WR'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : imr_a:inst1|imr:inst|imrreg[3]
+To             : pr:inst4|position.00000000_4351
+From Clock     : WR
+To Clock       : WR
+Failed Paths   : 64
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 187
+
+--------------------------------------------------------------------------------------
+

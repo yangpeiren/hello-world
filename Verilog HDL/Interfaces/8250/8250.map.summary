@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue May 18 21:19:52 2010
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : 8250
+Top-level Entity Name : 8250_down
+Family : Cyclone II
+Total logic elements : 139
+    Total combinational functions : 139
+    Dedicated logic registers : 96
+Total registers : 96
+Total pins : 41
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

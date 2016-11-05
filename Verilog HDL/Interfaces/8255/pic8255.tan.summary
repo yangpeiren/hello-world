@@ -1,0 +1,196 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.337 ns
+From           : WR
+To             : intrb~_emulated
+From Clock     : --
+To Clock       : PC_in[2]
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.202 ns
+From           : PB_MODE
+To             : PC_out[1]
+From Clock     : WR
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 15.442 ns
+From           : A0
+To             : pc3_en
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.869 ns
+From           : PC_in[2]
+To             : ibfb~_emulated
+From Clock     : --
+To Clock       : CS
+Failed Paths   : 0
+
+Type           : Clock Setup: 'A1'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 78.24 MHz ( period = 12.782 ns )
+From           : PB_MODE
+To             : obfb~latch
+From Clock     : A1
+To Clock       : A1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'RD'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 88.35 MHz ( period = 11.318 ns )
+From           : PB_MODE
+To             : obfb~latch
+From Clock     : RD
+To Clock       : RD
+Failed Paths   : 0
+
+Type           : Clock Setup: 'WR'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 89.45 MHz ( period = 11.180 ns )
+From           : PB_MODE
+To             : intrb~latch
+From Clock     : WR
+To Clock       : WR
+Failed Paths   : 0
+
+Type           : Clock Setup: 'A0'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 91.76 MHz ( period = 10.898 ns )
+From           : obfa~_emulated
+To             : obfa~latch
+From Clock     : A0
+To Clock       : A0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CS'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 92.23 MHz ( period = 10.842 ns )
+From           : PB_MODE
+To             : obfb~latch
+From Clock     : CS
+To Clock       : CS
+Failed Paths   : 0
+
+Type           : Clock Setup: 'PC_in[4]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 172.65 MHz ( period = 5.792 ns )
+From           : intra~_emulated
+To             : obfa~latch
+From Clock     : PC_in[4]
+To Clock       : PC_in[4]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'PC_in[6]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 172.65 MHz ( period = 5.792 ns )
+From           : intra~_emulated
+To             : obfa~latch
+From Clock     : PC_in[6]
+To Clock       : PC_in[6]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'PC_in[2]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 202.02 MHz ( period = 4.950 ns )
+From           : intrb~_emulated
+To             : obfb~latch
+From Clock     : PC_in[2]
+To Clock       : PC_in[2]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'D_in[7]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 321.54 MHz ( period = 3.110 ns )
+From           : obfa~latch
+To             : obfa~latch
+From Clock     : D_in[7]
+To Clock       : D_in[7]
+Failed Paths   : 0
+
+Type           : Clock Hold: 'A0'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : obfa~latch
+To             : obfa~_emulated
+From Clock     : A0
+To Clock       : A0
+Failed Paths   : 5
+
+Type           : Clock Hold: 'A1'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : obfa~latch
+To             : obfa~_emulated
+From Clock     : A1
+To Clock       : A1
+Failed Paths   : 46
+
+Type           : Clock Hold: 'CS'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : PA_IO
+To             : PA_R_OUT[0]
+From Clock     : CS
+To Clock       : CS
+Failed Paths   : 44
+
+Type           : Clock Hold: 'WR'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : PA_IO
+To             : PA_R_OUT[0]
+From Clock     : WR
+To Clock       : WR
+Failed Paths   : 44
+
+Type           : Clock Hold: 'RD'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : obfa~latch
+To             : obfa~_emulated
+From Clock     : RD
+To Clock       : RD
+Failed Paths   : 45
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 184
+
+--------------------------------------------------------------------------------------
+

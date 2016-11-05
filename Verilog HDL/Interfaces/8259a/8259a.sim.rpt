@@ -1,0 +1,1081 @@
+Simulator report for 8259a
+Tue May 10 01:47:40 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 484 nodes    ;
+; Simulation Coverage         ;       8.88 % ;
+; Total Number of Transitions ; 259          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                          ;
++--------------------------------------------------------------------------------------------+----------------+---------------+
+; Option                                                                                     ; Setting        ; Default Value ;
++--------------------------------------------------------------------------------------------+----------------+---------------+
+; Simulation mode                                                                            ; Timing         ; Timing        ;
+; Start time                                                                                 ; 0 ns           ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF           ;               ;
+; Vector input source                                                                        ; 8259a_down.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On             ; On            ;
+; Check outputs                                                                              ; Off            ; Off           ;
+; Report simulation coverage                                                                 ; On             ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On             ; On            ;
+; Display missing 1-value coverage report                                                    ; On             ; On            ;
+; Display missing 0-value coverage report                                                    ; On             ; On            ;
+; Detect setup and hold time violations                                                      ; Off            ; Off           ;
+; Detect glitches                                                                            ; Off            ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off            ; Off           ;
+; Generate Signal Activity File                                                              ; Off            ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off            ; Off           ;
+; Group bus channels in simulation results                                                   ; Off            ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On             ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE     ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off            ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off            ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto           ; Auto          ;
++--------------------------------------------------------------------------------------------+----------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       8.88 % ;
+; Total nodes checked                                 ; 484          ;
+; Total output ports checked                          ; 484          ;
+; Total output ports with complete 1/0-value coverage ; 43           ;
+; Total output ports with no 1/0-value coverage       ; 436          ;
+; Total output ports with no 1-value coverage         ; 439          ;
+; Total output ports with no 0-value coverage         ; 438          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                    ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+; Node Name                                            ; Output Port Name                                     ; Output Port Type ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+; |8259a_down|gdfx_temp0[3]~174                        ; |8259a_down|gdfx_temp0[3]~174                        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout~532    ; |8259a_down|core_dual:inst4|core:inst|dataout~532    ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|flag1          ; |8259a_down|core_dual:inst4|core:inst|flag1          ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|flag2          ; |8259a_down|core_dual:inst4|core:inst|flag2          ; regout           ;
+; |8259a_down|gdfx_temp0[3]~175                        ; |8259a_down|gdfx_temp0[3]~175                        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[7]~537 ; |8259a_down|core_dual:inst4|core:inst|dataout[7]~537 ; combout          ;
+; |8259a_down|select2:inst15|out1[1]~92                ; |8259a_down|select2:inst15|out1[1]~92                ; combout          ;
+; |8259a_down|select2:inst15|out1[4]~93                ; |8259a_down|select2:inst15|out1[4]~93                ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~687     ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~687     ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~690     ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~690     ; combout          ;
+; |8259a_down|select2:inst15|out1[0]~94                ; |8259a_down|select2:inst15|out1[0]~94                ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|freeze         ; |8259a_down|core_dual:inst4|core:inst|freeze         ; combout          ;
+; |8259a_down|select2:inst15|out1[2]~95                ; |8259a_down|select2:inst15|out1[2]~95                ; combout          ;
+; |8259a_down|select2:inst15|out1[3]~96                ; |8259a_down|select2:inst15|out1[3]~96                ; combout          ;
+; |8259a_down|select2:inst15|out1[5]~97                ; |8259a_down|select2:inst15|out1[5]~97                ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|always0~49     ; |8259a_down|core_dual:inst4|core:inst|always0~49     ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector6~27   ; |8259a_down|core_dual:inst4|core:inst|Selector6~27   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|always0~3      ; |8259a_down|core_dual:inst4|core:inst|always0~3      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|always0~50     ; |8259a_down|core_dual:inst4|core:inst|always0~50     ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw1~0         ; |8259a_down|core_dual:inst4|core:inst|icw1~0         ; combout          ;
+; |8259a_down|select2:inst15|out2[2]~83                ; |8259a_down|select2:inst15|out2[2]~83                ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector7~336  ; |8259a_down|core_dual:inst4|core:inst|Selector7~336  ; combout          ;
+; |8259a_down|select2:inst15|out2[4]~84                ; |8259a_down|select2:inst15|out2[4]~84                ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|clk            ; |8259a_down|core_dual:inst4|core:inst|clk            ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector7~337  ; |8259a_down|core_dual:inst4|core:inst|Selector7~337  ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|flag1~9        ; |8259a_down|core_dual:inst4|core:inst|flag1~9        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|flag2~9        ; |8259a_down|core_dual:inst4|core:inst|flag2~9        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|write1         ; |8259a_down|core_dual:inst4|core:inst|write1         ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|write2         ; |8259a_down|core_dual:inst4|core:inst|write2         ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw1[0]        ; |8259a_down|core_dual:inst4|core:inst|icw1[0]        ; combout          ;
+; |8259a_down|WR                                       ; |8259a_down|WR~corein                                ; combout          ;
+; |8259a_down|RD                                       ; |8259a_down|RD~corein                                ; combout          ;
+; |8259a_down|A0                                       ; |8259a_down|A0~corein                                ; combout          ;
+; |8259a_down|in[1]                                    ; |8259a_down|in[1]~corein                             ; combout          ;
+; |8259a_down|en                                       ; |8259a_down|en~corein                                ; combout          ;
+; |8259a_down|in[3]                                    ; |8259a_down|in[3]~corein                             ; combout          ;
+; |8259a_down|in[4]                                    ; |8259a_down|in[4]~corein                             ; combout          ;
+; |8259a_down|INTA                                     ; |8259a_down|INTA~corein                              ; combout          ;
+; |8259a_down|in[0]                                    ; |8259a_down|in[0]~corein                             ; combout          ;
+; |8259a_down|in[2]                                    ; |8259a_down|in[2]~corein                             ; combout          ;
+; |8259a_down|in[5]                                    ; |8259a_down|in[5]~corein                             ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw1~0clkctrl  ; |8259a_down|core_dual:inst4|core:inst|icw1~0clkctrl  ; outclk           ;
+; |8259a_down|core_dual:inst4|core:inst|write2~clkctrl ; |8259a_down|core_dual:inst4|core:inst|write2~clkctrl ; outclk           ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                             ;
++---------------------------------------------------------+---------------------------------------------------------+------------------+
+; Node Name                                               ; Output Port Name                                        ; Output Port Type ;
++---------------------------------------------------------+---------------------------------------------------------+------------------+
+; |8259a_down|pr:inst|WideOr3~13                          ; |8259a_down|pr:inst|WideOr3~13                          ; combout          ;
+; |8259a_down|pr:inst|Equal2~82                           ; |8259a_down|pr:inst|Equal2~82                           ; combout          ;
+; |8259a_down|pr:inst|Equal2~83                           ; |8259a_down|pr:inst|Equal2~83                           ; combout          ;
+; |8259a_down|pr:inst|Equal2~84                           ; |8259a_down|pr:inst|Equal2~84                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[2]~533    ; |8259a_down|core_dual:inst4|core:inst|dataout[2]~533    ; combout          ;
+; |8259a_down|gdfx_temp0[3]~176                           ; |8259a_down|gdfx_temp0[3]~176                           ; combout          ;
+; |8259a_down|gdfx_temp0[0]~177                           ; |8259a_down|gdfx_temp0[0]~177                           ; combout          ;
+; |8259a_down|gdfx_temp0[0]~178                           ; |8259a_down|gdfx_temp0[0]~178                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[0]~534    ; |8259a_down|core_dual:inst4|core:inst|dataout[0]~534    ; combout          ;
+; |8259a_down|pr:inst|WideOr2~19                          ; |8259a_down|pr:inst|WideOr2~19                          ; combout          ;
+; |8259a_down|gdfx_temp0[1]~179                           ; |8259a_down|gdfx_temp0[1]~179                           ; combout          ;
+; |8259a_down|gdfx_temp0[1]~180                           ; |8259a_down|gdfx_temp0[1]~180                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[1]~535    ; |8259a_down|core_dual:inst4|core:inst|dataout[1]~535    ; combout          ;
+; |8259a_down|pr:inst|WideOr1~12                          ; |8259a_down|pr:inst|WideOr1~12                          ; combout          ;
+; |8259a_down|gdfx_temp0[2]~181                           ; |8259a_down|gdfx_temp0[2]~181                           ; combout          ;
+; |8259a_down|gdfx_temp0[2]~182                           ; |8259a_down|gdfx_temp0[2]~182                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[2]~536    ; |8259a_down|core_dual:inst4|core:inst|dataout[2]~536    ; combout          ;
+; |8259a_down|gdfx_temp0[3]~183                           ; |8259a_down|gdfx_temp0[3]~183                           ; combout          ;
+; |8259a_down|gdfx_temp0[3]~184                           ; |8259a_down|gdfx_temp0[3]~184                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[3]~538    ; |8259a_down|core_dual:inst4|core:inst|dataout[3]~538    ; combout          ;
+; |8259a_down|segout:inst22|WideOr0~23                    ; |8259a_down|segout:inst22|WideOr0~23                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr1~23                    ; |8259a_down|segout:inst22|WideOr1~23                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr2~21                    ; |8259a_down|segout:inst22|WideOr2~21                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr3~23                    ; |8259a_down|segout:inst22|WideOr3~23                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr4~23                    ; |8259a_down|segout:inst22|WideOr4~23                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr5~23                    ; |8259a_down|segout:inst22|WideOr5~23                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr6~23                    ; |8259a_down|segout:inst22|WideOr6~23                    ; combout          ;
+; |8259a_down|gdfx_temp0[4]~185                           ; |8259a_down|gdfx_temp0[4]~185                           ; combout          ;
+; |8259a_down|gdfx_temp0[4]~186                           ; |8259a_down|gdfx_temp0[4]~186                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[4]~539    ; |8259a_down|core_dual:inst4|core:inst|dataout[4]~539    ; combout          ;
+; |8259a_down|gdfx_temp0[5]~187                           ; |8259a_down|gdfx_temp0[5]~187                           ; combout          ;
+; |8259a_down|gdfx_temp0[5]~188                           ; |8259a_down|gdfx_temp0[5]~188                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[5]~540    ; |8259a_down|core_dual:inst4|core:inst|dataout[5]~540    ; combout          ;
+; |8259a_down|gdfx_temp0[6]~189                           ; |8259a_down|gdfx_temp0[6]~189                           ; combout          ;
+; |8259a_down|gdfx_temp0[6]~190                           ; |8259a_down|gdfx_temp0[6]~190                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[6]~541    ; |8259a_down|core_dual:inst4|core:inst|dataout[6]~541    ; combout          ;
+; |8259a_down|gdfx_temp0[7]~191                           ; |8259a_down|gdfx_temp0[7]~191                           ; combout          ;
+; |8259a_down|gdfx_temp0[7]~192                           ; |8259a_down|gdfx_temp0[7]~192                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[7]~542    ; |8259a_down|core_dual:inst4|core:inst|dataout[7]~542    ; combout          ;
+; |8259a_down|segout:inst21|WideOr0~23                    ; |8259a_down|segout:inst21|WideOr0~23                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr1~23                    ; |8259a_down|segout:inst21|WideOr1~23                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr2~21                    ; |8259a_down|segout:inst21|WideOr2~21                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr3~23                    ; |8259a_down|segout:inst21|WideOr3~23                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr4~23                    ; |8259a_down|segout:inst21|WideOr4~23                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr5~23                    ; |8259a_down|segout:inst21|WideOr5~23                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr6~23                    ; |8259a_down|segout:inst21|WideOr6~23                    ; combout          ;
+; |8259a_down|pr:inst|nmr[5]                              ; |8259a_down|pr:inst|nmr[5]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[7]                              ; |8259a_down|pr:inst|nmr[7]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[6]                              ; |8259a_down|pr:inst|nmr[6]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[1]                              ; |8259a_down|pr:inst|nmr[1]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[0]                              ; |8259a_down|pr:inst|nmr[0]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[3]                              ; |8259a_down|pr:inst|nmr[3]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[4]                              ; |8259a_down|pr:inst|nmr[4]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[2]                              ; |8259a_down|pr:inst|nmr[2]                              ; combout          ;
+; |8259a_down|pr:inst|Mux0~203                            ; |8259a_down|pr:inst|Mux0~203                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~204                            ; |8259a_down|pr:inst|Mux0~204                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~205                            ; |8259a_down|pr:inst|Mux0~205                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~206                            ; |8259a_down|pr:inst|Mux0~206                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~207                            ; |8259a_down|pr:inst|Mux0~207                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~208                            ; |8259a_down|pr:inst|Mux0~208                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~209                            ; |8259a_down|pr:inst|Mux0~209                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~210                            ; |8259a_down|pr:inst|Mux0~210                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~211                            ; |8259a_down|pr:inst|Mux0~211                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~212                            ; |8259a_down|pr:inst|Mux0~212                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~213                            ; |8259a_down|pr:inst|Mux0~213                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~214                            ; |8259a_down|pr:inst|Mux0~214                            ; combout          ;
+; |8259a_down|pr:inst|position.00000101~322               ; |8259a_down|pr:inst|position.00000101~322               ; combout          ;
+; |8259a_down|pr:inst|Equal0~93                           ; |8259a_down|pr:inst|Equal0~93                           ; combout          ;
+; |8259a_down|pr:inst|Equal0~94                           ; |8259a_down|pr:inst|Equal0~94                           ; combout          ;
+; |8259a_down|pr:inst|Equal0~95                           ; |8259a_down|pr:inst|Equal0~95                           ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[0]                           ; |8259a_down|pr:inst|hp_nmr[0]                           ; combout          ;
+; |8259a_down|pr:inst|position.00000110~309               ; |8259a_down|pr:inst|position.00000110~309               ; combout          ;
+; |8259a_down|pr:inst|position.00000100~316               ; |8259a_down|pr:inst|position.00000100~316               ; combout          ;
+; |8259a_down|pr:inst|position.00000100~317               ; |8259a_down|pr:inst|position.00000100~317               ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[2]~1564                      ; |8259a_down|pr:inst|hp_nmr[2]~1564                      ; combout          ;
+; |8259a_down|pr:inst|Mux1~117                            ; |8259a_down|pr:inst|Mux1~117                            ; combout          ;
+; |8259a_down|pr:inst|Mux1~118                            ; |8259a_down|pr:inst|Mux1~118                            ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[2]~1565                      ; |8259a_down|pr:inst|hp_nmr[2]~1565                      ; combout          ;
+; |8259a_down|pr:inst|Mux1~119                            ; |8259a_down|pr:inst|Mux1~119                            ; combout          ;
+; |8259a_down|pr:inst|Mux1~120                            ; |8259a_down|pr:inst|Mux1~120                            ; combout          ;
+; |8259a_down|pr:inst|Mux1~121                            ; |8259a_down|pr:inst|Mux1~121                            ; combout          ;
+; |8259a_down|pr:inst|Mux1~122                            ; |8259a_down|pr:inst|Mux1~122                            ; combout          ;
+; |8259a_down|pr:inst|Mux1~123                            ; |8259a_down|pr:inst|Mux1~123                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[3]~1473                      ; |8259a_down|pr:inst|hp_isr[3]~1473                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[3]~1474                      ; |8259a_down|pr:inst|hp_isr[3]~1474                      ; combout          ;
+; |8259a_down|pr:inst|Mux11~438                           ; |8259a_down|pr:inst|Mux11~438                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~439                           ; |8259a_down|pr:inst|Mux11~439                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~440                           ; |8259a_down|pr:inst|Mux11~440                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~441                           ; |8259a_down|pr:inst|Mux11~441                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~442                           ; |8259a_down|pr:inst|Mux11~442                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~443                           ; |8259a_down|pr:inst|Mux11~443                           ; combout          ;
+; |8259a_down|pr:inst|hp_isr[2]~1475                      ; |8259a_down|pr:inst|hp_isr[2]~1475                      ; combout          ;
+; |8259a_down|pr:inst|Mux11~444                           ; |8259a_down|pr:inst|Mux11~444                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~445                           ; |8259a_down|pr:inst|Mux11~445                           ; combout          ;
+; |8259a_down|pr:inst|hp_isr~1476                         ; |8259a_down|pr:inst|hp_isr~1476                         ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1477                      ; |8259a_down|pr:inst|hp_isr[1]~1477                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1478                      ; |8259a_down|pr:inst|hp_isr[1]~1478                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1479                      ; |8259a_down|pr:inst|hp_isr[1]~1479                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1480                      ; |8259a_down|pr:inst|hp_isr[1]~1480                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1481                      ; |8259a_down|pr:inst|hp_isr[1]~1481                      ; combout          ;
+; |8259a_down|pr:inst|Mux12~31                            ; |8259a_down|pr:inst|Mux12~31                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1482                      ; |8259a_down|pr:inst|hp_isr[1]~1482                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1483                      ; |8259a_down|pr:inst|hp_isr[1]~1483                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1484                      ; |8259a_down|pr:inst|hp_isr[1]~1484                      ; combout          ;
+; |8259a_down|pr:inst|Mux12~32                            ; |8259a_down|pr:inst|Mux12~32                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1485                      ; |8259a_down|pr:inst|hp_isr[1]~1485                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1486                      ; |8259a_down|pr:inst|hp_isr[1]~1486                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1487                      ; |8259a_down|pr:inst|hp_isr[1]~1487                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1488                      ; |8259a_down|pr:inst|hp_isr[1]~1488                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1489                      ; |8259a_down|pr:inst|hp_isr[1]~1489                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1490                      ; |8259a_down|pr:inst|hp_isr[1]~1490                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1491                      ; |8259a_down|pr:inst|hp_isr[1]~1491                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1492                      ; |8259a_down|pr:inst|hp_isr[1]~1492                      ; combout          ;
+; |8259a_down|pr:inst|Mux12~33                            ; |8259a_down|pr:inst|Mux12~33                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1493                      ; |8259a_down|pr:inst|hp_isr[1]~1493                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1494                      ; |8259a_down|pr:inst|hp_isr[1]~1494                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1495                      ; |8259a_down|pr:inst|hp_isr[1]~1495                      ; combout          ;
+; |8259a_down|pr:inst|Mux12~34                            ; |8259a_down|pr:inst|Mux12~34                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1496                      ; |8259a_down|pr:inst|hp_isr[1]~1496                      ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[1]~1566                      ; |8259a_down|pr:inst|hp_nmr[1]~1566                      ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[1]~1567                      ; |8259a_down|pr:inst|hp_nmr[1]~1567                      ; combout          ;
+; |8259a_down|pr:inst|Mux2~128                            ; |8259a_down|pr:inst|Mux2~128                            ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[1]~1568                      ; |8259a_down|pr:inst|hp_nmr[1]~1568                      ; combout          ;
+; |8259a_down|pr:inst|Mux2~129                            ; |8259a_down|pr:inst|Mux2~129                            ; combout          ;
+; |8259a_down|pr:inst|position.00000010~314               ; |8259a_down|pr:inst|position.00000010~314               ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[1]~1569                      ; |8259a_down|pr:inst|hp_nmr[1]~1569                      ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[1]~1570                      ; |8259a_down|pr:inst|hp_nmr[1]~1570                      ; combout          ;
+; |8259a_down|pr:inst|Mux2~130                            ; |8259a_down|pr:inst|Mux2~130                            ; combout          ;
+; |8259a_down|pr:inst|Mux2~131                            ; |8259a_down|pr:inst|Mux2~131                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1497                      ; |8259a_down|pr:inst|hp_isr[0]~1497                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1498                      ; |8259a_down|pr:inst|hp_isr[0]~1498                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1499                      ; |8259a_down|pr:inst|hp_isr[0]~1499                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1500                      ; |8259a_down|pr:inst|hp_isr[0]~1500                      ; combout          ;
+; |8259a_down|pr:inst|Mux13~48                            ; |8259a_down|pr:inst|Mux13~48                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1501                      ; |8259a_down|pr:inst|hp_isr[0]~1501                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1502                      ; |8259a_down|pr:inst|hp_isr[0]~1502                      ; combout          ;
+; |8259a_down|pr:inst|Mux13~49                            ; |8259a_down|pr:inst|Mux13~49                            ; combout          ;
+; |8259a_down|pr:inst|Mux13~50                            ; |8259a_down|pr:inst|Mux13~50                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1503                      ; |8259a_down|pr:inst|hp_isr[0]~1503                      ; combout          ;
+; |8259a_down|pr:inst|Mux13~51                            ; |8259a_down|pr:inst|Mux13~51                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1504                      ; |8259a_down|pr:inst|hp_isr[0]~1504                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1505                      ; |8259a_down|pr:inst|hp_isr[0]~1505                      ; combout          ;
+; |8259a_down|pr:inst|Mux13~52                            ; |8259a_down|pr:inst|Mux13~52                            ; combout          ;
+; |8259a_down|pr:inst|Mux13~53                            ; |8259a_down|pr:inst|Mux13~53                            ; combout          ;
+; |8259a_down|pr:inst|LessThan0~656                       ; |8259a_down|pr:inst|LessThan0~656                       ; combout          ;
+; |8259a_down|pr:inst|LessThan0~657                       ; |8259a_down|pr:inst|LessThan0~657                       ; combout          ;
+; |8259a_down|pr:inst|isr_set[3]~125                      ; |8259a_down|pr:inst|isr_set[3]~125                      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|state.101         ; |8259a_down|core_dual:inst4|core:inst|state.101         ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|Selector7~334     ; |8259a_down|core_dual:inst4|core:inst|Selector7~334     ; combout          ;
+; |8259a_down|pr:inst|position.00000111~418               ; |8259a_down|pr:inst|position.00000111~418               ; combout          ;
+; |8259a_down|pr:inst|Mux3~112                            ; |8259a_down|pr:inst|Mux3~112                            ; combout          ;
+; |8259a_down|pr:inst|position.00000111~419               ; |8259a_down|pr:inst|position.00000111~419               ; combout          ;
+; |8259a_down|pr:inst|position.00000111~420               ; |8259a_down|pr:inst|position.00000111~420               ; combout          ;
+; |8259a_down|pr:inst|Mux3~113                            ; |8259a_down|pr:inst|Mux3~113                            ; combout          ;
+; |8259a_down|pr:inst|position.00000000~268               ; |8259a_down|pr:inst|position.00000000~268               ; combout          ;
+; |8259a_down|pr:inst|Mux3~114                            ; |8259a_down|pr:inst|Mux3~114                            ; combout          ;
+; |8259a_down|pr:inst|position.00000111~421               ; |8259a_down|pr:inst|position.00000111~421               ; combout          ;
+; |8259a_down|pr:inst|Mux3~115                            ; |8259a_down|pr:inst|Mux3~115                            ; combout          ;
+; |8259a_down|pr:inst|position.00000111~422               ; |8259a_down|pr:inst|position.00000111~422               ; combout          ;
+; |8259a_down|pr:inst|position.00000111~423               ; |8259a_down|pr:inst|position.00000111~423               ; combout          ;
+; |8259a_down|pr:inst|position.00000101~323               ; |8259a_down|pr:inst|position.00000101~323               ; combout          ;
+; |8259a_down|pr:inst|position.00000101~324               ; |8259a_down|pr:inst|position.00000101~324               ; combout          ;
+; |8259a_down|pr:inst|position.00000101~325               ; |8259a_down|pr:inst|position.00000101~325               ; combout          ;
+; |8259a_down|pr:inst|position.00000101~326               ; |8259a_down|pr:inst|position.00000101~326               ; combout          ;
+; |8259a_down|pr:inst|Mux9~60                             ; |8259a_down|pr:inst|Mux9~60                             ; combout          ;
+; |8259a_down|pr:inst|Mux9~61                             ; |8259a_down|pr:inst|Mux9~61                             ; combout          ;
+; |8259a_down|pr:inst|position.00000101~327               ; |8259a_down|pr:inst|position.00000101~327               ; combout          ;
+; |8259a_down|pr:inst|Mux9~62                             ; |8259a_down|pr:inst|Mux9~62                             ; combout          ;
+; |8259a_down|pr:inst|Mux9~63                             ; |8259a_down|pr:inst|Mux9~63                             ; combout          ;
+; |8259a_down|pr:inst|position.00000101~328               ; |8259a_down|pr:inst|position.00000101~328               ; combout          ;
+; |8259a_down|pr:inst|Mux7~120                            ; |8259a_down|pr:inst|Mux7~120                            ; combout          ;
+; |8259a_down|pr:inst|Mux7~121                            ; |8259a_down|pr:inst|Mux7~121                            ; combout          ;
+; |8259a_down|pr:inst|position.00000011~326               ; |8259a_down|pr:inst|position.00000011~326               ; combout          ;
+; |8259a_down|pr:inst|Mux7~122                            ; |8259a_down|pr:inst|Mux7~122                            ; combout          ;
+; |8259a_down|pr:inst|position.00000011~327               ; |8259a_down|pr:inst|position.00000011~327               ; combout          ;
+; |8259a_down|pr:inst|position.00000011~328               ; |8259a_down|pr:inst|position.00000011~328               ; combout          ;
+; |8259a_down|pr:inst|Mux7~123                            ; |8259a_down|pr:inst|Mux7~123                            ; combout          ;
+; |8259a_down|pr:inst|position.00000011~329               ; |8259a_down|pr:inst|position.00000011~329               ; combout          ;
+; |8259a_down|pr:inst|position.00000001~313               ; |8259a_down|pr:inst|position.00000001~313               ; combout          ;
+; |8259a_down|pr:inst|Mux5~60                             ; |8259a_down|pr:inst|Mux5~60                             ; combout          ;
+; |8259a_down|pr:inst|Mux5~61                             ; |8259a_down|pr:inst|Mux5~61                             ; combout          ;
+; |8259a_down|pr:inst|Mux5~62                             ; |8259a_down|pr:inst|Mux5~62                             ; combout          ;
+; |8259a_down|pr:inst|position.00000001~314               ; |8259a_down|pr:inst|position.00000001~314               ; combout          ;
+; |8259a_down|pr:inst|Mux5~63                             ; |8259a_down|pr:inst|Mux5~63                             ; combout          ;
+; |8259a_down|pr:inst|position.00000001~315               ; |8259a_down|pr:inst|position.00000001~315               ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|state.001         ; |8259a_down|core_dual:inst4|core:inst|state.001         ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|always3~0         ; |8259a_down|core_dual:inst4|core:inst|always3~0         ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~686        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~686        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~688        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~688        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~689        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~689        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~691        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~691        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[4]~692        ; |8259a_down|core_dual:inst4|core:inst|eoi[4]~692        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~693        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~693        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[4]~694        ; |8259a_down|core_dual:inst4|core:inst|eoi[4]~694        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[5]~695        ; |8259a_down|core_dual:inst4|core:inst|eoi[5]~695        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~3                 ; |8259a_down|isr_a:inst5|isr:inst|comb~3                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[0]~696        ; |8259a_down|core_dual:inst4|core:inst|eoi[0]~696        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[4]~697        ; |8259a_down|core_dual:inst4|core:inst|eoi[4]~697        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~4                 ; |8259a_down|isr_a:inst5|isr:inst|comb~4                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[6]~698        ; |8259a_down|core_dual:inst4|core:inst|eoi[6]~698        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[6]~699        ; |8259a_down|core_dual:inst4|core:inst|eoi[6]~699        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[7]~700        ; |8259a_down|core_dual:inst4|core:inst|eoi[7]~700        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~0                 ; |8259a_down|isr_a:inst5|isr:inst|comb~0                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[6]~701        ; |8259a_down|core_dual:inst4|core:inst|eoi[6]~701        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~2                 ; |8259a_down|isr_a:inst5|isr:inst|comb~2                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~702        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~702        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~703        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~703        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[0]~704        ; |8259a_down|core_dual:inst4|core:inst|eoi[0]~704        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~8                 ; |8259a_down|isr_a:inst5|isr:inst|comb~8                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~705        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~705        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~7                 ; |8259a_down|isr_a:inst5|isr:inst|comb~7                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~706        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~706        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~707        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~707        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[3]~708        ; |8259a_down|core_dual:inst4|core:inst|eoi[3]~708        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~5                 ; |8259a_down|isr_a:inst5|isr:inst|comb~5                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~709        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~709        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~6                 ; |8259a_down|isr_a:inst5|isr:inst|comb~6                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|o1                ; |8259a_down|core_dual:inst4|core:inst|o1                ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~269             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~269             ; combout          ;
+; |8259a_down|pr:inst|position.00000110~310               ; |8259a_down|pr:inst|position.00000110~310               ; combout          ;
+; |8259a_down|pr:inst|position.00000110~311               ; |8259a_down|pr:inst|position.00000110~311               ; combout          ;
+; |8259a_down|pr:inst|Mux10~60                            ; |8259a_down|pr:inst|Mux10~60                            ; combout          ;
+; |8259a_down|pr:inst|Mux10~61                            ; |8259a_down|pr:inst|Mux10~61                            ; combout          ;
+; |8259a_down|pr:inst|position.00000110~312               ; |8259a_down|pr:inst|position.00000110~312               ; combout          ;
+; |8259a_down|pr:inst|position.00000110~313               ; |8259a_down|pr:inst|position.00000110~313               ; combout          ;
+; |8259a_down|pr:inst|Mux10~62                            ; |8259a_down|pr:inst|Mux10~62                            ; combout          ;
+; |8259a_down|pr:inst|Mux10~63                            ; |8259a_down|pr:inst|Mux10~63                            ; combout          ;
+; |8259a_down|pr:inst|position.00000110~314               ; |8259a_down|pr:inst|position.00000110~314               ; combout          ;
+; |8259a_down|pr:inst|position.00000010~315               ; |8259a_down|pr:inst|position.00000010~315               ; combout          ;
+; |8259a_down|pr:inst|position.00000010~316               ; |8259a_down|pr:inst|position.00000010~316               ; combout          ;
+; |8259a_down|pr:inst|Mux6~88                             ; |8259a_down|pr:inst|Mux6~88                             ; combout          ;
+; |8259a_down|pr:inst|Mux6~89                             ; |8259a_down|pr:inst|Mux6~89                             ; combout          ;
+; |8259a_down|pr:inst|position.00000010~317               ; |8259a_down|pr:inst|position.00000010~317               ; combout          ;
+; |8259a_down|pr:inst|position.00000010~318               ; |8259a_down|pr:inst|position.00000010~318               ; combout          ;
+; |8259a_down|pr:inst|position.00000010~319               ; |8259a_down|pr:inst|position.00000010~319               ; combout          ;
+; |8259a_down|pr:inst|Mux6~90                             ; |8259a_down|pr:inst|Mux6~90                             ; combout          ;
+; |8259a_down|pr:inst|Mux6~91                             ; |8259a_down|pr:inst|Mux6~91                             ; combout          ;
+; |8259a_down|pr:inst|position.00000010~320               ; |8259a_down|pr:inst|position.00000010~320               ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~270             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~270             ; combout          ;
+; |8259a_down|pr:inst|position.00000100~318               ; |8259a_down|pr:inst|position.00000100~318               ; combout          ;
+; |8259a_down|pr:inst|Mux8~52                             ; |8259a_down|pr:inst|Mux8~52                             ; combout          ;
+; |8259a_down|pr:inst|position.00000100~319               ; |8259a_down|pr:inst|position.00000100~319               ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~271             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~271             ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~272             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~272             ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|state.010         ; |8259a_down|core_dual:inst4|core:inst|state.010         ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|icw2~0            ; |8259a_down|core_dual:inst4|core:inst|icw2~0            ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~273             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~273             ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~274             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~274             ; combout          ;
+; |8259a_down|select2:inst15|out1[6]~98                   ; |8259a_down|select2:inst15|out1[6]~98                   ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~275             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~275             ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~276             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~276             ; combout          ;
+; |8259a_down|select2:inst15|out1[7]~99                   ; |8259a_down|select2:inst15|out1[7]~99                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[1]~679        ; |8259a_down|core_dual:inst4|core:inst|pri[1]~679        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr4~542       ; |8259a_down|core_dual:inst4|core:inst|WideOr4~542       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~680        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~680        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[1]~681        ; |8259a_down|core_dual:inst4|core:inst|pri[1]~681        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|o2~34             ; |8259a_down|core_dual:inst4|core:inst|o2~34             ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~682        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~682        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr2~544       ; |8259a_down|core_dual:inst4|core:inst|WideOr2~544       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr0~745       ; |8259a_down|core_dual:inst4|core:inst|WideOr0~745       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr0~746       ; |8259a_down|core_dual:inst4|core:inst|WideOr0~746       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr0~747       ; |8259a_down|core_dual:inst4|core:inst|WideOr0~747       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr0~748       ; |8259a_down|core_dual:inst4|core:inst|WideOr0~748       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~683        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~683        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~684        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~684        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[0]~685        ; |8259a_down|core_dual:inst4|core:inst|pri[0]~685        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr6~542       ; |8259a_down|core_dual:inst4|core:inst|WideOr6~542       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[0]~686        ; |8259a_down|core_dual:inst4|core:inst|pri[0]~686        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~687        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~687        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~688        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~688        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|edge1[0]          ; |8259a_down|core_dual:inst4|core:inst|edge1[0]          ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|edge1[1]          ; |8259a_down|core_dual:inst4|core:inst|edge1[1]          ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|Selector8~65      ; |8259a_down|core_dual:inst4|core:inst|Selector8~65      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector10~186    ; |8259a_down|core_dual:inst4|core:inst|Selector10~186    ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector10~187    ; |8259a_down|core_dual:inst4|core:inst|Selector10~187    ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|state.100         ; |8259a_down|core_dual:inst4|core:inst|state.100         ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|state.011         ; |8259a_down|core_dual:inst4|core:inst|state.011         ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|Selector10~188    ; |8259a_down|core_dual:inst4|core:inst|Selector10~188    ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector10~189    ; |8259a_down|core_dual:inst4|core:inst|Selector10~189    ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw4~0            ; |8259a_down|core_dual:inst4|core:inst|icw4~0            ; combout          ;
+; |8259a_down|pr:inst|Mux4~81                             ; |8259a_down|pr:inst|Mux4~81                             ; combout          ;
+; |8259a_down|pr:inst|Mux4~82                             ; |8259a_down|pr:inst|Mux4~82                             ; combout          ;
+; |8259a_down|pr:inst|position.00000000~269               ; |8259a_down|pr:inst|position.00000000~269               ; combout          ;
+; |8259a_down|pr:inst|Mux4~83                             ; |8259a_down|pr:inst|Mux4~83                             ; combout          ;
+; |8259a_down|pr:inst|position.00000000~270               ; |8259a_down|pr:inst|position.00000000~270               ; combout          ;
+; |8259a_down|pr:inst|Mux4~84                             ; |8259a_down|pr:inst|Mux4~84                             ; combout          ;
+; |8259a_down|pr:inst|position.00000000~271               ; |8259a_down|pr:inst|position.00000000~271               ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[0]~32     ; |8259a_down|core_dual:inst4|core:inst|setzero[0]~32     ; combout          ;
+; |8259a_down|select2:inst15|out2[0]~81                   ; |8259a_down|select2:inst15|out2[0]~81                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[1]~33     ; |8259a_down|core_dual:inst4|core:inst|setzero[1]~33     ; combout          ;
+; |8259a_down|select2:inst15|out2[1]~82                   ; |8259a_down|select2:inst15|out2[1]~82                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[2]~34     ; |8259a_down|core_dual:inst4|core:inst|setzero[2]~34     ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[3]~35     ; |8259a_down|core_dual:inst4|core:inst|setzero[3]~35     ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector7~335     ; |8259a_down|core_dual:inst4|core:inst|Selector7~335     ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[4]~36     ; |8259a_down|core_dual:inst4|core:inst|setzero[4]~36     ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[5]~37     ; |8259a_down|core_dual:inst4|core:inst|setzero[5]~37     ; combout          ;
+; |8259a_down|select2:inst15|out2[5]~85                   ; |8259a_down|select2:inst15|out2[5]~85                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[6]~38     ; |8259a_down|core_dual:inst4|core:inst|setzero[6]~38     ; combout          ;
+; |8259a_down|select2:inst15|out2[6]~86                   ; |8259a_down|select2:inst15|out2[6]~86                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[7]~39     ; |8259a_down|core_dual:inst4|core:inst|setzero[7]~39     ; combout          ;
+; |8259a_down|select2:inst15|out2[7]~87                   ; |8259a_down|select2:inst15|out2[7]~87                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|edge1[1]~22       ; |8259a_down|core_dual:inst4|core:inst|edge1[1]~22       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector9~94      ; |8259a_down|core_dual:inst4|core:inst|Selector9~94      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector9~95      ; |8259a_down|core_dual:inst4|core:inst|Selector9~95      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector9~96      ; |8259a_down|core_dual:inst4|core:inst|Selector9~96      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector9~97      ; |8259a_down|core_dual:inst4|core:inst|Selector9~97      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector8~66      ; |8259a_down|core_dual:inst4|core:inst|Selector8~66      ; combout          ;
+; |8259a_down|pr:inst|Mux0~215                            ; |8259a_down|pr:inst|Mux0~215                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~216                            ; |8259a_down|pr:inst|Mux0~216                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~217                            ; |8259a_down|pr:inst|Mux0~217                            ; combout          ;
+; |8259a_down|pr:inst|Mux11~446                           ; |8259a_down|pr:inst|Mux11~446                           ; combout          ;
+; |8259a_down|pr:inst|position.00000110~315               ; |8259a_down|pr:inst|position.00000110~315               ; combout          ;
+; |8259a_down|pr:inst|LessThan0~658                       ; |8259a_down|pr:inst|LessThan0~658                       ; combout          ;
+; |8259a_down|pr:inst|intr~37                             ; |8259a_down|pr:inst|intr~37                             ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3~38           ; |8259a_down|core_dual:inst4|core:inst|ocw3~38           ; combout          ;
+; |8259a_down|pr:inst|position.00000111~424               ; |8259a_down|pr:inst|position.00000111~424               ; combout          ;
+; |8259a_down|pr:inst|Mux7~124                            ; |8259a_down|pr:inst|Mux7~124                            ; combout          ;
+; |8259a_down|pr:inst|Mux7~125                            ; |8259a_down|pr:inst|Mux7~125                            ; combout          ;
+; |8259a_down|pr:inst|Mux5~64                             ; |8259a_down|pr:inst|Mux5~64                             ; combout          ;
+; |8259a_down|pr:inst|position.00000001~316               ; |8259a_down|pr:inst|position.00000001~316               ; combout          ;
+; |8259a_down|pr:inst|position.00000001~317               ; |8259a_down|pr:inst|position.00000001~317               ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~710        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~710        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[5]~711        ; |8259a_down|core_dual:inst4|core:inst|eoi[5]~711        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~712        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~712        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[4]~713        ; |8259a_down|core_dual:inst4|core:inst|eoi[4]~713        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[7]~714        ; |8259a_down|core_dual:inst4|core:inst|eoi[7]~714        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[6]~715        ; |8259a_down|core_dual:inst4|core:inst|eoi[6]~715        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[0]~716        ; |8259a_down|core_dual:inst4|core:inst|eoi[0]~716        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~717        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~717        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[3]~718        ; |8259a_down|core_dual:inst4|core:inst|eoi[3]~718        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~719        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~719        ; combout          ;
+; |8259a_down|pr:inst|Mux8~53                             ; |8259a_down|pr:inst|Mux8~53                             ; combout          ;
+; |8259a_down|pr:inst|Mux8~54                             ; |8259a_down|pr:inst|Mux8~54                             ; combout          ;
+; |8259a_down|pr:inst|Mux4~85                             ; |8259a_down|pr:inst|Mux4~85                             ; combout          ;
+; |8259a_down|pr:inst|position.00000000~272               ; |8259a_down|pr:inst|position.00000000~272               ; combout          ;
+; |8259a_down|pr:inst|Mux0~218                            ; |8259a_down|pr:inst|Mux0~218                            ; combout          ;
+; |8259a_down|pr:inst|LessThan0~659                       ; |8259a_down|pr:inst|LessThan0~659                       ; combout          ;
+; |8259a_down|pr:inst|LessThan0~660                       ; |8259a_down|pr:inst|LessThan0~660                       ; combout          ;
+; |8259a_down|pr:inst|Mux2~132                            ; |8259a_down|pr:inst|Mux2~132                            ; combout          ;
+; |8259a_down|pr:inst|Mux2~133                            ; |8259a_down|pr:inst|Mux2~133                            ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|edge1[0]~23       ; |8259a_down|core_dual:inst4|core:inst|edge1[0]~23       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3[1]           ; |8259a_down|core_dual:inst4|core:inst|ocw3[1]           ; combout          ;
+; |8259a_down|pr:inst|position.00000111_3378              ; |8259a_down|pr:inst|position.00000111_3378              ; combout          ;
+; |8259a_down|pr:inst|position.00000101_3656              ; |8259a_down|pr:inst|position.00000101_3656              ; combout          ;
+; |8259a_down|pr:inst|position.00000011_3934              ; |8259a_down|pr:inst|position.00000011_3934              ; combout          ;
+; |8259a_down|pr:inst|position.00000001_4212              ; |8259a_down|pr:inst|position.00000001_4212              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[5]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[5]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[4]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[4]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[7]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[7]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[6]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[6]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[0]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[0]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[1]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[1]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[3]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[3]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[2]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[2]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[0]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[0]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3[0]           ; |8259a_down|core_dual:inst4|core:inst|ocw3[0]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[0]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[0]              ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[0]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[0]              ; combout          ;
+; |8259a_down|pr:inst|position.00000110_3517              ; |8259a_down|pr:inst|position.00000110_3517              ; combout          ;
+; |8259a_down|pr:inst|position.00000010_4073              ; |8259a_down|pr:inst|position.00000010_4073              ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[1]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[1]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[1]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[1]           ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[1]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[1]              ; combout          ;
+; |8259a_down|pr:inst|position.00000100_3795              ; |8259a_down|pr:inst|position.00000100_3795              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[2]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[2]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[2]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[2]              ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[2]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[2]              ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[3]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[3]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[3]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[3]           ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[3]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[3]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw2[3]           ; |8259a_down|core_dual:inst4|core:inst|icw2[3]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[4]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[4]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[4]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[4]              ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[4]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[4]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw2[4]           ; |8259a_down|core_dual:inst4|core:inst|icw2[4]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[5]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[5]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[5]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[5]           ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[5]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[5]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw2[5]           ; |8259a_down|core_dual:inst4|core:inst|icw2[5]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[6]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[6]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[6]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[6]              ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[6]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[6]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw2[6]           ; |8259a_down|core_dual:inst4|core:inst|icw2[6]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[7]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[7]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[7]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[7]           ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[7]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[7]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw2[7]           ; |8259a_down|core_dual:inst4|core:inst|icw2[7]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[1]            ; |8259a_down|core_dual:inst4|core:inst|pri[1]            ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[0]            ; |8259a_down|core_dual:inst4|core:inst|pri[0]            ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]            ; |8259a_down|core_dual:inst4|core:inst|pri[2]            ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3[6]           ; |8259a_down|core_dual:inst4|core:inst|ocw3[6]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3[5]           ; |8259a_down|core_dual:inst4|core:inst|ocw3[5]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw4[1]           ; |8259a_down|core_dual:inst4|core:inst|icw4[1]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[6]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[6]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[5]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[5]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[2]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[2]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[0]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[0]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[1]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[1]           ; combout          ;
+; |8259a_down|pr:inst|position.00000000_4351              ; |8259a_down|pr:inst|position.00000000_4351              ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[0]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[0]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[1]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[1]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[2]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[2]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[3]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[3]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[4]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[4]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[5]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[5]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[6]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[6]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[7]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[7]          ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[7]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[7]           ; combout          ;
+; |8259a_down|Hex0[6]                                     ; |8259a_down|Hex0[6]                                     ; padio            ;
+; |8259a_down|Hex0[5]                                     ; |8259a_down|Hex0[5]                                     ; padio            ;
+; |8259a_down|Hex0[4]                                     ; |8259a_down|Hex0[4]                                     ; padio            ;
+; |8259a_down|Hex0[3]                                     ; |8259a_down|Hex0[3]                                     ; padio            ;
+; |8259a_down|Hex0[2]                                     ; |8259a_down|Hex0[2]                                     ; padio            ;
+; |8259a_down|Hex0[1]                                     ; |8259a_down|Hex0[1]                                     ; padio            ;
+; |8259a_down|Hex0[0]                                     ; |8259a_down|Hex0[0]                                     ; padio            ;
+; |8259a_down|Hex1[6]                                     ; |8259a_down|Hex1[6]                                     ; padio            ;
+; |8259a_down|Hex1[5]                                     ; |8259a_down|Hex1[5]                                     ; padio            ;
+; |8259a_down|Hex1[4]                                     ; |8259a_down|Hex1[4]                                     ; padio            ;
+; |8259a_down|Hex1[3]                                     ; |8259a_down|Hex1[3]                                     ; padio            ;
+; |8259a_down|Hex1[2]                                     ; |8259a_down|Hex1[2]                                     ; padio            ;
+; |8259a_down|Hex1[1]                                     ; |8259a_down|Hex1[1]                                     ; padio            ;
+; |8259a_down|Hex1[0]                                     ; |8259a_down|Hex1[0]                                     ; padio            ;
+; |8259a_down|Hex4[6]                                     ; |8259a_down|Hex4[6]                                     ; padio            ;
+; |8259a_down|Hex4[5]                                     ; |8259a_down|Hex4[5]                                     ; padio            ;
+; |8259a_down|Hex4[4]                                     ; |8259a_down|Hex4[4]                                     ; padio            ;
+; |8259a_down|Hex4[3]                                     ; |8259a_down|Hex4[3]                                     ; padio            ;
+; |8259a_down|Hex4[2]                                     ; |8259a_down|Hex4[2]                                     ; padio            ;
+; |8259a_down|Hex4[1]                                     ; |8259a_down|Hex4[1]                                     ; padio            ;
+; |8259a_down|Hex4[0]                                     ; |8259a_down|Hex4[0]                                     ; padio            ;
+; |8259a_down|CS                                          ; |8259a_down|CS~corein                                   ; combout          ;
+; |8259a_down|RESET                                       ; |8259a_down|RESET~corein                                ; combout          ;
+; |8259a_down|in[6]                                       ; |8259a_down|in[6]~corein                                ; combout          ;
+; |8259a_down|in[7]                                       ; |8259a_down|in[7]~corein                                ; combout          ;
+; |8259a_down|RESET~clkctrl                               ; |8259a_down|RESET~clkctrl                               ; outclk           ;
+; |8259a_down|core_dual:inst4|core:inst|icw2~0clkctrl     ; |8259a_down|core_dual:inst4|core:inst|icw2~0clkctrl     ; outclk           ;
+; |8259a_down|core_dual:inst4|core:inst|o1~clkctrl        ; |8259a_down|core_dual:inst4|core:inst|o1~clkctrl        ; outclk           ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3~38clkctrl    ; |8259a_down|core_dual:inst4|core:inst|ocw3~38clkctrl    ; outclk           ;
+; |8259a_down|core_dual:inst4|core:inst|state.001~clkctrl ; |8259a_down|core_dual:inst4|core:inst|state.001~clkctrl ; outclk           ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~684clkctrl ; |8259a_down|core_dual:inst4|core:inst|pri[2]~684clkctrl ; outclk           ;
++---------------------------------------------------------+---------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                             ;
++---------------------------------------------------------+---------------------------------------------------------+------------------+
+; Node Name                                               ; Output Port Name                                        ; Output Port Type ;
++---------------------------------------------------------+---------------------------------------------------------+------------------+
+; |8259a_down|pr:inst|WideOr3~13                          ; |8259a_down|pr:inst|WideOr3~13                          ; combout          ;
+; |8259a_down|pr:inst|Equal2~82                           ; |8259a_down|pr:inst|Equal2~82                           ; combout          ;
+; |8259a_down|pr:inst|Equal2~83                           ; |8259a_down|pr:inst|Equal2~83                           ; combout          ;
+; |8259a_down|pr:inst|Equal2~84                           ; |8259a_down|pr:inst|Equal2~84                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[2]~533    ; |8259a_down|core_dual:inst4|core:inst|dataout[2]~533    ; combout          ;
+; |8259a_down|gdfx_temp0[3]~176                           ; |8259a_down|gdfx_temp0[3]~176                           ; combout          ;
+; |8259a_down|gdfx_temp0[0]~177                           ; |8259a_down|gdfx_temp0[0]~177                           ; combout          ;
+; |8259a_down|gdfx_temp0[0]~178                           ; |8259a_down|gdfx_temp0[0]~178                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[0]~534    ; |8259a_down|core_dual:inst4|core:inst|dataout[0]~534    ; combout          ;
+; |8259a_down|pr:inst|WideOr2~19                          ; |8259a_down|pr:inst|WideOr2~19                          ; combout          ;
+; |8259a_down|gdfx_temp0[1]~179                           ; |8259a_down|gdfx_temp0[1]~179                           ; combout          ;
+; |8259a_down|gdfx_temp0[1]~180                           ; |8259a_down|gdfx_temp0[1]~180                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[1]~535    ; |8259a_down|core_dual:inst4|core:inst|dataout[1]~535    ; combout          ;
+; |8259a_down|pr:inst|WideOr1~12                          ; |8259a_down|pr:inst|WideOr1~12                          ; combout          ;
+; |8259a_down|gdfx_temp0[2]~181                           ; |8259a_down|gdfx_temp0[2]~181                           ; combout          ;
+; |8259a_down|gdfx_temp0[2]~182                           ; |8259a_down|gdfx_temp0[2]~182                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[2]~536    ; |8259a_down|core_dual:inst4|core:inst|dataout[2]~536    ; combout          ;
+; |8259a_down|gdfx_temp0[3]~183                           ; |8259a_down|gdfx_temp0[3]~183                           ; combout          ;
+; |8259a_down|gdfx_temp0[3]~184                           ; |8259a_down|gdfx_temp0[3]~184                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[3]~538    ; |8259a_down|core_dual:inst4|core:inst|dataout[3]~538    ; combout          ;
+; |8259a_down|segout:inst22|WideOr0~23                    ; |8259a_down|segout:inst22|WideOr0~23                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr1~23                    ; |8259a_down|segout:inst22|WideOr1~23                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr2~21                    ; |8259a_down|segout:inst22|WideOr2~21                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr3~23                    ; |8259a_down|segout:inst22|WideOr3~23                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr4~23                    ; |8259a_down|segout:inst22|WideOr4~23                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr5~23                    ; |8259a_down|segout:inst22|WideOr5~23                    ; combout          ;
+; |8259a_down|segout:inst22|WideOr6~23                    ; |8259a_down|segout:inst22|WideOr6~23                    ; combout          ;
+; |8259a_down|gdfx_temp0[4]~185                           ; |8259a_down|gdfx_temp0[4]~185                           ; combout          ;
+; |8259a_down|gdfx_temp0[4]~186                           ; |8259a_down|gdfx_temp0[4]~186                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[4]~539    ; |8259a_down|core_dual:inst4|core:inst|dataout[4]~539    ; combout          ;
+; |8259a_down|gdfx_temp0[5]~187                           ; |8259a_down|gdfx_temp0[5]~187                           ; combout          ;
+; |8259a_down|gdfx_temp0[5]~188                           ; |8259a_down|gdfx_temp0[5]~188                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[5]~540    ; |8259a_down|core_dual:inst4|core:inst|dataout[5]~540    ; combout          ;
+; |8259a_down|gdfx_temp0[6]~189                           ; |8259a_down|gdfx_temp0[6]~189                           ; combout          ;
+; |8259a_down|gdfx_temp0[6]~190                           ; |8259a_down|gdfx_temp0[6]~190                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[6]~541    ; |8259a_down|core_dual:inst4|core:inst|dataout[6]~541    ; combout          ;
+; |8259a_down|gdfx_temp0[7]~191                           ; |8259a_down|gdfx_temp0[7]~191                           ; combout          ;
+; |8259a_down|gdfx_temp0[7]~192                           ; |8259a_down|gdfx_temp0[7]~192                           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|dataout[7]~542    ; |8259a_down|core_dual:inst4|core:inst|dataout[7]~542    ; combout          ;
+; |8259a_down|segout:inst21|WideOr0~23                    ; |8259a_down|segout:inst21|WideOr0~23                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr1~23                    ; |8259a_down|segout:inst21|WideOr1~23                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr2~21                    ; |8259a_down|segout:inst21|WideOr2~21                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr3~23                    ; |8259a_down|segout:inst21|WideOr3~23                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr4~23                    ; |8259a_down|segout:inst21|WideOr4~23                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr5~23                    ; |8259a_down|segout:inst21|WideOr5~23                    ; combout          ;
+; |8259a_down|segout:inst21|WideOr6~23                    ; |8259a_down|segout:inst21|WideOr6~23                    ; combout          ;
+; |8259a_down|pr:inst|nmr[5]                              ; |8259a_down|pr:inst|nmr[5]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[7]                              ; |8259a_down|pr:inst|nmr[7]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[6]                              ; |8259a_down|pr:inst|nmr[6]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[1]                              ; |8259a_down|pr:inst|nmr[1]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[0]                              ; |8259a_down|pr:inst|nmr[0]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[3]                              ; |8259a_down|pr:inst|nmr[3]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[4]                              ; |8259a_down|pr:inst|nmr[4]                              ; combout          ;
+; |8259a_down|pr:inst|nmr[2]                              ; |8259a_down|pr:inst|nmr[2]                              ; combout          ;
+; |8259a_down|pr:inst|Mux0~203                            ; |8259a_down|pr:inst|Mux0~203                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~204                            ; |8259a_down|pr:inst|Mux0~204                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~205                            ; |8259a_down|pr:inst|Mux0~205                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~206                            ; |8259a_down|pr:inst|Mux0~206                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~207                            ; |8259a_down|pr:inst|Mux0~207                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~208                            ; |8259a_down|pr:inst|Mux0~208                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~209                            ; |8259a_down|pr:inst|Mux0~209                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~210                            ; |8259a_down|pr:inst|Mux0~210                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~211                            ; |8259a_down|pr:inst|Mux0~211                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~212                            ; |8259a_down|pr:inst|Mux0~212                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~213                            ; |8259a_down|pr:inst|Mux0~213                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~214                            ; |8259a_down|pr:inst|Mux0~214                            ; combout          ;
+; |8259a_down|pr:inst|position.00000101~322               ; |8259a_down|pr:inst|position.00000101~322               ; combout          ;
+; |8259a_down|pr:inst|Equal0~93                           ; |8259a_down|pr:inst|Equal0~93                           ; combout          ;
+; |8259a_down|pr:inst|Equal0~94                           ; |8259a_down|pr:inst|Equal0~94                           ; combout          ;
+; |8259a_down|pr:inst|Equal0~95                           ; |8259a_down|pr:inst|Equal0~95                           ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[0]                           ; |8259a_down|pr:inst|hp_nmr[0]                           ; combout          ;
+; |8259a_down|pr:inst|position.00000110~309               ; |8259a_down|pr:inst|position.00000110~309               ; combout          ;
+; |8259a_down|pr:inst|position.00000100~316               ; |8259a_down|pr:inst|position.00000100~316               ; combout          ;
+; |8259a_down|pr:inst|position.00000100~317               ; |8259a_down|pr:inst|position.00000100~317               ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[2]~1564                      ; |8259a_down|pr:inst|hp_nmr[2]~1564                      ; combout          ;
+; |8259a_down|pr:inst|Mux1~117                            ; |8259a_down|pr:inst|Mux1~117                            ; combout          ;
+; |8259a_down|pr:inst|Mux1~118                            ; |8259a_down|pr:inst|Mux1~118                            ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[2]~1565                      ; |8259a_down|pr:inst|hp_nmr[2]~1565                      ; combout          ;
+; |8259a_down|pr:inst|Mux1~119                            ; |8259a_down|pr:inst|Mux1~119                            ; combout          ;
+; |8259a_down|pr:inst|Mux1~120                            ; |8259a_down|pr:inst|Mux1~120                            ; combout          ;
+; |8259a_down|pr:inst|Mux1~121                            ; |8259a_down|pr:inst|Mux1~121                            ; combout          ;
+; |8259a_down|pr:inst|Mux1~122                            ; |8259a_down|pr:inst|Mux1~122                            ; combout          ;
+; |8259a_down|pr:inst|Mux1~123                            ; |8259a_down|pr:inst|Mux1~123                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[3]~1473                      ; |8259a_down|pr:inst|hp_isr[3]~1473                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[3]~1474                      ; |8259a_down|pr:inst|hp_isr[3]~1474                      ; combout          ;
+; |8259a_down|pr:inst|Mux11~438                           ; |8259a_down|pr:inst|Mux11~438                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~439                           ; |8259a_down|pr:inst|Mux11~439                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~440                           ; |8259a_down|pr:inst|Mux11~440                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~441                           ; |8259a_down|pr:inst|Mux11~441                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~442                           ; |8259a_down|pr:inst|Mux11~442                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~443                           ; |8259a_down|pr:inst|Mux11~443                           ; combout          ;
+; |8259a_down|pr:inst|hp_isr[2]~1475                      ; |8259a_down|pr:inst|hp_isr[2]~1475                      ; combout          ;
+; |8259a_down|pr:inst|Mux11~444                           ; |8259a_down|pr:inst|Mux11~444                           ; combout          ;
+; |8259a_down|pr:inst|Mux11~445                           ; |8259a_down|pr:inst|Mux11~445                           ; combout          ;
+; |8259a_down|pr:inst|hp_isr~1476                         ; |8259a_down|pr:inst|hp_isr~1476                         ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1477                      ; |8259a_down|pr:inst|hp_isr[1]~1477                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1478                      ; |8259a_down|pr:inst|hp_isr[1]~1478                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1479                      ; |8259a_down|pr:inst|hp_isr[1]~1479                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1480                      ; |8259a_down|pr:inst|hp_isr[1]~1480                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1481                      ; |8259a_down|pr:inst|hp_isr[1]~1481                      ; combout          ;
+; |8259a_down|pr:inst|Mux12~31                            ; |8259a_down|pr:inst|Mux12~31                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1482                      ; |8259a_down|pr:inst|hp_isr[1]~1482                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1483                      ; |8259a_down|pr:inst|hp_isr[1]~1483                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1484                      ; |8259a_down|pr:inst|hp_isr[1]~1484                      ; combout          ;
+; |8259a_down|pr:inst|Mux12~32                            ; |8259a_down|pr:inst|Mux12~32                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1485                      ; |8259a_down|pr:inst|hp_isr[1]~1485                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1486                      ; |8259a_down|pr:inst|hp_isr[1]~1486                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1487                      ; |8259a_down|pr:inst|hp_isr[1]~1487                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1488                      ; |8259a_down|pr:inst|hp_isr[1]~1488                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1489                      ; |8259a_down|pr:inst|hp_isr[1]~1489                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1490                      ; |8259a_down|pr:inst|hp_isr[1]~1490                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1491                      ; |8259a_down|pr:inst|hp_isr[1]~1491                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1492                      ; |8259a_down|pr:inst|hp_isr[1]~1492                      ; combout          ;
+; |8259a_down|pr:inst|Mux12~33                            ; |8259a_down|pr:inst|Mux12~33                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1493                      ; |8259a_down|pr:inst|hp_isr[1]~1493                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1494                      ; |8259a_down|pr:inst|hp_isr[1]~1494                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1495                      ; |8259a_down|pr:inst|hp_isr[1]~1495                      ; combout          ;
+; |8259a_down|pr:inst|Mux12~34                            ; |8259a_down|pr:inst|Mux12~34                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[1]~1496                      ; |8259a_down|pr:inst|hp_isr[1]~1496                      ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[1]~1566                      ; |8259a_down|pr:inst|hp_nmr[1]~1566                      ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[1]~1567                      ; |8259a_down|pr:inst|hp_nmr[1]~1567                      ; combout          ;
+; |8259a_down|pr:inst|Mux2~128                            ; |8259a_down|pr:inst|Mux2~128                            ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[1]~1568                      ; |8259a_down|pr:inst|hp_nmr[1]~1568                      ; combout          ;
+; |8259a_down|pr:inst|Mux2~129                            ; |8259a_down|pr:inst|Mux2~129                            ; combout          ;
+; |8259a_down|pr:inst|position.00000010~314               ; |8259a_down|pr:inst|position.00000010~314               ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[1]~1569                      ; |8259a_down|pr:inst|hp_nmr[1]~1569                      ; combout          ;
+; |8259a_down|pr:inst|hp_nmr[1]~1570                      ; |8259a_down|pr:inst|hp_nmr[1]~1570                      ; combout          ;
+; |8259a_down|pr:inst|Mux2~130                            ; |8259a_down|pr:inst|Mux2~130                            ; combout          ;
+; |8259a_down|pr:inst|Mux2~131                            ; |8259a_down|pr:inst|Mux2~131                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1497                      ; |8259a_down|pr:inst|hp_isr[0]~1497                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1498                      ; |8259a_down|pr:inst|hp_isr[0]~1498                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1499                      ; |8259a_down|pr:inst|hp_isr[0]~1499                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1500                      ; |8259a_down|pr:inst|hp_isr[0]~1500                      ; combout          ;
+; |8259a_down|pr:inst|Mux13~48                            ; |8259a_down|pr:inst|Mux13~48                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1501                      ; |8259a_down|pr:inst|hp_isr[0]~1501                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1502                      ; |8259a_down|pr:inst|hp_isr[0]~1502                      ; combout          ;
+; |8259a_down|pr:inst|Mux13~49                            ; |8259a_down|pr:inst|Mux13~49                            ; combout          ;
+; |8259a_down|pr:inst|Mux13~50                            ; |8259a_down|pr:inst|Mux13~50                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1503                      ; |8259a_down|pr:inst|hp_isr[0]~1503                      ; combout          ;
+; |8259a_down|pr:inst|Mux13~51                            ; |8259a_down|pr:inst|Mux13~51                            ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1504                      ; |8259a_down|pr:inst|hp_isr[0]~1504                      ; combout          ;
+; |8259a_down|pr:inst|hp_isr[0]~1505                      ; |8259a_down|pr:inst|hp_isr[0]~1505                      ; combout          ;
+; |8259a_down|pr:inst|Mux13~52                            ; |8259a_down|pr:inst|Mux13~52                            ; combout          ;
+; |8259a_down|pr:inst|Mux13~53                            ; |8259a_down|pr:inst|Mux13~53                            ; combout          ;
+; |8259a_down|pr:inst|LessThan0~656                       ; |8259a_down|pr:inst|LessThan0~656                       ; combout          ;
+; |8259a_down|pr:inst|LessThan0~657                       ; |8259a_down|pr:inst|LessThan0~657                       ; combout          ;
+; |8259a_down|pr:inst|isr_set[3]~125                      ; |8259a_down|pr:inst|isr_set[3]~125                      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|state.101         ; |8259a_down|core_dual:inst4|core:inst|state.101         ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|Selector7~334     ; |8259a_down|core_dual:inst4|core:inst|Selector7~334     ; combout          ;
+; |8259a_down|pr:inst|position.00000111~418               ; |8259a_down|pr:inst|position.00000111~418               ; combout          ;
+; |8259a_down|pr:inst|Mux3~112                            ; |8259a_down|pr:inst|Mux3~112                            ; combout          ;
+; |8259a_down|pr:inst|position.00000111~419               ; |8259a_down|pr:inst|position.00000111~419               ; combout          ;
+; |8259a_down|pr:inst|position.00000111~420               ; |8259a_down|pr:inst|position.00000111~420               ; combout          ;
+; |8259a_down|pr:inst|Mux3~113                            ; |8259a_down|pr:inst|Mux3~113                            ; combout          ;
+; |8259a_down|pr:inst|position.00000000~268               ; |8259a_down|pr:inst|position.00000000~268               ; combout          ;
+; |8259a_down|pr:inst|Mux3~114                            ; |8259a_down|pr:inst|Mux3~114                            ; combout          ;
+; |8259a_down|pr:inst|position.00000111~421               ; |8259a_down|pr:inst|position.00000111~421               ; combout          ;
+; |8259a_down|pr:inst|Mux3~115                            ; |8259a_down|pr:inst|Mux3~115                            ; combout          ;
+; |8259a_down|pr:inst|position.00000111~422               ; |8259a_down|pr:inst|position.00000111~422               ; combout          ;
+; |8259a_down|pr:inst|position.00000101~323               ; |8259a_down|pr:inst|position.00000101~323               ; combout          ;
+; |8259a_down|pr:inst|position.00000101~324               ; |8259a_down|pr:inst|position.00000101~324               ; combout          ;
+; |8259a_down|pr:inst|position.00000101~325               ; |8259a_down|pr:inst|position.00000101~325               ; combout          ;
+; |8259a_down|pr:inst|position.00000101~326               ; |8259a_down|pr:inst|position.00000101~326               ; combout          ;
+; |8259a_down|pr:inst|Mux9~60                             ; |8259a_down|pr:inst|Mux9~60                             ; combout          ;
+; |8259a_down|pr:inst|Mux9~61                             ; |8259a_down|pr:inst|Mux9~61                             ; combout          ;
+; |8259a_down|pr:inst|position.00000101~327               ; |8259a_down|pr:inst|position.00000101~327               ; combout          ;
+; |8259a_down|pr:inst|Mux9~62                             ; |8259a_down|pr:inst|Mux9~62                             ; combout          ;
+; |8259a_down|pr:inst|Mux9~63                             ; |8259a_down|pr:inst|Mux9~63                             ; combout          ;
+; |8259a_down|pr:inst|position.00000101~328               ; |8259a_down|pr:inst|position.00000101~328               ; combout          ;
+; |8259a_down|pr:inst|Mux7~120                            ; |8259a_down|pr:inst|Mux7~120                            ; combout          ;
+; |8259a_down|pr:inst|Mux7~121                            ; |8259a_down|pr:inst|Mux7~121                            ; combout          ;
+; |8259a_down|pr:inst|position.00000011~326               ; |8259a_down|pr:inst|position.00000011~326               ; combout          ;
+; |8259a_down|pr:inst|Mux7~122                            ; |8259a_down|pr:inst|Mux7~122                            ; combout          ;
+; |8259a_down|pr:inst|position.00000011~327               ; |8259a_down|pr:inst|position.00000011~327               ; combout          ;
+; |8259a_down|pr:inst|position.00000011~328               ; |8259a_down|pr:inst|position.00000011~328               ; combout          ;
+; |8259a_down|pr:inst|Mux7~123                            ; |8259a_down|pr:inst|Mux7~123                            ; combout          ;
+; |8259a_down|pr:inst|position.00000011~329               ; |8259a_down|pr:inst|position.00000011~329               ; combout          ;
+; |8259a_down|pr:inst|position.00000001~313               ; |8259a_down|pr:inst|position.00000001~313               ; combout          ;
+; |8259a_down|pr:inst|Mux5~60                             ; |8259a_down|pr:inst|Mux5~60                             ; combout          ;
+; |8259a_down|pr:inst|Mux5~61                             ; |8259a_down|pr:inst|Mux5~61                             ; combout          ;
+; |8259a_down|pr:inst|Mux5~62                             ; |8259a_down|pr:inst|Mux5~62                             ; combout          ;
+; |8259a_down|pr:inst|position.00000001~314               ; |8259a_down|pr:inst|position.00000001~314               ; combout          ;
+; |8259a_down|pr:inst|Mux5~63                             ; |8259a_down|pr:inst|Mux5~63                             ; combout          ;
+; |8259a_down|pr:inst|position.00000001~315               ; |8259a_down|pr:inst|position.00000001~315               ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|state.001         ; |8259a_down|core_dual:inst4|core:inst|state.001         ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|always3~0         ; |8259a_down|core_dual:inst4|core:inst|always3~0         ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~686        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~686        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~688        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~688        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~689        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~689        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~691        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~691        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[4]~692        ; |8259a_down|core_dual:inst4|core:inst|eoi[4]~692        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~693        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~693        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[4]~694        ; |8259a_down|core_dual:inst4|core:inst|eoi[4]~694        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[5]~695        ; |8259a_down|core_dual:inst4|core:inst|eoi[5]~695        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~3                 ; |8259a_down|isr_a:inst5|isr:inst|comb~3                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[0]~696        ; |8259a_down|core_dual:inst4|core:inst|eoi[0]~696        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[4]~697        ; |8259a_down|core_dual:inst4|core:inst|eoi[4]~697        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~4                 ; |8259a_down|isr_a:inst5|isr:inst|comb~4                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[6]~698        ; |8259a_down|core_dual:inst4|core:inst|eoi[6]~698        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[6]~699        ; |8259a_down|core_dual:inst4|core:inst|eoi[6]~699        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[7]~700        ; |8259a_down|core_dual:inst4|core:inst|eoi[7]~700        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~0                 ; |8259a_down|isr_a:inst5|isr:inst|comb~0                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[6]~701        ; |8259a_down|core_dual:inst4|core:inst|eoi[6]~701        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~2                 ; |8259a_down|isr_a:inst5|isr:inst|comb~2                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~702        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~702        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~703        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~703        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[0]~704        ; |8259a_down|core_dual:inst4|core:inst|eoi[0]~704        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~8                 ; |8259a_down|isr_a:inst5|isr:inst|comb~8                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~705        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~705        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~7                 ; |8259a_down|isr_a:inst5|isr:inst|comb~7                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~706        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~706        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~707        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~707        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[3]~708        ; |8259a_down|core_dual:inst4|core:inst|eoi[3]~708        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~5                 ; |8259a_down|isr_a:inst5|isr:inst|comb~5                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~709        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~709        ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|comb~6                 ; |8259a_down|isr_a:inst5|isr:inst|comb~6                 ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|o1                ; |8259a_down|core_dual:inst4|core:inst|o1                ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~269             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~269             ; combout          ;
+; |8259a_down|pr:inst|position.00000110~310               ; |8259a_down|pr:inst|position.00000110~310               ; combout          ;
+; |8259a_down|pr:inst|position.00000110~311               ; |8259a_down|pr:inst|position.00000110~311               ; combout          ;
+; |8259a_down|pr:inst|Mux10~60                            ; |8259a_down|pr:inst|Mux10~60                            ; combout          ;
+; |8259a_down|pr:inst|Mux10~61                            ; |8259a_down|pr:inst|Mux10~61                            ; combout          ;
+; |8259a_down|pr:inst|position.00000110~312               ; |8259a_down|pr:inst|position.00000110~312               ; combout          ;
+; |8259a_down|pr:inst|position.00000110~313               ; |8259a_down|pr:inst|position.00000110~313               ; combout          ;
+; |8259a_down|pr:inst|Mux10~62                            ; |8259a_down|pr:inst|Mux10~62                            ; combout          ;
+; |8259a_down|pr:inst|Mux10~63                            ; |8259a_down|pr:inst|Mux10~63                            ; combout          ;
+; |8259a_down|pr:inst|position.00000110~314               ; |8259a_down|pr:inst|position.00000110~314               ; combout          ;
+; |8259a_down|pr:inst|position.00000010~315               ; |8259a_down|pr:inst|position.00000010~315               ; combout          ;
+; |8259a_down|pr:inst|position.00000010~316               ; |8259a_down|pr:inst|position.00000010~316               ; combout          ;
+; |8259a_down|pr:inst|Mux6~88                             ; |8259a_down|pr:inst|Mux6~88                             ; combout          ;
+; |8259a_down|pr:inst|Mux6~89                             ; |8259a_down|pr:inst|Mux6~89                             ; combout          ;
+; |8259a_down|pr:inst|position.00000010~317               ; |8259a_down|pr:inst|position.00000010~317               ; combout          ;
+; |8259a_down|pr:inst|position.00000010~318               ; |8259a_down|pr:inst|position.00000010~318               ; combout          ;
+; |8259a_down|pr:inst|position.00000010~319               ; |8259a_down|pr:inst|position.00000010~319               ; combout          ;
+; |8259a_down|pr:inst|Mux6~90                             ; |8259a_down|pr:inst|Mux6~90                             ; combout          ;
+; |8259a_down|pr:inst|Mux6~91                             ; |8259a_down|pr:inst|Mux6~91                             ; combout          ;
+; |8259a_down|pr:inst|position.00000010~320               ; |8259a_down|pr:inst|position.00000010~320               ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~270             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~270             ; combout          ;
+; |8259a_down|pr:inst|position.00000100~318               ; |8259a_down|pr:inst|position.00000100~318               ; combout          ;
+; |8259a_down|pr:inst|Mux8~52                             ; |8259a_down|pr:inst|Mux8~52                             ; combout          ;
+; |8259a_down|pr:inst|position.00000100~319               ; |8259a_down|pr:inst|position.00000100~319               ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~271             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~271             ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~272             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~272             ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|state.010         ; |8259a_down|core_dual:inst4|core:inst|state.010         ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|icw2~0            ; |8259a_down|core_dual:inst4|core:inst|icw2~0            ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~273             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~273             ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~274             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~274             ; combout          ;
+; |8259a_down|select2:inst15|out1[6]~98                   ; |8259a_down|select2:inst15|out1[6]~98                   ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~275             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~275             ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg~276             ; |8259a_down|irr_a:inst8|irr:inst|irrreg~276             ; combout          ;
+; |8259a_down|select2:inst15|out1[7]~99                   ; |8259a_down|select2:inst15|out1[7]~99                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[1]~679        ; |8259a_down|core_dual:inst4|core:inst|pri[1]~679        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr4~542       ; |8259a_down|core_dual:inst4|core:inst|WideOr4~542       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~680        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~680        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[1]~681        ; |8259a_down|core_dual:inst4|core:inst|pri[1]~681        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|o2~34             ; |8259a_down|core_dual:inst4|core:inst|o2~34             ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~682        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~682        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr2~544       ; |8259a_down|core_dual:inst4|core:inst|WideOr2~544       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr0~745       ; |8259a_down|core_dual:inst4|core:inst|WideOr0~745       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr0~746       ; |8259a_down|core_dual:inst4|core:inst|WideOr0~746       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr0~747       ; |8259a_down|core_dual:inst4|core:inst|WideOr0~747       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr0~748       ; |8259a_down|core_dual:inst4|core:inst|WideOr0~748       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~683        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~683        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~684        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~684        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[0]~685        ; |8259a_down|core_dual:inst4|core:inst|pri[0]~685        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|WideOr6~542       ; |8259a_down|core_dual:inst4|core:inst|WideOr6~542       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[0]~686        ; |8259a_down|core_dual:inst4|core:inst|pri[0]~686        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~687        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~687        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~688        ; |8259a_down|core_dual:inst4|core:inst|pri[2]~688        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|edge1[0]          ; |8259a_down|core_dual:inst4|core:inst|edge1[0]          ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|edge1[1]          ; |8259a_down|core_dual:inst4|core:inst|edge1[1]          ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|Selector8~65      ; |8259a_down|core_dual:inst4|core:inst|Selector8~65      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector10~186    ; |8259a_down|core_dual:inst4|core:inst|Selector10~186    ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector10~187    ; |8259a_down|core_dual:inst4|core:inst|Selector10~187    ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|state.100         ; |8259a_down|core_dual:inst4|core:inst|state.100         ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|state.011         ; |8259a_down|core_dual:inst4|core:inst|state.011         ; regout           ;
+; |8259a_down|core_dual:inst4|core:inst|Selector10~188    ; |8259a_down|core_dual:inst4|core:inst|Selector10~188    ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector10~189    ; |8259a_down|core_dual:inst4|core:inst|Selector10~189    ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw4~0            ; |8259a_down|core_dual:inst4|core:inst|icw4~0            ; combout          ;
+; |8259a_down|pr:inst|Mux4~81                             ; |8259a_down|pr:inst|Mux4~81                             ; combout          ;
+; |8259a_down|pr:inst|Mux4~82                             ; |8259a_down|pr:inst|Mux4~82                             ; combout          ;
+; |8259a_down|pr:inst|position.00000000~269               ; |8259a_down|pr:inst|position.00000000~269               ; combout          ;
+; |8259a_down|pr:inst|Mux4~83                             ; |8259a_down|pr:inst|Mux4~83                             ; combout          ;
+; |8259a_down|pr:inst|position.00000000~270               ; |8259a_down|pr:inst|position.00000000~270               ; combout          ;
+; |8259a_down|pr:inst|Mux4~84                             ; |8259a_down|pr:inst|Mux4~84                             ; combout          ;
+; |8259a_down|pr:inst|position.00000000~271               ; |8259a_down|pr:inst|position.00000000~271               ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[0]~32     ; |8259a_down|core_dual:inst4|core:inst|setzero[0]~32     ; combout          ;
+; |8259a_down|select2:inst15|out2[0]~81                   ; |8259a_down|select2:inst15|out2[0]~81                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[1]~33     ; |8259a_down|core_dual:inst4|core:inst|setzero[1]~33     ; combout          ;
+; |8259a_down|select2:inst15|out2[1]~82                   ; |8259a_down|select2:inst15|out2[1]~82                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[2]~34     ; |8259a_down|core_dual:inst4|core:inst|setzero[2]~34     ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[3]~35     ; |8259a_down|core_dual:inst4|core:inst|setzero[3]~35     ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector7~335     ; |8259a_down|core_dual:inst4|core:inst|Selector7~335     ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[4]~36     ; |8259a_down|core_dual:inst4|core:inst|setzero[4]~36     ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[5]~37     ; |8259a_down|core_dual:inst4|core:inst|setzero[5]~37     ; combout          ;
+; |8259a_down|select2:inst15|out2[5]~85                   ; |8259a_down|select2:inst15|out2[5]~85                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[6]~38     ; |8259a_down|core_dual:inst4|core:inst|setzero[6]~38     ; combout          ;
+; |8259a_down|select2:inst15|out2[6]~86                   ; |8259a_down|select2:inst15|out2[6]~86                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|setzero[7]~39     ; |8259a_down|core_dual:inst4|core:inst|setzero[7]~39     ; combout          ;
+; |8259a_down|select2:inst15|out2[7]~87                   ; |8259a_down|select2:inst15|out2[7]~87                   ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|edge1[1]~22       ; |8259a_down|core_dual:inst4|core:inst|edge1[1]~22       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector9~94      ; |8259a_down|core_dual:inst4|core:inst|Selector9~94      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector9~95      ; |8259a_down|core_dual:inst4|core:inst|Selector9~95      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector9~96      ; |8259a_down|core_dual:inst4|core:inst|Selector9~96      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector9~97      ; |8259a_down|core_dual:inst4|core:inst|Selector9~97      ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|Selector8~66      ; |8259a_down|core_dual:inst4|core:inst|Selector8~66      ; combout          ;
+; |8259a_down|pr:inst|Mux0~215                            ; |8259a_down|pr:inst|Mux0~215                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~216                            ; |8259a_down|pr:inst|Mux0~216                            ; combout          ;
+; |8259a_down|pr:inst|Mux0~217                            ; |8259a_down|pr:inst|Mux0~217                            ; combout          ;
+; |8259a_down|pr:inst|Mux11~446                           ; |8259a_down|pr:inst|Mux11~446                           ; combout          ;
+; |8259a_down|pr:inst|position.00000110~315               ; |8259a_down|pr:inst|position.00000110~315               ; combout          ;
+; |8259a_down|pr:inst|LessThan0~658                       ; |8259a_down|pr:inst|LessThan0~658                       ; combout          ;
+; |8259a_down|pr:inst|intr~37                             ; |8259a_down|pr:inst|intr~37                             ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3~38           ; |8259a_down|core_dual:inst4|core:inst|ocw3~38           ; combout          ;
+; |8259a_down|pr:inst|position.00000111~424               ; |8259a_down|pr:inst|position.00000111~424               ; combout          ;
+; |8259a_down|pr:inst|Mux7~124                            ; |8259a_down|pr:inst|Mux7~124                            ; combout          ;
+; |8259a_down|pr:inst|Mux7~125                            ; |8259a_down|pr:inst|Mux7~125                            ; combout          ;
+; |8259a_down|pr:inst|Mux5~64                             ; |8259a_down|pr:inst|Mux5~64                             ; combout          ;
+; |8259a_down|pr:inst|position.00000001~316               ; |8259a_down|pr:inst|position.00000001~316               ; combout          ;
+; |8259a_down|pr:inst|position.00000001~317               ; |8259a_down|pr:inst|position.00000001~317               ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~710        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~710        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[5]~711        ; |8259a_down|core_dual:inst4|core:inst|eoi[5]~711        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~712        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~712        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[4]~713        ; |8259a_down|core_dual:inst4|core:inst|eoi[4]~713        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[7]~714        ; |8259a_down|core_dual:inst4|core:inst|eoi[7]~714        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[6]~715        ; |8259a_down|core_dual:inst4|core:inst|eoi[6]~715        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[0]~716        ; |8259a_down|core_dual:inst4|core:inst|eoi[0]~716        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[1]~717        ; |8259a_down|core_dual:inst4|core:inst|eoi[1]~717        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[3]~718        ; |8259a_down|core_dual:inst4|core:inst|eoi[3]~718        ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|eoi[2]~719        ; |8259a_down|core_dual:inst4|core:inst|eoi[2]~719        ; combout          ;
+; |8259a_down|pr:inst|Mux8~53                             ; |8259a_down|pr:inst|Mux8~53                             ; combout          ;
+; |8259a_down|pr:inst|Mux8~54                             ; |8259a_down|pr:inst|Mux8~54                             ; combout          ;
+; |8259a_down|pr:inst|Mux4~85                             ; |8259a_down|pr:inst|Mux4~85                             ; combout          ;
+; |8259a_down|pr:inst|position.00000000~272               ; |8259a_down|pr:inst|position.00000000~272               ; combout          ;
+; |8259a_down|pr:inst|Mux0~218                            ; |8259a_down|pr:inst|Mux0~218                            ; combout          ;
+; |8259a_down|pr:inst|LessThan0~659                       ; |8259a_down|pr:inst|LessThan0~659                       ; combout          ;
+; |8259a_down|pr:inst|LessThan0~660                       ; |8259a_down|pr:inst|LessThan0~660                       ; combout          ;
+; |8259a_down|pr:inst|Mux2~132                            ; |8259a_down|pr:inst|Mux2~132                            ; combout          ;
+; |8259a_down|pr:inst|Mux2~133                            ; |8259a_down|pr:inst|Mux2~133                            ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|edge1[0]~23       ; |8259a_down|core_dual:inst4|core:inst|edge1[0]~23       ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3[1]           ; |8259a_down|core_dual:inst4|core:inst|ocw3[1]           ; combout          ;
+; |8259a_down|pr:inst|position.00000111_3378              ; |8259a_down|pr:inst|position.00000111_3378              ; combout          ;
+; |8259a_down|pr:inst|position.00000101_3656              ; |8259a_down|pr:inst|position.00000101_3656              ; combout          ;
+; |8259a_down|pr:inst|position.00000011_3934              ; |8259a_down|pr:inst|position.00000011_3934              ; combout          ;
+; |8259a_down|pr:inst|position.00000001_4212              ; |8259a_down|pr:inst|position.00000001_4212              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[5]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[5]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[4]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[4]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[7]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[7]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[6]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[6]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[0]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[0]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[1]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[1]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[3]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[3]              ; combout          ;
+; |8259a_down|isr_a:inst5|isr:inst|isrreg[2]              ; |8259a_down|isr_a:inst5|isr:inst|isrreg[2]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[0]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[0]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3[0]           ; |8259a_down|core_dual:inst4|core:inst|ocw3[0]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[0]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[0]              ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[0]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[0]              ; combout          ;
+; |8259a_down|pr:inst|position.00000110_3517              ; |8259a_down|pr:inst|position.00000110_3517              ; combout          ;
+; |8259a_down|pr:inst|position.00000010_4073              ; |8259a_down|pr:inst|position.00000010_4073              ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[1]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[1]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[1]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[1]           ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[1]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[1]              ; combout          ;
+; |8259a_down|pr:inst|position.00000100_3795              ; |8259a_down|pr:inst|position.00000100_3795              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[2]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[2]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[2]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[2]              ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[2]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[2]              ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[3]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[3]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[3]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[3]           ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[3]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[3]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw2[3]           ; |8259a_down|core_dual:inst4|core:inst|icw2[3]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[4]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[4]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[4]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[4]              ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[4]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[4]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw2[4]           ; |8259a_down|core_dual:inst4|core:inst|icw2[4]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[5]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[5]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[5]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[5]           ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[5]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[5]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw2[5]           ; |8259a_down|core_dual:inst4|core:inst|icw2[5]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[6]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[6]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[6]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[6]              ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[6]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[6]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw2[6]           ; |8259a_down|core_dual:inst4|core:inst|icw2[6]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|irrreg[7]              ; |8259a_down|irr_a:inst8|irr:inst|irrreg[7]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw1[7]           ; |8259a_down|core_dual:inst4|core:inst|ocw1[7]           ; combout          ;
+; |8259a_down|imr_a:inst9|imr:inst|imrreg[7]              ; |8259a_down|imr_a:inst9|imr:inst|imrreg[7]              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw2[7]           ; |8259a_down|core_dual:inst4|core:inst|icw2[7]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[1]            ; |8259a_down|core_dual:inst4|core:inst|pri[1]            ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[0]            ; |8259a_down|core_dual:inst4|core:inst|pri[0]            ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]            ; |8259a_down|core_dual:inst4|core:inst|pri[2]            ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3[6]           ; |8259a_down|core_dual:inst4|core:inst|ocw3[6]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3[5]           ; |8259a_down|core_dual:inst4|core:inst|ocw3[5]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw4[1]           ; |8259a_down|core_dual:inst4|core:inst|icw4[1]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[6]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[6]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[5]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[5]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[2]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[2]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[0]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[0]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[1]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[1]           ; combout          ;
+; |8259a_down|pr:inst|position.00000000_4351              ; |8259a_down|pr:inst|position.00000000_4351              ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw1[3]           ; |8259a_down|core_dual:inst4|core:inst|icw1[3]           ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[0]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[0]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[1]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[1]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[2]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[2]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[3]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[3]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[4]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[4]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[5]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[5]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[6]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[6]          ; combout          ;
+; |8259a_down|irr_a:inst8|irr:inst|senselatch[7]          ; |8259a_down|irr_a:inst8|irr:inst|senselatch[7]          ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|ocw2[7]           ; |8259a_down|core_dual:inst4|core:inst|ocw2[7]           ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw1[1]           ; |8259a_down|core_dual:inst4|core:inst|icw1[1]           ; combout          ;
+; |8259a_down|Hex0[6]                                     ; |8259a_down|Hex0[6]                                     ; padio            ;
+; |8259a_down|Hex0[5]                                     ; |8259a_down|Hex0[5]                                     ; padio            ;
+; |8259a_down|Hex0[4]                                     ; |8259a_down|Hex0[4]                                     ; padio            ;
+; |8259a_down|Hex0[3]                                     ; |8259a_down|Hex0[3]                                     ; padio            ;
+; |8259a_down|Hex0[2]                                     ; |8259a_down|Hex0[2]                                     ; padio            ;
+; |8259a_down|Hex0[1]                                     ; |8259a_down|Hex0[1]                                     ; padio            ;
+; |8259a_down|Hex0[0]                                     ; |8259a_down|Hex0[0]                                     ; padio            ;
+; |8259a_down|Hex1[6]                                     ; |8259a_down|Hex1[6]                                     ; padio            ;
+; |8259a_down|Hex1[5]                                     ; |8259a_down|Hex1[5]                                     ; padio            ;
+; |8259a_down|Hex1[4]                                     ; |8259a_down|Hex1[4]                                     ; padio            ;
+; |8259a_down|Hex1[3]                                     ; |8259a_down|Hex1[3]                                     ; padio            ;
+; |8259a_down|Hex1[2]                                     ; |8259a_down|Hex1[2]                                     ; padio            ;
+; |8259a_down|Hex1[1]                                     ; |8259a_down|Hex1[1]                                     ; padio            ;
+; |8259a_down|Hex1[0]                                     ; |8259a_down|Hex1[0]                                     ; padio            ;
+; |8259a_down|Hex4[6]                                     ; |8259a_down|Hex4[6]                                     ; padio            ;
+; |8259a_down|Hex4[5]                                     ; |8259a_down|Hex4[5]                                     ; padio            ;
+; |8259a_down|Hex4[4]                                     ; |8259a_down|Hex4[4]                                     ; padio            ;
+; |8259a_down|Hex4[3]                                     ; |8259a_down|Hex4[3]                                     ; padio            ;
+; |8259a_down|Hex4[2]                                     ; |8259a_down|Hex4[2]                                     ; padio            ;
+; |8259a_down|Hex4[1]                                     ; |8259a_down|Hex4[1]                                     ; padio            ;
+; |8259a_down|Hex4[0]                                     ; |8259a_down|Hex4[0]                                     ; padio            ;
+; |8259a_down|CS                                          ; |8259a_down|CS~corein                                   ; combout          ;
+; |8259a_down|in[6]                                       ; |8259a_down|in[6]~corein                                ; combout          ;
+; |8259a_down|in[7]                                       ; |8259a_down|in[7]~corein                                ; combout          ;
+; |8259a_down|core_dual:inst4|core:inst|icw2~0clkctrl     ; |8259a_down|core_dual:inst4|core:inst|icw2~0clkctrl     ; outclk           ;
+; |8259a_down|core_dual:inst4|core:inst|o1~clkctrl        ; |8259a_down|core_dual:inst4|core:inst|o1~clkctrl        ; outclk           ;
+; |8259a_down|core_dual:inst4|core:inst|ocw3~38clkctrl    ; |8259a_down|core_dual:inst4|core:inst|ocw3~38clkctrl    ; outclk           ;
+; |8259a_down|core_dual:inst4|core:inst|state.001~clkctrl ; |8259a_down|core_dual:inst4|core:inst|state.001~clkctrl ; outclk           ;
+; |8259a_down|core_dual:inst4|core:inst|pri[2]~684clkctrl ; |8259a_down|core_dual:inst4|core:inst|pri[2]~684clkctrl ; outclk           ;
++---------------------------------------------------------+---------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Tue May 10 01:47:39 2011
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off 8259a -c 8259a
+Info: Using vector source file "D:/download/½Ó¿Ú/8259a/8259a_down.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is       8.88 %
+Info: Number of transitions in simulation is 259
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 135 megabytes of memory during processing
+    Info: Processing ended: Tue May 10 01:47:40 2011
+    Info: Elapsed time: 00:00:01
+
+

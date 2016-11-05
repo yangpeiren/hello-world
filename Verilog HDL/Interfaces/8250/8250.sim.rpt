@@ -1,0 +1,281 @@
+Simulator report for 8250
+Tue May 18 21:04:02 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 101 nodes    ;
+; Simulation Coverage         ;      48.51 % ;
+; Total Number of Transitions ; 184          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; End time                                                                                   ; 200 ms     ;               ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Vector input source                                                                        ; ctrl.vwf   ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      48.51 % ;
+; Total nodes checked                                 ; 101          ;
+; Total output ports checked                          ; 101          ;
+; Total output ports with complete 1/0-value coverage ; 49           ;
+; Total output ports with no 1/0-value coverage       ; 18           ;
+; Total output ports with no 1-value coverage         ; 36           ;
+; Total output ports with no 0-value coverage         ; 34           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                ;
++--------------------------------------------+--------------------------------------------+------------------+
+; Node Name                                  ; Output Port Name                           ; Output Port Type ;
++--------------------------------------------+--------------------------------------------+------------------+
+; |ctrl_8250_download|dataout~201            ; |ctrl_8250_download|dataout~201            ; combout          ;
+; |ctrl_8250_download|dataout~202            ; |ctrl_8250_download|dataout~202            ; combout          ;
+; |ctrl_8250_download|dataout~206            ; |ctrl_8250_download|dataout~206            ; combout          ;
+; |ctrl_8250_download|dataout~208            ; |ctrl_8250_download|dataout~208            ; combout          ;
+; |ctrl_8250_download|dataout~0              ; |ctrl_8250_download|dataout~0              ; combout          ;
+; |ctrl_8250_download|dis_new~0              ; |ctrl_8250_download|dis_new~0              ; combout          ;
+; |ctrl_8250_download|data_bus[0]~_emulated  ; |ctrl_8250_download|data_bus[0]~_emulated  ; regout           ;
+; |ctrl_8250_download|data_bus[0]~head_lut   ; |ctrl_8250_download|data_bus[0]~head_lut   ; combout          ;
+; |ctrl_8250_download|read~0                 ; |ctrl_8250_download|read~0                 ; combout          ;
+; |ctrl_8250_download|data_bus[1]~_emulated  ; |ctrl_8250_download|data_bus[1]~_emulated  ; regout           ;
+; |ctrl_8250_download|data_bus[1]~head_lut   ; |ctrl_8250_download|data_bus[1]~head_lut   ; combout          ;
+; |ctrl_8250_download|write~0                ; |ctrl_8250_download|write~0                ; combout          ;
+; |ctrl_8250_download|load                   ; |ctrl_8250_download|load                   ; padio            ;
+; |ctrl_8250_download|dataout[0]             ; |ctrl_8250_download|dataout[0]             ; padio            ;
+; |ctrl_8250_download|dataout[1]             ; |ctrl_8250_download|dataout[1]             ; padio            ;
+; |ctrl_8250_download|dataout[5]             ; |ctrl_8250_download|dataout[5]             ; padio            ;
+; |ctrl_8250_download|dataout[7]             ; |ctrl_8250_download|dataout[7]             ; padio            ;
+; |ctrl_8250_download|data_en                ; |ctrl_8250_download|data_en                ; padio            ;
+; |ctrl_8250_download|dos                    ; |ctrl_8250_download|dos~corein             ; combout          ;
+; |ctrl_8250_download|a0                     ; |ctrl_8250_download|a0~corein              ; combout          ;
+; |ctrl_8250_download|datain[7]              ; |ctrl_8250_download|datain[7]~corein       ; combout          ;
+; |ctrl_8250_download|datain[6]              ; |ctrl_8250_download|datain[6]~corein       ; combout          ;
+; |ctrl_8250_download|dis                    ; |ctrl_8250_download|dis~corein             ; combout          ;
+; |ctrl_8250_download|datain[2]              ; |ctrl_8250_download|datain[2]~corein       ; combout          ;
+; |ctrl_8250_download|datain[4]              ; |ctrl_8250_download|datain[4]~corein       ; combout          ;
+; |ctrl_8250_download|datain[5]              ; |ctrl_8250_download|datain[5]~corein       ; combout          ;
+; |ctrl_8250_download|data_finish            ; |ctrl_8250_download|data_finish~corein     ; combout          ;
+; |ctrl_8250_download|data_in[0]             ; |ctrl_8250_download|data_in[0]~corein      ; combout          ;
+; |ctrl_8250_download|cs                     ; |ctrl_8250_download|cs~corein              ; combout          ;
+; |ctrl_8250_download|rd                     ; |ctrl_8250_download|rd~corein              ; combout          ;
+; |ctrl_8250_download|data_in[1]             ; |ctrl_8250_download|data_in[1]~corein      ; combout          ;
+; |ctrl_8250_download|data_in[5]             ; |ctrl_8250_download|data_in[5]~corein      ; combout          ;
+; |ctrl_8250_download|data_in[7]             ; |ctrl_8250_download|data_in[7]~corein      ; combout          ;
+; |ctrl_8250_download|wr                     ; |ctrl_8250_download|wr~corein              ; combout          ;
+; |ctrl_8250_download|dcd                    ; |ctrl_8250_download|dcd~corein             ; combout          ;
+; |ctrl_8250_download|ri                     ; |ctrl_8250_download|ri~corein              ; combout          ;
+; |ctrl_8250_download|dsr                    ; |ctrl_8250_download|dsr~corein             ; combout          ;
+; |ctrl_8250_download|cts                    ; |ctrl_8250_download|cts~corein             ; combout          ;
+; |ctrl_8250_download|data_finish~clkctrl    ; |ctrl_8250_download|data_finish~clkctrl    ; outclk           ;
+; |ctrl_8250_download|read~0clkctrl          ; |ctrl_8250_download|read~0clkctrl          ; outclk           ;
+; |ctrl_8250_download|dis_new~0clkctrl       ; |ctrl_8250_download|dis_new~0clkctrl       ; outclk           ;
+; |ctrl_8250_download|write~0clkctrl         ; |ctrl_8250_download|write~0clkctrl         ; outclk           ;
+; |ctrl_8250_download|rts~reg0feeder         ; |ctrl_8250_download|rts~reg0feeder         ; combout          ;
+; |ctrl_8250_download|data_out[7]~reg0feeder ; |ctrl_8250_download|data_out[7]~reg0feeder ; combout          ;
+; |ctrl_8250_download|dtr~reg0feeder         ; |ctrl_8250_download|dtr~reg0feeder         ; combout          ;
+; |ctrl_8250_download|data_out[6]~reg0feeder ; |ctrl_8250_download|data_out[6]~reg0feeder ; combout          ;
+; |ctrl_8250_download|data_out[2]~reg0feeder ; |ctrl_8250_download|data_out[2]~reg0feeder ; combout          ;
+; |ctrl_8250_download|data_out[4]~reg0feeder ; |ctrl_8250_download|data_out[4]~reg0feeder ; combout          ;
+; |ctrl_8250_download|data_out[5]~reg0feeder ; |ctrl_8250_download|data_out[5]~reg0feeder ; combout          ;
++--------------------------------------------+--------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                   ;
++--------------------------------------------+--------------------------------------------+------------------+
+; Node Name                                  ; Output Port Name                           ; Output Port Type ;
++--------------------------------------------+--------------------------------------------+------------------+
+; |ctrl_8250_download|data_out[0]~reg0       ; |ctrl_8250_download|data_out[0]~reg0       ; regout           ;
+; |ctrl_8250_download|data_out[1]~reg0       ; |ctrl_8250_download|data_out[1]~reg0       ; regout           ;
+; |ctrl_8250_download|data_out[3]~reg0       ; |ctrl_8250_download|data_out[3]~reg0       ; regout           ;
+; |ctrl_8250_download|data_out[6]~reg0       ; |ctrl_8250_download|data_out[6]~reg0       ; regout           ;
+; |ctrl_8250_download|data_out[7]~reg0       ; |ctrl_8250_download|data_out[7]~reg0       ; regout           ;
+; |ctrl_8250_download|dataout~203            ; |ctrl_8250_download|dataout~203            ; combout          ;
+; |ctrl_8250_download|dataout~204            ; |ctrl_8250_download|dataout~204            ; combout          ;
+; |ctrl_8250_download|dataout~205            ; |ctrl_8250_download|dataout~205            ; combout          ;
+; |ctrl_8250_download|dataout~207            ; |ctrl_8250_download|dataout~207            ; combout          ;
+; |ctrl_8250_download|data_bus[2]~_emulated  ; |ctrl_8250_download|data_bus[2]~_emulated  ; regout           ;
+; |ctrl_8250_download|data_bus[2]~head_lut   ; |ctrl_8250_download|data_bus[2]~head_lut   ; combout          ;
+; |ctrl_8250_download|data_bus[3]~_emulated  ; |ctrl_8250_download|data_bus[3]~_emulated  ; regout           ;
+; |ctrl_8250_download|data_bus[3]~head_lut   ; |ctrl_8250_download|data_bus[3]~head_lut   ; combout          ;
+; |ctrl_8250_download|data_bus[2]~data_lut   ; |ctrl_8250_download|data_bus[2]~data_lut   ; combout          ;
+; |ctrl_8250_download|data_bus[3]~data_lut   ; |ctrl_8250_download|data_bus[3]~data_lut   ; combout          ;
+; |ctrl_8250_download|data_bus[4]            ; |ctrl_8250_download|data_bus[4]            ; combout          ;
+; |ctrl_8250_download|data_bus[6]            ; |ctrl_8250_download|data_bus[6]            ; combout          ;
+; |ctrl_8250_download|data_bus[2]~latch      ; |ctrl_8250_download|data_bus[2]~latch      ; combout          ;
+; |ctrl_8250_download|data_bus[3]~latch      ; |ctrl_8250_download|data_bus[3]~latch      ; combout          ;
+; |ctrl_8250_download|data_out[0]            ; |ctrl_8250_download|data_out[0]            ; padio            ;
+; |ctrl_8250_download|data_out[1]            ; |ctrl_8250_download|data_out[1]            ; padio            ;
+; |ctrl_8250_download|data_out[3]            ; |ctrl_8250_download|data_out[3]            ; padio            ;
+; |ctrl_8250_download|data_out[6]            ; |ctrl_8250_download|data_out[6]            ; padio            ;
+; |ctrl_8250_download|data_out[7]            ; |ctrl_8250_download|data_out[7]            ; padio            ;
+; |ctrl_8250_download|dataout[2]             ; |ctrl_8250_download|dataout[2]             ; padio            ;
+; |ctrl_8250_download|dataout[3]             ; |ctrl_8250_download|dataout[3]             ; padio            ;
+; |ctrl_8250_download|dataout[4]             ; |ctrl_8250_download|dataout[4]             ; padio            ;
+; |ctrl_8250_download|dataout[6]             ; |ctrl_8250_download|dataout[6]             ; padio            ;
+; |ctrl_8250_download|datain[0]              ; |ctrl_8250_download|datain[0]~corein       ; combout          ;
+; |ctrl_8250_download|datain[1]              ; |ctrl_8250_download|datain[1]~corein       ; combout          ;
+; |ctrl_8250_download|datain[3]              ; |ctrl_8250_download|datain[3]~corein       ; combout          ;
+; |ctrl_8250_download|data_in[2]             ; |ctrl_8250_download|data_in[2]~corein      ; combout          ;
+; |ctrl_8250_download|data_in[3]             ; |ctrl_8250_download|data_in[3]~corein      ; combout          ;
+; |ctrl_8250_download|data_in[4]             ; |ctrl_8250_download|data_in[4]~corein      ; combout          ;
+; |ctrl_8250_download|data_in[6]             ; |ctrl_8250_download|data_in[6]~corein      ; combout          ;
+; |ctrl_8250_download|data_out[3]~reg0feeder ; |ctrl_8250_download|data_out[3]~reg0feeder ; combout          ;
++--------------------------------------------+--------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                   ;
++--------------------------------------------+--------------------------------------------+------------------+
+; Node Name                                  ; Output Port Name                           ; Output Port Type ;
++--------------------------------------------+--------------------------------------------+------------------+
+; |ctrl_8250_download|rts~reg0               ; |ctrl_8250_download|rts~reg0               ; regout           ;
+; |ctrl_8250_download|dtr~reg0               ; |ctrl_8250_download|dtr~reg0               ; regout           ;
+; |ctrl_8250_download|data_out[0]~reg0       ; |ctrl_8250_download|data_out[0]~reg0       ; regout           ;
+; |ctrl_8250_download|data_out[1]~reg0       ; |ctrl_8250_download|data_out[1]~reg0       ; regout           ;
+; |ctrl_8250_download|data_out[2]~reg0       ; |ctrl_8250_download|data_out[2]~reg0       ; regout           ;
+; |ctrl_8250_download|data_out[3]~reg0       ; |ctrl_8250_download|data_out[3]~reg0       ; regout           ;
+; |ctrl_8250_download|data_out[4]~reg0       ; |ctrl_8250_download|data_out[4]~reg0       ; regout           ;
+; |ctrl_8250_download|data_out[5]~reg0       ; |ctrl_8250_download|data_out[5]~reg0       ; regout           ;
+; |ctrl_8250_download|data_out[6]~reg0       ; |ctrl_8250_download|data_out[6]~reg0       ; regout           ;
+; |ctrl_8250_download|data_out[7]~reg0       ; |ctrl_8250_download|data_out[7]~reg0       ; regout           ;
+; |ctrl_8250_download|data_bus[0]~data_lut   ; |ctrl_8250_download|data_bus[0]~data_lut   ; combout          ;
+; |ctrl_8250_download|data_bus[1]~data_lut   ; |ctrl_8250_download|data_bus[1]~data_lut   ; combout          ;
+; |ctrl_8250_download|data_bus[5]            ; |ctrl_8250_download|data_bus[5]            ; combout          ;
+; |ctrl_8250_download|data_bus[7]            ; |ctrl_8250_download|data_bus[7]            ; combout          ;
+; |ctrl_8250_download|data_bus[0]~latch      ; |ctrl_8250_download|data_bus[0]~latch      ; combout          ;
+; |ctrl_8250_download|data_bus[1]~latch      ; |ctrl_8250_download|data_bus[1]~latch      ; combout          ;
+; |ctrl_8250_download|rts                    ; |ctrl_8250_download|rts                    ; padio            ;
+; |ctrl_8250_download|dtr                    ; |ctrl_8250_download|dtr                    ; padio            ;
+; |ctrl_8250_download|data_out[0]            ; |ctrl_8250_download|data_out[0]            ; padio            ;
+; |ctrl_8250_download|data_out[1]            ; |ctrl_8250_download|data_out[1]            ; padio            ;
+; |ctrl_8250_download|data_out[2]            ; |ctrl_8250_download|data_out[2]            ; padio            ;
+; |ctrl_8250_download|data_out[3]            ; |ctrl_8250_download|data_out[3]            ; padio            ;
+; |ctrl_8250_download|data_out[4]            ; |ctrl_8250_download|data_out[4]            ; padio            ;
+; |ctrl_8250_download|data_out[5]            ; |ctrl_8250_download|data_out[5]            ; padio            ;
+; |ctrl_8250_download|data_out[6]            ; |ctrl_8250_download|data_out[6]            ; padio            ;
+; |ctrl_8250_download|data_out[7]            ; |ctrl_8250_download|data_out[7]            ; padio            ;
+; |ctrl_8250_download|datain[0]              ; |ctrl_8250_download|datain[0]~corein       ; combout          ;
+; |ctrl_8250_download|datain[1]              ; |ctrl_8250_download|datain[1]~corein       ; combout          ;
+; |ctrl_8250_download|datain[3]              ; |ctrl_8250_download|datain[3]~corein       ; combout          ;
+; |ctrl_8250_download|data_in[2]             ; |ctrl_8250_download|data_in[2]~corein      ; combout          ;
+; |ctrl_8250_download|data_in[3]             ; |ctrl_8250_download|data_in[3]~corein      ; combout          ;
+; |ctrl_8250_download|data_in[4]             ; |ctrl_8250_download|data_in[4]~corein      ; combout          ;
+; |ctrl_8250_download|data_in[6]             ; |ctrl_8250_download|data_in[6]~corein      ; combout          ;
+; |ctrl_8250_download|data_out[3]~reg0feeder ; |ctrl_8250_download|data_out[3]~reg0feeder ; combout          ;
++--------------------------------------------+--------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Tue May 18 21:04:01 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off 8250 -c 8250
+Info: Using vector source file "F:/interface/8250/ctrl.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      48.51 %
+Info: Number of transitions in simulation is 184
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 134 megabytes of memory during processing
+    Info: Processing ended: Tue May 18 21:04:02 2010
+    Info: Elapsed time: 00:00:01
+
+

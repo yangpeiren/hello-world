@@ -1,0 +1,23 @@
+module select2(in,en,out1,out2);
+input [7:0]in;
+input en;
+output [7:0]out1,out2;
+
+
+always
+begin
+	if(!en)
+		begin
+			out1=in;
+			out2=0;
+		end
+	else
+		begin
+			out1=0;
+			out2=in;
+		end
+
+end
+
+endmodule
+

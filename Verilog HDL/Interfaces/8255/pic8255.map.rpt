@@ -1,0 +1,286 @@
+Analysis & Synthesis report for pic8255
+Wed Jun 16 11:09:42 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Inverted Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jun 16 11:09:42 2010    ;
+; Quartus II Version                 ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name                      ; pic8255                                  ;
+; Top-level Entity Name              ; pic8255                                  ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 110                                      ;
+;     Total combinational functions  ; 110                                      ;
+;     Dedicated logic registers      ; 38                                       ;
+; Total registers                    ; 38                                       ;
+; Total pins                         ; 81                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                          ; pic8255            ; pic8255            ;
+; Family name                                                                    ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; DSP Block Balancing                                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II/Cyclone III                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                       ;
++----------------------------------+-----------------+------------------------+--------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path   ;
++----------------------------------+-----------------+------------------------+--------------------------------+
+; pic8255.v                        ; yes             ; User Verilog HDL File  ; F:/interface/pic8255/pic8255.v ;
++----------------------------------+-----------------+------------------------+--------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 110   ;
+;                                             ;       ;
+; Total combinational functions               ; 110   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 59    ;
+;     -- 3 input functions                    ; 37    ;
+;     -- <=2 input functions                  ; 14    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 110   ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 38    ;
+;     -- Dedicated logic registers            ; 38    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 81    ;
+; Maximum fan-out node                        ; A0    ;
+; Maximum fan-out                             ; 25    ;
+; Total fan-out                               ; 554   ;
+; Average fan-out                             ; 2.42  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |pic8255                   ; 110 (110)         ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 81   ; 0            ; |pic8255            ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 38    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 22    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 23    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; reset_en                               ; 6       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |pic8255|PA_R_OUT[3]       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Wed Jun 16 11:09:38 2010
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pic8255 -c pic8255
+Info: Found 1 design units, including 1 entities, in source file pic8255.v
+    Info: Found entity 1: pic8255
+Info: Found 1 design units, including 1 entities, in source file select4_1.v
+    Info: Found entity 1: select4_1
+Info: Found 1 design units, including 1 entities, in source file select4.v
+    Info: Found entity 1: select4
+Info: Found 1 design units, including 1 entities, in source file segout4.v
+    Info: Found entity 1: segout4
+Info: Found 1 design units, including 1 entities, in source file 8255_down.bdf
+    Info: Found entity 1: 8255_down
+Info: Found 1 design units, including 1 entities, in source file select1.bdf
+    Info: Found entity 1: select1
+Info: Elaborating entity "pic8255" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at pic8255.v(23): object "D_R_IN" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pic8255.v(39): object "BUS_Z" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pic8255.v(41): object "W" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at pic8255.v(89): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pic8255.v(195): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pic8255.v(355): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pic8255.v(357): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pic8255.v(358): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pic8255.v(359): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pic8255.v(360): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pic8255.v(361): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pic8255.v(362): truncated value with size 32 to match size of target (1)
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(386): variable "PA_MODE" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(387): variable "PA_IO" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at pic8255.v(384): inferring latch(es) for variable "PA_R_IN", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(393): variable "PB_MODE" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(394): variable "PB_IO" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at pic8255.v(391): inferring latch(es) for variable "PB_R_IN", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(401): variable "PA_MODE" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(401): variable "PB_MODE" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(402): variable "PCH_IO" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(402): variable "PCL_IO" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(407): variable "PCH_IO" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(407): variable "PCL_IO" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(412): variable "PCH_IO" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pic8255.v(412): variable "PCL_IO" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at pic8255.v(399): inferring latch(es) for variable "PC_R_IN", which holds its previous value in one or more paths through the always construct
+Info: Clock multiplexers have been protected
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Converted presettable and clearable register to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "intrb" converted into equivalent circuit using register "intrb~_emulated" and latch "intrb~latch"
+    Warning (13310): Register "obfb" converted into equivalent circuit using register "obfb~_emulated" and latch "obfb~latch"
+    Warning (13310): Register "ibfb" converted into equivalent circuit using register "ibfb~_emulated" and latch "ibfb~latch"
+    Warning (13310): Register "intra" converted into equivalent circuit using register "intra~_emulated" and latch "intra~latch"
+    Warning (13310): Register "ibfa" converted into equivalent circuit using register "ibfa~_emulated" and latch "ibfa~latch"
+    Warning (13310): Register "obfa" converted into equivalent circuit using register "obfa~_emulated" and latch "obfa~latch"
+Warning: Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "PA_in[0]"
+    Warning (15610): No output dependent on input pin "PA_in[1]"
+    Warning (15610): No output dependent on input pin "PA_in[2]"
+    Warning (15610): No output dependent on input pin "PA_in[3]"
+    Warning (15610): No output dependent on input pin "PA_in[4]"
+    Warning (15610): No output dependent on input pin "PA_in[5]"
+    Warning (15610): No output dependent on input pin "PA_in[6]"
+    Warning (15610): No output dependent on input pin "PA_in[7]"
+Info: Implemented 215 device resources after synthesis - the final resource count might be different
+    Info: Implemented 38 input pins
+    Info: Implemented 43 output pins
+    Info: Implemented 134 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Allocated 207 megabytes of memory during processing
+    Info: Processing ended: Wed Jun 16 11:09:42 2010
+    Info: Elapsed time: 00:00:04
+
+

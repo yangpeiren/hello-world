@@ -1,0 +1,70 @@
+|AD_down
+D7OUT <= ad:inst.D7OUT
+IOR => ad:inst.IOR
+IOW => ad:inst.IOW
+AEN => ad:inst.AEN
+D7IN => ad:inst.D7IN
+EOC => ad:inst.EOC
+A[0] => ad:inst.A[0]
+A[1] => ad:inst.A[1]
+A[2] => ad:inst.A[2]
+A[3] => ad:inst.A[3]
+A[4] => ad:inst.A[4]
+A[5] => ad:inst.A[5]
+A[6] => ad:inst.A[6]
+A[7] => ad:inst.A[7]
+A[8] => ad:inst.A[8]
+A[9] => ad:inst.A[9]
+STATRT <= ad:inst.START
+OE <= ad:inst.OE
+ALE <= ad:inst.ALE
+IRQ2 <= ad:inst.IRQ2
+EN <= ad:inst.EN
+
+
+|AD_down|ad:inst
+A[0] => Equal0.IN4
+A[0] => Equal1.IN0
+A[0] => Equal2.IN5
+A[1] => Equal0.IN5
+A[1] => Equal1.IN5
+A[1] => Equal2.IN0
+A[2] => Equal0.IN0
+A[2] => Equal1.IN1
+A[2] => Equal2.IN1
+A[3] => Equal0.IN1
+A[3] => Equal1.IN2
+A[3] => Equal2.IN2
+A[4] => Equal0.IN6
+A[4] => Equal1.IN6
+A[4] => Equal2.IN6
+A[5] => Equal0.IN7
+A[5] => Equal1.IN7
+A[5] => Equal2.IN7
+A[6] => Equal0.IN8
+A[6] => Equal1.IN8
+A[6] => Equal2.IN8
+A[7] => Equal0.IN9
+A[7] => Equal1.IN9
+A[7] => Equal2.IN9
+A[8] => Equal0.IN2
+A[8] => Equal1.IN3
+A[8] => Equal2.IN3
+A[9] => Equal0.IN3
+A[9] => Equal1.IN4
+A[9] => Equal2.IN4
+IOR => D7OUT~0.IN0
+IOW => START~0.IN1
+AEN => D7OUT~0.IN1
+AEN => START~0.IN0
+D7IN => IRQ2~0.IN1
+D7OUT <= D7OUT~2.DB_MAX_OUTPUT_PORT_TYPE
+EOC => IRQ2~1.IN0
+EOC => D7OUT~1.IN1
+START <= START~1.DB_MAX_OUTPUT_PORT_TYPE
+OE <= OE~0.DB_MAX_OUTPUT_PORT_TYPE
+ALE <= ALE~0.DB_MAX_OUTPUT_PORT_TYPE
+IRQ2 <= IRQ2~2.DB_MAX_OUTPUT_PORT_TYPE
+EN <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+

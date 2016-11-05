@@ -1,0 +1,512 @@
+Simulator report for 8259A
+Tue May 25 21:13:56 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 259 nodes    ;
+; Simulation Coverage         ;      30.74 % ;
+; Total Number of Transitions ; 428          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                          ;
++--------------------------------------------------------------------------------------------+----------------+---------------+
+; Option                                                                                     ; Setting        ; Default Value ;
++--------------------------------------------------------------------------------------------+----------------+---------------+
+; Simulation mode                                                                            ; Timing         ; Timing        ;
+; Start time                                                                                 ; 0 ns           ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF           ;               ;
+; Vector input source                                                                        ; 8259A_core.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On             ; On            ;
+; Check outputs                                                                              ; Off            ; Off           ;
+; Report simulation coverage                                                                 ; On             ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On             ; On            ;
+; Display missing 1-value coverage report                                                    ; On             ; On            ;
+; Display missing 0-value coverage report                                                    ; On             ; On            ;
+; Detect setup and hold time violations                                                      ; Off            ; Off           ;
+; Detect glitches                                                                            ; Off            ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off            ; Off           ;
+; Generate Signal Activity File                                                              ; Off            ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off            ; Off           ;
+; Group bus channels in simulation results                                                   ; Off            ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On             ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE     ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off            ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off            ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto           ; Auto          ;
++--------------------------------------------------------------------------------------------+----------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      30.74 % ;
+; Total nodes checked                                 ; 259          ;
+; Total output ports checked                          ; 244          ;
+; Total output ports with complete 1/0-value coverage ; 75           ;
+; Total output ports with no 1/0-value coverage       ; 103          ;
+; Total output ports with no 1-value coverage         ; 147          ;
+; Total output ports with no 0-value coverage         ; 125          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                            ;
++--------------------------+--------------------------+------------------+
+; Node Name                ; Output Port Name         ; Output Port Type ;
++--------------------------+--------------------------+------------------+
+; |core|Equal4~13          ; |core|Equal4~13          ; combout          ;
+; |core|read2~24           ; |core|read2~24           ; combout          ;
+; |core|rd_isr~20          ; |core|rd_isr~20          ; combout          ;
+; |core|read2~25           ; |core|read2~25           ; combout          ;
+; |core|o1~0               ; |core|o1~0               ; combout          ;
+; |core|rd_irr~9           ; |core|rd_irr~9           ; combout          ;
+; |core|dataout~649        ; |core|dataout~649        ; combout          ;
+; |core|busdataout~108     ; |core|busdataout~108     ; combout          ;
+; |core|icw1~0             ; |core|icw1~0             ; combout          ;
+; |core|ocw3~11            ; |core|ocw3~11            ; combout          ;
+; |core|comb~31            ; |core|comb~31            ; combout          ;
+; |core|state.0100         ; |core|state.0100         ; regout           ;
+; |core|edge1[0]           ; |core|edge1[0]           ; regout           ;
+; |core|Selector4~100      ; |core|Selector4~100      ; combout          ;
+; |core|comb~4             ; |core|comb~4             ; combout          ;
+; |core|o2~26              ; |core|o2~26              ; combout          ;
+; |core|er[7]~667          ; |core|er[7]~667          ; combout          ;
+; |core|WideOr6~542        ; |core|WideOr6~542        ; combout          ;
+; |core|pri[0]~1238        ; |core|pri[0]~1238        ; combout          ;
+; |core|WideOr7~280        ; |core|WideOr7~280        ; combout          ;
+; |core|pri[0]~1242        ; |core|pri[0]~1242        ; combout          ;
+; |core|pri[0]~1246        ; |core|pri[0]~1246        ; combout          ;
+; |core|pri[1]~1247        ; |core|pri[1]~1247        ; combout          ;
+; |core|pri[1]~1248        ; |core|pri[1]~1248        ; combout          ;
+; |core|pri[1]~1249        ; |core|pri[1]~1249        ; combout          ;
+; |core|pri[1]~1251        ; |core|pri[1]~1251        ; combout          ;
+; |core|WideOr9~539        ; |core|WideOr9~539        ; combout          ;
+; |core|pri[2]~1252        ; |core|pri[2]~1252        ; combout          ;
+; |core|pri[2]~1254        ; |core|pri[2]~1254        ; combout          ;
+; |core|state.0010         ; |core|state.0010         ; regout           ;
+; |core|icw2~0             ; |core|icw2~0             ; combout          ;
+; |core|comb~32            ; |core|comb~32            ; combout          ;
+; |core|comb~33            ; |core|comb~33            ; combout          ;
+; |core|edge1[1]~18        ; |core|edge1[1]~18        ; combout          ;
+; |core|Selector3~47       ; |core|Selector3~47       ; combout          ;
+; |core|Selector2~65       ; |core|Selector2~65       ; combout          ;
+; |core|Selector3~48       ; |core|Selector3~48       ; combout          ;
+; |core|Selector2~66       ; |core|Selector2~66       ; combout          ;
+; |core|always0~3          ; |core|always0~3          ; combout          ;
+; |core|icw4[1]~14         ; |core|icw4[1]~14         ; combout          ;
+; |core|Selector1~201      ; |core|Selector1~201      ; combout          ;
+; |core|Selector1~202      ; |core|Selector1~202      ; combout          ;
+; |core|edge1[0]~19        ; |core|edge1[0]~19        ; combout          ;
+; |core|ocw3[6]$latch      ; |core|ocw3[6]$latch      ; combout          ;
+; |core|write2             ; |core|write2             ; combout          ;
+; |core|icw2[5]            ; |core|icw2[5]            ; combout          ;
+; |core|write1             ; |core|write1             ; combout          ;
+; |core|sm                 ; |core|sm                 ; padio            ;
+; |core|rd_isr             ; |core|rd_isr             ; padio            ;
+; |core|rd_imr             ; |core|rd_imr             ; padio            ;
+; |core|wr_imr             ; |core|wr_imr             ; padio            ;
+; |core|rd_irr             ; |core|rd_irr             ; padio            ;
+; |core|busdataout[4]      ; |core|busdataout[4]      ; padio            ;
+; |core|o1                 ; |core|o1                 ; padio            ;
+; |core|en                 ; |core|en                 ; padio            ;
+; |core|ocw3[6]            ; |core|ocw3[6]            ; padio            ;
+; |core|wr                 ; |core|wr~corein          ; combout          ;
+; |core|rd                 ; |core|rd~corein          ; combout          ;
+; |core|cs                 ; |core|cs~corein          ; combout          ;
+; |core|a0                 ; |core|a0~corein          ; combout          ;
+; |core|datain[3]          ; |core|datain[3]~corein   ; combout          ;
+; |core|datain[6]          ; |core|datain[6]~corein   ; combout          ;
+; |core|datain[4]          ; |core|datain[4]~corein   ; combout          ;
+; |core|datain[5]          ; |core|datain[5]~corein   ; combout          ;
+; |core|datain[0]          ; |core|datain[0]~corein   ; combout          ;
+; |core|datain[1]          ; |core|datain[1]~corein   ; combout          ;
+; |core|datain[7]          ; |core|datain[7]~corein   ; combout          ;
+; |core|ocw3~11clkctrl     ; |core|ocw3~11clkctrl     ; outclk           ;
+; |core|o1~0clkctrl        ; |core|o1~0clkctrl        ; outclk           ;
+; |core|always0~3clkctrl   ; |core|always0~3clkctrl   ; outclk           ;
+; |core|icw2~0clkctrl      ; |core|icw2~0clkctrl      ; outclk           ;
+; |core|write2~clkctrl     ; |core|write2~clkctrl     ; outclk           ;
+; |core|o2~26clkctrl       ; |core|o2~26clkctrl       ; outclk           ;
+; |core|pri[0]~1246clkctrl ; |core|pri[0]~1246clkctrl ; outclk           ;
+; |core|icw1~0clkctrl      ; |core|icw1~0clkctrl      ; outclk           ;
++--------------------------+--------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++---------------------------------------------------------------------+
+; Missing 1-Value Coverage                                            ;
++----------------------+---------------------------+------------------+
+; Node Name            ; Output Port Name          ; Output Port Type ;
++----------------------+---------------------------+------------------+
+; |core|setzero~191    ; |core|setzero~191         ; combout          ;
+; |core|flag2          ; |core|flag2               ; regout           ;
+; |core|setzero~192    ; |core|setzero~192         ; combout          ;
+; |core|setzero~193    ; |core|setzero~193         ; combout          ;
+; |core|setzero~194    ; |core|setzero~194         ; combout          ;
+; |core|setzero~195    ; |core|setzero~195         ; combout          ;
+; |core|setzero~196    ; |core|setzero~196         ; combout          ;
+; |core|setzero~197    ; |core|setzero~197         ; combout          ;
+; |core|setzero~198    ; |core|setzero~198         ; combout          ;
+; |core|setzero~199    ; |core|setzero~199         ; combout          ;
+; |core|setzero~200    ; |core|setzero~200         ; combout          ;
+; |core|setzero~201    ; |core|setzero~201         ; combout          ;
+; |core|setzero~202    ; |core|setzero~202         ; combout          ;
+; |core|flag1          ; |core|flag1               ; regout           ;
+; |core|dataout~648    ; |core|dataout~648         ; combout          ;
+; |core|dataout~650    ; |core|dataout~650         ; combout          ;
+; |core|dataout~651    ; |core|dataout~651         ; combout          ;
+; |core|dataout~652    ; |core|dataout~652         ; combout          ;
+; |core|dataout~653    ; |core|dataout~653         ; combout          ;
+; |core|dataout~654    ; |core|dataout~654         ; combout          ;
+; |core|dataout~655    ; |core|dataout~655         ; combout          ;
+; |core|dataout~656    ; |core|dataout~656         ; combout          ;
+; |core|dataout~657    ; |core|dataout~657         ; combout          ;
+; |core|busdataout~104 ; |core|busdataout~104      ; combout          ;
+; |core|busdataout~105 ; |core|busdataout~105      ; combout          ;
+; |core|busdataout~106 ; |core|busdataout~106      ; combout          ;
+; |core|busdataout~107 ; |core|busdataout~107      ; combout          ;
+; |core|busdataout~109 ; |core|busdataout~109      ; combout          ;
+; |core|busdataout~110 ; |core|busdataout~110      ; combout          ;
+; |core|busdataout~111 ; |core|busdataout~111      ; combout          ;
+; |core|state.0011     ; |core|state.0011          ; regout           ;
+; |core|Selector3~46   ; |core|Selector3~46        ; combout          ;
+; |core|er[0]~663      ; |core|er[0]~663           ; combout          ;
+; |core|er[0]~664      ; |core|er[0]~664           ; combout          ;
+; |core|er[7]~666      ; |core|er[7]~666           ; combout          ;
+; |core|always8~0      ; |core|always8~0           ; combout          ;
+; |core|er[1]~669      ; |core|er[1]~669           ; combout          ;
+; |core|er[2]~670      ; |core|er[2]~670           ; combout          ;
+; |core|er[3]~671      ; |core|er[3]~671           ; combout          ;
+; |core|er[2]~672      ; |core|er[2]~672           ; combout          ;
+; |core|er[3]~673      ; |core|er[3]~673           ; combout          ;
+; |core|er[3]~674      ; |core|er[3]~674           ; combout          ;
+; |core|er[4]~675      ; |core|er[4]~675           ; combout          ;
+; |core|er[4]~676      ; |core|er[4]~676           ; combout          ;
+; |core|er[6]~677      ; |core|er[6]~677           ; combout          ;
+; |core|er[4]~678      ; |core|er[4]~678           ; combout          ;
+; |core|er[5]~679      ; |core|er[5]~679           ; combout          ;
+; |core|er[6]~680      ; |core|er[6]~680           ; combout          ;
+; |core|er[5]~681      ; |core|er[5]~681           ; combout          ;
+; |core|er[6]~682      ; |core|er[6]~682           ; combout          ;
+; |core|er[7]~683      ; |core|er[7]~683           ; combout          ;
+; |core|er[7]~684      ; |core|er[7]~684           ; combout          ;
+; |core|pri[0]~1235    ; |core|pri[0]~1235         ; combout          ;
+; |core|pri[0]~1236    ; |core|pri[0]~1236         ; combout          ;
+; |core|pri[0]~1237    ; |core|pri[0]~1237         ; combout          ;
+; |core|pri[0]~1240    ; |core|pri[0]~1240         ; combout          ;
+; |core|pri[0]~1243    ; |core|pri[0]~1243         ; combout          ;
+; |core|WideOr0~556    ; |core|WideOr0~556         ; combout          ;
+; |core|pri[0]~1244    ; |core|pri[0]~1244         ; combout          ;
+; |core|pri[0]~1245    ; |core|pri[0]~1245         ; combout          ;
+; |core|pri[1]~1250    ; |core|pri[1]~1250         ; combout          ;
+; |core|pri[2]~1253    ; |core|pri[2]~1253         ; combout          ;
+; |core|Selector0~160  ; |core|Selector0~160       ; combout          ;
+; |core|Selector2~67   ; |core|Selector2~67        ; combout          ;
+; |core|Selector1~200  ; |core|Selector1~200       ; combout          ;
+; |core|flag2~2        ; |core|flag2~2             ; combout          ;
+; |core|flag1~2        ; |core|flag1~2             ; combout          ;
+; |core|ocw3[5]$latch  ; |core|ocw3[5]$latch       ; combout          ;
+; |core|clr_imr$latch  ; |core|clr_imr$latch       ; combout          ;
+; |core|er[0]          ; |core|er[0]               ; combout          ;
+; |core|er[1]          ; |core|er[1]               ; combout          ;
+; |core|er[2]          ; |core|er[2]               ; combout          ;
+; |core|er[3]          ; |core|er[3]               ; combout          ;
+; |core|er[4]          ; |core|er[4]               ; combout          ;
+; |core|er[5]          ; |core|er[5]               ; combout          ;
+; |core|er[6]          ; |core|er[6]               ; combout          ;
+; |core|er[7]          ; |core|er[7]               ; combout          ;
+; |core|icw2[3]        ; |core|icw2[3]             ; combout          ;
+; |core|icw2[4]        ; |core|icw2[4]             ; combout          ;
+; |core|icw2[6]        ; |core|icw2[6]             ; combout          ;
+; |core|icw2[7]        ; |core|icw2[7]             ; combout          ;
+; |core|ocw1[0]        ; |core|ocw1[0]             ; combout          ;
+; |core|ocw1[1]        ; |core|ocw1[1]             ; combout          ;
+; |core|ocw1[2]        ; |core|ocw1[2]             ; combout          ;
+; |core|ocw1[3]        ; |core|ocw1[3]             ; combout          ;
+; |core|ocw1[5]        ; |core|ocw1[5]             ; combout          ;
+; |core|ocw1[6]        ; |core|ocw1[6]             ; combout          ;
+; |core|ocw1[7]        ; |core|ocw1[7]             ; combout          ;
+; |core|ocw2[2]        ; |core|ocw2[2]             ; combout          ;
+; |core|ocw2[0]        ; |core|ocw2[0]             ; combout          ;
+; |core|ocw2[5]        ; |core|ocw2[5]             ; combout          ;
+; |core|Itim           ; |core|Itim                ; padio            ;
+; |core|clr_imr        ; |core|clr_imr             ; padio            ;
+; |core|freeze         ; |core|freeze              ; padio            ;
+; |core|eor[0]         ; |core|eor[0]              ; padio            ;
+; |core|eor[1]         ; |core|eor[1]              ; padio            ;
+; |core|eor[2]         ; |core|eor[2]              ; padio            ;
+; |core|eor[3]         ; |core|eor[3]              ; padio            ;
+; |core|eor[4]         ; |core|eor[4]              ; padio            ;
+; |core|eor[5]         ; |core|eor[5]              ; padio            ;
+; |core|eor[6]         ; |core|eor[6]              ; padio            ;
+; |core|eor[7]         ; |core|eor[7]              ; padio            ;
+; |core|setzero[0]     ; |core|setzero[0]          ; padio            ;
+; |core|setzero[1]     ; |core|setzero[1]          ; padio            ;
+; |core|setzero[2]     ; |core|setzero[2]          ; padio            ;
+; |core|setzero[3]     ; |core|setzero[3]          ; padio            ;
+; |core|setzero[4]     ; |core|setzero[4]          ; padio            ;
+; |core|setzero[5]     ; |core|setzero[5]          ; padio            ;
+; |core|setzero[6]     ; |core|setzero[6]          ; padio            ;
+; |core|setzero[7]     ; |core|setzero[7]          ; padio            ;
+; |core|sp[0]          ; |core|sp[0]               ; padio            ;
+; |core|sp[1]          ; |core|sp[1]               ; padio            ;
+; |core|sp[2]          ; |core|sp[2]               ; padio            ;
+; |core|dataout[0]     ; |core|dataout[0]          ; padio            ;
+; |core|dataout[1]     ; |core|dataout[1]          ; padio            ;
+; |core|dataout[2]     ; |core|dataout[2]          ; padio            ;
+; |core|dataout[3]     ; |core|dataout[3]          ; padio            ;
+; |core|dataout[4]     ; |core|dataout[4]          ; padio            ;
+; |core|dataout[5]     ; |core|dataout[5]          ; padio            ;
+; |core|dataout[6]     ; |core|dataout[6]          ; padio            ;
+; |core|dataout[7]     ; |core|dataout[7]          ; padio            ;
+; |core|busdataout[0]  ; |core|busdataout[0]       ; padio            ;
+; |core|busdataout[1]  ; |core|busdataout[1]       ; padio            ;
+; |core|busdataout[2]  ; |core|busdataout[2]       ; padio            ;
+; |core|busdataout[3]  ; |core|busdataout[3]       ; padio            ;
+; |core|busdataout[5]  ; |core|busdataout[5]       ; padio            ;
+; |core|busdataout[6]  ; |core|busdataout[6]       ; padio            ;
+; |core|busdataout[7]  ; |core|busdataout[7]       ; padio            ;
+; |core|ocw3[2]        ; |core|ocw3[2]             ; padio            ;
+; |core|ocw3[4]        ; |core|ocw3[4]             ; padio            ;
+; |core|ocw3[5]        ; |core|ocw3[5]             ; padio            ;
+; |core|ocw3[7]        ; |core|ocw3[7]             ; padio            ;
+; |core|reset          ; |core|reset~corein        ; combout          ;
+; |core|code[1]        ; |core|code[1]~corein      ; combout          ;
+; |core|code[2]        ; |core|code[2]~corein      ; combout          ;
+; |core|code[0]        ; |core|code[0]~corein      ; combout          ;
+; |core|busdatain[0]   ; |core|busdatain[0]~corein ; combout          ;
+; |core|busdatain[1]   ; |core|busdatain[1]~corein ; combout          ;
+; |core|busdatain[2]   ; |core|busdatain[2]~corein ; combout          ;
+; |core|busdatain[3]   ; |core|busdatain[3]~corein ; combout          ;
+; |core|busdatain[4]   ; |core|busdatain[4]~corein ; combout          ;
+; |core|busdatain[5]   ; |core|busdatain[5]~corein ; combout          ;
+; |core|busdatain[6]   ; |core|busdatain[6]~corein ; combout          ;
+; |core|busdatain[7]   ; |core|busdatain[7]~corein ; combout          ;
+; |core|inta           ; |core|inta~corein         ; combout          ;
+; |core|datain[2]      ; |core|datain[2]~corein    ; combout          ;
+; |core|reset~clkctrl  ; |core|reset~clkctrl       ; outclk           ;
++----------------------+---------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++---------------------------------------------------------------------+
+; Missing 0-Value Coverage                                            ;
++----------------------+---------------------------+------------------+
+; Node Name            ; Output Port Name          ; Output Port Type ;
++----------------------+---------------------------+------------------+
+; |core|state.0101     ; |core|state.0101          ; regout           ;
+; |core|setzero~191    ; |core|setzero~191         ; combout          ;
+; |core|flag2          ; |core|flag2               ; regout           ;
+; |core|setzero~193    ; |core|setzero~193         ; combout          ;
+; |core|setzero~195    ; |core|setzero~195         ; combout          ;
+; |core|setzero~198    ; |core|setzero~198         ; combout          ;
+; |core|flag1          ; |core|flag1               ; regout           ;
+; |core|dataout~648    ; |core|dataout~648         ; combout          ;
+; |core|dataout~650    ; |core|dataout~650         ; combout          ;
+; |core|dataout~651    ; |core|dataout~651         ; combout          ;
+; |core|dataout~652    ; |core|dataout~652         ; combout          ;
+; |core|dataout~653    ; |core|dataout~653         ; combout          ;
+; |core|dataout~654    ; |core|dataout~654         ; combout          ;
+; |core|dataout~655    ; |core|dataout~655         ; combout          ;
+; |core|dataout~656    ; |core|dataout~656         ; combout          ;
+; |core|dataout~657    ; |core|dataout~657         ; combout          ;
+; |core|busdataout~104 ; |core|busdataout~104      ; combout          ;
+; |core|busdataout~105 ; |core|busdataout~105      ; combout          ;
+; |core|busdataout~106 ; |core|busdataout~106      ; combout          ;
+; |core|busdataout~107 ; |core|busdataout~107      ; combout          ;
+; |core|busdataout~109 ; |core|busdataout~109      ; combout          ;
+; |core|busdataout~110 ; |core|busdataout~110      ; combout          ;
+; |core|busdataout~111 ; |core|busdataout~111      ; combout          ;
+; |core|state.0001     ; |core|state.0001          ; regout           ;
+; |core|edge1[1]       ; |core|edge1[1]            ; regout           ;
+; |core|state.0011     ; |core|state.0011          ; regout           ;
+; |core|Selector3~46   ; |core|Selector3~46        ; combout          ;
+; |core|Selector4~101  ; |core|Selector4~101       ; combout          ;
+; |core|icw4[1]        ; |core|icw4[1]             ; regout           ;
+; |core|er[0]~662      ; |core|er[0]~662           ; combout          ;
+; |core|er[0]~663      ; |core|er[0]~663           ; combout          ;
+; |core|er[0]~664      ; |core|er[0]~664           ; combout          ;
+; |core|er[0]~665      ; |core|er[0]~665           ; combout          ;
+; |core|er[7]~666      ; |core|er[7]~666           ; combout          ;
+; |core|er[0]~668      ; |core|er[0]~668           ; combout          ;
+; |core|er[1]~669      ; |core|er[1]~669           ; combout          ;
+; |core|er[2]~670      ; |core|er[2]~670           ; combout          ;
+; |core|er[3]~671      ; |core|er[3]~671           ; combout          ;
+; |core|er[2]~672      ; |core|er[2]~672           ; combout          ;
+; |core|er[3]~673      ; |core|er[3]~673           ; combout          ;
+; |core|er[3]~674      ; |core|er[3]~674           ; combout          ;
+; |core|er[4]~675      ; |core|er[4]~675           ; combout          ;
+; |core|er[4]~676      ; |core|er[4]~676           ; combout          ;
+; |core|er[6]~677      ; |core|er[6]~677           ; combout          ;
+; |core|er[4]~678      ; |core|er[4]~678           ; combout          ;
+; |core|er[5]~679      ; |core|er[5]~679           ; combout          ;
+; |core|er[6]~680      ; |core|er[6]~680           ; combout          ;
+; |core|er[5]~681      ; |core|er[5]~681           ; combout          ;
+; |core|er[6]~682      ; |core|er[6]~682           ; combout          ;
+; |core|er[7]~683      ; |core|er[7]~683           ; combout          ;
+; |core|er[7]~684      ; |core|er[7]~684           ; combout          ;
+; |core|pri[0]~1236    ; |core|pri[0]~1236         ; combout          ;
+; |core|pri[0]~1239    ; |core|pri[0]~1239         ; combout          ;
+; |core|pri[0]~1241    ; |core|pri[0]~1241         ; combout          ;
+; |core|pri[0]~1243    ; |core|pri[0]~1243         ; combout          ;
+; |core|WideOr0~556    ; |core|WideOr0~556         ; combout          ;
+; |core|pri[0]~1245    ; |core|pri[0]~1245         ; combout          ;
+; |core|pri[1]~1250    ; |core|pri[1]~1250         ; combout          ;
+; |core|Selector0~160  ; |core|Selector0~160       ; combout          ;
+; |core|Selector0~161  ; |core|Selector0~161       ; combout          ;
+; |core|Selector2~67   ; |core|Selector2~67        ; combout          ;
+; |core|Selector1~200  ; |core|Selector1~200       ; combout          ;
+; |core|flag2~2        ; |core|flag2~2             ; combout          ;
+; |core|flag1~2        ; |core|flag1~2             ; combout          ;
+; |core|ocw3[5]$latch  ; |core|ocw3[5]$latch       ; combout          ;
+; |core|ocw3[0]$latch  ; |core|ocw3[0]$latch       ; combout          ;
+; |core|ocw3[1]$latch  ; |core|ocw3[1]$latch       ; combout          ;
+; |core|icw2[3]        ; |core|icw2[3]             ; combout          ;
+; |core|icw2[4]        ; |core|icw2[4]             ; combout          ;
+; |core|icw2[6]        ; |core|icw2[6]             ; combout          ;
+; |core|icw2[7]        ; |core|icw2[7]             ; combout          ;
+; |core|ocw1[0]        ; |core|ocw1[0]             ; combout          ;
+; |core|ocw1[1]        ; |core|ocw1[1]             ; combout          ;
+; |core|ocw1[2]        ; |core|ocw1[2]             ; combout          ;
+; |core|ocw1[3]        ; |core|ocw1[3]             ; combout          ;
+; |core|ocw1[4]        ; |core|ocw1[4]             ; combout          ;
+; |core|ocw1[5]        ; |core|ocw1[5]             ; combout          ;
+; |core|ocw1[6]        ; |core|ocw1[6]             ; combout          ;
+; |core|ocw1[7]        ; |core|ocw1[7]             ; combout          ;
+; |core|icw1[0]        ; |core|icw1[0]             ; combout          ;
+; |core|ocw2[6]        ; |core|ocw2[6]             ; combout          ;
+; |core|ocw2[1]        ; |core|ocw2[1]             ; combout          ;
+; |core|ocw2[2]        ; |core|ocw2[2]             ; combout          ;
+; |core|ocw2[0]        ; |core|ocw2[0]             ; combout          ;
+; |core|ocw2[5]        ; |core|ocw2[5]             ; combout          ;
+; |core|ocw2[7]        ; |core|ocw2[7]             ; combout          ;
+; |core|icw1[1]        ; |core|icw1[1]             ; combout          ;
+; |core|Itim           ; |core|Itim                ; padio            ;
+; |core|freeze         ; |core|freeze              ; padio            ;
+; |core|sp[1]          ; |core|sp[1]               ; padio            ;
+; |core|dataout[0]     ; |core|dataout[0]          ; padio            ;
+; |core|dataout[1]     ; |core|dataout[1]          ; padio            ;
+; |core|dataout[2]     ; |core|dataout[2]          ; padio            ;
+; |core|dataout[3]     ; |core|dataout[3]          ; padio            ;
+; |core|dataout[4]     ; |core|dataout[4]          ; padio            ;
+; |core|dataout[5]     ; |core|dataout[5]          ; padio            ;
+; |core|dataout[6]     ; |core|dataout[6]          ; padio            ;
+; |core|dataout[7]     ; |core|dataout[7]          ; padio            ;
+; |core|busdataout[0]  ; |core|busdataout[0]       ; padio            ;
+; |core|busdataout[1]  ; |core|busdataout[1]       ; padio            ;
+; |core|busdataout[2]  ; |core|busdataout[2]       ; padio            ;
+; |core|busdataout[3]  ; |core|busdataout[3]       ; padio            ;
+; |core|busdataout[5]  ; |core|busdataout[5]       ; padio            ;
+; |core|busdataout[6]  ; |core|busdataout[6]       ; padio            ;
+; |core|busdataout[7]  ; |core|busdataout[7]       ; padio            ;
+; |core|ocw3[0]        ; |core|ocw3[0]             ; padio            ;
+; |core|ocw3[1]        ; |core|ocw3[1]             ; padio            ;
+; |core|ocw3[2]        ; |core|ocw3[2]             ; padio            ;
+; |core|ocw3[3]        ; |core|ocw3[3]             ; padio            ;
+; |core|ocw3[4]        ; |core|ocw3[4]             ; padio            ;
+; |core|ocw3[5]        ; |core|ocw3[5]             ; padio            ;
+; |core|ocw3[7]        ; |core|ocw3[7]             ; padio            ;
+; |core|code[1]        ; |core|code[1]~corein      ; combout          ;
+; |core|code[2]        ; |core|code[2]~corein      ; combout          ;
+; |core|code[0]        ; |core|code[0]~corein      ; combout          ;
+; |core|busdatain[0]   ; |core|busdatain[0]~corein ; combout          ;
+; |core|busdatain[1]   ; |core|busdatain[1]~corein ; combout          ;
+; |core|busdatain[2]   ; |core|busdatain[2]~corein ; combout          ;
+; |core|busdatain[3]   ; |core|busdatain[3]~corein ; combout          ;
+; |core|busdatain[4]   ; |core|busdatain[4]~corein ; combout          ;
+; |core|busdatain[5]   ; |core|busdatain[5]~corein ; combout          ;
+; |core|busdatain[6]   ; |core|busdatain[6]~corein ; combout          ;
+; |core|busdatain[7]   ; |core|busdatain[7]~corein ; combout          ;
+; |core|inta           ; |core|inta~corein         ; combout          ;
+; |core|datain[2]      ; |core|datain[2]~corein    ; combout          ;
++----------------------+---------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Tue May 25 21:13:54 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off 8259A -c 8259A
+Info: Using vector source file "F:/interface/8259Acyq/8259A_core.vwf"
+Warning: Ignored node in vector source file. Can't find corresponding node name "state[3]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "state[2]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "state[1]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "state[0]" in design.
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      30.74 %
+Info: Number of transitions in simulation is 428
+Info: Quartus II Simulator was successful. 0 errors, 4 warnings
+    Info: Allocated 135 megabytes of memory during processing
+    Info: Processing ended: Tue May 25 21:13:56 2010
+    Info: Elapsed time: 00:00:02
+
+

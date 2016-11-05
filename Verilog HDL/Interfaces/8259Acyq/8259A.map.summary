@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Failed - Tue Apr 26 10:21:33 2011
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Full Version
+Revision Name : 8259A
+Top-level Entity Name : 8259A
+Family : Cyclone II
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge

@@ -1,0 +1,110 @@
+|DA_down
+read <= da:inst.READ
+ior => da:inst.IOR
+iow => da:inst.IOW
+aen => da:inst.AEN
+d0 => da:inst.D0
+a[0] => da:inst.A[0]
+a[1] => da:inst.A[1]
+a[2] => da:inst.A[2]
+a[3] => da:inst.A[3]
+a[4] => da:inst.A[4]
+a[5] => da:inst.A[5]
+a[6] => da:inst.A[6]
+a[7] => da:inst.A[7]
+datain[0] => da:inst.DATAIN[0]
+datain[1] => da:inst.DATAIN[1]
+datain[2] => da:inst.DATAIN[2]
+datain[3] => da:inst.DATAIN[3]
+datain[4] => da:inst.DATAIN[4]
+datain[5] => da:inst.DATAIN[5]
+datain[6] => da:inst.DATAIN[6]
+datain[7] => da:inst.DATAIN[7]
+write <= da:inst.WRITE
+HEX0[0] <= segout:inst1.oSEG[0]
+HEX0[1] <= segout:inst1.oSEG[1]
+HEX0[2] <= segout:inst1.oSEG[2]
+HEX0[3] <= segout:inst1.oSEG[3]
+HEX0[4] <= segout:inst1.oSEG[4]
+HEX0[5] <= segout:inst1.oSEG[5]
+HEX0[6] <= segout:inst1.oSEG[6]
+HEX1[0] <= segout:inst2.oSEG[0]
+HEX1[1] <= segout:inst2.oSEG[1]
+HEX1[2] <= segout:inst2.oSEG[2]
+HEX1[3] <= segout:inst2.oSEG[3]
+HEX1[4] <= segout:inst2.oSEG[4]
+HEX1[5] <= segout:inst2.oSEG[5]
+HEX1[6] <= segout:inst2.oSEG[6]
+
+
+|DA_down|da:inst
+IOR => READ~1.DATAB
+IOW => WRITE~0.DATAB
+AEN => READ~0.IN1
+A[0] => Equal0.IN6
+A[1] => Equal0.IN7
+A[2] => Equal0.IN8
+A[3] => Equal0.IN0
+A[4] => Equal0.IN1
+A[5] => Equal0.IN2
+A[6] => Equal0.IN3
+A[7] => Equal0.IN4
+A[8] => Equal0.IN5
+A[9] => Equal0.IN9
+D0 => DATAOUT~0.IN1
+READ <= READ~1.DB_MAX_OUTPUT_PORT_TYPE
+WRITE <= WRITE~0.DB_MAX_OUTPUT_PORT_TYPE
+DATAIN[0] => OUT[0]~reg0.DATAIN
+DATAIN[1] => OUT[1]~reg0.DATAIN
+DATAIN[2] => OUT[2]~reg0.DATAIN
+DATAIN[3] => OUT[3]~reg0.DATAIN
+DATAIN[4] => OUT[4]~reg0.DATAIN
+DATAIN[5] => OUT[5]~reg0.DATAIN
+DATAIN[6] => OUT[6]~reg0.DATAIN
+DATAIN[7] => OUT[7]~reg0.DATAIN
+DATAOUT[0] <= DATAOUT~8.DB_MAX_OUTPUT_PORT_TYPE
+DATAOUT[1] <= DATAOUT~7.DB_MAX_OUTPUT_PORT_TYPE
+DATAOUT[2] <= DATAOUT~6.DB_MAX_OUTPUT_PORT_TYPE
+DATAOUT[3] <= DATAOUT~5.DB_MAX_OUTPUT_PORT_TYPE
+DATAOUT[4] <= DATAOUT~4.DB_MAX_OUTPUT_PORT_TYPE
+DATAOUT[5] <= DATAOUT~3.DB_MAX_OUTPUT_PORT_TYPE
+DATAOUT[6] <= DATAOUT~2.DB_MAX_OUTPUT_PORT_TYPE
+DATAOUT[7] <= DATAOUT~1.DB_MAX_OUTPUT_PORT_TYPE
+OUT[0] <= OUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= OUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= OUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= OUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+OUT[4] <= OUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+OUT[5] <= OUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+OUT[6] <= OUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+OUT[7] <= OUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DA_down|segout:inst1
+iDIG[0] => Decoder0.IN3
+iDIG[1] => Decoder0.IN2
+iDIG[2] => Decoder0.IN1
+iDIG[3] => Decoder0.IN0
+oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DA_down|segout:inst2
+iDIG[0] => Decoder0.IN3
+iDIG[1] => Decoder0.IN2
+iDIG[2] => Decoder0.IN1
+iDIG[3] => Decoder0.IN0
+oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+oSEG[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

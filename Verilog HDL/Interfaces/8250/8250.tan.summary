@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.708 ns
+From           : dod
+To             : ctrl_8250_download:inst|data_bus[0]~_emulated
+From Clock     : --
+To Clock       : rd
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.041 ns
+From           : reg8:inst6|out[5]
+To             : hex1[3]
+From Clock     : clk0
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.863 ns
+From           : dos
+To             : data_en
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.016 ns
+From           : DATAIN[2]
+To             : reg8:inst6|out[2]
+From Clock     : --
+To Clock       : clk0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk0'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 171.12 MHz ( period = 5.844 ns )
+From           : ctrl_8250_download:inst|data_bus[4]
+To             : reg8:inst6|out[7]
+From Clock     : clk0
+To Clock       : clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk0'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : rs_232_in:inst1|in_data[7]
+To             : ctrl_8250_download:inst|data_bus[7]
+From Clock     : clk0
+To Clock       : clk0
+Failed Paths   : 8
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 8
+
+--------------------------------------------------------------------------------------
+

@@ -1,0 +1,27 @@
+module segout(iDIG,oSEG);
+input[3:0] iDIG;
+output[6:0] oSEG;
+reg[6:0] oSEG;
+always@(iDIG )
+begin
+case(iDIG)
+0:oSEG=7'b1000000;
+1:oSEG=7'b1111001;
+2:oSEG=7'b0100100;
+3:oSEG=7'b0110000;
+4:oSEG=7'b0011001;
+5:oSEG=7'b0010010;
+6:oSEG=7'b0000010;
+7:oSEG=7'b1111000;
+8:oSEG=7'b0000000;
+9:oSEG=7'b0010000;
+10:oSEG=7'b0001000;
+11:oSEG=7'b0000011;
+12:oSEG=7'b1000110;
+13:oSEG=7'b0100001;
+14:oSEG=7'b0000110;
+15:oSEG=7'b0001110;
+
+endcase
+end
+endmodule 

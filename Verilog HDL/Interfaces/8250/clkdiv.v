@@ -1,0 +1,34 @@
+module clkdiv(clkin,clkout9600,clkout9600_16);
+input clkin;
+output clkout9600_16;
+reg clkout9600_16;
+output clkout9600;
+reg clkout9600;
+reg [7:0]clk_count;
+reg [31:0]clk16;
+always@(posedge clkin)
+begin
+	if(clk_count==176)
+	begin
+		clkout9600_16=!clkout9600_16;
+		clk_count=0;
+	end
+	else
+		begin
+		clk_count=clk_count+1;
+		
+		end
+end
+always@(posedge clkin)
+begin
+	if(clk16==(16*176))
+		begin
+		clkout9600=!clkout9600;
+		clk16=0;
+		end
+	else 
+		begin
+			clk16=clk16+1;
+		end
+end
+endmodule

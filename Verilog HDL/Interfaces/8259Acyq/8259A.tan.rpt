@@ -1,0 +1,1117 @@
+Classic Timing Analyzer report for 8259A
+Fri May 28 19:25:04 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'INTA'
+  6. Clock Setup: 'DATAIN[3]'
+  7. Clock Setup: 'DATAIN[4]'
+  8. Clock Hold: 'INTA'
+  9. Clock Hold: 'DATAIN[3]'
+ 10. Clock Hold: 'DATAIN[4]'
+ 11. tsu
+ 12. tco
+ 13. tpd
+ 14. th
+ 15. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                 ;
++------------------------------+------------------------------------------+---------------+------------------------------------------------+-------------------+------------------+------------+-----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                                    ; From              ; To               ; From Clock ; To Clock  ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+------------------------------------------------+-------------------+------------------+------------+-----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 5.866 ns                                       ; CODE[2]           ; core:inst|er[7]  ; --         ; DATAIN[3] ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 15.251 ns                                      ; core:inst|pri[1]  ; SP[1]            ; INTA       ; --        ; 0            ;
+; Worst-case tpd               ; N/A                                      ; None          ; 13.850 ns                                      ; CS                ; DATAOUT[1]       ; --         ; --        ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 0.656 ns                                       ; DATAIN[3]         ; core:inst|er[3]  ; --         ; INTA      ; 0            ;
+; Clock Setup: 'DATAIN[4]'     ; N/A                                      ; None          ; 237.08 MHz ( period = 4.218 ns )               ; core:inst|ocw2[1] ; core:inst|er[7]  ; DATAIN[4]  ; DATAIN[4] ; 0            ;
+; Clock Setup: 'DATAIN[3]'     ; N/A                                      ; None          ; 237.08 MHz ( period = 4.218 ns )               ; core:inst|ocw2[1] ; core:inst|er[7]  ; DATAIN[3]  ; DATAIN[3] ; 0            ;
+; Clock Setup: 'INTA'          ; N/A                                      ; None          ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; core:inst|flag2   ; core:inst|flag2  ; INTA       ; INTA      ; 0            ;
+; Clock Hold: 'DATAIN[3]'      ; Not operational: Clock Skew > Data Delay ; None          ; N/A                                            ; core:inst|ocw2[6] ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; 33           ;
+; Clock Hold: 'DATAIN[4]'      ; Not operational: Clock Skew > Data Delay ; None          ; N/A                                            ; core:inst|ocw2[6] ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; 33           ;
+; Clock Hold: 'INTA'           ; Not operational: Clock Skew > Data Delay ; None          ; N/A                                            ; core:inst|er[7]   ; core:inst|pri[1] ; INTA       ; INTA      ; 24           ;
+; Total number of failed paths ;                                          ;               ;                                                ;                   ;                  ;            ;           ; 90           ;
++------------------------------+------------------------------------------+---------------+------------------------------------------------+-------------------+------------------+------------+-----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; INTA            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; DATAIN[3]       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; DATAIN[4]       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'INTA'                                                                                                                                                                                    ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From            ; To              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; core:inst|flag1 ; core:inst|flag1 ; INTA       ; INTA     ; None                        ; None                      ; 0.407 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; core:inst|flag2 ; core:inst|flag2 ; INTA       ; INTA     ; None                        ; None                      ; 0.407 ns                ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'DATAIN[3]'                                                                                                                                                                                   ;
++-------+------------------------------------------------+-------------------+------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From              ; To               ; From Clock ; To Clock  ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-------------------+------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 237.08 MHz ( period = 4.218 ns )               ; core:inst|ocw2[1] ; core:inst|er[7]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.757 ns                ;
+; N/A   ; 238.04 MHz ( period = 4.201 ns )               ; core:inst|ocw2[1] ; core:inst|er[6]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.951 ns                ;
+; N/A   ; 244.50 MHz ( period = 4.090 ns )               ; core:inst|ocw2[2] ; core:inst|er[7]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.631 ns                ;
+; N/A   ; 245.52 MHz ( period = 4.073 ns )               ; core:inst|ocw2[2] ; core:inst|er[6]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.825 ns                ;
+; N/A   ; 262.67 MHz ( period = 3.807 ns )               ; core:inst|ocw2[0] ; core:inst|er[7]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; 265.53 MHz ( period = 3.766 ns )               ; core:inst|ocw2[0] ; core:inst|er[2]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.688 ns                ;
+; N/A   ; 276.47 MHz ( period = 3.617 ns )               ; core:inst|ocw2[0] ; core:inst|er[3]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.591 ns                ;
+; N/A   ; 277.47 MHz ( period = 3.604 ns )               ; core:inst|ocw2[0] ; core:inst|er[1]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.595 ns                ;
+; N/A   ; 280.03 MHz ( period = 3.571 ns )               ; core:inst|ocw2[0] ; core:inst|er[6]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.323 ns                ;
+; N/A   ; 281.37 MHz ( period = 3.554 ns )               ; core:inst|ocw2[1] ; core:inst|er[5]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.664 ns                ;
+; N/A   ; 284.01 MHz ( period = 3.521 ns )               ; core:inst|ocw2[2] ; core:inst|er[2]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.443 ns                ;
+; N/A   ; 289.44 MHz ( period = 3.455 ns )               ; core:inst|ocw2[0] ; core:inst|er[0]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.479 ns                ;
+; N/A   ; 291.29 MHz ( period = 3.433 ns )               ; core:inst|ocw2[1] ; core:inst|er[4]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.721 ns                ;
+; N/A   ; 292.74 MHz ( period = 3.416 ns )               ; core:inst|ocw2[2] ; core:inst|er[5]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.528 ns                ;
+; N/A   ; 300.57 MHz ( period = 3.327 ns )               ; core:inst|ocw2[0] ; core:inst|er[5]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.439 ns                ;
+; N/A   ; 303.49 MHz ( period = 3.295 ns )               ; core:inst|ocw2[2] ; core:inst|er[4]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.585 ns                ;
+; N/A   ; 304.88 MHz ( period = 3.280 ns )               ; core:inst|ocw2[2] ; core:inst|er[3]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.254 ns                ;
+; N/A   ; 306.09 MHz ( period = 3.267 ns )               ; core:inst|ocw2[2] ; core:inst|er[1]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.258 ns                ;
+; N/A   ; 309.21 MHz ( period = 3.234 ns )               ; core:inst|ocw2[1] ; core:inst|er[2]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.154 ns                ;
+; N/A   ; 311.14 MHz ( period = 3.214 ns )               ; core:inst|ocw2[0] ; core:inst|er[4]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.504 ns                ;
+; N/A   ; 311.53 MHz ( period = 3.210 ns )               ; core:inst|ocw2[2] ; core:inst|er[0]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 1.234 ns                ;
+; N/A   ; 334.11 MHz ( period = 2.993 ns )               ; core:inst|ocw2[1] ; core:inst|er[3]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 0.965 ns                ;
+; N/A   ; 335.35 MHz ( period = 2.982 ns )               ; core:inst|ocw2[1] ; core:inst|er[1]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 0.971 ns                ;
+; N/A   ; 339.33 MHz ( period = 2.947 ns )               ; core:inst|ocw2[1] ; core:inst|er[0]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 0.969 ns                ;
+; N/A   ; 406.34 MHz ( period = 2.461 ns )               ; core:inst|ocw2[6] ; core:inst|er[2]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 3.018 ns                ;
+; N/A   ; 410.34 MHz ( period = 2.437 ns )               ; core:inst|ocw2[6] ; core:inst|er[6]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 2.824 ns                ;
+; N/A   ; 418.94 MHz ( period = 2.387 ns )               ; core:inst|ocw2[6] ; core:inst|er[5]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 3.134 ns                ;
+; N/A   ; 422.48 MHz ( period = 2.367 ns )               ; core:inst|ocw2[6] ; core:inst|er[7]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 2.543 ns                ;
+; N/A   ; 440.72 MHz ( period = 2.269 ns )               ; core:inst|ocw2[6] ; core:inst|er[4]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 3.194 ns                ;
+; N/A   ; 449.03 MHz ( period = 2.227 ns )               ; core:inst|ocw2[6] ; core:inst|er[3]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 2.836 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; core:inst|ocw2[6] ; core:inst|er[1]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 2.840 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; core:inst|ocw2[6] ; core:inst|er[0]  ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 2.863 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; core:inst|ocw2[1] ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 3.325 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; core:inst|er[4]   ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                        ; None                      ; 3.403 ns                ;
++-------+------------------------------------------------+-------------------+------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'DATAIN[4]'                                                                                                                                                                                   ;
++-------+------------------------------------------------+-------------------+------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From              ; To               ; From Clock ; To Clock  ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-------------------+------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 237.08 MHz ( period = 4.218 ns )               ; core:inst|ocw2[1] ; core:inst|er[7]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.757 ns                ;
+; N/A   ; 238.04 MHz ( period = 4.201 ns )               ; core:inst|ocw2[1] ; core:inst|er[6]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.951 ns                ;
+; N/A   ; 244.50 MHz ( period = 4.090 ns )               ; core:inst|ocw2[2] ; core:inst|er[7]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.631 ns                ;
+; N/A   ; 245.52 MHz ( period = 4.073 ns )               ; core:inst|ocw2[2] ; core:inst|er[6]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.825 ns                ;
+; N/A   ; 262.67 MHz ( period = 3.807 ns )               ; core:inst|ocw2[0] ; core:inst|er[7]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; 265.53 MHz ( period = 3.766 ns )               ; core:inst|ocw2[0] ; core:inst|er[2]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.688 ns                ;
+; N/A   ; 276.47 MHz ( period = 3.617 ns )               ; core:inst|ocw2[0] ; core:inst|er[3]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.591 ns                ;
+; N/A   ; 277.47 MHz ( period = 3.604 ns )               ; core:inst|ocw2[0] ; core:inst|er[1]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.595 ns                ;
+; N/A   ; 280.03 MHz ( period = 3.571 ns )               ; core:inst|ocw2[0] ; core:inst|er[6]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.323 ns                ;
+; N/A   ; 281.37 MHz ( period = 3.554 ns )               ; core:inst|ocw2[1] ; core:inst|er[5]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.664 ns                ;
+; N/A   ; 284.01 MHz ( period = 3.521 ns )               ; core:inst|ocw2[2] ; core:inst|er[2]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.443 ns                ;
+; N/A   ; 289.44 MHz ( period = 3.455 ns )               ; core:inst|ocw2[0] ; core:inst|er[0]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.479 ns                ;
+; N/A   ; 291.29 MHz ( period = 3.433 ns )               ; core:inst|ocw2[1] ; core:inst|er[4]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.721 ns                ;
+; N/A   ; 292.74 MHz ( period = 3.416 ns )               ; core:inst|ocw2[2] ; core:inst|er[5]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.528 ns                ;
+; N/A   ; 300.57 MHz ( period = 3.327 ns )               ; core:inst|ocw2[0] ; core:inst|er[5]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.439 ns                ;
+; N/A   ; 303.49 MHz ( period = 3.295 ns )               ; core:inst|ocw2[2] ; core:inst|er[4]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.585 ns                ;
+; N/A   ; 304.88 MHz ( period = 3.280 ns )               ; core:inst|ocw2[2] ; core:inst|er[3]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.254 ns                ;
+; N/A   ; 306.09 MHz ( period = 3.267 ns )               ; core:inst|ocw2[2] ; core:inst|er[1]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.258 ns                ;
+; N/A   ; 309.21 MHz ( period = 3.234 ns )               ; core:inst|ocw2[1] ; core:inst|er[2]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.154 ns                ;
+; N/A   ; 311.14 MHz ( period = 3.214 ns )               ; core:inst|ocw2[0] ; core:inst|er[4]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.504 ns                ;
+; N/A   ; 311.53 MHz ( period = 3.210 ns )               ; core:inst|ocw2[2] ; core:inst|er[0]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 1.234 ns                ;
+; N/A   ; 334.11 MHz ( period = 2.993 ns )               ; core:inst|ocw2[1] ; core:inst|er[3]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 0.965 ns                ;
+; N/A   ; 335.35 MHz ( period = 2.982 ns )               ; core:inst|ocw2[1] ; core:inst|er[1]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 0.971 ns                ;
+; N/A   ; 339.33 MHz ( period = 2.947 ns )               ; core:inst|ocw2[1] ; core:inst|er[0]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 0.969 ns                ;
+; N/A   ; 406.34 MHz ( period = 2.461 ns )               ; core:inst|ocw2[6] ; core:inst|er[2]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 3.018 ns                ;
+; N/A   ; 410.34 MHz ( period = 2.437 ns )               ; core:inst|ocw2[6] ; core:inst|er[6]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 2.824 ns                ;
+; N/A   ; 418.94 MHz ( period = 2.387 ns )               ; core:inst|ocw2[6] ; core:inst|er[5]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 3.134 ns                ;
+; N/A   ; 422.48 MHz ( period = 2.367 ns )               ; core:inst|ocw2[6] ; core:inst|er[7]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 2.543 ns                ;
+; N/A   ; 440.72 MHz ( period = 2.269 ns )               ; core:inst|ocw2[6] ; core:inst|er[4]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 3.194 ns                ;
+; N/A   ; 449.03 MHz ( period = 2.227 ns )               ; core:inst|ocw2[6] ; core:inst|er[3]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 2.836 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; core:inst|ocw2[6] ; core:inst|er[1]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 2.840 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; core:inst|ocw2[6] ; core:inst|er[0]  ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 2.863 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; core:inst|ocw2[1] ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 3.325 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; core:inst|er[4]   ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                        ; None                      ; 3.403 ns                ;
++-------+------------------------------------------------+-------------------+------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'INTA'                                                                                                                                                                         ;
++------------------------------------------+-----------------+------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From            ; To               ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------------+------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; core:inst|er[7] ; core:inst|pri[1] ; INTA       ; INTA     ; None                       ; None                       ; 2.040 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[3] ; core:inst|pri[1] ; INTA       ; INTA     ; None                       ; None                       ; 2.004 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[7] ; core:inst|pri[2] ; INTA       ; INTA     ; None                       ; None                       ; 2.496 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[5] ; core:inst|pri[1] ; INTA       ; INTA     ; None                       ; None                       ; 2.113 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[1] ; core:inst|pri[1] ; INTA       ; INTA     ; None                       ; None                       ; 2.284 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[2] ; core:inst|pri[2] ; INTA       ; INTA     ; None                       ; None                       ; 2.343 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[2] ; core:inst|pri[1] ; INTA       ; INTA     ; None                       ; None                       ; 2.386 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[1] ; core:inst|pri[2] ; INTA       ; INTA     ; None                       ; None                       ; 2.370 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[4] ; core:inst|pri[2] ; INTA       ; INTA     ; None                       ; None                       ; 2.383 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[6] ; core:inst|pri[1] ; INTA       ; INTA     ; None                       ; None                       ; 2.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[4] ; core:inst|pri[1] ; INTA       ; INTA     ; None                       ; None                       ; 2.435 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[3] ; core:inst|pri[2] ; INTA       ; INTA     ; None                       ; None                       ; 2.446 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[0] ; core:inst|pri[2] ; INTA       ; INTA     ; None                       ; None                       ; 2.473 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[5] ; core:inst|pri[2] ; INTA       ; INTA     ; None                       ; None                       ; 2.486 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[6] ; core:inst|pri[2] ; INTA       ; INTA     ; None                       ; None                       ; 2.758 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[0] ; core:inst|pri[1] ; INTA       ; INTA     ; None                       ; None                       ; 2.661 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[1] ; core:inst|pri[0] ; INTA       ; INTA     ; None                       ; None                       ; 2.767 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[4] ; core:inst|pri[0] ; INTA       ; INTA     ; None                       ; None                       ; 2.867 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[2] ; core:inst|pri[0] ; INTA       ; INTA     ; None                       ; None                       ; 2.992 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[0] ; core:inst|pri[0] ; INTA       ; INTA     ; None                       ; None                       ; 2.958 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[7] ; core:inst|pri[0] ; INTA       ; INTA     ; None                       ; None                       ; 3.424 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[6] ; core:inst|pri[0] ; INTA       ; INTA     ; None                       ; None                       ; 3.368 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[3] ; core:inst|pri[0] ; INTA       ; INTA     ; None                       ; None                       ; 3.167 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[5] ; core:inst|pri[0] ; INTA       ; INTA     ; None                       ; None                       ; 3.277 ns                 ;
++------------------------------------------+-----------------+------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'DATAIN[3]'                                                                                                                                                                       ;
++------------------------------------------+-------------------+------------------+------------+-----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From              ; To               ; From Clock ; To Clock  ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-------------------+------------------+------------+-----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[6] ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.097 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[6] ; core:inst|pri[2] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.308 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[7] ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.314 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[7] ; core:inst|pri[2] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.550 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[7]   ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.040 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[7] ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 3.038 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[6] ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 3.509 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[3]   ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.004 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[7]   ; core:inst|pri[2] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.496 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[5]   ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.113 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[1]   ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.284 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[2]   ; core:inst|pri[2] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.343 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[2]   ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.386 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[1]   ; core:inst|pri[2] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.370 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[4]   ; core:inst|pri[2] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.383 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[6]   ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[4]   ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.435 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[3]   ; core:inst|pri[2] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.446 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[0]   ; core:inst|pri[2] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.473 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[5]   ; core:inst|pri[2] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.486 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[6]   ; core:inst|pri[2] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.758 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[0]   ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.661 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[1]   ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.767 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[4]   ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.867 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[2]   ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.992 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[0]   ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.958 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[7]   ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 3.424 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[2] ; core:inst|pri[2] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.073 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[6]   ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 3.368 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[3]   ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 3.167 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[5]   ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 3.277 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[0] ; core:inst|pri[0] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 2.531 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[1] ; core:inst|pri[1] ; DATAIN[3]  ; DATAIN[3] ; None                       ; None                       ; 3.325 ns                 ;
++------------------------------------------+-------------------+------------------+------------+-----------+----------------------------+----------------------------+--------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'DATAIN[4]'                                                                                                                                                                       ;
++------------------------------------------+-------------------+------------------+------------+-----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From              ; To               ; From Clock ; To Clock  ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-------------------+------------------+------------+-----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[6] ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.097 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[6] ; core:inst|pri[2] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.308 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[7] ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.314 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[7] ; core:inst|pri[2] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.550 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[7]   ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.040 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[7] ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 3.038 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[6] ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 3.509 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[3]   ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.004 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[7]   ; core:inst|pri[2] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.496 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[5]   ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.113 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[1]   ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.284 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[2]   ; core:inst|pri[2] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.343 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[2]   ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.386 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[1]   ; core:inst|pri[2] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.370 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[4]   ; core:inst|pri[2] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.383 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[6]   ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.696 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[4]   ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.435 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[3]   ; core:inst|pri[2] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.446 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[0]   ; core:inst|pri[2] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.473 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[5]   ; core:inst|pri[2] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.486 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[6]   ; core:inst|pri[2] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.758 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[0]   ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.661 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[1]   ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.767 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[4]   ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.867 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[2]   ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.992 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[0]   ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.958 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[7]   ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 3.424 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[2] ; core:inst|pri[2] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.073 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[6]   ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 3.368 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[3]   ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 3.167 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|er[5]   ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 3.277 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[0] ; core:inst|pri[0] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 2.531 ns                 ;
+; Not operational: Clock Skew > Data Delay ; core:inst|ocw2[1] ; core:inst|pri[1] ; DATAIN[4]  ; DATAIN[4] ; None                       ; None                       ; 3.325 ns                 ;
++------------------------------------------+-------------------+------------------+------------+-----------+----------------------------+----------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------+
+; tsu                                                                           ;
++-------+--------------+------------+-----------+-------------------+-----------+
+; Slack ; Required tsu ; Actual tsu ; From      ; To                ; To Clock  ;
++-------+--------------+------------+-----------+-------------------+-----------+
+; N/A   ; None         ; 5.866 ns   ; CODE[2]   ; core:inst|er[7]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.796 ns   ; CODE[1]   ; core:inst|er[7]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.722 ns   ; DATAIN[6] ; core:inst|ocw2[6] ; DATAIN[3] ;
+; N/A   ; None         ; 5.646 ns   ; CODE[2]   ; core:inst|er[7]   ; DATAIN[4] ;
+; N/A   ; None         ; 5.576 ns   ; CODE[1]   ; core:inst|er[7]   ; DATAIN[4] ;
+; N/A   ; None         ; 5.502 ns   ; DATAIN[6] ; core:inst|ocw2[6] ; DATAIN[4] ;
+; N/A   ; None         ; 5.414 ns   ; CODE[0]   ; core:inst|er[6]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.410 ns   ; CODE[2]   ; core:inst|er[5]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.369 ns   ; CODE[2]   ; core:inst|er[7]   ; INTA      ;
+; N/A   ; None         ; 5.299 ns   ; CODE[1]   ; core:inst|er[7]   ; INTA      ;
+; N/A   ; None         ; 5.293 ns   ; CODE[0]   ; core:inst|er[5]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.251 ns   ; CODE[2]   ; core:inst|er[2]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.246 ns   ; CODE[0]   ; core:inst|er[4]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.242 ns   ; CODE[0]   ; core:inst|er[7]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.194 ns   ; CODE[0]   ; core:inst|er[6]   ; DATAIN[4] ;
+; N/A   ; None         ; 5.190 ns   ; CODE[2]   ; core:inst|er[5]   ; DATAIN[4] ;
+; N/A   ; None         ; 5.188 ns   ; CODE[1]   ; core:inst|er[2]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.181 ns   ; CODE[0]   ; core:inst|er[0]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.124 ns   ; CODE[2]   ; core:inst|er[0]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.073 ns   ; CODE[0]   ; core:inst|er[5]   ; DATAIN[4] ;
+; N/A   ; None         ; 5.039 ns   ; CODE[1]   ; core:inst|er[0]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.034 ns   ; CODE[0]   ; core:inst|er[3]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.031 ns   ; CODE[2]   ; core:inst|er[2]   ; DATAIN[4] ;
+; N/A   ; None         ; 5.026 ns   ; CODE[0]   ; core:inst|er[4]   ; DATAIN[4] ;
+; N/A   ; None         ; 5.022 ns   ; CODE[0]   ; core:inst|er[1]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.022 ns   ; CODE[0]   ; core:inst|er[7]   ; DATAIN[4] ;
+; N/A   ; None         ; 5.010 ns   ; CODE[0]   ; core:inst|er[2]   ; DATAIN[3] ;
+; N/A   ; None         ; 5.008 ns   ; CODE[2]   ; core:inst|er[6]   ; DATAIN[3] ;
+; N/A   ; None         ; 4.989 ns   ; CODE[2]   ; core:inst|er[3]   ; DATAIN[3] ;
+; N/A   ; None         ; 4.971 ns   ; CODE[2]   ; core:inst|er[4]   ; DATAIN[3] ;
+; N/A   ; None         ; 4.971 ns   ; DATAIN[5] ; core:inst|ocw2[5] ; DATAIN[3] ;
+; N/A   ; None         ; 4.968 ns   ; CODE[1]   ; core:inst|er[2]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.961 ns   ; CODE[0]   ; core:inst|er[0]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.961 ns   ; CODE[2]   ; core:inst|er[1]   ; DATAIN[3] ;
+; N/A   ; None         ; 4.938 ns   ; CODE[1]   ; core:inst|er[6]   ; DATAIN[3] ;
+; N/A   ; None         ; 4.926 ns   ; CODE[1]   ; core:inst|er[3]   ; DATAIN[3] ;
+; N/A   ; None         ; 4.917 ns   ; CODE[0]   ; core:inst|er[6]   ; INTA      ;
+; N/A   ; None         ; 4.913 ns   ; CODE[2]   ; core:inst|er[5]   ; INTA      ;
+; N/A   ; None         ; 4.904 ns   ; CODE[2]   ; core:inst|er[0]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.876 ns   ; CODE[1]   ; core:inst|er[1]   ; DATAIN[3] ;
+; N/A   ; None         ; 4.874 ns   ; CODE[1]   ; core:inst|er[4]   ; DATAIN[3] ;
+; N/A   ; None         ; 4.819 ns   ; CODE[1]   ; core:inst|er[0]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.814 ns   ; CODE[0]   ; core:inst|er[3]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.802 ns   ; CODE[0]   ; core:inst|er[1]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.796 ns   ; CODE[0]   ; core:inst|er[5]   ; INTA      ;
+; N/A   ; None         ; 4.790 ns   ; CODE[0]   ; core:inst|er[2]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.788 ns   ; CODE[2]   ; core:inst|er[6]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.778 ns   ; CODE[1]   ; core:inst|er[5]   ; DATAIN[3] ;
+; N/A   ; None         ; 4.769 ns   ; CODE[2]   ; core:inst|er[3]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.754 ns   ; CODE[2]   ; core:inst|er[2]   ; INTA      ;
+; N/A   ; None         ; 4.751 ns   ; CODE[2]   ; core:inst|er[4]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.751 ns   ; DATAIN[5] ; core:inst|ocw2[5] ; DATAIN[4] ;
+; N/A   ; None         ; 4.749 ns   ; CODE[0]   ; core:inst|er[4]   ; INTA      ;
+; N/A   ; None         ; 4.745 ns   ; CODE[0]   ; core:inst|er[7]   ; INTA      ;
+; N/A   ; None         ; 4.741 ns   ; CODE[2]   ; core:inst|er[1]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.718 ns   ; CODE[1]   ; core:inst|er[6]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.706 ns   ; CODE[1]   ; core:inst|er[3]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.691 ns   ; CODE[1]   ; core:inst|er[2]   ; INTA      ;
+; N/A   ; None         ; 4.684 ns   ; CODE[0]   ; core:inst|er[0]   ; INTA      ;
+; N/A   ; None         ; 4.656 ns   ; CODE[1]   ; core:inst|er[1]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.654 ns   ; CODE[1]   ; core:inst|er[4]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.627 ns   ; CODE[2]   ; core:inst|er[0]   ; INTA      ;
+; N/A   ; None         ; 4.558 ns   ; CODE[1]   ; core:inst|er[5]   ; DATAIN[4] ;
+; N/A   ; None         ; 4.542 ns   ; CODE[1]   ; core:inst|er[0]   ; INTA      ;
+; N/A   ; None         ; 4.537 ns   ; CODE[0]   ; core:inst|er[3]   ; INTA      ;
+; N/A   ; None         ; 4.525 ns   ; CODE[0]   ; core:inst|er[1]   ; INTA      ;
+; N/A   ; None         ; 4.513 ns   ; CODE[0]   ; core:inst|er[2]   ; INTA      ;
+; N/A   ; None         ; 4.511 ns   ; CODE[2]   ; core:inst|er[6]   ; INTA      ;
+; N/A   ; None         ; 4.492 ns   ; CODE[2]   ; core:inst|er[3]   ; INTA      ;
+; N/A   ; None         ; 4.474 ns   ; CODE[2]   ; core:inst|er[4]   ; INTA      ;
+; N/A   ; None         ; 4.464 ns   ; CODE[2]   ; core:inst|er[1]   ; INTA      ;
+; N/A   ; None         ; 4.441 ns   ; CODE[1]   ; core:inst|er[6]   ; INTA      ;
+; N/A   ; None         ; 4.429 ns   ; CODE[1]   ; core:inst|er[3]   ; INTA      ;
+; N/A   ; None         ; 4.397 ns   ; DATAIN[7] ; core:inst|ocw2[7] ; DATAIN[3] ;
+; N/A   ; None         ; 4.379 ns   ; CODE[1]   ; core:inst|er[1]   ; INTA      ;
+; N/A   ; None         ; 4.377 ns   ; CODE[1]   ; core:inst|er[4]   ; INTA      ;
+; N/A   ; None         ; 4.281 ns   ; CODE[1]   ; core:inst|er[5]   ; INTA      ;
+; N/A   ; None         ; 4.177 ns   ; DATAIN[7] ; core:inst|ocw2[7] ; DATAIN[4] ;
+; N/A   ; None         ; 4.033 ns   ; DATAIN[4] ; core:inst|er[7]   ; DATAIN[3] ;
+; N/A   ; None         ; 4.016 ns   ; DATAIN[4] ; core:inst|er[6]   ; DATAIN[3] ;
+; N/A   ; None         ; 3.813 ns   ; DATAIN[4] ; core:inst|er[7]   ; DATAIN[4] ;
+; N/A   ; None         ; 3.813 ns   ; DATAIN[3] ; core:inst|er[7]   ; DATAIN[3] ;
+; N/A   ; None         ; 3.796 ns   ; DATAIN[4] ; core:inst|er[6]   ; DATAIN[4] ;
+; N/A   ; None         ; 3.796 ns   ; DATAIN[3] ; core:inst|er[6]   ; DATAIN[3] ;
+; N/A   ; None         ; 3.593 ns   ; DATAIN[3] ; core:inst|er[7]   ; DATAIN[4] ;
+; N/A   ; None         ; 3.576 ns   ; DATAIN[3] ; core:inst|er[6]   ; DATAIN[4] ;
+; N/A   ; None         ; 3.536 ns   ; DATAIN[4] ; core:inst|er[7]   ; INTA      ;
+; N/A   ; None         ; 3.519 ns   ; DATAIN[4] ; core:inst|er[6]   ; INTA      ;
+; N/A   ; None         ; 3.316 ns   ; DATAIN[3] ; core:inst|er[7]   ; INTA      ;
+; N/A   ; None         ; 3.299 ns   ; DATAIN[3] ; core:inst|er[6]   ; INTA      ;
+; N/A   ; None         ; 3.187 ns   ; DATAIN[4] ; core:inst|er[2]   ; DATAIN[3] ;
+; N/A   ; None         ; 2.967 ns   ; DATAIN[4] ; core:inst|er[2]   ; DATAIN[4] ;
+; N/A   ; None         ; 2.967 ns   ; DATAIN[3] ; core:inst|er[2]   ; DATAIN[3] ;
+; N/A   ; None         ; 2.876 ns   ; DATAIN[4] ; core:inst|er[0]   ; DATAIN[3] ;
+; N/A   ; None         ; 2.747 ns   ; DATAIN[3] ; core:inst|er[2]   ; DATAIN[4] ;
+; N/A   ; None         ; 2.690 ns   ; DATAIN[4] ; core:inst|er[2]   ; INTA      ;
+; N/A   ; None         ; 2.656 ns   ; DATAIN[4] ; core:inst|er[0]   ; DATAIN[4] ;
+; N/A   ; None         ; 2.656 ns   ; DATAIN[3] ; core:inst|er[0]   ; DATAIN[3] ;
+; N/A   ; None         ; 2.505 ns   ; DATAIN[1] ; core:inst|ocw2[1] ; DATAIN[3] ;
+; N/A   ; None         ; 2.470 ns   ; DATAIN[3] ; core:inst|er[2]   ; INTA      ;
+; N/A   ; None         ; 2.436 ns   ; DATAIN[3] ; core:inst|er[0]   ; DATAIN[4] ;
+; N/A   ; None         ; 2.379 ns   ; DATAIN[4] ; core:inst|er[0]   ; INTA      ;
+; N/A   ; None         ; 2.363 ns   ; DATAIN[2] ; core:inst|ocw2[2] ; DATAIN[3] ;
+; N/A   ; None         ; 2.285 ns   ; DATAIN[1] ; core:inst|ocw2[1] ; DATAIN[4] ;
+; N/A   ; None         ; 2.271 ns   ; DATAIN[6] ; core:inst|ocw3[6] ; DATAIN[3] ;
+; N/A   ; None         ; 2.159 ns   ; DATAIN[3] ; core:inst|er[0]   ; INTA      ;
+; N/A   ; None         ; 2.149 ns   ; DATAIN[4] ; core:inst|er[5]   ; DATAIN[3] ;
+; N/A   ; None         ; 2.143 ns   ; DATAIN[2] ; core:inst|ocw2[2] ; DATAIN[4] ;
+; N/A   ; None         ; 2.087 ns   ; DATAIN[5] ; core:inst|ocw3[5] ; DATAIN[3] ;
+; N/A   ; None         ; 2.048 ns   ; DATAIN[6] ; core:inst|ocw3[6] ; DATAIN[4] ;
+; N/A   ; None         ; 1.995 ns   ; DATAIN[4] ; core:inst|er[4]   ; DATAIN[3] ;
+; N/A   ; None         ; 1.929 ns   ; DATAIN[4] ; core:inst|er[5]   ; DATAIN[4] ;
+; N/A   ; None         ; 1.929 ns   ; DATAIN[3] ; core:inst|er[5]   ; DATAIN[3] ;
+; N/A   ; None         ; 1.885 ns   ; DATAIN[0] ; core:inst|ocw2[0] ; DATAIN[3] ;
+; N/A   ; None         ; 1.864 ns   ; DATAIN[5] ; core:inst|ocw3[5] ; DATAIN[4] ;
+; N/A   ; None         ; 1.775 ns   ; DATAIN[4] ; core:inst|er[4]   ; DATAIN[4] ;
+; N/A   ; None         ; 1.775 ns   ; DATAIN[3] ; core:inst|er[4]   ; DATAIN[3] ;
+; N/A   ; None         ; 1.738 ns   ; DATAIN[4] ; core:inst|er[3]   ; DATAIN[3] ;
+; N/A   ; None         ; 1.726 ns   ; DATAIN[4] ; core:inst|er[1]   ; DATAIN[3] ;
+; N/A   ; None         ; 1.709 ns   ; DATAIN[3] ; core:inst|er[5]   ; DATAIN[4] ;
+; N/A   ; None         ; 1.665 ns   ; DATAIN[0] ; core:inst|ocw2[0] ; DATAIN[4] ;
+; N/A   ; None         ; 1.652 ns   ; DATAIN[4] ; core:inst|er[5]   ; INTA      ;
+; N/A   ; None         ; 1.609 ns   ; DATAIN[1] ; core:inst|ocw3[1] ; DATAIN[3] ;
+; N/A   ; None         ; 1.555 ns   ; DATAIN[3] ; core:inst|er[4]   ; DATAIN[4] ;
+; N/A   ; None         ; 1.518 ns   ; DATAIN[4] ; core:inst|er[3]   ; DATAIN[4] ;
+; N/A   ; None         ; 1.518 ns   ; DATAIN[3] ; core:inst|er[3]   ; DATAIN[3] ;
+; N/A   ; None         ; 1.506 ns   ; DATAIN[4] ; core:inst|er[1]   ; DATAIN[4] ;
+; N/A   ; None         ; 1.506 ns   ; DATAIN[3] ; core:inst|er[1]   ; DATAIN[3] ;
+; N/A   ; None         ; 1.498 ns   ; DATAIN[4] ; core:inst|er[4]   ; INTA      ;
+; N/A   ; None         ; 1.432 ns   ; DATAIN[3] ; core:inst|er[5]   ; INTA      ;
+; N/A   ; None         ; 1.386 ns   ; DATAIN[1] ; core:inst|ocw3[1] ; DATAIN[4] ;
+; N/A   ; None         ; 1.298 ns   ; DATAIN[3] ; core:inst|er[3]   ; DATAIN[4] ;
+; N/A   ; None         ; 1.286 ns   ; DATAIN[3] ; core:inst|er[1]   ; DATAIN[4] ;
+; N/A   ; None         ; 1.278 ns   ; DATAIN[3] ; core:inst|er[4]   ; INTA      ;
+; N/A   ; None         ; 1.241 ns   ; DATAIN[4] ; core:inst|er[3]   ; INTA      ;
+; N/A   ; None         ; 1.229 ns   ; DATAIN[4] ; core:inst|er[1]   ; INTA      ;
+; N/A   ; None         ; 1.141 ns   ; DATAIN[0] ; core:inst|ocw3[0] ; DATAIN[3] ;
+; N/A   ; None         ; 1.021 ns   ; DATAIN[3] ; core:inst|er[3]   ; INTA      ;
+; N/A   ; None         ; 1.009 ns   ; DATAIN[3] ; core:inst|er[1]   ; INTA      ;
+; N/A   ; None         ; 0.918 ns   ; DATAIN[0] ; core:inst|ocw3[0] ; DATAIN[4] ;
++-------+--------------+------------+-----------+-------------------+-----------+
+
+
++---------------------------------------------------------------------------------+
+; tco                                                                             ;
++-------+--------------+------------+-------------------+------------+------------+
+; Slack ; Required tco ; Actual tco ; From              ; To         ; From Clock ;
++-------+--------------+------------+-------------------+------------+------------+
+; N/A   ; None         ; 15.251 ns  ; core:inst|pri[1]  ; SP[1]      ; INTA       ;
+; N/A   ; None         ; 15.170 ns  ; core:inst|pri[2]  ; SP[2]      ; INTA       ;
+; N/A   ; None         ; 15.163 ns  ; core:inst|pri[1]  ; SP[1]      ; DATAIN[4]  ;
+; N/A   ; None         ; 15.082 ns  ; core:inst|pri[2]  ; SP[2]      ; DATAIN[4]  ;
+; N/A   ; None         ; 14.943 ns  ; core:inst|pri[1]  ; SP[1]      ; DATAIN[3]  ;
+; N/A   ; None         ; 14.862 ns  ; core:inst|pri[2]  ; SP[2]      ; DATAIN[3]  ;
+; N/A   ; None         ; 14.407 ns  ; core:inst|pri[0]  ; SP[0]      ; INTA       ;
+; N/A   ; None         ; 14.319 ns  ; core:inst|pri[0]  ; SP[0]      ; DATAIN[4]  ;
+; N/A   ; None         ; 14.099 ns  ; core:inst|pri[0]  ; SP[0]      ; DATAIN[3]  ;
+; N/A   ; None         ; 12.996 ns  ; core:inst|ocw3[1] ; DATAOUT[1] ; DATAIN[4]  ;
+; N/A   ; None         ; 12.773 ns  ; core:inst|ocw3[1] ; DATAOUT[1] ; DATAIN[3]  ;
+; N/A   ; None         ; 12.416 ns  ; core:inst|ocw3[1] ; DATAOUT[2] ; DATAIN[4]  ;
+; N/A   ; None         ; 12.379 ns  ; core:inst|ocw3[1] ; DATAOUT[0] ; DATAIN[4]  ;
+; N/A   ; None         ; 12.360 ns  ; core:inst|ocw3[1] ; DATAOUT[3] ; DATAIN[4]  ;
+; N/A   ; None         ; 12.325 ns  ; core:inst|ocw3[1] ; DATAOUT[6] ; DATAIN[4]  ;
+; N/A   ; None         ; 12.193 ns  ; core:inst|ocw3[1] ; DATAOUT[2] ; DATAIN[3]  ;
+; N/A   ; None         ; 12.156 ns  ; core:inst|ocw3[1] ; DATAOUT[0] ; DATAIN[3]  ;
+; N/A   ; None         ; 12.138 ns  ; core:inst|ocw3[1] ; DATAOUT[5] ; DATAIN[4]  ;
+; N/A   ; None         ; 12.137 ns  ; core:inst|ocw3[1] ; DATAOUT[3] ; DATAIN[3]  ;
+; N/A   ; None         ; 12.102 ns  ; core:inst|ocw3[1] ; DATAOUT[6] ; DATAIN[3]  ;
+; N/A   ; None         ; 11.945 ns  ; core:inst|ocw3[1] ; DATAOUT[4] ; DATAIN[4]  ;
+; N/A   ; None         ; 11.934 ns  ; core:inst|ocw3[1] ; DATAOUT[7] ; DATAIN[4]  ;
+; N/A   ; None         ; 11.915 ns  ; core:inst|ocw3[1] ; DATAOUT[5] ; DATAIN[3]  ;
+; N/A   ; None         ; 11.805 ns  ; core:inst|ocw3[1] ; RD_ISR     ; DATAIN[4]  ;
+; N/A   ; None         ; 11.748 ns  ; core:inst|ocw3[0] ; RD_ISR     ; DATAIN[4]  ;
+; N/A   ; None         ; 11.722 ns  ; core:inst|ocw3[1] ; DATAOUT[4] ; DATAIN[3]  ;
+; N/A   ; None         ; 11.711 ns  ; core:inst|ocw3[1] ; DATAOUT[7] ; DATAIN[3]  ;
+; N/A   ; None         ; 11.582 ns  ; core:inst|ocw3[1] ; RD_ISR     ; DATAIN[3]  ;
+; N/A   ; None         ; 11.525 ns  ; core:inst|ocw3[0] ; RD_ISR     ; DATAIN[3]  ;
+; N/A   ; None         ; 11.470 ns  ; core:inst|ocw3[6] ; SM         ; DATAIN[4]  ;
+; N/A   ; None         ; 11.353 ns  ; core:inst|ocw3[1] ; RD_IRR     ; DATAIN[4]  ;
+; N/A   ; None         ; 11.265 ns  ; core:inst|ocw3[5] ; SM         ; DATAIN[4]  ;
+; N/A   ; None         ; 11.254 ns  ; core:inst|ocw3[0] ; RD_IRR     ; DATAIN[4]  ;
+; N/A   ; None         ; 11.247 ns  ; core:inst|ocw3[6] ; SM         ; DATAIN[3]  ;
+; N/A   ; None         ; 11.130 ns  ; core:inst|ocw3[1] ; RD_IRR     ; DATAIN[3]  ;
+; N/A   ; None         ; 11.042 ns  ; core:inst|ocw3[5] ; SM         ; DATAIN[3]  ;
+; N/A   ; None         ; 11.031 ns  ; core:inst|ocw3[0] ; RD_IRR     ; DATAIN[3]  ;
+; N/A   ; None         ; 10.663 ns  ; core:inst|flag1   ; DATAOUT[1] ; INTA       ;
+; N/A   ; None         ; 10.544 ns  ; core:inst|er[6]   ; EOI[6]     ; INTA       ;
+; N/A   ; None         ; 10.456 ns  ; core:inst|er[6]   ; EOI[6]     ; DATAIN[4]  ;
+; N/A   ; None         ; 10.236 ns  ; core:inst|er[6]   ; EOI[6]     ; DATAIN[3]  ;
+; N/A   ; None         ; 10.082 ns  ; core:inst|flag1   ; DATAOUT[2] ; INTA       ;
+; N/A   ; None         ; 10.045 ns  ; core:inst|flag1   ; DATAOUT[0] ; INTA       ;
+; N/A   ; None         ; 10.026 ns  ; core:inst|flag1   ; DATAOUT[3] ; INTA       ;
+; N/A   ; None         ; 9.987 ns   ; core:inst|flag1   ; DATAOUT[6] ; INTA       ;
+; N/A   ; None         ; 9.689 ns   ; core:inst|er[0]   ; EOI[0]     ; INTA       ;
+; N/A   ; None         ; 9.612 ns   ; core:inst|flag1   ; DATAOUT[4] ; INTA       ;
+; N/A   ; None         ; 9.601 ns   ; core:inst|er[0]   ; EOI[0]     ; DATAIN[4]  ;
+; N/A   ; None         ; 9.601 ns   ; core:inst|flag1   ; DATAOUT[7] ; INTA       ;
+; N/A   ; None         ; 9.544 ns   ; core:inst|er[2]   ; EOI[2]     ; INTA       ;
+; N/A   ; None         ; 9.513 ns   ; core:inst|er[4]   ; EOI[4]     ; INTA       ;
+; N/A   ; None         ; 9.497 ns   ; core:inst|er[5]   ; EOI[5]     ; INTA       ;
+; N/A   ; None         ; 9.456 ns   ; core:inst|er[2]   ; EOI[2]     ; DATAIN[4]  ;
+; N/A   ; None         ; 9.441 ns   ; core:inst|flag2   ; DATAOUT[1] ; INTA       ;
+; N/A   ; None         ; 9.425 ns   ; core:inst|er[4]   ; EOI[4]     ; DATAIN[4]  ;
+; N/A   ; None         ; 9.409 ns   ; core:inst|er[5]   ; EOI[5]     ; DATAIN[4]  ;
+; N/A   ; None         ; 9.381 ns   ; core:inst|er[0]   ; EOI[0]     ; DATAIN[3]  ;
+; N/A   ; None         ; 9.328 ns   ; core:inst|flag1   ; DATAOUT[5] ; INTA       ;
+; N/A   ; None         ; 9.327 ns   ; core:inst|er[3]   ; EOI[3]     ; INTA       ;
+; N/A   ; None         ; 9.308 ns   ; core:inst|er[7]   ; EOI[7]     ; INTA       ;
+; N/A   ; None         ; 9.239 ns   ; core:inst|er[3]   ; EOI[3]     ; DATAIN[4]  ;
+; N/A   ; None         ; 9.236 ns   ; core:inst|er[2]   ; EOI[2]     ; DATAIN[3]  ;
+; N/A   ; None         ; 9.220 ns   ; core:inst|er[7]   ; EOI[7]     ; DATAIN[4]  ;
+; N/A   ; None         ; 9.205 ns   ; core:inst|er[4]   ; EOI[4]     ; DATAIN[3]  ;
+; N/A   ; None         ; 9.189 ns   ; core:inst|er[5]   ; EOI[5]     ; DATAIN[3]  ;
+; N/A   ; None         ; 9.019 ns   ; core:inst|er[3]   ; EOI[3]     ; DATAIN[3]  ;
+; N/A   ; None         ; 9.000 ns   ; core:inst|er[7]   ; EOI[7]     ; DATAIN[3]  ;
+; N/A   ; None         ; 8.860 ns   ; core:inst|flag2   ; DATAOUT[2] ; INTA       ;
+; N/A   ; None         ; 8.823 ns   ; core:inst|flag2   ; DATAOUT[0] ; INTA       ;
+; N/A   ; None         ; 8.804 ns   ; core:inst|flag2   ; DATAOUT[3] ; INTA       ;
+; N/A   ; None         ; 8.803 ns   ; core:inst|er[1]   ; EOI[1]     ; INTA       ;
+; N/A   ; None         ; 8.765 ns   ; core:inst|flag2   ; DATAOUT[6] ; INTA       ;
+; N/A   ; None         ; 8.715 ns   ; core:inst|er[1]   ; EOI[1]     ; DATAIN[4]  ;
+; N/A   ; None         ; 8.495 ns   ; core:inst|er[1]   ; EOI[1]     ; DATAIN[3]  ;
+; N/A   ; None         ; 8.444 ns   ; core:inst|flag2   ; SETZERO[5] ; INTA       ;
+; N/A   ; None         ; 8.390 ns   ; core:inst|flag2   ; DATAOUT[4] ; INTA       ;
+; N/A   ; None         ; 8.379 ns   ; core:inst|flag2   ; DATAOUT[7] ; INTA       ;
+; N/A   ; None         ; 8.170 ns   ; core:inst|flag2   ; SETZERO[6] ; INTA       ;
+; N/A   ; None         ; 8.126 ns   ; core:inst|flag2   ; SETZERO[1] ; INTA       ;
+; N/A   ; None         ; 8.106 ns   ; core:inst|flag2   ; DATAOUT[5] ; INTA       ;
+; N/A   ; None         ; 7.911 ns   ; core:inst|flag2   ; SETZERO[7] ; INTA       ;
+; N/A   ; None         ; 7.864 ns   ; core:inst|flag2   ; SETZERO[2] ; INTA       ;
+; N/A   ; None         ; 7.670 ns   ; core:inst|flag2   ; SETZERO[4] ; INTA       ;
+; N/A   ; None         ; 7.645 ns   ; core:inst|flag2   ; SETZERO[0] ; INTA       ;
+; N/A   ; None         ; 7.615 ns   ; core:inst|flag2   ; SETZERO[3] ; INTA       ;
++-------+--------------+------------+-------------------+------------+------------+
+
+
++--------------------------------------------------------------------+
+; tpd                                                                ;
++-------+-------------------+-----------------+---------+------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From    ; To         ;
++-------+-------------------+-----------------+---------+------------+
+; N/A   ; None              ; 13.850 ns       ; CS      ; DATAOUT[1] ;
+; N/A   ; None              ; 13.670 ns       ; RD      ; DATAOUT[1] ;
+; N/A   ; None              ; 13.531 ns       ; WR      ; DATAOUT[1] ;
+; N/A   ; None              ; 13.270 ns       ; CS      ; DATAOUT[2] ;
+; N/A   ; None              ; 13.233 ns       ; CS      ; DATAOUT[0] ;
+; N/A   ; None              ; 13.214 ns       ; CS      ; DATAOUT[3] ;
+; N/A   ; None              ; 13.179 ns       ; CS      ; DATAOUT[6] ;
+; N/A   ; None              ; 13.090 ns       ; RD      ; DATAOUT[2] ;
+; N/A   ; None              ; 13.053 ns       ; RD      ; DATAOUT[0] ;
+; N/A   ; None              ; 13.034 ns       ; RD      ; DATAOUT[3] ;
+; N/A   ; None              ; 12.999 ns       ; RD      ; DATAOUT[6] ;
+; N/A   ; None              ; 12.992 ns       ; CS      ; DATAOUT[5] ;
+; N/A   ; None              ; 12.951 ns       ; WR      ; DATAOUT[2] ;
+; N/A   ; None              ; 12.914 ns       ; WR      ; DATAOUT[0] ;
+; N/A   ; None              ; 12.895 ns       ; WR      ; DATAOUT[3] ;
+; N/A   ; None              ; 12.860 ns       ; WR      ; DATAOUT[6] ;
+; N/A   ; None              ; 12.858 ns       ; A0      ; DATAOUT[1] ;
+; N/A   ; None              ; 12.812 ns       ; RD      ; DATAOUT[5] ;
+; N/A   ; None              ; 12.799 ns       ; CS      ; DATAOUT[4] ;
+; N/A   ; None              ; 12.788 ns       ; CS      ; DATAOUT[7] ;
+; N/A   ; None              ; 12.673 ns       ; WR      ; DATAOUT[5] ;
+; N/A   ; None              ; 12.619 ns       ; RD      ; DATAOUT[4] ;
+; N/A   ; None              ; 12.608 ns       ; RD      ; DATAOUT[7] ;
+; N/A   ; None              ; 12.480 ns       ; WR      ; DATAOUT[4] ;
+; N/A   ; None              ; 12.469 ns       ; WR      ; DATAOUT[7] ;
+; N/A   ; None              ; 12.358 ns       ; CS      ; RD_ISR     ;
+; N/A   ; None              ; 12.278 ns       ; A0      ; DATAOUT[2] ;
+; N/A   ; None              ; 12.241 ns       ; A0      ; DATAOUT[0] ;
+; N/A   ; None              ; 12.222 ns       ; A0      ; DATAOUT[3] ;
+; N/A   ; None              ; 12.187 ns       ; A0      ; DATAOUT[6] ;
+; N/A   ; None              ; 12.178 ns       ; RD      ; RD_ISR     ;
+; N/A   ; None              ; 12.039 ns       ; WR      ; RD_ISR     ;
+; N/A   ; None              ; 12.000 ns       ; A0      ; DATAOUT[5] ;
+; N/A   ; None              ; 11.906 ns       ; CS      ; RD_IRR     ;
+; N/A   ; None              ; 11.875 ns       ; CODE[1] ; DATAOUT[1] ;
+; N/A   ; None              ; 11.811 ns       ; CODE[2] ; SETZERO[2] ;
+; N/A   ; None              ; 11.807 ns       ; A0      ; DATAOUT[4] ;
+; N/A   ; None              ; 11.796 ns       ; A0      ; DATAOUT[7] ;
+; N/A   ; None              ; 11.748 ns       ; CODE[1] ; SETZERO[2] ;
+; N/A   ; None              ; 11.726 ns       ; RD      ; RD_IRR     ;
+; N/A   ; None              ; 11.622 ns       ; BUS[1]  ; DATAOUT[1] ;
+; N/A   ; None              ; 11.596 ns       ; CS      ; RD_IMR     ;
+; N/A   ; None              ; 11.587 ns       ; WR      ; RD_IRR     ;
+; N/A   ; None              ; 11.578 ns       ; CODE[1] ; SETZERO[5] ;
+; N/A   ; None              ; 11.552 ns       ; CODE[2] ; SETZERO[3] ;
+; N/A   ; None              ; 11.494 ns       ; CODE[2] ; SETZERO[6] ;
+; N/A   ; None              ; 11.489 ns       ; CODE[1] ; SETZERO[3] ;
+; N/A   ; None              ; 11.424 ns       ; CODE[1] ; SETZERO[6] ;
+; N/A   ; None              ; 11.416 ns       ; RD      ; RD_IMR     ;
+; N/A   ; None              ; 11.398 ns       ; CODE[2] ; SETZERO[0] ;
+; N/A   ; None              ; 11.313 ns       ; CODE[1] ; SETZERO[0] ;
+; N/A   ; None              ; 11.289 ns       ; CODE[0] ; SETZERO[2] ;
+; N/A   ; None              ; 11.276 ns       ; WR      ; RD_IMR     ;
+; N/A   ; None              ; 11.275 ns       ; CODE[0] ; SETZERO[6] ;
+; N/A   ; None              ; 11.260 ns       ; CODE[1] ; SETZERO[1] ;
+; N/A   ; None              ; 11.234 ns       ; CODE[2] ; SETZERO[7] ;
+; N/A   ; None              ; 11.192 ns       ; CODE[2] ; DATAOUT[2] ;
+; N/A   ; None              ; 11.164 ns       ; CODE[1] ; SETZERO[7] ;
+; N/A   ; None              ; 11.142 ns       ; CODE[2] ; SETZERO[4] ;
+; N/A   ; None              ; 11.124 ns       ; CODE[0] ; SETZERO[5] ;
+; N/A   ; None              ; 11.118 ns       ; A0      ; RD_IMR     ;
+; N/A   ; None              ; 11.112 ns       ; BUS[3]  ; DATAOUT[3] ;
+; N/A   ; None              ; 11.095 ns       ; A0      ; RD_ISR     ;
+; N/A   ; None              ; 11.058 ns       ; CODE[0] ; SETZERO[0] ;
+; N/A   ; None              ; 11.045 ns       ; CODE[1] ; SETZERO[4] ;
+; N/A   ; None              ; 11.026 ns       ; CODE[0] ; SETZERO[3] ;
+; N/A   ; None              ; 11.019 ns       ; CODE[0] ; SETZERO[7] ;
+; N/A   ; None              ; 11.004 ns       ; CODE[0] ; DATAOUT[0] ;
+; N/A   ; None              ; 10.956 ns       ; BUS[2]  ; DATAOUT[2] ;
+; N/A   ; None              ; 10.935 ns       ; CODE[2] ; SETZERO[5] ;
+; N/A   ; None              ; 10.914 ns       ; BUS[0]  ; DATAOUT[0] ;
+; N/A   ; None              ; 10.872 ns       ; BUS[6]  ; DATAOUT[6] ;
+; N/A   ; None              ; 10.819 ns       ; CODE[0] ; SETZERO[1] ;
+; N/A   ; None              ; 10.790 ns       ; CODE[0] ; SETZERO[4] ;
+; N/A   ; None              ; 10.639 ns       ; A0      ; RD_IRR     ;
+; N/A   ; None              ; 10.620 ns       ; CODE[2] ; SETZERO[1] ;
+; N/A   ; None              ; 10.552 ns       ; BUS[7]  ; DATAOUT[7] ;
+; N/A   ; None              ; 10.353 ns       ; BUS[5]  ; DATAOUT[5] ;
+; N/A   ; None              ; 10.315 ns       ; BUS[4]  ; DATAOUT[4] ;
+; N/A   ; None              ; 8.532 ns        ; RESET   ; SETZERO[5] ;
+; N/A   ; None              ; 8.214 ns        ; RESET   ; SETZERO[1] ;
+; N/A   ; None              ; 7.923 ns        ; RESET   ; SETZERO[2] ;
+; N/A   ; None              ; 7.910 ns        ; RESET   ; SETZERO[6] ;
+; N/A   ; None              ; 7.890 ns        ; RESET   ; SETZERO[0] ;
+; N/A   ; None              ; 7.658 ns        ; RESET   ; SETZERO[3] ;
+; N/A   ; None              ; 7.653 ns        ; RESET   ; SETZERO[7] ;
+; N/A   ; None              ; 7.424 ns        ; RESET   ; SETZERO[4] ;
++-------+-------------------+-----------------+---------+------------+
+
+
++-------------------------------------------------------------------------------------+
+; th                                                                                  ;
++---------------+-------------+-----------+-----------+-------------------+-----------+
+; Minimum Slack ; Required th ; Actual th ; From      ; To                ; To Clock  ;
++---------------+-------------+-----------+-----------+-------------------+-----------+
+; N/A           ; None        ; 0.656 ns  ; DATAIN[3] ; core:inst|er[3]   ; INTA      ;
+; N/A           ; None        ; 0.649 ns  ; DATAIN[3] ; core:inst|er[1]   ; INTA      ;
+; N/A           ; None        ; 0.568 ns  ; DATAIN[3] ; core:inst|er[3]   ; DATAIN[4] ;
+; N/A           ; None        ; 0.561 ns  ; DATAIN[3] ; core:inst|er[1]   ; DATAIN[4] ;
+; N/A           ; None        ; 0.436 ns  ; DATAIN[4] ; core:inst|er[3]   ; INTA      ;
+; N/A           ; None        ; 0.429 ns  ; DATAIN[4] ; core:inst|er[1]   ; INTA      ;
+; N/A           ; None        ; 0.413 ns  ; DATAIN[3] ; core:inst|er[5]   ; INTA      ;
+; N/A           ; None        ; 0.357 ns  ; DATAIN[3] ; core:inst|er[4]   ; INTA      ;
+; N/A           ; None        ; 0.348 ns  ; DATAIN[4] ; core:inst|er[3]   ; DATAIN[4] ;
+; N/A           ; None        ; 0.348 ns  ; DATAIN[3] ; core:inst|er[3]   ; DATAIN[3] ;
+; N/A           ; None        ; 0.341 ns  ; DATAIN[4] ; core:inst|er[1]   ; DATAIN[4] ;
+; N/A           ; None        ; 0.341 ns  ; DATAIN[3] ; core:inst|er[1]   ; DATAIN[3] ;
+; N/A           ; None        ; 0.325 ns  ; DATAIN[3] ; core:inst|er[5]   ; DATAIN[4] ;
+; N/A           ; None        ; 0.269 ns  ; DATAIN[3] ; core:inst|er[4]   ; DATAIN[4] ;
+; N/A           ; None        ; 0.193 ns  ; DATAIN[4] ; core:inst|er[5]   ; INTA      ;
+; N/A           ; None        ; 0.137 ns  ; DATAIN[4] ; core:inst|er[4]   ; INTA      ;
+; N/A           ; None        ; 0.128 ns  ; DATAIN[4] ; core:inst|er[3]   ; DATAIN[3] ;
+; N/A           ; None        ; 0.121 ns  ; DATAIN[4] ; core:inst|er[1]   ; DATAIN[3] ;
+; N/A           ; None        ; 0.105 ns  ; DATAIN[4] ; core:inst|er[5]   ; DATAIN[4] ;
+; N/A           ; None        ; 0.105 ns  ; DATAIN[3] ; core:inst|er[5]   ; DATAIN[3] ;
+; N/A           ; None        ; 0.049 ns  ; DATAIN[4] ; core:inst|er[4]   ; DATAIN[4] ;
+; N/A           ; None        ; 0.049 ns  ; DATAIN[3] ; core:inst|er[4]   ; DATAIN[3] ;
+; N/A           ; None        ; -0.023 ns ; DATAIN[3] ; core:inst|er[2]   ; INTA      ;
+; N/A           ; None        ; -0.111 ns ; DATAIN[3] ; core:inst|er[2]   ; DATAIN[4] ;
+; N/A           ; None        ; -0.115 ns ; DATAIN[4] ; core:inst|er[5]   ; DATAIN[3] ;
+; N/A           ; None        ; -0.171 ns ; DATAIN[4] ; core:inst|er[4]   ; DATAIN[3] ;
+; N/A           ; None        ; -0.237 ns ; DATAIN[0] ; core:inst|ocw3[0] ; DATAIN[4] ;
+; N/A           ; None        ; -0.242 ns ; DATAIN[3] ; core:inst|er[7]   ; INTA      ;
+; N/A           ; None        ; -0.243 ns ; DATAIN[4] ; core:inst|er[2]   ; INTA      ;
+; N/A           ; None        ; -0.259 ns ; DATAIN[3] ; core:inst|er[0]   ; INTA      ;
+; N/A           ; None        ; -0.330 ns ; DATAIN[3] ; core:inst|er[7]   ; DATAIN[4] ;
+; N/A           ; None        ; -0.331 ns ; DATAIN[4] ; core:inst|er[2]   ; DATAIN[4] ;
+; N/A           ; None        ; -0.331 ns ; DATAIN[3] ; core:inst|er[2]   ; DATAIN[3] ;
+; N/A           ; None        ; -0.347 ns ; DATAIN[3] ; core:inst|er[0]   ; DATAIN[4] ;
+; N/A           ; None        ; -0.460 ns ; DATAIN[0] ; core:inst|ocw3[0] ; DATAIN[3] ;
+; N/A           ; None        ; -0.462 ns ; DATAIN[4] ; core:inst|er[7]   ; INTA      ;
+; N/A           ; None        ; -0.479 ns ; DATAIN[4] ; core:inst|er[0]   ; INTA      ;
+; N/A           ; None        ; -0.479 ns ; DATAIN[3] ; core:inst|er[6]   ; INTA      ;
+; N/A           ; None        ; -0.550 ns ; DATAIN[4] ; core:inst|er[7]   ; DATAIN[4] ;
+; N/A           ; None        ; -0.550 ns ; DATAIN[3] ; core:inst|er[7]   ; DATAIN[3] ;
+; N/A           ; None        ; -0.551 ns ; DATAIN[4] ; core:inst|er[2]   ; DATAIN[3] ;
+; N/A           ; None        ; -0.567 ns ; DATAIN[4] ; core:inst|er[0]   ; DATAIN[4] ;
+; N/A           ; None        ; -0.567 ns ; DATAIN[3] ; core:inst|er[0]   ; DATAIN[3] ;
+; N/A           ; None        ; -0.567 ns ; DATAIN[3] ; core:inst|er[6]   ; DATAIN[4] ;
+; N/A           ; None        ; -0.678 ns ; DATAIN[1] ; core:inst|ocw3[1] ; DATAIN[4] ;
+; N/A           ; None        ; -0.699 ns ; DATAIN[4] ; core:inst|er[6]   ; INTA      ;
+; N/A           ; None        ; -0.770 ns ; DATAIN[4] ; core:inst|er[7]   ; DATAIN[3] ;
+; N/A           ; None        ; -0.787 ns ; DATAIN[4] ; core:inst|er[0]   ; DATAIN[3] ;
+; N/A           ; None        ; -0.787 ns ; DATAIN[4] ; core:inst|er[6]   ; DATAIN[4] ;
+; N/A           ; None        ; -0.787 ns ; DATAIN[3] ; core:inst|er[6]   ; DATAIN[3] ;
+; N/A           ; None        ; -0.788 ns ; DATAIN[0] ; core:inst|ocw2[0] ; DATAIN[4] ;
+; N/A           ; None        ; -0.901 ns ; DATAIN[1] ; core:inst|ocw3[1] ; DATAIN[3] ;
+; N/A           ; None        ; -0.996 ns ; DATAIN[5] ; core:inst|ocw3[5] ; DATAIN[4] ;
+; N/A           ; None        ; -1.007 ns ; DATAIN[4] ; core:inst|er[6]   ; DATAIN[3] ;
+; N/A           ; None        ; -1.008 ns ; DATAIN[0] ; core:inst|ocw2[0] ; DATAIN[3] ;
+; N/A           ; None        ; -1.155 ns ; DATAIN[6] ; core:inst|ocw3[6] ; DATAIN[4] ;
+; N/A           ; None        ; -1.219 ns ; DATAIN[5] ; core:inst|ocw3[5] ; DATAIN[3] ;
+; N/A           ; None        ; -1.278 ns ; DATAIN[2] ; core:inst|ocw2[2] ; DATAIN[4] ;
+; N/A           ; None        ; -1.378 ns ; DATAIN[6] ; core:inst|ocw3[6] ; DATAIN[3] ;
+; N/A           ; None        ; -1.498 ns ; DATAIN[2] ; core:inst|ocw2[2] ; DATAIN[3] ;
+; N/A           ; None        ; -1.565 ns ; DATAIN[1] ; core:inst|ocw2[1] ; DATAIN[4] ;
+; N/A           ; None        ; -1.785 ns ; DATAIN[1] ; core:inst|ocw2[1] ; DATAIN[3] ;
+; N/A           ; None        ; -3.393 ns ; CODE[1]   ; core:inst|er[1]   ; INTA      ;
+; N/A           ; None        ; -3.414 ns ; CODE[1]   ; core:inst|er[5]   ; INTA      ;
+; N/A           ; None        ; -3.423 ns ; CODE[1]   ; core:inst|er[3]   ; INTA      ;
+; N/A           ; None        ; -3.474 ns ; CODE[1]   ; core:inst|er[6]   ; INTA      ;
+; N/A           ; None        ; -3.478 ns ; CODE[2]   ; core:inst|er[1]   ; INTA      ;
+; N/A           ; None        ; -3.481 ns ; CODE[1]   ; core:inst|er[1]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.486 ns ; CODE[2]   ; core:inst|er[3]   ; INTA      ;
+; N/A           ; None        ; -3.488 ns ; DATAIN[7] ; core:inst|ocw2[7] ; DATAIN[4] ;
+; N/A           ; None        ; -3.494 ns ; CODE[0]   ; core:inst|er[2]   ; INTA      ;
+; N/A           ; None        ; -3.502 ns ; CODE[1]   ; core:inst|er[5]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.511 ns ; CODE[1]   ; core:inst|er[3]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.531 ns ; CODE[0]   ; core:inst|er[3]   ; INTA      ;
+; N/A           ; None        ; -3.539 ns ; CODE[0]   ; core:inst|er[1]   ; INTA      ;
+; N/A           ; None        ; -3.544 ns ; CODE[2]   ; core:inst|er[6]   ; INTA      ;
+; N/A           ; None        ; -3.562 ns ; CODE[1]   ; core:inst|er[6]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.566 ns ; CODE[2]   ; core:inst|er[1]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.574 ns ; CODE[2]   ; core:inst|er[3]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.582 ns ; CODE[0]   ; core:inst|er[2]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.588 ns ; CODE[1]   ; core:inst|er[0]   ; INTA      ;
+; N/A           ; None        ; -3.619 ns ; CODE[0]   ; core:inst|er[3]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.627 ns ; CODE[0]   ; core:inst|er[1]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.632 ns ; CODE[2]   ; core:inst|er[6]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.672 ns ; CODE[1]   ; core:inst|er[2]   ; INTA      ;
+; N/A           ; None        ; -3.673 ns ; CODE[2]   ; core:inst|er[0]   ; INTA      ;
+; N/A           ; None        ; -3.676 ns ; CODE[1]   ; core:inst|er[0]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.687 ns ; CODE[1]   ; core:inst|er[4]   ; INTA      ;
+; N/A           ; None        ; -3.701 ns ; CODE[1]   ; core:inst|er[1]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.708 ns ; DATAIN[7] ; core:inst|ocw2[7] ; DATAIN[3] ;
+; N/A           ; None        ; -3.722 ns ; CODE[1]   ; core:inst|er[5]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.730 ns ; CODE[0]   ; core:inst|er[0]   ; INTA      ;
+; N/A           ; None        ; -3.731 ns ; CODE[1]   ; core:inst|er[3]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.735 ns ; CODE[2]   ; core:inst|er[2]   ; INTA      ;
+; N/A           ; None        ; -3.758 ns ; CODE[0]   ; core:inst|er[7]   ; INTA      ;
+; N/A           ; None        ; -3.760 ns ; CODE[1]   ; core:inst|er[2]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.761 ns ; CODE[2]   ; core:inst|er[0]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.775 ns ; CODE[1]   ; core:inst|er[4]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.782 ns ; CODE[1]   ; core:inst|er[6]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.784 ns ; CODE[2]   ; core:inst|er[4]   ; INTA      ;
+; N/A           ; None        ; -3.786 ns ; CODE[2]   ; core:inst|er[1]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.794 ns ; CODE[2]   ; core:inst|er[3]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.802 ns ; CODE[0]   ; core:inst|er[2]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.818 ns ; CODE[0]   ; core:inst|er[0]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.823 ns ; CODE[2]   ; core:inst|er[2]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.839 ns ; CODE[0]   ; core:inst|er[3]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.846 ns ; CODE[0]   ; core:inst|er[7]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.847 ns ; CODE[0]   ; core:inst|er[1]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.852 ns ; CODE[2]   ; core:inst|er[6]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.872 ns ; CODE[2]   ; core:inst|er[4]   ; DATAIN[4] ;
+; N/A           ; None        ; -3.896 ns ; CODE[1]   ; core:inst|er[0]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.929 ns ; CODE[0]   ; core:inst|er[5]   ; INTA      ;
+; N/A           ; None        ; -3.950 ns ; CODE[0]   ; core:inst|er[6]   ; INTA      ;
+; N/A           ; None        ; -3.980 ns ; CODE[1]   ; core:inst|er[2]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.981 ns ; CODE[2]   ; core:inst|er[0]   ; DATAIN[3] ;
+; N/A           ; None        ; -3.995 ns ; CODE[1]   ; core:inst|er[4]   ; DATAIN[3] ;
+; N/A           ; None        ; -4.017 ns ; CODE[0]   ; core:inst|er[5]   ; DATAIN[4] ;
+; N/A           ; None        ; -4.038 ns ; CODE[0]   ; core:inst|er[0]   ; DATAIN[3] ;
+; N/A           ; None        ; -4.038 ns ; CODE[0]   ; core:inst|er[6]   ; DATAIN[4] ;
+; N/A           ; None        ; -4.043 ns ; CODE[2]   ; core:inst|er[2]   ; DATAIN[3] ;
+; N/A           ; None        ; -4.046 ns ; CODE[2]   ; core:inst|er[5]   ; INTA      ;
+; N/A           ; None        ; -4.059 ns ; CODE[0]   ; core:inst|er[4]   ; INTA      ;
+; N/A           ; None        ; -4.066 ns ; CODE[0]   ; core:inst|er[7]   ; DATAIN[3] ;
+; N/A           ; None        ; -4.074 ns ; DATAIN[5] ; core:inst|ocw2[5] ; DATAIN[4] ;
+; N/A           ; None        ; -4.092 ns ; CODE[2]   ; core:inst|er[4]   ; DATAIN[3] ;
+; N/A           ; None        ; -4.134 ns ; CODE[2]   ; core:inst|er[5]   ; DATAIN[4] ;
+; N/A           ; None        ; -4.147 ns ; CODE[0]   ; core:inst|er[4]   ; DATAIN[4] ;
+; N/A           ; None        ; -4.237 ns ; CODE[0]   ; core:inst|er[5]   ; DATAIN[3] ;
+; N/A           ; None        ; -4.258 ns ; CODE[0]   ; core:inst|er[6]   ; DATAIN[3] ;
+; N/A           ; None        ; -4.294 ns ; DATAIN[5] ; core:inst|ocw2[5] ; DATAIN[3] ;
+; N/A           ; None        ; -4.312 ns ; CODE[1]   ; core:inst|er[7]   ; INTA      ;
+; N/A           ; None        ; -4.346 ns ; DATAIN[6] ; core:inst|ocw2[6] ; DATAIN[4] ;
+; N/A           ; None        ; -4.354 ns ; CODE[2]   ; core:inst|er[5]   ; DATAIN[3] ;
+; N/A           ; None        ; -4.367 ns ; CODE[0]   ; core:inst|er[4]   ; DATAIN[3] ;
+; N/A           ; None        ; -4.382 ns ; CODE[2]   ; core:inst|er[7]   ; INTA      ;
+; N/A           ; None        ; -4.400 ns ; CODE[1]   ; core:inst|er[7]   ; DATAIN[4] ;
+; N/A           ; None        ; -4.470 ns ; CODE[2]   ; core:inst|er[7]   ; DATAIN[4] ;
+; N/A           ; None        ; -4.566 ns ; DATAIN[6] ; core:inst|ocw2[6] ; DATAIN[3] ;
+; N/A           ; None        ; -4.620 ns ; CODE[1]   ; core:inst|er[7]   ; DATAIN[3] ;
+; N/A           ; None        ; -4.690 ns ; CODE[2]   ; core:inst|er[7]   ; DATAIN[3] ;
++---------------+-------------+-----------+-----------+-------------------+-----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Fri May 28 19:25:03 2010
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off 8259A -c 8259A --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "core:inst|ocw3[6]" is a latch
+    Warning: Node "core:inst|ocw3[5]" is a latch
+    Warning: Node "core:inst|write1" is a latch
+    Warning: Node "core:inst|write2" is a latch
+    Warning: Node "core:inst|icw1[0]" is a latch
+    Warning: Node "core:inst|icw1[1]" is a latch
+    Warning: Node "core:inst|ocw3[1]" is a latch
+    Warning: Node "core:inst|ocw3[0]" is a latch
+    Warning: Node "core:inst|icw2[7]" is a latch
+    Warning: Node "core:inst|ocw1[7]" is a latch
+    Warning: Node "core:inst|icw2[6]" is a latch
+    Warning: Node "core:inst|ocw1[6]" is a latch
+    Warning: Node "core:inst|icw2[5]" is a latch
+    Warning: Node "core:inst|ocw1[5]" is a latch
+    Warning: Node "core:inst|icw2[4]" is a latch
+    Warning: Node "core:inst|ocw1[4]" is a latch
+    Warning: Node "core:inst|icw2[3]" is a latch
+    Warning: Node "core:inst|ocw1[3]" is a latch
+    Warning: Node "core:inst|ocw1[2]" is a latch
+    Warning: Node "core:inst|ocw1[1]" is a latch
+    Warning: Node "core:inst|ocw1[0]" is a latch
+    Warning: Node "core:inst|ocw2[6]" is a latch
+    Warning: Node "core:inst|ocw2[1]" is a latch
+    Warning: Node "core:inst|ocw2[2]" is a latch
+    Warning: Node "core:inst|ocw2[0]" is a latch
+    Warning: Node "core:inst|ocw2[5]" is a latch
+    Warning: Node "core:inst|clr_imr" is a latch
+    Warning: Node "core:inst|er[2]" is a latch
+    Warning: Node "core:inst|er[3]" is a latch
+    Warning: Node "core:inst|er[1]" is a latch
+    Warning: Node "core:inst|er[0]" is a latch
+    Warning: Node "core:inst|ocw2[7]" is a latch
+    Warning: Node "core:inst|er[6]" is a latch
+    Warning: Node "core:inst|er[5]" is a latch
+    Warning: Node "core:inst|er[4]" is a latch
+    Warning: Node "core:inst|er[7]" is a latch
+    Warning: Node "core:inst|icw1[3]" is a latch
+    Warning: Node "core:inst|pri[2]" is a latch
+    Warning: Node "core:inst|pri[1]" is a latch
+    Warning: Node "core:inst|pri[0]" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "INTA" is an undefined clock
+    Info: Assuming node "DATAIN[3]" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+    Info: Assuming node "DATAIN[4]" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+Warning: Found 35 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "core:inst|er[7]" as buffer
+    Info: Detected ripple clock "core:inst|er[4]" as buffer
+    Info: Detected ripple clock "core:inst|er[5]" as buffer
+    Info: Detected ripple clock "core:inst|er[6]" as buffer
+    Info: Detected ripple clock "core:inst|ocw2[7]" as buffer
+    Info: Detected ripple clock "core:inst|er[0]" as buffer
+    Info: Detected ripple clock "core:inst|er[1]" as buffer
+    Info: Detected ripple clock "core:inst|er[3]" as buffer
+    Info: Detected ripple clock "core:inst|er[2]" as buffer
+    Info: Detected ripple clock "core:inst|clr_imr" as buffer
+    Info: Detected ripple clock "core:inst|ocw2[5]" as buffer
+    Info: Detected ripple clock "core:inst|ocw2[6]" as buffer
+    Info: Detected ripple clock "core:inst|write2" as buffer
+    Info: Detected ripple clock "core:inst|write1" as buffer
+    Info: Detected gated clock "core:inst|pri[2]~1244" as buffer
+    Info: Detected gated clock "core:inst|pri[2]~1243" as buffer
+    Info: Detected gated clock "core:inst|pri[2]~1242" as buffer
+    Info: Detected gated clock "core:inst|pri[2]~1241" as buffer
+    Info: Detected gated clock "core:inst|pri[2]~1240" as buffer
+    Info: Detected gated clock "core:inst|WideOr7~280" as buffer
+    Info: Detected gated clock "core:inst|pri[2]~1238" as buffer
+    Info: Detected gated clock "core:inst|WideOr2~539" as buffer
+    Info: Detected gated clock "core:inst|er[7]~657" as buffer
+    Info: Detected gated clock "core:inst|er[7]~656" as buffer
+    Info: Detected ripple clock "core:inst|icw4[1]" as buffer
+    Info: Detected gated clock "core:inst|o2~26" as buffer
+    Info: Detected gated clock "core:inst|icw2~0" as buffer
+    Info: Detected ripple clock "core:inst|flag1" as buffer
+    Info: Detected gated clock "core:inst|o1" as buffer
+    Info: Detected ripple clock "core:inst|state.0010" as buffer
+    Info: Detected ripple clock "core:inst|state.0001" as buffer
+    Info: Detected gated clock "core:inst|icw1~0" as buffer
+    Info: Detected gated clock "core:inst|always0~3" as buffer
+    Info: Detected ripple clock "core:inst|state.0101" as buffer
+    Info: Detected gated clock "core:inst|ocw3~16" as buffer
+Info: Clock "INTA" Internal fmax is restricted to 450.05 MHz between source register "core:inst|flag1" and destination register "core:inst|flag1"
+    Info: fmax restricted to clock pin edge rate 2.222 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 0.407 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X24_Y15_N5; Fanout = 3; REG Node = 'core:inst|flag1'
+            Info: 2: + IC(0.000 ns) + CELL(0.323 ns) = 0.323 ns; Loc. = LCCOMB_X24_Y15_N4; Fanout = 1; COMB Node = 'core:inst|flag1~2'
+            Info: 3: + IC(0.000 ns) + CELL(0.084 ns) = 0.407 ns; Loc. = LCFF_X24_Y15_N5; Fanout = 3; REG Node = 'core:inst|flag1'
+            Info: Total cell delay = 0.407 ns ( 100.00 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "INTA" to destination register is 2.803 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.820 ns) = 0.820 ns; Loc. = PIN_AB12; Fanout = 2; CLK Node = 'INTA'
+                Info: 2: + IC(1.446 ns) + CELL(0.537 ns) = 2.803 ns; Loc. = LCFF_X24_Y15_N5; Fanout = 3; REG Node = 'core:inst|flag1'
+                Info: Total cell delay = 1.357 ns ( 48.41 % )
+                Info: Total interconnect delay = 1.446 ns ( 51.59 % )
+            Info: - Longest clock path from clock "INTA" to source register is 2.803 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.820 ns) = 0.820 ns; Loc. = PIN_AB12; Fanout = 2; CLK Node = 'INTA'
+                Info: 2: + IC(1.446 ns) + CELL(0.537 ns) = 2.803 ns; Loc. = LCFF_X24_Y15_N5; Fanout = 3; REG Node = 'core:inst|flag1'
+                Info: Total cell delay = 1.357 ns ( 48.41 % )
+                Info: Total interconnect delay = 1.446 ns ( 51.59 % )
+        Info: + Micro clock to output delay of source is 0.250 ns
+        Info: + Micro setup delay of destination is -0.036 ns
+Info: Clock "DATAIN[3]" has Internal fmax of 237.08 MHz between source register "core:inst|ocw2[1]" and destination register "core:inst|er[7]" (period= 4.218 ns)
+    Info: + Longest register to register delay is 1.757 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X22_Y15_N16; Fanout = 7; REG Node = 'core:inst|ocw2[1]'
+        Info: 2: + IC(0.678 ns) + CELL(0.275 ns) = 0.953 ns; Loc. = LCCOMB_X24_Y15_N18; Fanout = 2; COMB Node = 'core:inst|er[7]~653'
+        Info: 3: + IC(0.261 ns) + CELL(0.150 ns) = 1.364 ns; Loc. = LCCOMB_X24_Y15_N6; Fanout = 1; COMB Node = 'core:inst|er[7]~655'
+        Info: 4: + IC(0.243 ns) + CELL(0.150 ns) = 1.757 ns; Loc. = LCCOMB_X24_Y15_N10; Fanout = 5; REG Node = 'core:inst|er[7]'
+        Info: Total cell delay = 0.575 ns ( 32.73 % )
+        Info: Total interconnect delay = 1.182 ns ( 67.27 % )
+    Info: - Smallest clock skew is -1.474 ns
+        Info: + Shortest clock path from clock "DATAIN[3]" to destination register is 4.099 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.830 ns) = 0.830 ns; Loc. = PIN_AC12; Fanout = 5; CLK Node = 'DATAIN[3]'
+            Info: 2: + IC(1.404 ns) + CELL(0.150 ns) = 2.384 ns; Loc. = LCCOMB_X24_Y15_N14; Fanout = 14; COMB Node = 'core:inst|o2~26'
+            Info: 3: + IC(0.778 ns) + CELL(0.393 ns) = 3.555 ns; Loc. = LCCOMB_X24_Y15_N8; Fanout = 8; COMB Node = 'core:inst|er[7]~657'
+            Info: 4: + IC(0.273 ns) + CELL(0.271 ns) = 4.099 ns; Loc. = LCCOMB_X24_Y15_N10; Fanout = 5; REG Node = 'core:inst|er[7]'
+            Info: Total cell delay = 1.644 ns ( 40.11 % )
+            Info: Total interconnect delay = 2.455 ns ( 59.89 % )
+        Info: - Longest clock path from clock "DATAIN[3]" to source register is 5.573 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.830 ns) = 0.830 ns; Loc. = PIN_AC12; Fanout = 5; CLK Node = 'DATAIN[3]'
+            Info: 2: + IC(1.404 ns) + CELL(0.150 ns) = 2.384 ns; Loc. = LCCOMB_X24_Y15_N14; Fanout = 14; COMB Node = 'core:inst|o2~26'
+            Info: 3: + IC(1.674 ns) + CELL(0.000 ns) = 4.058 ns; Loc. = CLKCTRL_G2; Fanout = 3; COMB Node = 'core:inst|o2~26clkctrl'
+            Info: 4: + IC(1.365 ns) + CELL(0.150 ns) = 5.573 ns; Loc. = LCCOMB_X22_Y15_N16; Fanout = 7; REG Node = 'core:inst|ocw2[1]'
+            Info: Total cell delay = 1.130 ns ( 20.28 % )
+            Info: Total interconnect delay = 4.443 ns ( 79.72 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Micro setup delay of destination is 0.987 ns
+Info: Clock "DATAIN[4]" has Internal fmax of 237.08 MHz between source register "core:inst|ocw2[1]" and destination register "core:inst|er[7]" (period= 4.218 ns)
+    Info: + Longest register to register delay is 1.757 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X22_Y15_N16; Fanout = 7; REG Node = 'core:inst|ocw2[1]'
+        Info: 2: + IC(0.678 ns) + CELL(0.275 ns) = 0.953 ns; Loc. = LCCOMB_X24_Y15_N18; Fanout = 2; COMB Node = 'core:inst|er[7]~653'
+        Info: 3: + IC(0.261 ns) + CELL(0.150 ns) = 1.364 ns; Loc. = LCCOMB_X24_Y15_N6; Fanout = 1; COMB Node = 'core:inst|er[7]~655'
+        Info: 4: + IC(0.243 ns) + CELL(0.150 ns) = 1.757 ns; Loc. = LCCOMB_X24_Y15_N10; Fanout = 5; REG Node = 'core:inst|er[7]'
+        Info: Total cell delay = 0.575 ns ( 32.73 % )
+        Info: Total interconnect delay = 1.182 ns ( 67.27 % )
+    Info: - Smallest clock skew is -1.474 ns
+        Info: + Shortest clock path from clock "DATAIN[4]" to destination register is 4.319 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_AE10; Fanout = 6; CLK Node = 'DATAIN[4]'
+            Info: 2: + IC(1.479 ns) + CELL(0.275 ns) = 2.604 ns; Loc. = LCCOMB_X24_Y15_N14; Fanout = 14; COMB Node = 'core:inst|o2~26'
+            Info: 3: + IC(0.778 ns) + CELL(0.393 ns) = 3.775 ns; Loc. = LCCOMB_X24_Y15_N8; Fanout = 8; COMB Node = 'core:inst|er[7]~657'
+            Info: 4: + IC(0.273 ns) + CELL(0.271 ns) = 4.319 ns; Loc. = LCCOMB_X24_Y15_N10; Fanout = 5; REG Node = 'core:inst|er[7]'
+            Info: Total cell delay = 1.789 ns ( 41.42 % )
+            Info: Total interconnect delay = 2.530 ns ( 58.58 % )
+        Info: - Longest clock path from clock "DATAIN[4]" to source register is 5.793 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_AE10; Fanout = 6; CLK Node = 'DATAIN[4]'
+            Info: 2: + IC(1.479 ns) + CELL(0.275 ns) = 2.604 ns; Loc. = LCCOMB_X24_Y15_N14; Fanout = 14; COMB Node = 'core:inst|o2~26'
+            Info: 3: + IC(1.674 ns) + CELL(0.000 ns) = 4.278 ns; Loc. = CLKCTRL_G2; Fanout = 3; COMB Node = 'core:inst|o2~26clkctrl'
+            Info: 4: + IC(1.365 ns) + CELL(0.150 ns) = 5.793 ns; Loc. = LCCOMB_X22_Y15_N16; Fanout = 7; REG Node = 'core:inst|ocw2[1]'
+            Info: Total cell delay = 1.275 ns ( 22.01 % )
+            Info: Total interconnect delay = 4.518 ns ( 77.99 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Micro setup delay of destination is 0.987 ns
+Warning: Circuit may not operate. Detected 24 non-operational path(s) clocked by clock "INTA" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "core:inst|er[7]" and destination pin or register "core:inst|pri[1]" for clock "INTA" (Hold time is 4.019 ns)
+    Info: + Largest clock skew is 6.059 ns
+        Info: + Longest clock path from clock "INTA" to destination register is 10.655 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.820 ns) = 0.820 ns; Loc. = PIN_AB12; Fanout = 2; CLK Node = 'INTA'
+            Info: 2: + IC(1.446 ns) + CELL(0.787 ns) = 3.053 ns; Loc. = LCFF_X24_Y15_N5; Fanout = 3; REG Node = 'core:inst|flag1'
+            Info: 3: + IC(0.324 ns) + CELL(0.275 ns) = 3.652 ns; Loc. = LCCOMB_X24_Y15_N2; Fanout = 1; COMB Node = 'core:inst|er[7]~656'
+            Info: 4: + IC(0.251 ns) + CELL(0.149 ns) = 4.052 ns; Loc. = LCCOMB_X24_Y15_N8; Fanout = 8; COMB Node = 'core:inst|er[7]~657'
+            Info: 5: + IC(0.723 ns) + CELL(0.271 ns) = 5.046 ns; Loc. = LCCOMB_X22_Y15_N14; Fanout = 9; REG Node = 'core:inst|er[0]'
+            Info: 6: + IC(0.438 ns) + CELL(0.416 ns) = 5.900 ns; Loc. = LCCOMB_X21_Y15_N24; Fanout = 2; COMB Node = 'core:inst|WideOr2~539'
+            Info: 7: + IC(0.687 ns) + CELL(0.438 ns) = 7.025 ns; Loc. = LCCOMB_X23_Y15_N14; Fanout = 1; COMB Node = 'core:inst|pri[2]~1243'
+            Info: 8: + IC(0.264 ns) + CELL(0.275 ns) = 7.564 ns; Loc. = LCCOMB_X23_Y15_N0; Fanout = 1; COMB Node = 'core:inst|pri[2]~1244'
+            Info: 9: + IC(1.569 ns) + CELL(0.000 ns) = 9.133 ns; Loc. = CLKCTRL_G0; Fanout = 3; COMB Node = 'core:inst|pri[2]~1244clkctrl'
+            Info: 10: + IC(1.372 ns) + CELL(0.150 ns) = 10.655 ns; Loc. = LCCOMB_X21_Y15_N8; Fanout = 1; REG Node = 'core:inst|pri[1]'
+            Info: Total cell delay = 3.581 ns ( 33.61 % )
+            Info: Total interconnect delay = 7.074 ns ( 66.39 % )
+        Info: - Shortest clock path from clock "INTA" to source register is 4.596 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.820 ns) = 0.820 ns; Loc. = PIN_AB12; Fanout = 2; CLK Node = 'INTA'
+            Info: 2: + IC(1.446 ns) + CELL(0.787 ns) = 3.053 ns; Loc. = LCFF_X24_Y15_N5; Fanout = 3; REG Node = 'core:inst|flag1'
+            Info: 3: + IC(0.324 ns) + CELL(0.275 ns) = 3.652 ns; Loc. = LCCOMB_X24_Y15_N2; Fanout = 1; COMB Node = 'core:inst|er[7]~656'
+            Info: 4: + IC(0.251 ns) + CELL(0.149 ns) = 4.052 ns; Loc. = LCCOMB_X24_Y15_N8; Fanout = 8; COMB Node = 'core:inst|er[7]~657'
+            Info: 5: + IC(0.273 ns) + CELL(0.271 ns) = 4.596 ns; Loc. = LCCOMB_X24_Y15_N10; Fanout = 5; REG Node = 'core:inst|er[7]'
+            Info: Total cell delay = 2.302 ns ( 50.09 % )
+            Info: Total interconnect delay = 2.294 ns ( 49.91 % )
+    Info: - Micro clock to output delay of source is 0.000 ns
+    Info: - Shortest register to register delay is 2.040 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X24_Y15_N10; Fanout = 5; REG Node = 'core:inst|er[7]'
+        Info: 2: + IC(0.695 ns) + CELL(0.242 ns) = 0.937 ns; Loc. = LCCOMB_X21_Y15_N6; Fanout = 1; COMB Node = 'core:inst|pri[1]~1248'
+        Info: 3: + IC(0.248 ns) + CELL(0.150 ns) = 1.335 ns; Loc. = LCCOMB_X21_Y15_N12; Fanout = 1; COMB Node = 'core:inst|pri[1]~1249'
+        Info: 4: + IC(0.267 ns) + CELL(0.438 ns) = 2.040 ns; Loc. = LCCOMB_X21_Y15_N8; Fanout = 1; REG Node = 'core:inst|pri[1]'
+        Info: Total cell delay = 0.830 ns ( 40.69 % )
+        Info: Total interconnect delay = 1.210 ns ( 59.31 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+Warning: Circuit may not operate. Detected 33 non-operational path(s) clocked by clock "DATAIN[3]" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "core:inst|ocw2[6]" and destination pin or register "core:inst|pri[1]" for clock "DATAIN[3]" (Hold time is 5.314 ns)
+    Info: + Largest clock skew is 7.411 ns
+        Info: + Longest clock path from clock "DATAIN[3]" to destination register is 10.347 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.830 ns) = 0.830 ns; Loc. = PIN_AC12; Fanout = 5; CLK Node = 'DATAIN[3]'
+            Info: 2: + IC(1.404 ns) + CELL(0.150 ns) = 2.384 ns; Loc. = LCCOMB_X24_Y15_N14; Fanout = 14; COMB Node = 'core:inst|o2~26'
+            Info: 3: + IC(0.278 ns) + CELL(0.275 ns) = 2.937 ns; Loc. = LCCOMB_X24_Y15_N22; Fanout = 1; REG Node = 'core:inst|ocw2[5]'
+            Info: 4: + IC(0.257 ns) + CELL(0.150 ns) = 3.344 ns; Loc. = LCCOMB_X24_Y15_N2; Fanout = 1; COMB Node = 'core:inst|er[7]~656'
+            Info: 5: + IC(0.251 ns) + CELL(0.149 ns) = 3.744 ns; Loc. = LCCOMB_X24_Y15_N8; Fanout = 8; COMB Node = 'core:inst|er[7]~657'
+            Info: 6: + IC(0.723 ns) + CELL(0.271 ns) = 4.738 ns; Loc. = LCCOMB_X22_Y15_N14; Fanout = 9; REG Node = 'core:inst|er[0]'
+            Info: 7: + IC(0.438 ns) + CELL(0.416 ns) = 5.592 ns; Loc. = LCCOMB_X21_Y15_N24; Fanout = 2; COMB Node = 'core:inst|WideOr2~539'
+            Info: 8: + IC(0.687 ns) + CELL(0.438 ns) = 6.717 ns; Loc. = LCCOMB_X23_Y15_N14; Fanout = 1; COMB Node = 'core:inst|pri[2]~1243'
+            Info: 9: + IC(0.264 ns) + CELL(0.275 ns) = 7.256 ns; Loc. = LCCOMB_X23_Y15_N0; Fanout = 1; COMB Node = 'core:inst|pri[2]~1244'
+            Info: 10: + IC(1.569 ns) + CELL(0.000 ns) = 8.825 ns; Loc. = CLKCTRL_G0; Fanout = 3; COMB Node = 'core:inst|pri[2]~1244clkctrl'
+            Info: 11: + IC(1.372 ns) + CELL(0.150 ns) = 10.347 ns; Loc. = LCCOMB_X21_Y15_N8; Fanout = 1; REG Node = 'core:inst|pri[1]'
+            Info: Total cell delay = 3.104 ns ( 30.00 % )
+            Info: Total interconnect delay = 7.243 ns ( 70.00 % )
+        Info: - Shortest clock path from clock "DATAIN[3]" to source register is 2.936 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.830 ns) = 0.830 ns; Loc. = PIN_AC12; Fanout = 5; CLK Node = 'DATAIN[3]'
+            Info: 2: + IC(1.404 ns) + CELL(0.150 ns) = 2.384 ns; Loc. = LCCOMB_X24_Y15_N14; Fanout = 14; COMB Node = 'core:inst|o2~26'
+            Info: 3: + IC(0.277 ns) + CELL(0.275 ns) = 2.936 ns; Loc. = LCCOMB_X24_Y15_N30; Fanout = 10; REG Node = 'core:inst|ocw2[6]'
+            Info: Total cell delay = 1.255 ns ( 42.75 % )
+            Info: Total interconnect delay = 1.681 ns ( 57.25 % )
+    Info: - Micro clock to output delay of source is 0.000 ns
+    Info: - Shortest register to register delay is 2.097 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X24_Y15_N30; Fanout = 10; REG Node = 'core:inst|ocw2[6]'
+        Info: 2: + IC(0.955 ns) + CELL(0.437 ns) = 1.392 ns; Loc. = LCCOMB_X21_Y15_N12; Fanout = 1; COMB Node = 'core:inst|pri[1]~1249'
+        Info: 3: + IC(0.267 ns) + CELL(0.438 ns) = 2.097 ns; Loc. = LCCOMB_X21_Y15_N8; Fanout = 1; REG Node = 'core:inst|pri[1]'
+        Info: Total cell delay = 0.875 ns ( 41.73 % )
+        Info: Total interconnect delay = 1.222 ns ( 58.27 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+Warning: Circuit may not operate. Detected 33 non-operational path(s) clocked by clock "DATAIN[4]" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "core:inst|ocw2[6]" and destination pin or register "core:inst|pri[1]" for clock "DATAIN[4]" (Hold time is 5.314 ns)
+    Info: + Largest clock skew is 7.411 ns
+        Info: + Longest clock path from clock "DATAIN[4]" to destination register is 10.567 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_AE10; Fanout = 6; CLK Node = 'DATAIN[4]'
+            Info: 2: + IC(1.479 ns) + CELL(0.275 ns) = 2.604 ns; Loc. = LCCOMB_X24_Y15_N14; Fanout = 14; COMB Node = 'core:inst|o2~26'
+            Info: 3: + IC(0.278 ns) + CELL(0.275 ns) = 3.157 ns; Loc. = LCCOMB_X24_Y15_N22; Fanout = 1; REG Node = 'core:inst|ocw2[5]'
+            Info: 4: + IC(0.257 ns) + CELL(0.150 ns) = 3.564 ns; Loc. = LCCOMB_X24_Y15_N2; Fanout = 1; COMB Node = 'core:inst|er[7]~656'
+            Info: 5: + IC(0.251 ns) + CELL(0.149 ns) = 3.964 ns; Loc. = LCCOMB_X24_Y15_N8; Fanout = 8; COMB Node = 'core:inst|er[7]~657'
+            Info: 6: + IC(0.723 ns) + CELL(0.271 ns) = 4.958 ns; Loc. = LCCOMB_X22_Y15_N14; Fanout = 9; REG Node = 'core:inst|er[0]'
+            Info: 7: + IC(0.438 ns) + CELL(0.416 ns) = 5.812 ns; Loc. = LCCOMB_X21_Y15_N24; Fanout = 2; COMB Node = 'core:inst|WideOr2~539'
+            Info: 8: + IC(0.687 ns) + CELL(0.438 ns) = 6.937 ns; Loc. = LCCOMB_X23_Y15_N14; Fanout = 1; COMB Node = 'core:inst|pri[2]~1243'
+            Info: 9: + IC(0.264 ns) + CELL(0.275 ns) = 7.476 ns; Loc. = LCCOMB_X23_Y15_N0; Fanout = 1; COMB Node = 'core:inst|pri[2]~1244'
+            Info: 10: + IC(1.569 ns) + CELL(0.000 ns) = 9.045 ns; Loc. = CLKCTRL_G0; Fanout = 3; COMB Node = 'core:inst|pri[2]~1244clkctrl'
+            Info: 11: + IC(1.372 ns) + CELL(0.150 ns) = 10.567 ns; Loc. = LCCOMB_X21_Y15_N8; Fanout = 1; REG Node = 'core:inst|pri[1]'
+            Info: Total cell delay = 3.249 ns ( 30.75 % )
+            Info: Total interconnect delay = 7.318 ns ( 69.25 % )
+        Info: - Shortest clock path from clock "DATAIN[4]" to source register is 3.156 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_AE10; Fanout = 6; CLK Node = 'DATAIN[4]'
+            Info: 2: + IC(1.479 ns) + CELL(0.275 ns) = 2.604 ns; Loc. = LCCOMB_X24_Y15_N14; Fanout = 14; COMB Node = 'core:inst|o2~26'
+            Info: 3: + IC(0.277 ns) + CELL(0.275 ns) = 3.156 ns; Loc. = LCCOMB_X24_Y15_N30; Fanout = 10; REG Node = 'core:inst|ocw2[6]'
+            Info: Total cell delay = 1.400 ns ( 44.36 % )
+            Info: Total interconnect delay = 1.756 ns ( 55.64 % )
+    Info: - Micro clock to output delay of source is 0.000 ns
+    Info: - Shortest register to register delay is 2.097 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X24_Y15_N30; Fanout = 10; REG Node = 'core:inst|ocw2[6]'
+        Info: 2: + IC(0.955 ns) + CELL(0.437 ns) = 1.392 ns; Loc. = LCCOMB_X21_Y15_N12; Fanout = 1; COMB Node = 'core:inst|pri[1]~1249'
+        Info: 3: + IC(0.267 ns) + CELL(0.438 ns) = 2.097 ns; Loc. = LCCOMB_X21_Y15_N8; Fanout = 1; REG Node = 'core:inst|pri[1]'
+        Info: Total cell delay = 0.875 ns ( 41.73 % )
+        Info: Total interconnect delay = 1.222 ns ( 58.27 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+Info: tsu for register "core:inst|er[7]" (data pin = "CODE[2]", clock pin = "DATAIN[3]") is 5.866 ns
+    Info: + Longest pin to register delay is 8.978 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.810 ns) = 0.810 ns; Loc. = PIN_Y12; Fanout = 8; PIN Node = 'CODE[2]'
+        Info: 2: + IC(5.655 ns) + CELL(0.150 ns) = 6.615 ns; Loc. = LCCOMB_X23_Y8_N0; Fanout = 4; COMB Node = 'core:inst|setzero[7]~183'
+        Info: 3: + IC(1.550 ns) + CELL(0.420 ns) = 8.585 ns; Loc. = LCCOMB_X24_Y15_N6; Fanout = 1; COMB Node = 'core:inst|er[7]~655'
+        Info: 4: + IC(0.243 ns) + CELL(0.150 ns) = 8.978 ns; Loc. = LCCOMB_X24_Y15_N10; Fanout = 5; REG Node = 'core:inst|er[7]'
+        Info: Total cell delay = 1.530 ns ( 17.04 % )
+        Info: Total interconnect delay = 7.448 ns ( 82.96 % )
+    Info: + Micro setup delay of destination is 0.987 ns
+    Info: - Shortest clock path from clock "DATAIN[3]" to destination register is 4.099 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.830 ns) = 0.830 ns; Loc. = PIN_AC12; Fanout = 5; CLK Node = 'DATAIN[3]'
+        Info: 2: + IC(1.404 ns) + CELL(0.150 ns) = 2.384 ns; Loc. = LCCOMB_X24_Y15_N14; Fanout = 14; COMB Node = 'core:inst|o2~26'
+        Info: 3: + IC(0.778 ns) + CELL(0.393 ns) = 3.555 ns; Loc. = LCCOMB_X24_Y15_N8; Fanout = 8; COMB Node = 'core:inst|er[7]~657'
+        Info: 4: + IC(0.273 ns) + CELL(0.271 ns) = 4.099 ns; Loc. = LCCOMB_X24_Y15_N10; Fanout = 5; REG Node = 'core:inst|er[7]'
+        Info: Total cell delay = 1.644 ns ( 40.11 % )
+        Info: Total interconnect delay = 2.455 ns ( 59.89 % )
+Info: tco from clock "INTA" to destination pin "SP[1]" through register "core:inst|pri[1]" is 15.251 ns
+    Info: + Longest clock path from clock "INTA" to source register is 10.655 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.820 ns) = 0.820 ns; Loc. = PIN_AB12; Fanout = 2; CLK Node = 'INTA'
+        Info: 2: + IC(1.446 ns) + CELL(0.787 ns) = 3.053 ns; Loc. = LCFF_X24_Y15_N5; Fanout = 3; REG Node = 'core:inst|flag1'
+        Info: 3: + IC(0.324 ns) + CELL(0.275 ns) = 3.652 ns; Loc. = LCCOMB_X24_Y15_N2; Fanout = 1; COMB Node = 'core:inst|er[7]~656'
+        Info: 4: + IC(0.251 ns) + CELL(0.149 ns) = 4.052 ns; Loc. = LCCOMB_X24_Y15_N8; Fanout = 8; COMB Node = 'core:inst|er[7]~657'
+        Info: 5: + IC(0.723 ns) + CELL(0.271 ns) = 5.046 ns; Loc. = LCCOMB_X22_Y15_N14; Fanout = 9; REG Node = 'core:inst|er[0]'
+        Info: 6: + IC(0.438 ns) + CELL(0.416 ns) = 5.900 ns; Loc. = LCCOMB_X21_Y15_N24; Fanout = 2; COMB Node = 'core:inst|WideOr2~539'
+        Info: 7: + IC(0.687 ns) + CELL(0.438 ns) = 7.025 ns; Loc. = LCCOMB_X23_Y15_N14; Fanout = 1; COMB Node = 'core:inst|pri[2]~1243'
+        Info: 8: + IC(0.264 ns) + CELL(0.275 ns) = 7.564 ns; Loc. = LCCOMB_X23_Y15_N0; Fanout = 1; COMB Node = 'core:inst|pri[2]~1244'
+        Info: 9: + IC(1.569 ns) + CELL(0.000 ns) = 9.133 ns; Loc. = CLKCTRL_G0; Fanout = 3; COMB Node = 'core:inst|pri[2]~1244clkctrl'
+        Info: 10: + IC(1.372 ns) + CELL(0.150 ns) = 10.655 ns; Loc. = LCCOMB_X21_Y15_N8; Fanout = 1; REG Node = 'core:inst|pri[1]'
+        Info: Total cell delay = 3.581 ns ( 33.61 % )
+        Info: Total interconnect delay = 7.074 ns ( 66.39 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 4.596 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X21_Y15_N8; Fanout = 1; REG Node = 'core:inst|pri[1]'
+        Info: 2: + IC(1.788 ns) + CELL(2.808 ns) = 4.596 ns; Loc. = PIN_AE7; Fanout = 0; PIN Node = 'SP[1]'
+        Info: Total cell delay = 2.808 ns ( 61.10 % )
+        Info: Total interconnect delay = 1.788 ns ( 38.90 % )
+Info: Longest tpd from source pin "CS" to destination pin "DATAOUT[1]" is 13.850 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_B10; Fanout = 4; PIN Node = 'CS'
+    Info: 2: + IC(5.665 ns) + CELL(0.398 ns) = 6.913 ns; Loc. = LCCOMB_X23_Y16_N14; Fanout = 3; COMB Node = 'core:inst|rd_imr~23'
+    Info: 3: + IC(0.271 ns) + CELL(0.271 ns) = 7.455 ns; Loc. = LCCOMB_X23_Y16_N22; Fanout = 8; COMB Node = 'core:inst|dataout~649'
+    Info: 4: + IC(1.173 ns) + CELL(0.150 ns) = 8.778 ns; Loc. = LCCOMB_X22_Y8_N6; Fanout = 1; COMB Node = 'core:inst|dataout[1]~656'
+    Info: 5: + IC(2.400 ns) + CELL(2.672 ns) = 13.850 ns; Loc. = PIN_AE2; Fanout = 0; PIN Node = 'DATAOUT[1]'
+    Info: Total cell delay = 4.341 ns ( 31.34 % )
+    Info: Total interconnect delay = 9.509 ns ( 68.66 % )
+Info: th for register "core:inst|er[3]" (data pin = "DATAIN[3]", clock pin = "INTA") is 0.656 ns
+    Info: + Longest clock path from clock "INTA" to destination register is 5.048 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.820 ns) = 0.820 ns; Loc. = PIN_AB12; Fanout = 2; CLK Node = 'INTA'
+        Info: 2: + IC(1.446 ns) + CELL(0.787 ns) = 3.053 ns; Loc. = LCFF_X24_Y15_N5; Fanout = 3; REG Node = 'core:inst|flag1'
+        Info: 3: + IC(0.324 ns) + CELL(0.275 ns) = 3.652 ns; Loc. = LCCOMB_X24_Y15_N2; Fanout = 1; COMB Node = 'core:inst|er[7]~656'
+        Info: 4: + IC(0.251 ns) + CELL(0.149 ns) = 4.052 ns; Loc. = LCCOMB_X24_Y15_N8; Fanout = 8; COMB Node = 'core:inst|er[7]~657'
+        Info: 5: + IC(0.725 ns) + CELL(0.271 ns) = 5.048 ns; Loc. = LCCOMB_X22_Y15_N24; Fanout = 7; REG Node = 'core:inst|er[3]'
+        Info: Total cell delay = 2.302 ns ( 45.60 % )
+        Info: Total interconnect delay = 2.746 ns ( 54.40 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: - Shortest pin to register delay is 4.392 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.830 ns) = 0.830 ns; Loc. = PIN_AC12; Fanout = 5; CLK Node = 'DATAIN[3]'
+        Info: 2: + IC(1.404 ns) + CELL(0.150 ns) = 2.384 ns; Loc. = LCCOMB_X24_Y15_N14; Fanout = 14; COMB Node = 'core:inst|o2~26'
+        Info: 3: + IC(0.757 ns) + CELL(0.437 ns) = 3.578 ns; Loc. = LCCOMB_X22_Y15_N26; Fanout = 2; COMB Node = 'core:inst|er[1]~665'
+        Info: 4: + IC(0.269 ns) + CELL(0.150 ns) = 3.997 ns; Loc. = LCCOMB_X22_Y15_N22; Fanout = 1; COMB Node = 'core:inst|er[3]~666'
+        Info: 5: + IC(0.245 ns) + CELL(0.150 ns) = 4.392 ns; Loc. = LCCOMB_X22_Y15_N24; Fanout = 7; REG Node = 'core:inst|er[3]'
+        Info: Total cell delay = 1.717 ns ( 39.09 % )
+        Info: Total interconnect delay = 2.675 ns ( 60.91 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 46 warnings
+    Info: Allocated 144 megabytes of memory during processing
+    Info: Processing ended: Fri May 28 19:25:04 2010
+    Info: Elapsed time: 00:00:01
+
+

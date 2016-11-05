@@ -1,0 +1,440 @@
+// 可编程同步并行传输接口8255
+// 仅完成0方式，1方式
+
+module pic8255(CS, RD, WR, A1, A0, RESET,
+				D_in, D_out,
+				PA_in, PB_in, PC_in,
+				PA_out, PB_out, PC_out,
+				d_en, pa_en, pb_en,
+				pc0_en, pc1_en, pc2_en, pc3_en, pc4_en, pc5_en, pc6_en, pc7_en);
+				
+/***********************************输入输出端口信号定义*****************************************************/
+	input CS;										// 输入，片选信号CS
+	input RD, WR;									// 读写控制信号
+	input A1, A0;									// 片内地址选择信号
+	input RESET;									// 重置信号	
+	input[7:0] D_in;								// D端口输入, CPU输出的数据信号或控制信号
+	input[7:0] PA_in, PB_in, PC_in;					// PA,PB,PC端口的输入
+	output[7:0] D_out; 								// D端口输出
+	output[7:0] PA_out, PB_out, PC_out;				// PA,PB,PC端口的输出
+	output pa_en, pb_en, d_en;						// D端口IO控制使能信号
+	output pc0_en, pc1_en, pc2_en, pc3_en, pc4_en, pc5_en, pc6_en, pc7_en; // PA,PB,PC端口IO控制使能信号
+
+	reg[7:0] PA_R_IN, PB_R_IN, PC_R_IN, D_R_IN;	// 寄存器：输入	
+	reg[7:0] PA_R_OUT, PB_R_OUT, PC_R_OUT, D_R_OUT;	// 寄存器：输出
+	wire[7:0] CTRL_R;
+	reg[1:0] PA_MODE;	// PA口的工作方式寄存器
+	reg PB_MODE;		// PB口的工作方式寄存器.
+	reg PA_IO;			// PA口输入/输出功能选择寄存器
+	reg PB_IO;			// PB口输入/输出功能选择寄存器
+	reg PCH_IO;			// PC口高位输入/输出功能选择寄存器
+	reg PCL_IO; 		// PC口低位输入/输出功能选择寄存器
+	wire PA_BUS;		// PA口输入到BUS信号
+	wire PB_BUS;		// PB口输入到BUS信号
+	wire PC_BUS;		// PC口输入到BUS信号
+	wire BUS_PA;		// BUS输出到PA口信号
+	wire BUS_PB;		// BUS输出到PB口信号
+	wire BUS_PC;		// BUS输出到PC口信号
+	wire BUS_CTRL;		// BUS输出到CTRL口信号
+	wire BUS_Z; 		// 输出悬浮信号
+	wire PC_CTRL;		// 写控制字信号
+	wire W;			// 写信号
+	wire R;				// 读信号
+
+	reg testR;
+/**********************************************读写控制逻辑定义*****************************************/
+	assign PA_BUS = (!CS) & (!A1) & (!A0) & (!RD) & (WR);				// PA口输入到BUS信号
+	assign PB_BUS = (!CS) & (!A1) & (A0) & (!RD) & (WR);				// PB口输入到BUS信号
+	assign PC_BUS = (!CS) & (A1) & (!A0) & (!RD) & (WR);				// PC口输入到BUS信号
+
+	assign BUS_PA = (!CS) & (!A1) & (!A0) & (RD) & (!WR);				// BUS输出到PA口信号
+	assign BUS_PB = (!CS) & (!A1) & (A0) & (RD) & (!WR);				// BUS输出到PB口信号
+	assign BUS_PC = (!CS) & (A1) & (!A0) & (RD) & (!WR);				// BUS输出到PC口信号
+	assign BUS_CTRL = (!CS) & (A1) & (A0) & (RD) & (!WR);				// BUS输出到CTRL口信号
+
+//注：以下几个assign 赋值语句
+ 	assign PC_CTRL = (!CS) & (A1) & (RD) & (!WR);				// 对c口和控制口的写控制字信号, CS=0, A1=1, A0=X, RD=1, WR=0;
+	assign BUS_Z = ((!CS) & (RD) & (WR)) | CS;						// 写控制字信号, CS=0, RD=1, WR=1, OR CS=1
+	assign R = (!CS) & (!RD) & (WR);   							// 读信号, CS=0, RD=0, WR=1;
+	assign W = (!CS) & (RD) & (!WR);							// 写信号, CS=0, RD=1, WR=0;
+	
+	
+/****************************************************功能定义**********************************************/
+	// 0方式，等待请求中断逻辑
+	wire stbacka, intea;  		// stbacka:A端口1方式：做输入是STBa选通信号,作输出是ACKa应答信号
+								// intea:A端口中断允许信号，输入时为PC_R_IN[4]，输出时为PC_R_IN[6]
+	reg ibfa;					// 输入缓冲器满信号
+	reg intra;					// 中断请求信号
+
+	// staacka:当8255处于1方式，A口处于输入状态时，等于PC4口；处于输出状态时，等于pc6口。
+	assign stbacka = (PA_MODE == 2'B01 && PA_IO == 1) ? PC_in[4] : PC_in [6]; 
+
+	wire[31:0] stb2, ack2;										// 2方式下，stb,ack;
+	assign	stb2 = (PA_MODE == 2'B10) ? PC_in[4] : 1;			// 2方式, A组STBa
+	assign  ack2 = (PA_MODE == 2'B10) ? PC_in[6] : 1;			// 2方式，A组ACKa
+
+	wire stbackb, inteb;			// B组工作顺序，顺序与A组对应相同；		
+	reg ibfb;
+	reg intrb;
+	assign stbackb = PC_in[2];		// 外设输入信号和应答信号都等于PC2口；
+
+	wire BUS_CTRL_new;							// 工作方式控制信号，不含PC口置位，
+	assign BUS_CTRL_new = BUS_CTRL & D_in[7];	//  D_in[7] == 1, 表示方式选择控制命令
+
+	wire PA_BUS_new;				// ibfa控制信号，包含修改方式控制信号对ibfa影响
+	assign PA_BUS_new = PA_BUS | BUS_CTRL_new;
+
+	// A口输入，8255送送外设输入缓冲器满信号。
+	wire stbacka_new_1;							// 加入2方式下stb2信号对ibfa的控制
+	assign stbacka_new_1 = stbacka & stb2;
+
+	always @(negedge stbacka_new_1 or negedge PA_BUS_new)
+	begin
+		if(stbacka_new_1 == 0)						//外设送8255，输入选通信号有效
+		begin
+			if((PA_MODE == 2'B01 && PA_IO == 1) || (PA_MODE == 2'B10))		//8255，A口1方式，
+				ibfa <= 1;													//缓冲器满信号有效
+		end
+		else																//读信号结束有效
+		begin
+			if((PA_MODE == 2'B01 && PA_IO == 1) || (PA_MODE == 2'B10))		//方式判断 
+				ibfa <= 0;													//缓冲器清空
+		end
+	end
+
+	wire PA_0;										// intra控制信号，包含修改方式控制信号对ibfa影响
+	assign PA_0 = PA_BUS | BUS_PA | BUS_CTRL_new;	// 当从A口向总线输出或从总线向A口输或清零	
+
+	// A口输入，8255送CPU中断信号。
+	// wire stbacka_new_3;
+	// assign stbacka_new_3 = stbacka & stb2;			// 加入2方式下stb2信号对ibfa的控
+
+	always @(posedge stbacka or posedge PA_0)
+	begin
+		if(PA_0)									// 读写控制信号有效
+		begin
+			if(PA_BUS)								// A口处于1方式输入状态，PA_BUS有?，清除中断信号。
+			begin
+				if(PA_MODE == 2'B01 && PA_IO == 1)
+					intra <= 0;
+			end
+			else if(BUS_PA)							//A口处于1方式输出状态，BUS_PA有?，清除中断信号。
+			begin
+				if((PA_MODE == 2'B01 && PA_IO == 0) || (PA_MODE == 2'B10))
+					intra <= 0;
+			end	
+			else if(BUS_CTRL_new)					//修改方式控制信号有效
+			begin
+				if(PA_MODE == 2'B01 && PA_IO == 1)	//A口处于1方式输入状态，对intra信号清零
+					intra <= 0;
+				else if((PA_MODE == 2'B01 && PA_IO == 0) || (PA_MODE == 2'B10))
+					intra <= 1;						//A口处于1方式输出状态，对intra信号置位
+			end
+		end
+		else
+		begin
+			if((PA_MODE == 2'B01 && (PC_R_OUT[4] | PC_R_OUT[6])) || (PA_MODE == 2'B10))	//对以下两种逻辑的简化，
+				intra <= 1;
+		end
+	end
+
+	//B组1方式下，IBFB,INTRB信号的控制，情况与A组完全相同；
+	wire PB_BUS_new;
+	assign PB_BUS_new = PB_BUS | BUS_CTRL_new;
+
+	//B组1方式下，IBFB信号的控制
+	always @(negedge stbackb or negedge PB_BUS_new)
+	begin
+		if(stbackb == 0)
+		begin	
+			if(PB_MODE == 2'B01 && PB_IO == 1)
+				ibfb <= 1;
+		end
+		else
+		begin
+			if(PB_MODE == 2'B01 && PB_IO == 1) 
+				ibfb <= 0;
+		end
+	end
+
+	wire PB_0;
+	assign PB_0 = PB_BUS | BUS_PB | BUS_CTRL_new;
+
+	//B组1方式下INTRB信号的控制
+	always @(posedge stbackb or posedge PB_0)
+	begin
+		if(PB_0)
+		begin
+			if(PB_BUS)	
+			begin
+				if(PB_MODE == 2'B01 && PB_IO == 1)
+					intrb <= 0;
+			end
+			else if(BUS_PB)  
+			begin
+				if(PB_MODE == 2'B01 && PB_IO == 0)
+					intrb <= 0;
+			end
+			else if(BUS_CTRL_new)
+			begin
+				if(PB_MODE == 2'B01 && PB_IO == 1)
+					intrb <= 0;
+				else if(PB_MODE == 2'B01 && PB_IO == 0)
+					intrb <= 1;
+			end
+		end
+		else
+		begin
+			if(PB_MODE == 2'B01 && PC_R_OUT[2])
+				intrb <= 1;
+		end
+	end
+
+	reg obfa, obfb;			// 1方式下，8255送外设输出缓冲器满信号
+	wire stbacka_new_2;		// A组，外设应答信号，包含状态控制信号的影?
+	assign stbacka_new_2 = stbacka & (!BUS_CTRL_new) & ack2; 	// 加入信号ack2在2方式下对寄存器obfa的影响
+
+	always @(negedge BUS_PA or negedge stbacka_new_2)
+	begin
+		if(stbacka_new_2 == 0)							// 外设应答信号有效，或者状态控制信号有?情况下
+		begin
+			if((PA_MODE == 2'B01 || PA_MODE == 2'B10) && PA_IO == 0 && !intra)	// 对obfa置位
+				obfa <= 1;
+		end
+		else											// 送数信号有效的情况下
+		begin
+			if((PA_MODE == 2'B01 || PA_MODE == 2'B10) && PA_IO == 0 && !intra)
+				obfa <= 0;								// 清除obfa位						
+		end
+	end
+
+	// B组obfb信号控制，方式与a组相同
+	wire stbackb_new;
+	assign stbackb_new = stbackb & (!BUS_CTRL_new);
+
+	always @(negedge BUS_PB or negedge stbackb_new)
+	begin
+		if(stbackb_new == 0)
+		begin
+			if(PB_MODE == 2'B01 && PB_IO == 0 && !intrb)
+				obfb <= 1;
+		end
+		else
+		begin
+			if(PB_MODE == 2'B01 && PB_IO == 0 && !intrb)
+				obfb <= 0;
+		end
+	end
+
+	// I/O三态门控制信号
+	// RESET信号对输出高阻态的控制，reset_en为1表示输出全部为高阻态。
+	// RESET信号高电平有效。
+	reg reset_en;
+	always @(posedge RESET or posedge BUS_CTRL_new)
+	begin
+		if(RESET)
+			reset_en <= 1;
+		else 
+			reset_en <= 0;
+	end
+
+	// A组
+	assign pa_en = !reset_en & 
+				   ((PA_MODE == 0 && PB_MODE == 0 && PA_IO == 0 && BUS_PA) |// 0方式下，A组处于输出状态，BUS_PA有效情况下允许输出；
+				   (PA_MODE == 1 && PB_MODE == 1 && !PA_IO && !intra) | 	// 1方式下，A组处于输出状态，intra有效情况下允许输出；
+				   (PA_MODE == 2 && !ack2));								// 2方式下, A组允许输出
+	// B组 
+	assign pb_en = !reset_en & 
+				   ((PA_MODE == 0 && PB_MODE == 0 && PB_IO == 0 && BUS_PB) |// 0方式下，B组处于输出状态，BUS_PB有?情况下允许输出?
+				   (PA_MODE == 1 && PB_MODE == 1 && !PB_IO && !intrb));		// 2方式下，B组处于输出状态，intrb有效情况下允许输出;
+	// D口，0方式下，(PA_BUS|PB_BUS|PC_BUS)有效情况下允许输出；1方式下，(PA_BUS|PB_BUS)有?情况下允许输出;
+	assign d_en = !reset_en & 
+				  ((PA_MODE == 0 && PB_MODE == 0 && (PA_BUS | PB_BUS | PC_BUS)) | 
+				  (PA_MODE == 1 && PB_MODE == 1 &&(PA_BUS | PB_BUS)) | 
+				  (PA_MODE == 2 & WR));
+
+	// C组，0方式下c口置数输出，或BUS_PC有效的情况下，pc口处于输出状态下，输出；
+	// 1方式下，pc0,pc1,pc3,pc5,pc7口输出；pc2,pc4,pc6口输入；
+	// 2方式下3，5，7输出，2，4输入
+	assign pc0_en = !reset_en & 
+					(((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) | 
+					((PA_MODE == 1) & (PB_MODE ==1)));
+	assign pc1_en = !reset_en & 
+					(((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) | 
+					((PA_MODE == 1) & (PB_MODE == 1)));
+	assign pc2_en = !reset_en & 
+					(((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))));
+	assign pc3_en = !reset_en & 
+					(((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) | 
+					((PA_MODE == 1) & (PB_MODE == 1)) | (PA_MODE == 2));
+	assign pc4_en = !reset_en & 
+					(((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))));
+	assign pc5_en = !reset_en & 
+					(((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) | 
+					((PA_MODE == 1) & (PB_MODE == 1)) | (PA_MODE == 2));
+	assign pc6_en = !reset_en & 
+					(((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))));
+	assign pc7_en = !reset_en & 
+					(((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) | 
+					((PA_MODE == 1) & (PB_MODE == 1)) | (PA_MODE == 2));
+
+
+	// 0方式下对C组的操作，包括对控制方式寄存器的操作，以及RESET操作
+	always @(posedge PC_CTRL or posedge RESET)
+	begin	
+		if(RESET)						// RESET信号有效，PC口寄存器清零，PA,PB口置0方式，PA,PB,PC口均为输入方式
+		begin	
+			PA_MODE <= 0;
+			PA_IO <= 0;
+			PCH_IO <= 0;
+			PB_MODE <= 0;
+			PB_IO <= 0;
+			PCL_IO <= 0;
+			PC_R_OUT <= 8'b0;
+		end
+		else 							// PC_CTRL信号有效
+		begin
+			if(A0)								// BUS_PC有效, 数据总线到控制寄存器
+			begin
+				if(D_in[7])						// 输入最高位为1，写入状态寄存器
+				begin
+					PA_MODE <= D_in[6:5];		
+					PA_IO <= D_in[4];
+					PCH_IO <= D_in[3];
+					PB_MODE <= D_in[2];
+					PB_IO <= D_in[1];
+					PCL_IO <= D_in[0];
+				end
+				else if((D_in[7] == 0) && D_in[0])	// 输入最高为0，最低位为1，对C口置位
+					case(D_in[3:1])
+						0 : PC_R_OUT[0] <= 1;
+						1 : PC_R_OUT[1] <= 1;
+						2 : PC_R_OUT[2] <= 1;
+						3 : PC_R_OUT[3] <= 1;
+						4 : PC_R_OUT[4] <= 1;
+						5 : PC_R_OUT[5] <= 1;
+						6 : PC_R_OUT[6] <= 1;
+						7 : PC_R_OUT[7] <= 1;
+					endcase
+				else if((D_in[7] == 0) && (D_in[0] == 0))	// 输入最高为0，最低位为0，对C口清零
+					case(D_in[3:1])
+						0 : PC_R_OUT[0] <= 0;
+						1 : PC_R_OUT[1] <= 0;
+						2 : PC_R_OUT[2] <= 0;
+						3 : PC_R_OUT[3] <= 0;
+						4 : PC_R_OUT[4] <= 0;
+						5 : PC_R_OUT[5] <= 0;
+						6 : PC_R_OUT[6] <= 0;
+						7 : PC_R_OUT[7] <= 0;
+					endcase
+			end 
+			else									// BUS_PC有效，直接送数到C口.CPU->数据总线->PC口
+			begin
+				if((!PCH_IO) && PCL_IO)				// C口高位输出，低位输入
+				begin
+					PC_R_OUT[7:4] <= D_in[7:4];
+					PC_R_OUT[3:0] <= 4'b0;
+				end
+				else if((PCH_IO) && (!PCL_IO))		// C口低位输出，高位输入
+				begin
+					PC_R_OUT[7:4] <= 4'b0;
+					PC_R_OUT[3:0] <= D_in[3:0];
+				end
+				else if((!PCH_IO) && (!PCL_IO))		// C口高位低位全部输出
+				begin
+					PC_R_OUT[7:4] <= D_in[7:4];
+					PC_R_OUT[3:0] <= D_in[3:0];
+				end
+			end
+		end	
+	end
+
+	wire PC_out_new;
+	assign PC_out_new = (PB_IO == 1) ? ibfb : obfb;
+
+	assign PC_out[0] = ((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) ? PC_R_OUT[0] : (intrb ? 1 : 0);
+	assign PC_out[1] = ((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) ? PC_R_OUT[1] : PC_out_new;
+	assign PC_out[2] = ((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) ? PC_R_OUT[2] : 0;
+	assign PC_out[3] = ((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) ? PC_R_OUT[3] : (intra ? 1 : 0);
+	assign PC_out[4] = ((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) ? PC_R_OUT[4] : 0;
+	assign PC_out[5] = ((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) ? PC_R_OUT[5] : (ibfa ? 1 : 0);
+	assign PC_out[6] = ((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) ? PC_R_OUT[6] : 0;
+	assign PC_out[7] = ((PA_MODE == 0) & (PB_MODE == 0) & (BUS_CTRL & (!D_in[7])) | (BUS_PC & (!PCH_IO | !PCL_IO))) ? PC_R_OUT[7] : (obfa ? 1 : 0);
+
+	//0方式下和1方式下送数到A,B口	
+	always @(posedge BUS_PA)			//A口
+	begin
+		if(PA_MODE == 0 || PA_MODE ==1 )
+		begin
+			if(!PA_IO)					//当输出
+				PA_R_OUT <= D_in;
+		end
+		else if(PA_MODE == 2)
+			PA_R_OUT <= D_in;
+	end
+
+	always @(posedge BUS_PB)			//B口
+	begin
+		if(PB_MODE == 0 || PB_MODE == 1)
+			if(!PB_IO)					//当输出
+				PB_R_OUT <= D_in;
+	end
+
+	//0方式下，读数，A,B口输入
+	always @(PA_in)						//当A口有数据来到			
+	begin
+		if(PA_MODE == 0)
+			if(PA_IO)					//当输入
+				PA_R_IN <= PA_in;		//写入读数寄存器
+	end
+
+	always @(PB_in)						//当B口有数据来到
+	begin
+		if(PB_MODE == 0)
+			if(PB_IO)					//当输入
+				PB_R_IN <= PB_in;		//写入读数寄存器
+	end
+
+	//0方式下，C口读数
+	always @(PC_in)						//当C口有数据来到
+	begin
+		if((PA_MODE == 0) && (PB_MODE == 0))		
+			if(PCH_IO && (!PCL_IO))		//C口高位读数
+			begin
+				PC_R_IN[7:4] <= PC_in[7:4];
+				PC_R_IN[3:0] <= 4'b0;
+			end
+			else if((!PCH_IO) && PCL_IO)	//C口低位读数
+			begin
+				PC_R_IN[7:4] <= 4'b0;
+				PC_R_IN[3:0] <= PC_in[3:0];
+			end
+			else if(PCH_IO && PCL_IO)		//C口全部做输入，全部读数
+				PC_R_IN <= PC_in;	
+	end
+
+	wire stb;							//D口输出控制信号
+										//当0方式下，读信号有效输出；当1方式下，A口为输入时STBA信号有效时输出，B口为输入时STBB信号有效时输出；
+	assign stb = (PA_MODE == 1 && PA_IO == 1 && (stbacka != 1)) || 
+				 (PB_MODE == 1 && PB_IO == 1 && (stbackb != 1)) || 
+				 (PA_MODE == 2 && !stb2); //|| R;
+	
+	always @(posedge stb or posedge R)
+	begin								//当读信号有效
+		if(R)								
+		begin
+			
+				if({A1, A0} == 2'B00)		//读A口
+					D_R_IN <= PA_R_IN;
+				else if({A1, A0} == 2'B01)	//读B口
+					D_R_IN <= PB_R_IN;
+				else if({A1, A0} == 2'B10)	//读C口
+					D_R_IN <= PC_R_IN;
+		end
+		
+	end
+
+	assign D_out = {A1, A0}==2'b01?PB_in:PC_in;					// D组输出
+	assign PB_out = PB_R_OUT;				// PB组输出
+	assign PA_out = PA_R_OUT;				// PA组输出
+endmodule	

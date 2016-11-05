@@ -1,0 +1,269 @@
+Simulator report for AD
+Mon May 24 21:10:42 2010
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 63 nodes     ;
+; Simulation Coverage         ;      14.29 % ;
+; Total Number of Transitions ; 27           ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Vector input source                                                                        ; DA.vwf     ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      14.29 % ;
+; Total nodes checked                                 ; 63           ;
+; Total output ports checked                          ; 63           ;
+; Total output ports with complete 1/0-value coverage ; 9            ;
+; Total output ports with no 1/0-value coverage       ; 45           ;
+; Total output ports with no 1-value coverage         ; 48           ;
+; Total output ports with no 0-value coverage         ; 51           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                ;
++--------------------+--------------------+------------------+
+; Node Name          ; Output Port Name   ; Output Port Type ;
++--------------------+--------------------+------------------+
+; |da|READ~112       ; |da|READ~112       ; combout          ;
+; |da|DATAOUT~117    ; |da|DATAOUT~117    ; combout          ;
+; |da|WRITE~0        ; |da|WRITE~0        ; combout          ;
+; |da|READ           ; |da|READ           ; padio            ;
+; |da|WRITE          ; |da|WRITE          ; padio            ;
+; |da|DATAOUT[4]     ; |da|DATAOUT[4]     ; padio            ;
+; |da|IOR            ; |da|IOR~corein     ; combout          ;
+; |da|IOW            ; |da|IOW~corein     ; combout          ;
+; |da|WRITE~0clkctrl ; |da|WRITE~0clkctrl ; outclk           ;
++--------------------+--------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-----------------------------------------------------------+
+; Missing 1-Value Coverage                                  ;
++-----------------+----------------------+------------------+
+; Node Name       ; Output Port Name     ; Output Port Type ;
++-----------------+----------------------+------------------+
+; |da|READ~109    ; |da|READ~109         ; combout          ;
+; |da|READ~110    ; |da|READ~110         ; combout          ;
+; |da|READ~111    ; |da|READ~111         ; combout          ;
+; |da|DATAOUT~113 ; |da|DATAOUT~113      ; combout          ;
+; |da|READ~113    ; |da|READ~113         ; combout          ;
+; |da|OUT[1]~reg0 ; |da|OUT[1]~reg0      ; regout           ;
+; |da|DATAOUT~114 ; |da|DATAOUT~114      ; combout          ;
+; |da|OUT[2]~reg0 ; |da|OUT[2]~reg0      ; regout           ;
+; |da|DATAOUT~115 ; |da|DATAOUT~115      ; combout          ;
+; |da|OUT[3]~reg0 ; |da|OUT[3]~reg0      ; regout           ;
+; |da|DATAOUT~116 ; |da|DATAOUT~116      ; combout          ;
+; |da|OUT[5]~reg0 ; |da|OUT[5]~reg0      ; regout           ;
+; |da|DATAOUT~118 ; |da|DATAOUT~118      ; combout          ;
+; |da|OUT[6]~reg0 ; |da|OUT[6]~reg0      ; regout           ;
+; |da|DATAOUT~119 ; |da|DATAOUT~119      ; combout          ;
+; |da|OUT[7]~reg0 ; |da|OUT[7]~reg0      ; regout           ;
+; |da|DATAOUT~120 ; |da|DATAOUT~120      ; combout          ;
+; |da|DATAOUT[0]  ; |da|DATAOUT[0]       ; padio            ;
+; |da|DATAOUT[1]  ; |da|DATAOUT[1]       ; padio            ;
+; |da|DATAOUT[2]  ; |da|DATAOUT[2]       ; padio            ;
+; |da|DATAOUT[3]  ; |da|DATAOUT[3]       ; padio            ;
+; |da|DATAOUT[5]  ; |da|DATAOUT[5]       ; padio            ;
+; |da|DATAOUT[6]  ; |da|DATAOUT[6]       ; padio            ;
+; |da|DATAOUT[7]  ; |da|DATAOUT[7]       ; padio            ;
+; |da|OUT[1]      ; |da|OUT[1]           ; padio            ;
+; |da|OUT[2]      ; |da|OUT[2]           ; padio            ;
+; |da|OUT[3]      ; |da|OUT[3]           ; padio            ;
+; |da|OUT[5]      ; |da|OUT[5]           ; padio            ;
+; |da|OUT[6]      ; |da|OUT[6]           ; padio            ;
+; |da|OUT[7]      ; |da|OUT[7]           ; padio            ;
+; |da|A[7]        ; |da|A[7]~corein      ; combout          ;
+; |da|A[5]        ; |da|A[5]~corein      ; combout          ;
+; |da|AEN         ; |da|AEN~corein       ; combout          ;
+; |da|A[1]        ; |da|A[1]~corein      ; combout          ;
+; |da|A[3]        ; |da|A[3]~corein      ; combout          ;
+; |da|A[9]        ; |da|A[9]~corein      ; combout          ;
+; |da|A[2]        ; |da|A[2]~corein      ; combout          ;
+; |da|A[6]        ; |da|A[6]~corein      ; combout          ;
+; |da|A[8]        ; |da|A[8]~corein      ; combout          ;
+; |da|A[4]        ; |da|A[4]~corein      ; combout          ;
+; |da|D0          ; |da|D0~corein        ; combout          ;
+; |da|DATAIN[0]   ; |da|DATAIN[0]~corein ; combout          ;
+; |da|DATAIN[2]   ; |da|DATAIN[2]~corein ; combout          ;
+; |da|DATAIN[3]   ; |da|DATAIN[3]~corein ; combout          ;
+; |da|DATAIN[4]   ; |da|DATAIN[4]~corein ; combout          ;
+; |da|DATAIN[5]   ; |da|DATAIN[5]~corein ; combout          ;
+; |da|DATAIN[6]   ; |da|DATAIN[6]~corein ; combout          ;
+; |da|DATAIN[7]   ; |da|DATAIN[7]~corein ; combout          ;
++-----------------+----------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-----------------------------------------------------------+
+; Missing 0-Value Coverage                                  ;
++-----------------+----------------------+------------------+
+; Node Name       ; Output Port Name     ; Output Port Type ;
++-----------------+----------------------+------------------+
+; |da|READ~109    ; |da|READ~109         ; combout          ;
+; |da|READ~111    ; |da|READ~111         ; combout          ;
+; |da|OUT[0]~reg0 ; |da|OUT[0]~reg0      ; regout           ;
+; |da|DATAOUT~113 ; |da|DATAOUT~113      ; combout          ;
+; |da|OUT[1]~reg0 ; |da|OUT[1]~reg0      ; regout           ;
+; |da|DATAOUT~114 ; |da|DATAOUT~114      ; combout          ;
+; |da|OUT[2]~reg0 ; |da|OUT[2]~reg0      ; regout           ;
+; |da|DATAOUT~115 ; |da|DATAOUT~115      ; combout          ;
+; |da|OUT[3]~reg0 ; |da|OUT[3]~reg0      ; regout           ;
+; |da|DATAOUT~116 ; |da|DATAOUT~116      ; combout          ;
+; |da|OUT[4]~reg0 ; |da|OUT[4]~reg0      ; regout           ;
+; |da|OUT[5]~reg0 ; |da|OUT[5]~reg0      ; regout           ;
+; |da|DATAOUT~118 ; |da|DATAOUT~118      ; combout          ;
+; |da|OUT[6]~reg0 ; |da|OUT[6]~reg0      ; regout           ;
+; |da|DATAOUT~119 ; |da|DATAOUT~119      ; combout          ;
+; |da|OUT[7]~reg0 ; |da|OUT[7]~reg0      ; regout           ;
+; |da|DATAOUT~120 ; |da|DATAOUT~120      ; combout          ;
+; |da|DATAOUT[0]  ; |da|DATAOUT[0]       ; padio            ;
+; |da|DATAOUT[1]  ; |da|DATAOUT[1]       ; padio            ;
+; |da|DATAOUT[2]  ; |da|DATAOUT[2]       ; padio            ;
+; |da|DATAOUT[3]  ; |da|DATAOUT[3]       ; padio            ;
+; |da|DATAOUT[5]  ; |da|DATAOUT[5]       ; padio            ;
+; |da|DATAOUT[6]  ; |da|DATAOUT[6]       ; padio            ;
+; |da|DATAOUT[7]  ; |da|DATAOUT[7]       ; padio            ;
+; |da|OUT[0]      ; |da|OUT[0]           ; padio            ;
+; |da|OUT[1]      ; |da|OUT[1]           ; padio            ;
+; |da|OUT[2]      ; |da|OUT[2]           ; padio            ;
+; |da|OUT[3]      ; |da|OUT[3]           ; padio            ;
+; |da|OUT[4]      ; |da|OUT[4]           ; padio            ;
+; |da|OUT[5]      ; |da|OUT[5]           ; padio            ;
+; |da|OUT[6]      ; |da|OUT[6]           ; padio            ;
+; |da|OUT[7]      ; |da|OUT[7]           ; padio            ;
+; |da|A[7]        ; |da|A[7]~corein      ; combout          ;
+; |da|A[5]        ; |da|A[5]~corein      ; combout          ;
+; |da|AEN         ; |da|AEN~corein       ; combout          ;
+; |da|A[1]        ; |da|A[1]~corein      ; combout          ;
+; |da|A[3]        ; |da|A[3]~corein      ; combout          ;
+; |da|A[0]        ; |da|A[0]~corein      ; combout          ;
+; |da|A[9]        ; |da|A[9]~corein      ; combout          ;
+; |da|A[2]        ; |da|A[2]~corein      ; combout          ;
+; |da|A[6]        ; |da|A[6]~corein      ; combout          ;
+; |da|A[8]        ; |da|A[8]~corein      ; combout          ;
+; |da|A[4]        ; |da|A[4]~corein      ; combout          ;
+; |da|D0          ; |da|D0~corein        ; combout          ;
+; |da|DATAIN[1]   ; |da|DATAIN[1]~corein ; combout          ;
+; |da|DATAIN[2]   ; |da|DATAIN[2]~corein ; combout          ;
+; |da|DATAIN[3]   ; |da|DATAIN[3]~corein ; combout          ;
+; |da|DATAIN[4]   ; |da|DATAIN[4]~corein ; combout          ;
+; |da|DATAIN[5]   ; |da|DATAIN[5]~corein ; combout          ;
+; |da|DATAIN[6]   ; |da|DATAIN[6]~corein ; combout          ;
+; |da|DATAIN[7]   ; |da|DATAIN[7]~corein ; combout          ;
++-----------------+----------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Mon May 24 21:10:41 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off AD -c AD
+Info: Using vector source file "F:/interface/AD/DA.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      14.29 %
+Info: Number of transitions in simulation is 27
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 134 megabytes of memory during processing
+    Info: Processing ended: Mon May 24 21:10:42 2010
+    Info: Elapsed time: 00:00:01
+
+

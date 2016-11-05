@@ -1,0 +1,77 @@
+# Copyright (C) 1991-2007 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		DA_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C35F672C6
+set_global_assignment -name TOP_LEVEL_ENTITY DA_down
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 7.2
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:20:04  MAY 24, 2010"
+set_global_assignment -name LAST_QUARTUS_VERSION 7.2
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_palace
+set_global_assignment -name VERILOG_FILE da.v
+set_global_assignment -name LL_ROOT_REGION ON -entity DA -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity DA -section_id "Root Region"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 2147039 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY no_file_for_top_partition -to | -section_id Top
+set_global_assignment -name BDF_FILE DA_down.bdf
+set_location_assignment PIN_G26 -to ior
+set_location_assignment PIN_N23 -to iow
+set_location_assignment PIN_V1 -to aen
+set_location_assignment PIN_V2 -to d0
+set_location_assignment PIN_B13 -to datain[0]
+set_location_assignment PIN_A13 -to datain[1]
+set_location_assignment PIN_U4 -to datain[7]
+set_location_assignment PIN_U3 -to datain[6]
+set_location_assignment PIN_T7 -to datain[5]
+set_location_assignment PIN_P2 -to datain[4]
+set_location_assignment PIN_P1 -to datain[3]
+set_location_assignment PIN_N1 -to datain[2]
+set_location_assignment PIN_N25 -to a[0]
+set_location_assignment PIN_N26 -to a[1]
+set_location_assignment PIN_P25 -to a[2]
+set_location_assignment PIN_AE14 -to a[3]
+set_location_assignment PIN_AF14 -to a[4]
+set_location_assignment PIN_AD13 -to a[5]
+set_location_assignment PIN_AC13 -to a[6]
+set_location_assignment PIN_C13 -to a[7]
+set_location_assignment PIN_V13 -to HEX0[6]
+set_location_assignment PIN_V14 -to HEX0[5]
+set_location_assignment PIN_AE11 -to HEX0[4]
+set_location_assignment PIN_AD11 -to HEX0[3]
+set_location_assignment PIN_AC12 -to HEX0[2]
+set_location_assignment PIN_AB12 -to HEX0[1]
+set_location_assignment PIN_AF10 -to HEX0[0]
+set_location_assignment PIN_AB24 -to HEX1[6]
+set_location_assignment PIN_AA23 -to HEX1[5]
+set_location_assignment PIN_AA24 -to HEX1[4]
+set_location_assignment PIN_Y22 -to HEX1[3]
+set_location_assignment PIN_W21 -to HEX1[2]
+set_location_assignment PIN_V21 -to HEX1[1]
+set_location_assignment PIN_V20 -to HEX1[0]
+set_location_assignment PIN_W19 -to write
+set_location_assignment PIN_AE22 -to read
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"

@@ -1,0 +1,653 @@
+Analysis & Synthesis report for 8259A
+Tue Apr 26 10:21:34 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. State Machine - |8259A|CORE_FIANEL:inst16|core:inst|state
+  5. User-Specified and Inferred Latches
+  6. Multiplexer Restructuring Statistics (Restructuring Performed)
+  7. Analysis & Synthesis Messages
+  8. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Tue Apr 26 10:21:33 2011        ;
+; Quartus II Version                 ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name                      ; 8259A                                    ;
+; Top-level Entity Name              ; 8259A                                    ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; N/A until Partition Merge                ;
+;     Total combinational functions  ; N/A until Partition Merge                ;
+;     Dedicated logic registers      ; N/A until Partition Merge                ;
+; Total registers                    ; N/A until Partition Merge                ;
+; Total pins                         ; N/A until Partition Merge                ;
+; Total virtual pins                 ; N/A until Partition Merge                ;
+; Total memory bits                  ; N/A until Partition Merge                ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                ;
+; Total PLLs                         ; N/A until Partition Merge                ;
++------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                          ; 8259A              ; 8259A              ;
+; Family name                                                                    ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; DSP Block Balancing                                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II/Cyclone III                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------+
+; State Machine - |8259A|CORE_FIANEL:inst16|core:inst|state                   ;
++------------+------------+------------+------------+------------+------------+
+; Name       ; state.0101 ; state.0100 ; state.0011 ; state.0010 ; state.0001 ;
++------------+------------+------------+------------+------------+------------+
+; state.0001 ; 0          ; 0          ; 0          ; 0          ; 0          ;
+; state.0010 ; 0          ; 0          ; 0          ; 1          ; 1          ;
+; state.0011 ; 0          ; 0          ; 1          ; 0          ; 1          ;
+; state.0100 ; 0          ; 1          ; 0          ; 0          ; 1          ;
+; state.0101 ; 1          ; 0          ; 0          ; 0          ; 1          ;
++------------+------------+------------+------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                  ;
++-----------------------------------------------------+---------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                   ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------------------------+------------------------+
+; CORE_FIANEL:inst16|core:inst|ocw3[6]                ; CORE_FIANEL:inst16|core:inst|ocw3~0   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw3[5]                ; CORE_FIANEL:inst16|core:inst|ocw3~0   ; yes                    ;
+; pr:inst|hp_nmr[2]                                   ; pr:inst|hp_nmr[0]~122                 ; yes                    ;
+; pr:inst|hp_isr[2]                                   ; pr:inst|Equal2                        ; yes                    ;
+; pr:inst|hp_nmr[1]                                   ; pr:inst|hp_nmr[0]~122                 ; yes                    ;
+; pr:inst|hp_isr[1]                                   ; pr:inst|Equal2                        ; yes                    ;
+; pr:inst|hp_nmr[0]                                   ; pr:inst|hp_nmr[0]~122                 ; yes                    ;
+; pr:inst|hp_isr[0]                                   ; pr:inst|Equal2                        ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|write1                 ; GND                                   ; yes                    ;
+; 8259A_imr_a:inst3|imr:inst|imrreg[3]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|icw1[3]                ; CORE_FIANEL:inst16|core:inst|icw1~0   ; yes                    ;
+; 8259A_irr_a:inst5|irr:inst|senselatch[3]            ; GND                                   ; yes                    ;
+; 8259A_imr_a:inst3|imr:inst|imrreg[7]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; 8259A_irr_a:inst5|irr:inst|senselatch[7]            ; GND                                   ; yes                    ;
+; 8259A_imr_a:inst3|imr:inst|imrreg[4]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; 8259A_irr_a:inst5|irr:inst|senselatch[4]            ; GND                                   ; yes                    ;
+; 8259A_imr_a:inst3|imr:inst|imrreg[6]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; 8259A_irr_a:inst5|irr:inst|senselatch[6]            ; GND                                   ; yes                    ;
+; 8259A_imr_a:inst3|imr:inst|imrreg[5]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; 8259A_irr_a:inst5|irr:inst|senselatch[5]            ; GND                                   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|pri[1]                 ; CORE_FIANEL:inst16|core:inst|pri[2]~0 ; yes                    ;
+; 8259A_imr_a:inst3|imr:inst|imrreg[2]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; 8259A_irr_a:inst5|irr:inst|senselatch[2]            ; GND                                   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|pri[0]                 ; CORE_FIANEL:inst16|core:inst|pri[2]~0 ; yes                    ;
+; 8259A_imr_a:inst3|imr:inst|imrreg[1]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; 8259A_irr_a:inst5|irr:inst|senselatch[1]            ; GND                                   ; yes                    ;
+; 8259A_imr_a:inst3|imr:inst|imrreg[0]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; 8259A_irr_a:inst5|irr:inst|senselatch[0]            ; GND                                   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|pri[2]                 ; CORE_FIANEL:inst16|core:inst|pri[2]~0 ; yes                    ;
+; 8259A_isr_a:inst4|isr:inst|isrreg[3]                ; GND                                   ; yes                    ;
+; 8259A_isr_a:inst4|isr:inst|isrreg[7]                ; GND                                   ; yes                    ;
+; 8259A_isr_a:inst4|isr:inst|isrreg[4]                ; GND                                   ; yes                    ;
+; 8259A_isr_a:inst4|isr:inst|isrreg[6]                ; GND                                   ; yes                    ;
+; 8259A_isr_a:inst4|isr:inst|isrreg[5]                ; GND                                   ; yes                    ;
+; 8259A_isr_a:inst4|isr:inst|isrreg[2]                ; GND                                   ; yes                    ;
+; 8259A_isr_a:inst4|isr:inst|isrreg[1]                ; GND                                   ; yes                    ;
+; 8259A_isr_a:inst4|isr:inst|isrreg[0]                ; GND                                   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|icw2[7]                ; CORE_FIANEL:inst16|core:inst|icw2~0   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw3[1]                ; CORE_FIANEL:inst16|core:inst|ocw3~0   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|icw2[6]                ; CORE_FIANEL:inst16|core:inst|icw2~0   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|icw2[5]                ; CORE_FIANEL:inst16|core:inst|icw2~0   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|icw2[4]                ; CORE_FIANEL:inst16|core:inst|icw2~0   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|icw2[3]                ; CORE_FIANEL:inst16|core:inst|icw2~0   ; yes                    ;
+; pr:inst|position.00000111_4286                      ; pr:inst|hp_nmr[0]~122                 ; yes                    ;
+; pr:inst|position.00000110_4416                      ; pr:inst|hp_nmr[0]~122                 ; yes                    ;
+; pr:inst|position.00000101_4546                      ; pr:inst|hp_nmr[0]~122                 ; yes                    ;
+; pr:inst|position.00000100_4676                      ; pr:inst|hp_nmr[0]~122                 ; yes                    ;
+; pr:inst|position.00000011_4806                      ; pr:inst|hp_nmr[0]~122                 ; yes                    ;
+; pr:inst|position.00000010_4936                      ; pr:inst|hp_nmr[0]~122                 ; yes                    ;
+; pr:inst|position.00000001_5066                      ; pr:inst|hp_nmr[0]~122                 ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|icw1[0]                ; CORE_FIANEL:inst16|core:inst|icw1~0   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|write2                 ; GND                                   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|clr_imr                ; GND                                   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|er[2]                  ; CORE_FIANEL:inst16|core:inst|er[7]~0  ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|er[3]                  ; CORE_FIANEL:inst16|core:inst|er[7]~0  ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|er[6]                  ; CORE_FIANEL:inst16|core:inst|er[7]~0  ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|er[7]                  ; CORE_FIANEL:inst16|core:inst|er[7]~0  ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|er[0]                  ; CORE_FIANEL:inst16|core:inst|er[7]~0  ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|er[1]                  ; CORE_FIANEL:inst16|core:inst|er[7]~0  ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|er[4]                  ; CORE_FIANEL:inst16|core:inst|er[7]~0  ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|er[5]                  ; CORE_FIANEL:inst16|core:inst|er[7]~0  ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw2[1]                ; CORE_FIANEL:inst16|core:inst|o2       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw2[6]                ; CORE_FIANEL:inst16|core:inst|o2       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw2[7]                ; CORE_FIANEL:inst16|core:inst|o2       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw2[0]                ; CORE_FIANEL:inst16|core:inst|o2       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw2[2]                ; CORE_FIANEL:inst16|core:inst|o2       ; yes                    ;
+; pr:inst|position.00000000_5196                      ; pr:inst|hp_nmr[0]~122                 ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|icw1[1]                ; CORE_FIANEL:inst16|core:inst|icw1~0   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw2[5]                ; CORE_FIANEL:inst16|core:inst|o2       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw3[0]                ; CORE_FIANEL:inst16|core:inst|ocw3~0   ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw1[7]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw1[6]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw1[5]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw1[4]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw1[3]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw1[2]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw1[1]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; CORE_FIANEL:inst16|core:inst|ocw1[0]                ; CORE_FIANEL:inst16|core:inst|o1       ; yes                    ;
+; Number of user-specified and inferred latches = 78  ;                                       ;                        ;
++-----------------------------------------------------+---------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |8259A|CORE_FIANEL:inst16|core:inst|setzero[1] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |8259A|CORE_FIANEL:inst16|core:inst|dataout[2] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |8259A|CORE_FIANEL:inst16|core:inst|pri[2]~2   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |8259A|CORE_FIANEL:inst16|core:inst|er[5]~11   ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |8259A|CORE_FIANEL:inst16|core:inst|Selector1  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Tue Apr 26 10:21:30 2011
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 8259A -c 8259A
+Info: Found 1 design units, including 1 entities, in source file imr.v
+    Info: Found entity 1: imr
+Info: Found 1 design units, including 1 entities, in source file irr.v
+    Info: Found entity 1: irr
+Info: Found 1 design units, including 1 entities, in source file isr.v
+    Info: Found entity 1: isr
+Info: Found 1 design units, including 1 entities, in source file 8259A_irr_a.bdf
+    Info: Found entity 1: 8259A_irr_a
+Info: Found 1 design units, including 1 entities, in source file 8259A_isr_a.bdf
+    Info: Found entity 1: 8259A_isr_a
+Info: Found 1 design units, including 1 entities, in source file 8259A_imr_a.bdf
+    Info: Found entity 1: 8259A_imr_a
+Info: Found 1 design units, including 1 entities, in source file pr.v
+    Info: Found entity 1: pr
+Info: Found 1 design units, including 1 entities, in source file core.v
+    Info: Found entity 1: core
+Info: Found 1 design units, including 1 entities, in source file 8259A_core.bdf
+    Info: Found entity 1: 8259A_core
+Info: Found 1 design units, including 1 entities, in source file 8259A_down.bdf
+    Info: Found entity 1: 8259A_down
+Info: Found 1 design units, including 1 entities, in source file segout.v
+    Info: Found entity 1: segout
+Info: Found 1 design units, including 1 entities, in source file select2.v
+    Info: Found entity 1: select2
+Info: Found 1 design units, including 1 entities, in source file CORE_FIANEL.bdf
+    Info: Found entity 1: CORE_FIANEL
+Info: Found 1 design units, including 1 entities, in source file 8259A.bdf
+    Info: Found entity 1: 8259A
+Info: Elaborating entity "8259A" for the top level hierarchy
+Info: Elaborating entity "pr" for hierarchy "pr:inst"
+Warning (10235): Verilog HDL Always Construct warning at pr.v(21): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(26): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(31): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(36): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(41): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(46): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(51): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(56): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(61): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(70): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(75): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(80): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(85): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(90): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(95): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(100): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(105): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(113): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(118): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(123): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(128): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(133): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(138): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(143): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(148): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(157): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(162): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(167): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(172): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(177): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(182): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(187): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(192): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(201): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(206): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(211): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(216): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(221): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(226): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(231): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(236): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(243): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(248): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(253): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(258): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(263): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(268): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(273): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(278): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(286): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(291): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(296): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(301): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(306): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(311): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(316): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(321): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(329): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(334): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(339): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(344): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(349): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(354): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(359): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(364): variable "nmr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at pr.v(19): inferring latch(es) for variable "position", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at pr.v(19): inferring latch(es) for variable "hp_nmr", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at pr.v(379): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(383): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(385): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(387): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(389): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(391): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(393): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(395): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(397): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(401): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(403): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(405): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(407): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(409): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(411): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(413): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(415): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(419): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(421): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(423): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(425): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(427): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(429): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(431): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(433): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(438): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(440): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(442): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(444): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(446): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(448): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(450): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(452): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(456): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(458): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(460): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(462): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(464): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(466): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(468): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(470): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(475): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(477): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(479): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(481): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(483): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(485): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(487): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(489): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(493): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(495): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(497): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(499): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(501): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(503): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(505): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(507): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(511): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(513): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(515): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(517): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(519): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(521): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(523): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at pr.v(525): variable "isr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at pr.v(377): inferring latch(es) for variable "hp_isr", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at pr.v(535): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(536): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(537): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(538): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(539): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(540): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(541): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(542): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at pr.v(543): truncated value with size 8 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at pr.v(544): truncated value with size 32 to match size of target (1)
+Info (10041): Inferred latch for "hp_isr[0]" at pr.v(377)
+Info (10041): Inferred latch for "hp_isr[1]" at pr.v(377)
+Info (10041): Inferred latch for "hp_isr[2]" at pr.v(377)
+Info (10041): Inferred latch for "hp_isr[3]" at pr.v(377)
+Info (10041): Inferred latch for "hp_isr[4]" at pr.v(377)
+Info (10041): Inferred latch for "hp_isr[5]" at pr.v(377)
+Info (10041): Inferred latch for "hp_isr[6]" at pr.v(377)
+Info (10041): Inferred latch for "hp_isr[7]" at pr.v(377)
+Info (10041): Inferred latch for "hp_nmr[0]" at pr.v(19)
+Info (10041): Inferred latch for "hp_nmr[1]" at pr.v(19)
+Info (10041): Inferred latch for "hp_nmr[2]" at pr.v(19)
+Info (10041): Inferred latch for "hp_nmr[3]" at pr.v(19)
+Info (10041): Inferred latch for "hp_nmr[4]" at pr.v(19)
+Info (10041): Inferred latch for "hp_nmr[5]" at pr.v(19)
+Info (10041): Inferred latch for "hp_nmr[6]" at pr.v(19)
+Info (10041): Inferred latch for "hp_nmr[7]" at pr.v(19)
+Info (10041): Inferred latch for "position.00001000" at pr.v(19)
+Info (10041): Inferred latch for "position.00000111" at pr.v(19)
+Info (10041): Inferred latch for "position.00000110" at pr.v(19)
+Info (10041): Inferred latch for "position.00000101" at pr.v(19)
+Info (10041): Inferred latch for "position.00000100" at pr.v(19)
+Info (10041): Inferred latch for "position.00000011" at pr.v(19)
+Info (10041): Inferred latch for "position.00000010" at pr.v(19)
+Info (10041): Inferred latch for "position.00000001" at pr.v(19)
+Info (10041): Inferred latch for "position.00000000" at pr.v(19)
+Info: Elaborating entity "CORE_FIANEL" for hierarchy "CORE_FIANEL:inst16"
+Info: Elaborating entity "core" for hierarchy "CORE_FIANEL:inst16|core:inst"
+Warning (10240): Verilog HDL Always Construct warning at core.v(85): inferring latch(es) for variable "write1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at core.v(85): inferring latch(es) for variable "write2", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at core.v(93): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at core.v(198): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at core.v(201): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at core.v(202): truncated value with size 32 to match size of target (1)
+Warning (10240): Verilog HDL Always Construct warning at core.v(210): inferring latch(es) for variable "clr_imr", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at core.v(254): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(254): variable "mclr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(255): variable "icw4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(257): variable "flag1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(258): variable "code" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(271): variable "o2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(273): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(274): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(275): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(288): variable "code" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(302): variable "mclr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at core.v(252): inferring latch(es) for variable "er", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at core.v(310): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(310): variable "mclr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(312): variable "icw4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(313): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(315): variable "er" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at core.v(315): incomplete case statement has no default case item
+Info (10264): Verilog HDL Case Statement information at core.v(315): all case item expressions in this case statement are onehot
+Warning (10235): Verilog HDL Always Construct warning at core.v(327): variable "o2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(327): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(328): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(340): variable "ocw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(344): variable "er" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at core.v(344): incomplete case statement has no default case item
+Warning (10235): Verilog HDL Always Construct warning at core.v(358): variable "pri" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at core.v(308): inferring latch(es) for variable "pri", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at core.v(362): truncated value with size 32 to match size of target (1)
+Warning (10235): Verilog HDL Always Construct warning at core.v(371): variable "flag2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at core.v(373): variable "code" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at core.v(390): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at core.v(391): truncated value with size 32 to match size of target (1)
+Info (10041): Inferred latch for "pri[0]" at core.v(308)
+Info (10041): Inferred latch for "pri[1]" at core.v(308)
+Info (10041): Inferred latch for "pri[2]" at core.v(308)
+Info (10041): Inferred latch for "er[0]" at core.v(252)
+Info (10041): Inferred latch for "er[1]" at core.v(252)
+Info (10041): Inferred latch for "er[2]" at core.v(252)
+Info (10041): Inferred latch for "er[3]" at core.v(252)
+Info (10041): Inferred latch for "er[4]" at core.v(252)
+Info (10041): Inferred latch for "er[5]" at core.v(252)
+Info (10041): Inferred latch for "er[6]" at core.v(252)
+Info (10041): Inferred latch for "er[7]" at core.v(252)
+Info (10041): Inferred latch for "clr_imr" at core.v(210)
+Info (10041): Inferred latch for "ocw3[0]" at core.v(173)
+Info (10041): Inferred latch for "ocw3[1]" at core.v(173)
+Info (10041): Inferred latch for "ocw3[2]" at core.v(173)
+Info (10041): Inferred latch for "ocw3[3]" at core.v(173)
+Info (10041): Inferred latch for "ocw3[4]" at core.v(173)
+Info (10041): Inferred latch for "ocw3[5]" at core.v(173)
+Info (10041): Inferred latch for "ocw3[6]" at core.v(173)
+Info (10041): Inferred latch for "ocw3[7]" at core.v(173)
+Info (10041): Inferred latch for "ocw2[0]" at core.v(172)
+Info (10041): Inferred latch for "ocw2[1]" at core.v(172)
+Info (10041): Inferred latch for "ocw2[2]" at core.v(172)
+Info (10041): Inferred latch for "ocw2[5]" at core.v(172)
+Info (10041): Inferred latch for "ocw2[6]" at core.v(172)
+Info (10041): Inferred latch for "ocw2[7]" at core.v(172)
+Info (10041): Inferred latch for "ocw1[0]" at core.v(171)
+Info (10041): Inferred latch for "ocw1[1]" at core.v(171)
+Info (10041): Inferred latch for "ocw1[2]" at core.v(171)
+Info (10041): Inferred latch for "ocw1[3]" at core.v(171)
+Info (10041): Inferred latch for "ocw1[4]" at core.v(171)
+Info (10041): Inferred latch for "ocw1[5]" at core.v(171)
+Info (10041): Inferred latch for "ocw1[6]" at core.v(171)
+Info (10041): Inferred latch for "ocw1[7]" at core.v(171)
+Info (10041): Inferred latch for "icw2[3]" at core.v(168)
+Info (10041): Inferred latch for "icw2[4]" at core.v(168)
+Info (10041): Inferred latch for "icw2[5]" at core.v(168)
+Info (10041): Inferred latch for "icw2[6]" at core.v(168)
+Info (10041): Inferred latch for "icw2[7]" at core.v(168)
+Info (10041): Inferred latch for "icw1[0]" at core.v(167)
+Info (10041): Inferred latch for "icw1[1]" at core.v(167)
+Info (10041): Inferred latch for "icw1[3]" at core.v(167)
+Info (10041): Inferred latch for "write2" at core.v(85)
+Info (10041): Inferred latch for "write1" at core.v(85)
+Info: Elaborating entity "8259A_imr_a" for hierarchy "8259A_imr_a:inst3"
+Info: Elaborating entity "imr" for hierarchy "8259A_imr_a:inst3|imr:inst"
+Info (10041): Inferred latch for "imrreg[0]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[1]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[2]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[3]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[4]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[5]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[6]" at imr.v(7)
+Info (10041): Inferred latch for "imrreg[7]" at imr.v(7)
+Info: Elaborating entity "8259A_isr_a" for hierarchy "8259A_isr_a:inst4"
+Info: Elaborating entity "isr" for hierarchy "8259A_isr_a:inst4|isr:inst"
+Warning (10230): Verilog HDL assignment warning at isr.v(13): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(15): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(16): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(17): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(18): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(19): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(20): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at isr.v(21): truncated value with size 32 to match size of target (1)
+Info (10041): Inferred latch for "isrreg[7]" at isr.v(21)
+Info (10041): Inferred latch for "isrreg[6]" at isr.v(20)
+Info (10041): Inferred latch for "isrreg[5]" at isr.v(19)
+Info (10041): Inferred latch for "isrreg[4]" at isr.v(18)
+Info (10041): Inferred latch for "isrreg[3]" at isr.v(17)
+Info (10041): Inferred latch for "isrreg[2]" at isr.v(16)
+Info (10041): Inferred latch for "isrreg[1]" at isr.v(15)
+Info (10041): Inferred latch for "isrreg[0]" at isr.v(13)
+Info: Elaborating entity "8259A_irr_a" for hierarchy "8259A_irr_a:inst5"
+Info: Elaborating entity "irr" for hierarchy "8259A_irr_a:inst5|irr:inst"
+Warning (10230): Verilog HDL assignment warning at irr.v(15): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(18): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(21): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(24): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(27): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(30): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(33): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at irr.v(36): truncated value with size 32 to match size of target (1)
+Info (10041): Inferred latch for "senselatch[7]" at irr.v(36)
+Info (10041): Inferred latch for "irrreg[7]" at irr.v(35)
+Info (10041): Inferred latch for "senselatch[6]" at irr.v(33)
+Info (10041): Inferred latch for "irrreg[6]" at irr.v(32)
+Info (10041): Inferred latch for "senselatch[5]" at irr.v(30)
+Info (10041): Inferred latch for "irrreg[5]" at irr.v(29)
+Info (10041): Inferred latch for "senselatch[4]" at irr.v(27)
+Info (10041): Inferred latch for "irrreg[4]" at irr.v(26)
+Info (10041): Inferred latch for "senselatch[3]" at irr.v(24)
+Info (10041): Inferred latch for "irrreg[3]" at irr.v(23)
+Info (10041): Inferred latch for "senselatch[2]" at irr.v(21)
+Info (10041): Inferred latch for "irrreg[2]" at irr.v(20)
+Info (10041): Inferred latch for "senselatch[1]" at irr.v(18)
+Info (10041): Inferred latch for "irrreg[1]" at irr.v(17)
+Info (10041): Inferred latch for "senselatch[0]" at irr.v(15)
+Info (10041): Inferred latch for "irrreg[0]" at irr.v(14)
+Warning: LATCH primitive "8259A_irr_a:inst5|irr:inst|irrreg[7]" is permanently enabled
+Warning: LATCH primitive "8259A_irr_a:inst5|irr:inst|irrreg[6]" is permanently enabled
+Warning: LATCH primitive "8259A_irr_a:inst5|irr:inst|irrreg[5]" is permanently enabled
+Warning: LATCH primitive "8259A_irr_a:inst5|irr:inst|irrreg[4]" is permanently enabled
+Warning: LATCH primitive "8259A_irr_a:inst5|irr:inst|irrreg[3]" is permanently enabled
+Warning: LATCH primitive "8259A_irr_a:inst5|irr:inst|irrreg[2]" is permanently enabled
+Warning: LATCH primitive "8259A_irr_a:inst5|irr:inst|irrreg[1]" is permanently enabled
+Warning: LATCH primitive "8259A_irr_a:inst5|irr:inst|irrreg[0]" is permanently enabled
+Warning: Converted TRI buffer or tri-state bus to logic, or removed OPNDRN
+    Warning: Converting tri-state bus "8259A_imr_a:inst3|bus~0" that feeds logic into logic
+    Warning: Converting tri-state bus "8259A_imr_a:inst3|bus~1" that feeds logic into logic
+    Warning: Converting tri-state bus "8259A_imr_a:inst3|bus~2" that feeds logic into logic
+    Warning: Converting tri-state bus "8259A_imr_a:inst3|bus~3" that feeds logic into logic
+    Warning: Converting tri-state bus "8259A_imr_a:inst3|bus~4" that feeds logic into logic
+    Warning: Converting tri-state bus "8259A_imr_a:inst3|bus~5" that feeds logic into logic
+    Warning: Converting tri-state bus "8259A_imr_a:inst3|bus~6" that feeds logic into logic
+    Warning: Converting tri-state bus "8259A_imr_a:inst3|bus~7" that feeds logic into logic
+Info: State machine "|8259A|CORE_FIANEL:inst16|core:inst|state" contains 5 states
+Info: Selected Auto state machine encoding method for state machine "|8259A|CORE_FIANEL:inst16|core:inst|state"
+Info: Encoding result for state machine "|8259A|CORE_FIANEL:inst16|core:inst|state"
+    Info: Completed encoding using 5 state bits
+        Info: Encoded state bit "CORE_FIANEL:inst16|core:inst|state.0101"
+        Info: Encoded state bit "CORE_FIANEL:inst16|core:inst|state.0100"
+        Info: Encoded state bit "CORE_FIANEL:inst16|core:inst|state.0011"
+        Info: Encoded state bit "CORE_FIANEL:inst16|core:inst|state.0010"
+        Info: Encoded state bit "CORE_FIANEL:inst16|core:inst|state.0001"
+    Info: State "|8259A|CORE_FIANEL:inst16|core:inst|state.0001" uses code string "00000"
+    Info: State "|8259A|CORE_FIANEL:inst16|core:inst|state.0010" uses code string "00011"
+    Info: State "|8259A|CORE_FIANEL:inst16|core:inst|state.0011" uses code string "00101"
+    Info: State "|8259A|CORE_FIANEL:inst16|core:inst|state.0100" uses code string "01001"
+    Info: State "|8259A|CORE_FIANEL:inst16|core:inst|state.0101" uses code string "10001"
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus DATA~0 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus DATA~1 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus DATA~2 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus DATA~3 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus DATA~4 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus DATA~5 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus DATA~6 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus DATA~7 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus CORE_FIANEL:inst16|BUS~0 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus CORE_FIANEL:inst16|BUS~1 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus CORE_FIANEL:inst16|BUS~2 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus CORE_FIANEL:inst16|BUS~3 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus CORE_FIANEL:inst16|BUS~4 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus CORE_FIANEL:inst16|BUS~5 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus CORE_FIANEL:inst16|BUS~6 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus CORE_FIANEL:inst16|BUS~7 that it feeds
+Error: The node "CORE_FIANEL:inst16|core:inst|dataout[7]~75" has multiple drivers due to the always-enabled IO buffer "CORE_FIANEL:inst16|BUS~16" File: D:/download/接口/8259Acyq/core.v Line: 20
+Error: The node "CORE_FIANEL:inst16|core:inst|dataout[6]~76" has multiple drivers due to the always-enabled IO buffer "CORE_FIANEL:inst16|BUS~17" File: D:/download/接口/8259Acyq/core.v Line: 20
+Error: The node "CORE_FIANEL:inst16|core:inst|dataout[5]~77" has multiple drivers due to the always-enabled IO buffer "CORE_FIANEL:inst16|BUS~18" File: D:/download/接口/8259Acyq/core.v Line: 20
+Error: The node "CORE_FIANEL:inst16|core:inst|dataout[4]~78" has multiple drivers due to the always-enabled IO buffer "CORE_FIANEL:inst16|BUS~19" File: D:/download/接口/8259Acyq/core.v Line: 20
+Error: The node "CORE_FIANEL:inst16|core:inst|dataout[3]~79" has multiple drivers due to the always-enabled IO buffer "CORE_FIANEL:inst16|BUS~20" File: D:/download/接口/8259Acyq/core.v Line: 20
+Error: The node "CORE_FIANEL:inst16|core:inst|dataout[2]~80" has multiple drivers due to the always-enabled IO buffer "CORE_FIANEL:inst16|BUS~21" File: D:/download/接口/8259Acyq/core.v Line: 20
+Error: The node "CORE_FIANEL:inst16|core:inst|dataout[1]~81" has multiple drivers due to the always-enabled IO buffer "CORE_FIANEL:inst16|BUS~22" File: D:/download/接口/8259Acyq/core.v Line: 20
+Error: The node "CORE_FIANEL:inst16|core:inst|dataout[0]~82" has multiple drivers due to the always-enabled IO buffer "CORE_FIANEL:inst16|BUS~23" File: D:/download/接口/8259Acyq/core.v Line: 20
+Info: Generated suppressed messages file D:/download/接口/8259Acyq/8259A.map.smsg
+Error: Quartus II Analysis & Synthesis was unsuccessful. 8 errors, 230 warnings
+    Info: Allocated 175 megabytes of memory during processing
+    Error: Processing ended: Tue Apr 26 10:21:34 2011
+    Error: Elapsed time: 00:00:04
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/download/接口/8259Acyq/8259A.map.smsg.
+
+

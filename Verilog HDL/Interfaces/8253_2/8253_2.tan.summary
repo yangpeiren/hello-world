@@ -1,0 +1,186 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.235 ns
+From           : CS
+To             : I8253f:inst|cnt0[13]~_emulated
+From Clock     : --
+To Clock       : clk0
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 34.031 ns
+From           : I8253f:inst|cnt0[2]~latch
+To             : HEX0[0]
+From Clock     : CS
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.309 ns
+From           : CS
+To             : HEX0[0]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.796 ns
+From           : GATE0
+To             : I8253f:inst|buffer[14]
+From Clock     : --
+To Clock       : CS
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CS'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 23.43 MHz ( period = 42.674 ns )
+From           : I8253f:inst|cnt0[0]~latch
+To             : I8253f:inst|lock[0]
+From Clock     : CS
+To Clock       : CS
+Failed Paths   : 0
+
+Type           : Clock Setup: 'WR'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 23.43 MHz ( period = 42.674 ns )
+From           : I8253f:inst|cnt0[0]~latch
+To             : I8253f:inst|lock[0]
+From Clock     : WR
+To Clock       : WR
+Failed Paths   : 0
+
+Type           : Clock Setup: 'RD'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 23.43 MHz ( period = 42.674 ns )
+From           : I8253f:inst|cnt0[0]~latch
+To             : I8253f:inst|lock[0]
+From Clock     : RD
+To Clock       : RD
+Failed Paths   : 0
+
+Type           : Clock Setup: 'A0'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 23.43 MHz ( period = 42.674 ns )
+From           : I8253f:inst|cnt0[0]~latch
+To             : I8253f:inst|lock[0]
+From Clock     : A0
+To Clock       : A0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'A1'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 23.43 MHz ( period = 42.674 ns )
+From           : I8253f:inst|cnt0[0]~latch
+To             : I8253f:inst|lock[0]
+From Clock     : A1
+To Clock       : A1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk0'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 56.94 MHz ( period = 17.563 ns )
+From           : I8253f:inst|cnt0[13]~latch
+To             : I8253f:inst|cnt0[13]~_emulated
+From Clock     : clk0
+To Clock       : clk0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'GATE0'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 420.17 MHz ( period = 2.380 ns )
+From           : I8253f:inst|edge0
+To             : I8253f:inst|edge0
+From Clock     : GATE0
+To Clock       : GATE0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'A0'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : I8253f:inst|set0[15]
+To             : I8253f:inst|cnt0[15]~latch
+From Clock     : A0
+To Clock       : A0
+Failed Paths   : 667
+
+Type           : Clock Hold: 'A1'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : I8253f:inst|set0[15]
+To             : I8253f:inst|cnt0[15]~latch
+From Clock     : A1
+To Clock       : A1
+Failed Paths   : 669
+
+Type           : Clock Hold: 'RD'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : I8253f:inst|set0[15]
+To             : I8253f:inst|cnt0[15]~latch
+From Clock     : RD
+To Clock       : RD
+Failed Paths   : 673
+
+Type           : Clock Hold: 'WR'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : I8253f:inst|set0[15]
+To             : I8253f:inst|cnt0[15]~latch
+From Clock     : WR
+To Clock       : WR
+Failed Paths   : 673
+
+Type           : Clock Hold: 'CS'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : I8253f:inst|set0[15]
+To             : I8253f:inst|cnt0[15]~latch
+From Clock     : CS
+To Clock       : CS
+Failed Paths   : 673
+
+Type           : Clock Hold: 'clk0'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : I8253f:inst|cnt0[8]~_emulated
+To             : I8253f:inst|buffer[8]
+From Clock     : clk0
+To Clock       : clk0
+Failed Paths   : 21
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 3376
+
+--------------------------------------------------------------------------------------
+
